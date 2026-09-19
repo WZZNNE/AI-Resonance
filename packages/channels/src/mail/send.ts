@@ -22,7 +22,19 @@ export interface OutgoingMail {
 /** A configured provider. */
 export interface Sender {
   provider: 'smtp' | 'resend'
-  send(mail: OutgoingMail): Promise<{ id?: string }>
+  send(mail: OutgoingMail): Promise<SendResult>
+}
+
+export interface RejectedRecipient {
+  address: string
+  error: string
+  permanent: boolean
+}
+export interface SendResult {
+  id?: string
+  /** Omitted by providers whose transaction is all-or-nothing. */
+  accepted?: string[]
+  rejected?: RejectedRecipient[]
 }
 
 /** Error that retrying cannot fix (bad credentials, rejected recipient, spam verdict). */
@@ -45,10 +57,17 @@ export const SMTP_PRESETS: Record<
 
 /** `a@x.com, b@y.com; c@z.com` → addresses (secrets pasted from a form often carry stray spaces). */
 export function parseRecipients(raw: string | undefined): string[] {
+  const seen = new Set<string>()
   return (raw ?? '')
     .split(/[,;\s]+/)
     .map((s) => s.trim())
     .filter((s) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s))
+    .filter((s) => {
+      const key = s.toLowerCase()
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
 }
 
 /**
@@ -62,12 +81,19 @@ export function messageId(slot: string, owner: string, uniq?: string): string {
 
 /** The slice of a nodemailer transport this module uses (a seam for tests). */
 export interface MailTransport {
-  sendMail(message: Record<string, unknown>): Promise<{ messageId?: string }>
+  sendMail(message: Record<string, unknown>): Promise<{
+    messageId?: string
+    accepted?: string[]
+    rejected?: string[]
+    rejectedErrors?: Array<{ recipient?: string; message?: string; responseCode?: number }>
+  }>
 }
 export type CreateTransport = (options: Record<string, unknown>) => MailTransport
 
 function smtpPermanent(err: unknown): boolean {
   const e = err as { code?: string; responseCode?: number }
+  // EENVELOPE also covers an all-recipient temporary 4xx rejection; those are safe to retry.
+  if (typeof e.responseCode === 'number' && e.responseCode >= 400 && e.responseCode < 500) return false
   return e.code === 'EAUTH' || e.code === 'EENVELOPE' || (typeof e.responseCode === 'number' && e.responseCode >= 500)
 }
 
@@ -112,7 +138,19 @@ export function smtpSender(
               ]
             : [],
         })
-        return { id: info.messageId }
+        if (!info.rejected?.length) return { id: info.messageId }
+        return {
+          id: info.messageId,
+          accepted: info.accepted ?? mail.to.filter((address) => !info.rejected?.includes(address)),
+          rejected: info.rejected.map((address) => {
+            const error = info.rejectedErrors?.find((e) => e.recipient === address)
+            return {
+              address,
+              error: error?.message ?? 'SMTP recipient rejected',
+              permanent: (error?.responseCode ?? 500) >= 500,
+            }
+          }),
+        }
       } catch (err) {
         if (smtpPermanent(err)) throw new PermanentError((err as Error).message)
         throw err
@@ -180,18 +218,46 @@ export function senderFromEnv(settings: MailSettings, env: Record<string, string
 export async function sendWithRetry(
   sender: Sender,
   mail: OutgoingMail,
-  opts: { tries?: number; delaysMs?: number[]; sleep?: (ms: number) => Promise<void> } = {},
-): Promise<{ id?: string; attempts: number }> {
+  opts: {
+    tries?: number
+    delaysMs?: number[]
+    sleep?: (ms: number) => Promise<void>
+    /** Persist acknowledgements before another attempt. A persistence failure must never re-send accepted mail. */
+    onProgress?: (accepted: string[]) => Promise<void>
+  } = {},
+): Promise<SendResult & { attempts: number }> {
   const tries = opts.tries ?? 3
   const delays = opts.delaysMs ?? [5_000, 20_000]
   const sleep = opts.sleep ?? ((ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)))
+  let pending = [...mail.to]
+  const accepted = new Set<string>()
+  const rejected: RejectedRecipient[] = []
+  let id: string | undefined
   for (let attempt = 1; ; attempt++) {
+    let result: SendResult
     try {
-      const { id } = await sender.send(mail)
-      return { id, attempts: attempt }
+      result = await sender.send({ ...mail, to: pending })
     } catch (err) {
-      if (err instanceof PermanentError || attempt >= tries) throw err
+      if (err instanceof PermanentError || attempt >= tries) {
+        if (!accepted.size) throw err
+        rejected.push(
+          ...pending.map((address) => ({ address, error: String(err), permanent: err instanceof PermanentError })),
+        )
+        return { id, attempts: attempt, accepted: [...accepted], rejected }
+      }
       await sleep(delays[Math.min(attempt - 1, delays.length - 1)])
+      continue
     }
+    id = result.id ?? id
+    const failed = result.rejected ?? []
+    const delivered = result.accepted ?? pending.filter((a) => !failed.some((r) => r.address === a))
+    for (const address of delivered) accepted.add(address)
+    // Deliberately outside the send catch: a state-write failure must not retry the SMTP transaction.
+    if (delivered.length) await opts.onProgress?.([...accepted])
+    rejected.push(...failed.filter((r) => r.permanent || attempt >= tries))
+    pending = failed.filter((r) => !r.permanent && attempt < tries).map((r) => r.address)
+    if (!pending.length)
+      return rejected.length ? { id, attempts: attempt, accepted: [...accepted], rejected } : { id, attempts: attempt }
+    await sleep(delays[Math.min(attempt - 1, delays.length - 1)])
   }
 }

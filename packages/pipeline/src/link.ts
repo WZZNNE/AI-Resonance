@@ -80,8 +80,14 @@ function mergeTwo(a: RawCandidate, b: RawCandidate): RawCandidate {
   switch (base.board) {
     case 'repos':
       return { ...common, board: 'repos', repo: mergeDetail(base.repo, (other as RawRepo).repo) }
-    case 'papers':
-      return { ...common, board: 'papers', paper: mergeDetail(base.paper, (other as RawPaper).paper) }
+    case 'papers': {
+      const paper = mergeDetail(base.paper, (other as RawPaper).paper)
+      // Curation is a separate event from arXiv publication. Metadata richness must never move an HF event
+      // into an older (already frozen) edition. Infer the HF time too for pre-migration candidates.
+      const hf = [a, b].find((c) => c.sources.includes('hf-papers'))
+      const publishedAt = paper.hfSubmittedAt ?? hf?.publishedAt ?? paper.arxivAnnouncedAt ?? common.publishedAt
+      return { ...common, publishedAt, board: 'papers', paper }
+    }
     case 'news':
       return { ...common, board: 'news', news: mergeDetail(base.news, (other as RawNews).news) }
     case 'social':

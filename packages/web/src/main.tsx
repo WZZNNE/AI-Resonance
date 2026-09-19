@@ -5,6 +5,7 @@
 import './theme/tokens.css'
 import './theme/presets.css'
 import './ui/ui.css'
+import './ui/motion.css'
 import './shell/shell.css'
 import './items/items.css'
 import './views/today.css'

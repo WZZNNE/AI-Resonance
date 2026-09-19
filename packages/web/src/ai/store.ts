@@ -3,56 +3,16 @@
  * and the lazily loaded price catalogue.
  */
 import { signal } from '@preact/signals'
-import type { Lang, PricingFile } from '@resonance/schema'
+import type { PricingFile } from '@resonance/schema'
 import { api } from '../core/api.ts'
-import { defineSlice } from '../core/settings.ts'
 import { effortsFromPrice } from './effort.ts'
 import { type EffectivePrice, effectivePrice, matchPrice, type PriceMatch } from './pricing.ts'
 import { modelKeyOf } from './providers.ts'
-import type { Depth, Effort, ModelRef, Provider } from './types.ts'
+import type { Effort, ModelRef, Provider } from './types.ts'
 
-export interface AiSettings {
-  providers: Provider[]
-  /** Selection key (`provider::model`) of the active model. */
-  active: string
-  /** Effort a summary starts with when the model has no default of its own. */
-  effort: Effort
-  /** Ask for readable reasoning and show it while streaming. */
-  showThinking: boolean
-  /** Summary language pinned in settings; `''` follows the UI language. */
-  lang: Lang | ''
-  depth: Depth
-  /** "About me / what I care about", added to every summary prompt. */
-  aboutMe: string
-  /** Web-grounded summaries by default (needs a search API engine from the search feature). */
-  web: boolean
-}
+export { type AiSettings, aiPrefs } from './prefs.ts'
 
-export const aiPrefs = defineSlice<AiSettings>(
-  'ai',
-  {
-    providers: [],
-    active: '',
-    effort: 'default',
-    showThinking: false,
-    lang: '',
-    depth: 'brief',
-    aboutMe: '',
-    web: false,
-  },
-  // Credential ids point into this device's vault; exported settings must not carry them to another one, and an
-  // imported file (untrusted: it names the endpoints) must not bind this device's keys to its providers.
-  {
-    redact: (v) => ({ ...v, providers: v.providers.map((p) => ({ ...p, credentialId: undefined })) }),
-    importing: (incoming) => {
-      if (!Array.isArray(incoming.providers)) return { value: incoming, changed: [] }
-      const providers = incoming.providers.map((p) =>
-        p && typeof p === 'object' ? { ...p, credentialId: undefined } : p,
-      )
-      return { value: { ...incoming, providers }, changed: [] }
-    },
-  },
-)
+import { aiPrefs } from './prefs.ts'
 
 /** `undefined` until loaded, `null` when the site publishes no (readable) catalogue. */
 export const pricing = signal<PricingFile | null | undefined>(undefined)

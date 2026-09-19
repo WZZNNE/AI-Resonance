@@ -1,6 +1,7 @@
 import preact from '@preact/preset-vite'
 import { defineConfig } from 'vitest/config'
 import { allowController } from './scripts/csp.ts'
+import { staticApi } from './scripts/static-api.ts'
 
 /**
  * Vite + Vitest config. `BASE_PATH` lets a fork deploy under any sub-path (`/ai-resonance/`); the default `./` works
@@ -9,7 +10,7 @@ import { allowController } from './scripts/csp.ts'
  */
 export default defineConfig({
   base: process.env.BASE_PATH ?? './',
-  plugins: [preact(), { name: 'report-controller-csp', transformIndexHtml: allowController }],
+  plugins: [staticApi(), preact(), { name: 'report-controller-csp', transformIndexHtml: allowController }],
   build: {
     target: 'es2022',
     // Lazy chunks come from dynamic imports only; no manual chunking, so the initial graph stays honest.

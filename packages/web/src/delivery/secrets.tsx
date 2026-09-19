@@ -3,7 +3,7 @@
  * secrets (never stored here, cleared after saving), and "Send test now" (workflow_dispatch + run polling).
  */
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { fmt, type MessageKey, t } from '../i18n/index.ts'
+import { fmt, lang, type MessageKey, t } from '../i18n/index.ts'
 import { Button } from '../ui/button.tsx'
 import { Badge } from '../ui/chip.tsx'
 import { Field, Input } from '../ui/form.tsx'
@@ -99,7 +99,7 @@ export function CredentialsSection({
   const list = useAction()
   const set = (patch: Partial<MailCredentials>) => setCreds((c) => ({ ...c, ...patch }))
   const rcpt = parseRecipients(creds.to)
-  const toWrite = secretsToWrite(provider, creds)
+  const toWrite = secretsToWrite(provider, creds, preset)
   const implied = presetForAddress(creds.smtpUser)
   const usable = !!repo && vaultAvailable()
 
@@ -295,7 +295,14 @@ export function TestSection({ repo }: { repo: RepoRef | null }) {
         const r = await gh.run(id)
         setRun(r)
         if (r.status === 'completed') {
-          if (r.conclusion === 'success') return t('delivery.test.success')
+          if (r.conclusion === 'success') {
+            if (await gh.deliveryConfirmed(id)) return t('delivery.test.success')
+            throw new Error(
+              lang.peek() === 'zh'
+                ? '工作流已结束，但没有确认邮件送达。请打开运行记录检查发送步骤，并确认仓库已更新 mail.yml。'
+                : 'The workflow finished without a delivery acknowledgement. Check the send step and update mail.yml in the repository.',
+            )
+          }
           throw new DeliveryError('delivery.test.failed', { conclusion: r.conclusion ?? '?' })
         }
         if (Date.now() - started > POLL_LIMIT_MS) return t('delivery.test.slow')

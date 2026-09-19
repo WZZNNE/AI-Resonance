@@ -62,6 +62,8 @@ export function parseArxiv(xml: string, prior: number): RawPaper[] {
       metrics: { prior },
       paper: {
         arxivId: id,
+        arxivPublishedAt: textOf(entry.published) || undefined,
+        arxivAnnouncedAt: announcedAt(textOf(entry.published)),
         doi: textOf(entry['arxiv:doi']) || undefined,
         venue: plain(textOf(entry['arxiv:journal_ref'])) || undefined,
         authors: asArray(entry.author)
@@ -105,7 +107,13 @@ export function arxiv(config: Config): Source {
         // Announcement times rise with submission times, so the page order (newest submission first) still holds.
         const fresh = page.filter((p) => !p.publishedAt || Date.parse(p.publishedAt) >= oldest)
         // A paper the API already shows is announced, whatever the schedule says (an early batch, a holiday shift).
-        papers.push(...fresh.map((p) => (p.publishedAt && p.publishedAt > nowIso ? { ...p, publishedAt: nowIso } : p)))
+        papers.push(
+          ...fresh.map((p) =>
+            p.publishedAt && p.publishedAt > nowIso
+              ? { ...p, publishedAt: nowIso, paper: { ...p.paper, arxivAnnouncedAt: nowIso } }
+              : p,
+          ),
+        )
         if (page.length < size || fresh.length < page.length) break
       }
       return papers

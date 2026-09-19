@@ -77,6 +77,8 @@ export function mapHfPaper(row: HfDailyPaper, prior: number, listDate?: string):
       hfUrl: `https://huggingface.co/papers/${paper.id}`,
       hfUpvotes: paper.upvotes ?? 0,
       hfComments: row.numComments ?? 0,
+      hfSubmittedAt: hfEventTime(row, listDate),
+      arxivPublishedAt: row.publishedAt ?? paper.publishedAt,
       codeUrl,
       codeStars: paper.githubStars,
     },

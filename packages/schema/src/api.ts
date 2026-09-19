@@ -242,6 +242,11 @@ export interface PaperItem extends ItemBase {
     hfUrl?: string
     hfUpvotes?: number
     hfComments?: number
+    /** Original arXiv submission time; distinct from announcement and HF curation. */
+    arxivPublishedAt?: string
+    arxivAnnouncedAt?: string
+    /** Time this paper reached HF Daily Papers; takes precedence for edition assignment. */
+    hfSubmittedAt?: string
     codeUrl?: string
     codeStars?: number
   }
@@ -363,6 +368,8 @@ export interface SourceStatus {
   costUsd?: number
   /** For a stale board: the edition the shown data really comes from. */
   staleSince?: DateStr
+  /** Successful post-cutoff refresh for this source in this edition; absent while it is still pending. */
+  settledAt?: string
 }
 
 /** \`/api/v1/mail-status.json\` — public e-mail health, never containing addresses. */
@@ -371,7 +378,15 @@ export interface MailStatus {
   updatedAt: string
   /** Slot id (\`2026-09-18\` or \`2026-W38\`) → when and how it went out. */
   sent: Record<string, { at: string; provider: string; bytes?: number }>
-  last?: { ok: boolean; at: string; error?: string }
+  pending?: Record<string, { at: string; provider: string; delivered: string[]; failed: string[]; error?: string }>
+  last?: {
+    ok: boolean
+    at: string
+    error?: string
+    status?: 'sent' | 'partial' | 'failed'
+    delivered?: number
+    failed?: number
+  }
 }
 
 /** `/api/v1/daily/<date>.json` and `/api/v1/latest.json` */
@@ -386,6 +401,8 @@ export interface DailyFile {
   sources: SourceStatus[]
   /** True when the pipeline produced bilingual `copy` for this day. */
   enriched: boolean
+  /** First collection time for a cold-start edition; missingBoards have no historical candidates to reconstruct. */
+  coverage?: { startedAt: string; coldStart: boolean; missingBoards: Board[] }
 }
 
 /** `/api/v1/manifest.json` — the entry point. Small; fetched on every load. */
@@ -407,6 +424,8 @@ export interface Manifest {
     theme?: { preset?: string; accent?: string }
   }
   latest: DateStr
+  /** Only present when latest.json temporarily aliases live.json before the first closed edition exists. */
+  latestKind?: 'live'
   /** The open edition, present exactly when `live.json` is published (so readers need not probe for it). */
   live?: DateStr
   /** All available days, newest first (≤ `retentionDays`). */

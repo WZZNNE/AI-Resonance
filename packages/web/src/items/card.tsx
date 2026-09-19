@@ -8,6 +8,7 @@ import type { Board, BoardMeta, DateStr, Item } from '@resonance/schema'
 import { useId } from 'preact/hooks'
 import { boardMetas } from '../core/state.ts'
 import { lang, t, term } from '../i18n/index.ts'
+import { readingEntries } from '../reading/store.ts'
 import { Sparkline } from '../ui/charts.tsx'
 import { boardHue, CategoryChip } from '../ui/chip.tsx'
 import { RankNumeral, ResonanceMark, TrendBadge } from '../ui/marks.tsx'
@@ -40,7 +41,7 @@ export function ItemCard({ item, date, meta, showBoard, stale }: ItemCardProps) 
   const names = (b: Board) => boardTitle(b, metas.get(b))
   return (
     <article
-      class={`card${stale ? ' is-stale' : ''}`}
+      class={`card${stale ? ' is-stale' : ''}${readingEntries()[item.key]?.readAt ? ' is-read' : ''}`}
       data-part="item-card"
       data-board={item.board}
       style={{ '--hue': boardHue(item.board) }}
@@ -49,6 +50,7 @@ export function ItemCard({ item, date, meta, showBoard, stale }: ItemCardProps) 
       <div class="card__rank">
         <RankNumeral rank={item.rank} />
         <TrendBadge trend={item.trend} rank={item.rank} />
+        {readingEntries()[item.key]?.readAt && <span class="reading-mark">{t('reading.read')}</span>}
       </div>
       <div class="card__body">
         {showBoard && (

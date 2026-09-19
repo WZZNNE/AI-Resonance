@@ -406,7 +406,27 @@ once the pipeline publishes it, else "ranked by list position") and never show z
 - Pages use `<main class="page" id="main">` + `.page__head` / `.page__title`; section labels `.section-head`,
   `.kicker`. Numbers get `.num` (tabular).
 
-## 14. Mock data and tests
+## 14. Reading and motion additions (2026-09)
+
+`reading/` owns device-local saved/later/read snapshots (250 combined pinned items, 600 recent reads), interest rules,
+and acknowledged event fingerprints. Settings backups export rules only, never article history. The homepage applies
+mute rules before unread/following filters; its overview uses the same filtered candidates. The unfiltered AI brief
+is hidden while a personal filter or mute rule is active. Event changes compare original content and group membership,
+ignoring score/counter movement; this is a reading aid, not factual verification.
+
+`#/library` keeps minimal bilingual text after public archive expiry. `#/status` distinguishes publication time from
+source observation time, shows cold-start coverage and per-source settlement, and reports actual delivery results.
+Search combines live and retained archive entries and labels their origin.
+
+`ui/motion.ts` centralizes interruptible motion. Route changes preserve component identity; overlays leave the base
+page mounted. Tab indicators animate transform/scale, visible lists use bounded FLIP, and sheet removal waits for the
+actual exit animation. OS and app reduced-motion preferences both take effect. Avoid per-row timers and large staggered
+entrances; do not add height animation loops that repeatedly force layout.
+
+The local smoke checks cover desktop/mobile layout, library persistence, card actions, interests, search, health,
+language/theme changes and reduced motion. See `docs/READING-GUIDE.zh-CN.md` for API and language behavior.
+
+## 15. Mock data and tests
 
 `node scripts/mock-api.ts [lastEdition=2026-09-18] [editions=45]` writes `public/api/v1` (git-ignored): 45 US-Pacific
 editions × five boards, briefs (en + zh) on most days, a live edition, Reddit in RSS mode for the last 12 editions,

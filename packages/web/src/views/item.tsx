@@ -5,7 +5,7 @@
 import { type Board, type EntityHistory, type Item, monthOf, type ResonanceRel } from '@resonance/schema'
 import './item.css'
 import type { ComponentChildren } from 'preact'
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { api, useResource } from '../core/api.ts'
 import type { RouteProps } from '../core/registry.ts'
 import { back, setTitle } from '../core/router.ts'
@@ -23,7 +23,7 @@ import {
   itemTitle,
   itemWhy,
 } from '../items/text.ts'
-import { motionReduced } from '../theme/prefs.ts'
+import { markRead } from '../reading/store.ts'
 import { Button } from '../ui/button.tsx'
 import { LineChart } from '../ui/charts.tsx'
 import { Badge, boardHue, CategoryChip, Chip } from '../ui/chip.tsx'
@@ -84,13 +84,18 @@ function History({ item }: { item: Item }) {
     loading: false,
   })
   const [metric, setMetric] = useState<string>(item.trend.spark.metric)
+  const request = useRef<AbortController | null>(null)
+  useEffect(() => () => request.current?.abort(), [])
   const load = async () => {
+    request.current?.abort()
+    const ctl = new AbortController()
+    request.current = ctl
     setState({ loading: true })
     try {
-      const shard = await api.entities(item.board, monthOf(item.trend.firstSeen))
-      setState({ loading: false, data: shard.entities[item.key] ?? null })
+      const shard = await api.entities(item.board, monthOf(item.trend.firstSeen), { signal: ctl.signal })
+      if (!ctl.signal.aborted) setState({ loading: false, data: shard.entities[item.key] ?? null })
     } catch (error) {
-      setState({ loading: false, error })
+      if (!ctl.signal.aborted) setState({ loading: false, error })
     }
   }
   const idle = !state.data && !state.loading && !state.error && state.data !== null
@@ -182,6 +187,7 @@ function Detail({ located }: { located: LocatedItem }) {
   const metas = boardMetas.value
   const meta = metas.get(item.board)
   const date = ref.kind === 'live' ? 'live' : day.date
+  useEffect(() => markRead(item, date), [item.key, date])
   const translated = isTranslated(item, l)
   const title = original ? item.title : itemTitle(item, l)
   const blurb = original ? '' : itemBlurb(item, l)
@@ -351,7 +357,7 @@ function Detail({ located }: { located: LocatedItem }) {
         )}
       </Section>
 
-      <History item={item} />
+      <History key={item.key} item={item} />
 
       <Section id="d-why" title={t('detail.relevance')}>
         <div class="detail__plate detail__relevance">
@@ -381,13 +387,13 @@ export default function ItemView({ params, query }: RouteProps) {
   const [open, setOpen] = useState(true)
   const close = () => {
     setOpen(false)
-    setTimeout(() => back(editionPath(ref, manifest.data.value)), motionReduced() ? 0 : 200)
   }
   const item = res.data?.item
   return (
     <Sheet
       open={open}
       onClose={close}
+      onAfterClose={() => back(editionPath(ref, manifest.data.value))}
       size="l"
       part="item-sheet"
       label={t('detail.label')}
@@ -400,7 +406,7 @@ export default function ItemView({ params, query }: RouteProps) {
       }
     >
       {res.data ? (
-        <Detail located={res.data} />
+        <Detail key={res.data.item.key} located={res.data} />
       ) : res.error ? (
         <ErrorState error={res.error} onRetry={res.reload} />
       ) : res.loading ? (

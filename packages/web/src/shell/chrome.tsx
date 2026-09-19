@@ -25,13 +25,13 @@ export function TabBar() {
   const path = location.value.path
   const today = path === '/' || path.startsWith('/d/') || path === '/live' || path.startsWith('/item/')
   const tabs: Tab[] = [{ id: 'today', icon: 'today', label: t('nav.today'), href: '#/', active: today }]
-  if (hasRoute('/resonance'))
+  if (hasRoute('/library'))
     tabs.push({
-      id: 'resonance',
-      icon: 'resonance',
-      label: t('nav.resonance'),
-      href: '#/resonance',
-      active: path.startsWith('/resonance'),
+      id: 'library',
+      icon: 'bookmark',
+      label: t('reading.title'),
+      href: '#/library',
+      active: path.startsWith('/library'),
     })
   if (hasRoute('/archive'))
     tabs.push({
@@ -130,6 +130,8 @@ export function Footer() {
       <div class="footer__inner">
         <p class="footer__tagline">{m ? localized(m.site.tagline) : ''}</p>
         <nav class="footer__links" aria-label={t('footer.label')}>
+          {hasRoute('/resonance') && <a href="#/resonance">{t('nav.resonance')}</a>}
+          {hasRoute('/status') && <a href="#/status">{t('health.title')}</a>}
           {hasRoute('/scoring') && <a href={href('/scoring')}>{t('footer.scoring')}</a>}
           <a href="./api/v1/manifest.json">{t('footer.api')}</a>
           <a href="./api/v1/digest.md">{t('footer.digest')}</a>

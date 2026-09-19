@@ -73,6 +73,7 @@ interface Day {
   config: Config
   /** When the snapshot's numbers were last read (ms). */
   observedAt: number
+  sourceTimes: Map<string, number>
   /** Reference instant for decay: min(window end, last reading). */
   asOf: number
   from: number
@@ -213,6 +214,7 @@ function openDay(snapshot: Snapshot, memory: Memory, config: Config): Day {
     date,
     config,
     observedAt,
+    sourceTimes: new Map(snapshot.sources.map((s) => [s.id, ms(s.fetchedAt)])),
     asOf,
     from,
     to,
@@ -288,7 +290,15 @@ function paperReadings(c: RawPaper, day: Day): Readings {
 
 function newsReadings(c: RawNews, day: Day): Readings {
   const m = metricsOf(c)
-  const ageHours = hoursBetween(c.news.createdAt, day.observedAt)
+  const sourceTimes = c.sources
+    .map((id) => day.sourceTimes.get(id))
+    .filter((t): t is number => t !== undefined && Number.isFinite(t))
+  const observedAt = Number.isFinite(ms(c.observedAt))
+    ? ms(c.observedAt)
+    : sourceTimes.length
+      ? Math.max(...sourceTimes)
+      : day.observedAt
+  const ageHours = hoursBetween(c.news.createdAt, Math.min(m[READ_AT] ?? observedAt, observedAt))
   return {
     points: { raw: m.points ?? 0 },
     comments: { raw: m.comments ?? 0 },
@@ -350,7 +360,8 @@ function socialReadings(c: RawSocial, day: Day): Readings {
   // A post's counts may be older than the snapshot's last fetch (X providers read a post once, then only on the
   // settle run), so its rate is measured at the time its counts were read.
   const readAt = metricsOf(c)[READ_AT]
-  const readTime = readAt !== undefined ? Math.min(readAt, day.observedAt) : day.observedAt
+  const observedAt = Number.isFinite(ms(c.observedAt)) ? ms(c.observedAt) : day.observedAt
+  const readTime = readAt !== undefined ? Math.min(readAt, observedAt) : observedAt
   const ageHours = hoursBetween(c.social.createdAt || c.publishedAt, readTime)
   return {
     lift: liftOf(c, reach, day),
@@ -642,6 +653,23 @@ function rankOne(snapshot: Snapshot, memory: Memory, meta: BoardMeta[], config: 
     for (const item of boards[b.board].top) memory.topDays.set(item.key, (memory.topDays.get(item.key) ?? 0) + 1)
   }
   memory.snapshots.push(snapshot)
+  // Older snapshots predate coverage metadata. A first published edition only collected after its close cannot
+  // have measured historical repository stars; expose that cold-start gap when rebuilding existing data too.
+  const startedAt = [...snapshot.runs].sort()[0] ?? snapshot.fetchedAt
+  const coverage =
+    snapshot.coverage ??
+    (published && memory.dates.length === 1 && ms(startedAt) >= day.to
+      ? {
+          startedAt,
+          coldStart: true,
+          missingBoards: BOARDS.filter(
+            (b) =>
+              snapshot.sources.some((s) => s.board === b && s.state !== 'skipped') &&
+              boards[b].top.length === 0 &&
+              boards[b].runnersUp.length === 0,
+          ),
+        }
+      : undefined)
 
   return {
     schema: SCHEMA_VERSION,
@@ -652,6 +680,7 @@ function rankOne(snapshot: Snapshot, memory: Memory, meta: BoardMeta[], config: 
     resonance: clustersOf(day.graph, members),
     sources: snapshot.sources,
     enriched,
+    ...(coverage ? { coverage } : {}),
   }
 }
 

@@ -42,6 +42,8 @@ export interface RawBase {
    * Absent for repos: they belong to the edition that is open when they are observed.
    */
   publishedAt?: string
+  /** Actual observation time of these readings, independent of later retries of other sources. */
+  observedAt?: string
   /** Ids of the sources that reported this candidate (merged when several do). */
   sources: string[]
   /** Other entities this one points at (URLs found in its url/text/README). Filled by sources and `link`. */
@@ -88,6 +90,7 @@ export interface Snapshot {
   runs: string[]
   candidates: RawCandidate[]
   sources: SourceStatus[]
+  coverage?: DailyFile['coverage']
 }
 
 // ───────────── sources ─────────────

@@ -62,6 +62,16 @@ their star gains are deltas between cutoffs. An edition's lifecycle:
  live.json          daily/D.json, settled: false        daily/D.json, settled: true (engagement re-read)
 ```
 
+Settlement is tracked per source (`SourceStatus.settledAt`). A failed or cached source can recover in a later run;
+already completed sources retain their readings and clocks while the edition remains preliminary. Completed lab
+items are immutable too: only new late-arriving lab keys may join a frozen edition. Pending older editions receive
+only historical candidates actually returned by the source, never a fabricated refresh inferred from today's fetch.
+
+Before the first closed edition, the publisher still writes the manifest and full site metadata. `latest.json` is
+then an alias of `live.json`, `manifest.latestKind = 'live'`, and the closed-edition archive (`dates`, `weeks`) is empty.
+Optional daily `coverage` metadata identifies cold-start gaps; optional paper event timestamps distinguish arXiv
+submission / announcement from HF curation so metadata merging cannot silently move a newly curated paper backwards.
+
 `run` works out by itself what to (re)build, so the cron can be simple, late, or doubled. (DESIGN §6a)
 
 **3. Rank is arithmetic you can check.** `score.ts` computes named signals, `schema/score.ts` turns them into points

@@ -9,24 +9,24 @@ import { effect, signal } from '@preact/signals'
 import { addDays, BOARDS, type Board, CATEGORIES, type Category, type DateStr, type Item } from '@resonance/schema'
 import { type ComponentChildren, render } from 'preact'
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
-import { api } from '../core/api.ts'
+import { useResource } from '../core/api.ts'
 import { isWide } from '../core/media.ts'
 import { runCommand } from '../core/registry.ts'
 import { location } from '../core/router.ts'
-import { boardMetas } from '../core/state.ts'
+import { boardMetas, manifest } from '../core/state.ts'
 import { fmt, lang, t } from '../i18n/index.ts'
 import { boardTitle, categoryLabel, itemHref } from '../items/text.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { boardHue, CategoryChip, Chip } from '../ui/chip.tsx'
 import { Icon } from '../ui/icons.tsx'
 import { lockBackground, trapFocus } from '../ui/layer.tsx'
+import { useLayoutMotion } from '../ui/motion.ts'
 import { EmptyState, ErrorState, Skeleton } from '../ui/state.tsx'
 import { Tabs, tabPanelProps } from '../ui/tabs.tsx'
 import {
   type ArchiveFilters,
   type ArchiveHit,
   type ArchiveIndex,
-  createArchive,
   excerpt,
   highlight,
   parseQuery,
@@ -45,6 +45,7 @@ import {
 import { describeSearchError } from './errors.ts'
 import { activeApi, moreEngines, pushRecent, redirectEngines, searchPrefs } from './prefs.ts'
 import type { RunResult } from './runner.ts'
+import { loadSiteSearch, searchRevision } from './site.ts'
 import { runEngine } from './web.ts'
 import './search.css'
 
@@ -78,8 +79,6 @@ const context = signal<Item | null>(null)
 /** The query the item suggestions were built from; once the user edits it, every suggestion uses the typed text. */
 const contextQuery = signal('')
 const filters = signal<FilterState>(NO_FILTERS)
-
-const loadArchive = createArchive(() => api.search())
 
 /** Pure: the palette's filter state → archive filters, with relative ranges counted back from the newest edition. */
 export function toArchiveFilters(f: FilterState, latest: DateStr): ArchiveFilters {
@@ -137,6 +136,7 @@ function Root() {
 
 function Palette() {
   const ref = useRef<HTMLDivElement>(null)
+  useLayoutMotion(ref)
   useLayoutEffect(() => {
     const el = ref.current
     if (!el) return
@@ -214,6 +214,8 @@ export function SearchPanel({ onClose }: SearchPanelProps) {
   const options = () => [...(body.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? [])]
 
   const onKey = (e: KeyboardEvent) => {
+    // Enter and arrow keys belong to the IME while choosing a composed word.
+    if (e.isComposing || e.keyCode === 229) return
     const n = options().length
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       if (!n) return
@@ -324,24 +326,10 @@ export function SearchPanel({ onClose }: SearchPanelProps) {
 
 // ───────────────────────────── archive scope ─────────────────────────────
 
-function useArchive(): { ix?: ArchiveIndex; error?: unknown; retry: () => void } {
-  const [state, setState] = useState<{ ix?: ArchiveIndex; error?: unknown }>({})
-  const [attempt, setAttempt] = useState(0)
-  useEffect(() => {
-    let live = true
-    loadArchive().then(
-      (ix) => live && setState({ ix }),
-      (error: unknown) => live && setState({ error }),
-    )
-    return () => {
-      live = false
-    }
-  }, [attempt])
-  const retry = () => {
-    setState({})
-    setAttempt((a) => a + 1)
-  }
-  return { ...state, retry }
+function useArchive(): { ix?: ArchiveIndex; partial?: boolean; error?: unknown; retry: () => void } {
+  const version = `${manifest.data.value?.generatedAt ?? 'startup'}:${searchRevision.value}`
+  const res = useResource((_signal, fresh) => loadSiteSearch(version, fresh), [version])
+  return { ...res.data, error: res.error, retry: res.reload }
 }
 
 /** Text with `<mark>`ed ranges. */
@@ -361,7 +349,7 @@ function Marked({ text, ranges }: { text: string; ranges: readonly Range[] }) {
 const GROUP_SIZE = 6
 
 function ArchivePane({ listId, onClose }: { listId: string; onClose?: () => void }) {
-  const { ix, error, retry } = useArchive()
+  const { ix, error, retry, partial } = useArchive()
   const [showFilters, setShowFilters] = useState(isWide.peek())
   const [expanded, setExpanded] = useState<Board[]>([])
   const q = query.value
@@ -389,6 +377,14 @@ function ArchivePane({ listId, onClose }: { listId: string; onClose?: () => void
 
   return (
     <div class="sarch">
+      {partial && (
+        <p class="sweb__hint" role="status">
+          {t('search.partial')}{' '}
+          <Button size="s" onClick={retry}>
+            {t('ui.retry')}
+          </Button>
+        </p>
+      )}
       <div class="sarch__tools">
         <Button
           size="s"
@@ -498,7 +494,7 @@ function ResultRow({
   const blurb = otherMarks.length && other ? { text: other, ranges: otherMarks } : excerpt(e.s, highlight(e.s, pq), 150)
   const span = e.f === e.l ? fmt.day(e.f) : `${fmt.day(e.f)} – ${fmt.day(e.l)}`
   return (
-    <a class="sres" role="option" tabIndex={-1} href={itemHref({ key: e.k }, e.l)} onClick={onOpen}>
+    <a class="sres" role="option" tabIndex={-1} href={itemHref({ key: e.k }, e.live ? 'live' : e.l)} onClick={onOpen}>
       <span class="sres__title">
         <Marked text={title} ranges={marks} />
       </span>
@@ -508,6 +504,7 @@ function ResultRow({
         </span>
       )}
       <span class="sres__facts num">
+        <span>{t(e.live ? (e.archived ? 'search.sourceBoth' : 'search.sourceLive') : 'search.sourceArchive')}</span>
         <span>{span}</span>
         {e.n > 0 && <span>{t('search.days', { n: e.n })}</span>}
         <span>{t('search.best', { rank: e.r })}</span>

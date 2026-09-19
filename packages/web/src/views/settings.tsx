@@ -6,6 +6,7 @@ import { useEffect } from 'preact/hooks'
 import { type RouteProps, settingsTabs } from '../core/registry.ts'
 import { href, setTitle } from '../core/router.ts'
 import { lang, t } from '../i18n/index.ts'
+import { Button } from '../ui/button.tsx'
 import { EmptyState } from '../ui/state.tsx'
 import { Tabs, tabPanelProps } from '../ui/tabs.tsx'
 
@@ -23,6 +24,25 @@ export default function Settings({ params }: RouteProps) {
     <main class="settings page" id="main" data-part="settings">
       <header class="page__head">
         <h1 class="page__title">{t('settings.title')}</h1>
+        <p class="page__lead">{t('settings.readingHelp')}</p>
+        <div class="reading-tabs">
+          <Button size="s" href="#/settings/general">
+            {t('general.language')}
+          </Button>
+          <Button size="s" href="#/settings/interests" icon="heart">
+            {t('reading.interests')}
+          </Button>
+          <Button size="s" href="#/library" icon="bookmark">
+            {t('reading.title')}
+          </Button>
+        </div>
+        <details class="settings__advanced">
+          <summary>{t('settings.advancedHelp')}</summary>
+          <p class="settings__hint">{t('ai.keysHelp')}</p>
+          <Button size="s" href="#/status" icon="info">
+            {t('health.title')}
+          </Button>
+        </details>
       </header>
       <div class="settings__layout">
         <Tabs

@@ -23,7 +23,7 @@ describe('pure state changes', () => {
     expect(Object.keys(s.sent)).toHaveLength(120)
     expect(s.sent['2026-01-01']).toBeUndefined()
     expect(s.sent['2026-05-10']).toMatchObject({ provider: 'smtp', bytes: 1129 })
-    expect(s.last).toEqual({ ok: true, at: '2026-05-10T00:00:00.000Z' })
+    expect(s.last).toEqual({ ok: true, at: '2026-05-10T00:00:00.000Z', status: 'sent' })
     const failed = recordError(s, NOW, 'x'.repeat(900))
     expect(failed.last).toMatchObject({ ok: false, at: NOW })
     expect(failed.last?.error).toHaveLength(500)

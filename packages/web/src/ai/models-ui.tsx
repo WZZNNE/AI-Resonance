@@ -612,6 +612,7 @@ export default function ModelsTab() {
           {t('ai.defaults')}
         </h3>
         <p class="settings__hint">{t('ai.defaultsHint')}</p>
+        <p class="settings__hint">{t('ai.keysHelp')}</p>
         {options.length > 0 && (
           <Field label={t('ai.activeModel')}>
             {(id) => <Select id={id} value={activeKey} options={options} onValue={(v) => aiPrefs.set({ active: v })} />}

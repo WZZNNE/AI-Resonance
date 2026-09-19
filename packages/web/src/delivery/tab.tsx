@@ -3,6 +3,8 @@
  * Non-secret settings go to the repository variable RESONANCE_MAIL; credentials are sealed in the browser and written
  * as Actions secrets (write-only); "Send test now" dispatches mail.yml. Everything also has a manual path.
  */
+
+import { previewSchedule } from '@resonance/channels/schedule'
 import type { Lang } from '@resonance/schema'
 import { useState } from 'preact/hooks'
 import { manifest } from '../core/state.ts'
@@ -194,6 +196,14 @@ function ScheduleSection({ repo }: { repo: RepoRef | null }) {
   const load = useAction()
   const err = (k: keyof typeof INVALID) => (problems.includes(k) ? t(INVALID[k]) : undefined)
   const weekly = form.frequency !== 'daily'
+  const site = manifest.data.value?.site
+  const previews =
+    problems.length || !site
+      ? []
+      : previewSchedule(form, {
+          timezone: site.timezone,
+          cutoff: site.cutoff,
+        })
 
   const onSave = () =>
     save.run(async () => {
@@ -328,6 +338,53 @@ function ScheduleSection({ repo }: { repo: RepoRef | null }) {
           )}
         </Field>
       </div>
+      {previews.length > 0 && (
+        <div class="delivery__note" role="note">
+          <div>
+            <strong>{l === 'zh' ? '按当前草稿计算的下次推送' : 'Next delivery with this draft'}</strong>
+            {!form.enabled && (
+              <p>
+                {l === 'zh'
+                  ? '计划尚未启用；以下是启用后的预计时间。'
+                  : 'Scheduling is off; these times apply after enabling it.'}
+              </p>
+            )}
+            {previews.map((p) => (
+              <p key={p.kind}>
+                {p.kind === 'weekly' ? (l === 'zh' ? '周报' : 'Weekly') : l === 'zh' ? '日报' : 'Daily'}
+                {' · '}
+                {new Intl.DateTimeFormat(l === 'zh' ? 'zh-CN' : 'en-US', {
+                  dateStyle: 'medium',
+                  timeStyle: 'short',
+                  timeZone: form.timezone,
+                }).format(new Date(p.at))}{' '}
+                ({form.timezone})
+                <br />
+                {l === 'zh' ? '涵盖日期：' : 'Edition dates: '}
+                {p.from}
+                {p.to !== p.from ? ` – ${p.to}` : ''}
+                {' · '}
+                {site?.timezone}
+                {p.staleWeek && (
+                  <>
+                    <br />
+                    <strong>
+                      {l === 'zh'
+                        ? '此时采集时区的上一周尚未结束，会发送更早一周。建议改为周二上午。'
+                        : 'The previous week is still open in the edition timezone, so this sends an older week. Try Tuesday morning.'}
+                    </strong>
+                  </>
+                )}
+              </p>
+            ))}
+            <p>
+              {l === 'zh'
+                ? 'GitHub 定时任务可能延迟；保存到仓库后计划才会生效。'
+                : 'GitHub schedules may run late. Save to the repository to apply this draft.'}
+            </p>
+          </div>
+        </div>
+      )}
       <Field
         label={t('delivery.provider')}
         hint={form.provider === 'resend' ? t('delivery.provider.resendHint') : t('delivery.provider.smtpHint')}

@@ -14,7 +14,7 @@ import {
   type Manifest,
   slugToKey,
 } from '@resonance/schema'
-import { api, resource } from './api.ts'
+import { ApiError, api, resource } from './api.ts'
 import { location, type RouteLocation } from './router.ts'
 
 /** Which edition a view shows. `latest` resolves through `latest.json` so Today renders without the manifest. */
@@ -36,11 +36,11 @@ export const dataVersion = signal(0)
 const RECHECK_MS = 60_000
 
 /** Kick off the startup fetches. Called once by `main.tsx`. */
-export function startData(): void {
+export function startData(): () => void {
   void manifest.reload()
   let stamp: string | undefined
   // The manifest names the open edition when live.json exists; no probe needed.
-  effect(() => {
+  const stop = effect(() => {
     const m = manifest.data.value
     if (!m) return
     liveAvailable.value = m.live !== undefined
@@ -55,6 +55,14 @@ export function startData(): void {
   }
   document.addEventListener('visibilitychange', recheck)
   window.addEventListener('online', recheck)
+  // A reader can keep the tab visible through a publishing cycle; visibility events alone miss that case.
+  const timer = setInterval(recheck, RECHECK_MS)
+  return () => {
+    stop()
+    clearInterval(timer)
+    document.removeEventListener('visibilitychange', recheck)
+    window.removeEventListener('online', recheck)
+  }
 }
 
 /** Board metadata from the manifest, keyed by board. */
@@ -96,7 +104,7 @@ export const currentEdition = computed<EditionRef>(() => {
 /** Pure: the concrete date for a ref (`null` for live, or while the manifest is unknown). */
 export function refDate(ref: EditionRef, m: Manifest | undefined): DateStr | null {
   if (ref.kind === 'date') return ref.date
-  if (ref.kind === 'latest') return m?.latest ?? null
+  if (ref.kind === 'latest') return m?.latestKind === 'live' ? null : (m?.latest ?? null)
   return null
 }
 
@@ -108,11 +116,23 @@ export function editionPath(ref: EditionRef, m?: Manifest): string {
 }
 
 /** Load the day file for a ref. Throws `ApiError` like every reader; `live` without a published file falls back to latest. */
-export async function loadEdition(ref: EditionRef, signal?: AbortSignal): Promise<DailyFile> {
-  if (ref.kind === 'latest') return api.latest({ signal })
-  if (ref.kind === 'date') return api.daily(ref.date, { signal })
-  const live = await api.live({ signal })
-  if (!live) return api.latest({ signal })
+export async function loadEdition(ref: EditionRef, signal?: AbortSignal, fresh = false): Promise<DailyFile> {
+  const options = { signal, fresh }
+  if (ref.kind === 'latest') {
+    try {
+      return await api.latest(options)
+    } catch (err) {
+      // Older first-run deployments published live.json before the first closed edition/latest.json.
+      if (err instanceof ApiError && err.status === 404) {
+        const live = await api.live(options)
+        if (live) return live
+      }
+      throw err
+    }
+  }
+  if (ref.kind === 'date') return api.daily(ref.date, options)
+  const live = await api.live(options)
+  if (!live) return api.latest(options)
   return live
 }
 
@@ -154,7 +174,11 @@ export async function locateItem(
   const key = slugOrKey.includes(':') ? slugOrKey : slugToKey(slugOrKey)
   const day = await loadEdition(ref, signal)
   const hit = findItem(day, key)
-  if (hit) return { item: hit, day, ref }
+  if (hit) {
+    const actual =
+      ref.kind === 'latest' && manifest.data.peek()?.latestKind === 'live' ? { kind: 'live' as const } : ref
+    return { item: hit, day, ref: actual }
+  }
   const index = await api.search({ signal }).catch(() => null)
   const entry = index?.entries.find((e) => e.k === key)
   if (entry && entry.l !== day.date) {

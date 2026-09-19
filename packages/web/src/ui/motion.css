@@ -1,0 +1,37 @@
+/* Motion is scoped to actual state changes; no ambient, endlessly running decoration. */
+:root {
+  --motion-surface: 380ms;
+  --motion-exit: 240ms;
+  --motion-response: 160ms;
+  --motion-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* JS owns presence and timing for managed dialogs, including interruption and drag release. */
+.overlay[data-motion-managed] > .sheet,
+.overlay[data-motion-managed] > .dialog,
+.overlay[data-motion-managed] > .overlay__scrim,
+.overlay[data-motion-managed][data-state="closing"] > .sheet,
+.overlay[data-motion-managed][data-state="closing"] > .dialog,
+.overlay[data-motion-managed][data-state="closing"] > .overlay__scrim {
+  animation: none;
+  transition: none;
+}
+
+/* The thumb changes dimensions once, then FLIP scales its surface; text never scales with it. */
+[data-thumb="on"] > .thumb {
+  transition: none;
+  transform-origin: 0 0;
+}
+
+.motion-disclosure-ghost {
+  pointer-events: none;
+  overflow: hidden;
+  contain: layout paint;
+}
+
+/* A crisp press response on data controls, with no hover movement for touch or reduced-motion users. */
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion="reduce"]) :is(.reading-tabs, .library__actions) .btn:active {
+    transform: scale(0.975);
+  }
+}

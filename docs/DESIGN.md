@@ -200,10 +200,23 @@ board's primary metric (`stars` / `hfUpvotes` / `points`) and rank history. Full
 * `run` is idempotent and time-driven: it decides by itself what to (re)build, so the cron stays simple and DST-agnostic
   (`.github/workflows/daily.yml`: every 3 h at :40, plus 07:40 and 08:40 UTC so a run always lands just after a Pacific cutoff).
   `run --date D` pretends now = D's closing cutoff.
-* Lifecycle rules (`run.ts`): a settled edition is frozen — no new metrics, statuses, clock or run stamps; only labs
-  look-back posts may still join it. Lab posts for an edition without a snapshot create a labs-only snapshot that is
-  settled at once; it feeds the labs look-back but is not published as an edition. The open edition's snapshot stores
-  `window.to` = the run time. An edition is marked settled only by a run in which at least one source did not fail.
+* Lifecycle rules (`run.ts`): each source records `settledAt` after its successful settle refresh. Failed, stale and
+  cached reads stay pending; subsequent runs may recover them without changing already completed sources' readings
+  or observation times. The whole edition becomes settled when all enabled sources have completed. Existing pending
+  editions can receive dated recovery candidates for seven days; a current-day fetch without matching historical
+  candidates does not falsely complete an older source. An unrecoverable source remains visibly pending.
+* A settled edition freezes existing candidates — no new metrics, statuses, clock or run stamps. Genuinely new labs
+  look-back posts may still join it, but a repeated lab key cannot rewrite yesterday's likes or score. Lab posts for
+  an edition without a snapshot create a labs-only snapshot that feeds the look-back without publishing an edition.
+  The open snapshot stores `window.to` = the run time. Pre-existing settled snapshots remain frozen during migration.
+* Cold start: `coverage.startedAt` is the first collection instant, `coldStart` flags incomplete initial coverage,
+  and `missingBoards` names enabled boards for which historical candidates could not be reconstructed. Rebuilds infer
+  this metadata for the first legacy edition collected after its closing cutoff. When only live data exists,
+  `latest.json` aliases `live.json`, `manifest.latestKind` is `live`, and `dates` / `weeks` stay empty until a closed
+  edition is available; the homepage therefore works immediately without inventing a historical archive.
+* Paper dates are explicit: `arxivPublishedAt` is submission time, `arxivAnnouncedAt` is announcement time, and
+  `hfSubmittedAt` is the HF Daily curation event. HF curation takes precedence for edition assignment when sources
+  merge, independently of which source happens to have richer metadata.
 * `labs` ranks over `lookbackDays` (default 7) because official posts are sparse; items outside D are `fresh: false`.
 
 ## 7. Web app

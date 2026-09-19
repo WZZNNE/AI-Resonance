@@ -110,6 +110,9 @@ export function Header() {
         )}
         <LangSwitch />
         <ModeSwitch />
+        {hasRoute('/library') && (
+          <IconButton class="wide-only" icon="bookmark" label={t('reading.title')} href="#/library" />
+        )}
         {hasRoute('/export') && (
           <IconButton class="hide-narrow" icon="download" label={t('header.export')} href="#/export" />
         )}

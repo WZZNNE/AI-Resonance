@@ -40,6 +40,13 @@ export function StatusCard() {
           </p>
         )}
         {s.last?.error && <p class="delivery__error">{s.last.error}</p>}
+        {s.last?.status === 'partial' && (
+          <p class="delivery__error">
+            {lang.value === 'zh'
+              ? `部分送达：${s.last.delivered ?? 0} 人成功，${s.last.failed ?? 0} 人失败。后续只补发失败收件人。`
+              : `Partial delivery: ${s.last.delivered ?? 0} accepted, ${s.last.failed ?? 0} failed. Only failed recipients will be retried.`}
+          </p>
+        )}
         {recent.length > 0 && (
           <table class="delivery__sent">
             <caption class="sr-only">{t('delivery.status.recent')}</caption>

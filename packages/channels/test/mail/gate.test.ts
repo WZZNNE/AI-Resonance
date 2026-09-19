@@ -1,3 +1,5 @@
+import { spawnSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import type { Published } from '../../src/mail/gate.ts'
 import { completeWeek, decide, runGate } from '../../src/mail/gate.ts'
@@ -157,6 +159,15 @@ describe('decide — manual runs', () => {
 })
 
 describe('runGate', () => {
+  it('exits nonzero for a broken manual test configuration without touching the network', () => {
+    const result = spawnSync(process.execPath, [fileURLToPath(new URL('../../src/mail/gate.ts', import.meta.url))], {
+      env: { ...process.env, MAIL_TEST: 'true', RESONANCE_MAIL: '{broken', GITHUB_OUTPUT: '' },
+      encoding: 'utf8',
+      timeout: 10_000,
+    })
+    expect(result.status).toBe(1)
+    expect(result.stdout).toContain('skip:invalid-config')
+  })
   const manifest = {
     dates: PUBLISHED.dates,
     weeks: PUBLISHED.weeks,
@@ -198,16 +209,22 @@ describe('runGate', () => {
     expect(await runGate({ ...env, RESONANCE_MAIL: '{"enabled":true,"time":"8:30"}' }, d)).toEqual({
       due: false,
       reason: 'invalid-config',
+      failed: true,
     })
     expect(warnings.join()).toMatch(/mail\.time = "8:30"/)
-    expect(await runGate({ ...env, SITE_URL: '' }, d)).toEqual({ due: false, reason: 'no-site-url' })
-    expect(await runGate({ ...env, GITHUB_TOKEN: '' }, d)).toEqual({ due: false, reason: 'no-state' })
+    expect(await runGate({ ...env, SITE_URL: '' }, d)).toEqual({ due: false, reason: 'no-site-url', failed: true })
+    expect(await runGate({ ...env, GITHUB_TOKEN: '' }, d)).toEqual({ due: false, reason: 'no-state', failed: true })
   })
 
   it('skips instead of guessing when the site or the state cannot be read', async () => {
     const { gh, deps: d } = deps()
     gh.fallback = () => new Response('down', { status: 503 })
-    expect(await runGate(env, d)).toEqual({ due: false, reason: 'site-unavailable' })
+    expect(await runGate(env, d)).toEqual({ due: false, reason: 'site-unavailable', failed: true })
+    expect(await runGate({ ...env, MAIL_TEST: 'true' }, d)).toEqual({
+      due: false,
+      reason: 'site-unavailable',
+      failed: true,
+    })
     const other = deps()
     expect(await runGate({ ...env, DATA_BRANCH: 'nope' }, other.deps)).toMatchObject({ due: true })
     const broken = deps()
@@ -218,6 +235,26 @@ describe('runGate', () => {
     expect(await runGate(env, { ...broken.deps, fetch: broken.gh.fetch })).toEqual({
       due: false,
       reason: 'state-unavailable',
+      failed: true,
+    })
+  })
+
+  it('does not send the cold-start live alias as a closed edition in a manual test', async () => {
+    const { gh, deps: d } = deps()
+    gh.fallback = () =>
+      new Response(
+        JSON.stringify({
+          ...manifest,
+          dates: [],
+          weeks: [],
+          latest: '2026-09-19',
+          latestKind: 'live',
+        }),
+      )
+    expect(await runGate({ ...env, MAIL_TEST: 'true' }, d)).toEqual({
+      due: false,
+      reason: 'nothing-published',
+      failed: true,
     })
   })
 })

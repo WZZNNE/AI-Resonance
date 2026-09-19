@@ -6,7 +6,7 @@
  * Failures are visible: the error (scrubbed of addresses and secrets) is recorded in state/mail.json, a GitHub issue
  * labelled `mail-failure` is opened or commented, and the exit code is 1.
  */
-import { mkdir, writeFile } from 'node:fs/promises'
+import { appendFile, mkdir, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { parseArgs } from 'node:util'
 import type { DailyFile, Manifest } from '@resonance/schema'
@@ -24,12 +24,21 @@ import { createGitHub, reportFailure, resolveFailure } from './github.ts'
 import type { Sender } from './send.ts'
 import { messageId, parseRecipients, senderFromEnv, sendWithRetry } from './send.ts'
 import { resolveMailSettings } from './settings.ts'
-import { readState, recordError, recordSent, STATE_LOCATION, scrub, updateState } from './state.ts'
+import {
+  readState,
+  recipientId,
+  recordError,
+  recordProgress,
+  recordSent,
+  STATE_LOCATION,
+  scrub,
+  updateState,
+} from './state.ts'
 
 const USAGE = `Usage: pnpm mail [options]
 
   (no options)          decide like the scheduled gate and send if a mail is due
-  --slot <id>           send this edition (2026-09-18) or week (2026-W38) now
+  --slot <id>           deliver this edition (2026-09-18) or week (2026-W38); use --force to resend
   --test                send the newest edition now as a test; nothing is recorded
   --force               send now even if not due or already sent (recorded)
   --dry-run <folder>    write email.html, email.txt and the report there instead of sending
@@ -83,6 +92,8 @@ export interface MailDeps {
   sleep?: (ms: number) => Promise<void>
   /** Overrides the provider chosen from settings + secrets. */
   sender?: Sender
+  /** Workflow evidence: called only after a successful delivery, never for a gate skip or dry run. */
+  onSent?: (slot: string) => Promise<void>
 }
 
 function openClient(args: MailArgs, site: string | undefined, deps: MailDeps, now: Date): ResonanceClient {
@@ -217,23 +228,72 @@ export async function runMail(args: MailArgs, env: Env, deps: MailDeps): Promise
     const to = parseRecipients(env.MAIL_TO)
     if (!to.length) throw new Error('The MAIL_TO secret is not set (comma-separated addresses)')
     const sender = deps.sender ?? senderFromEnv(settings, env)
+    const previous = gh && !args.test && !args.force ? (await readState(gh, at, location)).state : null
+    if (previous?.sent[slot]) {
+      deps.log(`skip:already-sent:${slot}`)
+      return 0
+    }
+    const acknowledged = new Set(previous?.pending?.[slot]?.delivered ?? [])
+    const recipients = to.map((address) => recipientId(slot as string, address))
+    const remaining = to.filter((address) => !acknowledged.has(recipientId(slot as string, address)))
+    if (gh && args.force && !args.test) {
+      await updateState(
+        gh,
+        (s) =>
+          recordProgress(s, slot as string, {
+            at,
+            provider: sender.provider,
+            delivered: [],
+            recipients,
+            reset: true,
+          }),
+        { now: at, message: `mail: force delivery ${slot}`, location },
+      )
+    }
     const owner = env.GITHUB_REPOSITORY_OWNER || env.GITHUB_REPOSITORY?.split('/')[0] || 'ai-resonance'
     // Manual re-sends need fresh ids, or mail clients and Resend drop them as duplicates of the first delivery.
     const unique = args.test || args.force ? String(now.getTime()) : undefined
-    const result = await sendWithRetry(
-      sender,
-      {
-        fromName: manifest.site.name,
-        to,
-        subject,
-        html: email.html,
-        text: email.text,
-        messageId: messageId(slot, owner, unique),
-        idempotencyKey: `air-${slot}${unique ? `-${unique}` : ''}`,
-        attachment: settings.attach ? attachment : undefined,
-      },
-      { sleep: deps.sleep },
-    )
+    const result = remaining.length
+      ? await sendWithRetry(
+          sender,
+          {
+            fromName: manifest.site.name,
+            to: remaining,
+            subject,
+            html: email.html,
+            text: email.text,
+            messageId: messageId(slot, owner, unique),
+            idempotencyKey: `air-${slot}${unique ? `-${unique}` : ''}`,
+            attachment: settings.attach ? attachment : undefined,
+          },
+          {
+            sleep: deps.sleep,
+            onProgress:
+              gh && !args.test
+                ? async (accepted) => {
+                    for (const address of accepted) acknowledged.add(recipientId(slot as string, address))
+                    await updateState(
+                      gh,
+                      (s) =>
+                        recordProgress(s, slot as string, {
+                          at,
+                          provider: sender.provider,
+                          delivered: [...acknowledged],
+                          recipients,
+                        }),
+                      { now: at, message: `mail: delivery progress ${slot}`, location },
+                    )
+                  }
+                : undefined,
+          },
+        )
+      : { attempts: 0 }
+    if (result.rejected?.length) {
+      throw new Error(
+        `Partial delivery: ${to.length - result.rejected.length} accepted, ${result.rejected.length} failed. ` +
+          result.rejected.map((r) => r.error).join('; '),
+      )
+    }
     deps.log(
       `sent ${slot} via ${sender.provider} to ${to.length} recipient(s), attempt ${result.attempts}, ${bytes} bytes`,
     )
@@ -247,6 +307,7 @@ export async function runMail(args: MailArgs, env: Env, deps: MailDeps): Promise
       })
     }
     if (gh) await resolveFailure(gh, `Delivered ${slot} at ${at}.`).catch(() => false)
+    await deps.onSent?.(slot)
     return 0
   } catch (err) {
     const message = scrub(err instanceof Error ? err.message : String(err), secrets)
@@ -279,6 +340,13 @@ if (import.meta.main) {
     console.log(USAGE)
     process.exit(0)
   }
-  const code = await runMail(args, process.env, { fetch, now: () => new Date(), log: (line) => console.log(line) })
+  const code = await runMail(args, process.env, {
+    fetch,
+    now: () => new Date(),
+    log: (line) => console.log(line),
+    onSent: async () => {
+      if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, 'sent=true\n')
+    },
+  })
   process.exit(code)
 }

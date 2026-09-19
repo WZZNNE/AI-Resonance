@@ -1,3 +1,4 @@
+import './prefs.ts'
 /**
  * Search feature (DESIGN §9). Registers the palette command `search.open` (`/`, Ctrl/⌘K; the header button and the
  * Search tab call it), `search.web` and `reader.fetch` for other features (web-grounded summaries, deep read), the

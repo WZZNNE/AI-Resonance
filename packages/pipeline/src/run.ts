@@ -10,7 +10,16 @@ import type { DateStr, Item, PricingFile, SourceStatus } from '@resonance/schema
 import { addDays, BOARDS, diffDays, SCHEMA_VERSION } from '@resonance/schema'
 import { collect, collectFrom } from './collect.ts'
 import { type Config, loadConfig } from './config.ts'
-import { assignEditions, lastClosedEdition, oldestMutable, openEdition, settleDue, windowOf } from './edition.ts'
+import {
+  assignEditions,
+  editionOfCandidate,
+  isPublished,
+  lastClosedEdition,
+  oldestMutable,
+  openEdition,
+  settleDue,
+  windowOf,
+} from './edition.ts'
 import { enrich } from './enrich.ts'
 import { createHttp } from './http.ts'
 import { fetchPricing } from './pricing.ts'
@@ -113,7 +122,8 @@ async function latestClosed(store: DataStore, now: Date, config: Config): Promis
 /**
  * Files this run's candidates into their editions (DESIGN §6a). Mutable editions get the candidates and this run's
  * statuses, and a closed one whose settle time has come is marked settled. Settled or older editions are frozen:
- * they only accept labs posts of the look-back, and an edition with no snapshot yet gets a labs-only one.
+ * they only accept new labs posts of the look-back, and an edition with no snapshot yet gets a labs-only one.
+ * Completion is per source: failed sources may retry while the successfully settled sources remain immutable.
  */
 export async function fileEditions(
   store: DataStore,
@@ -125,9 +135,19 @@ export async function fileEditions(
   const open = openEdition(now, config)
   const lastClosed = addDays(open, -1)
   const oldest = oldestMutable(now, config)
-  const healthy = !everySourceFailed(collected.sources)
   const groups = assignEditions(collected.candidates, now, config)
-  const recent = (await store.listDates()).filter((d) => d <= lastClosed && d >= addDays(lastClosed, -SETTLE_SCAN))
+  const storedDates = await store.listDates()
+  const recent = storedDates.filter((d) => d <= lastClosed && d >= addDays(lastClosed, -SETTLE_SCAN))
+  const stored = await Promise.all(storedDates.map((d) => store.readSnapshot(d)))
+  const coldStart = !stored.some((s) => s && isPublished(s))
+  // A failed source can recover after the next cutoff. Only existing, unfinished editions are reopened;
+  // normal collection must not manufacture historical editions from an arbitrary old post.
+  for (const date of recent) {
+    const prev = stored.find((s) => s?.date === date)
+    if (!prev || prev.window.settled || date >= oldest) continue
+    const rows = collected.candidates.filter((c) => editionOfCandidate(c, open, config) === date)
+    if (rows.length) groups.set(date, rows)
+  }
   const dates = [...new Set([...groups.keys(), ...recent, open])].sort()
 
   const writes: EditionWrite[] = []
@@ -136,15 +156,47 @@ export async function fileEditions(
     const added = groups.get(date) ?? []
     // A closed edition always spans its whole window; only the open one ends "now".
     const full = windowOf(date, config)
-    if (date >= oldest && !prev?.window.settled) {
+    if (!prev?.window.settled && (date >= oldest || (prev && recent.includes(date)))) {
       const window = { ...full }
       if (date === open) {
         // Exactly at a cutoff (`run --date`) the open edition has not begun: an empty window is no edition at all.
         if (stamp <= full.from) continue
         window.to = stamp
       }
-      // Only a run that actually re-read the sources may call an edition final.
-      window.settled = date < open && healthy && settleDue(date, now, config)
+      const due = date < open && settleDue(date, now, config)
+      const completed = new Set((prev?.sources ?? []).filter((s) => s.settledAt).map((s) => s.id))
+      const refreshed = (s: SourceStatus) =>
+        s.state !== 'failed' &&
+        s.state !== 'skipped' &&
+        s.mode !== 'cached' &&
+        !s.staleSince &&
+        (s.state !== 'degraded' || s.count > 0 || s.message === 'no results')
+      const statuses = collected.sources.map((s) => {
+        const previous = prev?.sources.find((p) => p.id === s.id)
+        if (previous?.settledAt) return previous
+        // Past a source's fetch window, a successful unrelated current-day fetch is no proof of a refresh.
+        const observed = date >= oldest || added.some((c) => c.sources.includes(s.id))
+        return due && observed && refreshed(s) ? { ...s, settledAt: stamp } : s
+      })
+      const allStatuses = new Map((prev?.sources ?? []).map((s) => [s.id, s]))
+      for (const s of statuses) allStatuses.set(s.id, s)
+      const active = [...allStatuses.values()].filter((s) => s.state !== 'skipped')
+      window.settled = due && active.length > 0 && active.every((s) => !!s.settledAt)
+      const healthySources = new Set(statuses.filter(refreshed).map((s) => s.id))
+      const sourceIds = (c: RawCandidate) => {
+        const matched = c.sources.filter((id) => allStatuses.has(id))
+        return matched.length ? matched : statuses.filter((s) => s.board === c.board).map((s) => s.id)
+      }
+      const accepted = added
+        .filter((c) => {
+          const previous = prev?.candidates.find((p) => p.key === c.key)
+          return (
+            !sourceIds(c).some((id) => completed.has(id)) &&
+            !(previous && sourceIds(previous).some((id) => completed.has(id))) &&
+            sourceIds(c).some((id) => healthySources.has(id))
+          )
+        })
+        .map((c) => ({ ...c, observedAt: c.observedAt ?? stamp }))
       if (!prev && !added.length && date !== open) continue
       await store.writeSnapshot({
         schema: SCHEMA_VERSION,
@@ -152,22 +204,34 @@ export async function fileEditions(
         window,
         fetchedAt: stamp,
         runs: [stamp],
-        candidates: added,
-        sources: collected.sources,
+        candidates: accepted,
+        sources: statuses,
+        ...(prev?.coverage || coldStart
+          ? {
+              coverage: {
+                startedAt: prev?.coverage?.startedAt ?? stamp,
+                coldStart: true,
+                missingBoards: BOARDS.filter(
+                  (b) =>
+                    statuses.some((s) => s.board === b && s.state !== 'skipped') &&
+                    ![...(prev?.candidates ?? []), ...accepted].some((c) => c.board === b),
+                ),
+              },
+            }
+          : {}),
       })
       writes.push({ date, phase: date === open ? 'open' : window.settled ? 'settled' : 'closed', added: added.length })
       continue
     }
     // Frozen: scores of a settled edition must not move, so neither its clock nor its statuses change.
-    const labs = added.filter((c) => c.board === 'labs')
-    const overdue = !!prev && !prev.window.settled && healthy
+    const labs = added.filter((c) => c.board === 'labs' && !prev?.candidates.some((p) => p.key === c.key))
     // The last run that saw it open (runs paused over the cutoff) left it ending at that run's time.
     const truncated = !!prev && prev.window.to < full.to
-    if (!labs.length && !overdue && !truncated) continue
+    if (!labs.length && !truncated) continue
     if (prev) {
       await store.writeSnapshot({
         ...prev,
-        window: { ...prev.window, to: full.to, settled: prev.window.settled || overdue },
+        window: { ...prev.window, to: full.to },
         candidates: labs,
         sources: [],
         runs: [],

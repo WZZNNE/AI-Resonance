@@ -186,6 +186,18 @@ export function createGitHubApi(token: string, ref: RepoRef, fetchImpl: typeof f
       if (!data) throw new GitHubApiError('Empty run response', 200, 'actions')
       return toRun(data)
     },
+
+    /** A green workflow may have skipped delivery. Require the explicit acknowledgement step from mail.yml. */
+    async deliveryConfirmed(id: number): Promise<boolean> {
+      const { data } = await call<{ jobs: Array<{ steps?: Array<{ name: string; conclusion: string | null }> }> }>(
+        'GET',
+        `/actions/runs/${id}/jobs?per_page=100`,
+        'actions',
+      )
+      return !!data?.jobs.some((job) =>
+        job.steps?.some((step) => step.name === 'Mail delivery confirmed' && step.conclusion === 'success'),
+      )
+    },
   }
 }
 

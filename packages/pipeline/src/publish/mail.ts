@@ -42,16 +42,36 @@ export function mailStatusOf(state: unknown): MailStatus | null {
     if (Object.keys(sent).length >= MAX_SLOTS) break
   }
   let last: MailStatus['last']
+  const pending: NonNullable<MailStatus['pending']> = {}
+  const hashes = (v: unknown) =>
+    Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string' && /^[a-f0-9]{64}$/.test(x)) : []
+  for (const [slot, raw] of Object.entries(record(s.pending) ?? {})
+    .sort(([a], [b]) => b.localeCompare(a))
+    .slice(0, MAX_SLOTS)) {
+    const e = record(raw)
+    if (!SLOT.test(slot) || !e || !isInstant(e.at) || typeof e.provider !== 'string' || !e.provider) continue
+    pending[slot] = { at: e.at, provider: scrub(e.provider), delivered: hashes(e.delivered), failed: hashes(e.failed) }
+    if (typeof e.error === 'string') pending[slot].error = scrub(e.error).slice(0, MAX_ERROR)
+  }
   const rawLast = record(s.last)
   if (rawLast && typeof rawLast.ok === 'boolean' && isInstant(rawLast.at)) {
     last = { ok: rawLast.ok, at: rawLast.at }
+    if (rawLast.status === 'sent' || rawLast.status === 'partial' || rawLast.status === 'failed')
+      last.status = rawLast.status
+    for (const key of ['delivered', 'failed'] as const) {
+      const n = rawLast[key]
+      if (typeof n === 'number' && Number.isInteger(n) && n >= 0) last[key] = n
+    }
     const error = typeof rawLast.error === 'string' ? rawLast.error.trim() : ''
     if (error) last.error = scrub(error).slice(0, MAX_ERROR)
   }
-  const stamps = [last?.at, ...Object.values(sent).map((e) => e.at)].filter(isInstant)
+  const stamps = [last?.at, ...Object.values(sent).map((e) => e.at), ...Object.values(pending).map((e) => e.at)].filter(
+    isInstant,
+  )
   const updatedAt = isInstant(s.updatedAt) ? s.updatedAt : stamps.sort().at(-1)
   if (!updatedAt) return null
   const status: MailStatus = { schema: SCHEMA_VERSION, updatedAt, sent }
   if (last) status.last = last
+  if (Object.keys(pending).length) status.pending = pending
   return status
 }

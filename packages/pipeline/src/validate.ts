@@ -158,6 +158,9 @@ const paperItem = z.object({
     hfUrl: z.string().optional(),
     hfUpvotes: z.number().optional(),
     hfComments: z.number().optional(),
+    arxivPublishedAt: isoTime.optional(),
+    arxivAnnouncedAt: isoTime.optional(),
+    hfSubmittedAt: isoTime.optional(),
     codeUrl: z.string().optional(),
     codeStars: z.number().optional(),
   }),
@@ -231,6 +234,7 @@ const sourceStatus = z.object({
   mode: z.string().optional(),
   costUsd: z.number().nonnegative().optional(),
   staleSince: dateStr.optional(),
+  settledAt: isoTime.optional(),
 })
 
 /** `/api/v1/daily/<date>.json`, `latest.json` and `live.json`. */
@@ -250,6 +254,7 @@ export const dailyFileSchema = z.object({
   brief: perLang(brief).optional(),
   sources: z.array(sourceStatus),
   enriched: z.boolean(),
+  coverage: z.object({ startedAt: isoTime, coldStart: z.boolean(), missingBoards: z.array(board) }).optional(),
 }) satisfies z.ZodType<DailyFile>
 
 /** `/api/v1/manifest.json`. */
@@ -267,8 +272,9 @@ export const manifestSchema = z.object({
     theme: z.object({ preset: z.string().optional(), accent: z.string().optional() }).optional(),
   }),
   latest: dateStr,
+  latestKind: z.literal('live').optional(),
   live: dateStr.optional(),
-  dates: z.array(dateStr).min(1),
+  dates: z.array(dateStr),
   weeks: z.array(weekId),
   retentionDays: count,
   boards: z.array(boardMeta).length(5),
@@ -399,10 +405,28 @@ export const mailStatusSchema = z.object({
     z.string().regex(/^\d{4}-(\d{2}-\d{2}|W\d{2})$/),
     z.object({ at: isoTime, provider: z.string().min(1), bytes: count.optional() }),
   ),
+  pending: z
+    .record(
+      z.string().regex(/^\d{4}-(\d{2}-\d{2}|W\d{2})$/),
+      z.object({
+        at: isoTime,
+        provider: z.string().min(1),
+        delivered: z.array(z.string().regex(/^[a-f0-9]{64}$/)),
+        failed: z.array(z.string().regex(/^[a-f0-9]{64}$/)),
+        error: z
+          .string()
+          .refine((s) => !EMAIL.test(s), 'contains an address')
+          .optional(),
+      }),
+    )
+    .optional(),
   last: z
     .object({
       ok: z.boolean(),
       at: isoTime,
+      status: z.enum(['sent', 'partial', 'failed']).optional(),
+      delivered: count.optional(),
+      failed: count.optional(),
       error: z
         .string()
         .refine((s) => !EMAIL.test(s), 'contains an address')

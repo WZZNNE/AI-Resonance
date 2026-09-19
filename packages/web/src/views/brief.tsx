@@ -1,16 +1,19 @@
 /** "Today in brief" (今日要点): the edition's LLM headline + bullets, each citation linked to its item. */
 import type { DailyFile, DateStr, Lang } from '@resonance/schema'
-import { useId } from 'preact/hooks'
+import { useEffect, useId, useState } from 'preact/hooks'
 import { boardMetas, itemAtRank } from '../core/state.ts'
 import { lang, t } from '../i18n/index.ts'
 import { parseBullet } from '../items/cite.ts'
 import { boardTitle, itemHref, itemTitle } from '../items/text.ts'
+import { Button } from '../ui/button.tsx'
 import { boardHue } from '../ui/chip.tsx'
 import { Icon } from '../ui/icons.tsx'
 
 /** Brief card; renders nothing when the edition has no brief (pipeline ran without an LLM key). */
 export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }) {
   const id = useId()
+  const [expanded, setExpanded] = useState(false)
+  useEffect(() => setExpanded(false), [day.date])
   const l = lang.value
   const other: Lang = l === 'en' ? 'zh' : 'en'
   const brief = day.brief?.[l] ?? day.brief?.[other]
@@ -26,7 +29,7 @@ export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }
         {brief.headline}
       </h2>
       <ul class="brief__list">
-        {brief.bullets.map((b) => (
+        {(expanded ? brief.bullets : brief.bullets.slice(0, 3)).map((b) => (
           <li key={b}>
             {parseBullet(b).map((part, i) => {
               if (typeof part === 'string') return part
@@ -51,6 +54,17 @@ export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }
           </li>
         ))}
       </ul>
+      {brief.bullets.length > 3 && (
+        <Button
+          size="s"
+          variant="ghost"
+          class="brief__expand"
+          aria-expanded={expanded}
+          onClick={() => setExpanded(!expanded)}
+        >
+          {t(expanded ? 'home.showLess' : 'home.showMore')}
+        </Button>
+      )}
       <p class="brief__note">{fallback ? t('brief.otherLang') : t('brief.note')}</p>
     </section>
   )

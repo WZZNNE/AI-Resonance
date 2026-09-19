@@ -9,7 +9,7 @@ describe('parseMailBlock', () => {
     expect(parseMailBlock(await readFile(CONFIG, 'utf8'))).toEqual({
       enabled: false,
       frequency: 'daily',
-      weekday: 1,
+      weekday: 2,
       time: '08:30',
       timezone: 'Asia/Shanghai',
       lang: 'zh',

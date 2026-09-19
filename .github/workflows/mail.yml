@@ -132,6 +132,7 @@ jobs:
 
       # Inputs reach the script as environment variables, never through the shell.
       - name: Render and send
+        id: delivery
         env:
           RESONANCE_MAIL: ${{ vars.RESONANCE_MAIL }}
           RESEND_FROM: ${{ vars.RESEND_FROM }}
@@ -145,3 +146,8 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
         run: node packages/channels/src/mail/cli.ts
+
+      # The web app checks this exact step, not the workflow conclusion (a skipped send can also be green).
+      - name: Mail delivery confirmed
+        if: steps.delivery.outputs.sent == 'true'
+        run: echo "Mail provider accepted all recipients."

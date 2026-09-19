@@ -48,7 +48,7 @@ export function defaultMailForm(lang: Lang, timezone: string): MailForm {
   return {
     enabled: false,
     frequency: 'daily',
-    weekday: 1,
+    weekday: 2,
     time: '08:30',
     timezone: isTimeZone(timezone) ? timezone : 'UTC',
     lang,
@@ -185,14 +185,19 @@ export function parseRecipients(raw: string): { valid: string[]; invalid: string
  * Pure: the repository secrets to write for the filled-in fields — only those, so the user can change one (say, a
  * renewed 授权码) without retyping the rest. `MAIL_TO` is written as a comma list, the format the job parses.
  */
-export function secretsToWrite(provider: Provider, c: MailCredentials): Array<{ name: string; value: string }> {
+export function secretsToWrite(
+  provider: Provider,
+  c: MailCredentials,
+  preset: Preset = 'custom',
+): Array<{ name: string; value: string }> {
   const out: Array<{ name: string; value: string }> = []
   const to = parseRecipients(c.to).valid
   if (to.length) out.push({ name: 'MAIL_TO', value: to.join(',') })
   if (provider === 'smtp') {
     if (c.smtpUser.trim()) out.push({ name: 'SMTP_USER', value: c.smtpUser.trim() })
-    // Codes are pasted with stray spaces (Gmail shows app passwords in groups of four); none contain spaces.
-    if (c.smtpPass.trim()) out.push({ name: 'SMTP_PASS', value: c.smtpPass.replace(/\s+/g, '') })
+    // Only known app-password formats ignore whitespace. A custom SMTP password is opaque, including spaces.
+    if (c.smtpPass)
+      out.push({ name: 'SMTP_PASS', value: preset === 'custom' ? c.smtpPass : c.smtpPass.replace(/\s+/g, '') })
   } else if (c.resendKey.trim()) {
     out.push({ name: 'RESEND_API_KEY', value: c.resendKey.trim() })
   }

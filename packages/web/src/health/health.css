@@ -1,0 +1,90 @@
+.health {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.health__head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.health__head p,
+.health__card p {
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.health__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.health__card {
+  min-width: 0;
+  padding: 1.25rem;
+  background: var(--plate-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+.health__card h2 {
+  font-size: var(--fs-body);
+  margin: 0 0 1rem;
+}
+.health__card time {
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.health__notice {
+  padding: 1rem 1.25rem;
+  border-inline-start: 3px solid var(--warn);
+  background: var(--plate-bg);
+  border-radius: var(--radius-l);
+}
+.health__notice p {
+  margin-bottom: 0;
+}
+.health__settlement {
+  margin-top: 1.25rem;
+}
+.health__settlement summary {
+  cursor: pointer;
+  padding-block: 0.5rem;
+}
+.health__source-list {
+  list-style: none;
+  padding: 0;
+}
+.health__source-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+}
+.health__source-list li + li {
+  border-top: 1px solid var(--line);
+}
+.health__source-list li span:last-child {
+  color: var(--text-2);
+}
+.health__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.health__delivery--failed {
+  color: var(--danger);
+}
+.health__delivery--partial {
+  color: var(--warn);
+}
+@media (max-width: 720px) {
+  .health__grid {
+    grid-template-columns: 1fr;
+  }
+  .health__head {
+    flex-wrap: wrap;
+  }
+}

@@ -95,7 +95,9 @@ export function BoardColumn({ board, day, date, meta, category, span, panelProps
           <h2 class="board__title" id={titleId}>
             <span class="board__dot" aria-hidden="true" />
             {boardTitle(board, meta)}
-            <span class="board__count num">{data.top.length}</span>
+            <span class="board__count num">
+              {category ? t('home.filteredCount', { shown: top.length, total: data.top.length }) : data.top.length}
+            </span>
           </h2>
           <p class="board__sub">
             {meta ? localized(meta.subtitle) : ''}

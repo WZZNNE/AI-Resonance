@@ -33,7 +33,7 @@ export interface MailSettings {
 export const MAIL_DEFAULTS: MailSettings = {
   enabled: false,
   frequency: 'daily',
-  weekday: 1,
+  weekday: 2,
   time: '08:30',
   timezone: 'Asia/Shanghai',
   lang: 'zh',

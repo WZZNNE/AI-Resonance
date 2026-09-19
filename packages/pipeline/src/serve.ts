@@ -306,7 +306,12 @@ export async function serve(opts: ServeOptions): Promise<Server> {
     opts.log.warn(`No built site at ${opts.distDir} - build it first: pnpm build. Serving the API and the relay only.`)
   }
   const server = createServer((req, res) => {
-    const url = new URL(req.url ?? '/', 'http://127.0.0.1')
+    let url: URL
+    try {
+      url = new URL(req.url ?? '/', 'http://127.0.0.1')
+    } catch {
+      return sendText(res, 400, 'Invalid request URL')
+    }
     const handled =
       url.pathname === RELAY_PATH
         ? handleRelay(req, res, url.searchParams, opts)

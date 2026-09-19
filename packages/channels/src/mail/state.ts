@@ -6,6 +6,8 @@
  * Read and written through the Contents API with the file's sha; a concurrent write (409) is answered by re-reading,
  * re-applying the change to the fresh state and trying again.
  */
+
+import { createHash } from 'node:crypto'
 import type { MailStatus } from '@resonance/schema'
 import type { GitHub } from './github.ts'
 import { GitHubError } from './github.ts'
@@ -41,18 +43,69 @@ export function recordSent(
   const keep = Object.entries(sent)
     .sort(([, a], [, b]) => (a.at < b.at ? 1 : a.at > b.at ? -1 : 0))
     .slice(0, KEEP_SLOTS)
+  const pending = { ...state.pending }
+  delete pending[slot]
   return {
     ...state,
     schema: SCHEMA,
     updatedAt: entry.at,
     sent: Object.fromEntries(keep),
-    last: { ok: true, at: entry.at },
+    ...(Object.keys(pending).length ? { pending } : { pending: undefined }),
+    last: { ok: true, at: entry.at, status: 'sent' },
+  }
+}
+
+/** Scoped fingerprints: the public status never stores addresses or reusable cross-edition recipient ids. */
+export function recipientId(slot: string, address: string): string {
+  return createHash('sha256').update(`${slot}\0${address.trim().toLowerCase()}`).digest('hex')
+}
+
+/** Save acknowledgements after each SMTP transaction, before any retry. */
+export function recordProgress(
+  state: MailStatus,
+  slot: string,
+  entry: { at: string; provider: string; delivered: string[]; recipients: string[]; error?: string; reset?: boolean },
+): MailStatus {
+  const delivered = [
+    ...new Set([...(entry.reset ? [] : (state.pending?.[slot]?.delivered ?? [])), ...entry.delivered]),
+  ].filter((id) => entry.recipients.includes(id))
+  const failed = entry.recipients.filter((id) => !delivered.includes(id))
+  const error = entry.error?.slice(0, MAX_ERROR)
+  const pending = Object.fromEntries(
+    Object.entries({
+      ...state.pending,
+      [slot]: { at: entry.at, provider: entry.provider, delivered, failed, ...(error ? { error } : {}) },
+    })
+      .sort(([, a], [, b]) => b.at.localeCompare(a.at))
+      .slice(0, KEEP_SLOTS),
+  )
+  const sent = { ...state.sent }
+  delete sent[slot]
+  return {
+    ...state,
+    sent,
+    updatedAt: entry.at,
+    pending,
+    last: {
+      ok: false,
+      at: entry.at,
+      status: 'partial',
+      delivered: delivered.length,
+      failed: failed.length,
+      ...(error ? { error } : {}),
+    },
   }
 }
 
 /** Record a failure (pure). `error` must already be scrubbed. */
 export function recordError(state: MailStatus, at: string, error: string): MailStatus {
-  return { ...state, schema: SCHEMA, updatedAt: at, last: { ok: false, at, error: error.slice(0, MAX_ERROR) } }
+  const partial = state.last?.at === at && state.last.status === 'partial' ? state.last : {}
+  return {
+    ...state,
+    schema: SCHEMA,
+    updatedAt: at,
+    last: { status: 'failed', ...partial, ok: false, at, error: error.slice(0, MAX_ERROR) },
+  }
 }
 
 /**

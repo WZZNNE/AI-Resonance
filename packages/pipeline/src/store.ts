@@ -129,6 +129,7 @@ export function mergeSnapshots(prev: Snapshot, next: Snapshot): Snapshot {
     runs: union(prev.runs, next.runs).sort(byString).slice(-MAX_RUNS),
     candidates: [...candidates.values()].sort(byBoardThenKey),
     sources: [...sources.values()].sort((a, b) => byString(a.id, b.id)),
+    ...((next.coverage ?? prev.coverage) ? { coverage: next.coverage ?? prev.coverage } : {}),
   }
 }
 

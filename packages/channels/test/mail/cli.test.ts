@@ -92,6 +92,48 @@ describe('parseMailArgs', () => {
 })
 
 describe('runMail', () => {
+  it('records partial delivery without addresses and the next run sends only the failed recipient', async () => {
+    const w = world(DUE)
+    w.deps.sender = {
+      provider: 'smtp',
+      async send(mail) {
+        w.sent.push(mail)
+        return {
+          accepted: ['good@example.com'],
+          rejected: [
+            {
+              address: 'bad@example.com',
+              permanent: true,
+              error: '550 bad@example.com refused',
+            },
+          ],
+        }
+      },
+    }
+    const env = { ...ENV, MAIL_TO: 'good@example.com,bad@example.com' }
+    let confirmed = false
+    w.deps.onSent = async () => {
+      confirmed = true
+    }
+    expect(await runMail(args(), env, w.deps)).toBe(1)
+    expect(confirmed).toBe(false)
+    const state = w.gh.state() as MailStatus
+    expect(state.sent[TODAY]).toBeUndefined()
+    expect(state.pending?.[TODAY]?.delivered).toHaveLength(1)
+    expect(state.pending?.[TODAY]?.failed).toHaveLength(1)
+    expect(state.last).toMatchObject({ status: 'partial', delivered: 1, failed: 1 })
+    expect(JSON.stringify(state)).not.toContain('@')
+    const retry = world('2026-09-21T01:10:00Z')
+    retry.gh.setState(state)
+    retry.deps.onSent = async () => {
+      confirmed = true
+    }
+    expect(await runMail(args(), env, retry.deps)).toBe(0)
+    expect(retry.sent.map((m) => m.to)).toEqual([['bad@example.com']])
+    expect((retry.gh.state() as MailStatus).pending).toBeUndefined()
+    expect((retry.gh.state() as MailStatus).sent[TODAY]).toBeDefined()
+    expect(confirmed).toBe(true)
+  })
   it('dry-run writes the e-mail (html + text) and the report instead of sending', async () => {
     const w = world(DUE)
     const dir = join(out, 'dry')

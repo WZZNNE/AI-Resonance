@@ -17,6 +17,7 @@ export interface ManifestInput {
   pricingUpdatedAt?: string
   /** The open edition when `live.json` was written. */
   live?: DateStr
+  latestKind?: 'live'
 }
 
 /** Site identity, edition clock, available dates and weeks (newest first), and board + signal metadata. */
@@ -34,7 +35,7 @@ export function buildManifest(input: ManifestInput): Manifest {
       defaultLang,
       theme: theme.accent ? { preset: theme.preset, accent: theme.accent } : { preset: theme.preset },
     },
-    latest: dates[dates.length - 1],
+    latest: dates[dates.length - 1] ?? input.live!,
     dates: [...dates].reverse(),
     weeks: [...weeks].reverse(),
     retentionDays: config.retention.days,
@@ -44,5 +45,6 @@ export function buildManifest(input: ManifestInput): Manifest {
   if (siteUrl) manifest.site.siteUrl = siteUrl
   if (pricingUpdatedAt) manifest.pricingUpdatedAt = pricingUpdatedAt
   if (live) manifest.live = live
+  if (input.latestKind) manifest.latestKind = input.latestKind
   return manifest
 }

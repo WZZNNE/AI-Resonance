@@ -1,3 +1,4 @@
+import './prefs.ts'
 /**
  * BYOK AI (DESIGN §8): Settings › Models, the ✦ Summarise action on every item, and `ai.cachedSummaries` for the Export
  * view. Only these stubs load with the page; the model manager, the summary sheet, the adapters and the Anthropic SDK

@@ -46,6 +46,22 @@ const sleep = async (ms: number) => {
 }
 
 describe('smtpSender', () => {
+  it('surfaces partial recipient rejection instead of reporting the whole message as delivered', async () => {
+    const sender = smtpSender(MAIL_DEFAULTS, { user: 'from@example.com', pass: 'x' }, () => ({
+      async sendMail() {
+        return {
+          messageId: 'partial',
+          accepted: ['a@example.com'],
+          rejected: ['b@example.com'],
+          rejectedErrors: [{ recipient: 'b@example.com', responseCode: 450, message: '450 busy' }],
+        }
+      },
+    }))
+    expect(await sender.send({ ...MAIL, to: ['a@example.com', 'b@example.com'] })).toMatchObject({
+      accepted: ['a@example.com'],
+      rejected: [{ address: 'b@example.com', permanent: false }],
+    })
+  })
   it('uses the preset server, sends from the authenticated user with the fixed Message-ID and the report attached', async () => {
     const t = fakeTransport()
     const sender = smtpSender({ ...MAIL_DEFAULTS, preset: '163' }, { user: 'me@163.com', pass: 'code' }, t.create)
@@ -97,9 +113,73 @@ describe('smtpSender', () => {
     const sender = smtpSender(MAIL_DEFAULTS, { user: 'me@qq.com', pass: 'x' }, t.create)
     await expect(sender.send(MAIL)).rejects.toBeInstanceOf(PermanentError)
   })
+
+  it('retries a temporary all-recipient SMTP envelope rejection', async () => {
+    const t = fakeTransport([Object.assign(new Error('450 busy'), { code: 'EENVELOPE', responseCode: 450 })])
+    const result = await sendWithRetry(smtpSender(MAIL_DEFAULTS, { user: 'u', pass: 'p' }, t.create), MAIL, {
+      sleep: async () => {},
+    })
+    expect(result.attempts).toBe(2)
+  })
 })
 
 describe('sendWithRetry', () => {
+  it('retries only temporarily rejected recipients and acknowledges accepted ones before retrying', async () => {
+    const sent: string[][] = []
+    const progress: string[][] = []
+    const sender = {
+      provider: 'smtp' as const,
+      async send(mail: OutgoingMail) {
+        sent.push([...mail.to])
+        if (sent.length === 1)
+          return {
+            accepted: ['good@example.com'],
+            rejected: [
+              { address: 'busy@example.com', error: '450 busy', permanent: false },
+              { address: 'gone@example.com', error: '550 gone', permanent: true },
+            ],
+          }
+        expect(progress).toEqual([['good@example.com']])
+        return { id: 'second' }
+      },
+    }
+    const result = await sendWithRetry(
+      sender,
+      { ...MAIL, to: ['good@example.com', 'busy@example.com', 'gone@example.com'] },
+      {
+        sleep: async () => {},
+        onProgress: async (addresses) => {
+          progress.push(addresses)
+        },
+      },
+    )
+    expect(sent).toEqual([['good@example.com', 'busy@example.com', 'gone@example.com'], ['busy@example.com']])
+    expect(result.accepted).toEqual(['good@example.com', 'busy@example.com'])
+    expect(result.rejected?.map((r) => r.address)).toEqual(['gone@example.com'])
+  })
+
+  it('does not resend when acknowledgement persistence fails', async () => {
+    let sends = 0
+    await expect(
+      sendWithRetry(
+        {
+          provider: 'smtp',
+          async send() {
+            sends++
+            return {}
+          },
+        },
+        MAIL,
+        {
+          onProgress: async () => {
+            throw new Error('state unavailable')
+          },
+          sleep: async () => {},
+        },
+      ),
+    ).rejects.toThrow('state unavailable')
+    expect(sends).toBe(1)
+  })
   it('retries transient failures with growing pauses (3 tries)', async () => {
     noSleep.length = 0
     const t = fakeTransport([Object.assign(new Error('ETIMEDOUT'), { code: 'ETIMEDOUT' }), new Error('socket hang up')])

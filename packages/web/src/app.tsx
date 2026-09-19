@@ -2,7 +2,7 @@
  * The application shell: header, the routed page, overlay routes on top of the page they were opened from, tab bar,
  * toasts and global shortcuts. It knows routes and slots, never features.
  */
-import { useEffect, useLayoutEffect } from 'preact/hooks'
+import { useEffect, useLayoutEffect, useRef } from 'preact/hooks'
 import { commandForKey, resolveRoute } from './core/registry.ts'
 import { location, type RouteLocation, setTitle } from './core/router.ts'
 import { baseLocation, editionOf, editionPath } from './core/state.ts'
@@ -10,6 +10,7 @@ import { lang, t } from './i18n/index.ts'
 import { Footer, OfflineBanner, SkipLink, TabBar } from './shell/chrome.tsx'
 import { Header } from './shell/header.tsx'
 import { Portal } from './ui/layer.tsx'
+import { routeMotionKey, useLayoutMotion, usePageMotion } from './ui/motion.ts'
 import { Toaster } from './ui/toast.tsx'
 import NotFound from './views/not-found.tsx'
 
@@ -27,6 +28,9 @@ export function App() {
   const baseHit = overlay ? resolveRoute(base.path) : hit
   const Page = baseHit && !baseHit.route.overlay ? baseHit.route.component : NotFound
   const Over = overlay && hit ? hit.route.component : null
+  const page = useRef<HTMLDivElement>(null)
+  usePageMotion(page, routeMotionKey(base))
+  useLayoutMotion(page)
 
   // A layout effect runs before the pages' own effects: a route's static title is only the default, and a page that
   // knows better (the edition's date, an item, a settings tab) overrides it in the same commit.
@@ -53,7 +57,7 @@ export function App() {
       <SkipLink />
       <Header />
       <OfflineBanner />
-      <div class="app__page">
+      <div class="app__page" ref={page}>
         <Page path={base.path} params={baseHit?.params ?? {}} query={base.query} />
       </div>
       <Footer />

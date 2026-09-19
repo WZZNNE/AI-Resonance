@@ -332,10 +332,19 @@ describe('live.json', () => {
     expect((await run(store, PRICING, new Date(later.getTime() + 3_600_000))).files).toBe(0)
   })
 
-  it('is the only file when no edition has closed yet', async () => {
+  it('publishes the live edition through a usable manifest and latest alias before the first cutoff', async () => {
     const report = await run(memoryStore([openSnapshot()]))
     expect(report.days).toBe(0)
-    expect(await list(out)).toEqual(['live.json'])
+    expect(await list(out)).toEqual(
+      expect.arrayContaining(['live.json', 'latest.json', 'manifest.json', 'search/index.json']),
+    )
+    expect(await json<Manifest>('manifest.json')).toMatchObject({
+      latest: OPEN,
+      latestKind: 'live',
+      live: OPEN,
+      dates: [],
+    })
+    expect(await json<DailyFile>('latest.json')).toEqual(await json<DailyFile>('live.json'))
   })
 })
 

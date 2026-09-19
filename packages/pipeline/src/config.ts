@@ -177,7 +177,7 @@ export const configSchema = z.object({
     enabled: z.boolean().default(false),
     frequency: z.enum(['daily', 'weekly', 'both']).default('daily'),
     /** ISO weekday for weekly mail, 1 = Monday. */
-    weekday: z.number().int().min(1).max(7).default(1),
+    weekday: z.number().int().min(1).max(7).default(2),
     time: hhmm.default('08:30'),
     timezone: timeZone.default('Asia/Shanghai'),
     lang: z.enum(['en', 'zh']).default('zh'),

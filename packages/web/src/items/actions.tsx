@@ -3,14 +3,17 @@
  * their features), then the built-ins Open ↗ and Copy link.
  */
 import type { DateStr, Item } from '@resonance/schema'
+import { useState } from 'preact/hooks'
 import { toast } from '../core/events.ts'
 import { type ItemActionCtx, itemActions } from '../core/registry.ts'
 import { navigate } from '../core/router.ts'
 import { general } from '../core/settings.ts'
 import { lang, t } from '../i18n/index.ts'
+import { markRead } from '../reading/store.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { absoluteRoute, copyText } from '../ui/link.tsx'
 import { safeHref } from '../ui/md.ts'
+import { Sheet } from '../ui/sheet.tsx'
 import { itemHref } from './text.ts'
 
 export interface ItemActionsProps {
@@ -21,6 +24,7 @@ export interface ItemActionsProps {
 
 /** Registered + built-in actions for one item. Cards get icon buttons, the detail gets labelled buttons. */
 export function ItemActions({ item, placement, date }: ItemActionsProps) {
+  const [more, setMore] = useState(false)
   const ctx: ItemActionCtx = {
     lang: lang.value,
     date,
@@ -36,9 +40,10 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
     toast(t(ok ? 'card.copied' : 'card.copyFailed'), { kind: ok ? 'ok' : 'warn' })
   }
   const labelled = placement === 'detail'
+  const visible = labelled ? list : list.filter((a) => a.id === 'ai.summarize' || a.id === 'reading.save')
   return (
     <div class={`actions actions--${placement}`} data-part="item-actions">
-      {list.map((a) => {
+      {visible.map((a) => {
         if (a.component) {
           const C = a.component
           return <C key={a.id} item={item} ctx={ctx} />
@@ -54,7 +59,14 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
       })}
       {url &&
         (labelled ? (
-          <Button size="s" icon="external" href={url} target={newTab ? '_blank' : undefined} rel="noopener noreferrer">
+          <Button
+            size="s"
+            icon="external"
+            href={url}
+            target={newTab ? '_blank' : undefined}
+            rel="noopener noreferrer"
+            onClick={() => markRead(item, date)}
+          >
             {t('card.open')}
           </Button>
         ) : (
@@ -65,6 +77,7 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
             href={url}
             target={newTab ? '_blank' : undefined}
             rel="noopener noreferrer"
+            onClick={() => markRead(item, date)}
           />
         ))}
       {labelled ? (
@@ -72,7 +85,14 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
           {t('card.copyLink')}
         </Button>
       ) : (
-        <IconButton size="s" icon="link" label={t('card.copyLink')} onClick={copy} />
+        <IconButton size="s" icon="more" label={t('card.more')} onClick={() => setMore(true)} />
+      )}
+      {!labelled && (
+        <Sheet open={more} onClose={() => setMore(false)} title={t('card.more')} size="s">
+          <div class="item-action-menu">
+            <ItemActions item={item} placement="detail" date={date} />
+          </div>
+        </Sheet>
       )}
     </div>
   )

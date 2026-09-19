@@ -30,7 +30,7 @@ describe('RESONANCE_MAIL (de)serialisation', () => {
     expect(defaults).toMatchObject({
       enabled: false,
       frequency: 'daily',
-      weekday: 1,
+      weekday: 2,
       time: '08:30',
       timezone: 'Asia/Shanghai',
       lang: 'zh',
@@ -47,7 +47,7 @@ describe('RESONANCE_MAIL (de)serialisation', () => {
   it('writes every key of config.yaml › mail in a stable order', () => {
     const json = serializeMailVariable({ ...defaults, enabled: true, time: '07:05' })
     expect(json).toBe(
-      '{"enabled":true,"frequency":"daily","weekday":1,"time":"07:05","timezone":"Asia/Shanghai","lang":"zh","provider":"smtp",' +
+      '{"enabled":true,"frequency":"daily","weekday":2,"time":"07:05","timezone":"Asia/Shanghai","lang":"zh","provider":"smtp",' +
         '"preset":"qq","host":"smtp.qq.com","port":465,"secure":true,"attach":true,"perBoard":5,"graceMinutes":240}',
     )
   })
@@ -120,7 +120,7 @@ describe('credentials', () => {
 
   it('writes only filled-in secrets, in the format the job reads', () => {
     const c = { to: 'a@qq.com; b@qq.com', smtpUser: ' me@qq.com ', smtpPass: 'abcd efgh ijkl mnop', resendKey: 're_x' }
-    expect(secretsToWrite('smtp', c)).toEqual([
+    expect(secretsToWrite('smtp', c, 'qq')).toEqual([
       { name: 'MAIL_TO', value: 'a@qq.com,b@qq.com' },
       { name: 'SMTP_USER', value: 'me@qq.com' },
       { name: 'SMTP_PASS', value: 'abcdefghijklmnop' },
@@ -129,7 +129,10 @@ describe('credentials', () => {
       { name: 'MAIL_TO', value: 'a@qq.com,b@qq.com' },
       { name: 'RESEND_API_KEY', value: 're_x' },
     ])
-    expect(secretsToWrite('smtp', { to: '', smtpUser: '', smtpPass: '  ', resendKey: '' })).toEqual([])
+    expect(secretsToWrite('smtp', { to: '', smtpUser: '', smtpPass: '', resendKey: '' })).toEqual([])
+    expect(secretsToWrite('smtp', { to: '', smtpUser: '', smtpPass: ' a b ', resendKey: '' }, 'custom')).toEqual([
+      { name: 'SMTP_PASS', value: ' a b ' },
+    ])
   })
 
   it('guesses the preset from a mailbox address', () => {
@@ -248,6 +251,17 @@ function fakeFetch(answers: Array<[number, unknown?]>) {
 
 describe('GitHub client', () => {
   const repo = { owner: 'me', repo: 'radar' }
+
+  it('requires the delivery acknowledgement step, even when a workflow otherwise succeeds', async () => {
+    const f = fakeFetch([
+      [200, { jobs: [{ steps: [{ name: 'Mail delivery confirmed', conclusion: 'skipped' }] }] }],
+      [200, { jobs: [{ steps: [{ name: 'Mail delivery confirmed', conclusion: 'success' }] }] }],
+    ])
+    const gh = createGitHubApi('tok', repo, f.impl)
+    expect(await gh.deliveryConfirmed(42)).toBe(false)
+    expect(await gh.deliveryConfirmed(43)).toBe(true)
+    expect(f.calls[0].url).toContain('/actions/runs/42/jobs?per_page=100')
+  })
 
   it('upserts the variable: PATCH, then POST when it does not exist', async () => {
     const f = fakeFetch([

@@ -62,6 +62,8 @@ export interface InputProps extends InputBase {
   spellcheck?: boolean
   disabled?: boolean
   readOnly?: boolean
+  maxLength?: number
+  required?: boolean
 }
 
 /** Single-line text input, optionally with a leading icon. */

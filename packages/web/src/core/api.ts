@@ -212,27 +212,36 @@ export interface ResourceState<T> {
 }
 
 /**
- * Hook flavour: reloads when `deps` change, aborts on unmount, keeps stale data while reloading. `reload()` runs the
- * loader with `fresh = true`, so a "Refresh" button really asks the server again.
+ * Reload the same resource while keeping its data visible. Changing deps immediately hides the previous resource,
+ * including the render before the effect runs. A failed request clears the old data so consumers surface the error.
  */
 export function useResource<T>(loader: Loader<T>, deps: unknown[]): ResourceState<T> {
-  const [state, set] = useState<Omit<ResourceState<T>, 'reload'>>({ data: undefined, error: undefined, loading: true })
+  const [state, set] = useState<Omit<ResourceState<T>, 'reload'> & { deps: unknown[] }>({
+    data: undefined,
+    error: undefined,
+    loading: true,
+    deps,
+  })
   const [tick, setTick] = useState(0)
   const reloading = useRef(false)
+  const same = (a: unknown[], b: unknown[]) => a.length === b.length && a.every((v, i) => Object.is(v, b[i]))
   useEffect(() => {
     const ctl = new AbortController()
     const fresh = reloading.current
     reloading.current = false
-    set((s) => ({ ...s, loading: true, error: undefined }))
-    loader(ctl.signal, fresh).then(
-      (data) => !ctl.signal.aborted && set({ data, error: undefined, loading: false }),
-      (err) => !ctl.signal.aborted && set((s) => ({ ...s, error: toApiError(err), loading: false })),
-    )
+    set((s) => ({ data: same(s.deps, deps) ? s.data : undefined, loading: true, error: undefined, deps }))
+    Promise.resolve()
+      .then(() => loader(ctl.signal, fresh))
+      .then(
+        (data) => !ctl.signal.aborted && set({ data, error: undefined, loading: false, deps }),
+        (err) => !ctl.signal.aborted && set({ data: undefined, error: toApiError(err), loading: false, deps }),
+      )
     return () => ctl.abort()
   }, [...deps, tick])
   const reload = () => {
     reloading.current = true
     setTick((t) => t + 1)
   }
-  return { ...state, reload }
+  const current = same(state.deps, deps) ? state : { data: undefined, error: undefined, loading: true }
+  return { data: current.data, error: current.error, loading: current.loading, reload }
 }

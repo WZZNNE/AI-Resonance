@@ -342,7 +342,7 @@ export default function Resonance({ params, query }: RouteProps) {
   const ref = resonanceRef(params, query)
   const refKey = ref.kind === 'date' ? ref.date : ref.kind
   const version = ref.kind === 'date' ? 0 : dataVersion.value
-  const res = useResource((signal) => loadEdition(ref, signal), [refKey, version])
+  const res = useResource((signal, fresh) => loadEdition(ref, signal, fresh), [refKey, version])
   const day: DailyFile | undefined = res.data
   const m = manifest.data.value
   useEffect(() => {

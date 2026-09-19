@@ -105,10 +105,15 @@ export function SourcesTable({ sources }: { sources: readonly SourceStatus[] }) 
                   (s.costUsd ?? 0) > 0 && fmt.usd(s.costUsd ?? 0),
                   s.staleSince && t('status.staleSince', { date: fmt.day(s.staleSince) }),
                   fmt.dateTime(s.fetchedAt),
-                  s.message,
                 ]
                   .filter(Boolean)
                   .join(' · ')}
+                {s.message && (
+                  <details class="source-log">
+                    <summary>{t('home.technical')}</summary>
+                    <p>{s.message}</p>
+                  </details>
+                )}
               </td>
             </tr>
           ))}

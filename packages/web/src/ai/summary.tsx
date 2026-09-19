@@ -32,7 +32,7 @@ import { costUsd, estimateTokens, expectedOutputTokens } from './pricing.ts'
 import { buildPrompt, type Verdict, visibleBody } from './prompt.ts'
 import { findModel, modelKeyOf } from './providers.ts'
 import { aiPrefs, loadPricing, modelInfo, patchProvider } from './store.ts'
-import { type Depth, EFFORTS, type Effort } from './types.ts'
+import { type Depth, EFFORTS, type Effort, type Provider } from './types.ts'
 import './ai.css'
 
 const target = signal<{ item: Item; seq: number } | null>(null)
@@ -133,7 +133,7 @@ function SummarySheet({ item, open: isOpen, onClose }: { item: Item; open: boole
     setRun((r) => ({ ...r, text, thinking }))
   }
 
-  const start = async () => {
+  const start = async (providerOverride?: Provider) => {
     if (!found) return
     abort.current?.abort()
     const ac = new AbortController()
@@ -144,7 +144,7 @@ function SummarySheet({ item, open: isOpen, onClose }: { item: Item; open: boole
       const entry = await runSummary(
         {
           item,
-          provider: found.provider,
+          provider: providerOverride ?? found.provider,
           model: found.model,
           lang: outLang,
           depth,
@@ -300,7 +300,7 @@ function SummarySheet({ item, open: isOpen, onClose }: { item: Item; open: boole
     const id = await runCommand('vault.pick', { kind: 'llm' })
     if (id) {
       patchProvider(provider.id, { credentialId: id })
-      void start()
+      void start({ ...provider, credentialId: id })
     }
   }
 

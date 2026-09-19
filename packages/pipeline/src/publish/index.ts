@@ -107,8 +107,8 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
     await out.remove(apiPaths.live)
   }
 
-  if (closed.length === 0) {
-    log.warn(`publish: no closed edition within ${config.retention.days} days of ${today} — only live.json written`)
+  if (closed.length === 0 && !live) {
+    log.warn(`publish: no closed or live edition within ${config.retention.days} days of ${today}`)
     return { days: 0, files: out.report.files, bytes: out.report.bytes }
   }
 
@@ -116,7 +116,15 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
   for (const day of closed) {
     published.push(await out.json(apiPaths.daily(day.date), { ...day, generatedAt: stamp }, dailyFileSchema, 'keep'))
   }
-  await out.json(apiPaths.latest, published[published.length - 1], dailyFileSchema)
+  await out.json(
+    apiPaths.latest,
+    published[published.length - 1] ?? {
+      ...live!,
+      generatedAt: stamp,
+      window: { ...live!.window, to: stamp, settled: false },
+    },
+    dailyFileSchema,
+  )
 
   const weeklies = buildWeeklies(closed, meta).map((w) => withWeekBrief(w, briefs, meta))
   for (const week of weeklies) await out.json(apiPaths.weekly(week.week), week, weeklyFileSchema)
@@ -130,7 +138,7 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
   }
   await out.json(apiPaths.search, buildSearchIndex(histories, closed, stamp), searchIndexSchema, 'keep')
 
-  const latest = closed[closed.length - 1]
+  const latest = closed[closed.length - 1] ?? live!
   const feedDays = [...closed]
     .reverse()
     .slice(0, FEED_DAYS)
@@ -165,6 +173,7 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
     generatedAt: stamp,
     pricingUpdatedAt,
     live: live?.date,
+    latestKind: closed.length ? undefined : 'live',
   })
   for (const job of reportJobs(closed, weeklies, manifest)) {
     for (const lang of LANGS) {

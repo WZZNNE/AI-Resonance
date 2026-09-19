@@ -56,6 +56,7 @@ export function Tabs<V extends string>({
   const ref = useRef<HTMLDivElement>(null)
   useThumb(ref)
   const onKey = (e: KeyboardEvent) => {
+    if (!items.length || e.isComposing) return
     const fwd = orientation === 'horizontal' ? 'ArrowRight' : 'ArrowDown'
     const back = orientation === 'horizontal' ? 'ArrowLeft' : 'ArrowUp'
     const i = items.findIndex((t) => t.id === value)

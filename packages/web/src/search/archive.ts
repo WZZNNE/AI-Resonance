@@ -14,7 +14,12 @@ import {
 } from '@resonance/schema'
 
 /** A row as published; `c` (category) is read when the pipeline provides it. */
-export type ArchiveEntry = SearchEntry & { c?: Category }
+export type ArchiveEntry = SearchEntry & {
+  c?: Category
+  /** Client-side provenance when the open edition is merged with the published archive. */
+  live?: boolean
+  archived?: boolean
+}
 
 const CJK_CHARS = '\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}\\p{Script=Hangul}\\u3005\\u30fc'
 const CJK_RE = new RegExp(`[${CJK_CHARS}]`, 'u')
