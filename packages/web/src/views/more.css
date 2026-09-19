@@ -1,0 +1,1492 @@
+/*
+ * The memory views: archive, weekly recap, resonance diagrams, scoring (docs/VISUAL.md). Loaded with whichever of them
+ * opens first. Panels are plates, tracks and empty cells are wells, rows inside a panel are hairline-separated; colour
+ * only where it means something (board hue, signal, resonance gold, state).
+ */
+
+.page__lead {
+  max-width: 68ch;
+  margin: 0.5rem 0 0;
+  color: var(--text-2);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.weekly.is-refreshing,
+.resonance.is-refreshing {
+  opacity: 0.75;
+  transition: opacity var(--dur-2) var(--ease);
+}
+
+/* Every panel of these views is a plate: raised, its edge inside the shadow (never a border). */
+.cal,
+.preview,
+.leaders__board,
+.wboard,
+.streaks__list,
+.wclusters__list,
+.rcluster,
+.scoring__card {
+  border-radius: var(--radius-xl);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+/* Hairline between rows of a grouped panel, inset to the text (set --inset). */
+.leaders__list li + li::after,
+.wentry + .wentry::before,
+.streaks__list li + li::before,
+.wclusters__list .cluster + .cluster::before,
+.rmember + .rmember::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: var(--inset, 0);
+  height: 1px;
+  background: var(--line);
+}
+
+/* Rows are whole tap targets: the row's link stretches over it; rows tint on hover (panels lift, rows don't). */
+.preview__tops li,
+.leaders__list li,
+.wentry,
+.streaks__list li,
+.rmember {
+  position: relative;
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+.preview__tops a::after,
+.leaders__title::after,
+.wentry__title a::after,
+.streaks__title::after,
+.rmember__title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+@media (hover: hover) {
+  .leaders__list li:hover,
+  .wentry:hover,
+  .streaks__list li:hover {
+    background: var(--surface-2);
+  }
+}
+
+/* ───────── archive ───────── */
+
+.archive__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.archive__progress {
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1.2 var(--font-mono);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend__scale {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.legend__sw {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+/*
+ * Heat: level 0 (no summary yet) is an empty well; 1–4 are raised tiles tinted with the signal at rising strength.
+ * The strongest tint stops where the day number (--text) still reads at 4.5:1 in every preset (terminal dark: 4.85).
+ */
+.cal__day,
+.legend__sw {
+  --sh: 0 0 #0000;
+  --today: 0 0 #0000;
+  --sel: 0 0 #0000;
+  background: var(--heat-bg, transparent);
+  box-shadow: var(--sh), var(--today), var(--sel);
+}
+
+.heat-0 {
+  --heat-bg: var(--well-bg);
+  --sh: var(--well-edge);
+}
+
+.heat-1,
+.heat-2,
+.heat-3,
+.heat-4 {
+  --sh: var(--plate-edge), var(--elev-0);
+}
+
+.heat-1 {
+  --heat-bg: color-mix(in oklab, var(--signal) 12%, var(--surface-2));
+}
+
+.heat-2 {
+  --heat-bg: color-mix(in oklab, var(--signal) 24%, var(--surface-2));
+}
+
+.heat-3 {
+  --heat-bg: color-mix(in oklab, var(--signal) 35%, var(--surface-2));
+}
+
+.heat-4 {
+  --heat-bg: color-mix(in oklab, var(--signal) 45%, var(--surface-2));
+}
+
+/* A run that failed: an empty well with a dashed danger outline. */
+.cal__day.is-missing,
+.legend__sw.is-missing {
+  --heat-bg: var(--well-bg);
+  --sh: var(--well-edge);
+  outline: 1px dashed color-mix(in oklab, var(--danger) 65%, transparent);
+  outline-offset: -3px;
+}
+
+.cal__day.is-stale,
+.legend__sw.is-stale {
+  position: relative;
+}
+
+.cal__day.is-stale::after,
+.legend__sw.is-stale::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warn);
+}
+
+.legend__sw.is-stale::after {
+  top: 2px;
+  right: 2px;
+  width: 4px;
+  height: 4px;
+}
+
+/* The newest edition: a signal ring, no bloom (a mark, not a light). */
+.cal__day.is-today,
+.legend__sw.is-today {
+  --today: inset 0 0 0 1.5px var(--signal);
+}
+
+/* Phones and tablets: the calendar you tap comes first, the preview of the chosen day under it. */
+.archive__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.archive__months {
+  order: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  min-width: 0;
+}
+
+.archive__side {
+  order: 2;
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/*
+ * Wide: the months column is as wide as its calendars, so the preview sits right beside them (one retained month
+ * never leaves a hole in the middle of the page); many months wrap three to a row.
+ */
+@media (min-width: 1100px) {
+  .archive__layout {
+    grid-template-columns: fit-content(calc(100% - 340px - 2rem)) 340px;
+    column-gap: 2rem;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .archive__side {
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .archive__months {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .archive__months > .cal {
+    flex: 0 0 320px;
+  }
+
+  /* A lone month gets room to read as the page's subject rather than a thumbnail. */
+  .archive__months > .cal:only-child {
+    flex-basis: 400px;
+  }
+}
+
+.jumps,
+.weeks__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.weeks {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cal {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.cal__title {
+  margin: 0 0 0.75rem 0.15rem;
+  color: var(--text);
+  font: 650 var(--fs-board) / 1.2 var(--font-display);
+  letter-spacing: var(--tracking-title);
+}
+
+.cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.cal__wd {
+  padding-bottom: 0.2rem;
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.4 var(--font-ui);
+  text-align: center;
+}
+
+.cal__day {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-height: 34px;
+  border: 0;
+  border-radius: var(--radius-s);
+  color: var(--text-2);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  transition:
+    box-shadow var(--dur-1) var(--ease),
+    transform var(--dur-1) var(--ease);
+}
+
+button.cal__day {
+  padding: 0;
+  cursor: pointer;
+}
+
+.cal__day.heat-2,
+.cal__day.heat-3,
+.cal__day.heat-4 {
+  color: var(--text);
+}
+
+.cal__day.heat-4 {
+  font-weight: 650;
+}
+
+.cal__day.is-outside {
+  color: color-mix(in oklab, var(--text-3) 45%, transparent);
+}
+
+/* The day shown in the preview: a soft outer ring with a gap, like a selected date. */
+.cal__day.is-focus {
+  --sel: 0 0 0 2px var(--surface), 0 0 0 3.5px color-mix(in oklab, var(--text) 30%, transparent);
+}
+
+/* Selected and newest at once: the signal ring alone says both. */
+.cal__day.is-focus.is-today {
+  --sel: 0 0 #0000;
+}
+
+@media (hover: hover) {
+  a.cal__day:hover,
+  button.cal__day:hover {
+    transform: translateY(-1px);
+    --sh: var(--plate-edge), var(--elev-1);
+  }
+}
+
+a.cal__day:active,
+button.cal__day:active {
+  transform: scale(0.94);
+  --sh: var(--press);
+}
+
+.cal .cal__day:focus-visible {
+  box-shadow: var(--sh), var(--today), var(--ring);
+}
+
+@media (max-width: 559px) {
+  .cal__day {
+    min-height: var(--target);
+  }
+}
+
+/* Preview of the focused day. */
+.preview {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.15rem 1.25rem 1.25rem;
+}
+
+.preview__date {
+  margin: 0;
+  font: var(--weight-display) var(--fs-xl) / 1.2 var(--font-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.preview__note,
+.preview__headline {
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+}
+
+.preview__headline {
+  color: var(--text);
+  font: 600 var(--fs-m) / 1.45 var(--font-text);
+}
+
+.preview__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.9rem;
+  margin: 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.preview__tops {
+  display: grid;
+  margin: 0.2rem 0 0.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.preview__tops li {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr);
+  column-gap: 0.65rem;
+  padding: 0.6rem 0 0.55rem;
+  box-shadow: inset 0 1px 0 var(--line);
+  font-size: var(--fs-s);
+  line-height: 1.4;
+}
+
+.preview__tops li::before {
+  content: "";
+  grid-row: span 2;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.3rem;
+  border-radius: 50%;
+  background: var(--hue);
+}
+
+.preview__tops a {
+  color: var(--text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.preview__tops a:hover {
+  text-decoration: underline;
+}
+
+.preview__board {
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.4 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.preview > .btn {
+  --btn-h: 38px;
+  border-radius: var(--radius-pill);
+}
+
+/* Longest-running items per board. */
+.leaders {
+  margin-top: 3rem;
+}
+
+.leaders__hint {
+  margin: -0.4rem 0 1rem;
+  color: var(--text-3);
+  font-size: var(--fs-s);
+}
+
+.leaders__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.leaders__board {
+  min-width: 0;
+  padding: 1.05rem 0 0.4rem;
+}
+
+.leaders__name {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0 1.15rem 0.7rem;
+  font: 650 var(--fs-board) / 1.2 var(--font-display);
+  letter-spacing: var(--tracking-title);
+}
+
+.leaders__list {
+  --inset: 3.25rem;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ld;
+}
+
+.leaders__list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  column-gap: 0.7rem;
+  padding: 0.65rem 1.15rem 0.7rem;
+  counter-increment: ld;
+}
+
+.leaders__list li::before {
+  content: counter(ld);
+  grid-row: span 2;
+  color: var(--text-3);
+  font: 200 1.375rem / 1 var(--font-num);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+
+.leaders__title {
+  display: block;
+  color: var(--text);
+  font: 500 var(--fs-s) / 1.4 var(--font-text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.leaders__title:hover {
+  text-decoration: underline;
+}
+
+.leaders__meta {
+  grid-column: 2;
+  margin-top: 0.2rem;
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.4 var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+.leaders__none {
+  margin: 0;
+  padding: 0.2rem 1.15rem 0.8rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+/* ───────── weekly ───────── */
+
+.weekly__nav {
+  display: flex;
+  flex: none;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+@media (max-width: 559px) {
+  .weekly__nav .iconbtn {
+    --ib: 36px;
+  }
+}
+
+.weekly__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: -0.25rem 0 1.75rem;
+}
+
+/* The week's brief: the same plate + signal hairline as the day's. */
+.weekly .brief {
+  margin-bottom: 1.5rem;
+  border: 0;
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.weekly__boards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Same anatomy as Today's board panels: thin metallic ranks in a 40/48 px column, no rule under the header. */
+.wboard {
+  --rank-w: 40px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .wboard {
+    --rank-w: 48px;
+  }
+}
+
+.wboard__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 1.25rem 1.25rem 0.35rem;
+  font: 650 var(--fs-board) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
+}
+
+/* The count: a small well chip. */
+.wboard__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 20px;
+  padding: 0 0.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 500 var(--fs-2xs) / 1 var(--font-mono);
+  letter-spacing: 0;
+}
+
+.wboard__list {
+  --inset: calc(1.25rem + var(--rank-w) + 0.75rem);
+  margin: 0;
+  padding: 0 0 0.35rem;
+  list-style: none;
+}
+
+.wentry {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--rank-w) minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.95rem 1.25rem 1rem;
+}
+
+.wentry > .rank {
+  padding-top: 0.1rem;
+}
+
+.wentry__body {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.wentry__title {
+  margin: 0;
+  font: var(--weight-title) var(--fs-item) / 1.35 var(--font-text);
+  letter-spacing: var(--tracking-title);
+  overflow-wrap: anywhere;
+}
+
+.wentry__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.wentry__title a:hover {
+  text-decoration: underline;
+}
+
+.wentry__new {
+  margin-left: 0.45rem;
+  vertical-align: 2px;
+}
+
+.wentry__blurb {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow-wrap: anywhere;
+}
+
+.wentry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.9rem;
+  margin: 0.1rem 0 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Seven days: lit in the board hue on days the item was on the board, tiny wells otherwise. */
+.dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.dots__d {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--well-bg);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+}
+
+.dots__d.is-on {
+  background: var(--hue);
+  box-shadow: inset 0 1px 0 var(--hl);
+}
+
+.dots__d.is-none {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* On the board grid's columns, so a lone section does not stretch across the page. */
+.weekly__extras {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.streaks,
+.wclusters {
+  min-width: 0;
+}
+
+.streaks__list,
+.wclusters__list {
+  display: grid;
+  margin: 0.9rem 0 0;
+  padding: 0.3rem 0;
+  list-style: none;
+}
+
+.streaks__list {
+  --inset: calc(1.25rem + 8px + 0.7rem);
+}
+
+.streaks__list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: var(--target);
+  padding: 0.35rem 1.25rem;
+}
+
+.streaks__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+  font-size: var(--fs-s);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.streaks__title:hover {
+  text-decoration: underline;
+}
+
+.streaks__n {
+  flex: none;
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+}
+
+/* The week's clusters: rows of one plate (the day view's cluster cards, flattened). */
+.wclusters__list {
+  --inset: 1.25rem;
+}
+
+.wclusters__list .cluster {
+  position: relative;
+  flex: none;
+  padding: 0.85rem 1.25rem 0.75rem;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.wclusters__list .cluster__headline {
+  min-height: 0;
+  margin: 0 0 0.3rem;
+}
+
+/* Phones: panels pad 16 px (VISUAL §7). */
+@media (max-width: 559px) {
+  .wboard__title,
+  .wentry,
+  .streaks__list li,
+  .wclusters__list .cluster {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .wboard__list {
+    --inset: calc(1rem + var(--rank-w) + 0.75rem);
+  }
+
+  .streaks__list {
+    --inset: calc(1rem + 8px + 0.7rem);
+  }
+
+  .wclusters__list {
+    --inset: 1rem;
+  }
+}
+
+/* ───────── resonance ───────── */
+
+/* Cards in a row share one height; their contents stack from the top. */
+.rclusters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rcluster {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 1.1rem 1.25rem 0.6rem;
+}
+
+@media (max-width: 559px) {
+  .rcluster {
+    padding: 1rem 1rem 0.5rem;
+  }
+}
+
+/* Full resonance (three boards and more): the plate's top light turns into a gold hairline. */
+.rcluster.is-full {
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--res) 55%, transparent),
+    inset 0 0 0 1px rgb(255 255 255 / 0.045),
+    var(--elev-1);
+}
+
+[data-mode="light"] .rcluster.is-full {
+  box-shadow:
+    inset 0 1.5px 0 color-mix(in srgb, var(--res) 55%, transparent),
+    inset 0 0 0 1px rgb(0 0 0 / 0.06),
+    var(--elev-1);
+}
+
+.rcluster__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.6rem 0.75rem;
+}
+
+/* One 2 px segment per board, in its hue. */
+.rcluster__segs {
+  display: flex;
+  flex-basis: 100%;
+  gap: 3px;
+}
+
+.rcluster__seg {
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--hue);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--hue) var(--bloom), transparent);
+}
+
+.rcluster__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font: 600 var(--fs-l) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+/* Side by side, two title lines are reserved so the diagrams of a row line up (as on Today's resonance cards). */
+@media (min-width: 900px) {
+  .rcluster__title {
+    min-height: 2.6em;
+  }
+}
+
+.rcluster__strength {
+  flex: none;
+  padding-top: 0.2rem;
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1.2 var(--font-mono);
+}
+
+.rcluster__boards {
+  margin: -0.35rem 0 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.rcluster.is-full .rcluster__boards {
+  color: color-mix(in oklab, var(--res) 62%, var(--text-2));
+}
+
+/*
+ * Display areas (the diagram, the formula) are nested plates, not wells — wells are for fields and tracks.
+ * Dark: one step up from the card; light: one step down into the page grey, edged by a hairline.
+ */
+.rdiag,
+.formula {
+  --display-bg: var(--surface-2);
+  background: var(--display-bg);
+  box-shadow: var(--plate-edge);
+}
+
+[data-mode="light"] :is(.rdiag, .formula) {
+  --display-bg: color-mix(in oklab, var(--bg) 70%, var(--surface));
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* Nodes are small raised plates with a hue ring, edges are hairlines. */
+.rdiag {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-l);
+}
+
+.rdiag__edge {
+  stroke: var(--line-2);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.rdiag__edge--mention {
+  stroke-dasharray: 3 3;
+}
+
+.rdiag__rel {
+  fill: var(--text-2);
+  font: 500 8.5px var(--font-ui);
+  letter-spacing: 0.04em;
+  paint-order: stroke;
+  stroke: var(--display-bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.rdiag__plate {
+  fill: var(--thumb-bg);
+  stroke: var(--hue);
+  stroke-width: 1.5;
+}
+
+.rdiag__node.is-hub .rdiag__plate {
+  stroke-width: 2;
+}
+
+.rdiag__core {
+  fill: var(--hue);
+}
+
+/* The level-3 mark: a gold hairline ring round the hub with an 8 px halo (bloom: none in light). */
+.rdiag__gold {
+  fill: none;
+  stroke: color-mix(in srgb, var(--res) 75%, transparent);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--res) var(--bloom), transparent));
+}
+
+[data-mode="light"] .rdiag__gold {
+  filter: none;
+}
+
+.rdiag__label {
+  fill: var(--text-2);
+  font: 500 10px var(--font-ui);
+  paint-order: stroke;
+  stroke: var(--display-bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.rdiag__node.is-hub .rdiag__label {
+  fill: var(--text);
+  font-weight: 600;
+}
+
+.rcluster__members {
+  --inset: calc(8px + 0.7rem);
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rmember {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr);
+  column-gap: 0.7rem;
+  padding: 0.6rem 0 0.65rem;
+  font-size: var(--fs-s);
+  line-height: 1.4;
+}
+
+.rmember__dot {
+  grid-row: span 3;
+  margin-top: 0.3rem;
+}
+
+.rmember__board {
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.4 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.rmember__title {
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.rmember__title:hover {
+  text-decoration: underline;
+}
+
+.rmember__meta {
+  margin-top: 0.1rem;
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.4 var(--font-mono);
+}
+
+.resonance__note {
+  max-width: 72ch;
+  margin: 2rem 0 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+}
+
+/* ───────── scoring ───────── */
+
+.scoring {
+  max-width: 1040px;
+}
+
+.scoring__card {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+  padding: 1.5rem 1.6rem 1.6rem;
+  color: var(--text-2);
+  font-size: var(--fs-m);
+  line-height: 1.6;
+}
+
+.scoring__card p {
+  margin: 0;
+}
+
+.scoring__h {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 0.15rem;
+  color: var(--text);
+  font: var(--weight-section) var(--fs-section) / 1.25 var(--font-display);
+  letter-spacing: var(--tracking-section);
+}
+
+/* The section glyph sits in a small well, like a keycap pressed into the plate. */
+.scoring__h > .icon {
+  box-sizing: content-box;
+  padding: 6px;
+  border-radius: 9px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+}
+
+.scoring__h3 {
+  margin: 0.75rem 0 0;
+  padding-top: 1.5rem;
+  box-shadow: inset 0 1px 0 var(--line);
+  color: var(--text);
+  font: 650 var(--fs-l) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
+}
+
+.scoring__hint {
+  color: var(--text-3);
+  font-size: var(--fs-s);
+}
+
+.scoring__list,
+.scoring__caps {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.scoring__list li::marker,
+.scoring__caps li::marker {
+  color: var(--text-3);
+}
+
+.scoring__caps strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.scoring__example {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text);
+  font-size: var(--fs-s);
+}
+
+.scoring__tabs {
+  position: relative;
+  overflow-x: auto;
+}
+
+.scoring__card > [role="tabpanel"] {
+  display: grid;
+  gap: 0.9rem;
+  min-width: 0;
+  border-radius: var(--radius-m);
+}
+
+/* The formula, typeset on a nested plate: rows aligned on "=", italic variables, stacked fractions over a hairline. */
+.formula {
+  display: grid;
+  grid-template-columns: max-content max-content minmax(0, max-content);
+  align-items: center;
+  gap: 1rem 0.6em;
+  margin: 0.15rem 0 0.35rem;
+  padding: 1.35rem 1.6rem;
+  overflow-x: auto;
+  border-radius: var(--radius-l);
+  color: var(--text);
+  font: 400 1.1875rem / 1.25 var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.formula__row {
+  display: contents;
+}
+
+.formula var {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.formula__row > var:first-child {
+  justify-self: end;
+}
+
+.formula__rhs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  white-space: nowrap;
+}
+
+.formula__fn {
+  color: var(--text-2);
+}
+
+.formula__op {
+  color: var(--text-3);
+}
+
+.formula__paren {
+  margin: -0.15em -0.22em 0;
+  color: var(--text-3);
+  font-size: 2.1em;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.frac {
+  display: inline-grid;
+  justify-items: center;
+  font-size: 0.9em;
+}
+
+.frac__n {
+  padding: 0 0.35em 0.22em;
+}
+
+.frac__d {
+  justify-self: stretch;
+  padding: 0.24em 0.35em 0;
+  box-shadow: inset 0 1px 0 var(--text-3);
+  text-align: center;
+}
+
+.frac .formula__op {
+  margin-right: 0.18em;
+}
+
+.formula__range {
+  margin-left: 0.9em;
+  padding: 0.2em 0.6em;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  box-shadow: var(--plate-edge), var(--elev-0);
+  color: var(--text-2);
+  font: 500 var(--fs-xs) / 1.3 var(--font-mono);
+}
+
+@media (max-width: 559px) {
+  .scoring__card {
+    padding: 1.15rem 1rem 1.25rem;
+  }
+
+  .formula {
+    padding: 1.1rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Weights: one well track per board, the signal segments set into it. */
+.weights__all {
+  display: grid;
+  gap: 1.35rem;
+  margin-top: 0.3rem;
+}
+
+.weights {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.weights__name {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font: 600 var(--fs-m) / 1.3 var(--font-ui);
+}
+
+.weights__bar {
+  display: flex;
+  height: 12px;
+  padding: 2px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+}
+
+.weights__seg {
+  height: 100%;
+  background: linear-gradient(180deg, var(--hl), var(--hl) 1px, transparent 1px) var(--seg);
+}
+
+.weights__seg + .weights__seg {
+  border-left: 1px solid var(--well);
+}
+
+.weights__seg:first-child {
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+}
+
+.weights__seg:last-child {
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+}
+
+.weights__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.weights__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.weights__legend .num {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+
+/* Signals: text on the left, the normalisation curve in a small well on the right. */
+.signals {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 156px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.1rem 0;
+}
+
+.signal + .signal {
+  box-shadow: inset 0 1px 0 var(--line);
+}
+
+.signal__text {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.signal__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);
+}
+
+.signal__name code {
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+}
+
+.signal__help {
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.55;
+}
+
+.signal__facts {
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.signal__via {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.curve {
+  box-sizing: border-box;
+  width: 156px;
+  height: auto;
+  padding: 10px 12px 4px;
+  overflow: visible;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+}
+
+.curve__axis {
+  stroke: var(--line-2);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.curve__cap {
+  stroke: var(--text-3);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.curve__area {
+  fill: color-mix(in srgb, var(--seg) 16%, transparent);
+}
+
+.curve__line {
+  fill: none;
+  stroke: var(--seg);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.curve__tick {
+  fill: var(--text-2);
+  font: 500 9px var(--font-mono);
+}
+
+@media (max-width: 559px) {
+  .signal {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .curve {
+    width: 180px;
+  }
+}
+
+/* Calculator: well inputs, then the result on a nested plate with the breakdown flat inside it. */
+.calc {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.calc__inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.25rem), 1fr));
+  gap: 0.9rem 1rem;
+}
+
+.calc__result {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.1rem 1.25rem 0.9rem;
+  border-radius: var(--radius-l);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.calc__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  color: var(--text-3);
+  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.calc__total strong {
+  color: var(--text);
+  font: 600 2.25rem / 1 var(--font-mono);
+  letter-spacing: -0.05em;
+  text-transform: none;
+}
+
+/* The big total above says it; the bar's own total would repeat it. */
+.calc__result .scorebar__total {
+  display: none;
+}
+
+.calc__result .scoretable {
+  margin: 0.35rem 0 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.calc__result .scoretable th:first-child {
+  padding-left: 0;
+}
+
+.calc__result .scoretable th:last-child,
+.calc__result .scoretable td:last-child {
+  padding-right: 0;
+}
+
+.calc__result .scoretable__helprow > td {
+  padding-left: calc(8px + 0.5rem);
+  padding-right: 0;
+}
+
+.calc__parity {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.calc__parity.is-ok .icon {
+  color: var(--ok);
+}

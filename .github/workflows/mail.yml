@@ -1,0 +1,147 @@
+# Scheduled e-mail (DESIGN §15.2, docs/CHANNELS.md). Every half hour a tiny gate job decides in seconds whether a
+# mail is due — no dependency install — and only then does the send job install, render and send.
+#
+# Setup (Settings › Delivery in the web app does all of this for you):
+#   variable RESONANCE_MAIL   JSON with the keys of config.yaml › mail, e.g.
+#                             {"enabled":true,"time":"08:30","timezone":"Asia/Shanghai","lang":"zh","preset":"qq"}
+#   secrets  MAIL_TO          recipients, comma-separated (a secret so it is masked in public logs)
+#            SMTP_USER + SMTP_PASS   the mailbox and its SMTP code (QQ / 163 授权码, Gmail app password)
+#            or RESEND_API_KEY [+ variable RESEND_FROM for a verified domain]
+#   optional variables SITE_URL (custom domain) or BASE_PATH (same meaning as in daily.yml)
+name: Mail
+
+on:
+  schedule:
+    # Off the hour on purpose: GitHub delays and drops runs at :00. Local send times are resolved by the gate.
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Send now, even if it is not the send time or this slot was already sent
+        type: boolean
+        default: false
+      test:
+        description: Send a test mail of the newest edition now (records nothing)
+        type: boolean
+        default: false
+      slot:
+        description: Edition (YYYY-MM-DD) or week (YYYY-Www) to send; empty = decided by the schedule
+        type: string
+        default: ''
+
+# Two runs must never decide on the same state at once; queue them.
+concurrency:
+  group: mail
+  cancel-in-progress: false
+
+permissions: {}
+
+env:
+  DATA_BRANCH: data
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read # state/mail.json on the data branch
+      actions: write # weekly keep-alive
+    outputs:
+      due: ${{ steps.gate.outputs.due }}
+      slot: ${{ steps.gate.outputs.slot }}
+      site: ${{ steps.site.outputs.url }}
+    steps:
+      - name: Check out the gate only
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            config.yaml
+            packages/channels/src/mail
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Resolve the site URL
+        id: site
+        env:
+          SITE_URL_OVERRIDE: ${{ vars.SITE_URL }}
+          BASE_PATH_OVERRIDE: ${{ vars.BASE_PATH }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          set -euo pipefail
+          if [ -n "$SITE_URL_OVERRIDE" ]; then
+            url="${SITE_URL_OVERRIDE%/}/"
+          else
+            if [ -n "$BASE_PATH_OVERRIDE" ]; then
+              base="/${BASE_PATH_OVERRIDE#/}"
+              base="${base%/}/"
+            elif [[ "${GITHUB_REPOSITORY,,}" == */*.github.io ]]; then
+              base="/" # user/organisation site: served from the domain root
+            else
+              base="/${GITHUB_REPOSITORY#*/}/" # project site: https://<owner>.github.io/<repo>/
+            fi
+            url="https://${OWNER,,}.github.io${base}"
+          fi
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Is a mail due?
+        id: gate
+        env:
+          RESONANCE_MAIL: ${{ vars.RESONANCE_MAIL }}
+          SITE_URL: ${{ steps.site.outputs.url }}
+          GITHUB_TOKEN: ${{ github.token }}
+          MAIL_FORCE: ${{ inputs.force }}
+          MAIL_TEST: ${{ inputs.test }}
+          MAIL_SLOT: ${{ inputs.slot }}
+        run: node packages/channels/src/mail/gate.ts
+
+      - name: Keep the schedule alive (Mondays)
+        # Public repos lose scheduled workflows after 60 days without activity; re-enabling an enabled workflow resets
+        # the timer (community-proven, docs/VERIFIED.md › v2 › e-mail). Idempotent, so a few calls on Monday are fine.
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(date -u +%u)" = 1 ] && [ "$(date -u +%H)" -lt 6 ]; then
+            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/mail.yml/enable" || echo "::warning::keep-alive failed"
+          fi
+
+  send:
+    needs: gate
+    if: needs.gate.outputs.due == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # record the send in state/mail.json (Contents API)
+      issues: write # open / close the mail-failure issue
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install the mail job's dependencies only
+        run: pnpm install --frozen-lockfile --filter "@resonance/channels..."
+
+      # Inputs reach the script as environment variables, never through the shell.
+      - name: Render and send
+        env:
+          RESONANCE_MAIL: ${{ vars.RESONANCE_MAIL }}
+          RESEND_FROM: ${{ vars.RESEND_FROM }}
+          SITE_URL: ${{ needs.gate.outputs.site }}
+          MAIL_SLOT: ${{ needs.gate.outputs.slot }}
+          MAIL_TEST: ${{ inputs.test }}
+          MAIL_FORCE: ${{ inputs.force }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node packages/channels/src/mail/cli.ts

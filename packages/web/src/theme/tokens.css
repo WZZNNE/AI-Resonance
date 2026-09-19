@@ -1,0 +1,442 @@
+/* biome-ignore-all lint/complexity/noImportantStyles: reduced-motion overrides must beat every component animation */
+/*
+ * Design tokens — "Titanium × Signal" (docs/VISUAL.md). Everything visual reads these custom properties; presets
+ * (presets.css) and user overrides (Settings › Appearance, window.ResonanceTheme, public/custom.css) only change values,
+ * never selectors.
+ *
+ * <html> carries: data-preset (titanium | paper | terminal), data-mode (light | dark), data-density
+ * (compact | comfortable | cozy), optional data-motion (reduce | full), optional --font-scale / --accent.
+ * The default below is titanium dark; titanium light is the [data-mode="light"] block; presets.css overrides colours.
+ *
+ * Materials (plate / well / glass / press / glow) are recipes DERIVED from the colour tokens with color-mix(), so a
+ * preset that only sets colours gets the same depth system. Light comes from the top.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ── colour roles (titanium dark) ── */
+  --bg: #07080b;
+  --bg-2: #0b0d11;
+  --surface: #111318;
+  --surface-2: #171a21;
+  --surface-3: #1e222b;
+  --well: #050608;
+  --line: rgb(255 255 255 / 0.07);
+  --line-2: rgb(255 255 255 / 0.12);
+  --text: #f2f3f5;
+  --text-2: #aeb4bf;
+  --text-3: #868d9a;
+  --accent: #0a84ff;
+  /* Filled accent (primary buttons): #0a84ff under white text is 3.6:1, so dark mode fills one step deeper (4.7:1). */
+  --accent-fill: color-mix(in oklab, var(--accent) 90%, black);
+  --accent-2: color-mix(in oklab, var(--accent) 88%, white);
+  --accent-ink: #ffffff;
+  --signal: #64d2ff;
+  --signal-2: #bf5af2;
+  --signal-line: linear-gradient(90deg, var(--signal), var(--signal-2));
+  /* The signal as text or icon colour (≥ 4.5:1 in both modes). */
+  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
+  --focus: var(--signal);
+  --ok: #30d158;
+  --warn: #ffd60a;
+  --danger: #ff453a;
+  --info: #64d2ff;
+  --live: #ff453a;
+  --res: #ffd60a;
+  --up: var(--ok);
+  --down: var(--danger);
+  --knob: #ffffff;
+  --scrim: rgb(0 0 0 / 0.45);
+
+  /* ── meaning: boards, categories, signals ── */
+  --hue-repos: #30d158;
+  --hue-papers: #bf5af2;
+  --hue-news: #ff9f0a;
+  --hue-social: #0a84ff;
+  --hue-labs: #ff375f;
+
+  --cat-release: #30d158;
+  --cat-product: #64d2ff;
+  --cat-research: #bf5af2;
+  --cat-tool: #ffd60a;
+  --cat-engineering: #0a84ff;
+  --cat-discussion: #98989d;
+  --cat-industry: #ff9f0a;
+  --cat-policy: #ff453a;
+
+  --sig-1: #5e5ce6;
+  --sig-2: #30d158;
+  --sig-3: #ffd60a;
+  --sig-4: #ff375f;
+  --sig-5: #64d2ff;
+  --sig-6: #bf5af2;
+  --sig-7: #ac8e68;
+  --sig-8: #8e8e93;
+
+  /* ── materials (VISUAL §3): derived, per mode ── */
+  --plate-bg: linear-gradient(180deg, color-mix(in oklab, var(--surface) 94%, white) 0%, var(--surface) 42%);
+  --plate-edge: inset 0 1px 0 rgb(255 255 255 / 0.07), inset 0 0 0 1px rgb(255 255 255 / 0.045);
+  /* Tiny contact shadow for small plates (chips, keycaps). */
+  --elev-0: 0 1px 1px rgb(0 0 0 / 0.3);
+  --elev-1: 0 1px 1px rgb(0 0 0 / 0.35), 0 10px 28px -14px rgb(0 0 0 / 0.65);
+  --elev-2: 0 2px 4px rgb(0 0 0 / 0.4), 0 22px 44px -18px rgb(0 0 0 / 0.75);
+  --elev-3: 0 4px 12px rgb(0 0 0 / 0.45), 0 32px 80px -16px rgb(0 0 0 / 0.8);
+  --well-bg: var(--well);
+  --well-edge: inset 0 1px 2px rgb(0 0 0 / 0.55), inset 0 0 0 1px rgb(0 0 0 / 0.45), 0 1px 0 rgb(255 255 255 / 0.05);
+  --glass-bg: color-mix(in srgb, var(--surface) 64%, transparent);
+  --glass-blur: saturate(1.8) blur(24px);
+  --glass-edge: inset 0 1px 0 rgb(255 255 255 / 0.08), inset 0 0 0 1px rgb(255 255 255 / 0.06);
+  --press: inset 0 2px 5px rgb(0 0 0 / 0.5), inset 0 0 0 1px rgb(0 0 0 / 0.4);
+  /* The raised thumb of segmented controls / tabs / the tab bar: one step brighter than the plate it sits on. */
+  --thumb-bg: color-mix(in oklab, var(--surface-3) 88%, white);
+  --knob-shadow: 0 2px 4px rgb(0 0 0 / 0.3), 0 0 0 0.5px rgb(0 0 0 / 0.08);
+  /* Off switch track: a well with a little light in it, so the channel reads next to the white knob (iOS fill). */
+  --switch-off: color-mix(in oklab, var(--text) 26%, var(--well));
+  /* Top-light on coloured fills (score segments, primary buttons). */
+  --hl: rgb(255 255 255 / 0.22);
+
+  /* ── glow budget (VISUAL §5): only focus, active nav, live dot, score segments, hue dots, resonance, switch ── */
+  --glow:
+    0 0 0 1px color-mix(in oklab, var(--signal) 55%, transparent),
+    0 0 16px -2px color-mix(in oklab, var(--signal) 45%, transparent);
+  /* Focus ring (every interactive element, via :focus-visible) and its inset twin for rows inside scrollers. */
+  --ring: var(--glow);
+  --ring-inset: inset 0 0 0 1.5px color-mix(in oklab, var(--signal) 70%, transparent);
+  /* Bloom strength for coloured marks: 45 % in dark, 0 in light (light gets halos, not bloom). */
+  --bloom: 45%;
+
+  /* ── page background (VISUAL §4) ── */
+  --spill: radial-gradient(
+    1200px 520px at 50% -260px,
+    color-mix(in srgb, var(--signal) 7%, transparent),
+    transparent 70%
+  );
+  /* Legacy name of the page light (theme files and forks set `--aurora: none`). */
+  --aurora: var(--spill);
+  --grid-dot: color-mix(in srgb, var(--text) 3.5%, transparent);
+  --grid: radial-gradient(var(--grid-dot) 1px, transparent 1.3px) 0 0 / 24px 24px;
+
+  /* ── legacy aliases (components written before the material system) ── */
+  --header-bg: var(--glass-bg);
+  --shadow-1: var(--elev-1);
+  --shadow-2: var(--elev-2);
+  --inset: inset 0 1px 0 rgb(255 255 255 / 0.06);
+
+  /* ── type (VISUAL §6) ── */
+  --font-ui:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", "PingFang SC",
+    "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Noto Sans CJK SC", system-ui, sans-serif;
+  --font-display:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", "PingFang SC",
+    "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Noto Sans CJK SC", system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-serif:
+    "Iowan Old Style", "Charter", "Georgia", "Cambria", "Songti SC", "STSong", "Noto Serif CJK SC",
+    "Source Han Serif SC", "SimSun", serif;
+  --font-text: var(--font-ui);
+  --font-num: var(--font-display);
+  --weight-title: 600;
+  --weight-section: 650;
+  --weight-display: 700;
+  --tracking-display: -0.025em;
+  --tracking-hero: -0.035em;
+  --tracking-section: -0.02em;
+  --tracking-title: -0.01em;
+  --tracking-eyebrow: 0.06em;
+
+  --font-scale: 1;
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-s: 0.8125rem;
+  --fs-m: 0.9375rem;
+  --fs-l: 1.0625rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.5rem;
+  --fs-rank: 2.125rem;
+  /* Roles */
+  --fs-hero: clamp(2.25rem, 1.3rem + 3.2vw, 3.75rem);
+  --fs-section: 1.375rem;
+  --fs-board: 1.0625rem;
+  --fs-item: 1rem;
+  --fs-body: 0.9375rem;
+  --fs-meta: 0.8125rem;
+  --fs-eyebrow: 0.75rem;
+  --lh-tight: 1.25;
+  --lh-title: 1.35;
+  --lh: 1.55;
+
+  /* ── space, shape (VISUAL §7) ── */
+  --density: 1;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --pad-card: calc(0.875rem * var(--density));
+  --gap-list: calc(0.875rem * var(--density));
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 18px;
+  --radius-xl: 22px;
+  --radius-2xl: 30px;
+  --radius-pill: 999px;
+  --border: 1px solid var(--line);
+  --target: 44px;
+
+  /* ── motion ── */
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-pop: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --dur-1: 160ms;
+  --dur-2: 240ms;
+  --dur-3: 420ms;
+
+  /* ── layout ── */
+  --header-h: 60px;
+  --tabbar-h: 62px;
+  /* What the floating tab bar covers at the bottom of a phone screen (pages pad by this). */
+  --tabbar-space: calc(var(--tabbar-h) + 10px + env(safe-area-inset-bottom));
+  --maxw: 1520px;
+  --gutter: 16px;
+  --z-header: 30;
+  --z-overlay: 60;
+  --z-toast: 80;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --gutter: 32px;
+    --fs-item: 1.0625rem;
+  }
+}
+
+/* titanium light */
+:root[data-mode="light"] {
+  color-scheme: light;
+  --bg: #f5f5f7;
+  --bg-2: #ececf0;
+  --surface: #ffffff;
+  --surface-2: #fbfbfd;
+  --surface-3: #f2f2f6;
+  --well: #ebebf0;
+  --line: rgb(0 0 0 / 0.08);
+  --line-2: rgb(0 0 0 / 0.14);
+  --text: #1d1d1f;
+  --text-2: #424245;
+  --text-3: #6e6e73;
+  /* VISUAL.md says #0071e3; that is 4.3:1 on --bg, so text-accent is one notch deeper (4.7:1, 5.2:1 under white). */
+  --accent: #006bd6;
+  --accent-fill: var(--accent);
+  --accent-2: color-mix(in oklab, var(--accent) 90%, white);
+  --accent-ink: #ffffff;
+  --signal: #0a84ff;
+  --signal-2: #8944ab;
+  --ok: #248a3d;
+  --warn: #b25000;
+  --danger: #d70015;
+  --info: #0066cc;
+  --live: #d70015;
+  --res: #a05a00;
+  --scrim: rgb(0 0 0 / 0.2);
+
+  --hue-repos: #248a3d;
+  --hue-papers: #8944ab;
+  --hue-news: #c93400;
+  --hue-social: #0066cc;
+  --hue-labs: #d30f45;
+
+  --cat-release: #248a3d;
+  --cat-product: #0071a4;
+  --cat-research: #8944ab;
+  --cat-tool: #a05a00;
+  --cat-engineering: #0066cc;
+  --cat-discussion: #6c6c70;
+  --cat-industry: #c93400;
+  --cat-policy: #d70015;
+
+  --sig-1: #5856d6;
+  --sig-2: #34c759;
+  --sig-3: #ffcc00;
+  --sig-4: #ff2d55;
+  --sig-5: #32ade6;
+  --sig-6: #af52de;
+  --sig-7: #a2845e;
+  --sig-8: #8e8e93;
+
+  --plate-bg: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--surface) 60%, white) 0%,
+    color-mix(in oklab, var(--surface) 97%, var(--bg-2)) 100%
+  );
+  --plate-edge: inset 0 1px 0 rgb(255 255 255 / 0.9), inset 0 0 0 1px rgb(0 0 0 / 0.06);
+  --elev-0: 0 1px 1px rgb(0 0 0 / 0.05);
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -10px rgb(0 0 0 / 0.1);
+  --elev-2: 0 2px 6px rgb(0 0 0 / 0.06), 0 18px 40px -16px rgb(0 0 0 / 0.16);
+  --elev-3: 0 4px 12px rgb(0 0 0 / 0.08), 0 32px 80px -24px rgb(0 0 0 / 0.28);
+  --well-edge: inset 0 1px 2px rgb(0 0 0 / 0.08), inset 0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 0 rgb(255 255 255 / 0.9);
+  --glass-bg: color-mix(in srgb, var(--surface) 72%, transparent);
+  --glass-edge: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 0 0 1px rgb(0 0 0 / 0.06);
+  --press: inset 0 2px 5px rgb(0 0 0 / 0.12), inset 0 0 0 1px rgb(0 0 0 / 0.08);
+  --thumb-bg: var(--surface);
+  --knob-shadow: 0 2px 4px rgb(0 0 0 / 0.2), 0 0 0 0.5px rgb(0 0 0 / 0.06);
+  --switch-off: color-mix(in oklab, var(--text) 5%, var(--well));
+  --hl: rgb(255 255 255 / 0.3);
+
+  --glow: 0 0 0 3px color-mix(in oklab, var(--signal) 22%, transparent);
+  /* A 3 px 22 % halo alone is ~1.3:1 on white; the 1 px core line keeps the focus indicator visible (≥ 3:1). */
+  --ring: 0 0 0 1px var(--signal), 0 0 0 4px color-mix(in oklab, var(--signal) 22%, transparent);
+  --ring-inset: inset 0 0 0 1.5px var(--signal);
+  --bloom: 0%;
+
+  --spill: none;
+  --inset: inset 0 1px 0 rgb(255 255 255 / 0.9);
+}
+
+/* No backdrop-filter: glass becomes a near-opaque surface (never unreadable). After the mode blocks so it wins. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root,
+  :root[data-mode] {
+    --glass-bg: color-mix(in srgb, var(--surface) 96%, transparent);
+  }
+}
+
+[data-density="compact"] {
+  --density: 0.78;
+  --fs-rank: 1.75rem;
+}
+
+[data-density="cozy"] {
+  --density: 1.2;
+}
+
+/* Reduced motion: the setting wins; "system" follows the OS. */
+[data-motion="reduce"] {
+  --dur-1: 0ms;
+  --dur-2: 0ms;
+  --dur-3: 0ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion="full"]) {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
+  }
+}
+
+/* ── base ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(100% * var(--font-scale));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+html[data-modal] {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 var(--fs-m) / var(--lh) var(--font-ui);
+  font-feature-settings: "kern", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:lang(zh) body,
+body:lang(zh) {
+  --lh: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/*
+ * Focus = the signal ring (VISUAL §5.1), drawn as a shadow so it follows every radius. `:root` lifts it above
+ * single-class component shadows; primitives that have their own shadow add the ring to it in ui.css. The
+ * transparent outline is what forced-colors mode shows.
+ */
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+:root :focus-visible {
+  box-shadow: var(--ring);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--signal) 32%, transparent);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion="full"]) *,
+  :root:not([data-motion="full"]) *::before,
+  :root:not([data-motion="full"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+[data-motion="reduce"] *,
+[data-motion="reduce"] *::before,
+[data-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@resonance/channels",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Everything that delivers the data: typed API client, agent tool descriptors, MCP stdio server, dsh seam, the interactive HTML report renderer and the scheduled e-mail job.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tools": "./src/tools.ts",
+    "./dsh": "./src/dsh.ts",
+    "./report": "./src/report/index.ts"
+  },
+  "bin": {
+    "resonance-mcp": "./src/mcp.ts"
+  },
+  "scripts": {
+    "mcp": "node src/mcp.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "mail": "node src/mail/cli.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@resonance/schema": "workspace:*",
+    "zod": "catalog:",
+    "nodemailer": "^10.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

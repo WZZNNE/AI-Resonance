@@ -1,0 +1,229 @@
+/*
+ * Export view (docs/VISUAL.md): options in a grouped plate on the left, the file on the right (stacked below 900 px) —
+ * a document glyph, a recessed readout of size and counts in mono, and one primary download.
+ */
+
+.export__lead {
+  margin: 0.6rem 0 0;
+  max-width: 62ch;
+  color: var(--text-2);
+  font-size: var(--fs-m);
+  line-height: 1.6;
+}
+
+.export .page__head .kicker {
+  margin-bottom: 0.5rem;
+}
+
+.export__layout {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 1080px;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .export__layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .export__out {
+    position: sticky;
+    top: calc(var(--header-h) + 1.25rem);
+  }
+}
+
+/* The kind of export: a full-width segmented track with equal segments. */
+.export__kind > .segmented {
+  display: flex;
+  width: 100%;
+}
+
+.export__kind .segmented__opt {
+  flex: 1 1 0;
+  min-height: 34px;
+}
+
+.export__range {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 0.75rem;
+}
+
+.export__count {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.export__count.is-err {
+  color: color-mix(in oklab, var(--danger) 80%, var(--text));
+}
+
+.export__boards {
+  /* A fieldset for its grouping semantics, without the browser frame. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+/* ── the file ── */
+
+.export__out {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-l);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.export__busy {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--text-3);
+  font-size: var(--fs-s);
+}
+
+.export__card {
+  display: grid;
+  gap: 1rem;
+}
+
+.export__file {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+}
+
+/* Document glyph: a small raised sheet with three text lines and a mono extension tag. */
+.export__doc {
+  position: relative;
+  display: grid;
+  flex: none;
+  align-items: end;
+  justify-items: center;
+  width: 42px;
+  height: 52px;
+  padding-bottom: 7px;
+  border-radius: 7px;
+  background: var(--thumb-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.export__doc::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  width: 24px;
+  height: 11px;
+  background:
+    linear-gradient(var(--line-2), var(--line-2)) 0 0 / 100% 2px no-repeat,
+    linear-gradient(var(--line-2), var(--line-2)) 0 4.5px / 80% 2px no-repeat,
+    linear-gradient(var(--line-2), var(--line-2)) 0 9px / 90% 2px no-repeat;
+}
+
+.export__ext {
+  color: var(--signal-text);
+  font: 700 8.5px / 1 var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+.export__fileinfo {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.export__fileinfo .settings__hint {
+  margin: 0;
+}
+
+.export__name {
+  margin: 0;
+  font: 500 var(--fs-s) / 1.35 var(--font-mono);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+/* Readout: a recessed strip, one column per fact, hairline dividers, numbers in mono. */
+.export__facts {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+}
+
+.export__facts div {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.75rem 1rem 0.8rem;
+}
+
+.export__facts div + div {
+  box-shadow: inset 1px 0 0 var(--line);
+}
+
+.export__facts dt {
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.export__facts dd {
+  margin: 0;
+  color: var(--text);
+  font: 600 var(--fs-xl) / 1.1 var(--font-mono);
+  letter-spacing: -0.03em;
+}
+
+.export__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.export__download {
+  flex: 1 1 10rem;
+}
+
+.export__hosted {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  padding-top: 1rem;
+  box-shadow: inset 0 1px 0 var(--line);
+  font-size: var(--fs-s);
+}
+
+.export__hostedicon {
+  margin-top: 0.15rem;
+  color: var(--text-3);
+}
+
+.export__hostedtext {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.export__hostedtext .settings__hint {
+  margin: 0;
+}

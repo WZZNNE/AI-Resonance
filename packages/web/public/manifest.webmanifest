@@ -1,0 +1,41 @@
+{
+  "id": "./",
+  "name": "AI Resonance",
+  "short_name": "Resonance",
+  "description": "Daily top AI repos, papers, Hacker News stories, community posts and lab updates — ranked by a score you can audit, linked across sources.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090c12",
+  "theme_color": "#090c12",
+  "categories": ["news", "productivity", "developer"],
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Resonance",
+      "short_name": "Resonance",
+      "url": "./#/resonance",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Archive",
+      "short_name": "Archive",
+      "url": "./#/archive",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Weekly recap",
+      "short_name": "Weekly",
+      "url": "./#/weekly",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

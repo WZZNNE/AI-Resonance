@@ -1,0 +1,18 @@
+packages:
+  - packages/*
+
+# One place for shared versions; packages reference them as "catalog:".
+catalog:
+  typescript: ^7.0.2
+  vitest: ^5.0.1
+  vite: ^8.3.0
+  '@types/node': ^24.0.0
+  zod: ^4.6.5
+  yaml: ^2.9.1
+
+minimumReleaseAgeExclude:
+  - '@anthropic-ai/sdk@0.127.0'
+
+onlyBuiltDependencies:
+  - esbuild
+  - '@biomejs/biome'

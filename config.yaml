@@ -1,0 +1,364 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  AI Resonance — the one file a fork needs to edit.
+#  Change the topic (keywords / topics / categories) and you have a daily radar
+#  for Rust, bioinformatics, robotics … The scoring formula below is published
+#  verbatim to the site's "How scoring works" page.
+# ─────────────────────────────────────────────────────────────────────────────
+
+site:
+  name: AI Resonance
+  tagline:
+    en: What AI builders, researchers and hackers are all looking at today.
+    zh: 今天，AI 的开发者、研究者和极客们都在看什么。
+  # Your copy: set repoUrl to your repository and siteUrl to '' (CI then derives https://<owner>.github.io/<repo>/).
+  repoUrl: https://github.com/WZZNNE/AI-Resonance     # footer, Settings › Delivery, User-Agent contact URL
+  siteUrl: https://wzznne.github.io/AI-Resonance/     # feeds, e-mail links, llms.txt; wins over the SITE_URL variable
+  defaultLang: zh             # en | zh — first-visit language when the browser gives no hint
+  theme:
+    preset: titanium          # titanium | paper | terminal — see docs/CUSTOMIZE.md
+    accent: ''                # any CSS colour; empty = preset default
+
+# What "a day" is. Edition D = [D cutoff, D+1 cutoff) in this timezone — by default one full US-Pacific day.
+# Timestamped items (HN, Reddit, X, lab posts, arXiv) are placed by their own time; GitHub star gains are measured
+# between cutoffs. `settleHours` after the cutoff, engagement is re-read so late posts are judged fairly.
+edition:
+  timezone: America/Los_Angeles   # try America/New_York or Asia/Shanghai
+  cutoff: '00:00'
+  settleHours: 8
+
+retention:
+  days: 183                   # half a year of trend memory
+  candidatesPerBoard: 60      # raw candidates kept per board per day (bounds repo size)
+
+# What counts as "on topic". Used by the classifier for repos and news.
+# Papers are on topic by construction (they come from the categories listed under sources).
+topic:
+  minRelevance: 0.35
+  strongKeywords:             # any one of these in title/description ⇒ clearly on topic
+    - llm
+    - large language model
+    - language model
+    - generative ai
+    - genai
+    - machine learning
+    - deep learning
+    - neural network
+    - transformer
+    - diffusion model
+    - reinforcement learning
+    - fine-tuning
+    - finetuning
+    - rag
+    - retrieval-augmented
+    - ai agent
+    - agentic
+    - multi-agent
+    - mcp
+    - model context protocol
+    - prompt engineering
+    - text-to-image
+    - text-to-video
+    - text-to-speech
+    - speech recognition
+    - computer vision
+    - embedding
+    - vector database
+    - inference engine
+    - gpt
+    - chatgpt
+    - openai
+    - anthropic
+    - claude
+    - gemini
+    - deepseek
+    - qwen
+    - llama                   # also matches llama.cpp
+    - mistral
+    - kimi
+    - glm
+    - grok
+    - codex
+    - gemma
+    - ollama
+    - vllm
+    - hugging face
+    - huggingface
+    - stable diffusion
+    - copilot
+    - agi
+    - 大模型
+    - 智能体
+  weakKeywords:               # need two of these, or one plus a matching topic/domain
+    - ai
+    - agent
+    - agents
+    - model
+    - models
+    - inference
+    - training
+    - gpu
+    - cuda
+    - nvidia
+    - benchmark
+    - reasoning
+    - chatbot
+    - assistant
+    - alignment
+    - tokens
+    - robotics
+    - autonomous
+  githubTopics:
+    - ai
+    - artificial-intelligence
+    - machine-learning
+    - deep-learning
+    - llm
+    - llms
+    - large-language-models
+    - generative-ai
+    - agents
+    - ai-agents
+    - rag
+    - mcp
+    - nlp
+    - computer-vision
+    - diffusion
+    - transformers
+    - pytorch
+    - reinforcement-learning
+    - multimodal
+    - text-to-speech
+    - speech-recognition
+    - vector-database
+    - inference
+    - fine-tuning
+  domains:                    # a story from one of these hosts is on topic
+    - openai.com
+    - anthropic.com
+    - deepmind.google
+    - ai.google
+    - ai.meta.com
+    - huggingface.co
+    - arxiv.org
+    - mistral.ai
+    - deepseek.com
+    - x.ai
+    - stability.ai
+    - together.ai
+    - simonwillison.net
+    - lmsys.org
+    - lmarena.ai
+  exclude:                    # a match here vetoes the item
+    - awesome-list-of-jobs
+
+sources:
+  githubTrending:
+    enabled: true
+    since: daily
+    languages: ['', python, typescript, rust, go, jupyter-notebook, c++]   # '' = all languages
+  githubSearch:
+    enabled: true
+    # One qualifier set per query: GitHub rejects OR between qualifiers (422). {{d-N}} = today minus N days.
+    queries:
+      - 'created:>{{d-7}} stars:>100'                     # fresh & hot; new repos often have no topics yet
+      - 'created:>{{d-30}} pushed:>{{d-2}} stars:>300'
+      - 'llm OR agent OR ai in:name,description,topics created:>{{d-30}} stars:>200'
+      - 'topic:llm pushed:>{{d-7}} created:>{{d-365}}'
+      - 'topic:ai-agents pushed:>{{d-7}} created:>{{d-365}}'
+      - 'topic:mcp pushed:>{{d-7}} created:>{{d-365}}'
+      - 'topic:rag pushed:>{{d-7}} created:>{{d-365}}'
+      - 'topic:generative-ai pushed:>{{d-7}} created:>{{d-365}}'
+    perQuery: 50
+  hfPapers:
+    enabled: true
+    days: 4                   # look back this many daily lists (weekends are empty)
+    prior: 1.0
+  arxiv:
+    enabled: true
+    categories: [cs.AI, cs.CL, cs.LG, cs.CV]
+    max: 200
+    prior: 0.3
+  journals:                   # any RSS/Atom feed of a journal or proceedings
+    enabled: true
+    prior: 0.8
+    feeds:
+      - { id: nature-mi, name: Nature Machine Intelligence, url: 'https://www.nature.com/natmachintell.rss' }
+      - { id: jmlr, name: JMLR, url: 'https://www.jmlr.org/jmlr.xml' }
+      - { id: jair, name: JAIR, url: 'https://www.jair.org/index.php/jair/gateway/plugin/WebFeedGatewayPlugin/atom' }
+  hackerNews:
+    enabled: true
+    hours: 48                 # fetch window; late bloomers keep being tracked until their edition settles
+    minPoints: 10
+
+  # Reddit. The unauthenticated .json API answers 403; RSS works but carries no vote counts (items are then ranked by
+  # their position in each community's Top-Today list) and allows ~1 request/minute. Set REDDIT_CLIENT_ID and
+  # REDDIT_CLIENT_SECRET (an approved Reddit app) to get real scores and comment counts.
+  reddit:
+    enabled: true
+    mode: auto                # auto | oauth | rss
+    username: ''              # your Reddit name, used in the honest User-Agent Reddit asks for
+    subreddits:               # same `group` = fetched in one combined feed; keep giants and small subs apart
+      - { name: singularity,     group: 0, weight: 0.9, flairDeny: [Meme] }
+      - { name: OpenAI,          group: 0, weight: 1.0 }
+      - { name: ClaudeAI,        group: 0, weight: 0.9, flairDeny: [Humor] }
+      - { name: artificial,      group: 0, weight: 0.9 }
+      - { name: LocalLLaMA,      group: 1, weight: 1.3, flairDeny: [Funny, 'Question | Help'] }
+      - { name: StableDiffusion, group: 1, weight: 0.8 }
+      - { name: GeminiAI,        group: 1, weight: 0.9 }
+      - { name: DeepSeek,        group: 1, weight: 1.0 }
+      - { name: MachineLearning, group: 2, weight: 1.4 }
+      - { name: LLMDevs,         group: 2, weight: 1.1 }
+      - { name: mlscaling,       group: 2, weight: 1.0 }
+      - { name: ClaudeCode,      group: 2, weight: 0.9, enabled: false }
+    commentsPerPost: 8
+    commentsForTop: 5
+    minIntervalHours: 6
+
+  # X. There is no free API in 2026: the official pay-per-use API costs about $20–30/month for this watch list
+  # (set a spending limit in console.x.com); twitterapi.io / SocialData are cheaper but unofficial. `syndication` is free
+  # and experimental: fresh only for business-verified organisation accounts. See docs/VERIFIED.md › v2 › X.
+  # `auto`: with no secret, the free feed covers the official lab accounts only (personal accounts such as
+  # @thsottiaux are skipped); add the repository secret X_BEARER_TOKEN and the next run uses the official API for the
+  # whole list, within `monthlyUsdCap`. Or pin: xapi | twitterapi_io (TWITTERAPI_IO_KEY) | socialdata | syndication.
+  x:
+    enabled: true
+    provider: auto
+    linked: true              # free: X posts linked from HN / Reddit / lab pages are shown via oEmbed either way
+    maxPostsPerRun: 300
+    monthlyUsdCap: 20
+    accounts:
+      - { handle: OpenAI,          id: '4398626122',          group: lab, org: openai }
+      - { handle: OpenAIDevs,      id: '1633874951508721686', group: lab, org: openai }
+      - { handle: AnthropicAI,     id: '1353836358901501952', group: lab, org: anthropic }
+      - { handle: claudeai,        id: '1943306828697550848', group: lab, org: anthropic }
+      - { handle: GoogleDeepMind,  id: '4783690002',          group: lab, org: google }
+      - { handle: GoogleAI,        id: '33838201',            group: lab, org: google }
+      - { handle: GoogleAIStudio,  id: '1742923424056713217', group: lab, org: google }
+      - { handle: GeminiApp,       id: '1806359170830172162', group: lab, org: google }
+      - { handle: deepseek_ai,     id: '1714580962569588736', group: lab, org: deepseek }
+      - { handle: Zai_org,         id: '1726486879456096256', group: lab, org: zhipu }
+      - { handle: Kimi_Moonshot,   id: '1863959670169501696', group: lab, org: kimi }
+      - { handle: SpaceXAI,        id: '1661523610111193088', group: lab, org: xai, note: 'renamed from @xai in July 2026' }
+      - { handle: grok,            id: '1720665183188922368', group: lab, org: xai, weight: 0.6 }
+      - { handle: MistralAI,       id: '1667249535519805451', group: lab, org: mistral }
+      - { handle: Alibaba_Qwen,    id: '1753339277386342400', group: lab, org: qwen }
+      - { handle: AIatMeta,        id: '1034844617261248512', group: lab, org: meta }
+      - { handle: MiniMax_AI,      id: '1875078099538423808', group: lab, org: minimax }
+      - { handle: thsottiaux,      id: '1953337039510003712', group: person, org: openai, weight: 1.0, note: 'Tibo — Codex & ChatGPT at OpenAI' }
+      - { handle: sama,            id: '1605',                group: person, org: openai, weight: 1.0 }
+      - { handle: gdb,             id: '162124540',           group: person, org: openai, weight: 0.9 }
+      - { handle: markchen90,                                 group: person, org: openai, weight: 0.8 }
+      - { handle: polynoamial,                                group: person, org: openai, weight: 0.8 }
+      - { handle: DarioAmodei,     id: '874126509245476864',  group: person, org: anthropic, weight: 1.0 }
+      - { handle: alexalbert__,                               group: person, org: anthropic, weight: 0.8 }
+      - { handle: bcherny,         id: '159337660',           group: person, org: anthropic, weight: 0.9, note: 'Claude Code' }
+      - { handle: OfficialLoganK,  id: '284333988',           group: person, org: google, weight: 0.9 }
+      - { handle: demishassabis,                              group: person, org: google, weight: 0.9 }
+      - { handle: karpathy,        id: '33836629',            group: person, weight: 1.0 }
+      - { handle: simonw,          id: '12497',               group: person, weight: 0.9 }
+      - { handle: swyx,                                       group: person, weight: 0.7 }
+      - { handle: _akhaliq,                                   group: person, weight: 0.6, note: 'high volume' }
+      - { handle: DrJimFan,                                   group: person, weight: 0.7 }
+
+  # Official updates of AI companies. How each site is read (feeds, changelogs, sitemaps, GitHub/HF releases) lives in
+  # packages/pipeline/src/sources/labs/sites.ts; here you choose companies and their weight (0 = off).
+  labs:
+    enabled: true
+    lookbackDays: 7
+    companies:
+      anthropic: 1.0
+      openai: 1.0
+      google: 1.0
+      deepseek: 1.0
+      xai: 1.0
+      zhipu: 0.9
+      kimi: 0.9
+      qwen: 0.9
+      meta: 0.8
+      mistral: 0.8
+      minimax: 0.8
+    hidePatchReleases: true
+    extraFeeds: []            # - { company: nvidia, name: NVIDIA Technical Blog, url: 'https://…/feed' }
+
+# Transparent heat score:  norm = min(1, curve(raw)/curve(cap)) ;  points = norm × weight / Σweight × 100
+boards:
+  repos:
+    size: 10
+    runnersUp: 10
+    signals:
+      - { key: stars_today, weight: 40, cap: 1500, curve: log }
+      - { key: momentum,    weight: 15, cap: 30,   curve: sqrt }     # stars today as % of total stars
+      - { key: hn_echo,     weight: 15, cap: 500,  curve: log }      # points of HN stories linking to the repo
+      - { key: paper_echo,  weight: 10, cap: 100,  curve: log }      # upvotes of the paper this repo implements
+      - { key: novelty,     weight: 10, cap: 1,    curve: linear }   # 1 on first appearance, decays while it stays
+      - { key: relevance,   weight: 10, cap: 1,    curve: linear }   # how squarely on-topic it is
+  papers:
+    size: 10
+    runnersUp: 10
+    signals:
+      - { key: hf_upvotes,   weight: 35, cap: 150,  curve: log }
+      - { key: hf_comments,  weight: 5,  cap: 30,   curve: log }
+      - { key: code,         weight: 15, cap: 2000, curve: log }     # stars of the released code (1 if code exists)
+      - { key: hn_echo,      weight: 15, cap: 300,  curve: log }
+      - { key: repo_echo,    weight: 10, cap: 500,  curve: log }     # stars gained today by its repo
+      - { key: recency,      weight: 10, cap: 1,    curve: linear }  # 1 today → 0 after a week
+      - { key: source_prior, weight: 10, cap: 1,    curve: linear }  # curated list > journal > raw listing
+  news:
+    size: 10
+    runnersUp: 10
+    signals:
+      - { key: points,    weight: 40, cap: 800, curve: log }
+      - { key: comments,  weight: 15, cap: 400, curve: log }
+      - { key: velocity,  weight: 20, cap: 60,  curve: sqrt }        # points per hour since posting
+      - { key: echo,      weight: 15, cap: 2,   curve: linear }      # how many other boards it points into
+      - { key: relevance, weight: 10, cap: 1,   curve: linear }
+  social:
+    size: 10
+    runnersUp: 10
+    signals:
+      - { key: lift,       weight: 30, cap: 5,    curve: sqrt }      # vs. the author's / community's usual (via says which)
+      - { key: reach,      weight: 20, cap: 5000, curve: log }       # X: likes + 2·reposts + 3·quotes + replies · Reddit: score
+      - { key: discussion, weight: 10, cap: 500,  curve: log }       # replies / comments
+      - { key: velocity,   weight: 10, cap: 500,  curve: sqrt }      # engagement per hour since posting (age ≥ 0.5 h)
+      - { key: authority,  weight: 15, cap: 1.5,  curve: linear }    # watch-list weight (lab account, person, subreddit)
+      - { key: echo,       weight: 10, cap: 2,    curve: linear }    # other boards it links into / is linked from
+      - { key: relevance,  weight: 5,  cap: 1,    curve: linear }
+    caps: { perAuthor: 2, perCommunity: 3, perPlatform: 7 }
+  labs:
+    size: 10
+    runnersUp: 10
+    signals:
+      - { key: kind,      weight: 25, cap: 1,   curve: linear }      # model 1 · product .7 · research .6 · engineering .5 · company .35
+      - { key: release,   weight: 10, cap: 0.7, curve: linear }      # +.5 model release, +.2 flagship
+      - { key: freshness, weight: 30, cap: 1,   curve: linear }      # 0.5^(age hours / 24)
+      - { key: echo,      weight: 20, cap: 1.5, curve: linear }      # HN + Reddit + X attention on links to the post
+      - { key: company,   weight: 10, cap: 1.5, curve: linear }      # sources.labs.companies weight
+      - { key: surface,   weight: 5,  cap: 0.2, curve: linear }      # blog .2 · changelog .1 · GitHub/HF 0
+    caps: { perCompany: 3 }
+
+# Optional. With no key the site still works; items simply show their original text and no brief.
+# Set RESONANCE_LLM_API_KEY (and optionally _BASE_URL / _MODEL) as repository secrets.
+enrich:
+  enabled: true
+  languages: [en, zh]
+  baseUrl: https://api.deepseek.com      # any OpenAI-compatible endpoint
+  model: deepseek-flash                  # check your provider's current model ids
+  maxItemsPerRun: 120
+  briefs: true                           # "today in 5 bullets" per edition and per week
+
+pricing:
+  enabled: true
+
+# E-mail. Defaults only: the web app's Settings › Delivery writes the live values to the repository variable
+# RESONANCE_MAIL, and the credentials to repository secrets (MAIL_TO, SMTP_USER, SMTP_PASS — or RESEND_API_KEY).
+mail:
+  enabled: false
+  frequency: daily            # daily | weekly | both
+  weekday: 1                  # weekly mail on Monday (1–7)
+  time: '08:30'
+  timezone: Asia/Shanghai
+  lang: zh
+  provider: smtp              # smtp | resend
+  preset: qq                  # qq | 163 | gmail | custom (then host/port/secure)
+  attach: true                # attach the interactive report (.html)
+  perBoard: 5

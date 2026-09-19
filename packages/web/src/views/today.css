@@ -1,0 +1,1136 @@
+/*
+ * Today (docs/VISUAL.md §8): hero, live note, brief, resonance strip, category bar, board switcher, board panels,
+ * sources. Materials and colours come from the tokens; the rows inside the panels live in items/items.css.
+ */
+
+.today {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.75rem var(--gutter) 0;
+}
+
+@media (min-width: 1100px) {
+  .today {
+    padding-top: 2.75rem;
+  }
+}
+
+.today.is-refreshing .boards {
+  opacity: 0.7;
+  transition: opacity var(--dur-2) var(--ease);
+}
+
+/* ── hero: eyebrow → display date → window line → status chips ── */
+
+.edition {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 1100px) {
+  .edition {
+    margin-bottom: 2.25rem;
+  }
+}
+
+.today--loading .edition {
+  display: grid;
+  justify-content: start;
+  gap: 0.75rem;
+}
+
+.edition__main {
+  min-width: 0;
+}
+
+.edition__kicker {
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-height: 24px;
+}
+
+/* Live: a signal-free tinted pill; its dot stays still (the header's Live toggle carries the one pulse). */
+.edition__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 24px;
+  padding: 0 0.7rem 0 0.6rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--live) 12%, transparent);
+  color: color-mix(in oklab, var(--live) 78%, var(--text));
+}
+
+.edition__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live);
+}
+
+.edition__sep {
+  opacity: 0.6;
+}
+
+/* The live edition's caveat: one quiet line under the window, not a banner. */
+.edition__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  max-width: 62ch;
+  margin: 0.45rem 0 0;
+  color: var(--text-3);
+  font: 500 var(--fs-meta) / 1.45 var(--font-ui);
+  text-wrap: pretty;
+}
+
+.edition__note > .icon {
+  margin-top: 0.15em;
+}
+
+/* Display date, lit from the top like the rank numerals (titanium, not glow). */
+.edition__date {
+  margin: 0.7rem 0 0;
+  background: linear-gradient(180deg, var(--text) 40%, color-mix(in oklab, var(--text) 70%, var(--text-3)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--text);
+  font: var(--weight-display) var(--fs-hero) / 1.05 var(--font-display);
+  letter-spacing: var(--tracking-hero);
+  text-wrap: balance;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (forced-colors: active) {
+  .edition__date {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+.edition__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 1.5rem;
+  margin-top: 0.9rem;
+}
+
+.edition__window,
+.edition__local {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--text-3);
+  font: 500 var(--fs-meta) / 1.4 var(--font-ui);
+}
+
+.edition__times {
+  color: var(--text-2);
+  font: 500 0.95em / 1.4 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.edition__flags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+}
+
+/* Static states are small wells with a tone dot… */
+.edition__flags .badge {
+  gap: 0.45rem;
+  height: 26px;
+  padding: 0 0.75rem 0 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 500 var(--fs-xs) / 1 var(--font-ui);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.edition__flags .badge::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--badge-hue);
+}
+
+/* …the one that does something is a small raised plate. */
+.edition__sources {
+  --sh: var(--plate-edge), var(--elev-0);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 26px;
+  padding: 0 0.6rem 0 0.65rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  box-shadow: var(--sh);
+  color: var(--text-2);
+  font: 500 var(--fs-xs) / 1 var(--font-ui);
+  cursor: pointer;
+  transition:
+    transform var(--dur-1) var(--ease),
+    box-shadow var(--dur-1) var(--ease),
+    background-color var(--dur-1) var(--ease),
+    color var(--dur-1) var(--ease);
+}
+
+.edition__sources::before {
+  content: "";
+  position: absolute;
+  inset: -9px -2px;
+}
+
+.edition__sources > .icon:first-child {
+  color: var(--ok);
+}
+
+.edition__sources.has-issues > .icon:first-child {
+  color: var(--warn);
+}
+
+.edition__sources > .icon:last-child {
+  color: var(--text-3);
+}
+
+@media (hover: hover) {
+  .edition__sources:hover {
+    background: color-mix(in oklab, var(--surface-3) 94%, var(--text));
+    color: var(--text);
+  }
+}
+
+.edition__sources:active {
+  --sh: var(--press);
+  transform: scale(0.97);
+  transition-duration: 60ms;
+}
+
+.edition__sources:focus-visible {
+  box-shadow: var(--sh), var(--ring);
+}
+
+.edition__nav {
+  display: flex;
+  flex: none;
+  gap: 0.5rem;
+}
+
+/* Phones: the date gets the full width; the previous/next arrows sit at the end of the chips row. */
+@media (max-width: 767px) {
+  .edition__nav {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+  }
+
+  .edition__nav .iconbtn {
+    --ib: 36px;
+  }
+
+  .edition:has(.edition__nav) .edition__flags {
+    padding-right: 84px;
+  }
+}
+
+/* ── brief + resonance strip ── */
+
+/* Stacked sections: the brief (the day's story), then resonance, then the boards. */
+.today__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.today__top:empty {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .today__top {
+    gap: 2.75rem;
+    margin-bottom: 2.75rem;
+  }
+}
+
+/* Brief: a plate with the page's one signal-line hairline on its left edge (`.signal-edge`). */
+.brief {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.35rem 1.35rem 1.2rem 1.5rem;
+  border-radius: var(--radius-l);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+@media (min-width: 768px) {
+  .brief {
+    padding: 1.6rem 1.75rem 1.4rem 1.85rem;
+  }
+}
+
+/* Wide: editorial — the headline holds the left column, the bullets read at a comfortable measure on the right. */
+@media (min-width: 1100px) {
+  .brief {
+    display: grid;
+    grid-template-areas:
+      "kicker list"
+      "headline list"
+      "note list";
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 3.5rem;
+    padding: 2rem 2.25rem 1.75rem 2.5rem;
+  }
+
+  .brief__kicker {
+    grid-area: kicker;
+  }
+
+  .brief__headline {
+    grid-area: headline;
+  }
+
+  .brief__list {
+    grid-area: list;
+    align-self: center;
+  }
+
+  .brief__note {
+    grid-area: note;
+    align-self: end;
+  }
+}
+
+.brief__kicker .icon {
+  color: var(--signal-text);
+}
+
+.brief__headline {
+  margin: 0.7rem 0 1.1rem;
+  font: var(--weight-section) clamp(1.1875rem, 0.95rem + 0.8vw, 1.75rem) / 1.28 var(--font-display);
+  letter-spacing: var(--tracking-section);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.brief__list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brief__list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text);
+  font: 400 var(--fs-body) / 1.65 var(--font-text);
+  overflow-wrap: anywhere;
+}
+
+.brief__list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+
+/* Citation: a small raised chip inline in the sentence. */
+.cite {
+  --sh: var(--plate-edge), var(--elev-0);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 13rem;
+  height: 22px;
+  margin: 0 0.15rem;
+  padding: 0 0.55rem 0 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  box-shadow: var(--sh);
+  color: var(--text-2);
+  font: 500 var(--fs-2xs) / 1 var(--font-ui);
+  text-decoration: none;
+  vertical-align: 1px;
+  transition:
+    transform var(--dur-1) var(--ease),
+    box-shadow var(--dur-1) var(--ease),
+    background-color var(--dur-1) var(--ease),
+    color var(--dur-1) var(--ease);
+}
+
+/* Inline in a sentence, so the halo stays short of 44 px rather than covering the lines around it. */
+.cite::before {
+  content: "";
+  position: absolute;
+  inset: -6px -2px;
+}
+
+@media (hover: hover) {
+  .cite:hover {
+    background: color-mix(in oklab, var(--surface-3) 92%, var(--text));
+    color: var(--text);
+  }
+}
+
+.cite:active {
+  --sh: var(--press);
+  transform: scale(0.97);
+  transition-duration: 60ms;
+}
+
+.cite:focus-visible {
+  box-shadow: var(--sh), var(--ring);
+}
+
+.cite__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hue);
+}
+
+.cite__text {
+  overflow: hidden;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brief__note {
+  margin: auto 0 0;
+  padding-top: 1.25rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+}
+
+.strip {
+  min-width: 0;
+}
+
+.strip .section-head {
+  margin-bottom: 1rem;
+}
+
+/* Scrollers are positioned so absolutely positioned descendants (sr-only labels) cannot escape and widen the page. */
+.strip__list,
+.catbar__track,
+.sources__scroll {
+  position: relative;
+}
+
+/* Phones and tablets: a full-bleed horizontal shelf; the padding keeps the plates' shadows inside the scroller. */
+.strip__list {
+  display: flex;
+  gap: 0.75rem;
+  margin: -0.25rem calc(-1 * var(--gutter)) -1.5rem;
+  padding: 0.25rem var(--gutter) 1.5rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--gutter);
+  scrollbar-width: none;
+}
+
+.strip__list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Wide: three columns on the same grid (and gap) as the boards below. */
+@media (min-width: 1100px) {
+  .strip__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 1.75rem;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+/* Resonance card: a plate; hue segments on top, strength in mono, member rows with inset hairlines. */
+.cluster {
+  display: flex;
+  flex: 0 0 min(80vw, 300px);
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem 1.1rem 0.45rem;
+  border-radius: var(--radius-l);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+  scroll-snap-align: start;
+}
+
+/* Three boards: the plate's top edge catches a little resonance gold. */
+.cluster--full {
+  box-shadow:
+    var(--plate-edge),
+    inset 0 1px 0 color-mix(in srgb, var(--res) 32%, transparent),
+    var(--elev-1);
+}
+
+.cluster__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 14px;
+}
+
+.cluster__boards {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.cluster__pip {
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--hue);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--hue) var(--bloom), transparent);
+}
+
+.cluster__strength {
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.cluster--full .cluster__strength {
+  color: color-mix(in oklab, var(--res) 80%, var(--text));
+}
+
+.cluster__headline {
+  display: -webkit-box;
+  margin: 0.75rem 0 0.4rem;
+  overflow: hidden;
+  color: var(--text);
+  font: 600 var(--fs-body) / 1.35 var(--font-text);
+  letter-spacing: var(--tracking-title);
+  overflow-wrap: anywhere;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+/* Side by side: two lines reserved, so member lists line up across a row of cards (a shelf shows one at a time). */
+@media (min-width: 1100px) {
+  .cluster__headline {
+    min-height: 2.7em;
+  }
+}
+
+.cluster__members {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cluster__member {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  min-height: 34px;
+  font-size: var(--fs-s);
+}
+
+@media (max-width: 1099.98px), (pointer: coarse) {
+  .cluster__member {
+    min-height: var(--target);
+  }
+}
+
+.cluster__member + .cluster__member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: calc(6px + 0.6rem);
+  height: 1px;
+  background: var(--line);
+}
+
+.cluster__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hue);
+}
+
+.cluster__link {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  color: var(--text-2);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color var(--dur-1) var(--ease);
+}
+
+@media (hover: hover) {
+  .cluster__link:hover {
+    color: var(--text);
+  }
+}
+
+.cluster__metric {
+  flex: none;
+  color: var(--text-3);
+  font: 400 var(--fs-2xs) / 1 var(--font-mono);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* ── category bar and board switcher: segmented wells with a raised thumb ── */
+
+.catbar {
+  margin: 0 0 0.75rem;
+}
+
+@media (min-width: 1100px) {
+  .catbar {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.catbar__track {
+  isolation: isolate;
+  display: flex;
+  gap: 2px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.catbar__track::-webkit-scrollbar {
+  display: none;
+}
+
+.catbar__track[data-fade="end"] {
+  -webkit-mask-image: linear-gradient(90deg, black calc(100% - 32px), transparent);
+  mask-image: linear-gradient(90deg, black calc(100% - 32px), transparent);
+}
+
+.catbar__track[data-fade="start"] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 32px);
+  mask-image: linear-gradient(90deg, transparent, black 32px);
+}
+
+.catbar__track[data-fade="both"] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 32px, black calc(100% - 32px), transparent);
+  mask-image: linear-gradient(90deg, transparent, black 32px, black calc(100% - 32px), transparent);
+}
+
+/* Chips become text buttons on the track; the thumb (or, before it is measured, the chip itself) is the plate. */
+.catbar__track .chip {
+  --sh: 0 0 #0000;
+  z-index: 1;
+  flex: none;
+  padding: 0 0.85rem;
+  background: transparent;
+  font-size: var(--fs-s);
+}
+
+.catbar__track .chip.is-selected {
+  --sh: var(--plate-edge), var(--elev-1);
+  background: var(--thumb-bg);
+}
+
+.catbar__track[data-thumb] .chip.is-selected {
+  --sh: 0 0 #0000;
+  background: transparent;
+}
+
+@media (hover: hover) {
+  .catbar__track .chip.is-interactive:hover {
+    background: transparent;
+  }
+
+  .catbar__track:not([data-thumb]) .chip.is-selected:hover {
+    background: var(--thumb-bg);
+  }
+}
+
+/* Inside a scroller an outer ring would be clipped: draw it inside. */
+.catbar__track .chip:focus-visible {
+  box-shadow: var(--sh), var(--ring-inset);
+}
+
+.catbar__track .chip__count {
+  font-size: var(--fs-xs);
+}
+
+/*
+ * Phones and tablets: the board switcher above is the page's one segmented track, so the filter steps back into a
+ * light, full-bleed row of chips — hairline pills at rest, the raised thumb under the chosen one.
+ */
+@media (max-width: 1099.98px) {
+  .catbar {
+    margin-bottom: 1rem;
+  }
+
+  .catbar__track {
+    gap: 6px;
+    width: auto;
+    max-width: none;
+    margin: -4px calc(-1 * var(--gutter)) -8px;
+    padding: 4px var(--gutter) 8px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    scroll-padding-inline: var(--gutter);
+  }
+
+  .catbar__track > .thumb {
+    border-radius: var(--radius-pill);
+  }
+
+  .catbar__track .chip {
+    --chip-h: 30px;
+    --sh: inset 0 0 0 1px var(--line-2);
+    padding: 0 0.75rem;
+    font-size: var(--fs-xs);
+  }
+
+  .catbar__track .chip.is-selected,
+  .catbar__track[data-thumb] .chip.is-selected {
+    --sh: 0 0 #0000;
+  }
+
+  .catbar__track:not([data-thumb]) .chip.is-selected {
+    --sh: var(--plate-edge), var(--elev-1);
+  }
+
+  .catbar__track .chip:focus-visible {
+    box-shadow: var(--sh), var(--ring);
+  }
+}
+
+/* The board switcher (phones, tablets): `.tabs--pills` is the track, this wrapper only spaces it. */
+.board-switch {
+  position: relative;
+  margin: 0 0 0.875rem;
+}
+
+/* ── the board grid ── */
+
+/* Panels in a row share one bottom edge; each panel's runners-up button sits on it (see `.board > .runners`). */
+.boards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.boards--single {
+  display: block;
+  /* Vertical scroll and pinch-zoom stay native (WCAG 1.4.4); horizontal swipes switch boards. */
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Board panel: one plate (radius 22); its rows are inset 8 px so their hover plates are concentric with it. */
+.board {
+  --rank-w: 40px;
+  --rank-gap: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-bottom: 0.5rem;
+  border-radius: var(--radius-xl);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+@media (min-width: 768px) {
+  .board {
+    --rank-w: 48px;
+  }
+}
+
+.board--skeleton {
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.board__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding: 1rem 1rem 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .board__head {
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+}
+
+.board__titles {
+  min-width: 0;
+}
+
+.board__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: var(--text);
+  font: var(--weight-section) var(--fs-board) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
+}
+
+/* The board's hue dot with its halo (bloom in dark, a soft ring in light) — also used by archive / weekly / scoring. */
+.board__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hue);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--hue) var(--bloom), transparent);
+}
+
+[data-mode="light"] .board__dot {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hue) 14%, transparent);
+}
+
+/* Count: a small well chip. */
+.board__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 20px;
+  padding: 0 0.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1 var(--font-mono);
+  letter-spacing: 0;
+}
+
+.board__sub {
+  margin: 0.3rem 0 0;
+  padding-left: calc(8px + 0.6rem);
+  color: var(--text-3);
+  font-size: var(--fs-meta);
+  line-height: 1.4;
+}
+
+.board__lookback {
+  white-space: nowrap;
+}
+
+.board__status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.board__stale {
+  margin: 0.4rem 1rem 0.25rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-m);
+  background: color-mix(in oklab, var(--warn) 10%, var(--surface-2));
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+  .board__stale {
+    margin-inline: 1.25rem;
+  }
+}
+
+/* Rows (items.css), separated by hairlines that start at the content column (iOS grouped list). */
+.board__list,
+.runners__list {
+  margin: 0;
+  padding: 0 0.5rem;
+  list-style: none;
+}
+
+.board__list > li,
+.runners__list > li {
+  position: relative;
+}
+
+.board__list > li + li::before,
+.runners__list > li + li::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0.75rem;
+  left: calc(0.75rem + var(--rank-w) + var(--rank-gap));
+  height: 1px;
+  background: var(--line);
+  pointer-events: none;
+  transition: opacity var(--dur-1) var(--ease);
+}
+
+/* A hovered row's plate replaces the hairlines around it. */
+@media (hover: hover) {
+  :is(.board__list, .runners__list) > li:hover::before,
+  :is(.board__list, .runners__list) > li:hover + li::before {
+    opacity: 0;
+  }
+}
+
+.board > .empty {
+  padding: 2rem 1.25rem 2.25rem;
+}
+
+/* Runners-up: a plate button, then the one-line rows — pinned to the panel's foot so a row of panels lines up. */
+.runners {
+  margin-top: auto;
+  padding: 0.35rem 0 0;
+}
+
+.runners__summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  margin: 0 1.25rem 0.75rem;
+  border-radius: var(--radius-m);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+  color: var(--text-2);
+  font: 500 var(--fs-s) / 1 var(--font-ui);
+  list-style: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition:
+    transform var(--dur-1) var(--ease),
+    box-shadow var(--dur-1) var(--ease),
+    color var(--dur-1) var(--ease);
+}
+
+@media (max-width: 767px) {
+  .runners__summary {
+    margin-inline: 1rem;
+    min-height: var(--target);
+  }
+}
+
+.runners__summary::-webkit-details-marker {
+  display: none;
+}
+
+.runners__summary > .icon {
+  color: var(--text-3);
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.runners[open] .runners__summary > .icon {
+  transform: rotate(180deg);
+}
+
+@media (hover: hover) {
+  .runners__summary:hover {
+    box-shadow: var(--plate-edge), var(--elev-2);
+    color: var(--text);
+  }
+}
+
+.runners__summary:active {
+  box-shadow: var(--press);
+  transform: scale(0.98);
+  transition-duration: 60ms;
+}
+
+.runners__summary:focus-visible {
+  box-shadow: var(--plate-edge), var(--elev-1), var(--ring);
+}
+
+.runners__count {
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+}
+
+.today__none {
+  padding: 3rem 0;
+  color: var(--text-2);
+  text-align: center;
+}
+
+/* ── sources: a grouped list on a plate ── */
+
+.sources {
+  margin-top: 3rem;
+}
+
+@media (min-width: 1100px) {
+  .sources {
+    margin-top: 4rem;
+  }
+}
+
+.sources__note {
+  margin: 0.4rem 0 1rem;
+  color: var(--text-3);
+  font-size: var(--fs-s);
+}
+
+.sources__scroll {
+  padding: 0.25rem 1.1rem;
+  overflow-x: auto;
+  border-radius: var(--radius-l);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+/* One line-height for every cell, so top-aligned cells share their first baseline. */
+.sources__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-s);
+  line-height: 1.45;
+}
+
+.sources__table th,
+.sources__table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.sources__table :is(th, td):first-child {
+  padding-left: 0;
+}
+
+.sources__table :is(th, td):last-child {
+  padding-right: 0;
+}
+
+.sources__table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.sources__table thead th {
+  padding-top: 0.8rem;
+  padding-bottom: 0.55rem;
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sources__table tbody th {
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sources__table .num {
+  text-align: right;
+}
+
+.sources__table td.num {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.sources__board {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: var(--hue);
+  vertical-align: 1px;
+}
+
+.sources__state {
+  --tone: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: color-mix(in oklab, var(--tone) 80%, var(--text));
+  font-weight: 500;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.sources__state::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+
+/* "OK" is the quiet default: only its dot is green; problems keep their tinted text. */
+.sources__state--ok {
+  --tone: var(--ok);
+  color: var(--text-2);
+}
+
+.sources__state--failed {
+  --tone: var(--danger);
+}
+
+.sources__state--degraded,
+.sources__state--stale {
+  --tone: var(--warn);
+}
+
+.sources__state--skipped {
+  color: var(--text-3);
+}
+
+.sources__detail {
+  min-width: 16rem;
+  color: var(--text-3);
+  line-height: 1.45;
+}

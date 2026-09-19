@@ -1,0 +1,184 @@
+# The whole product runs here: collect → file into editions → settle → rank → publish → deploy.
+# Snapshots, caches and source state (the source of truth) live on the `data` branch; the site and the static API are
+# rebuilt from them on every run and deployed to GitHub Pages.
+#
+# `pnpm daily` is time-driven and idempotent (docs/DESIGN.md §6a): it works out by itself which edition is open, which
+# one just closed and which one is due to settle, so the schedule only has to run often enough. Every 3 h at :40, plus
+# 07:40 and 08:40 UTC so that a run always lands shortly after the Pacific midnight cutoff, in summer and in winter.
+#
+# Setup: Settings → Pages → Source: "GitHub Actions". Everything else is optional:
+#   secrets    RESONANCE_LLM_API_KEY / _BASE_URL / _MODEL   item copy + briefs (OpenAI-compatible endpoint)
+#              X_BEARER_TOKEN | TWITTERAPI_IO_KEY | SOCIALDATA_API_KEY   the whole X watch list (default: lab accounts, free)
+#              REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET   Reddit OAuth with vote counts (default: RSS)
+#   variables  BASE_PATH  ("/" for a custom domain; default: from the repository name)
+#              SITE_URL   (public URL for e-mail links; default: https://<owner>.github.io/<repo>/)
+name: Daily
+
+on:
+  schedule:
+    - cron: '40 */3 * * *'
+    - cron: '40 7,8 * * *'
+  workflow_dispatch:
+
+# Two runs writing the same snapshot would race on the data branch; queue them instead.
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+env:
+  DATA_BRANCH: data
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    # Reddit's RSS allows one request a minute, so a full Reddit fetch alone takes about a quarter of an hour.
+    timeout-minutes: 45
+    permissions:
+      contents: write # push snapshots to the data branch
+      pages: write # deploy the site
+      id-token: write # OIDC for actions/deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Check out the code (default branch)
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm (version from package.json › packageManager)
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node 24 with the pnpm store cached
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check out the data branch into ./data (created empty on the first run)
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$DATA_BRANCH"
+            git worktree add ./data "origin/$DATA_BRANCH"
+            git -C data checkout -B "$DATA_BRANCH"
+          else
+            echo "No '$DATA_BRANCH' branch yet - starting an orphan one."
+            git worktree add --detach ./data
+            git -C data checkout --orphan "$DATA_BRANCH"
+            git -C data rm -rfq --cached . || true
+            find ./data -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          fi
+          git -C data config user.name 'github-actions[bot]'
+          git -C data config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Resolve the site base path and public URL
+        id: site
+        env:
+          BASE_PATH_OVERRIDE: ${{ vars.BASE_PATH }}
+          SITE_URL_OVERRIDE: ${{ vars.SITE_URL }}
+        run: |
+          set -euo pipefail
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ -n "$BASE_PATH_OVERRIDE" ]; then
+            base="$BASE_PATH_OVERRIDE"
+          elif [[ "${repo,,}" == "$owner.github.io" ]]; then
+            base="/" # user/organisation site: served from the domain root
+          else
+            base="/$repo/" # project site: https://<owner>.github.io/<repo>/
+          fi
+          if [ -n "$SITE_URL_OVERRIDE" ]; then
+            url="$SITE_URL_OVERRIDE"
+          else
+            url="https://$owner.github.io$base"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "BASE_PATH=$base  SITE_URL=$url"
+
+      # A run in which every source failed exits 1: the snapshots still record the outage, so the data is committed
+      # and the site deployed before the job is marked failed at the end.
+      - name: Collect, file into editions, rank and publish
+        id: run
+        continue-on-error: true
+        run: pnpm daily
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SITE_URL: ${{ steps.site.outputs.url }}
+          RESONANCE_LLM_API_KEY: ${{ secrets.RESONANCE_LLM_API_KEY }}
+          RESONANCE_LLM_BASE_URL: ${{ secrets.RESONANCE_LLM_BASE_URL }}
+          RESONANCE_LLM_MODEL: ${{ secrets.RESONANCE_LLM_MODEL }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          SOCIALDATA_API_KEY: ${{ secrets.SOCIALDATA_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+
+      - name: Commit and push the data branch
+        run: |
+          set -euo pipefail
+          cd data
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Data unchanged - nothing to push."
+            exit 0
+          fi
+          git commit -q -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
+          # The mail workflow writes state/mail.json through the Contents API, so a non-fast-forward is expected
+          # now and then: rebase onto the remote branch and retry.
+          for attempt in 1 2 3 4; do
+            if git push origin "HEAD:$DATA_BRANCH"; then exit 0; fi
+            echo "Push rejected (attempt $attempt) - rebasing onto the remote branch."
+            sleep $((attempt * 5))
+            git fetch origin "$DATA_BRANCH"
+            git rebase "origin/$DATA_BRANCH" || { git rebase --abort; exit 1; }
+          done
+          exit 1
+
+      - name: Build the site
+        run: pnpm build
+        env:
+          BASE_PATH: ${{ steps.site.outputs.base }}
+          SITE_URL: ${{ steps.site.outputs.url }}
+
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: packages/web/dist
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v5
+
+      - name: Fail when every source failed
+        if: steps.run.outcome == 'failure'
+        run: |
+          echo "::error::The pipeline run failed (every source failed, or an error) - see the 'Collect' step."
+          exit 1
+
+  # GitHub disables scheduled workflows in public repositories after 60 days without activity, and bot commits to the
+  # data branch are not proven to count. Re-enabling an enabled workflow resets that timer; once a week is plenty.
+  keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Keep the scheduled workflows enabled (Mondays)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(date -u +%u)" != 1 ]; then
+            echo "Not Monday (UTC) - nothing to do."
+            exit 0
+          fi
+          for workflow in daily.yml mail.yml; do
+            if gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable" --silent; then
+              echo "$workflow: enabled"
+            else
+              echo "::warning::could not re-enable $workflow"
+            fi
+          done

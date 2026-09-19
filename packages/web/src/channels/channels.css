@@ -1,0 +1,99 @@
+/*
+ * Settings › Channels (docs/VISUAL.md): the published files as one grouped inset list (URLs in mono), and the MCP
+ * snippets as recessed code wells with the copy button inside.
+ */
+
+.channels__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  list-style: none;
+}
+
+.channels__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.2rem 0.5rem;
+  min-height: 60px;
+  padding: 0.625rem 0.35rem 0.625rem 0.875rem;
+}
+
+.channels__row + .channels__row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0.875rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.channels__label {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.channels__tag {
+  padding: 0.15em 0.45em;
+  border-radius: 5px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  letter-spacing: 0.02em;
+}
+
+.channels__url {
+  grid-column: 1;
+  min-width: 0;
+  color: var(--text-3);
+  font: 400 var(--fs-xs) / 1.45 var(--font-mono);
+  font-variant-ligatures: none;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.channels__url:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.channels__row > .iconbtn {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.channels__snippet {
+  position: relative;
+  min-width: 0;
+}
+
+/* Wrapped, so nothing hides under the copy button; no ligatures, so `--env` stays two hyphens. */
+.channels__snippet pre {
+  margin: 0;
+  padding: 0.875rem 3.25rem 0.875rem 1rem;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text);
+  font: 400 var(--fs-xs) / 1.6 var(--font-mono);
+  font-variant-ligatures: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.channels__snippet > .iconbtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}

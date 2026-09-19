@@ -1,0 +1,74 @@
+name: Bug report / 问题反馈
+description: Something is broken or wrong on the site, in the pipeline, a source, the e-mail or the MCP server. 网站、数据管道、数据源、邮件或 MCP 出了问题。
+title: '[Bug] '
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. English or 中文 are both fine.
+        A source chip that says *failed* or *degraded* for a single run is usually transient (rate limits, runner IPs); please report it when it lasts a day or more.
+        单次运行里某个数据源显示 *failed* / *degraded* 通常是暂时的（限流、Runner IP），持续一天以上再反馈即可。
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / 模块
+      options:
+        - Web app (boards, item detail, search, settings) / 网页
+        - Pipeline or a data source (GitHub, papers, HN, Reddit, X, labs) / 数据管道或数据源
+        - Scores, resonance or trends / 评分、共振或趋势
+        - AI summaries or model manager (BYOK) / AI 总结或模型管理
+        - E-mail delivery or report export / 邮件推送或报告导出
+        - MCP server, dsh, feeds, llms.txt / MCP、dsh、订阅
+        - Deploy, workflows or docs / 部署、工作流或文档
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where / 出现位置
+      description: The site (the public instance or your own copy) and the page. 站点地址（公共实例或你自己的副本）和页面。
+      placeholder: https://wzznne.github.io/AI-Resonance/#/d/2026-09-18
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened / 发生了什么
+      description: What you saw and what you expected instead. Screenshots help. 看到了什么、原本期望什么；截图很有帮助。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      placeholder: |
+        1. Open …
+        2. Tap …
+        3. See …
+
+  - type: input
+    id: env
+    attributes:
+      label: Environment / 环境
+      description: Browser and device, or Node / pnpm versions and the workflow run link. 浏览器与设备，或 Node / pnpm 版本与 Actions 运行链接。
+      placeholder: Chrome on Android · Safari on iOS · Node 24, pnpm 11
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / 日志
+      description: Output from the Actions log, `pnpm pipeline doctor` or the browser console. Remove keys, tokens and e-mail addresses first. 请先删除密钥、令牌和邮箱地址。
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist / 确认
+      options:
+        - label: I searched the existing issues. / 我已搜索过现有 issue。
+          required: true
+        - label: This report contains no API keys, tokens or personal e-mail addresses. / 内容中不含 API 密钥、令牌或个人邮箱。
+          required: true

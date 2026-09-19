@@ -1,0 +1,25 @@
+{
+  "name": "@resonance/pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "fetch → classify → link → snapshot → score → trend → enrich → publish. Runs in GitHub Actions or locally.",
+  "type": "module",
+  "scripts": {
+    "cli": "node src/cli.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@resonance/schema": "workspace:*",
+    "fast-xml-parser": "^5.11.1",
+    "node-html-parser": "^9.0.4",
+    "yaml": "catalog:",
+    "zod": "catalog:",
+    "@resonance/channels": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

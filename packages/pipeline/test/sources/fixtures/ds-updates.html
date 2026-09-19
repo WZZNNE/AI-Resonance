@@ -1,0 +1,345 @@
+<!DOCTYPE html><html><head><meta data-rh="true" property="og:title" content="Change Log | DeepSeek API Docs"></head><body><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_gDTe" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_fbmM"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Change Log</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_lKxX theme-doc-toc-mobile tocMobile_kO7c"><button type="button" class="clean-btn tocCollapsibleButton_KNXb">On this page</button></div><div class="theme-doc-markdown markdown"><div class="row"><div class="col col--12"><h1>Change Log</h1>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2026-09-10">Date: 2026-09-10<a href="#date-2026-09-10" class="hash-link" aria-label="Direct link to Date: 2026-09-10" title="Direct link to Date: 2026-09-10">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v41-flash-release">DeepSeek-V4.1-Flash Release<a href="#deepseek-v41-flash-release" class="hash-link" aria-label="Direct link to DeepSeek-V4.1-Flash Release" title="Direct link to DeepSeek-V4.1-Flash Release">​</a></h3>
+<p>Today, we officially release the DeepSeek-V4.1-Flash model. It is the smallest model in our new architecture family, with native multimodal visual understanding. The new architecture is designed for a higher capability ceiling, faster inference, higher throughput, and scaling to larger models.</p>
+<ul>
+<li>GPQA Diamond: 90.9</li>
+<li>HLE: 36.8 (39.1*)</li>
+<li>Codeforces (Rating): 3471</li>
+<li>MathArena Apex: 65.6</li>
+<li>Terminal-Bench 2.1: 90.6</li>
+<li>Terminal-Bench 3.0: 30.0</li>
+<li>Terminal-Bench 4.0: 31.2</li>
+<li>DeepSWE v1.1: 74.2</li>
+<li>ProgramBench: 20.3</li>
+<li>NL2Repo-Bench: 65.4</li>
+<li>CyberGym: 88.1</li>
+<li>SEC-Bench Pro: 62.8</li>
+<li>ExploitGym: 15.3</li>
+<li>HLE (w/tools): 63.9</li>
+<li>Automation-Bench: 54.8</li>
+<li>Agents&#x27; Last Exam: 31.8</li>
+<li>Chartography (w/tools): 78.9</li>
+<li>BabyVision (w/tools): 89.6</li>
+<li>ZeroBench-main (w/tools): 49.0</li>
+</ul>
+<div style="font-size:14px"><p>* Tested only on the pure-text subset of the HLE benchmark set.</p></div>
+<b>API changes</b>
+<p>DeepSeek V4.1 Flash is now available on the DeepSeek API with native multimodal support. Change the model name to <code>deepseek-flash</code> to call the latest V4.1 Flash model. The previous-generation models V4 Flash and V4 Flash Vision Exp have been retired; for compatibility, the model names <code>deepseek-v4-flash</code> and <code>deepseek-v4-flash-vision-exp</code> are temporarily routed to V4.1 Flash.</p>
+<p>In response to user demand, we have decided to continue providing API services for DeepSeek V4 Pro after September 14, 2026, with the billing method remaining unchanged. We will provide further notice should there be any changes. Thank you for your understanding and support!</p>
+<b>API pricing adjustment</b>
+<p>With the release of DeepSeek-V4.1-Flash, API prices have been reduced accordingly. For details, please refer to <a href="/quick_start/pricing">Models &amp; Pricing</a>.</p>
+<p>For more details, please refer to <a href="/news/news260910">this documentation</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2026-08-21">Date: 2026-08-21<a href="#date-2026-08-21" class="hash-link" aria-label="Direct link to Date: 2026-08-21" title="Direct link to Date: 2026-08-21">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v4-flash-vision-exp-release">DeepSeek-V4-Flash-Vision-Exp Release<a href="#deepseek-v4-flash-vision-exp-release" class="hash-link" aria-label="Direct link to DeepSeek-V4-Flash-Vision-Exp Release" title="Direct link to DeepSeek-V4-Flash-Vision-Exp Release">​</a></h3>
+<p>Today, the new multimodal vision understanding model DeepSeek-V4-Flash-Vision-Exp is now available on the DeepSeek API platform. This is an experimental model that can be accessed by setting <code>model=&#x27;deepseek-v4-flash-vision-exp&#x27;</code>.</p>
+<ul>
+<li>Terminal Bench 2.1: 83.9</li>
+<li>NL2Repo: 57.7</li>
+<li>DeepSWE: 59.3</li>
+<li>DSBench-Hard: 63.6</li>
+<li>AutomationBench (Public): 25.7</li>
+<li>ApexBench (Pass@1): 36.5</li>
+<li>Agents&#x27; Last Exam: 27.3</li>
+<li>Chartography: 64.3</li>
+<li>ZeroBench (Pass@5): 35.0</li>
+</ul>
+<div style="font-size:14px"><p>* For the Code Agent text tasks in the public benchmark sets, the DeepSeek family models were tested using the DeepSeek Harness minimal mode as the framework, with the max effort level, topp=0.95, and temperature=1.0; in the ApexBench and Agents&#x27; Last Exam evaluations, the text model DeepSeek-V4-Flash ignores the multimodal elements within them.</p></div>
+<p>In terms of pure-text capabilities (agent, reasoning, world knowledge, etc.), DeepSeek-V4-Flash-Vision-Exp is on par with the official DeepSeek-V4-Flash.</p>
+<p>On agent benchmarks that require visual understanding, DeepSeek-V4-Flash-Vision-Exp delivers a significant leap over DeepSeek-V4-Flash, bringing its multimodal agent capabilities close to Opus-4.8.</p>
+<p>For usage details, please refer to the <a href="/guides/vision">Vision guide</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2026-08-13">Date: 2026-08-13<a href="#date-2026-08-13" class="hash-link" aria-label="Direct link to Date: 2026-08-13" title="Direct link to Date: 2026-08-13">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v4-pro-update">DeepSeek-V4-Pro Update<a href="#deepseek-v4-pro-update" class="hash-link" aria-label="Direct link to DeepSeek-V4-Pro Update" title="Direct link to DeepSeek-V4-Pro Update">​</a></h3>
+<p>The GA release of DeepSeek-V4-Pro has been rolled out on the APP, Web, and API. The API calling method remains unchanged — simply set the model name to <code>deepseek-v4-pro</code> to use the latest version.</p>
+<b>Significantly enhanced Agent capabilities</b>
+<p>The GA version of DeepSeek V4 Pro greatly enhances agent capabilities, with particularly significant performance improvements in production environments.</p>
+<ul>
+<li>HLE (wo / w tools): 42.7/60.0</li>
+<li>Terminal Bench 2.1: 87.9</li>
+<li>NL2Repo: 61.5</li>
+<li>Cybergym: 83.3</li>
+<li>DeepSWE: 62.7</li>
+<li>Toolathlon-Verified: 74.1</li>
+<li>Agents&#x27; Last Exam: 25.7</li>
+<li>AutomationBench (Public): 31.8</li>
+<li>DSBench-FullStack: 71.1</li>
+<li>DSBench-Hard: 67.2</li>
+</ul>
+<b>Native support for the Responses API</b>
+<p>The DeepSeek API now natively supports the OpenAI Responses API format and is specifically adapted for Codex. Users can refer to the <a href="/quick_start/agent_integrations/codex">official documentation</a> and complete the Codex configuration with a one-click configuration script.</p>
+<b>More flexible thinking effort control</b>
+<p>The thinking modes of V4-Pro and V4-Flash now support three thinking effort levels: low / high / max. In real-world usage, users can flexibly choose based on task complexity: use low for simple tasks, high for daily Agent tasks, and max for more complex scenarios. For setup instructions, please refer to the official API documentation: <a href="/guides/thinking_mode">Thinking Mode</a>.</p>
+<b>API Pricing Adjustment</b>
+<p>With the official release of the DeepSeek V4 model family, we will <a href="/quick_start/pricing">update and adjust API pricing</a>. To allocate resources more reasonably, we will adopt peak/off-peak pricing, with off-peak prices set at half of the peak-hour prices, encouraging users to schedule their tasks based on actual usage. The new prices will take effect at 16:00 (UTC Time) on August 16, 2026.</p>
+<p>For more details, please refer to <a href="/news/news260813">this documentation</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2026-07-31">Date: 2026-07-31<a href="#date-2026-07-31" class="hash-link" aria-label="Direct link to Date: 2026-07-31" title="Direct link to Date: 2026-07-31">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v4-flash-update">DeepSeek-V4-Flash Update<a href="#deepseek-v4-flash-update" class="hash-link" aria-label="Direct link to DeepSeek-V4-Flash Update" title="Direct link to DeepSeek-V4-Flash Update">​</a></h3>
+<p>The official release of the DeepSeek-V4-Flash API is now in public beta. The API calling method remains unchanged — simply set the model name to <code>deepseek-v4-flash</code> to use the latest version.</p>
+<b>Significantly enhanced agent capabilities, with benchmark results far exceeding V4-Pro-Preview:</b>
+<ul>
+<li>Terminal Bench 2.1: 82.7</li>
+<li>NL2Repo: 54.2</li>
+<li>Cybergym: 76.7</li>
+<li>DeepSWE: 54.4</li>
+<li>Toolathlon verified: 70.3</li>
+<li>Agent Last Exam: 25.2</li>
+<li>Automation Bench (Public): 25.1</li>
+<li>DSBench-FullStack: 68.7</li>
+<li>DSBench-Hard: 59.6</li>
+</ul>
+<div style="font-size:14px"><p>Note 1: For the Code Agent tasks in the public benchmark sets, the official DeepSeek-V4-Flash was tested using the DeepSeek Harness minimal mode (to be released soon) as the framework, with the max effort level, topp=0.95, and temperature=1.0<br>
+Note 2: DSBench-FullStack is an internal full-stack development test set, and DSBench-Hard is an internal Coding Agent hard-problem test set</p></div>
+<b>The official V4-Flash natively supports the Responses API format and is specifically adapted for Codex. For the specific configuration, please refer to the <a href="/quick_start/agent_integrations/codex">documentation</a>.</b>
+<br>
+<br>
+<b>DeepSeek-V4-Flash-0731 keeps the same model architecture and size as DeepSeek-V4-Flash-Preview, and was only re-post-trained.</b>
+<br>
+<br>
+<b>Note: This update only upgrades the DeepSeek-V4-Flash API. The DeepSeek-V4-Pro API and the APP/WEB models are unchanged.</b>
+<br>
+<b>The official release of DeepSeek-V4-Pro will follow soon.</b>
+<br>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2026-04-24">Date: 2026-04-24<a href="#date-2026-04-24" class="hash-link" aria-label="Direct link to Date: 2026-04-24" title="Direct link to Date: 2026-04-24">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v4">DeepSeek-V4<a href="#deepseek-v4" class="hash-link" aria-label="Direct link to DeepSeek-V4" title="Direct link to DeepSeek-V4">​</a></h3>
+<p>The DeepSeek API now supports V4-Pro and V4-Flash, available via both the OpenAI ChatCompletions interface and the Anthropic interface. To access the new models, the base_url remains unchanged, and the model parameter should be set to <code>deepseek-v4-pro</code> or <code>deepseek-v4-flash</code>.</p>
+<p>The two legacy API model names, <code>deepseek-chat</code> and <code>deepseek-reasoner</code>, will be discontinued in three months (2026-07-24). During the current period, these two model names point to the non-thinking mode and thinking mode of <code>deepseek-v4-flash</code>, respectively.</p>
+<p>For more details, please refer to <a href="/news/news260424">this documentation</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-12-01">Date: 2025-12-01<a href="#date-2025-12-01" class="hash-link" aria-label="Direct link to Date: 2025-12-01" title="Direct link to Date: 2025-12-01">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v32">DeepSeek-V3.2<a href="#deepseek-v32" class="hash-link" aria-label="Direct link to DeepSeek-V3.2" title="Direct link to DeepSeek-V3.2">​</a></h3>
+<p>Both <code>deepseek-chat</code> and <code>deepseek-reasoner</code> have been upgraded to DeepSeek-V3.2.</p>
+<ul>
+<li><code>deepseek-chat</code> corresponds to DeepSeek-V3.2&#x27;s <strong>non-thinking mode</strong></li>
+<li><code>deepseek-reasoner</code> corresponds to DeepSeek-V3.2&#x27;s <strong>thinking mode</strong></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v32-speciale">DeepSeek-V3.2-Speciale<a href="#deepseek-v32-speciale" class="hash-link" aria-label="Direct link to DeepSeek-V3.2-Speciale" title="Direct link to DeepSeek-V3.2-Speciale">​</a></h3>
+<p>DeepSeek-V3.2-Speciale is served via a temporary endpoint: base_url=&quot;<a href="https://api.deepseek.com/v3.2_speciale_expires_on_20251215" target="_blank" rel="noopener noreferrer">https://api.deepseek.com/v3.2_speciale_expires_on_20251215</a>&quot;. Same pricing as V3.2, no tool calls, available until Dec 15th, 2025, 15:59 (UTC Time).</p>
+<p>For more details, please refer to <a href="/news/news251201">this documentation</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-09-29">Date: 2025-09-29<a href="#date-2025-09-29" class="hash-link" aria-label="Direct link to Date: 2025-09-29" title="Direct link to Date: 2025-09-29">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v32-exp">DeepSeek-V3.2-Exp<a href="#deepseek-v32-exp" class="hash-link" aria-label="Direct link to DeepSeek-V3.2-Exp" title="Direct link to DeepSeek-V3.2-Exp">​</a></h3>
+<p>Both <code>deepseek-chat</code> and <code>deepseek-reasoner</code> have been upgraded to DeepSeek-V3.2-Exp.</p>
+<ul>
+<li><code>deepseek-chat</code> corresponds to DeepSeek-V3.2-Exp&#x27;s <strong>non-thinking mode</strong></li>
+<li><code>deepseek-reasoner</code> corresponds to DeepSeek-V3.2-Exp&#x27;s <strong>thinking mode</strong></li>
+</ul>
+<p>For more details, please refer to <a href="/news/news250929">this documentation</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-09-22">Date: 2025-09-22<a href="#date-2025-09-22" class="hash-link" aria-label="Direct link to Date: 2025-09-22" title="Direct link to Date: 2025-09-22">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v31-terminus">DeepSeek-V3.1-Terminus<a href="#deepseek-v31-terminus" class="hash-link" aria-label="Direct link to DeepSeek-V3.1-Terminus" title="Direct link to DeepSeek-V3.1-Terminus">​</a></h3>
+<p><strong>Both <code>deepseek-chat</code> and <code>deepseek-reasoner</code> have been upgraded to DeepSeek-V3.1-Terminus.</strong> <code>deepseek-chat</code> corresponds to DeepSeek-V3.1-Terminus&#x27;s <strong>non-thinking mode</strong>, while <code>deepseek-reasoner</code> corresponds to its <strong>thinking mode</strong>.</p>
+<p>This update maintains the model&#x27;s original capabilities while addressing issues reported by users, including:</p>
+<ul>
+<li>Language consistency: Reduced occurrences of Chinese-English mixing and occasional abnormal characters;</li>
+<li>Agent capabilities: Further optimized the performance of the Code Agent and Search Agent.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-08-21">Date: 2025-08-21<a href="#date-2025-08-21" class="hash-link" aria-label="Direct link to Date: 2025-08-21" title="Direct link to Date: 2025-08-21">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-v31">DeepSeek-V3.1<a href="#deepseek-v31" class="hash-link" aria-label="Direct link to DeepSeek-V3.1" title="Direct link to DeepSeek-V3.1">​</a></h3>
+<p><strong>Both <code>deepseek-chat</code> and <code>deepseek-reasoner</code> have been upgraded to DeepSeek-V3.1.</strong> <code>deepseek-chat</code> corresponds to DeepSeek-V3.1&#x27;s <strong>non-thinking mode</strong>, while <code>deepseek-reasoner</code> corresponds to its <strong>thinking mode</strong>.</p>
+<ul>
+<li>Key updates in DeepSeek-V3.1:<!-- -->
+<ul>
+<li><strong>Hybrid reasoning architecture</strong>: A single model supports both thinking mode and non-thinking mode</li>
+<li><strong>Improved reasoning efficiency</strong>: Compared to DeepSeek-R1-0528, DeepSeek-V3.1-Think provides answers in significantly less time</li>
+<li><strong>Enhanced agent capabilities</strong>: With post-training optimization, the new model achieves major improvements in tool usage and intelligent agent tasks<!-- -->
+<ul>
+<li>SWE-bench Verified: 66.0</li>
+<li>SWE-bench Multilingual: 54.5</li>
+<li>Terminal-bench: 31.3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-05-28">Date: 2025-05-28<a href="#date-2025-05-28" class="hash-link" aria-label="Direct link to Date: 2025-05-28" title="Direct link to Date: 2025-05-28">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-reasoner">deepseek-reasoner<a href="#deepseek-reasoner" class="hash-link" aria-label="Direct link to deepseek-reasoner" title="Direct link to deepseek-reasoner">​</a></h3>
+<p><strong><code>deepseek-reasoner</code> Model Upgraded to DeepSeek-R1-0528:</strong></p>
+<ul>
+<li><strong>Enhanced Reasoning Capabilities</strong>
+<ul>
+<li>Significant benchmark improvements (Pass@1)<!-- -->
+<ul>
+<li>AIME 2025: 70.0 → 87.5 (+17.5)</li>
+<li>GPQA: 71.5 → 81.0 (+9.5)</li>
+<li>LCB_v6: 63.5 → 73.3 (+9.8)</li>
+<li>Aider: 57.0 → 71.6 (+14.6)</li>
+</ul>
+</li>
+<li>Note: Complex reasoning tasks may consume more tokens compared to legacy R1 version.</li>
+</ul>
+</li>
+<li><strong>Optimized Front-end Development</strong>
+<ul>
+<li>Generated web pages and games now feature improved aesthetics.</li>
+</ul>
+</li>
+<li><strong>Reduced Hallucinations</strong>
+<ul>
+<li>Significantly suppressed hallucination issues present in legacy R1 version.</li>
+</ul>
+</li>
+<li><strong>JSON Output &amp; Function Calling Support</strong>
+<ul>
+<li>Function call performance:<!-- -->
+<ul>
+<li>Tau-bench score: 53.5 (Airline) / 63.9 (Retail)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-03-24">Date: 2025-03-24<a href="#date-2025-03-24" class="hash-link" aria-label="Direct link to Date: 2025-03-24" title="Direct link to Date: 2025-03-24">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-chat">deepseek-chat<a href="#deepseek-chat" class="hash-link" aria-label="Direct link to deepseek-chat" title="Direct link to deepseek-chat">​</a></h3>
+<p><strong><code>deepseek-chat</code> Model Upgraded to DeepSeek-V3-0324:</strong></p>
+<ul>
+<li>
+<p><strong>Enhanced Reasoning Capabilities</strong></p>
+<ul>
+<li>Significant improvements in benchmark performance:<!-- -->
+<ul>
+<li>MMLU-Pro: 75.9 → 81.2 (+5.3)</li>
+<li>GPQA: 59.1 → 68.4 (+9.3)</li>
+<li>AIME: 39.6 → 59.4 (+19.8)</li>
+<li>LiveCodeBench: 39.2 → 49.2 (+10.0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimized Front-End Web Development</strong></p>
+<ul>
+<li>Improved accuracy in code generation</li>
+<li>More aesthetically pleasing web pages and game front-ends</li>
+</ul>
+</li>
+<li>
+<p><strong>Upgraded Chinese Writing Proficiency</strong></p>
+<ul>
+<li>Enhanced style and content quality:<!-- -->
+<ul>
+<li>Aligned with the R1 writing style</li>
+<li>Better quality in medium-to-long-form writing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Feature Enhancements</strong></p>
+<ul>
+<li>Improved multi-turn interactive rewriting</li>
+<li>Optimized translation quality and letter writing</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved Chinese Search Capabilities</strong></p>
+<ul>
+<li>Enhanced report analysis requests with more detailed outputs</li>
+</ul>
+</li>
+<li>
+<p><strong>Function Calling Improvements</strong></p>
+<ul>
+<li>Increased accuracy in Function Calling, fixing issues from previous V3 versions</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2025-01-20">Date: 2025-01-20<a href="#date-2025-01-20" class="hash-link" aria-label="Direct link to Date: 2025-01-20" title="Direct link to Date: 2025-01-20">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-reasoner-1">deepseek-reasoner<a href="#deepseek-reasoner-1" class="hash-link" aria-label="Direct link to deepseek-reasoner" title="Direct link to deepseek-reasoner">​</a></h3>
+<ul>
+<li><code>deepseek-reasoner</code> is our new model DeepSeek-R1. You can invoke DeepSeek-V3 by specifying <code>model=&#x27;deepseek-reasoner&#x27;</code>.</li>
+<li>For details, please refer to: <a href="/news/news250120">DeepSeek-R1 Release</a></li>
+<li>For guides, please refer to: <a href="/guides/thinking_mode">Thinking Mode</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-12-26">Date: 2024-12-26<a href="#date-2024-12-26" class="hash-link" aria-label="Direct link to Date: 2024-12-26" title="Direct link to Date: 2024-12-26">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-chat-1">deepseek-chat<a href="#deepseek-chat-1" class="hash-link" aria-label="Direct link to deepseek-chat" title="Direct link to deepseek-chat">​</a></h3>
+<ul>
+<li>The <code>deepseek-chat</code> model has been upgraded to DeepSeek-V3. The API remains unchanged. You can invoke DeepSeek-V3 by specifying <code>model=&#x27;deepseek-chat&#x27;</code>.</li>
+<li>For details, please refer to: <a href="/news/news1226">introducing DeepSeek-V3</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-12-10">Date: 2024-12-10<a href="#date-2024-12-10" class="hash-link" aria-label="Direct link to Date: 2024-12-10" title="Direct link to Date: 2024-12-10">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-chat-2">deepseek-chat<a href="#deepseek-chat-2" class="hash-link" aria-label="Direct link to deepseek-chat" title="Direct link to deepseek-chat">​</a></h3>
+<p>The deepseek-chat model has been upgraded to <strong>DeepSeek-V2.5-1210</strong>, with improvements across various capabilities. Relevant benchmarking results include:</p>
+<ul>
+<li>Mathematical: Performance on the MATH-500 benchmark has improved from 74.8% to 82.8% .</li>
+<li>Coding: Accuracy on the LiveCodebench (08.01 - 12.01) benchmark has increased from 29.2% to 34.38% .</li>
+<li>Writing and Reasoning: Corresponding improvements have been observed in internal test datasets.</li>
+</ul>
+<p>Additionally, the new version of the model has optimized the user experience for file upload and webpage summarization functionalities.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-09-05">Date: 2024-09-05<a href="#date-2024-09-05" class="hash-link" aria-label="Direct link to Date: 2024-09-05" title="Direct link to Date: 2024-09-05">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-coder--deepseek-chat-upgraded-to-deepseek-v25-model"><code>deepseek-coder</code> &amp; <code>deepseek-chat</code> Upgraded to DeepSeek V2.5 Model<a href="#deepseek-coder--deepseek-chat-upgraded-to-deepseek-v25-model" class="hash-link" aria-label="Direct link to deepseek-coder--deepseek-chat-upgraded-to-deepseek-v25-model" title="Direct link to deepseek-coder--deepseek-chat-upgraded-to-deepseek-v25-model">​</a></h3>
+<p>The DeepSeek V2 Chat and DeepSeek Coder V2 models have been merged and upgraded into the new model, DeepSeek V2.5.</p>
+<p>For backward compatibility, API users can access the new model through either <code>deepseek-coder</code> or <code>deepseek-chat</code>.</p>
+<p>The new model significantly surpasses the previous versions in both general capabilities and code abilities.</p>
+<p><strong>The new model better aligns with human preferences and has been optimized in various areas such as writing tasks and instruction following:</strong></p>
+<ul>
+<li>ArenaHard win rate improved from 68.3% to 76.3%</li>
+<li>AlpacaEval 2.0 LC win rate increased from 46.61% to 50.52%</li>
+<li>MT-Bench score rose from 8.84 to 9.02</li>
+<li>AlignBench score increased from 7.88 to 8.04</li>
+</ul>
+<p><strong>The new model has further enhanced its code generation capabilities based on the original Coder model, optimized for common programming application scenarios, and achieved the following results on the standard test set:</strong></p>
+<ul>
+<li>HumanEval: 89%</li>
+<li>LiveCodeBench (January-September): 41%</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-08-02">Date: 2024-08-02<a href="#date-2024-08-02" class="hash-link" aria-label="Direct link to Date: 2024-08-02" title="Direct link to Date: 2024-08-02">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="api-launches-context-caching-on-disk-technology">API Launches Context Caching on Disk Technology<a href="#api-launches-context-caching-on-disk-technology" class="hash-link" aria-label="Direct link to API Launches Context Caching on Disk Technology" title="Direct link to API Launches Context Caching on Disk Technology">​</a></h3>
+<p>The DeepSeek API has innovatively adopted hard disk caching, reducing prices by another order of magnitude.</p>
+<p>For more details on the update, please refer to the documentation <a href="/news/news0802">Context Caching is Available 2024/08/02</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-07-25">Date: 2024-07-25<a href="#date-2024-07-25" class="hash-link" aria-label="Direct link to Date: 2024-07-25" title="Direct link to Date: 2024-07-25">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="new-api-features">New API Features<a href="#new-api-features" class="hash-link" aria-label="Direct link to New API Features" title="Direct link to New API Features">​</a></h3>
+<ul>
+<li><strong>Update API /chat/completions</strong>
+<ul>
+<li>JSON Mode</li>
+<li>Function Calling</li>
+<li>Chat Prefix Completion（Beta）</li>
+<li>8K <code>max_tokens</code>（Beta）</li>
+</ul>
+</li>
+<li><strong>New API /completions</strong>
+<ul>
+<li>FIM Completion（Beta）</li>
+</ul>
+</li>
+</ul>
+<p>For more details, please check the documentation <a href="/news/news0725">New API Features 2024/07/25</a></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-07-24">Date: 2024-07-24<a href="#date-2024-07-24" class="hash-link" aria-label="Direct link to Date: 2024-07-24" title="Direct link to Date: 2024-07-24">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-coder">deepseek-coder<a href="#deepseek-coder" class="hash-link" aria-label="Direct link to deepseek-coder" title="Direct link to deepseek-coder">​</a></h3>
+<p>The <code>deepseek-coder</code> model has been upgraded to DeepSeek-Coder-V2-0724.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-06-28">Date: 2024-06-28<a href="#date-2024-06-28" class="hash-link" aria-label="Direct link to Date: 2024-06-28" title="Direct link to Date: 2024-06-28">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-chat-3">deepseek-chat<a href="#deepseek-chat-3" class="hash-link" aria-label="Direct link to deepseek-chat" title="Direct link to deepseek-chat">​</a></h3>
+<p>The <code>deepseek-chat</code> model has been upgraded to DeepSeek-V2-0628.</p>
+<p>Model&#x27;s reasoning capabilities have improved, as shown in relevant benchmarks:</p>
+<ul>
+<li>Coding: HumanEval Pass@1 79.88% -&gt; 84.76%</li>
+<li>Mathematics: MATH ACC@1 55.02% -&gt; 71.02%</li>
+<li>Reasoning: BBH 78.56% -&gt; 83.40%</li>
+</ul>
+<p>In the Arena-Hard evaluation, the win rate against GPT-4-0314 increased from 41.6% to 68.3%.</p>
+<p>The model&#x27;s role-playing capabilities have significantly enhanced, allowing it to act as different characters as requested during conversations.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-06-14">Date: 2024-06-14<a href="#date-2024-06-14" class="hash-link" aria-label="Direct link to Date: 2024-06-14" title="Direct link to Date: 2024-06-14">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-coder-1">deepseek-coder<a href="#deepseek-coder-1" class="hash-link" aria-label="Direct link to deepseek-coder" title="Direct link to deepseek-coder">​</a></h3>
+<p>The <code>deepseek-coder</code> model has been upgraded to DeepSeek-Coder-V2-0614, significantly enhancing its coding capabilities. It has reached the level of GPT-4-Turbo-0409 in code generation, code understanding, code debugging, and code completion. Additionally, it possesses excellent mathematical and reasoning abilities, and its general capabilities are on par with DeepSeek-V2-0517.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_YAqC" id="date-2024-05-17">Date: 2024-05-17<a href="#date-2024-05-17" class="hash-link" aria-label="Direct link to Date: 2024-05-17" title="Direct link to Date: 2024-05-17">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_YAqC" id="deepseek-chat-4">deepseek-chat<a href="#deepseek-chat-4" class="hash-link" aria-label="Direct link to deepseek-chat" title="Direct link to deepseek-chat">​</a></h3>
+<p>The <code>deepseek-chat</code> model has been upgraded to DeepSeek-V2-0517. The model has seen a significant improvement in following instructions, with the IFEval Benchmark Prompt-Level accuracy jumping from 63.9% to 77.6%. Additionally, on API end, we have optimized model ability to follow instruction filled in the ``system&quot; part. This optimization has significantly elevated the user experience across a variety of tasks, including immersive translation, Retrieval-Augmented Generation (RAG), and more.</p>
+<p>The model&#x27;s accuracy in outputting JSON format has been enhanced. In our internal test set, the JSON parsing rate increased from 78% to 85%. By introducing appropriate regular expressions, the JSON parsing rate was further improved to 97%.</p></div></div></div><div class="col col--12"></div></article></body></html>

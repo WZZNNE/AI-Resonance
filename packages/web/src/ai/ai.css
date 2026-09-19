@@ -1,0 +1,859 @@
+/*
+ * Models tab and the one-click summary sheet (lazy chunks; docs/VISUAL.md). Tokens only; everything stacks at 360 px.
+ * Grouped lists are inset plates (surface-2 + plate edge) with hairline rows; values that are measurements (prices,
+ * tokens, cost, masked keys) are mono.
+ */
+
+/* ── summary sheet ── */
+
+.aisum {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.aisum__item {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.aisum__board {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-3);
+  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.aisum__board .hue-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.aisum__item strong {
+  font: var(--weight-section) var(--fs-l) / var(--lh-title) var(--font-display);
+  letter-spacing: var(--tracking-title);
+  overflow-wrap: anywhere;
+}
+
+/* Run options: an inset grouped plate, label on the left, the control (a well) on the right. */
+.aisum__controls {
+  display: grid;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  container-type: inline-size;
+}
+
+.aisum__ctl {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  min-height: 52px;
+  padding: 0.5rem 0.75rem 0.5rem 0.875rem;
+}
+
+.aisum__ctl + .aisum__ctl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0.875rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.aisum__lbl {
+  flex: none;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  font-weight: 500;
+}
+
+.aisum__model {
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: 24rem;
+}
+
+.aisum__model select {
+  min-height: 36px;
+  font-size: var(--fs-s);
+}
+
+@media (pointer: coarse) {
+  .aisum__model select {
+    min-height: var(--target);
+  }
+}
+
+/* Many effort levels: the track scrolls sideways instead of wrapping into two rows. */
+.aisum__scroll {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.aisum__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.aisum__scroll .segmented {
+  flex: none;
+  flex-wrap: nowrap;
+}
+
+/* Narrow sheet: the effort row puts its label above a full-width (scrolling) track. */
+@container (max-width: 440px) {
+  .aisum__ctl--stack {
+    display: grid;
+    justify-content: normal;
+    gap: 0.5rem;
+    padding-block: 0.75rem;
+  }
+
+  .aisum__ctl--stack .aisum__scroll {
+    justify-content: flex-start;
+  }
+}
+
+/* The verdict card: a plate with the signal edge (AI-written text), verdict chip, TL;DR lead, eyebrow sections. */
+.aisum__card {
+  display: grid;
+  gap: 0.875rem;
+  min-width: 0;
+  padding: 1.125rem 1.25rem 1.25rem 1.375rem;
+  border-radius: var(--radius-l);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.aisum__card:empty {
+  display: none;
+}
+
+.aisum__verdict {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+}
+
+/* Verdict chip: a tinted capsule with a state dot — dig = ok, bookmark = signal, skip = neutral. */
+.aisum__chip {
+  gap: 0.45rem;
+  height: 28px;
+  padding: 0 0.8rem 0 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.aisum__chip::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--badge-hue);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--badge-hue) var(--bloom), transparent);
+}
+
+.aisum__chip.is-bookmark {
+  --badge-hue: var(--signal);
+}
+
+.aisum__chip.is-skip {
+  --badge-hue: var(--text-3);
+}
+
+.aisum__chip.is-dig,
+.aisum__chip.is-bookmark {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--badge-hue) 22%, transparent);
+}
+
+.aisum__chip.is-skip {
+  box-shadow: var(--well-edge);
+  background: var(--well-bg);
+}
+
+.aisum__meta {
+  margin: 0;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  overflow-wrap: anywhere;
+}
+
+/* Thinking indicator: small, grey, no colour. */
+.aisum__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--text-3);
+  font-size: var(--fs-s);
+}
+
+.aisum__thinking {
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.aisum__thinking summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 36px;
+  padding: 0 0.75rem;
+  border-radius: inherit;
+  cursor: pointer;
+  list-style: none;
+}
+
+.aisum__thinking summary::-webkit-details-marker {
+  display: none;
+}
+
+.aisum__chev {
+  transform: rotate(-90deg);
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.aisum__thinking[open] .aisum__chev {
+  transform: none;
+}
+
+.aisum__thinking p {
+  max-height: 12rem;
+  margin: 0;
+  padding: 0 0.875rem 0.75rem 1.9rem;
+  overflow: auto;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.aisum__md {
+  font-size: var(--fs-m);
+  overflow-wrap: anywhere;
+}
+
+/* Section headings (## → h5) read as eyebrows with a hairline above; the text carries the hierarchy. */
+.aisum__md h4,
+.aisum__md h5,
+.aisum__md h6 {
+  margin: 1.1rem 0 0.4rem;
+  padding-top: 0.9rem;
+  box-shadow: inset 0 1px 0 var(--line);
+  color: var(--text-3);
+  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.aisum__md > h4:first-child,
+.aisum__md > h5:first-child,
+.aisum__md > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  box-shadow: none;
+}
+
+/* TL;DR: the first paragraph under the first heading is the lead. */
+.aisum__md > :first-child + p {
+  margin-bottom: 0;
+  color: var(--text);
+  font: 500 var(--fs-l) / 1.5 var(--font-text);
+  letter-spacing: -0.01em;
+}
+
+.aisum__md p,
+.aisum__md ul,
+.aisum__md ol {
+  margin-bottom: 0;
+}
+
+.aisum__md ul,
+.aisum__md ol {
+  color: var(--text-2);
+}
+
+.aisum__idle {
+  font-size: var(--fs-s);
+}
+
+.aisum__error {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-m);
+  background: color-mix(in oklab, var(--danger) 8%, var(--surface-2));
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--danger) 26%, transparent);
+  font-size: var(--fs-s);
+}
+
+.aisum__error p {
+  margin: 0;
+}
+
+.aisum__error strong {
+  color: color-mix(in oklab, var(--danger) 70%, var(--text));
+  font-weight: 600;
+}
+
+.aisum__error .aisum__meta {
+  font-family: var(--font-mono);
+}
+
+.aisum__used {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.aisum__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.aisum__foot {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Cost: a quiet mono readout at the end of the footer. */
+.aisum__cost {
+  margin-left: auto;
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.4 var(--font-mono);
+  letter-spacing: -0.01em;
+  text-align: right;
+}
+
+/* ── troubleshooting ── */
+
+.aihelp {
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+}
+
+.aihelp__title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.45rem;
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.aihelp__title .icon {
+  color: var(--info);
+}
+
+.aihelp__list {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-2);
+}
+
+.aihelp__list li::marker {
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+
+.aihelp code {
+  padding: 0.1em 0.4em;
+  border-radius: 5px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* ── models tab ── */
+
+/* Providers: grouped plates inside the section, each a disclosure row. */
+.aiprovs {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.aiprov {
+  border-radius: var(--radius-l);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.aiprov__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 60px;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-l);
+  cursor: pointer;
+  list-style: none;
+}
+
+.aiprov__head::-webkit-details-marker {
+  display: none;
+}
+
+.aiprov__head:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+.aiprov[open] > .aiprov__head {
+  border-radius: var(--radius-l) var(--radius-l) 0 0;
+  box-shadow: inset 0 -1px 0 var(--line);
+}
+
+.aiprov[open] > .aiprov__head:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+/* Monogram in a recessed disc. */
+.aiprov__mono {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 650 var(--fs-m) / 1 var(--font-display);
+}
+
+.aiprov__text {
+  display: grid;
+  flex: 1;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.aiprov__text strong {
+  font-size: var(--fs-m);
+  font-weight: 600;
+}
+
+.aiprov__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  overflow-wrap: anywhere;
+}
+
+.aiprov__host {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+}
+
+.aiprov__chev {
+  color: var(--text-3);
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.aiprov[open] .aiprov__chev {
+  transform: rotate(180deg);
+}
+
+.aiprov__body {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem 0.875rem 0.875rem;
+}
+
+.aiprov__body > .settings__hint {
+  margin: 0;
+}
+
+.aiprov__adv {
+  margin-top: -0.25rem;
+}
+
+.aiprov__adv .aiprov__body {
+  padding: 0.75rem 0 0;
+}
+
+.aiprov__adv summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border-radius: var(--radius-s);
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  cursor: pointer;
+}
+
+.aiprov__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: -0.25rem 0 0;
+  font-size: var(--fs-s);
+}
+
+.aiprov__ok {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: -0.25rem 0 0;
+  color: color-mix(in oklab, var(--ok) 80%, var(--text));
+  font-size: var(--fs-s);
+}
+
+.aiprov__add {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.aiprov__add .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.aiprov__add .input input {
+  font-family: var(--font-mono);
+  font-size: var(--fs-s);
+}
+
+/* The key a provider uses: disc, label + masked secret in a well, actions. */
+.aikey {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem 0.75rem;
+  min-height: 52px;
+  padding: 0.5rem 0.5rem 0.5rem 0.625rem;
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  box-shadow: var(--plate-edge);
+}
+
+.aikey__disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-3);
+}
+
+.aikey.is-set .aikey__disc {
+  color: color-mix(in oklab, var(--ok) 80%, var(--text));
+}
+
+.aikey.is-missing .aikey__disc,
+.aikey.is-none .aikey__disc {
+  color: color-mix(in oklab, var(--warn) 80%, var(--text));
+}
+
+.aikey__text {
+  display: flex;
+  flex: 1 1 12rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.6rem;
+  min-width: 0;
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+}
+
+.aikey__label {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.aikey__mask {
+  padding: 0.2em 0.55em;
+  border-radius: 6px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+.aikey__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+/* Phones: the actions sit under the text, aligned with it (not flushed right). */
+@media (max-width: 479px) {
+  .aikey {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+
+  .aikey__actions {
+    grid-column: 2;
+    margin-left: -0.35rem;
+  }
+}
+
+/* Fetched model ids: a recessed list. */
+.airemote {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.airemote__list {
+  display: grid;
+  max-height: 16rem;
+  margin: 0;
+  padding: 0.25rem 0;
+  overflow: auto;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  list-style: none;
+}
+
+.airemote__list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.35rem 0 0.875rem;
+}
+
+.airemote__list li + li {
+  box-shadow: inset 0 1px 0 var(--line);
+}
+
+.airemote__list code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font: 500 var(--fs-xs) / 1.3 var(--font-mono);
+}
+
+/* Models of a provider: a grouped list one step below the provider plate; the radio carries the selection. */
+.aimodels {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  box-shadow: var(--plate-edge);
+  list-style: none;
+}
+
+.aimodel {
+  position: relative;
+}
+
+.aimodel + .aimodel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 2.75rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.aimodel__head {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 56px;
+  padding: 0.25rem 0.35rem 0.25rem 0;
+}
+
+.aimodel__pick {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--target);
+  height: var(--target);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: none;
+  cursor: pointer;
+}
+
+.aimodel__pick:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+/* Radio: an empty ring (rim first, over a half well); selected = accent fill with a white centre and a top highlight. */
+.aimodel__dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--well-bg) 50%, transparent);
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--text) 30%, transparent),
+    var(--well-edge);
+  transition:
+    background-color var(--dur-1) var(--ease),
+    box-shadow var(--dur-1) var(--ease);
+}
+
+.aimodel.is-active .aimodel__dot {
+  background: radial-gradient(circle, var(--accent-ink) 0 3.5px, transparent 4.5px) var(--accent-fill);
+  box-shadow:
+    inset 0 1px 0 var(--hl),
+    0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+.aimodel__text {
+  display: grid;
+  flex: 1;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.aimodel__text strong {
+  font-size: var(--fs-s);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.aimodel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.aimodel__meta code,
+.aimodel__meta .num {
+  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+.aimodel__meta .num {
+  color: var(--text-2);
+}
+
+.aimodel__body {
+  display: grid;
+  gap: 1rem;
+  margin-left: 2.75rem;
+  padding: 1rem 0.875rem 1rem 0;
+  box-shadow: inset 0 1px 0 var(--line);
+}
+
+@media (max-width: 479px) {
+  .aimodel__body {
+    margin-left: 0.875rem;
+  }
+}
+
+.aimodel__grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  align-items: end;
+}
+
+/* Price and context overrides are numbers: mono. */
+.aimodel__body .aimodel__grid input {
+  font-family: var(--font-mono);
+  font-size: var(--fs-s);
+}
+
+.aiprov__body > .aimodel__grid {
+  align-items: start;
+}
+
+.aifieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.aifieldset legend {
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+.aimodel__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+/* Add-provider sheet: preset tiles (.tile gives the plate, lift and press). */
+.aipresets {
+  display: grid;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+}
+
+.aipresets__item {
+  gap: 0.2rem;
+  align-content: start;
+  justify-items: start;
+  width: 100%;
+  min-height: 76px;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-m);
+  font: inherit;
+}
+
+.aipresets__item strong {
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.aipresets__item > span:not(.badge) {
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.4 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.aipresets__item .badge {
+  margin-top: 0.2rem;
+}

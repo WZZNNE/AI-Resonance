@@ -1,0 +1,252 @@
+/*
+ * Presets beyond titanium: COLOUR maps (plus the type and corner shape that are each preset's identity). Materials —
+ * plate, well, glass, press, glow — are never set here: tokens.css derives them from these colours per mode, so every
+ * preset gets the same depth system. Loaded after tokens.css, so `:root[data-preset=…]` (same specificity as
+ * titanium's light block) wins; each preset defines its primary mode first and the other mode as an override.
+ */
+
+/* ───────────── paper: light editorial, serif headlines, ink on warm stock ───────────── */
+
+:root[data-preset="paper"] {
+  color-scheme: light;
+  --bg: #f3eee3;
+  --bg-2: #ebe4d6;
+  --surface: #fbf8f1;
+  --surface-2: #f5f0e5;
+  --surface-3: #ebe4d5;
+  --well: #e8e0cf;
+  --line: rgb(60 45 20 / 0.12);
+  --line-2: rgb(60 45 20 / 0.22);
+  --text: #1c1914;
+  --text-2: #463f35;
+  --text-3: #605a4e;
+  --accent: #a3302a;
+  --accent-fill: var(--accent);
+  --accent-2: #86241f;
+  --accent-ink: #fffaf2;
+  --signal: #25609e;
+  --signal-2: #a3302a;
+  --ok: #256b41;
+  --warn: #865606;
+  --danger: #b3261e;
+  --info: #25609e;
+  --live: #b3261e;
+  --res: #8f6a00;
+  --scrim: rgb(28 25 20 / 0.28);
+  --spill: none;
+  --grid: none;
+
+  --hue-repos: #2b7552;
+  --hue-papers: #6445a3;
+  --hue-news: #b95515;
+  --hue-social: #25629f;
+  --hue-labs: #a3325f;
+
+  --cat-release: #2f7a3f;
+  --cat-product: #1d7680;
+  --cat-research: #6445a3;
+  --cat-tool: #93620f;
+  --cat-engineering: #2b5f9e;
+  --cat-discussion: #5d564a;
+  --cat-industry: #b0531c;
+  --cat-policy: #a3302a;
+
+  --sig-1: #2d4f7c;
+  --sig-2: #2b7552;
+  --sig-3: #b77b12;
+  --sig-4: #a3325f;
+  --sig-5: #3f7fb8;
+  --sig-6: #6d5296;
+  --sig-7: #6f8a2d;
+  --sig-8: #8b8373;
+
+  --font-text: var(--font-serif);
+  --font-display: var(--font-serif);
+  --font-num: var(--font-serif);
+  --weight-title: 600;
+  --weight-section: 600;
+  --weight-display: 600;
+  --tracking-display: -0.01em;
+  --tracking-hero: -0.015em;
+  --tracking-section: -0.01em;
+  --tracking-title: 0;
+  --radius-s: 3px;
+  --radius-m: 4px;
+  --radius-l: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+}
+
+:root[data-preset="paper"][data-mode="dark"] {
+  color-scheme: dark;
+  --bg: #161411;
+  --bg-2: #1b1915;
+  --surface: #1e1b17;
+  --surface-2: #25221d;
+  --surface-3: #2c2823;
+  --well: #12100d;
+  --line: rgb(255 240 210 / 0.08);
+  --line-2: rgb(255 240 210 / 0.14);
+  --text: #efe8da;
+  --text-2: #c8bfae;
+  --text-3: #9d9483;
+  --accent: #e2786c;
+  --accent-2: #ec8f84;
+  --accent-ink: #1b0f0d;
+  --signal: #7fb2e8;
+  --signal-2: #e2786c;
+  --ok: #6cc28f;
+  --warn: #e2b04f;
+  --danger: #f07a70;
+  --info: #7fb2e8;
+  --live: #f07a70;
+  --res: #e8c55a;
+  --scrim: rgb(0 0 0 / 0.5);
+
+  --hue-repos: #62c093;
+  --hue-papers: #a98ee2;
+  --hue-news: #eb9454;
+  --hue-social: #6fa9e8;
+  --hue-labs: #e27fa7;
+
+  --cat-release: #7fcf8d;
+  --cat-product: #62c4cc;
+  --cat-research: #a98ee2;
+  --cat-tool: #e2b04f;
+  --cat-engineering: #7fb2e8;
+  --cat-discussion: #b3aa98;
+  --cat-industry: #eb9454;
+  --cat-policy: #f07a70;
+
+  --sig-1: #7fb2e8;
+  --sig-2: #62c093;
+  --sig-3: #e2b04f;
+  --sig-4: #e27fa7;
+  --sig-5: #5fb8d8;
+  --sig-6: #a98ee2;
+  --sig-7: #a9c96a;
+  --sig-8: #8f8777;
+}
+
+/* ───────────── terminal: phosphor mono, square corners ───────────── */
+
+:root[data-preset="terminal"] {
+  color-scheme: dark;
+  --bg: #030604;
+  --bg-2: #050a06;
+  --surface: #06100a;
+  --surface-2: #0a170e;
+  --surface-3: #0f2014;
+  --well: #020403;
+  --line: rgb(77 255 154 / 0.1);
+  --line-2: rgb(77 255 154 / 0.18);
+  --text: #d4f7dc;
+  --text-2: #a2dcb0;
+  --text-3: #74ad82;
+  --accent: #ffcc4d;
+  --accent-fill: var(--accent);
+  --accent-2: #ffd978;
+  --accent-ink: #0b0800;
+  --signal: #4dff9a;
+  --signal-2: #59c8ff;
+  --ok: #4dff9a;
+  --warn: #ffcc4d;
+  --danger: #ff6b6b;
+  --info: #59c8ff;
+  --live: #ff6b6b;
+  --res: #ffcc4d;
+  --scrim: rgb(0 0 0 / 0.6);
+
+  --hue-repos: #4dff9a;
+  --hue-papers: #b894ff;
+  --hue-news: #ffa94d;
+  --hue-social: #59c8ff;
+  --hue-labs: #ff6fae;
+
+  --cat-release: #4dff9a;
+  --cat-product: #59e0e8;
+  --cat-research: #b894ff;
+  --cat-tool: #ffcc4d;
+  --cat-engineering: #59c8ff;
+  --cat-discussion: #a2dcb0;
+  --cat-industry: #ffa94d;
+  --cat-policy: #ff6b6b;
+
+  --sig-1: #4dff9a;
+  --sig-2: #59c8ff;
+  --sig-3: #ffcc4d;
+  --sig-4: #ff6fae;
+  --sig-5: #b894ff;
+  --sig-6: #59e0e8;
+  --sig-7: #c6f56a;
+  --sig-8: #74ad82;
+
+  --font-ui: var(--font-mono);
+  --font-text: var(--font-mono);
+  --font-display: var(--font-mono);
+  --font-num: var(--font-mono);
+  --weight-title: 600;
+  --weight-section: 700;
+  --weight-display: 700;
+  --tracking-display: 0;
+  --tracking-hero: 0;
+  --tracking-section: 0;
+  --tracking-title: 0;
+  --fs-m: 0.875rem;
+  --radius-s: 0;
+  --radius-m: 2px;
+  --radius-l: 2px;
+  --radius-xl: 2px;
+  --radius-2xl: 2px;
+}
+
+:root[data-preset="terminal"][data-mode="light"] {
+  color-scheme: light;
+  --bg: #f2f5ef;
+  --bg-2: #e9eee5;
+  --surface: #fbfdf9;
+  --surface-2: #f2f6ef;
+  --surface-3: #e7ede3;
+  --well: #e4eadf;
+  --line: rgb(12 31 17 / 0.1);
+  --line-2: rgb(12 31 17 / 0.18);
+  --text: #0c1f11;
+  --text-2: #2f4c37;
+  --text-3: #4b6953;
+  --accent: #946200;
+  --accent-2: #7a5100;
+  --accent-ink: #fffbe8;
+  --signal: #0c7a3c;
+  --signal-2: #146aa6;
+  --ok: #0c7a3c;
+  --warn: #8a5a00;
+  --danger: #c02f2f;
+  --info: #155f96;
+  --live: #c02f2f;
+  --res: #946200;
+  --scrim: rgb(12 31 17 / 0.28);
+
+  --hue-repos: #0c7a3c;
+  --hue-papers: #6a44c2;
+  --hue-news: #b25a0a;
+  --hue-social: #146aa6;
+  --hue-labs: #b8306e;
+
+  --cat-release: #0c7a3c;
+  --cat-product: #0f7580;
+  --cat-research: #6a44c2;
+  --cat-tool: #8a5a00;
+  --cat-engineering: #146aa6;
+  --cat-discussion: #4b6953;
+  --cat-industry: #b25a0a;
+  --cat-policy: #c02f2f;
+
+  --sig-1: #0c7a3c;
+  --sig-2: #146aa6;
+  --sig-3: #8a5a00;
+  --sig-4: #b8306e;
+  --sig-5: #6a44c2;
+  --sig-6: #0f7580;
+  --sig-7: #5d7d10;
+  --sig-8: #6d8574;
+}

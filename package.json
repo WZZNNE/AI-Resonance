@@ -1,0 +1,62 @@
+{
+  "name": "ai-resonance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Daily top-10 AI repos, papers, Hacker News, X/Reddit and AI-lab updates - ranked by a transparent score, linked across sources, remembered for six months. Zero-server (GitHub Actions + Pages), bilingual, bring-your-own-key AI summaries.",
+  "keywords": [
+    "ai",
+    "llm",
+    "ai-news",
+    "daily-digest",
+    "news-aggregator",
+    "github-trending",
+    "arxiv",
+    "hacker-news",
+    "reddit",
+    "twitter",
+    "ai-agents",
+    "mcp",
+    "dashboard",
+    "pwa",
+    "github-actions",
+    "github-pages",
+    "typescript",
+    "preact",
+    "bilingual",
+    "open-source"
+  ],
+  "homepage": "https://wzznne.github.io/AI-Resonance/",
+  "bugs": {
+    "url": "https://github.com/WZZNNE/AI-Resonance/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WZZNNE/AI-Resonance.git"
+  },
+  "license": "MIT",
+  "author": "WZZNNE",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "pipeline": "pnpm --filter @resonance/pipeline run cli",
+    "daily": "pnpm pipeline run",
+    "publish:data": "pnpm pipeline publish",
+    "dev": "pnpm --filter @resonance/web run dev",
+    "build": "pnpm --filter @resonance/web run build",
+    "preview": "pnpm --filter @resonance/web run preview",
+    "start": "pnpm pipeline serve",
+    "mcp": "pnpm --filter @resonance/channels run mcp",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "mail": "pnpm --filter @resonance/channels run mail"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14"
+  }
+}

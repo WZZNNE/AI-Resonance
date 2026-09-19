@@ -1,0 +1,54 @@
+name: Feature request / 功能建议
+description: An idea, a new source or AI company, a search engine, a model provider preset or a UI improvement. 新想法、数据源、AI 公司、搜索引擎、模型服务商预设或界面改进。
+title: '[Feature] '
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AI Resonance stays deliberately small: no backend, no accounts, no analytics, five boards. Ideas that fit into `config.yaml`, a source, a lab site, a search engine or a provider preset are the easiest to land (see [CONTRIBUTING.md](https://github.com/WZZNNE/AI-Resonance/blob/main/CONTRIBUTING.md)).
+        项目刻意保持精简：无后端、无账号、无统计、五个榜单。能落在 `config.yaml`、数据源、AI 公司、搜索引擎或模型预设里的建议最容易被采纳。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind / 类型
+      options:
+        - New data source or AI company / 新数据源或 AI 公司
+        - Scoring, resonance or trends / 评分、共振或趋势
+        - Web app UI / 网页界面
+        - AI summaries, models or search / AI 总结、模型或搜索
+        - E-mail, reports, MCP or feeds / 邮件、报告、MCP 或订阅
+        - Docs / 文档
+        - Other / 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem / 要解决的问题
+      description: What are you trying to do, and what gets in the way today? 你想做什么、现在卡在哪里？
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / 建议方案
+      description: What should happen instead? Mock-ups or examples are welcome. 期望的效果，欢迎附草图或示例。
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: For a new source / 新数据源信息
+      description: URL, fields, date format, rate limits, CORS and terms of use, as in `docs/VERIFIED.md`. 请提供 URL、字段、日期格式、限流、CORS 与使用条款。
+
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contributing / 参与
+      options:
+        - label: I would like to open a pull request for this. / 我愿意为此提交 PR。

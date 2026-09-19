@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Pipeline state. Locally this is a plain folder; in CI it is a checkout of the `data` branch.
+/data/
+
+# Derived API files the pipeline writes for the web app (rebuilt on every run).
+/packages/web/public/api/
+/packages/web/public/llms.txt
+
+# `pnpm mail --dry-run out` renders into packages/channels/out.
+/packages/channels/out/

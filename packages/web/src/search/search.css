@@ -1,0 +1,872 @@
+/*
+ * Search (docs/VISUAL.md): the palette is a glass sheet (full screen below 768 px, a floating panel above) with a well
+ * field, a scope segmented track, grouped results on inset plates and raised engine pills; plus the #/search page and
+ * Settings › Search. Tokens only; hooks: data-part="search-palette | search-input | search-results | search-web |
+ * search-page | search-settings".
+ */
+
+/* ── palette frame (glass) ── */
+
+.overlay.spal[data-state] {
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Phones: a full-screen page of its own (as iOS search is), opaque — see-through glass over a busy page reads muddy. */
+.spal__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  outline: none;
+  animation: fade-in var(--dur-2) var(--ease) both;
+}
+
+@media (min-width: 768px) {
+  .overlay.spal[data-state] {
+    align-items: flex-start;
+    padding: 10vh var(--gutter) 2rem;
+  }
+
+  .spal__panel {
+    width: min(680px, 100%);
+    height: auto;
+    max-height: min(78vh, 760px);
+    border-radius: var(--radius-xl);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-edge), var(--elev-3);
+    overflow: hidden;
+    animation-name: pop-in;
+  }
+}
+
+.spal__inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Field row: the well field, then "Close" as a text button (iOS search bar). */
+.spal__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: calc(0.75rem + env(safe-area-inset-top)) 0.5rem 0.25rem 1rem;
+}
+
+.spal__field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  min-height: var(--target);
+  padding: 0 0.25rem 0 0.8rem;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  transition: box-shadow var(--dur-1) var(--ease);
+}
+
+.spal__field:focus-within {
+  box-shadow: var(--well-edge), var(--ring);
+}
+
+.spal__icon {
+  flex: none;
+  color: var(--text-3);
+}
+
+.spal__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--target);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: 400 max(16px, var(--fs-m)) / 1.3 var(--font-ui);
+  letter-spacing: -0.005em;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.spal__input::placeholder {
+  color: color-mix(in oklab, var(--text-3) 85%, var(--text));
+  opacity: 1;
+}
+
+/* The field shows the ring; the input itself stays bare. */
+.spal__input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.spal__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.spal__clear {
+  --ib: 28px;
+}
+
+.spal__close {
+  position: relative;
+  flex: none;
+  min-height: var(--target);
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  color: var(--accent);
+  font: 500 var(--fs-m) / 1 var(--font-ui);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .spal__bar {
+    padding: 0.875rem 0.75rem 0.25rem 1rem;
+  }
+
+  .spal__field {
+    min-height: 48px;
+    padding-left: 0.9rem;
+  }
+
+  .spal__input {
+    font-size: var(--fs-l);
+  }
+
+  .spal__close {
+    font-size: var(--fs-s);
+  }
+}
+
+/* Scope track wrapper: spacing and the hairline that separates chrome from results live here, not on the track. */
+.spal__scopes {
+  flex: none;
+  padding: 0.5rem 1rem 0.75rem;
+  box-shadow: inset 0 -1px 0 var(--line);
+}
+
+.spal__body {
+  flex: 1;
+  min-height: 0;
+  padding: 0.75rem 1rem 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  outline: none;
+}
+
+.spal__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.25rem;
+  padding: 0.625rem 1rem;
+  box-shadow: inset 0 1px 0 var(--line);
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.spal__foot > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.spal__foot kbd {
+  min-width: 20px;
+  height: 20px;
+}
+
+/* #/search: the same panel as a plate on the page. */
+.spage .spal__inner {
+  max-width: 760px;
+  border-radius: var(--radius-xl);
+  background: var(--plate-bg);
+  box-shadow: var(--plate-edge), var(--elev-1);
+}
+
+.spage .spal__bar {
+  padding-top: 0.875rem;
+}
+
+/* ── archive scope ── */
+
+.sarch__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: -0.25rem 0 0.5rem -0.5rem;
+}
+
+.sarch__count {
+  margin-left: auto;
+  color: var(--text-3);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* Filters: a grouped inset plate, one hairline-separated row per facet. */
+.sfilt {
+  display: grid;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.sfilt__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.625rem 0.75rem;
+}
+
+.sfilt__row + .sfilt__row {
+  box-shadow: inset 0 1px 0 var(--line);
+}
+
+.sfilt__label {
+  width: 100%;
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .sfilt__label {
+    width: 4.5rem;
+  }
+}
+
+.sfilt__dates {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-3);
+}
+
+.sfilt__date {
+  min-height: 36px;
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text);
+  font: 500 var(--fs-xs) / 1 var(--font-mono);
+  color-scheme: inherit;
+  outline: none;
+}
+
+.sfilt__date:focus-visible {
+  box-shadow: var(--well-edge), var(--ring);
+}
+
+@media (pointer: coarse) {
+  .sfilt__date {
+    min-height: var(--target);
+    font-size: max(16px, var(--fs-xs));
+  }
+}
+
+/* Results: a group label above an inset plate of rows (iOS grouped list). */
+.sres-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.sres-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.sres-group__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  color: var(--text-2);
+  font: 600 var(--fs-xs) / 1.2 var(--font-ui);
+  letter-spacing: 0.01em;
+}
+
+.sres-group__head .hue-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.sres-group__count {
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1 var(--font-mono);
+}
+
+.sres-group__rows,
+.srecent__list,
+.sweb__results {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.sres,
+.wres {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  min-height: var(--target);
+  padding: 0.7rem 0.875rem 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+/* Hairlines between rows, inset from the leading edge. */
+.sres + .sres::before,
+.wres + .wres::before,
+.srecent__item + .srecent__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0.875rem;
+  height: 1px;
+  background: var(--line);
+}
+
+@media (hover: hover) {
+  .sres:hover,
+  .wres:hover,
+  .srecent__item:hover {
+    background: color-mix(in oklab, var(--text) 4%, transparent);
+  }
+}
+
+/* Keyboard selection = "you are here": a signal tint and the 2 px signal marker (VISUAL §5.2). */
+.sres.is-active,
+.wres.is-active,
+.srecent__item.is-active {
+  background: color-mix(in oklab, var(--signal) 10%, transparent);
+}
+
+.sres.is-active::after,
+.wres.is-active::after,
+.srecent__item.is-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2px;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 0 2px 2px 0;
+  background: var(--signal);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--signal) var(--bloom), transparent);
+}
+
+.sres.is-active + .sres::before,
+.wres.is-active + .wres::before,
+.srecent__item.is-active + .srecent__item::before {
+  opacity: 0;
+}
+
+.sres:focus-visible,
+.wres:focus-visible,
+.srecent__item:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+.sres__title,
+.wres__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font: var(--weight-title) var(--fs-m) / var(--lh-title) var(--font-text);
+  letter-spacing: -0.005em;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.sres__blurb,
+.wres__snippet {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.sres__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 0;
+  margin-top: 0.15rem;
+  color: var(--text-3);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.01em;
+}
+
+.sres__facts > span + span::before {
+  content: "·";
+  margin: 0 0.45rem;
+  opacity: 0.7;
+}
+
+.wres__host {
+  overflow: hidden;
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Highlights: a signal tint, never a colour change of the text itself. */
+.sres mark {
+  padding: 0.04em 0;
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--signal) 24%, transparent);
+  color: inherit;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[data-mode="light"] .sres mark {
+  background: color-mix(in oklab, var(--signal) 16%, transparent);
+}
+
+.sres-group__more {
+  position: relative;
+  justify-self: start;
+  min-height: 32px;
+  padding: 0 0.25rem;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  color: var(--accent);
+  font: 500 var(--fs-xs) / 1 var(--font-ui);
+  cursor: pointer;
+}
+
+.sres-group__more::before {
+  content: "";
+  position: absolute;
+  inset: calc((32px - var(--target)) / 2) 0;
+}
+
+/* Recent searches. */
+.srecent {
+  display: grid;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.srecent__hint {
+  margin: 0;
+  padding: 0 0.25rem;
+  color: var(--text-3);
+  font-size: var(--fs-s);
+  line-height: 1.55;
+}
+
+.srecent__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -0.35rem;
+  padding-left: 0.25rem;
+}
+
+.srecent__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  min-height: var(--target);
+  padding: 0 0.875rem;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font-size: var(--fs-m);
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.srecent__item > .icon {
+  color: var(--text-3);
+}
+
+.srecent__item + .srecent__item::before {
+  left: 2.55rem;
+}
+
+/* ── web scope: the hand-off, engines as raised pills ── */
+
+.sweb {
+  display: grid;
+  gap: 1.25rem;
+  padding-top: 0.25rem;
+}
+
+.sweb__sec {
+  display: grid;
+  gap: 0.625rem;
+  justify-items: start;
+  min-width: 0;
+}
+
+.sweb__sec > .kicker {
+  padding-left: 0.25rem;
+}
+
+/* The default engine: one clear primary action, full width on phones. */
+.sweb__go {
+  max-width: 100%;
+}
+
+.sweb__go .btn__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .sweb__go {
+    justify-self: stretch;
+  }
+}
+
+.sweb__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Suggestions for an item: an inset plate, engine pill + the query it will send (queries share one column). */
+.sweb__suggest {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  list-style: none;
+}
+
+.sweb__suggest li {
+  position: relative;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 0.875rem 0 0.625rem;
+}
+
+@supports (grid-template-columns: subgrid) {
+  .sweb__suggest li {
+    grid-template-columns: subgrid;
+  }
+}
+
+.sweb__suggest .btn {
+  justify-self: start;
+}
+
+.sweb__suggest li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0.875rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.sweb__suggest .btn {
+  flex: none;
+}
+
+.sweb__q {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-3);
+  font: 400 var(--fs-xs) / 1.3 var(--font-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sweb__hint,
+.sweb__err,
+.sset-warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+}
+
+/* The API hint: a quiet inset note. */
+.sweb > .sweb__hint {
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.sweb__hint .icon,
+.sweb__err .icon {
+  flex: none;
+  margin-top: 0.2rem;
+  color: var(--text-3);
+}
+
+.sweb__err,
+.sset-warn {
+  color: color-mix(in oklab, var(--warn) 80%, var(--text));
+}
+
+.sweb__err .icon {
+  color: var(--warn);
+}
+
+.sweb__api {
+  justify-items: stretch;
+}
+
+.sweb__apihead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.sweb__results.is-stale {
+  opacity: 0.6;
+}
+
+/* ── Settings › Search ── */
+
+/* Engine and API lists: one inset plate, hairline rows. */
+.sset-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  list-style: none;
+}
+
+.sset-list > li {
+  position: relative;
+}
+
+.sset-list > li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0.875rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.sset-engine {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 52px;
+  padding: 0.35rem 0.75rem 0.35rem 0.875rem;
+}
+
+.sset-engine__name {
+  display: grid;
+  flex: 1;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.sset-engine__name strong {
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.sset-code {
+  color: var(--text-3);
+  font: var(--fs-2xs) / 1.4 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.sset-api {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.875rem;
+}
+
+.sset-api__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 32px;
+}
+
+.sset-api__title {
+  flex: 1;
+  min-width: 9rem;
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.sset-api .settings__hint {
+  margin: -0.35rem 0 0;
+}
+
+/* An enabled engine opens a recessed body for its key, parameters and test. */
+.sset-api__body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.875rem;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+}
+
+.sset-api__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sset-api__foot:empty {
+  display: none;
+}
+
+.sset-link {
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.sset-cred {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sset-cred__status {
+  display: inline-flex;
+  flex: 1 1 10rem;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+}
+
+.sset-cred__status > .icon {
+  color: var(--text-3);
+}
+
+.sset-cred__status.is-missing,
+.sset-cred__status.is-missing > .icon {
+  color: color-mix(in oklab, var(--warn) 80%, var(--text));
+}
+
+.sset-cred__actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.sset-cred .settings__hint {
+  width: 100%;
+  margin: 0;
+}
+
+.sset-test__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.sset-test {
+  flex: 1 1 14rem;
+  min-width: 0;
+  margin: 0;
+  font: 400 var(--fs-xs) / 1.45 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.sset-test.is-ok {
+  color: color-mix(in oklab, var(--ok) 80%, var(--text));
+}
+
+.sset-test.is-err {
+  color: color-mix(in oklab, var(--warn) 80%, var(--text));
+}
+
+/* Sub-forms (add a site, custom API, custom reader): a nested inset plate. */
+.sset-form {
+  display: grid;
+  gap: 0.875rem;
+  padding: 1rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.sset-form > .settings__subh {
+  font-size: var(--fs-m);
+}
+
+/* Fieldsets group filters and engine rows for assistive tech; they should not look like boxes. */
+.sfilt__row,
+.sweb__row,
+.sset-form {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+}
+
+.sweb__row {
+  padding: 0;
+}
+
+/* A floated legend is laid out like any other child, so it can share the flex row with the chips. */
+.sfilt__label {
+  float: left;
+  padding: 0;
+}

@@ -1,0 +1,39 @@
+# Quality bar on every push and pull request: biome + tsc + vitest, then a production build.
+# Action majors checked against their releases pages on 2026-09-19: checkout v7, setup-node v7, pnpm/action-setup v6
+# (it installs the pnpm version pinned in package.json › packageManager).
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - data # snapshot commits from the daily job; nothing to check there
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Lint, typecheck and test
+        run: pnpm check
+
+      - name: Build the site
+        run: pnpm build

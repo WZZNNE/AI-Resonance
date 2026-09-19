@@ -1,0 +1,372 @@
+/*
+ * Credentials tab and vault prompts (lazy chunk; docs/VISUAL.md). Tokens only; layout holds at 360 px.
+ * Lists are inset plates with hairline rows; secrets are masked, mono, inside small wells; state lives in discs.
+ */
+
+.vnote {
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.55;
+}
+
+.vnote--warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-m);
+  background: color-mix(in oklab, var(--warn) 9%, var(--surface-2));
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--warn) 24%, transparent);
+  color: var(--text);
+}
+
+.vnote--warn > .icon {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--warn);
+}
+
+.vtrust .settings__subh {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vtrust .settings__subh > .icon {
+  color: var(--info);
+}
+
+/* On *.github.io the note matters: a warn hairline inside the plate, no loud fill. */
+.vtrust.is-shared {
+  box-shadow:
+    var(--plate-edge),
+    var(--elev-1),
+    inset 0 0 0 1px color-mix(in oklab, var(--warn) 40%, transparent);
+}
+
+.vtrust.is-shared .settings__subh > .icon {
+  color: var(--warn);
+}
+
+.vform {
+  display: grid;
+  gap: 0.875rem;
+}
+
+/* ── storage mode: an inset grouped list of radio rows ── */
+
+.vmodes {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.vmode {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 60px;
+  padding: 0.8rem 0.875rem;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+.vmode + .vmode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 2.9rem;
+  height: 1px;
+  background: var(--line);
+}
+
+@media (hover: hover) {
+  .vmode:hover {
+    background: color-mix(in oklab, var(--text) 3%, transparent);
+  }
+}
+
+/* The native radio stays in the tab order and the accessibility tree; the dot is its visible stand-in. */
+.vmode__input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vmode:has(.vmode__input:focus-visible) {
+  box-shadow: var(--ring-inset);
+}
+
+/*
+ * Radio: an empty ring pressed into the row; chosen = accent fill, white centre, top highlight (same as the Models
+ * tab). The rim is listed first so the well's dark edge cannot paint over it, and the fill is only half a well, so an
+ * empty radio never reads as a filled black disc.
+ */
+.vmode__dot {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.05rem;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--well-bg) 50%, transparent);
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--text) 30%, transparent),
+    var(--well-edge);
+  transition:
+    background-color var(--dur-1) var(--ease),
+    box-shadow var(--dur-1) var(--ease);
+}
+
+.vmode.is-on .vmode__dot {
+  background: radial-gradient(circle, var(--accent-ink) 0 3.5px, transparent 4.5px) var(--accent-fill);
+  box-shadow:
+    inset 0 1px 0 var(--hl),
+    0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+.vmode__text {
+  display: grid;
+  flex: 1;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.vmode__text strong {
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.vmode__text span {
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+}
+
+.vmode__icon {
+  margin-top: 0.1rem;
+  color: var(--text-3);
+}
+
+.vmode.is-on .vmode__icon {
+  color: var(--text-2);
+}
+
+/* ── lock state ── */
+
+.vlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  min-height: 52px;
+  padding: 0.5rem 0.5rem 0.5rem 0.625rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.vlock__disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+}
+
+.vlock.is-locked .vlock__disc {
+  color: color-mix(in oklab, var(--warn) 80%, var(--text));
+}
+
+.vlock.is-open .vlock__disc {
+  color: color-mix(in oklab, var(--ok) 80%, var(--text));
+}
+
+.vlock__text {
+  flex: 1;
+  min-width: 8rem;
+  color: var(--text);
+  font-size: var(--fs-s);
+  font-weight: 500;
+}
+
+/* ── the credential list ── */
+
+.vlist {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+  list-style: none;
+}
+
+.vlist > li {
+  position: relative;
+}
+
+.vlist > li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 3.6rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.vlist__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 64px;
+  padding: 0.625rem 0.35rem 0.625rem 0.875rem;
+}
+
+.vlist__row.is-editing {
+  display: block;
+  padding: 1rem 0.875rem;
+  background: var(--surface);
+}
+
+.vlist > li + li.is-editing::before {
+  left: 0;
+}
+
+/* Kind glyph in a recessed disc. */
+.vlist__disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+}
+
+.vlist__text {
+  display: grid;
+  flex: 1;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.vlist__title,
+.vpick__item strong {
+  overflow: hidden;
+  font-size: var(--fs-s);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vlist__meta .badge {
+  flex: none;
+}
+
+.vlist__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.6rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+/* The masked secret: mono, in a small well. */
+.vlist__secret {
+  padding: 0.2em 0.55em;
+  border-radius: 6px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+.vlist__secret.is-revealed {
+  color: var(--text);
+  box-shadow:
+    var(--well-edge),
+    inset 0 0 0 1px color-mix(in oklab, var(--signal) 45%, transparent);
+}
+
+.vlist__secret.is-locked {
+  font-family: var(--font-ui);
+  letter-spacing: 0;
+}
+
+.vlist__actions {
+  display: flex;
+  flex: none;
+}
+
+/* ── the picker sheet ── */
+
+.vpick {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.vpick__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem 0.75rem 0.5rem 0.875rem;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+@media (hover: hover) {
+  .vpick__item:hover {
+    background: color-mix(in oklab, var(--text) 4%, transparent);
+  }
+}
+
+.vpick__item:active {
+  background: color-mix(in oklab, var(--text) 7%, transparent);
+}
+
+.vpick__item:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+.vpick__item .vlist__text {
+  gap: 0.15rem;
+}
+
+.vpick__chev {
+  color: var(--text-3);
+}

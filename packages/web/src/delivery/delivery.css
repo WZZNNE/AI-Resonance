@@ -1,0 +1,395 @@
+/*
+ * Settings › Delivery (docs/VISUAL.md). Lives inside the settings groups (plates); adds a status card with a state
+ * disc, the token row, recessed code/JSON wells, the recent-sends table in mono, and the help topics as one grouped
+ * inset list.
+ */
+
+.delivery__intro {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.6;
+}
+
+.delivery__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.delivery__head .settings__subh {
+  flex: 1;
+  min-width: 0;
+}
+
+.delivery__head .btn {
+  margin-right: -0.5rem;
+}
+
+/* ── status card ── */
+
+.delivery__disc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-3);
+}
+
+.delivery__disc.is-ok {
+  color: color-mix(in oklab, var(--ok) 85%, var(--text));
+}
+
+.delivery__disc.is-err {
+  color: color-mix(in oklab, var(--danger) 85%, var(--text));
+}
+
+.delivery__status > .settings__hint {
+  margin: -0.25rem 0 0 calc(40px + 0.75rem);
+}
+
+.delivery__last {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+}
+
+.delivery__last .badge {
+  height: 24px;
+  padding: 0 0.6rem;
+  border-radius: var(--radius-pill);
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.delivery__error {
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-s);
+  background: color-mix(in oklab, var(--danger) 7%, var(--well));
+  box-shadow:
+    var(--well-edge),
+    inset 2px 0 0 color-mix(in oklab, var(--danger) 70%, transparent);
+  color: var(--text);
+  font: 400 var(--fs-xs) / 1.55 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+/* Recent sends: a recessed readout, figures in mono. */
+.delivery__sent {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  font-size: var(--fs-xs);
+}
+
+.delivery__sent th,
+.delivery__sent td {
+  padding: 0.55rem 0.875rem;
+  text-align: left;
+  font-weight: 400;
+}
+
+.delivery__sent tbody tr > * {
+  box-shadow: inset 0 1px 0 var(--line);
+}
+
+.delivery__sent thead th {
+  padding-block: 0.6rem 0.45rem;
+  color: var(--text-3);
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.delivery__sent tbody th,
+.delivery__sent tbody td {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+}
+
+.delivery__sent tbody th {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.delivery__sent tbody td {
+  color: var(--text-2);
+}
+
+.delivery__sent .num:last-child {
+  text-align: right;
+}
+
+/* ── access ── */
+
+.delivery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+/* The token in use: an inset plate row with a key disc. */
+.delivery__token {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.625rem 1rem;
+  min-height: 56px;
+  padding: 0.5rem 0.5rem 0.5rem 0.625rem;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.delivery__tokenlabel {
+  display: inline-flex;
+  flex: 1 1 14rem;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  color: var(--text);
+  font-size: var(--fs-s);
+  overflow-wrap: anywhere;
+}
+
+.delivery__token.is-none .delivery__tokenlabel {
+  color: var(--text-2);
+}
+
+.delivery__keydisc {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-3);
+}
+
+.delivery__token.is-set .delivery__keydisc {
+  color: color-mix(in oklab, var(--ok) 80%, var(--text));
+}
+
+.delivery__token .settings__row {
+  gap: 0.35rem;
+}
+
+.delivery__note {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-m);
+  background: color-mix(in oklab, var(--info) 7%, var(--surface-2));
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--info) 18%, transparent);
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+}
+
+.delivery__note .icon {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--info);
+}
+
+.delivery__perms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.delivery__perms .badge {
+  height: 24px;
+  padding: 0 0.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.delivery__outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.delivery__outcome .icon {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--text-3);
+}
+
+.delivery__outcome.is-ok .icon {
+  color: var(--ok);
+}
+
+.delivery__outcome.is-err {
+  color: var(--text);
+}
+
+.delivery__outcome.is-err .icon {
+  color: var(--danger);
+}
+
+.delivery__creds {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.delivery__creds > .field + .field {
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--line);
+}
+
+.delivery__runlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  font-size: var(--fs-s);
+}
+
+/* ── help: one grouped inset list of disclosure rows ── */
+
+.delivery__topics {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  box-shadow: var(--plate-edge);
+}
+
+.delivery__topic {
+  position: relative;
+}
+
+.delivery__topic + .delivery__topic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 3.25rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.delivery__topic summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 52px;
+  padding: 0 0.875rem;
+  cursor: pointer;
+  font-size: var(--fs-s);
+  font-weight: 500;
+  list-style: none;
+  transition: background-color var(--dur-1) var(--ease);
+}
+
+.delivery__topic summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: hover) {
+  .delivery__topic summary:hover {
+    background: color-mix(in oklab, var(--text) 3%, transparent);
+  }
+}
+
+.delivery__topic summary:focus-visible {
+  box-shadow: var(--ring-inset);
+}
+
+.delivery__topic summary > span:not(.delivery__topicicon) {
+  flex: 1;
+  min-width: 0;
+}
+
+.delivery__topicicon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text-2);
+}
+
+.delivery__chev {
+  color: var(--text-3);
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.delivery__topic[open] .delivery__chev {
+  transform: rotate(180deg);
+}
+
+.delivery__topicbody {
+  padding: 0.125rem 1rem 1rem 3.25rem;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.6;
+}
+
+.delivery__topicbody p {
+  margin: 0.6rem 0 0;
+}
+
+.delivery__steps {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.delivery__steps li::marker {
+  color: var(--text-3);
+  font: 500 var(--fs-xs) var(--font-mono);
+}
+
+.delivery__json {
+  margin: 0.6rem 0;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-s);
+  background: var(--well-bg);
+  box-shadow: var(--well-edge);
+  color: var(--text);
+  font: 400 var(--fs-xs) / 1.55 var(--font-mono);
+  font-variant-ligatures: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 479px) {
+  .delivery__topicbody {
+    padding-left: 1rem;
+  }
+}
