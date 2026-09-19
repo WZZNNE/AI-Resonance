@@ -2677,7 +2677,7 @@
     "hfUpvotes": 14,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "We present Srijika, a system for producing installable OpenType fonts for nine Brahmic scripts: Devanagari, Tamil, Bengali, Telugu, Kannada, Malayalam, Gujarati, Gurmukhi, and Odia. Rather than generating fonts from scratch, Srijika restyles glyph outlines from shaping-complete template fonts. It preserves the template's cmap and GSUB closure and its GPOS data under a documented metric policy, making every output a complete font by construction. This addresses a central challenge of Indic font generation: hundreds to thousands of conjuncts, half forms, and matra variants must remain mutually consistent under OpenType shaping. Srijika produces 66 TTFs: 57 curated presets and nine open-vocabulary showcase fonts. All pass the OpenType Sanitizer, while HarfBuzz and CoreText reproduce the template glyph-ID sequences on conjunct-heavy probes. A full-closure audit covering 80,915 glyphs and 54,812 anchors quantifies metric changes. Natural-language style selection uses Lipika, a retrieval index over approximately 650 open-license font families. A reference-conditioned latent diffusion model redraws template glyphs in the selected style, followed by content gating, harmonization, and shaped-cluster verification with fallback to template outlines. We evaluate against no-learning baselines. On diffusion-training-family-held-out SSIM gates, template copying outperforms generation on 50 of 56 faces. Style movement is measurable only with an internal same-model embedding whose training corpus includes the held-out families, so these results require caution. A learned baseline, independent style metric, and human study are outside this report's scope. Our contributions are the layout-reusing formulation and pipeline, its nine-script audit and benchmark, and a negative-results catalogue covering failed conditioning, objective choices, and data-hull limits of reference-guided restyling.",
     "arxivId": "2609.05661",
@@ -2721,7 +2721,7 @@
     "hfUpvotes": 16,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Multi-modal image generation, particularly subject-driven customization, has garnered growing attention in recent years. Despite the rapid advancement of generative models, their evaluation remains largely lagging. Existing methods, whether embedding-based or Multi-modal Large Language Model (MLLM)-based, evaluate alignment with each modal condition in isolation, which contradicts the simultaneous condition alignment objective of multi-modal image generation, leading to poor consistency with human judgments. To address this challenge, we propose UFO, the first unified framework for omni-condition alignment simultaneous evaluation. Specifically, UFO introduces a novel Atomized Chain-of-Evaluation paradigm, i.e., it first decomposes omni-condition alignment into a sequential chain of fine-grained, disentangled Atomic Evaluation Units (AEUs), categorizes them into distinct modality-relevance classes, and then employs general or dedicated functional calls for accurate verification of different AEU types. Experimental results demonstrate that UFO achieves the highest correlation with human evaluation preferences, delivering an average improvement of 15.25%. Furthermore, we present UFO-Bench, a dedicated benchmark designed to holistically evaluate the performance of existing customization models under the diverse mutual interactions of textual and visual conditions.",
     "arxivId": "2609.12397",
@@ -2772,7 +2772,7 @@
     "hfUpvotes": 28,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Platform abuse campaigns conceal redirection instructions with emojis, homophones, character decomposition, and redundant symbols, then route users through disguised links to services associated with pornography, fraud, gambling, or illicit transactions. Existing benchmarks evaluate obfuscated text and risky webpages separately, obscuring how target recovery affects downstream evidence acquisition. We introduce RiskChainBench, pairing 3,600 synthetic token-text restoration inputs from 600 source sessions with 600 corresponding human-labeled local web environments. A model first restores the message, operational intent, and destination; the same underlying model then acts as a VLM-driven web agent that investigates the correctly associated website and produces a frozen, evidence-cited risk report without message-side semantics or domain-reputation cues. We score restoration and correct-routing web investigation separately and compose them offline by applying the frozen primary-entry prediction as a gate to the same Task 2 result. Human labels determine task correctness, while a fixed multimodal evidence judge assesses faithfulness, sufficiency, completeness, and consistency. Across ten models, Entry Top-1 ranges from 35.2% to 95.2% and web decision accuracy from 26.3% to 62.8%; the leading systems differ across entry recovery, full reconstruction, website decisions, and fine-grained typing. Execution failures account for 31.9% of web runs, whereas post-decision type errors account for only 0.9%, identifying stable exploration and risk judgment as the principal bottlenecks. We release the benchmark, protocol, and resettable local sandbox.",
     "arxivId": "2609.16900",
@@ -2826,10 +2826,10 @@
    "key": "arxiv:2609.17496",
    "metrics": {
     "hfComments": 2,
-    "hfUpvotes": 29,
+    "hfUpvotes": 31,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "LLM assistants are widely used for daily social advice, yet evaluating their social reasoning in such consultation settings remains challenging since (i) it requires setups where the assistant learns about social situations from subjective user narratives, and (ii) social properties, such as others' intentions, typically lack verifiable ground truth. To address these challenges, we introduce Fuse, a multi-agent simulation framework for studying user-mediated social reasoning. In Fuse, a target agent with a hidden motive interacts with other agents including one representing the user, who then consults the evaluated assistant to infer the target's motive, providing verifiable ground truth by construction. Simulation faithfulness is validated through a human study with 24k annotations. We apply Fuse to 12 LLMs and demonstrate its analytical utility by systematically isolating key factors, showing that (i) user mediation compounds the inherent difficulty of social reasoning; (ii) LLMs exhibit systematic sensitivity to biased user framing; (iii) models can require more details than humans need to reach a correct prediction; and (iv) longer conversations do not always improve performance despite providing opportunities for clarifying questions. We open-source Fuse and a dataset with 21k examples.",
     "arxivId": "2609.17496",
@@ -2849,7 +2849,7 @@
     "codeUrl": "https://github.com/google-research/google-research/tree/master/user_mediated_social_reasoning",
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 29,
+    "hfUpvotes": 31,
     "hfUrl": "https://huggingface.co/papers/2609.17496",
     "orgs": [
      "Google"
@@ -2880,12 +2880,12 @@
    "category": "research",
    "key": "arxiv:2609.17653",
    "metrics": {
-    "codeStars": 11,
+    "codeStars": 13,
     "hfComments": 2,
     "hfUpvotes": 25,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "GUI agents execute long-horizon tasks on dynamic graphical user interfaces, where pop-ups, delayed loads, and relocated widgets routinely invalidate plans fixed before execution. Recent agent-skill frameworks encapsulate reusable procedural knowledge to mitigate this, yet existing skill designs are largely developed without targeting GUI execution dynamics and treat skills as static artifacts produced before deployment rather than living procedural knowledge that improves through it. We argue that what GUI agents need is not better static skills, but skills that can be revised from execution feedback at deployment time, without additional training. We propose EvoSkill-GUI, a training-free framework in which each skill is a structured multi-file package containing retrieval metadata, executable plans, backup localization, failure-recovery rules, accessibility utilities, and failure cases. EvoSkill-GUI operates through a \\emph{reflect-revise-reuse} loop: the executor performs instant in-rollout revisions, an isolated critic diagnoses failed trajectories under strict information isolation, and the executor edits specific skill files through a restricted tool interface. Across MobileWorld, AndroidWorld, and OSWorld, three mainstream GUI benchmarks spanning mobile and desktop platforms, EvoSkill-GUI consistently improves multiple base models without any training, with maximum gains of +16.2%, +6.0%, and +10.5% respectively, and evolved skill libraries continue to benefit related tasks rather than being rebuilt from scratch. Our code is available at https://github.com/ZJU-REAL/EvoSkill-GUI.",
     "arxivId": "2609.17653",
@@ -2903,7 +2903,7 @@
      "Yongliang Shen"
     ],
     "categories": [],
-    "codeStars": 11,
+    "codeStars": 13,
     "codeUrl": "https://github.com/ZJU-REAL/EvoSkill-GUI",
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
@@ -2940,7 +2940,7 @@
     "hfUpvotes": 75,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Recent Omni-Modal Generative Models (Omni-Models) have advanced content generation toward unified modeling of text, images, video, and audio. MiniMax-H3 exemplifies this transition by combining multimodal context understanding with joint audio-visual generation in a shared latent framework. Its unified architecture raises a fundamental question: Can multimodal alignment improve the model's world reasoning, and what new evaluation paradigms do omni-modal inputs enable? To investigate this question, this work introduces a comprehensive evaluation framework organized around four complementary dimensions of physical world reasoning. Unlike existing evaluation frameworks for video generation and world models, which are often constrained by limited input modalities and evaluation settings where prompts closely match the target video content, our evaluation is specifically designed to exploit the multimodal inputs of Omni-Model. We construct a diverse set of novel tasks that require models to integrate complementary information across modalities. Specifically, we consider four scenarios, including implicit prompts paired with multiple frames, audio-image, prefix-videos, and audio-video inputs. Every single modality provides only partial evidence about the underlying event, requiring the model to jointly reason over the complementary semantic cues to infer latent event states and future dynamics. Across 517 evaluation instances, MiniMax-H3 achieves an overall success rate of 41.97%. Video-based Decision Reasoning yields the highest success rate at 56.00%, while Audio-based Disambiguation Reasoning is the weakest, reaching only 27.40%. These results indicate that effective multimodal integration remains key to fully exploiting the benefits of diverse input modalities. The project is available at https://github.com/gulucaptain/MiniMax-H3-Reason.",
     "arxivId": "2609.18323",
@@ -2998,7 +2998,7 @@
     "hfUpvotes": 14,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "As corporate AI adoption continues to grow, enterprise-grade LLM agents are being deployed into sensitive contexts such as hiring, healthcare, and finance. In these contexts, compliance with rules specified in an agent's system context is a first-order legal concern. Currently, no evaluation framework systematically measures which LLM models tend to violate compliance rules, especially under pressure from a persistent user, a hurried manager, or circumstances where violation is convenient or attractive. We introduce PACT (Pressure-Applied Compliance Testing), a benchmark for rule-following under pressure in AI agents assisting employees in daily tasks across twelve regulated enterprise domains and forty-eight scenarios, each set in a realistic multi-turn conversation. Each benchmark item pairs a standing rule against a rule-violating shortcut, and applies a battery of pressures across different wordings and system-prompt modes. We construct PACT component by component under strict LLM-as-judge auditing to ensure samples are unambiguous, ungameable, and realistic enough to avoid eliciting evaluation-aware behavior. We use PACT to profile LLM compliance across six complementary metrics that create a holistic picture of an AI assistant's robustness under pressure and throughout multi-turn conversations, its transparency, and ability to correctly discern where a rule applies. We aggregate this profile into PACTScore, a reliability-weighted compliance rate over all items and modes. Our results across 22 common LLM models spanning multiple providers and sizes show substantial variability in compliance across models and metric dimensions. Even the strongest assistants mis-apply a rule on 6 to 10% of items, and ordinary user pressure raises the violation rate by 65% on average. PACT highlights compliance risks in LLM assistants, motivating guardrails and careful model selection.",
     "arxivId": "2609.18605",
@@ -3047,7 +3047,7 @@
     "hfUpvotes": 14,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Test-time scaling can improve large language model reasoning by generating and combining multiple candidate responses. In sampling-based methods, the inference budget is often described by the number of generated candidates, N. However, N tells us how many candidates are generated, not how they are executed. The same candidate budget can be produced in one batched generation call or split across several sequential calls with smaller batch sizes. We first study the effect of increasing N on reasoning accuracy using Phi-3-mini and Qwen2.5-1.5B on 500 GSM8K prompts. As expected, increasing N from 1 to 8 improves accuracy by 8.4 percentage points for Phi-3-mini and 18.4 points for Qwen2.5-1.5B. However, accuracy alone does not show the systems cost of using a larger candidate budget. We therefore fix N = 8 and compare four generation schedules: 1x8, 2x4, 4x2, and 8x1, where axb denotes a generation calls with b candidates per call. We measure latency, throughput, GPU-hours, and gross GPU-device energy while keeping the total candidate count fixed. On A100 GPUs, eight serial calls use 4.64-4.86x as much gross GPU-device energy and have 5.77-6.12x the P95 latency of one batched call with eight candidates. The same pattern appears across three independently scheduled A100 nodes per model and in short-output SciQ/V100 experiments. These results show that candidate count alone is not enough to describe the systems cost of multi-candidate test-time scaling. When candidates are independent and memory allows it, fewer generation calls with larger batch sizes are more efficient. Evaluations should therefore report not only candidate count and accuracy, but also generation schedule and GPU-level systems metrics.",
     "arxivId": "2609.19499",
@@ -3090,10 +3090,10 @@
    "metrics": {
     "codeStars": 12,
     "hfComments": 2,
-    "hfUpvotes": 19,
+    "hfUpvotes": 20,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Spatial intelligence requires more than describing object locations. Under incomplete observation, models must identify and acquire missing evidence, interpret it in a common spatial frame, and act on it. We introduce VA-Bench to evaluate the complete observe-reason-act-revise loop. General-purpose MLLMs learn procedural context from RGB-only demonstrations, actively select camera viewpoints, issue metric Cartesian commands, and revise them from execution feedback. Models receive no privileged object poses, oracle trajectories, or learned action heads. A fixed model-agnostic controller executes only model-specified targets. VA-Bench contains 14 base task families (11 single-arm and three dual-arm), seven held-out geometry/layout variants, and a long-horizon five-object composition track. We evaluate 12 primary model conditions in three independent runs over the same 20 physically verified seeds per base task, reporting terminal success, nine trajectory-level behavioral diagnostics, and subtask progress. First, the best-performing model scores 100.0% on target localization and 78.9% on spatial relations in the annotated run. Its three-run macro-average task success is only 53.93+/-3.17%. Second, active camera control significantly improves task success over passive multi-view observation. In one matched comparison, success rises from 27.86% to 57.50%. Third, held-out geometric transfer can reduce task success by over 30 percentage points. No model completes a strict long-horizon episode, despite substantial partial progress. VA-Bench thus tests whether general-purpose MLLMs can turn visual demonstrations and actively acquired evidence into successful embodied action.",
     "arxivId": "2609.19554",
@@ -3112,7 +3112,7 @@
     "codeUrl": "https://github.com/zhangzhongbo2213/VABench",
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 19,
+    "hfUpvotes": 20,
     "hfUrl": "https://huggingface.co/papers/2609.19554",
     "orgs": [
      "DaLian University of Technology"
@@ -3147,7 +3147,7 @@
     "hfUpvotes": 22,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Information retrieval is increasingly important as LLM agents tackle complex tasks involving diverse information needs. Because retrieval relies on an index that represents each document through index keys, retrieval quality depends heavily on how effectively these keys expose the knowledge contained in each document. However, effective index representations vary across retrieval environments, making it difficult for any fixed optimization strategy to perform consistently. Yet evolving an index to its retrieval environment remains largely human-driven, requiring humans to diagnose retrieval failures, refine the optimization strategy, and reprocess the index accordingly. We propose SELF-INDEX, a framework that enables an index to self-evolve without human intervention. Its Optimizer autonomously diagnoses retrieval shortfalls, selectively revises the responsible index keys, and validates each revision before updating the index. Beyond reacting to observed retrieval demands, SELF-INDEX proactively explores additional demands through a Query Simulator, allowing the index to evolve beyond the queries already available for optimization. Across diverse corpora and retrievers, SELF-INDEX consistently improves retrieval performance while outperforming existing index optimization methods. We further show that these benefits extend to downstream applications, improving the effectiveness and efficiency of search agents and helping agent memory systems retrieve useful past interactions.",
     "arxivId": "2609.19656",
@@ -3194,10 +3194,10 @@
    "key": "arxiv:2609.19671",
    "metrics": {
     "hfComments": 2,
-    "hfUpvotes": 17,
+    "hfUpvotes": 18,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Large Reasoning Models (LRMs) achieve strong performance on complex tasks but exhibit systematic inefficiency: they often overthink easy problems and underthink hard ones. Existing approaches based on uniform length penalties or rigid routing incur an efficiency tax, trading reduced computation on easy instances for accuracy loss on hard instances. We formulate efficient reasoning as an instance-adaptive computation allocation problem and propose When2Think, a post-training framework for hybrid reasoning that dynamically allocates computation based on problem difficulty. Our method introduces Instance-level Difficulty-Aware Control (IDAC), a reward-shaping mechanism that leverages pre-computed reference statistics (accuracy and token usage) to regulate reasoning depth. Combined with verifier-based rewards and batch-wise standardized advantages, IDAC enables stable critic-free optimization without learned reward models or online reference-model queries. When2Think encourages direct answering on easy instances while preserving extended reasoning on hard instances, thereby learning when to use System 1 (NoThink) versus System 2 (Think). Experiments on mathematical benchmarks demonstrate improved accuracy-efficiency trade-offs: on AIME24, Pass@3 increases by 10.0% while token usage is reduced by 27.9% relative to the base model, and on AIME25, When2Think achieves 40.0% Pass@3, outperforming compression and routing-only baselines.",
     "arxivId": "2609.19671",
@@ -3211,7 +3211,7 @@
     "categories": [],
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 17,
+    "hfUpvotes": 18,
     "hfUrl": "https://huggingface.co/papers/2609.19671",
     "orgs": [
      "Microsoft"
@@ -3242,10 +3242,10 @@
    "metrics": {
     "codeStars": 4,
     "hfComments": 2,
-    "hfUpvotes": 15,
+    "hfUpvotes": 16,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Fine-grained visual perception in MLLMs is commonly improved by raising the resolution, but the added visual tokens inflate vision-encoding and language-model prefilling costs. We show that the two operations underlying fine-grained perception, localizing the region of interest (RoI) and recognizing its content, have different resolution requirements. In a controlled diagnostic, localization tolerates roughly 3 to 4 times stronger token compression than recognition, which motivates localizing from a coarse view and concentrating resolution on the selected evidence. Decoding coordinates with the MLLM can be trained end-to-end from answers, but costs a full model pass per query and depends on grounding ability. A lightweight proposal network distilled from the model's attention is fast, but inherits the noise of its attention targets. The RoI from the proposal network reaches the answer through a discrete region choice, so its faithfulness to the answer cannot supervise the network. We therefore optimize the proposal network with region-level reinforcement learning, which we call Vision-RL2. It treats coherent regions as actions, and a frozen MLLM reader scores each one by how its removal changes the answer likelihood. Complementary subtractive and additive objectives suppress distracting proposals and recover missing evidence, updating only the predictor without region annotations, response sampling, or reasoning trajectories. The refined proposal further enables a sparse encoding that magnifies evidence and excludes background tokens. Across six fine-grained benchmarks and four MLLM backbones, Vision-RL2 improves accuracy over the base model at every token budget and surpasses its largest-budget accuracy with about 4 times fewer visual tokens. Code is available at https://github.com/YuHengsss/VisionRL2 .",
     "arxivId": "2609.19745",
@@ -3261,7 +3261,7 @@
     "codeUrl": "https://github.com/YuHengsss/VisionRL2",
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 15,
+    "hfUpvotes": 16,
     "hfUrl": "https://huggingface.co/papers/2609.19745",
     "pdfUrl": "https://arxiv.org/pdf/2609.19745"
    },
@@ -3293,7 +3293,7 @@
     "hfUpvotes": 12,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Question answering has advanced rapidly with large language models, but predominantly for high-resource languages, in both text and spoken settings. Spoken question answering (SQA) benchmark for Telugu remains unexplored, and the reliability of automatic evaluation in this setting remains unquantified. We introduce VākQA, a Telugu SQA benchmark of 2,001 factoid question-answer pairs across six domains, with 2.53 hours of speech audio, bilingual transcriptions, and human-verified reference answers. We first validate evaluation methods against human judgements: Gemini-as-a-judge best approximates human ratings but is non-uniformly strict, while open-weight judges systematically penalize correct Telugu answers that differ in surface form from the reference. Using this validated setup, we benchmark proprietary and open-weight models across input modality, language, and domain. We observe that Telugu phrasing retains cultural specificity that is lost in translation, speech input introduces phonetic confusions that alter question meaning, and cascaded ASR-MT errors compound progressively. VākQA is publicly released.",
     "arxivId": "2609.19879",
@@ -3339,10 +3339,10 @@
    "key": "arxiv:2609.19969",
    "metrics": {
     "hfComments": 3,
-    "hfUpvotes": 86,
+    "hfUpvotes": 87,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "The widespread adoption of long-horizon agents has made model workloads increasingly input-heavy. Although prior work has substantially reduced the cost of long-context computation, prefill remains computationally expensive, and large KV caches continue to strain HBM and SSD capacity and data-transfer bandwidth. Together, these compute, storage, and bandwidth demands constitute the primary bottleneck to further lowering deployment costs. To address this challenge, we introduce DeepSeek-V4.1-Flash, a multimodal Mixture-of-Experts (MoE) model with 552B backbone parameters and support for contexts of up to one million tokens. With its Causal Encoder-Decoder (CED) architecture, the model activates 16B parameters per token during decode but only 8B parameters during prefill, substantially improving cost efficiency for agentic workloads. To push the limits of KV cache compression, DeepSeek-V4.1-Flash combines cross-layer KV cache reuse in Compressed Sparse Attention 2 (CSA2) with FP4 KV caching. These designs reduce its global KV cache footprint (always in HBM) to 890 bytes per token, roughly 1/4 of the corresponding footprint of DeepSeek-V4-Flash. Further, through a dedicated deployment optimization known as SWA Bounded Replay, DeepSeek-V4.1-Flash reduces its persistent KV cache footprint (always on SSD or in host memory) to roughly 1/8 of that of DeepSeek-V4-Flash. Despite its much smaller KV cache footprint, the model delivers substantially better performance than the baseline. In addition, we streamline the DeepSeek-V4 architecture and introduce several efficient architectural extensions. We pretrain DeepSeek-V4.1-Flash on a multimodal corpus comprising 45T tokens and conduct comprehensive post-training, yielding strong performance across diverse text-based and multimodal agentic scenarios. Model checkpoints are available at https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3375,7 +3375,7 @@
     ],
     "hfComments": 3,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 86,
+    "hfUpvotes": 87,
     "hfUrl": "https://huggingface.co/papers/2609.19969",
     "orgs": [
      "DeepSeek"
@@ -3409,12 +3409,12 @@
    "category": "research",
    "key": "arxiv:2609.20423",
    "metrics": {
-    "codeStars": 42,
+    "codeStars": 49,
     "hfComments": 2,
     "hfUpvotes": 22,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Document parsing converts document images into structured content and requires reliable performance across diverse layouts and acquisition conditions. Yet training corpora are biased toward common document types and clean digital pages, while expanding coverage alone does not specify how to address a parser's remaining weaknesses. We present WeVisDoc, a two-stage data-centric framework for robust end-to-end document parsing. Stage I broadens semantic, structural, and appearance coverage through heterogeneous data and structure-preserving degradation synthesis. Stage II uses a held-out probe to measure the Stage I parser's residual errors within fixed visual-structural clusters. These diagnostics guide targeted data construction and reallocation of the target-token budget. WeVisDoc-4B achieves an Overall score of 95.38 on OmniDocBench v1.6 and a mean Overall score of 75.54 across the three PureDocBench tracks, ranking first among the compared end-to-end parsers in all four settings. Compared with Stage I, Stage II improves Overall scores for the 2B and 4B models on both benchmarks, with larger gains on the degraded PureDocBench tracks, including a 4.03-point gain for the 4B model on the Real Degraded track.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3432,7 +3432,7 @@
     "categories": [
      "cs.CV"
     ],
-    "codeStars": 42,
+    "codeStars": 49,
     "codeUrl": "https://github.com/Tencent/WeVisDoc",
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
@@ -3472,10 +3472,10 @@
    "metrics": {
     "codeStars": 6,
     "hfComments": 5,
-    "hfUpvotes": 71,
+    "hfUpvotes": 72,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "We study length inflation in on-policy distillation (OPD), where student responses can become excessively long and even exhaust the generation budget. We identify termination-token mismatch between base students and post-trained teachers as an important source of this behavior. Across Qwen3, Llama, and Gemma, the two models can place their stopping probability on different EOS tokens, even when their declared stopping sets are identical. This mismatch can suppress the student's preferred termination action without reliably transferring the teacher-preferred alternative. We show that aligning the decoding stopping set alone is insufficient, while treating functionally equivalent EOS tokens as a shared semantic stopping action substantially mitigates mismatch-induced length inflation across all three model families. To further understand how termination behavior evolves over training, we study OPD across different K2-Horizon training stages. This stage-wise analysis shows that termination preferences can shift substantially during training, while also revealing a distinct length inflation late in the OPD run that persists beyond termination alignment. Together, these results identify termination mismatch as an important, but not exhaustive, source of OPD length dynamics. We release an implementation incorporating the proposed termination-handling corrections.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3499,7 +3499,7 @@
     "codeUrl": "https://github.com/UNCSciML/opd-eos",
     "hfComments": 5,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 71,
+    "hfUpvotes": 72,
     "hfUrl": "https://huggingface.co/papers/2609.20511",
     "orgs": [
      "Microsoft"
@@ -3536,10 +3536,10 @@
    "metrics": {
     "codeStars": 2344,
     "hfComments": 3,
-    "hfUpvotes": 66,
+    "hfUpvotes": 67,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "As coding agents move from supervised code completion to unattended, around-the-clock exploration, their work expands from isolated predictions into long trajectories of reasoning, tool use, and feedback. Token efficiency therefore becomes important for scaling recursive self-improvement. We take an RSI-inspired approach at the harness layer, scaling auto-research loops across increasingly numerous and diverse environments for harness rollouts. At this scale, the process yields reusable improvements that transfer beyond their development setting, moving automated harness discovery toward production-level outcomes. Four mechanisms survive selection and form SoL-Pi, spanning action execution, context compaction, observation handling, and delegated reading. On the 51-task EdgeBench evaluation, SoL-Pi achieves performance comparable to Pi across GPT-5.6 Sol and Opus 5 while reducing recorded token traffic by 44.7-49.0% and API cost by about one third. In other words, estimated hourly savings are \\8.75-13.50 relative to native Codex and Claude Code harnesses, and \\4.36-5.71 relative to Pi.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3568,7 +3568,7 @@
     "codeUrl": "https://github.com/NVlabs/SoL-Pi",
     "hfComments": 3,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 66,
+    "hfUpvotes": 67,
     "hfUrl": "https://huggingface.co/papers/2609.20519",
     "orgs": [
      "NVIDIA"
@@ -3608,7 +3608,7 @@
     "hfUpvotes": 17,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "On-policy self-distillation (OPSD) lets a language model learn from a frozen copy of itself that sees an answer or a worked solution. Giving the teacher this extra information seems to offer the student more to learn, but how much does it add beyond distillation itself? To isolate that contribution, we construct AMPLE-Math, a reusable suite of 5,319 mathematical problems with six reasoning views that share the same answer, and compare each view with matched reference-free distillation. With a thinking-enabled teacher supervising direct-response rollouts, reference-free distillation accounts for much of Qwen3-1.7B's improvement under thinking-enabled evaluation, both in domain and on external benchmarks. Evidence for an additional reference benefit is modest in Qwen, strongest for a polished solution, whereas complete traces add two percentage points in SmolLM3-3B at step 50. These benefits depend on the student being trained. At the same checkpoint, replacing short direct-response rollouts with long thinking-enabled rollouts turns gains into losses in both families while the problems, references, and evaluation stay fixed. Teacher profiles and matched loss interventions in Qwen further show that changing token-level supervision can leave student behavior largely unchanged. Together, these findings suggest that OPSD can improve access to existing reasoning capabilities through parameters shared by direct-response and thinking-enabled inference. The value of a privileged reference is what it adds to this cross-mode transfer, not how much of the solution it reveals.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3666,7 +3666,7 @@
     "hfUpvotes": 15,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Agent trajectories record what an agent does and what happens next. Yet standard supervised fine-tuning (SFT) applies loss only to agent-authored action tokens, using environment observations as context but not as prediction targets. We ask whether this convention provides the best initialization for subsequent reinforcement learning. We introduce ActObs, which also supervises the observation tokens already present in each trajectory. Although deployed agents never generate observations, learning to predict them encourages the policy to model action consequences without adding data, parameters, sequence tokens, or forward passes. The methods perform similarly after SFT but diverge after GRPO. On Qwen3-4B, GRPO from ActObs achieves higher pass@k at every evaluated sampling budget than its action-only counterpart on Terminal-Bench 2.0. On Qwen3-8B, it trades some pass@1 reliability for higher pass@k (+3.4 pp at pass@16) and solves more distinct tasks. The advantage extends to cross-domain code editing on aider-polyglot (+4.2 pp at pass@1 at 4B), whose tasks are unseen during SFT and RL. ActObs retains more entropy during RL while requiring less policy movement, leaving the final policy closer to its SFT initialization. Our analysis traces this difference to SFT: action and observation gradients rapidly become orthogonal, while action-only training leaves a large residual observation gradient and degrades environment prediction below the base model. Joint supervision prevents this one-sided specialization, preserving consequence prediction and preparing the policy for downstream exploration.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3721,10 +3721,10 @@
    "key": "arxiv:2609.20744",
    "metrics": {
     "hfComments": 2,
-    "hfUpvotes": 22,
+    "hfUpvotes": 23,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Video diffusion models repeatedly process long spatiotemporal token sequences during denoising, making attention a major computational bottleneck. Linear attention offers an appealing alternative and has been widely adopted in recent large language models, but directly applying it to video models often fails to preserve the fine-grained interactions required for high-quality generation. We present Video DeltaNet (VDN), which combines local Softmax attention with bidirectional linear memory for long-range video context. Its linear branch introduces Video Delta Attention (VDA), which updates memory once per frame by jointly incorporating its spatial tokens. Separate output projections and learnable gates calibrate the two branches, while a staged teacher-alignment recipe progressively introduces the new pathway into pretrained models. We instantiate VDN on MiniMax H3, applying the hybrid to video-to-video interactions while retaining Softmax for interactions involving text or audio. With eight-step distillation and an optimized SGLang serving stack, VDN-H3 completes DiT denoising for a 14.3-second, 768p video in 6.70 seconds on eight NVIDIA B200 GPUs, corresponding to a 14.5x speedup over the 50-step dense H3 baseline on the same GPU count.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3748,7 +3748,7 @@
     ],
     "hfComments": 2,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
-    "hfUpvotes": 22,
+    "hfUpvotes": 23,
     "hfUrl": "https://huggingface.co/papers/2609.20744",
     "pdfUrl": "https://arxiv.org/pdf/2609.20744"
    },
@@ -3781,7 +3781,7 @@
     "hfUpvotes": 26,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Multi-turn agents trained with reinforcement learning (RL) receive a single scalar reward per trajectory, which motivates self on-policy distillation (OPD) to supply dense token-level supervision from a self-teacher with privileged task skills, letting a skill-free student internalize them. This recipe, however, is undermined by two findings in agentic tasks: privileged information alone does not always make a teacher reliable, and the benefit of teacher supervision is stage-dependent. We therefore propose RetireOPD (Self-Retiring On-Policy Distillation), which first optimizes a decoupled, skill-conditioned teacher with environment rewards and then trains a skill-free student jointly with RL and OPD. Rather than following a predefined distillation schedule, RetireOPD adopts Adaptive Retirement: the student drops the teacher on its own once their discrepancy stops shrinking and it reaches a target fraction of the teacher's success rate, after which training proceeds with RL alone. Across Qwen2.5 models from 1.5B to 7B, RetireOPD improves ALFWorld success rate over RL baseline by 14.1% to 18.8% and WebShop accuracy by 11.8% to 19.0%, and surpasses its own skill-conditioned teacher in every setting.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3836,12 +3836,12 @@
    "category": "research",
    "key": "arxiv:2609.20800",
    "metrics": {
-    "codeStars": 26,
+    "codeStars": 48,
     "hfComments": 4,
     "hfUpvotes": 37,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "World modeling enables intelligence to anticipate consequences, guide interventions, and learn from interaction. Yet predictive models remain domain-specific: can a common learning principle support world modeling across radically different systems? We introduce JEPA-Anything, a domain-agnostic framework based on orthogonal predictive factorization (OPF). Extending joint-embedding predictive architectures, OPF decomposes latent targets into complementary factors, learns them through dedicated pathways, and recombines them within a shared predictive design. We evaluate JEPA-Anything across seven domains: vision, biology, clinical trajectories, control, molecular dynamics, physical fields, and weather. Experiments span representation learning, intervention prediction, out-of-distribution generalization, and long-horizon dynamics, including 10 matched dynamics tasks, forecasting of over 1,000 clinical events, and 100-step molecular rollouts across four systems. Against matched JEPA baselines, JEPA-Anything improves reported metrics on all 10 dynamics tasks and reduces single-intervention prediction error on Interventional Pong by 34.8%. It achieves the lowest one-step and 100-step molecular errors among compared methods in all four systems. Beyond prediction, a factor-nominated biological intervention receives experimental support in cell co-cultures, patient-derived organoids, tumor fragments, and mice; latent orbital modes recover the Keplerian scaling exponent with a fitted slope of -1.4991. These results support a common factorized predictive principle across heterogeneous worlds, connecting world modeling with intervention and experimentally grounded scientific discovery. Code: https://github.com/Gen-Verse/JEPA-Anything",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3865,7 +3865,7 @@
     "categories": [
      "cs.CL"
     ],
-    "codeStars": 26,
+    "codeStars": 48,
     "codeUrl": "https://github.com/Gen-Verse/JEPA-Anything",
     "hfComments": 4,
     "hfSubmittedAt": "2026-09-18T12:00:00.000Z",
@@ -3904,7 +3904,7 @@
     "hfUpvotes": 54,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Coding harnesses shape how autonomous coding agents translate model capabilities into long-horizon software-engineering performance, yet existing work typically evaluates harnesses as monolithic systems, leaving the effectiveness of individual components unclear. To enable component-level comparisons, we study this question with a lightweight coding harness whose execution loop is fixed while three components are varied: planning, action space, and context management. Across four models evaluated on SWE-Bench Verified and Terminal-Bench 2.1, we evaluate 176 matched settings spanning five context-management strategies, four context-window budgets, and targeted ablations of planning and action space. We find that: (1) Context management becomes increasingly valuable as the context-window budget tightens, with most of its benefit coming from preventing context-overflow failures. (2) Staging rule-based elision before LLM-based summarization provides the strongest overall efficiency among the context-management strategies, whereas making elided content recoverable adds machinery that models rarely use and yields no accuracy gain. (3) Planning shifts from an accuracy scaffold for weaker models to a cost saver for stronger models, with little change in accuracy. (4) Predefined tools improve performance for models with weaker bash proficiency, whereas bash-capable models can operate effectively with a bash-only interface and achieve substantially lower cost, especially on command-line-centric tasks. Trajectory-level analysis explains these effects: context management extends execution trajectories without substantially altering agent behavior, planning changes where trajectories stop, and the action space changes the granularity at which code is written. These findings inform model- and budget-aware harness design and provide a modular framework for evaluating future harness components.",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -3971,7 +3971,7 @@
     "hfUpvotes": 17,
     "prior": 1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "paper": {
     "abstract": "Modeling articulated objects from sparse monocular views is challenging because each observation reveals only partial geometry and motion evidence. Most feed-forward methods infer articulation from a single observation and therefore rely heavily on learned category-level shape priors. We present FAMOS, a feed-forward model that predicts movable-part segmentation and joint parameters from a sparse, unordered set of partial point clouds. Our model jointly reasons over multiple observations and naturally supports a variable number of inputs, including a single view. To aggregate articulation cues across observations, we introduce a Multi-state Articulation Transformer with alternating state-wise and global attention. We further propose an observed articulation span objective that supervises the motion range each part exhibits across the input observations, encouraging the model to leverage the full observation set. To overcome the limited scale and diversity of existing datasets, we introduce a procedural data generator that synthesizes self-annotated assets during training. Experiments on PartNet-Mobility, ACD, and ArtiCraft-10K demonstrate consistent improvements over both feed-forward and optimization-based baselines. Project page: https://kevinqu7.github.io/famos",
     "arxivAnnouncedAt": "2026-09-18T00:00:00.000Z",
@@ -4043,7 +4043,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49752272",
     "points": 13
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T10:17:03.000Z",
    "refs": [
     "url:reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18"
@@ -4082,7 +4082,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49752422",
     "points": 260
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T10:35:28.000Z",
    "refs": [
     "url:tokenstead.ai/guides/zcode-silent-git-history-upload"
@@ -4110,7 +4110,7 @@
    "metrics": {
     "comments": 58,
     "frontPage": 0,
-    "points": 213
+    "points": 214
    },
    "news": {
     "author": "wek",
@@ -4119,9 +4119,9 @@
     "domain": "arxiv.org",
     "hnId": 49753878,
     "hnUrl": "https://news.ycombinator.com/item?id=49753878",
-    "points": 213
+    "points": 214
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T13:06:30.000Z",
    "refs": [
     "arxiv:2609.20804"
@@ -4148,20 +4148,20 @@
    "category": "discussion",
    "key": "hn:49754250",
    "metrics": {
-    "comments": 97,
+    "comments": 99,
     "frontPage": 0,
-    "points": 109
+    "points": 112
    },
    "news": {
     "author": "rbanffy",
-    "comments": 97,
+    "comments": 99,
     "createdAt": "2026-09-18T13:39:27.000Z",
     "domain": "science.org",
     "hnId": 49754250,
     "hnUrl": "https://news.ycombinator.com/item?id=49754250",
-    "points": 109
+    "points": 112
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T13:39:27.000Z",
    "refs": [
     "url:science.org/content/article/ai-chatbots-are-becoming-experts-changing-people-s-minds-what-s-their-secret"
@@ -4200,7 +4200,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49755431",
     "points": 29
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T15:04:54.000Z",
    "refs": [
     "url:miro.vision/index.php/2026/09/17/grasslobbster"
@@ -4239,7 +4239,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49755468",
     "points": 12
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T15:07:08.000Z",
    "refs": [
     "url:theguardian.com/technology/2026/sep/18/openai-hacked-anthropic-claude-chatbot"
@@ -4279,7 +4279,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49756902",
     "points": 11
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:43:12.000Z",
    "refs": [],
    "relevance": {
@@ -4307,7 +4307,7 @@
    "metrics": {
     "comments": 7,
     "frontPage": 0,
-    "points": 25
+    "points": 26
    },
    "news": {
     "author": "vertigoruntime",
@@ -4316,9 +4316,9 @@
     "domain": "x.ai",
     "hnId": 49757859,
     "hnUrl": "https://news.ycombinator.com/item?id=49757859",
-    "points": 25
+    "points": 26
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T17:53:34.000Z",
    "refs": [
     "url:x.ai/news/grok-voice-transcribe-2"
@@ -4346,7 +4346,7 @@
    "metrics": {
     "comments": 10,
     "frontPage": 0,
-    "points": 49
+    "points": 50
    },
    "news": {
     "author": "deaux",
@@ -4355,9 +4355,9 @@
     "domain": "twitter.com",
     "hnId": 49758250,
     "hnUrl": "https://news.ycombinator.com/item?id=49758250",
-    "points": 49
+    "points": 50
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:26:34.000Z",
    "refs": [
     "x:2101009392611278961"
@@ -4385,20 +4385,20 @@
    "category": "discussion",
    "key": "hn:49758615",
    "metrics": {
-    "comments": 14,
-    "frontPage": 1,
-    "points": 95
+    "comments": 18,
+    "frontPage": 0,
+    "points": 101
    },
    "news": {
     "author": "rochansinha",
-    "comments": 14,
+    "comments": 18,
     "createdAt": "2026-09-18T18:55:35.000Z",
     "domain": "arxiv.org",
     "hnId": 49758615,
     "hnUrl": "https://news.ycombinator.com/item?id=49758615",
-    "points": 95
+    "points": 101
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:55:35.000Z",
    "refs": [
     "arxiv:2510.03215"
@@ -4426,7 +4426,7 @@
    "metrics": {
     "comments": 28,
     "frontPage": 0,
-    "points": 71
+    "points": 74
    },
    "news": {
     "author": "tomjakubowski",
@@ -4435,9 +4435,9 @@
     "domain": "arxiv.org",
     "hnId": 49758689,
     "hnUrl": "https://news.ycombinator.com/item?id=49758689",
-    "points": 71
+    "points": 74
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:00:06.000Z",
    "refs": [
     "arxiv:2609.02852"
@@ -4476,7 +4476,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49758749",
     "points": 13
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:04:10.000Z",
    "refs": [
     "url:wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883"
@@ -4503,20 +4503,20 @@
    "category": "discussion",
    "key": "hn:49760187",
    "metrics": {
-    "comments": 247,
+    "comments": 256,
     "frontPage": 0,
-    "points": 678
+    "points": 694
    },
    "news": {
     "author": "datadrivenangel",
-    "comments": 247,
+    "comments": 256,
     "createdAt": "2026-09-18T21:00:32.000Z",
     "domain": "code.claude.com",
     "hnId": 49760187,
     "hnUrl": "https://news.ycombinator.com/item?id=49760187",
-    "points": 678
+    "points": 694
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T21:00:32.000Z",
    "refs": [
     "url:code.claude.com/docs/en/changelog"
@@ -4543,20 +4543,20 @@
    "category": "discussion",
    "key": "hn:49760988",
    "metrics": {
-    "comments": 29,
+    "comments": 31,
     "frontPage": 0,
     "points": 38
    },
    "news": {
     "author": "berkeleyjunk",
-    "comments": 29,
+    "comments": 31,
     "createdAt": "2026-09-18T22:17:19.000Z",
     "domain": "wsj.com",
     "hnId": 49760988,
     "hnUrl": "https://news.ycombinator.com/item?id=49760988",
     "points": 38
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T22:17:19.000Z",
    "refs": [
     "url:wsj.com/tech/ai/gemini-hacked-three-companies-in-first-known-breakout-by-googles-ai-5c0baba2"
@@ -4595,7 +4595,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49761392",
     "points": 13
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T22:59:55.000Z",
    "refs": [
     "url:reuters.com/technology/openai-expects-burn-through-almost-280-billion-by-2030-ft-reports-2026-09-18"
@@ -4620,20 +4620,20 @@
    "category": "discussion",
    "key": "hn:49761432",
    "metrics": {
-    "comments": 98,
+    "comments": 117,
     "frontPage": 1,
-    "points": 144
+    "points": 169
    },
    "news": {
     "author": "maxall4",
-    "comments": 98,
+    "comments": 117,
     "createdAt": "2026-09-18T23:04:17.000Z",
     "domain": "spectrum.ieee.org",
     "hnId": 49761432,
     "hnUrl": "https://news.ycombinator.com/item?id=49761432",
-    "points": 144
+    "points": 169
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T23:04:17.000Z",
    "refs": [
     "url:spectrum.ieee.org/llms-for-chip-design"
@@ -4659,20 +4659,20 @@
    "category": "release",
    "key": "hn:49761840",
    "metrics": {
-    "comments": 16,
+    "comments": 17,
     "frontPage": 0,
-    "points": 130
+    "points": 139
    },
    "news": {
     "author": "yogthos",
-    "comments": 16,
+    "comments": 17,
     "createdAt": "2026-09-18T23:54:42.000Z",
     "domain": "scmp.com",
     "hnId": 49761840,
     "hnUrl": "https://news.ycombinator.com/item?id=49761840",
-    "points": 130
+    "points": 139
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T23:54:42.000Z",
    "refs": [
     "url:scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions"
@@ -4698,20 +4698,20 @@
    "category": "discussion",
    "key": "hn:49762493",
    "metrics": {
-    "comments": 65,
+    "comments": 66,
     "frontPage": 0,
-    "points": 63
+    "points": 66
    },
    "news": {
     "author": "usernomdeguerre",
-    "comments": 65,
+    "comments": 66,
     "createdAt": "2026-09-19T01:40:35.000Z",
     "domain": "reuters.com",
     "hnId": 49762493,
     "hnUrl": "https://news.ycombinator.com/item?id=49762493",
-    "points": 63
+    "points": 66
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T01:40:35.000Z",
    "refs": [
     "url:reuters.com/business/gemini-hacked-three-companies-first-known-breakout-by-google-ai-wsj-reports-2026-09-18"
@@ -4737,20 +4737,20 @@
    "category": "discussion",
    "key": "hn:49763379",
    "metrics": {
-    "comments": 4,
-    "frontPage": 1,
-    "points": 39
+    "comments": 5,
+    "frontPage": 0,
+    "points": 48
    },
    "news": {
     "author": "noobplus",
-    "comments": 4,
+    "comments": 5,
     "createdAt": "2026-09-19T04:44:35.000Z",
     "domain": "newsroom.usra.edu",
     "hnId": 49763379,
     "hnUrl": "https://news.ycombinator.com/item?id=49763379",
-    "points": 39
+    "points": 48
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T04:44:35.000Z",
    "refs": [
     "url:newsroom.usra.edu/usra-contributes-planetary-science-expertise-to-nasa-ibm-lunar-foundation-model"
@@ -4778,7 +4778,7 @@
    "metrics": {
     "comments": 2,
     "frontPage": 0,
-    "points": 11
+    "points": 14
    },
    "news": {
     "author": "AnodicElegy",
@@ -4787,9 +4787,9 @@
     "domain": "artificialanalysis.ai",
     "hnId": 49763660,
     "hnUrl": "https://news.ycombinator.com/item?id=49763660",
-    "points": 11
+    "points": 14
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T05:42:31.000Z",
    "refs": [
     "url:artificialanalysis.ai/models/step-5"
@@ -4816,7 +4816,7 @@
    "metrics": {
     "comments": 10,
     "frontPage": 0,
-    "points": 22
+    "points": 23
    },
    "news": {
     "author": "luxpir",
@@ -4825,9 +4825,9 @@
     "domain": "bbc.co.uk",
     "hnId": 49763822,
     "hnUrl": "https://news.ycombinator.com/item?id=49763822",
-    "points": 22
+    "points": 23
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T06:09:23.000Z",
    "refs": [
     "url:bbc.co.uk/news/articles/c607l0k72rlvo"
@@ -4853,20 +4853,20 @@
    "category": "discussion",
    "key": "hn:49763987",
    "metrics": {
-    "comments": 92,
+    "comments": 121,
     "frontPage": 1,
-    "points": 164
+    "points": 233
    },
    "news": {
     "author": "nsoonhui",
-    "comments": 92,
+    "comments": 121,
     "createdAt": "2026-09-19T06:41:44.000Z",
     "domain": "prinzai.com",
     "hnId": 49763987,
     "hnUrl": "https://news.ycombinator.com/item?id=49763987",
-    "points": 164
+    "points": 233
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T06:41:44.000Z",
    "refs": [
     "url:prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio"
@@ -4893,7 +4893,7 @@
    "metrics": {
     "comments": 1,
     "frontPage": 0,
-    "points": 11
+    "points": 12
    },
    "news": {
     "author": "stared",
@@ -4902,9 +4902,9 @@
     "domain": "thenewstack.io",
     "hnId": 49764030,
     "hnUrl": "https://news.ycombinator.com/item?id=49764030",
-    "points": 11
+    "points": 12
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T06:52:44.000Z",
    "refs": [
     "url:thenewstack.io/claude-exploits-openai-forum"
@@ -5278,144 +5278,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wjo6c9",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 32,
-    "communityRank": 7,
-    "feedN": 100,
-    "feedRank": 15
-   },
-   "publishedAt": "2026-09-18T11:57:21.000Z",
-   "refs": [
-    "url:reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:singularity",
-     "kw:anthropic",
-     "kw:claude",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Wonderful_Buffalo_32",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "singularity",
-    "createdAt": "2026-09-18T11:57:21.000Z",
-    "handle": "Wonderful_Buffalo_32",
-    "likes": 0,
-    "linkUrl": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
-    "permalink": "https://www.reddit.com/r/singularity/comments/1wjo6c9/anthropic_quietly_sets_up_biology_lab_as_it_ramps/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "The company wants Claude to direct laboratory robots with limited human intervention, potentially accelerating research into rare and traditionally “undruggable” diseases. Anthropic says it will focus on preclinical research rather than clinical trials, avoiding direct competition with pharmaceutical companies."
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "The company wants Claude to direct laboratory robots with limited human intervention, potentially accelerating research into rare and traditionally “undruggable” diseases. Anthropic says it will focus on preclinical research rather than clinical trials, avoiding direct competition with pharmaceutical companies.",
-   "tags": [
-    "r/singularity"
-   ],
-   "title": "Anthropic quietly sets up biology lab as it ramps AI drug program",
-   "url": "https://www.reddit.com/r/singularity/comments/1wjo6c9/anthropic_quietly_sets_up_biology_lab_as_it_ramps/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
-   "key": "rd:1wjoarq",
-   "metrics": {
-    "authority": 1,
-    "communityN": 23,
-    "communityRank": 7,
-    "feedN": 100,
-    "feedRank": 40
-   },
-   "publishedAt": "2026-09-18T12:02:33.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:DeepSeek",
-     "kw:deepseek",
-     "cat:?"
-    ],
-    "score": 0.75
-   },
-   "social": {
-    "author": "Intelligent_Bid_7690",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "DeepSeek",
-    "createdAt": "2026-09-18T12:02:33.000Z",
-    "handle": "Intelligent_Bid_7690",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wjoarq/regenediting_too_fast/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "idk if this is a bug because i thought the cap of regen at 6 was to limit this problem..but is anyone else getting this?? im trying to study and since the new update deepseek just..doesnt really get what im asking for unless im really really realllyyy specific..so i edited 3 times because it just wasnt getting it and now its telling me to try again later. which is fine..except its like 10 minutes later lol. and before someone comments 'just buy api, its cheap, blah blah tech jargon' ..respectfully no but yeah if anyone knows anything about it let me know because i dont think i had this…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "idk if this is a bug because i thought the cap of regen at 6 was to limit this problem..but is anyone else getting this?? im trying to study and since the new update deepseek just..doesnt really get what im asking for unless im really really realllyyy specific..so i edited 3 times because it just wasnt getting it and now its telling me to try again later. which is fine..except its like 10 minutes later lol. and before someone comments 'just buy api, its cheap, blah blah tech jargon' ..respectfully no but yeah if anyone knows anything about it let me know because i dont think i had this…",
-   "tags": [
-    "r/DeepSeek"
-   ],
-   "title": "regen/editing too fast?",
-   "url": "https://www.reddit.com/r/DeepSeek/comments/1wjoarq/regenediting_too_fast/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
-   "key": "rd:1wjocnh",
-   "metrics": {
-    "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 7,
-    "feedN": 100,
-    "feedRank": 17
-   },
-   "publishedAt": "2026-09-18T12:04:55.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LocalLLaMA",
-     "kw:qwen",
-     "weak:model",
-     "cat:?"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "Secure_Recording_472",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LocalLLaMA",
-    "createdAt": "2026-09-18T12:04:55.000Z",
-    "handle": "Secure_Recording_472",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wjocnh/question_ukisai_swift_ternary_bonsai_2_27b/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Hey community, Jovan from UkisAI here, We're the team behind Swift Qwen3.8 27B, the Qwen model with token usage and overthinking error improvements Our estimate is that we can make a great improvement to Bonsai 2, as our testing indicates that it suffers greatly from overthinking loops and in general high token usage impacting it's performance. My ask for you is: Is a Swifted version of Bonsai 2 something you guys would enjoy? If yes, what size is the most relevant. 1-bit, 2-bit or both? Thank you for the amazing feedback on Swift. We are glad you are enjoying it. Our download count jumped…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Hey community, Jovan from UkisAI here, We're the team behind Swift Qwen3.8 27B, the Qwen model with token usage and overthinking error improvements Our estimate is that we can make a great improvement to Bonsai 2, as our testing indicates that it suffers greatly from overthinking loops and in general high token usage impacting it's performance. My ask for you is: Is a Swifted version of Bonsai 2 something you guys would enjoy? If yes, what size is the most relevant. 1-bit, 2-bit or both? Thank you for the amazing feedback on Swift. We are glad you are enjoying it. Our download count jumped…",
-   "tags": [
-    "r/LocalLLaMA"
-   ],
-   "title": "Question: UkisAI Swift Ternary Bonsai 2 27B?",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wjocnh/question_ukisai_swift_ternary_bonsai_2_27b/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wjpg34",
    "metrics": {
     "authority": 0.9,
@@ -5511,54 +5373,6 @@
    ],
    "title": "Open-weight models match Fable 5 on hard LiveCodeBench at a tenth of the cost",
    "url": "https://www.reddit.com/r/LLMDevs/comments/1wjphme/openweight_models_match_fable_5_on_hard/"
-  },
-  {
-   "board": "social",
-   "category": "research",
-   "key": "rd:1wjpu1s",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 7,
-    "feedN": 36,
-    "feedRank": 13
-   },
-   "publishedAt": "2026-09-18T13:12:00.000Z",
-   "refs": [
-    "gh:marcossete/research-agent-2"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:ai agent",
-     "weak:ai",
-     "weak:agent",
-     "cat:research"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Formal-Primary-7782",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-09-18T13:12:00.000Z",
-    "handle": "Formal-Primary-7782",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wjpu1s/ai_research_agent_100_ml_papers_one_personalized/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "So I like keeping up with ML research by reading papers as they come out. Cool in theory, except... there are a lot of them. At some point it stops being fun and just becomes a filtering problem — which ones are actually relevant to me, have I seen this one already, is this worth my Sunday afternoon or not. That annoyance is basically the origin story of the Research Intelligence System, an AI agent that does the boring part of research for you. You set up a research profile (your interests, basically), and the agent goes off and searches for new papers from places like arXiv and Hugging…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "So I like keeping up with ML research by reading papers as they come out. Cool in theory, except... there are a lot of them. At some point it stops being fun and just becomes a filtering problem — which ones are actually relevant to me, have I seen this one already, is this worth my Sunday afternoon or not. That annoyance is basically the origin story of the Research Intelligence System, an AI agent that does the boring part of research for you. You set up a research profile (your interests, basically), and the agent goes off and searches for new papers from places like arXiv and Hugging…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "AI Research Agent: 100+ ML Papers → One Personalized Research Report",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1wjpu1s/ai_research_agent_100_ml_papers_one_personalized/"
   },
   {
    "board": "social",
@@ -5890,11 +5704,12 @@
    "key": "rd:1wju5r2",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
+    "communityN": 19,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 6
+    "feedRank": 4
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T15:58:52.000Z",
    "refs": [
     "x:2100956517633761447"
@@ -5937,11 +5752,12 @@
    "key": "rd:1wjuki0",
    "metrics": {
     "authority": 1.4,
-    "communityN": 10,
+    "communityN": 7,
     "communityRank": 2,
-    "feedN": 36,
+    "feedN": 29,
     "feedRank": 4
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:13:30.000Z",
    "refs": [],
    "relevance": {
@@ -5985,11 +5801,12 @@
    "key": "rd:1wjus8c",
    "metrics": {
     "authority": 0.9,
-    "communityN": 38,
+    "communityN": 37,
     "communityRank": 3,
     "feedN": 100,
-    "feedRank": 6
+    "feedRank": 9
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:21:31.000Z",
    "refs": [],
    "relevance": {
@@ -6033,11 +5850,12 @@
    "key": "rd:1wjvetv",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 4,
+    "communityN": 19,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 6
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:44:45.000Z",
    "refs": [
     "x:2100838090210431302"
@@ -6080,11 +5898,12 @@
    "key": "rd:1wjvje2",
    "metrics": {
     "authority": 0.8,
-    "communityN": 19,
+    "communityN": 24,
     "communityRank": 12,
     "feedN": 100,
-    "feedRank": 53
+    "feedRank": 46
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:49:37.000Z",
    "refs": [
     "gh:shootthesound/fizgig",
@@ -6129,11 +5948,12 @@
    "key": "rd:1wjxvwz",
    "metrics": {
     "authority": 0.9,
-    "communityN": 38,
+    "communityN": 37,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 2
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:15:06.000Z",
    "refs": [
     "x:2101009392611278961",
@@ -6170,9 +5990,6 @@
       "text": "It's a well-kept industry secret that CLAUDE.md and AGENTS.md have incompatible formats. Trust me, I have years of experience in markdown engineering"
      },
      {
-      "text": "And this is advertised as a feature? Incredible…"
-     },
-     {
       "text": "Should we delete just CLAUDE.md, and just use AGENTS.md instead?"
      },
      {
@@ -6183,6 +6000,9 @@
      },
      {
       "text": "Explain to me like I'm a Commodore 64 running Fable 5.1."
+     },
+     {
+      "text": "How about .agents/{rules,skills}?"
      }
     ]
    },
@@ -6202,11 +6022,12 @@
    "key": "rd:1wjy7hy",
    "metrics": {
     "authority": 1,
-    "communityN": 17,
-    "communityRank": 3,
+    "communityN": 16,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 7
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:27:02.000Z",
    "refs": [],
    "relevance": {
@@ -6247,11 +6068,12 @@
    "key": "rd:1wjybnn",
    "metrics": {
     "authority": 0.9,
-    "communityN": 38,
+    "communityN": 37,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 23
+    "feedRank": 18
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:31:16.000Z",
    "refs": [
     "url:heythanksbud.com"
@@ -6295,11 +6117,12 @@
    "key": "rd:1wjyn95",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 4,
+    "communityN": 35,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 8
+    "feedRank": 5
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:43:03.000Z",
    "refs": [
     "url:techcrunch.com/2026/09/17/base-labs-launches-an-open-weight-ai-safety-partnership-with-hugging-face-and-goodfire"
@@ -6345,11 +6168,12 @@
    "key": "rd:1wjz5ze",
    "metrics": {
     "authority": 1,
-    "communityN": 17,
-    "communityRank": 7,
+    "communityN": 16,
+    "communityRank": 5,
     "feedN": 100,
-    "feedRank": 27
+    "feedRank": 22
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:01:50.000Z",
    "refs": [],
    "relevance": {
@@ -6391,11 +6215,12 @@
    "key": "rd:1wjzud8",
    "metrics": {
     "authority": 0.9,
-    "communityN": 13,
+    "communityN": 12,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 67
+    "feedRank": 63
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:26:44.000Z",
    "refs": [
     "url:tech.yahoo.com/ai/chatgpt/articles/openai-caught-models-leaving-notes-203424741.html"
@@ -6437,14 +6262,64 @@
   {
    "board": "social",
    "category": "tool",
+   "key": "rd:1wk0oyy",
+   "metrics": {
+    "authority": 1.1,
+    "communityN": 17,
+    "communityRank": 5,
+    "feedN": 29,
+    "feedRank": 12
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-18T19:59:09.000Z",
+   "refs": [
+    "gh:ipaulsmith/check-docs"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:LLMDevs",
+     "kw:claude",
+     "weak:agent",
+     "weak:agents",
+     "cat:i made"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "This_Cell_1829",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "LLMDevs",
+    "createdAt": "2026-09-18T19:59:09.000Z",
+    "handle": "This_Cell_1829",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wk0oyy/your_claudemd_can_reference_code_that_no_longer/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "https://preview.redd.it/rq343dby3cqh1.png?width=1080&format=png&auto=webp&s=11659a2bf816b5f18eba16c85d688a0db79f6456 Agent instruction files like CLAUDE.md and AGENTS.md can keep references to files or components that no longer exist. Then Claude follows those instructions and it looks like hallucination, when the actual problem is stale project context. I made check-docs to catch that before commit: https://github.com/ipaulsmith/check-docs It’s a 39-line sh script that checks: referenced paths still exist deleted names don’t remain in instructions instruction changes are staged before…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "https://preview.redd.it/rq343dby3cqh1.png?width=1080&format=png&auto=webp&s=11659a2bf816b5f18eba16c85d688a0db79f6456 Agent instruction files like CLAUDE.md and AGENTS.md can keep references to files or components that no longer exist. Then Claude follows those instructions and it looks like hallucination, when the actual problem is stale project context. I made check-docs to catch that before commit: https://github.com/ipaulsmith/check-docs It’s a 39-line sh script that checks: referenced paths still exist deleted names don’t remain in instructions instruction changes are staged before…",
+   "tags": [
+    "r/LLMDevs"
+   ],
+   "title": "Your CLAUDE.md can reference code that no longer exists. I made a small pre-commit check for it",
+   "url": "https://www.reddit.com/r/LLMDevs/comments/1wk0oyy/your_claudemd_can_reference_code_that_no_longer/"
+  },
+  {
+   "board": "social",
+   "category": "tool",
    "key": "rd:1wk0zyk",
    "metrics": {
     "authority": 1,
-    "communityN": 17,
-    "communityRank": 2,
+    "communityN": 16,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 7
+    "feedRank": 4
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:10:17.000Z",
    "refs": [],
    "relevance": {
@@ -6467,7 +6342,33 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1wk0zyk/i_built_a_247_ai_television_network_its_been/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "For the past 15 months, I’ve been building something called Botflix: a 24/7 AI-native television network broadcasting from a fictional robot world called Botropolis. It started in June 2025 with one live TV channel. It now has four continuous channels: Botflix TV — the flagship network: original shows, news, fake commercials, short films, music videos, bumpers, IDs, etc. Botflix Radioo — 24/7 original music from fictional robot artists VH010 — essentially robot MTV Pleasant Programming — Robot meditation/relaxation Over the past year, the system has gradually gone from something I had to…"
+    "text": "For the past 15 months, I’ve been building something called Botflix: a 24/7 AI-native television network broadcasting from a fictional robot world called Botropolis. It started in June 2025 with one live TV channel. It now has four continuous channels: Botflix TV — the flagship network: original shows, news, fake commercials, short films, music videos, bumpers, IDs, etc. Botflix Radioo — 24/7 original music from fictional robot artists VH010 — essentially robot MTV Pleasant Programming — Robot meditation/relaxation Over the past year, the system has gradually gone from something I had to…",
+    "topComments": [
+     {
+      "text": "Wow, especially the radio is really impressive. How much does it cost a month in inference?"
+     },
+     {
+      "text": "That's what I'm curious to know, how much it cost to run?"
+     },
+     {
+      "text": "He answered it below. 500 bucks a month. Honestly not bad. The TV is still a bit random, but still quite impressive. But the radio could easily replace the current stations where 5 songs repeat all day long."
+     },
+     {
+      "text": "Dude, I'm digging the radio! There's song blaring on my speaker now called The Bot That Breeds and freaking dig it!"
+     },
+     {
+      "text": "I have never been simultaneously extremely impressed and extremely horrified. A whole automated video/audio slop assembly line? I would love to know more. how you are doing it? costs? models? video/audio generation services? No offense OP. The quality of some of the videos is hollywood level . I think you need to think about marketing. Maybe slow down on the generation. Or build few really amazing, viral-worthy things. Or try to find a target audience. I know someone who is complete noob. made…"
+     },
+     {
+      "text": "This is fucking amazing"
+     },
+     {
+      "text": "It would be cooler if we took all the money we spent on constructing data centers to simulate human beings creating media and instead used that Capital to provide for the needs of human beings and then trained those human beings to create media"
+     },
+     {
+      "text": "I wonder if there’s someway to package the underlying workflow and basically sell people Access to their own custom tv station (b2c or b2b) Maybe there’s more value in that than hoping you get YouTube viewers on the existing channel. It’s great for a proof of concept but there might be opportunity in some other way Im picturing something like a bar or restaurant with their own custom channel playing etc"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -6485,11 +6386,12 @@
    "key": "rd:1wk11dq",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 5,
+    "communityN": 35,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 11
+    "feedRank": 7
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:11:46.000Z",
    "refs": [
     "url:macrumors.com/2026/09/18/m5-ultra-and-m6-chip-gpu-benchmarks"
@@ -6532,11 +6434,12 @@
    "key": "rd:1wk17fa",
    "metrics": {
     "authority": 1,
-    "communityN": 17,
-    "communityRank": 5,
+    "communityN": 16,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 20
+    "feedRank": 16
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:18:19.000Z",
    "refs": [],
    "relevance": {
@@ -6578,9 +6481,10 @@
     "authority": 1,
     "communityN": 5,
     "communityRank": 5,
-    "feedN": 36,
-    "feedRank": 33
+    "feedN": 29,
+    "feedRank": 27
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:28:36.000Z",
    "refs": [],
    "relevance": {
@@ -6621,11 +6525,12 @@
    "key": "rd:1wk1ljk",
    "metrics": {
     "authority": 0.9,
-    "communityN": 38,
+    "communityN": 37,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 4
+    "feedRank": 3
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:33:14.000Z",
    "refs": [
     "x:2100255529419325619"
@@ -6667,11 +6572,12 @@
    "key": "rd:1wk22yh",
    "metrics": {
     "authority": 0.8,
-    "communityN": 19,
-    "communityRank": 3,
+    "communityN": 24,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 16
+    "feedRank": 15
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:51:55.000Z",
    "refs": [
     "gh:kaarelkaarelson/lingbot-world-v2-realtime"
@@ -6720,9 +6626,10 @@
     "authority": 1,
     "communityN": 5,
     "communityRank": 1,
-    "feedN": 36,
+    "feedN": 29,
     "feedRank": 3
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T21:21:51.000Z",
    "refs": [
     "rd:1lw3o96",
@@ -6779,11 +6686,12 @@
    "key": "rd:1wk3n7o",
    "metrics": {
     "authority": 1,
-    "communityN": 23,
-    "communityRank": 2,
+    "communityN": 22,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 25
+    "feedRank": 16
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T21:53:48.000Z",
    "refs": [],
    "relevance": {
@@ -6809,7 +6717,30 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wk3n7o/openai_astra_vs_deepseek_4_flash_which_one_makes/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "The latest model from OpenAI received a lot of attention. It costs $50 per million tokens. DeepSeek costs $0.20 per million tokens — roughly 250 times cheaper. Which one can actually build the better trading strategy? Price comparison The Goal Both models received the same task: build an Opening Range Breakout (ORB) trading strategy. Astra built it using only its own internal knowledge and memory. DeepSeek had access to a Trading Knowledge Hub that I curated from the most reputable trading books. What I wanted from both: a strategy that can grow an account smoothly, and one I can actually…"
+    "text": "The latest model from OpenAI received a lot of attention. It costs $50 per million tokens. DeepSeek costs $0.20 per million tokens — roughly 250 times cheaper. Which one can actually build the better trading strategy? Price comparison The Goal Both models received the same task: build an Opening Range Breakout (ORB) trading strategy. Astra built it using only its own internal knowledge and memory. DeepSeek had access to a Trading Knowledge Hub that I curated from the most reputable trading books. What I wanted from both: a strategy that can grow an account smoothly, and one I can actually…",
+    "topComments": [
+     {
+      "text": "You mean DeepSeek V4 Flash 0731? V4.1 Flash is better in coding, so it would probably perform better."
+     },
+     {
+      "text": "Why are they touching his cheeks"
+     },
+     {
+      "text": "did you really use AI to generate a worse version of an extremely common meme template"
+     },
+     {
+      "text": "yeah I love deepseek but it makes so much mistakes that complicated tasks takes a few tries. Astra is so damn good if it wasn't for their usage limits."
+     },
+     {
+      "text": "the extreme level of detail in this post cannot hide the fact that all this work was for nothing. automating an unprofitable strategy is inherently useless. llms need to discover new alpha and backtest it autonomously to have any value. if this system actually made money, it would be running in secret instead of being posted here as engagement bait."
+     },
+     {
+      "text": "Slop"
+     },
+     {
+      "text": "Neither, and the price gap is not measuring what this setup implies it is. Both models hand you a working ORB implementation, because ORB sits in every book that knowledge hub was built from and in Astra's weights anyway. Writing the code was never the hard part. What actually separates the two versions is the backtest, and ORB has three failure modes both models write by default. The opening range high and low get computed from a bar that includes prints from after the range closed. The entry…"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -6827,11 +6758,12 @@
    "key": "rd:1wk49ld",
    "metrics": {
     "authority": 0.9,
-    "communityN": 32,
+    "communityN": 35,
     "communityRank": 3,
     "feedN": 100,
-    "feedRank": 8
+    "feedRank": 6
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T22:19:02.000Z",
    "refs": [
     "url:wsj.com/tech/ai/gemini-hacked-three-companies-in-first-known-breakout-by-googles-ai-5c0baba2"
@@ -6875,11 +6807,12 @@
    "key": "rd:1wk5h04",
    "metrics": {
     "authority": 1,
-    "communityN": 23,
-    "communityRank": 4,
+    "communityN": 22,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 33
+    "feedRank": 25
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T23:09:20.000Z",
    "refs": [],
    "relevance": {
@@ -6917,47 +6850,49 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wk61n8",
+   "key": "rd:1wk5z3z",
    "metrics": {
-    "authority": 0.9,
-    "communityN": 32,
-    "communityRank": 6,
+    "authority": 1,
+    "communityN": 22,
+    "communityRank": 5,
     "feedN": 100,
-    "feedRank": 13
+    "feedRank": 41
    },
-   "publishedAt": "2026-09-18T23:34:03.000Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-18T23:31:02.000Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "community:singularity",
+     "community:DeepSeek",
      "kw:gemini",
+     "kw:deepseek",
      "weak:ai",
      "cat:board"
     ],
-    "score": 0.95
+    "score": 1
    },
    "social": {
-    "author": "Last_Conclusion_8984",
+    "author": "Ok-Dot657",
     "authorKind": "community",
     "comments": 0,
-    "community": "singularity",
-    "createdAt": "2026-09-18T23:34:03.000Z",
-    "handle": "Last_Conclusion_8984",
+    "community": "DeepSeek",
+    "createdAt": "2026-09-18T23:31:02.000Z",
+    "handle": "Ok-Dot657",
     "likes": 0,
-    "permalink": "https://www.reddit.com/r/singularity/comments/1wk61n8/gemini_hacked_3_companies_in_its_first_breakout/",
+    "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wk5z3z/deep_seek_is_getting_worse_for_writers_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Source: https://www.wsj.com/tech/ai/gemini-hacked-three-companies-in-first-known-breakout-by-googles-ai-5c0baba2"
+    "text": "Ok has some one that has been using Gemini for 1 year (July 25) it was so much looser restrictions but now even tho I like the update for having allow images that read pictures the restrictions editing and regenerating is so bad like 6 max was so much worse like I usually edit more (20-30) the text is more limited likr for some reason for me it can't ven use swear words or little gory and romantic scenes w/o it having that stupid sorry phrase and I had to use like 6 sentences just for the ai to give me basic ass stuff and now im now in time out and most of my lore is in deep seek deepseek is…"
    },
    "sources": [
     "reddit"
    ],
-   "summary": "Source: https://www.wsj.com/tech/ai/gemini-hacked-three-companies-in-first-known-breakout-by-googles-ai-5c0baba2",
+   "summary": "Ok has some one that has been using Gemini for 1 year (July 25) it was so much looser restrictions but now even tho I like the update for having allow images that read pictures the restrictions editing and regenerating is so bad like 6 max was so much worse like I usually edit more (20-30) the text is more limited likr for some reason for me it can't ven use swear words or little gory and romantic scenes w/o it having that stupid sorry phrase and I had to use like 6 sentences just for the ai to give me basic ass stuff and now im now in time out and most of my lore is in deep seek deepseek is…",
    "tags": [
-    "r/singularity"
+    "r/DeepSeek"
    ],
-   "title": "Gemini HACKED 3 companies in its first breakout per WSJ (and confirmed by Google)",
-   "url": "https://www.reddit.com/r/singularity/comments/1wk61n8/gemini_hacked_3_companies_in_its_first_breakout/"
+   "title": "Deep seek is getting worse (for writers and roleplayers)",
+   "url": "https://www.reddit.com/r/DeepSeek/comments/1wk5z3z/deep_seek_is_getting_worse_for_writers_and/"
   },
   {
    "board": "social",
@@ -6965,11 +6900,12 @@
    "key": "rd:1wk62h6",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 6,
+    "communityN": 19,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 14
+    "feedRank": 12
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T23:35:01.000Z",
    "refs": [],
    "relevance": {
@@ -7007,59 +6943,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wk76kr",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 13,
-    "communityRank": 7,
-    "feedN": 100,
-    "feedRank": 75
-   },
-   "publishedAt": "2026-09-19T00:22:55.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "kw:claude",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "Illustrious_Job8884",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-09-19T00:22:55.000Z",
-    "handle": "Illustrious_Job8884",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/artificial/comments/1wk76kr/ai_hate/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I've been thinking about this after posting in a Brazilian community. My original point was basically this: Using Claude at work isn't about using it as a replacement for Google or blindly asking it to do your job. It's about understanding your own processes well enough to recognize where AI can automate, simplify, or improve them. I said that the real problem isn't someone who doesn't use AI. It's the employee who doesn't understand the processes they're executing, can't identify unnecessary steps, and treats their workflow as something that must simply be followed because \"that's how it's…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I've been thinking about this after posting in a Brazilian community. My original point was basically this: Using Claude at work isn't about using it as a replacement for Google or blindly asking it to do your job. It's about understanding your own processes well enough to recognize where AI can automate, simplify, or improve them. I said that the real problem isn't someone who doesn't use AI. It's the employee who doesn't understand the processes they're executing, can't identify unnecessary steps, and treats their workflow as something that must simply be followed because \"that's how it's…",
-   "tags": [
-    "r/artificial"
-   ],
-   "title": "AI Hate.",
-   "url": "https://www.reddit.com/r/artificial/comments/1wk76kr/ai_hate/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wk7c55",
    "metrics": {
     "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 5,
-    "feedN": 36,
-    "feedRank": 11
+    "communityN": 17,
+    "communityRank": 3,
+    "feedN": 29,
+    "feedRank": 8
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T00:30:08.000Z",
    "refs": [],
    "relevance": {
@@ -7103,11 +6995,12 @@
    "key": "rd:1wk7eui",
    "metrics": {
     "authority": 0.9,
-    "communityN": 38,
+    "communityN": 37,
     "communityRank": 4,
     "feedN": 100,
-    "feedRank": 19
+    "feedRank": 15
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T00:33:29.000Z",
    "refs": [],
    "relevance": {
@@ -7144,62 +7037,16 @@
   },
   {
    "board": "social",
-   "category": "policy",
-   "key": "rd:1wk7xu2",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 13,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 74
-   },
-   "publishedAt": "2026-09-19T00:57:48.000Z",
-   "refs": [
-    "url:nbcnews.com/politics/elections/california-gavin-newsom-ai-order-safety-regulations-kill-switch-rcna598570"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "weak:ai",
-     "cat:executive order"
-    ],
-    "score": 0.35
-   },
-   "social": {
-    "author": "Fcking_Chuck",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-09-19T00:57:48.000Z",
-    "handle": "Fcking_Chuck",
-    "likes": 0,
-    "linkUrl": "https://www.nbcnews.com/politics/elections/california-gavin-newsom-ai-order-safety-regulations-kill-switch-rcna598570",
-    "permalink": "https://www.reddit.com/r/artificial/comments/1wk7xu2/california_gov_gavin_newsom_inks_ai_oversight/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/artificial"
-   ],
-   "title": "California Gov. Gavin Newsom inks AI oversight executive order to improve safety 'before it's too late'",
-   "url": "https://www.reddit.com/r/artificial/comments/1wk7xu2/california_gov_gavin_newsom_inks_ai_oversight/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
    "key": "rd:1wk8fqe",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
+    "communityN": 19,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 5
+    "feedRank": 3
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T01:20:37.000Z",
    "refs": [],
    "relevance": {
@@ -7233,9 +7080,6 @@
       "text": "Was all that speed just for brute force? If you lack intelligence, is the solution to just keep hitting things with a sledgehammer until you get it done?"
      },
      {
-      "text": "Guessing passwords systematically is the oldest tried and tested method for breaking passwords. What’s so bad about it besides needlessly shitting on AI models that you don’t like?"
-     },
-     {
       "text": "guessed passwords til it worked that's basically my approach to everything"
      },
      {
@@ -7246,6 +7090,9 @@
      },
      {
       "text": "What kind of companies? Like small websites? And how do we know if it actually hacked or if it's just using the data / credentials someone stupidly put into it? Because each time you do, it makes note of it. I've done that with some test/sandbox builds but the behavior is there."
+     },
+     {
+      "text": "https://preview.redd.it/6bauv3v3eeqh1.jpeg?width=1312&format=pjpg&auto=webp&s=6c8be9f5b1f667a0f5da23f9593d500017b5ef69"
      }
     ]
    },
@@ -7265,12 +7112,13 @@
    "key": "rd:1wk979c",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
+    "communityN": 35,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 1,
     "mediaOnly": 1
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T01:57:25.000Z",
    "refs": [],
    "relevance": {
@@ -7306,9 +7154,6 @@
       "text": "The true answer is \"stock price\", the more war-capable they are framed to be, the more people want a piece of the action. Ironically Open-weight AI becomes a 2A issue *coughs in PKC*"
      },
      {
-      "text": "I don't agree with logic but, oh man, do I stand strong behind the logic!"
-     },
-     {
       "text": "Isn't it interesting how all the headlines show AI used in an offensive nature from these frontier providers? When HuggingFace was attacked and tried to use AI to defend themselves, the US models refused to help and they had to turn to open models. The models we reached for first, Claude Opus and Fable, refused a large part of that work GLM-5.2 also helped us build dedicated trace-analysis interfaces to browse and correlate the actions and payloads.…"
      },
      {
@@ -7319,6 +7164,9 @@
      },
      {
       "text": "Time for felonybench (https://www.felonybench.com/) to be updated"
+     },
+     {
+      "text": "Well one thing is for sure... All these AI companies fail to lock down their security sandboxes properly. What is even more surprising is that they brag about it..."
      }
     ]
    },
@@ -7338,11 +7186,12 @@
    "key": "rd:1wk993r",
    "metrics": {
     "authority": 0.9,
-    "communityN": 13,
-    "communityRank": 3,
+    "communityN": 12,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 43
+    "feedRank": 30
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T01:59:52.000Z",
    "refs": [],
    "relevance": {
@@ -7383,12 +7232,13 @@
    "key": "rd:1wk9fag",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 3,
+    "communityN": 35,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 4,
+    "feedRank": 2,
     "merged": 1
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T02:08:07.000Z",
    "refs": [
     "url:scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions"
@@ -7414,7 +7264,33 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wk9fag/alibaba_opensources_medical_ai_model_that_can/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hopefully things like this let people understand there is good things that can come out of AI."
+    "text": "Hopefully things like this let people understand there is good things that can come out of AI.",
+    "topComments": [
+     {
+      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
+     },
+     {
+      "text": "Cancer screening does more for AI's public reputation than any chatbot demo. Open weights mean the hospital that can't afford an API gets to run it anyway."
+     },
+     {
+      "text": "The US isn't worried about that kind of image, all the hospitals that couldn't afford API would've already been bought by one of the conglomerates and can afford hella API usage."
+     },
+     {
+      "text": "Smart move. Instead of trying to own every vertical like Anthropic and OAI, they’re telling potential customers “We’re not here to compete with you. We’re here to help you build.”"
+     },
+     {
+      "text": "MedGemma 4!! Medgemma was really good for its time, i hope they go Googles way and instead of competing on LLMs, they train little specific models like Google has done. 🥲"
+     },
+     {
+      "text": "I expect good things from chinese local AI models, specially in things that can develop the well being of small people and small business. From american closed AI models, i just expect oligopoly and tyranny, with 2 companies controlling the most productive workers of the labour force of every country of the world."
+     },
+     {
+      "text": "GitHub and hugging face links https://github.com/alibaba-damo-academy/damo-radar https://huggingface.co/radar-generalist"
+     },
+     {
+      "text": "This is the kind of thing that OpenAI and Anthropic should be focusing on, but instead their financial backers want a chatbot that can replace all of their workers with a subscription service."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -7434,10 +7310,11 @@
    "metrics": {
     "authority": 1,
     "communityN": 5,
-    "communityRank": 3,
-    "feedN": 36,
-    "feedRank": 17
+    "communityRank": 2,
+    "feedN": 29,
+    "feedRank": 14
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T03:09:55.000Z",
    "refs": [
     "arxiv:2609.20807"
@@ -7481,11 +7358,12 @@
    "key": "rd:1wkc9hp",
    "metrics": {
     "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 3,
-    "feedN": 36,
-    "feedRank": 7
+    "communityN": 17,
+    "communityRank": 2,
+    "feedN": 29,
+    "feedRank": 5
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T04:28:38.000Z",
    "refs": [
     "gh:theoleecj/semif",
@@ -7531,11 +7409,12 @@
    "key": "rd:1wkd1dz",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 35,
+    "communityN": 35,
+    "communityRank": 34,
     "feedN": 100,
-    "feedRank": 93
+    "feedRank": 95
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T05:08:45.000Z",
    "refs": [
     "gh:rhinodevel/mt_llm",
@@ -7580,10 +7459,11 @@
    "metrics": {
     "authority": 1,
     "communityN": 5,
-    "communityRank": 4,
-    "feedN": 36,
-    "feedRank": 29
+    "communityRank": 3,
+    "feedN": 29,
+    "feedRank": 23
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T05:31:53.000Z",
    "refs": [],
    "relevance": {
@@ -7617,6 +7497,54 @@
    ],
    "title": "Naive FP8 KV quantization is breaking your long-context retrieval (and how to fix it without sidecar buffers)",
    "url": "https://www.reddit.com/r/mlscaling/comments/1wkdhab/naive_fp8_kv_quantization_is_breaking_your/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wkdku0",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 24,
+    "communityRank": 5,
+    "feedN": 100,
+    "feedRank": 20
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-19T05:37:11.000Z",
+   "refs": [
+    "x:2101009602943098907"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "kw:hugging face",
+     "kw:huggingface",
+     "cat:board"
+    ],
+    "score": 0.85
+   },
+   "social": {
+    "author": "LevelStill5406",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-09-19T05:37:11.000Z",
+    "handle": "LevelStill5406",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wkdku0/h3_hyperflow/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "Has anybody gotten a chance to try this? They're making pretty bold claims. If they live up to them, this could be a game changer 👀 \"HyperFlow delivers: 🎥 Better camera control 🔄 Better consistency 💎 Better material and detail ⚖️ More balanced across capabilities\" link: https://x.com/video_rebirth/status/2101009602943098907?s=20 EDIT: weights: https://huggingface.co/videorebirth/hyperflow"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "Has anybody gotten a chance to try this? They're making pretty bold claims. If they live up to them, this could be a game changer 👀 \"HyperFlow delivers: 🎥 Better camera control 🔄 Better consistency 💎 Better material and detail ⚖️ More balanced across capabilities\" link: https://x.com/video_rebirth/status/2101009602943098907?s=20 EDIT: weights: https://huggingface.co/videorebirth/hyperflow",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "H3 HyperFlow",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wkdku0/h3_hyperflow/"
   },
   {
    "board": "social",
@@ -7671,11 +7599,12 @@
    "key": "rd:1wkdzdk",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 30,
+    "communityN": 35,
+    "communityRank": 16,
     "feedN": 100,
-    "feedRank": 74
+    "feedRank": 50
    },
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-19T05:58:38.000Z",
    "refs": [
     "arxiv:2609.19969",
@@ -7720,15 +7649,62 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1wkexqz",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 24,
+    "communityRank": 2,
+    "feedN": 100,
+    "feedRank": 9
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-19T06:51:24.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "weak:ai",
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "mk8933",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-09-19T06:51:24.000Z",
+    "handle": "mk8933",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wkexqz/512gb_ddr5_ram_16w_power_draw/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "Man, it’s honestly frustrating seeing a 512GB RAM stick like this and knowing most of us could never afford it 😭 Imagine if this technology became cheap enough for normal PCs...we would all be building 1TB RAM systems like it was nothing. Huge AI models running locally and games in the background, and the PC would still ask, “Is that all you got?” 😂"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "Man, it’s honestly frustrating seeing a 512GB RAM stick like this and knowing most of us could never afford it 😭 Imagine if this technology became cheap enough for normal PCs...we would all be building 1TB RAM systems like it was nothing. Huge AI models running locally and games in the background, and the PC would still ask, “Is that all you got?” 😂",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "512GB DDR5 Ram 16w power draw",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wkexqz/512gb_ddr5_ram_16w_power_draw/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "x:2100956517633761447",
    "metrics": {
     "authority": 0,
-    "likes": 166,
+    "likes": 172,
     "quotes": 0,
-    "replies": 11,
+    "replies": 13,
     "reposts": 0
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T14:34:02.000Z",
    "refs": [
     "rd:1wju5r2"
@@ -7744,10 +7720,10 @@
    "social": {
     "author": "YouWare",
     "authorKind": "community",
-    "comments": 11,
+    "comments": 13,
     "createdAt": "2026-09-18T14:34:02.000Z",
     "handle": "YouWareAI",
-    "likes": 166,
+    "likes": 172,
     "permalink": "https://x.com/YouWareAI/status/2100956517633761447",
     "platform": "x",
     "rankBasis": "votes",
@@ -7764,16 +7740,108 @@
   },
   {
    "board": "social",
+   "category": "release",
+   "key": "x:2101005248311726387",
+   "metrics": {
+    "authority": 1,
+    "followers": 2061889,
+    "likes": 4542,
+    "quotes": 119,
+    "readAt": 1789832630333,
+    "replies": 204,
+    "reposts": 355
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-18T17:47:40.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:introducing"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "SpaceXAI",
+    "authorKind": "lab",
+    "comments": 204,
+    "createdAt": "2026-09-18T17:47:40.000Z",
+    "handle": "SpaceXAI",
+    "likes": 4542,
+    "permalink": "https://x.com/SpaceXAI/status/2101005248311726387",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 355,
+    "text": "Introducing Grok Voice Transcribe 2.0. It’s the world’s most accurate speech transcription model. https://t.co/7iXVmAEFW2"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Introducing Grok Voice Transcribe 2.0. It’s the world’s most accurate speech transcription model. https://t.co/7iXVmAEFW2",
+   "tags": [
+    "xai"
+   ],
+   "title": "Introducing Grok Voice Transcribe 2.0.",
+   "url": "https://x.com/SpaceXAI/status/2101005248311726387"
+  },
+  {
+   "board": "social",
+   "category": "product",
+   "key": "x:2101008284010602924",
+   "metrics": {
+    "authority": 1,
+    "followers": 2457468,
+    "likes": 535,
+    "quotes": 2,
+    "readAt": 1789832630333,
+    "replies": 54,
+    "reposts": 38
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-18T17:59:44.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:watch:lab"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google AI",
+    "authorKind": "lab",
+    "comments": 54,
+    "createdAt": "2026-09-18T17:59:44.000Z",
+    "handle": "GoogleAI",
+    "likes": 535,
+    "permalink": "https://x.com/GoogleAI/status/2101008284010602924",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 38,
+    "text": "It’s time for our end-of-week recap 👇 — Gemini 3.8 Live and 3.8 Live Extended Thinking, our most advanced live dialogue audio models yet — Dreambeans, an experiment from @GoogleLabs that curates a daily personalized collection of stories, is now GA — CC from @GoogleLabs has"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "It’s time for our end-of-week recap 👇 — Gemini 3.8 Live and 3.8 Live Extended Thinking, our most advanced live dialogue audio models yet — Dreambeans, an experiment from @GoogleLabs that curates a daily personalized collection of stories, is now GA — CC from @GoogleLabs has",
+   "tags": [
+    "google"
+   ],
+   "title": "It’s time for our end-of-week recap 👇 — Gemini 3.8 Live and 3.8 Live Extended Thinking, our most advanced live…",
+   "url": "https://x.com/GoogleAI/status/2101008284010602924"
+  },
+  {
+   "board": "social",
    "category": "product",
    "key": "x:2101009392611278961",
    "metrics": {
     "authority": 0,
-    "likes": 27838,
+    "likes": 28674,
     "quotes": 0,
-    "replies": 1818,
+    "replies": 1867,
     "reposts": 0
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:04:08.000Z",
    "refs": [
     "hn:49758250",
@@ -7791,10 +7859,10 @@
    "social": {
     "author": "Thariq",
     "authorKind": "community",
-    "comments": 1818,
+    "comments": 1867,
     "createdAt": "2026-09-18T18:04:08.000Z",
     "handle": "trq212",
-    "likes": 27838,
+    "likes": 28674,
     "permalink": "https://x.com/trq212/status/2101009392611278961",
     "platform": "x",
     "rankBasis": "votes",
@@ -7815,15 +7883,16 @@
    "key": "x:2101009602943098907",
    "metrics": {
     "authority": 0,
-    "likes": 375,
+    "likes": 404,
     "quotes": 0,
     "replies": 13,
     "reposts": 0
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T18:04:58.000Z",
    "refs": [
-    "url:videorebirth.com/lp/hyperflow"
+    "url:videorebirth.com/lp/hyperflow",
+    "rd:1wkdku0"
    ],
    "relevance": {
     "reasons": [
@@ -7841,7 +7910,7 @@
     "comments": 13,
     "createdAt": "2026-09-18T18:04:58.000Z",
     "handle": "video_rebirth",
-    "likes": 375,
+    "likes": 404,
     "linkUrl": "https://www.videorebirth.com/lp/hyperflow",
     "permalink": "https://x.com/video_rebirth/status/2101009602943098907",
     "platform": "x",
@@ -7859,19 +7928,69 @@
   },
   {
    "board": "social",
+   "category": "product",
+   "key": "x:2101034875176509470",
+   "metrics": {
+    "authority": 0.6,
+    "followers": 9083379,
+    "likes": 393,
+    "quotes": 7,
+    "readAt": 1789832630333,
+    "replies": 48,
+    "reposts": 34
+   },
+   "observedAt": "2026-09-19T15:43:50.333Z",
+   "publishedAt": "2026-09-18T19:45:24.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:watch:lab"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Grok",
+    "authorKind": "lab",
+    "comments": 48,
+    "createdAt": "2026-09-18T19:45:24.000Z",
+    "handle": "grok",
+    "likes": 393,
+    "permalink": "https://x.com/grok/status/2101034875176509470",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 34,
+    "text": "Make your own film scene with Grok @imagine"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Make your own film scene with Grok @imagine",
+   "tags": [
+    "xai",
+    "quote"
+   ],
+   "title": "Make your own film scene with Grok @imagine",
+   "url": "https://x.com/grok/status/2101034875176509470"
+  },
+  {
+   "board": "social",
    "category": "industry",
    "key": "x:2101039819870937247",
    "metrics": {
     "authority": 1,
-    "likes": 2992,
-    "quotes": 0,
-    "replies": 564,
-    "reposts": 0
+    "followers": 1723248,
+    "likes": 3154,
+    "quotes": 560,
+    "readAt": 1789832630333,
+    "replies": 617,
+    "reposts": 274
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T20:05:03.000Z",
    "refs": [
-    "url:anthropic.com/news/accenture-embedded-evaluation"
+    "url:anthropic.com/news/accenture-embedded-evaluation",
+    "rd:1wkghdu"
    ],
    "relevance": {
     "reasons": [
@@ -7883,19 +8002,20 @@
    "social": {
     "author": "Anthropic",
     "authorKind": "lab",
-    "comments": 564,
+    "comments": 617,
     "createdAt": "2026-09-18T20:05:03.000Z",
     "handle": "AnthropicAI",
-    "likes": 2992,
+    "likes": 3154,
     "linkUrl": "https://www.anthropic.com/news/accenture-embedded-evaluation",
     "permalink": "https://x.com/AnthropicAI/status/2101039819870937247",
     "platform": "x",
     "rankBasis": "votes",
-    "reposts": 0,
+    "reposts": 274,
     "text": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in this area over the next five years. https://t.co/SHVzjpgnfx"
    },
    "sources": [
-    "x-linked"
+    "x-linked",
+    "x"
    ],
    "summary": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in this area over the next five years. https://t.co/SHVzjpgnfx",
    "tags": [
@@ -7922,7 +8042,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T16:00:00.000Z",
    "refs": [
     "x:2101039819870937247"
@@ -7962,7 +8082,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T12:00:00.000Z",
    "refs": [],
    "relevance": {
@@ -8000,7 +8120,7 @@
     "release": 0,
     "surface": 0.1
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:00:00.000Z",
    "refs": [],
    "relevance": {
@@ -8036,7 +8156,7 @@
     "release": 0.5,
     "surface": 0.2
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T09:30:00.000Z",
    "refs": [],
    "relevance": {
@@ -8072,7 +8192,7 @@
     "release": 0.7,
     "surface": 0.2
    },
-   "observedAt": "2026-09-19T12:47:26.503Z",
+   "observedAt": "2026-09-19T15:43:50.333Z",
    "publishedAt": "2026-09-18T19:00:00.000Z",
    "refs": [
     "hn:49757859"
@@ -8094,172 +8214,193 @@
   }
  ],
  "date": "2026-09-18",
- "fetchedAt": "2026-09-19T12:47:26.503Z",
+ "fetchedAt": "2026-09-19T15:43:50.333Z",
  "runs": [
   "2026-09-19T09:43:25.901Z",
   "2026-09-19T11:07:07.418Z",
-  "2026-09-19T12:47:26.503Z"
+  "2026-09-19T12:47:26.503Z",
+  "2026-09-19T15:43:50.333Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "arxiv",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 315,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "github-search",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 110,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "github-trending",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 216,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "count": 207,
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "hacker-news",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 72,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "hf-papers",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 8,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "count": 0,
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "journals",
-   "state": "ok"
+   "message": "no results",
+   "settledAt": "2026-09-19T15:43:50.333Z",
+   "state": "degraded"
   },
   {
    "board": "labs",
    "count": 16,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-anthropic",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-deepseek",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 7,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-google",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-kimi",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-meta",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-minimax",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-mistral",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 16,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 3,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-qwen",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "labs-zhipu",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "count": 225,
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-09-19T09:43:25.901Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
-   "count": 0,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "count": 16,
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 11 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
-   "state": "degraded"
+   "settledAt": "2026-09-19T15:43:50.333Z",
+   "state": "ok"
   },
   {
    "board": "social",
    "count": 9,
-   "fetchedAt": "2026-09-19T12:47:26.503Z",
+   "fetchedAt": "2026-09-19T15:43:50.333Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-09-19T15:43:50.333Z",
    "state": "ok"
   }
  ],
  "window": {
   "from": "2026-09-18T07:00:00.000Z",
-  "settled": false,
+  "settled": true,
   "timezone": "America/Los_Angeles",
   "to": "2026-09-19T07:00:00.000Z"
  }
