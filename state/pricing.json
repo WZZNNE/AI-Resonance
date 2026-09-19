@@ -8088,7 +8088,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.16562,
+   "cr": 0.15678,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8096,11 +8096,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.8918,
+   "in": 0.8442,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.8028,
+   "out": 2.6532,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8888,18 +8888,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.008456,
+   "cr": 0.00812,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.04228,
+   "in": 0.0406,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.08456,
+   "out": 0.0812,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12379,11 +12379,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3-vl-30b-a3b-instruct",
-   "in": 0.2,
+   "in": 0.13,
    "k": "qwen3-vl-30b-a3b-instruct",
    "maxOut": 32768,
    "name": "Qwen3 VL 30B A3B Instruct",
-   "out": 0.7,
+   "out": 0.52,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -13032,7 +13032,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13040,11 +13040,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13484,14 +13484,14 @@
    "upd": "2025-08-11"
   },
   {
-   "cr": 0.1,
+   "cr": 0.08,
    "ctx": 204800,
    "id": "z-ai/glm-4.6",
-   "in": 0.5,
+   "in": 0.43,
    "k": "glm-4-6",
-   "maxOut": 131072,
+   "maxOut": 16384,
    "name": "GLM-4.6",
-   "out": 2,
+   "out": 1.75,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16920,13 +16920,13 @@
    "name": "MiniMax (minimax.io)"
   },
   "minimax-cn": {
-   "api": "https://api.minimaxi.com/anthropic/v1",
+   "api": "https://api.minimax.cn/anthropic/v1",
    "doc": "https://platform.minimaxi.com/docs/guides/quickstart",
    "format": "anthropic",
    "hosts": [
-    "api.minimaxi.com"
+    "api.minimax.cn"
    ],
-   "name": "MiniMax (minimaxi.com)"
+   "name": "MiniMax (minimax.cn)"
   },
   "mistral": {
    "api": "https://api.mistral.ai/v1",
@@ -17110,5 +17110,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-19T15:43:50.333Z"
+ "updatedAt": "2026-09-19T18:45:02.424Z"
 }
