@@ -2,9 +2,12 @@ import { BOARDS } from '@resonance/schema'
 import { beforeAll, describe, expect, it } from 'vitest'
 import type { Config } from '../../src/config.ts'
 import {
+  buildEnrichmentStatus,
   citablesHash,
+  type EnrichmentAttempts,
   editionCitables,
   enrich,
+  enrichEditions,
   extractJson,
   parseBrief,
   parseCopy,
@@ -14,7 +17,7 @@ import { buildWeeklies } from '../../src/publish/weekly.ts'
 import { rankWindow, textHash } from '../../src/score.ts'
 import { boardMeta } from '../../src/signals.ts'
 import type { Http, HttpOptions, RankedDay, RunContext } from '../../src/types.ts'
-import { closedWindow, memoryStore, NOW, OPEN, silent, TODAY, testConfig } from './fixture.ts'
+import { closedWindow, memoryStore, NOW, OPEN, openSnapshot, silent, TODAY, testConfig } from './fixture.ts'
 
 interface Call {
   url: string
@@ -174,7 +177,7 @@ describe('enrich stage', () => {
     expect(store.copy[top.key].copy.zh!.title).toBe(`中文 ${top.title}`)
 
     const edition = store.briefs[TODAY]
-    expect(edition.hash).toBe(citablesHash(editionCitables(day)))
+    expect(edition.hash).toBe(citablesHash(editionCitables(day, store.copy)))
     const refs = editionCitables(day).map((c) => c.ref)
     expect(edition.brief.en!.bullets).toEqual([
       `Top repo [${refs[0]}] and top paper [${refs[1]}].`,
@@ -228,5 +231,59 @@ describe('enrich stage', () => {
     const store = memoryStore(closedWindow())
     await enrich(day, { ...ctx(http), date: TODAY }, store)
     expect(Object.keys(store.briefs)).toEqual([TODAY])
+  })
+
+  it('exposes a safe failure reason and retries missing copy when the endpoint recovers', async () => {
+    const store = memoryStore(closedWindow())
+    await enrich(day, ctx(fakeLlm('unauthorized')), store)
+    const failed = await store.state.get<EnrichmentAttempts>('enrichment')
+    expect(failed?.[TODAY].reason).toBe('unauthorized')
+    expect(buildEnrichmentStatus(day, store.copy, store.briefs, config, failed?.[TODAY])).toMatchObject({
+      state: 'failed',
+      covered: { zh: 0 },
+    })
+    await enrich(day, ctx(fakeLlm()), store)
+    const recovered = await store.state.get<EnrichmentAttempts>('enrichment')
+    expect(recovered?.[TODAY].reason).toBeUndefined()
+    expect(buildEnrichmentStatus(day, store.copy, store.briefs, config, recovered?.[TODAY])).toMatchObject({
+      state: 'complete',
+      briefReady: { en: true, zh: true },
+    })
+  })
+
+  it('reports no-key honestly without manufacturing translations', async () => {
+    const store = memoryStore(closedWindow())
+    await enrich(day, ctx(fakeLlm(), {}), store)
+    const attempts = await store.state.get<EnrichmentAttempts>('enrichment')
+    expect(buildEnrichmentStatus(day, store.copy, store.briefs, config, attempts?.[TODAY])).toMatchObject({
+      state: 'missing-key',
+      reason: 'missing-key',
+      covered: { zh: 0 },
+      briefReady: { zh: false },
+    })
+  })
+
+  it('shares one budget across closed and live editions and completes both over later runs', async () => {
+    const snapshots = [...closedWindow(), openSnapshot()]
+    const store = memoryStore(snapshots)
+    const live = rankWindow(snapshots, config, {}).at(-1)!
+    const first = fakeLlm()
+    expect(await enrichEditions([day, live], ctx(first, undefined, { maxItemsPerRun: 5, briefs: false }), store)).toBe(
+      5,
+    )
+    expect(first.calls).toHaveLength(1)
+    expect((await store.state.get<EnrichmentAttempts>('enrichment'))?.[OPEN].reason).toBe('budget')
+    await enrichEditions([day, live], ctx(fakeLlm()), store)
+    expect(store.briefs[TODAY]).toBeDefined()
+    expect(store.briefs[OPEN]).toBeDefined()
+    expect(live.boards.repos.top.every((item) => store.copy[item.key]?.copy.zh?.blurb)).toBe(true)
+  })
+
+  it('refreshes a brief when article evidence improves without changing ranks', () => {
+    const before = editionCitables(day)
+    const after = before.map((item, index) =>
+      index === 0 ? { ...item, blurb: 'Newly fetched attributed source excerpt.' } : item,
+    )
+    expect(citablesHash(before)).not.toBe(citablesHash(after))
   })
 })

@@ -1,4 +1,4 @@
-import type { DailyFile, Item } from '@resonance/schema'
+import { type DailyFile, editorialEligibility, groupSameEvents, type Item } from '@resonance/schema'
 
 export interface NewsEvent {
   key: string
@@ -10,6 +10,33 @@ export interface EventMemory {
   signature: string
   at: string
   members?: string[]
+  /** Content hashes only; no article text is retained for change explanations. */
+  content?: Record<string, string>
+}
+
+export function itemContentSignature(item: Item): string {
+  return hashEventContent(JSON.stringify([item.key, item.title, item.summary, item.publishedAt ?? '']))
+}
+
+export function eventContent(event: NewsEvent): Record<string, string> {
+  return Object.fromEntries(event.items.map((item) => [item.key, itemContentSignature(item)]))
+}
+
+/** Explain only observable changes; a new linked source is not independent verification. */
+export function eventChanges(
+  event: NewsEvent,
+  previous?: EventMemory,
+): { added: Item[]; changed: Item[]; removed: number } {
+  if (!previous) return { added: [], changed: [], removed: 0 }
+  const before = new Set(previous.members ?? [event.key])
+  const current = new Set(event.items.map((item) => item.key))
+  return {
+    added: event.items.filter((item) => !before.has(item.key)),
+    changed: event.items.filter(
+      (item) => previous.content?.[item.key] && previous.content[item.key] !== itemContentSignature(item),
+    ),
+    removed: [...before].filter((key) => !current.has(key)).length,
+  }
 }
 
 /** Personal filters change visible members, never what counts as an editorial update. */
@@ -61,9 +88,25 @@ export function cleanEventMemory(raw: unknown): Record<string, EventMemory> {
           ),
         ].slice(0, 100)
       : undefined
+    const content =
+      entry.content && typeof entry.content === 'object' && !Array.isArray(entry.content)
+        ? Object.fromEntries(
+            Object.entries(entry.content)
+              .filter(
+                ([key, value]) =>
+                  members?.includes(key) && typeof value === 'string' && /^v1:[a-f0-9]{16}$/.test(value),
+              )
+              .slice(0, 100),
+          )
+        : undefined
     out.push([
       key,
-      { signature: compactEventSignature(entry.signature), at: entry.at, ...(members?.length ? { members } : {}) },
+      {
+        signature: compactEventSignature(entry.signature),
+        at: entry.at,
+        ...(members?.length ? { members } : {}),
+        ...(content ? { content } : {}),
+      },
     ])
   }
   return Object.fromEntries(out.sort((a, b) => b[1].at.localeCompare(a[1].at)).slice(0, 500))
@@ -82,21 +125,26 @@ export function previousEvent(event: NewsEvent, memory: unknown): EventMemory | 
 
 /** Anchor related coverage to its primary source; engagement changes alone are not editorial updates. */
 export function newsEvents(day: DailyFile): NewsEvent[] {
-  const all = Object.values(day.boards).flatMap((b) => [...b.top, ...b.runnersUp])
+  const all = Object.values(day.boards)
+    .flatMap((b) => [...b.top, ...b.runnersUp])
+    .filter((item) => editorialEligibility(item).eligible)
   const byKey = new Map(all.map((item) => [item.key, item]))
   const used = new Set<string>()
   const result: NewsEvent[] = []
-  const push = (items: Item[]) => {
-    if (!items.length) return
+  const make = (items: Item[]): NewsEvent => {
     const sorted = [...items].sort((a, b) => priority[a.board] - priority[b.board] || a.key.localeCompare(b.key))
     const lead = sorted[0]
-    for (const item of sorted) used.add(item.key)
-    result.push({
+    return {
       key: lead.key,
       title: lead.title,
       items: sorted,
       signature: hashEventContent(JSON.stringify(sorted.map((i) => [i.key, i.title, i.summary, i.publishedAt ?? '']))),
-    })
+    }
+  }
+  const push = (items: Item[]) => {
+    if (!items.length) return
+    for (const item of items) used.add(item.key)
+    result.push(make(items))
   }
   for (const group of day.resonance)
     push(
@@ -105,9 +153,27 @@ export function newsEvents(day: DailyFile): NewsEvent[] {
         return it && !used.has(it.key) ? [it] : []
       }),
     )
+  // Conservative story identities supplement explicit cross-source links without changing any public score.
+  for (const group of groupSameEvents(all)) {
+    if (group.length < 2) continue
+    const keys = new Set(group.map((item) => item.key))
+    const anchor = result.findIndex((event) => event.items.some((item) => keys.has(item.key)))
+    if (anchor < 0) {
+      push(group)
+      continue
+    }
+    result[anchor] = make([...new Map([...result[anchor].items, ...group].map((item) => [item.key, item])).values()])
+    // Move only the positively identified story members; never join two whole clusters transitively.
+    for (let index = result.length - 1; index > anchor; index--) {
+      const remaining = result[index].items.filter((item) => !keys.has(item.key))
+      if (remaining.length) result[index] = make(remaining)
+      else result.splice(index, 1)
+    }
+    for (const item of group) used.add(item.key)
+  }
   // A no-key/no-resonance first run still has an editorial overview from existing, attributed titles.
   for (const board of Object.values(day.boards)) {
-    const lead = board.top.find((i) => !used.has(i.key))
+    const lead = board.top.find((i) => !used.has(i.key) && editorialEligibility(i).eligible)
     if (lead) push([lead])
   }
   return result

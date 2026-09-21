@@ -20,7 +20,7 @@ import {
   settleDue,
   windowOf,
 } from './edition.ts'
-import { enrich } from './enrich.ts'
+import { enrichEditions } from './enrich.ts'
 import { createHttp } from './http.ts'
 import { fetchPricing } from './pricing.ts'
 import { publishAll } from './publish/index.ts'
@@ -288,10 +288,18 @@ export async function runDaily(opts: RunOptions): Promise<RunResult> {
   }
 
   let enriched = 0
-  if (day && opts.enrich !== false && config.enrich.enabled) {
-    if (env.RESONANCE_LLM_API_KEY) enriched = await enrich(day, ctx, store)
-    else log.info('enrich: RESONANCE_LLM_API_KEY not set, items keep their original text')
-  }
+  const copyDays = day ? [day] : []
+  const liveSnapshot = await store.readSnapshot(open)
+  if (liveSnapshot)
+    copyDays.push(
+      rankDay(liveSnapshot, await loadHistory(store, open, config.retention.days), config, await store.readCopyCache()),
+    )
+  if (copyDays.length)
+    enriched = await enrichEditions(
+      copyDays,
+      opts.enrich === false ? { ...ctx, config: { ...config, enrich: { ...config.enrich, enabled: false } } } : ctx,
+      store,
+    )
   const pricing = opts.pricing !== false && config.pricing.enabled ? await fetchPricing(ctx) : null
   if (!latest) log.info(`no closed edition yet: publishing ${open} as live only`)
   const report = await publishAll({

@@ -1,6 +1,7 @@
 import preact from '@preact/preset-vite'
 import { defineConfig } from 'vitest/config'
 import { allowController } from './scripts/csp.ts'
+import { siteMetadata } from './scripts/site-meta.ts'
 import { staticApi } from './scripts/static-api.ts'
 
 /**
@@ -10,7 +11,12 @@ import { staticApi } from './scripts/static-api.ts'
  */
 export default defineConfig({
   base: process.env.BASE_PATH ?? './',
-  plugins: [staticApi(), preact(), { name: 'report-controller-csp', transformIndexHtml: allowController }],
+  plugins: [
+    staticApi(),
+    siteMetadata(),
+    preact(),
+    { name: 'report-controller-csp', transformIndexHtml: allowController },
+  ],
   build: {
     target: 'es2022',
     // Lazy chunks come from dynamic imports only; no manual chunking, so the initial graph stays honest.

@@ -179,6 +179,75 @@
 .event-brief__foot .btn {
   flex: none;
 }
+.event-brief__item .event-brief__summary {
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  line-height: 1.6;
+  margin-top: 0.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.event-brief__item .event-brief__change {
+  color: var(--accent);
+  line-height: 1.5;
+}
+.subscribe {
+  max-width: 800px;
+}
+.subscribe__card {
+  padding: 1.3rem;
+  border-radius: var(--radius-l);
+}
+.subscribe__card h2,
+.subscribe__other h2 {
+  font-size: var(--fs-l);
+  margin: 0 0 0.5rem;
+}
+.subscribe__card p,
+.subscribe__other p,
+.subscribe__steps,
+.subscribe__advanced p {
+  color: var(--text-2);
+  line-height: 1.7;
+}
+.subscribe__feed {
+  display: grid;
+  gap: 0.6rem;
+  margin-block: 1.4rem;
+}
+.subscribe__feed code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.subscribe__other {
+  margin-block: 1.5rem;
+}
+.subscribe__advanced,
+.library__transfer {
+  margin-block: 1.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.subscribe__advanced summary,
+.library__transfer summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.share-card {
+  padding: 1rem;
+}
+.share-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--line);
+  margin: 1rem 0;
+}
 .reading-tabs--home {
   padding-top: 0.25rem;
   gap: 0.5rem;

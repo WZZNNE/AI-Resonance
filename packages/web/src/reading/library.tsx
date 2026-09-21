@@ -1,5 +1,5 @@
 import { type EntityKey, keyToSlug } from '@resonance/schema'
-import { useState } from 'preact/hooks'
+import { useRef, useState } from 'preact/hooks'
 import { toast } from '../core/events.ts'
 import { fmt, lang, t } from '../i18n/index.ts'
 import { boardTitle } from '../items/text.ts'
@@ -7,8 +7,10 @@ import { Button } from '../ui/button.tsx'
 import { Chip } from '../ui/chip.tsx'
 import { Field, Input } from '../ui/form.tsx'
 import { ExtLink } from '../ui/link.tsx'
+import { Dialog } from '../ui/sheet.tsx'
 import { EmptyState } from '../ui/state.tsx'
 import { MAX_SAVED, type ReadingEntry, readingEntries, updateEntry } from './store.ts'
+import { downloadReading, exportReading, MAX_IMPORT_BYTES, planReadingImport } from './transfer.ts'
 
 type Tab = 'saved' | 'later' | 'read'
 const field: Record<Tab, 'savedAt' | 'laterAt' | 'readAt'> = { saved: 'savedAt', later: 'laterAt', read: 'readAt' }
@@ -50,6 +52,32 @@ function SavedCard({ entry }: { entry: ReadingEntry }) {
 export default function Library() {
   const [active, setActive] = useState<Tab>('saved')
   const [query, setQuery] = useState('')
+  const upload = useRef<HTMLInputElement>(null)
+  const [importPlan, setImportPlan] = useState<ReturnType<typeof planReadingImport> | null>(null)
+  const [importError, setImportError] = useState('')
+  const receive = async (event: Event) => {
+    const input = event.currentTarget as HTMLInputElement
+    const file = input.files?.[0]
+    input.value = ''
+    if (!file) return
+    setImportError('')
+    try {
+      if (file.size > MAX_IMPORT_BYTES) throw new Error('too-large')
+      setImportPlan(planReadingImport(await file.text()))
+    } catch {
+      setImportError(t('reading.importInvalid'))
+    }
+  }
+  const applyImport = () => {
+    try {
+      importPlan?.apply()
+      setImportPlan(null)
+      toast(t('reading.importDone'))
+    } catch {
+      setImportPlan(null)
+      setImportError(t('reading.limit', { n: MAX_SAVED }))
+    }
+  }
   const all = Object.values(readingEntries()).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
   const items = all.filter(
     (e) =>
@@ -94,6 +122,41 @@ export default function Library() {
         )}
       </div>
       <p class="settings__hint">{t('reading.retention')}</p>
+      <details class="library__transfer">
+        <summary>{t('reading.transfer')}</summary>
+        <p class="settings__hint">{t('reading.transferHelp')}</p>
+        <div class="settings__row">
+          <Button icon="download" onClick={() => downloadReading(exportReading())}>
+            {t('reading.exportLibrary')}
+          </Button>
+          <Button icon="upload" onClick={() => upload.current?.click()}>
+            {t('reading.importLibrary')}
+          </Button>
+          <input ref={upload} type="file" accept="application/json,.json" hidden onChange={receive} />
+        </div>
+        {importError && (
+          <p class="field__error" role="alert">
+            {importError}
+          </p>
+        )}
+      </details>
+      {importPlan && (
+        <Dialog
+          open
+          onClose={() => setImportPlan(null)}
+          title={t('reading.importLibrary')}
+          actions={
+            <>
+              <Button onClick={() => setImportPlan(null)}>{t('ui.cancel')}</Button>
+              <Button variant="primary" onClick={applyImport}>
+                {t('reading.importMerge')}
+              </Button>
+            </>
+          }
+        >
+          <p>{t('reading.importConfirm', { n: importPlan.count })}</p>
+        </Dialog>
+      )}
     </main>
   )
 }

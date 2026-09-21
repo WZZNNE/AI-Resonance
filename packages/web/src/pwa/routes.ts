@@ -49,7 +49,7 @@ export function cacheName(kind: CacheKind): string {
 }
 
 const BYPASS: Route = { strategy: 'bypass' }
-const VOLATILE = /^api\/v1\/(manifest|latest|live|mail-status)\.json$/
+const VOLATILE = /^api\/v1\/(manifest|latest|live|beginner|mail-status)\.json$/
 const STATIC = /^(boot\.js|custom\.css|manifest\.webmanifest|icon\.svg|icons\/[\w.-]+)$/
 
 /**

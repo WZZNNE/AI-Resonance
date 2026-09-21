@@ -5,6 +5,7 @@
 import { createHash } from 'node:crypto'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { readPublicPage } from './public-page.ts'
 import type { CreateHttp, HttpOptions } from './types.ts'
 
 const DEFAULT_TIMEOUT = 30_000
@@ -119,6 +120,7 @@ export const createHttp: CreateHttp = ({ log, userAgent, fixtures }) => {
     opts: HttpOptions,
     pause: (ms: number) => void,
   ): Promise<Fixture> {
+    if (opts.publicPage) return readPublicPage(url, userAgent, opts.timeout, opts.maxBytes)
     const retries = opts.retries ?? DEFAULT_RETRIES
     for (let n = 0; ; n++) {
       let wait: number
@@ -197,6 +199,18 @@ export const createHttp: CreateHttp = ({ log, userAgent, fixtures }) => {
 
   return {
     text,
+    async page(url, opts = {}) {
+      const result = await exchange(url, {
+        ...opts,
+        publicPage: true,
+        retries: 0,
+        method: 'GET',
+        headers: undefined,
+        body: undefined,
+      })
+      if (result.status < 200 || result.status >= 300) throw new HttpError(result.status, 'GET', url)
+      return { url: result.url, body: result.body }
+    },
     async json<T = unknown>(url: string, opts?: HttpOptions): Promise<T> {
       const body = await text(url, opts)
       try {

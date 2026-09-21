@@ -2,7 +2,15 @@
 import { BOARDS, type Board, type DateStr, type Item } from '@resonance/schema'
 import { defineSlice } from '../core/settings.ts'
 import { itemBlurb, itemTitle } from '../items/text.ts'
-import { cleanEventMemory, compactEventSignature, type EventMemory } from './events.ts'
+import {
+  cleanEventMemory,
+  compactEventSignature,
+  type EventMemory,
+  eventContent,
+  itemContentSignature,
+  newsEvents,
+  previousEvent,
+} from './events.ts'
 
 export interface ReadingEntry {
   key: string
@@ -15,6 +23,8 @@ export interface ReadingEntry {
   date?: DateStr | 'live'
   updatedAt: string
   readAt?: string
+  readSignature?: string
+  contentSignature?: string
   savedAt?: string
   laterAt?: string
 }
@@ -63,8 +73,7 @@ export const reading = defineSlice<ReadingPrefs>(
   },
 )
 
-export function readingEntries(): Record<string, ReadingEntry> {
-  const raw = reading.value.entries
+export function cleanEntries(raw: unknown): Record<string, ReadingEntry> {
   if (!object(raw)) return {}
   return Object.fromEntries(
     Object.entries(raw).flatMap(([key, e]) => {
@@ -97,11 +106,23 @@ export function readingEntries(): Record<string, ReadingEntry> {
             savedAt: stamp(e.savedAt),
             laterAt: stamp(e.laterAt),
             readAt: stamp(e.readAt),
+            readSignature:
+              typeof e.readSignature === 'string' && /^v1:[a-f0-9]{16}$/.test(e.readSignature)
+                ? e.readSignature
+                : undefined,
+            contentSignature:
+              typeof e.contentSignature === 'string' && /^v1:[a-f0-9]{16}$/.test(e.contentSignature)
+                ? e.contentSignature
+                : undefined,
           },
         ],
       ]
     }),
   )
+}
+
+export function readingEntries(): Record<string, ReadingEntry> {
+  return cleanEntries(reading.value.entries)
 }
 
 /** Keep all saved/later entries, and the most recent ordinary reading history. */
@@ -123,6 +144,7 @@ function snapshot(item: Item, date?: DateStr | 'live'): ReadingEntry {
     zhSummary: itemBlurb(item, 'zh').slice(0, 500),
     date,
     updatedAt: new Date().toISOString(),
+    contentSignature: itemContentSignature(item),
   }
 }
 
@@ -132,7 +154,12 @@ export function markRead(item: Item, date?: DateStr | 'live'): void {
   reading.set({
     entries: pruneEntries({
       ...entries,
-      [item.key]: { ...old, ...snapshot(item, date), readAt: new Date().toISOString() },
+      [item.key]: {
+        ...old,
+        ...snapshot(item, date),
+        readAt: new Date().toISOString(),
+        readSignature: itemContentSignature(item),
+      },
     }),
   })
 }
@@ -149,9 +176,15 @@ export function toggleEntry(item: Item, field: 'savedAt' | 'laterAt' | 'readAt',
   )
     return false
   reading.set({
+    ...(field === 'readAt' && old?.readAt ? { events: eventsWithoutItem(item.key) } : {}),
     entries: pruneEntries({
       ...entries,
-      [item.key]: { ...old, ...snapshot(item, date), [field]: old?.[field] ? undefined : new Date().toISOString() },
+      [item.key]: {
+        ...old,
+        ...snapshot(item, date),
+        [field]: old?.[field] ? undefined : new Date().toISOString(),
+        ...(field === 'readAt' ? { readSignature: old?.readAt ? undefined : itemContentSignature(item) } : {}),
+      },
     }),
   })
   return true
@@ -170,12 +203,26 @@ export function updateEntry(key: string, field: 'savedAt' | 'laterAt' | 'readAt'
   )
     return false
   reading.set({
+    ...(field === 'readAt' && !enabled ? { events: eventsWithoutItem(key) } : {}),
     entries: pruneEntries({
       ...entries,
-      [key]: { ...old, updatedAt: new Date().toISOString(), [field]: enabled ? new Date().toISOString() : undefined },
+      [key]: {
+        ...old,
+        updatedAt: new Date().toISOString(),
+        [field]: enabled ? new Date().toISOString() : undefined,
+        ...(field === 'readAt' ? { readSignature: enabled ? old.contentSignature : undefined } : {}),
+      },
     }),
   })
   return true
+}
+
+function eventsWithoutItem(key: string): Record<string, EventMemory> {
+  return Object.fromEntries(
+    Object.entries(cleanEventMemory(reading.value.events)).filter(
+      ([id, event]) => id !== key && !event.members?.includes(key),
+    ),
+  )
 }
 
 export function addRule(
@@ -233,11 +280,44 @@ export function filterReading(
   })
 }
 
-export function rememberEvent(key: string, signature: string, members: string[] = [key]): void {
+export function rememberEvent(
+  key: string,
+  signature: string,
+  members: string[] = [key],
+  content?: Record<string, string>,
+): void {
   reading.set({
     events: cleanEventMemory({
-      [key]: { signature: compactEventSignature(signature), at: new Date().toISOString(), members },
+      [key]: { signature: compactEventSignature(signature), at: new Date().toISOString(), members, content },
       ...Object.fromEntries(Object.entries(cleanEventMemory(reading.value.events)).filter(([old]) => old !== key)),
     }),
   })
+}
+
+/** A group is seen once every currently shown source has been read at its current content revision. */
+export function acknowledgeReadEvents(day: Parameters<typeof newsEvents>[0]): void {
+  const entries = readingEntries()
+  for (const event of newsEvents(day)) {
+    if (previousEvent(event, reading.value.events)?.signature === event.signature) continue
+    if (
+      event.items.every(
+        (item) => entries[item.key]?.readAt && entries[item.key]?.readSignature === itemContentSignature(item),
+      )
+    ) {
+      rememberEvent(
+        event.key,
+        event.signature,
+        event.items.map((item) => item.key),
+        eventContent(event),
+      )
+    }
+  }
+}
+
+/** Contextual follow actions use the same exact project/company rules as Interests. */
+export function followTarget(item: Item): Pick<FollowRule, 'kind' | 'value'> | null {
+  if (item.board === 'repos') return { kind: 'project', value: `${item.repo.owner}/${item.repo.name}` }
+  if (item.board === 'labs' && item.lab.company) return { kind: 'company', value: item.lab.company }
+  const linked = item.resonance.links.find((link) => link.key.startsWith('gh:'))
+  return linked ? { kind: 'project', value: linked.key.slice(3) } : null
 }

@@ -6,8 +6,8 @@
 
 <p align="center">
   <b>The daily AI radar you can audit.</b><br>
-  Every day: the top 10 AI repos, papers, Hacker News stories, X/Reddit posts and AI-lab updates.<br>
-  Ranked by a transparent score, linked across sources, remembered for six months. No servers to run.
+  Read the day's meaningful events, explore five transparent boards, or start with the beginner picks.<br>
+  Original sources, explainable scores and six months of history. Open it and start reading.
 </p>
 
 <p align="center">
@@ -23,7 +23,9 @@
 </p>
 
 <p align="center">
-  <a href="https://wzznne.github.io/AI-Resonance/">Live demo</a> ·
+  <a href="https://wzznne.github.io/AI-Resonance/">Read now</a> ·
+  <a href="https://wzznne.github.io/AI-Resonance/#/learn">Beginner picks</a> ·
+  <a href="https://wzznne.github.io/AI-Resonance/#/subscribe">Subscribe</a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="#feature-tour">Features</a> ·
   <a href="#make-it-your-radar-any-topic">Any topic</a> ·
@@ -37,6 +39,32 @@
   <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the hero date, resonance clusters, the category bar and the board grid (dark theme)" width="100%">
 </p>
 
+## Read it now — no deployment required
+
+[Open the daily radar](https://wzznne.github.io/AI-Resonance/) · [Beginner picks](https://wzznne.github.io/AI-Resonance/#/learn) · [Subscribe](https://wzznne.github.io/AI-Resonance/#/subscribe)
+
+The beginner library always shows 100 resources: 30 resident picks and 70 dynamic recommendations. Search by keyword and type, switch between resident and dynamic picks, or filter recent entries.
+
+Reading, Atom subscriptions, follow controls, bookmarks and reading-library backup need no key or account. A site operator can pre-generate bilingual explanations with a pipeline LLM key; coverage is shown honestly when explanations are unavailable. Deploy only if you want to run your own edition.
+
+## Update · 2026-09-21
+
+The library always shows **100 resources: 30 resident picks plus 70 dynamic recommendations**. Dynamic selection is reconsidered daily; resources need not be newly published, and useful selections stay when no better candidates qualify.
+
+- Removed historical launch news, specialist mathematics/research textbooks and duplicate repository/tutorial entry points. A few older foundations can remain when they still help users understand current tools.
+- Dynamic selection considers useful AI tools, repositories, tutorials and official releases regardless of age. Ordinary research papers, rants, hiring, funding and promotions are excluded. A reviewed starter pool and retained candidates keep all 70 slots filled while later resources compete on value.
+- Residents can be replaced. Rank all eligible candidates without reserved seats and use the 100th item's score as the daily threshold. A resident strictly below it can be replaced by the highest-scoring eligible resource that appeared in the dynamic 70 during the preceding 30 days and is not already resident. Equal scores do not trigger replacement.
+- Source publication or repository update dates stay separate from entry dates. Recrawling old material does not make it new. `NEW` and `BACK` last seven days and entry history survives deployment.
+- The page now prioritizes filters, short descriptions and source links. Long selection explanations, per-item recommendations and scoring details have moved out of the reading interface.
+
+This revision retains 40 entries from the original catalogue and replaces 60, including all 15 original research papers and five historical launch stories, plus specialist or duplicate courses, textbooks and low-level library entries. New resources cover document Q&A, PDF/OCR, subtitles, speech, coding, workflows, visual creation and presentations. Examples include Claude Code, n8n, Docling, PaddleOCR, Subtitle Edit, Codex and Cherry Studio, plus ten official Chinese-language tool entry points. Paper and news categories may initially be empty; suitable later resources can still enter those categories.
+
+The default GitHub Actions workflow collects and publishes every three hours, with extra runs around the daily cutoff. The visible page checks for updates every five minutes and supports manual refresh. This is scheduled refresh, not instant push. Initial resources receive editorial maintenance; dynamic selection and resident replacement use disclosed rules rather than individual editorial review. Missing translations fall back to the source text.
+
+Internal learning scores combine foundation, clarity, practice and authority, each 0–5, multiplied by five. They support stable ordering and represent editorial/rule-based judgments, not popularity or measured learning outcomes. Monthly replacement uses the mean score on days a resource appeared in the dynamic selection during the past 30 days, recording each day once; ties compare current score, latest appearance and stable ID. Both a replacement's current score and monthly mean must exceed the displaced item's score. Missing days receive no invented scores; one observed day is enough to compete. The update rescreens cached candidates while preserving entry history. See [data and implementation notes](./docs/LEARNING.md).
+
+The daily reader also gains clearer edition labels, content-first details, one-click follows, reading-library migration and a dedicated subscription page. Sharing now offers static preview pages and downloadable image cards. Explanation coverage and event changes are visible, so you can tell missing copy from missing source data. Details are in the [feature tour](#feature-tour).
+
 ## Why AI Resonance?
 
 Most AI digests are a feed that someone (or some model) picked for you. You can't see why an item made the cut, you
@@ -46,13 +74,14 @@ only see one source at a time, and yesterday is gone. AI Resonance does it diffe
   `config.yaml`. Tap any score bar to see raw value, normalised value and points. An LLM may write a blurb. It
   never decides the rank.
 - **Cross-source resonance.** When the same repo, paper or launch shows up on GitHub, arXiv, Hacker News, X/Reddit and
-  a lab's own blog on the same day, those items are linked into one cluster and shown first. That overlap is the
-  strongest signal you can get.
+  a lab's own blog on the same day, those items are linked into one cluster and shown first. Open the original
+  sources to compare what each report supports.
 - **Half a year of memory.** Every item keeps 183 days of history: first seen, days on board, streak, best rank,
   `NEW` / `▲3` / `▼1` / `BACK` badges and a sparkline. You can tell a one-day spike from a sustained trend.
 
-It runs entirely on GitHub Actions and GitHub Pages. There is no backend, database or account. AI features run in
-your browser with your own keys. Change one YAML file and the same code tracks Rust, robotics or any other topic.
+It runs entirely on GitHub Actions and GitHub Pages. There is no backend, database or account. Daily explanations can be
+pre-generated by the pipeline; optional personal AI tools run in your browser with your own keys. Change YAML to adapt
+the daily sources and topic; the AI beginner catalogue is maintained separately.
 
 ## Screenshots
 
@@ -122,13 +151,14 @@ your browser with your own keys. Change one YAML file and the same code tracks R
 
 ### Reading experience
 
+- **Read the event first.** A compact header distinguishes the latest complete edition from Live. Event cards show short summaries and group clear reports of the same event; casual conversation and promotions stay out of these picks without changing the five heat boards. Item details put the content before an expandable score breakdown.
+- **Pick up where you left off.** Follow a project or company from its details, save an item, queue it for later or mark it read/unread. Event updates distinguish added sources from changed content. The local reading library exports to JSON and previews imports before merging them with existing saves.
 - **Titanium × Signal UI.** Tactile plates and wells, one thin line of cyan-to-violet "signal" light, dark and light
   modes that follow your system. Two alternate presets (`paper`, `terminal`), plus accent, density, font size,
   reduced motion, custom CSS and theme import/export. The visual spec is in [docs/VISUAL.md](./docs/VISUAL.md).
 - **Phone and desktop.** A front-page grid on desktop, one swipeable board at a time on a phone, a floating tab bar,
   keyboard shortcuts (`/` search, `[` `]` previous/next edition). Installable as a PWA.
-- **Bilingual.** English and Chinese UI. With a pipeline LLM key you also get blurbs, "why it matters", essence points
-  and a daily brief in both languages, with a toggle back to the original text.
+- **Bilingual, with visible coverage.** English and Chinese UI, plus operator-generated blurbs, "why it matters", essence points and daily briefs when configured. The page shows how many items have explanations and any known generation issue. Missing copy falls back to the original; readers need no key, and source links remain available.
 - **Archive and weekly.** A calendar heat-map of the retention window where any day opens again, ISO-week recaps,
   and "longest on the boards".
 - **Search that fits your habits.** Archive search runs offline in your browser (English prefix and Chinese substring
@@ -162,7 +192,8 @@ your browser with your own keys. Change one YAML file and the same code tracks R
 - **Scheduled e-mail through GitHub Actions.** Daily, weekly or both, at your local time, from your own mailbox (QQ,
   163, Gmail, any SMTP) or Resend. The mail carries the brief and the top 5 per board, with the report linked and
   attached. Set it up from **Settings › Delivery** with a token scoped to your repository. No workflow edits needed.
-- **Feeds.** Atom feeds and a Markdown digest in both languages.
+- **Subscribe without an account.** The subscription page provides Chinese and English Atom links to copy into your feed reader, alongside the Markdown digests. Scheduled e-mail remains an optional setup for the owner of a deployed copy.
+- **Share an event.** Use your device's share menu or copy a link. Dated event and edition links have static summary pages with preview metadata and original sources. Download an image card generated in your browser as PNG, with SVG fallback when PNG export is unavailable.
 
 ### For agents and developers
 
@@ -324,6 +355,7 @@ docs/                    DESIGN · VISUAL · ARCHITECTURE · SOURCES · CHANNELS
 ## Privacy and security
 
 - **The site ships no secrets.** No backend, analytics, cookies or accounts: static files plus JSON.
+- **Your reading library stays local.** Bookmarks, read state and follows stay in this browser. Explicit JSON export/import moves them between browsers; it is separate from ordinary settings backup and does not upload your library.
 - **Your keys stay in your browser.** Summaries, model lists and search call the provider directly from your browser.
   All major hosted LLM providers allow this (CORS), so no proxy ever sees your key. A key is only sent to the
   endpoint it belongs to, and is never logged or exported by default.
@@ -347,8 +379,8 @@ docs/                    DESIGN · VISUAL · ARCHITECTURE · SOURCES · CHANNELS
 yesterday. Newsletters are curated by a person or a model you can't audit. AI Resonance reads many sources, links
 what they have in common, ranks with a formula you can inspect, and keeps six months of history.
 
-**Does an LLM pick the stories?** No. Ranking is pure arithmetic over published signals. With a key, an LLM writes
-blurbs and the brief. Brief bullets must cite `board#rank`, and bullets whose citations don't resolve are dropped.
+**Does an LLM pick the stories?** Daily heat ranks are calculated from published signals. With a key, an LLM writes
+blurbs and the brief. Brief bullets must cite `board#rank`, and invalid citations are dropped. Event picks apply additional relevance rules; the beginner library uses the separate learning scores described above.
 
 **Why does the Social board show mostly Reddit?** Without a key, X is read through a free feed that only covers the
 official lab accounts. Add `X_BEARER_TOKEN` and the next run switches to the official API for the whole watch list.

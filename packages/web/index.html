@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
     <meta
       name="description"
-      content="Daily top AI repos, papers, Hacker News stories, community posts and lab updates — ranked by a score you can audit, linked across sources."
+      content="AI 日报与入门推荐：跨来源事件、透明热度、分类检索和每日更新。Daily AI radar and a curated beginner learning library."
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,14 +22,15 @@
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <!-- iOS ignores SVG touch icons. -->
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-    <title>AI Resonance</title>
+    <title>AI Resonance · AI 日报与入门推荐</title>
+    <!-- SITE_METADATA -->
     <!-- Applies the saved theme before first paint; a classic external script because the CSP forbids inline ones. -->
     <script src="./boot.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body>
     <div id="app"></div>
-    <noscript>AI Resonance needs JavaScript. The raw data is available under ./api/v1/manifest.json</noscript>
+    <noscript>交互式日报需要 JavaScript。<a href="./learn/">阅读入门推荐</a>，或<a href="./api/v1/digest.zh.md">查看最新日报正文</a>。</noscript>
     <!-- Fork-level overrides: loaded after the bundled styles so it always wins (see docs/CUSTOMIZE.md). -->
     <link rel="stylesheet" href="./custom.css" />
   </body>

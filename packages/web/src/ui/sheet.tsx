@@ -4,13 +4,26 @@
  * page behind inert, and animate out before unmounting (instantly under reduced motion).
  */
 import type { ComponentChildren } from 'preact'
-import { useId, useLayoutEffect, useRef, useState } from 'preact/hooks'
+import { useLayoutEffect, useRef, useState } from 'preact/hooks'
 import { isWide } from '../core/media.ts'
 import { t } from '../i18n/index.ts'
 import { motionReduced } from '../theme/prefs.ts'
 import { IconButton } from './button.tsx'
 import { lockBackground, Portal, trapFocus } from './layer.tsx'
 import { animateMotion, cancelMotion, MOTION, useLayoutMotion } from './motion.ts'
+
+let nextTitleId = 0
+
+/** Each Portal owns a Preact root, so useId() alone repeats across nested surfaces. */
+function useSurfaceTitleId(): string {
+  return useState(() => {
+    let id: string
+    do {
+      id = `resonance-dialog-title-${++nextTitleId}`
+    } while (typeof document !== 'undefined' && document.getElementById(id))
+    return id
+  })[0]
+}
 
 /** Presence ends with the actual surface exit, not a second independently maintained timer. */
 function usePresence(open: boolean, onAfterClose?: () => void) {
@@ -140,7 +153,7 @@ function SheetPanel({
   exited,
 }: SheetProps & { closing: boolean; exited: () => void }) {
   const ref = useRef<HTMLElement>(null)
-  const titleId = useId()
+  const titleId = useSurfaceTitleId()
   useModal(ref)
   useSurfaceMotion(ref, closing, exited)
   useLayoutMotion(ref)
@@ -255,7 +268,7 @@ function DialogPanel({
   exited,
 }: DialogProps & { closing: boolean; exited: () => void }) {
   const ref = useRef<HTMLElement>(null)
-  const titleId = useId()
+  const titleId = useSurfaceTitleId()
   useModal(ref)
   useSurfaceMotion(ref, closing, exited, true)
   useLayoutMotion(ref)

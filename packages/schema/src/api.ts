@@ -401,6 +401,7 @@ export interface DailyFile {
   sources: SourceStatus[]
   /** True when the pipeline produced bilingual `copy` for this day. */
   enriched: boolean
+  enrichment?: import('./enrichment.ts').EnrichmentStatus
   /** First collection time for a cold-start edition; missingBoards have no historical candidates to reconstruct. */
   coverage?: { startedAt: string; coldStart: boolean; missingBoards: Board[] }
 }
@@ -569,6 +570,7 @@ export interface PricingFile {
 
 /** Relative paths under the API root, shared by every reader. */
 export const apiPaths = {
+  beginner: 'beginner.json',
   manifest: 'manifest.json',
   latest: 'latest.json',
   live: 'live.json',

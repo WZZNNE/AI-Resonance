@@ -4,6 +4,80 @@
  * Features add keys in their marked section at the bottom (and the same keys in zh.ts).
  */
 const en = {
+  'enrichment.coverageZh': 'Chinese insights {n}/{total}',
+  'enrichment.coverageEn': 'English insights {n}/{total}',
+  'enrichment.originalAvailable': 'Original sources available',
+  'enrichment.coverageHelp':
+    'Coverage counts main-board stories with a complete explanation in this language. Changing the interface language does not translate missing stories.',
+  'enrichment.partial': 'Some explanations are still unavailable. Original titles and sources remain readable.',
+  'enrichment.briefReady': 'The edition summary is available in this language.',
+  'enrichment.briefPending': 'The edition summary is not yet available in this language.',
+  'enrichment.attempted': 'Last generation attempt: {time}',
+  'enrichment.reason.unauthorized':
+    'The publishing model rejected its credentials. The site owner needs to check the pipeline API key.',
+  'enrichment.reason.rate-limit':
+    'The publishing model reached a rate or quota limit. Existing explanations remain available.',
+  'enrichment.reason.endpoint-error':
+    'The publishing model service did not respond successfully. Original stories remain available.',
+  'enrichment.reason.invalid-response':
+    'The publishing model returned incomplete or invalid content. It was not presented as a finished explanation.',
+  'enrichment.reason.budget':
+    'The publishing run reached its configured generation budget. Some stories remain in their original language.',
+  'enrichment.reason.missing-key':
+    'Automatic explanations have no pipeline model key configured. The site owner can set it in repository Actions secrets; browser model settings do not configure publishing.',
+  'enrichment.reason.disabled': 'Automatic explanations are disabled for this site. Original stories remain available.',
+  'nav.learn': 'Learn',
+  'header.star': 'Source code · Star on GitHub',
+  'home.latestComplete': 'Latest complete edition',
+  'home.closedEdition': 'Closed edition',
+  'home.pendingEdition': 'Closed · awaiting final data',
+  'home.editionDetails': 'Coverage times & sources',
+  'home.eventAdded': '{n} new linked source(s): {sources}',
+  'home.eventChanged': 'Content changed in {n} source(s)',
+  'home.eventRemoved': '{n} earlier source(s) no longer in this edition',
+  'home.eventContentChanged': 'Coverage changed since you last read it',
+  'reading.followTarget': 'Follow {value}',
+  'reading.followedTarget': 'Following {value}',
+  'reading.followProject': 'Follow project',
+  'reading.followedProject': 'Following project',
+  'reading.followCompany': 'Follow company',
+  'reading.followedCompany': 'Following company',
+  'reading.followedToast': 'Following {value}. Find matching stories in Following.',
+  'reading.unfollowedToast': 'Unfollowed {value}',
+  'reading.undo': 'Undo',
+  'reading.transfer': 'Back up or move my reading',
+  'reading.transferHelp':
+    'Download your saved items, recent reads and interests to a file. Nothing is uploaded. The file contains your reading history; keep it private. Settings backups do not include this library.',
+  'reading.exportLibrary': 'Export reading library',
+  'reading.importLibrary': 'Import reading library',
+  'reading.importInvalid': 'Choose a valid AI Resonance reading backup smaller than 4 MB.',
+  'reading.importDone': 'Reading library merged on this device.',
+  'reading.importMerge': 'Merge on this device',
+  'reading.importConfirm':
+    'Merge {n} reading entries and their interests into this device? Existing saves are preserved. The file stays in your browser.',
+  'subscribe.title': 'Subscribe to updates',
+  'subscribe.lead': 'Keep up with each edition. No account, deployment or API key needed.',
+  'subscribe.feedTitle': 'Read in your RSS reader',
+  'subscribe.feedHelp':
+    'Copy an Atom feed into an RSS reader you already use. Each entry links back to its edition and original sources.',
+  'subscribe.copyFeed': 'Copy feed address',
+  'subscribe.openFeed': 'Open feed',
+  'subscribe.step1': 'Choose a language and copy the feed address.',
+  'subscribe.step2': 'In your RSS reader, choose Add feed or Subscribe and paste the address.',
+  'subscribe.step3':
+    'Your reader checks for new editions automatically. Its refresh schedule may differ from this site.',
+  'subscribe.browserTitle': 'Prefer reading here?',
+  'subscribe.browserHelp':
+    'Bookmark this site or use your browser’s Add to home screen option. Saved items and interests stay on this device.',
+  'subscribe.ownerTitle': 'For people running their own copy',
+  'subscribe.ownerHelp':
+    'Email delivery sends reports from your own GitHub repository. It needs repository access and email credentials; this is not an email signup for this public site.',
+  'subscribe.developer': 'API & agent integrations',
+  'share.title': 'Share this story',
+  'share.help': 'The card is generated locally from this story. Its link includes the edition and original sources.',
+  'share.send': 'Share',
+  'share.download': 'Download image',
+  'share.svgFallback': 'PNG is unavailable in this browser. A standalone SVG card was downloaded instead.',
   'settings.readingHelp':
     'Start with language, appearance and interests. Reading, saving and site search work without a model API key.',
   'settings.advancedHelp': 'Optional: AI models, credentials and publishing',
@@ -412,7 +486,7 @@ const en = {
   'footer.digest': 'Daily digest',
   'footer.source': 'Source code',
   'footer.fine':
-    'Ranked by a published formula. No accounts, no tracking; AI features run in your browser with your own keys.',
+    'Ranked by a published formula. No accounts, no tracking. Reading needs no API key; optional personal AI summaries use your own key.',
   'notFound.title': 'Page not found',
   'notFound.body': 'Nothing lives at {path}.',
   'notFound.home': 'Go to today’s edition',

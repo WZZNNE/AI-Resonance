@@ -7,7 +7,7 @@ import { BOARDS, type Board, CATEGORIES, type Category, type DailyFile, type Dat
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { useResource } from '../core/api.ts'
 import { isWide } from '../core/media.ts'
-import type { RouteProps } from '../core/registry.ts'
+import { hasRoute, type RouteProps } from '../core/registry.ts'
 import { location, navigate, setTitle } from '../core/router.ts'
 import { boardOrder, general } from '../core/settings.ts'
 import {
@@ -34,6 +34,7 @@ import { Tabs, tabPanelProps } from '../ui/tabs.tsx'
 import { BoardColumn } from './board.tsx'
 import { Brief } from './brief.tsx'
 import { CategoryBar } from './catbar.tsx'
+import { EnrichmentNote } from './enrichment-note.tsx'
 import { EventBrief } from './event-brief.tsx'
 import { freshness } from './freshness.ts'
 
@@ -79,7 +80,13 @@ function EditionHead({
             </span>
           ) : (
             <>
-              {t('edition.kicker')}
+              {t(
+                day.window.settled
+                  ? day.date === m?.latest
+                    ? 'home.latestComplete'
+                    : 'home.closedEdition'
+                  : 'home.pendingEdition',
+              )}
               <span class="edition__sep" aria-hidden="true">
                 {' · '}
               </span>
@@ -88,17 +95,6 @@ function EditionHead({
           )}
         </p>
         <h1 class="edition__date">{fmt.day(day.date, 'long')}</h1>
-        <div class="edition__when">
-          <p class="edition__window">
-            <Icon name="clock" size={14} />
-            <span class="edition__times">{w.edition}</span>
-          </p>
-          {!w.sameZone && (
-            <p class="edition__local">
-              {t('edition.yourTime')} <span class="edition__times">{w.local}</span>
-            </p>
-          )}
-        </div>
         <p class="edition__note">
           <Icon name="clock" size={14} />
           {t('home.collected', { time: fmt.relative(fresh.collected, now) })}
@@ -108,34 +104,69 @@ function EditionHead({
             </Badge>
           )}
         </p>
-        <div class="edition__flags">
-          {!day.window.settled && (
-            <Badge tone="warn" title={t('edition.preliminaryHelp')}>
-              {t('edition.preliminary')}
-            </Badge>
-          )}
-          {!day.enriched && <Badge title={t('edition.noCopyHelp')}>{t('edition.noCopy')}</Badge>}
-          <button
-            type="button"
-            class={`edition__sources${sum.issues ? ' has-issues' : ''}`}
-            onClick={() => {
-              // An explicit behaviour overrides CSS reduced motion, so the preference is asked here.
-              document.getElementById('sources')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
-              document.getElementById('sources-title')?.focus({ preventScroll: true })
-            }}
-          >
-            <Icon name={sum.issues ? 'warn' : 'check'} size={13} />
-            <span>
-              {sum.issues
-                ? t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })
-                : t('edition.sourcesOk', { n: sum.total })}
-              {sum.cost > 0 && ` · ${fmt.usd(sum.cost)}`}
-            </span>
-            <Icon name="chevron-down" size={12} />
-          </button>
-        </div>
+        <EnrichmentNote status={day.enrichment} />
+        <details class="edition__details">
+          <summary>
+            {t('home.editionDetails')}
+            {sum.issues > 0 && (
+              <Badge tone="warn">{t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })}</Badge>
+            )}
+          </summary>
+          <div class="edition__when">
+            <p class="edition__window">
+              <Icon name="clock" size={14} />
+              <span class="edition__times">{w.edition}</span>
+            </p>
+            {!w.sameZone && (
+              <p class="edition__local">
+                {t('edition.yourTime')} <span class="edition__times">{w.local}</span>
+              </p>
+            )}
+          </div>
+          <div class="edition__flags">
+            {!day.window.settled && (
+              <Badge tone="warn" title={t('edition.preliminaryHelp')}>
+                {t('edition.preliminary')}
+              </Badge>
+            )}
+            {!day.enriched && <Badge title={t('edition.noCopyHelp')}>{t('edition.noCopy')}</Badge>}
+            <button
+              type="button"
+              class={`edition__sources${sum.issues ? ' has-issues' : ''}`}
+              onClick={() => {
+                // An explicit behaviour overrides CSS reduced motion, so the preference is asked here.
+                document.getElementById('sources')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
+                document.getElementById('sources-title')?.focus({ preventScroll: true })
+              }}
+            >
+              <Icon name={sum.issues ? 'warn' : 'check'} size={13} />
+              <span>
+                {sum.issues
+                  ? t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })
+                  : t('edition.sourcesOk', { n: sum.total })}
+                {sum.cost > 0 && ` · ${fmt.usd(sum.cost)}`}
+              </span>
+              <Icon name="chevron-down" size={12} />
+            </button>
+          </div>
+        </details>
       </div>
       <div class="edition__tools">
+        {m?.live && (
+          <Button
+            size="s"
+            href={live && m.latestKind !== 'live' ? '#/' : '#/live'}
+            icon={live ? 'today' : 'live'}
+            disabled={live && m.latestKind === 'live'}
+          >
+            {t(live ? 'home.closedEdition' : 'home.openLive')}
+          </Button>
+        )}
+        {hasRoute('/subscribe') && (
+          <Button size="s" href="#/subscribe" icon="send">
+            {t('subscribe.title')}
+          </Button>
+        )}
         <Button
           size="s"
           icon="chevron-down"
@@ -247,6 +278,9 @@ export default function Today({ path, query }: RouteProps) {
   const metas = boardMetas.value
   const spans = boardSpans(visible.length)
   const readingFilter: ReadingFilter = query.read === 'unread' || query.read === 'following' ? query.read : 'all'
+  const readingCounts = Object.fromEntries(
+    (['all', 'unread', 'following'] as const).map((mode) => [mode, filterReading(allItems(day), mode).length]),
+  )
   const filteredDay = {
     ...day,
     boards: Object.fromEntries(
@@ -289,6 +323,7 @@ export default function Today({ path, query }: RouteProps) {
           <Chip
             key={f}
             selected={readingFilter === f}
+            count={readingCounts[f]}
             onClick={() =>
               navigate(editionPath(ref, manifest.data.value), {
                 query: { ...query, read: f === 'all' ? undefined : f },

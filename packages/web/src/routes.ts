@@ -13,6 +13,7 @@ import Today from './views/today.tsx'
 const ItemView = lazy(() => import('./views/item.tsx'))
 const Settings = lazy(() => import('./views/settings.tsx'))
 const General = lazy(() => import('./views/general.tsx'))
+const Beginner = lazy(() => import('./beginner/page.tsx'))
 
 function stepEdition(dir: 'older' | 'newer'): void {
   const m = manifest.data.peek()
@@ -29,6 +30,7 @@ function stepEdition(dir: 'older' | 'newer'): void {
 registerRoute({ path: '/', component: Today, title: 'nav.today' })
 registerRoute({ path: '/d/:date', component: Today })
 registerRoute({ path: '/live', component: Today, title: 'edition.liveTitle' })
+registerRoute({ path: '/learn', component: Beginner, title: 'nav.learn' })
 registerRoute({ path: '/item/:slug', component: ItemView, overlay: true })
 registerRoute({ path: '/settings', component: Settings, title: 'settings.title' })
 registerRoute({ path: '/settings/:tab', component: Settings, title: 'settings.title' })

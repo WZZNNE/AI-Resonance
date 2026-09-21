@@ -8,7 +8,17 @@ export function staticApi(): Plugin {
     const prefix = new URL(base === './' || base === '' ? '/' : base, 'http://localhost').pathname.replace(/\/+$/, '')
     middlewares.use((req, _res, next) => {
       try {
-        const path = decodeURIComponent(new URL(req.url ?? '/', 'http://localhost').pathname)
+        const url = new URL(req.url ?? '/', 'http://localhost')
+        const path = decodeURIComponent(url.pathname)
+        const local = path.slice(prefix.length)
+        const landing =
+          path.startsWith(`${prefix}/`) &&
+          (local === '/learn/' || local === '/learn/index.html' || local.startsWith('/share/'))
+        if (landing) {
+          requests.add(req)
+          // Vite dev serves public files but does not resolve public directory indexes before SPA fallback.
+          if (url.pathname.endsWith('/')) req.url = `${url.pathname}index.html${url.search}`
+        }
         if (path === `${prefix}/api` || path.startsWith(`${prefix}/api/`)) requests.add(req)
       } catch {
         // Vite's own invalid-request middleware handles malformed URLs.
@@ -24,7 +34,7 @@ export function staticApi(): Plugin {
         res.setHeader('content-type', 'text/plain; charset=utf-8')
         res.setHeader('cache-control', 'no-store')
         res.setHeader('x-content-type-options', 'nosniff')
-        res.end(req.method === 'HEAD' ? undefined : 'Static API file not found')
+        res.end(req.method === 'HEAD' ? undefined : 'Static content file not found')
       })
   }
   return {

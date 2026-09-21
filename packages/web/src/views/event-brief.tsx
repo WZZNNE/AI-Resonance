@@ -2,9 +2,9 @@ import type { DailyFile, DateStr } from '@resonance/schema'
 import { useEffect, useState } from 'preact/hooks'
 import { isWide } from '../core/media.ts'
 import { lang, t } from '../i18n/index.ts'
-import { boardTitle, itemHref, itemTitle } from '../items/text.ts'
-import { completeEvent, eventState, newsEvents, previousEvent } from '../reading/events.ts'
-import { markRead, reading, rememberEvent } from '../reading/store.ts'
+import { boardTitle, itemBlurb, itemHref, itemTitle, itemWhy } from '../items/text.ts'
+import { completeEvent, eventChanges, eventContent, eventState, newsEvents, previousEvent } from '../reading/events.ts'
+import { acknowledgeReadEvents, markRead, reading, rememberEvent } from '../reading/store.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { Badge } from '../ui/chip.tsx'
 
@@ -21,6 +21,8 @@ export function EventBrief({
 }) {
   const [expanded, setExpanded] = useState(false)
   useEffect(() => setExpanded(false), [day.date])
+  const entries = reading.value.entries
+  useEffect(() => acknowledgeReadEvents(originalDay ?? day), [originalDay ?? day, entries])
   const events = newsEvents(day)
   const fullEvents = originalDay ? newsEvents(originalDay) : events
   const count = compact || !isWide.value ? 2 : 3
@@ -37,8 +39,30 @@ export function EventBrief({
       <ol class="event-brief__list">
         {shown.map((event) => {
           const full = completeEvent(event, fullEvents)
-          const state = eventState(full, previousEvent(full, reading.value.events))
+          const previous = previousEvent(full, reading.value.events)
+          const state = eventState(full, previous)
+          const changes = eventChanges(full, previous)
           const lead = event.items[0]
+          const blurb =
+            itemBlurb(lead, lang.value) ||
+            itemWhy(lead, lang.value) ||
+            event.items
+              .slice(1)
+              .map((item) => itemBlurb(item, lang.value))
+              .find(Boolean)
+          const why = itemWhy(lead, lang.value)
+          const summary = [blurb, why && why !== blurb ? why : undefined].filter(Boolean).join(' ')
+          const changedBoards = [...new Set(changes.added.map((item) => boardTitle(item.board)))].join(' · ')
+          const explanation =
+            state !== 'updated'
+              ? ''
+              : changes.added.length
+                ? t('home.eventAdded', { n: changes.added.length, sources: changedBoards })
+                : changes.changed.length
+                  ? t('home.eventChanged', { n: changes.changed.length })
+                  : changes.removed
+                    ? t('home.eventRemoved', { n: changes.removed })
+                    : t('home.eventContentChanged')
           return (
             <li key={event.key} class="event-brief__item">
               <div>
@@ -50,7 +74,9 @@ export function EventBrief({
                 <a class="event-brief__title" href={itemHref(lead, date)}>
                   {itemTitle(lead, lang.value)}
                 </a>
+                {summary && <p class="event-brief__summary">{summary}</p>}
                 <p>{[...new Set(event.items.map((i) => boardTitle(i.board)))].join(' · ')}</p>
+                {explanation && <p class="event-brief__change">{explanation}</p>}
               </div>
               <IconButton
                 icon="check"
@@ -62,6 +88,7 @@ export function EventBrief({
                     full.key,
                     full.signature,
                     full.items.map((item) => item.key),
+                    eventContent(full),
                   )
                   for (const item of event.items) markRead(item, date)
                 }}

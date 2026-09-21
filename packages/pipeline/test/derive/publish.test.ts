@@ -324,8 +324,9 @@ describe('live.json', () => {
     const later = new Date(NOW.getTime() + 3_600_000)
     const after = await run(store, PRICING, later)
     expect((await list(out)).includes('live.json')).toBe(false)
-    // the removal alone refreshes the manifest (and only the manifest) so readers stop asking for live data
-    expect(after.files).toBe(1)
+    // Readers stop asking for live data; the learning catalogue also reports the remaining input freshness.
+    expect(after.files).toBeGreaterThanOrEqual(2)
+    expect((await json<{ dataAsOf: string }>('beginner.json')).dataAsOf).not.toBe(live.generatedAt)
     expect((await json<Manifest>('manifest.json')).generatedAt).toBe(later.toISOString())
     expect((await json<Manifest>('manifest.json')).live).toBeUndefined()
     // time passing without new data writes nothing

@@ -17,6 +17,13 @@ describe('Vite static API boundary', () => {
       for (const directory of ['public', 'dist']) {
         await mkdir(join(root, directory, 'api/v1'), { recursive: true })
         await writeFile(join(root, directory, 'api/v1/manifest.json'), '{"schema":2}')
+        for (const path of ['learn', 'share/2026-09-21/item-safe']) {
+          await mkdir(join(root, directory, path), { recursive: true })
+          await writeFile(
+            join(root, directory, path, 'index.html'),
+            '<!doctype html><title>Static share content</title>',
+          )
+        }
       }
       await writeFile(join(root, 'index.html'), '<!doctype html><title>App shell</title>')
       await writeFile(join(root, 'dist/index.html'), '<!doctype html><title>App shell</title>')
@@ -40,6 +47,12 @@ describe('Vite static API boundary', () => {
       expect(json.status).toBe(200)
       expect(json.headers.get('content-type')).toContain('application/json')
       expect(await json.json()).toEqual({ schema: 2 })
+      for (const path of ['learn/', 'share/2026-09-21/item-safe/']) {
+        const landing = await fetch(`${url}${path}`)
+        expect(landing.status).toBe(200)
+        expect(await landing.text()).toContain('Static share content')
+      }
+      expect((await fetch(`${url}share/2026-09-21/missing/`)).status).toBe(404)
       for (const accept of ['*/*', 'text/html']) {
         const missing = await fetch(`${url}api/v1/live.json?t=123`, { headers: { accept } })
         expect(missing.status).toBe(404)

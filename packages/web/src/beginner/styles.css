@@ -1,0 +1,208 @@
+.learn {
+  max-width: 1160px;
+  padding-top: 1rem;
+}
+.learn__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.learn__head .page__title {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  margin: 0;
+}
+.learn__counts {
+  color: var(--text-3);
+  font-size: var(--fs-s);
+  margin: 0.35rem 0 0;
+}
+.learn__scopes {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+.learn__scopes button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-2);
+  font: inherit;
+  font-size: var(--fs-s);
+  cursor: pointer;
+}
+.learn__scopes button[aria-pressed="true"] {
+  border-color: var(--signal-text);
+  color: var(--signal-text);
+  background: color-mix(in srgb, var(--signal) 9%, var(--surface));
+}
+.learn__scopes button span {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-xs);
+  opacity: 0.8;
+}
+.learn__filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 0.8rem;
+}
+.learn__search,
+.learn__type {
+  display: grid;
+  min-width: 0;
+  gap: 0.3rem;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+.learn__filters input[type="search"],
+.learn__filters select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-m);
+  color: var(--text);
+  background: var(--surface);
+  font: inherit;
+  font-size: var(--fs-s);
+}
+.learn__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  min-height: 50px;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.learn__status > p {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.learn__recent {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.45rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+.learn__recent input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+.learn__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+.learn-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-l);
+  padding: 1rem;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+}
+.learn-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+.learn-card__origin--discovered {
+  color: var(--signal-text);
+}
+.learn-badge {
+  border: 1px solid var(--signal-text);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.65rem;
+  color: var(--signal-text);
+}
+.learn-card__title {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.45rem 0 0.3rem;
+}
+.learn-card__title a {
+  color: var(--text);
+}
+.learn-card__summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--text-2);
+  line-height: 1.6;
+  font-size: var(--fs-s);
+  margin: 0 0 0.5rem;
+}
+.learn-card__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.65rem;
+  padding-top: 0.25rem;
+  margin-top: auto;
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+.learn-card__source {
+  min-width: 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.learn-card__footer > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--signal-text);
+  margin-left: auto;
+}
+.learn__freshness {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+@media (max-width: 720px) {
+  .learn__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .learn__filters {
+    grid-template-columns: minmax(0, 1fr) 112px;
+    gap: 0.5rem;
+  }
+  .learn__scopes button {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 0.5rem;
+  }
+  .learn-card {
+    padding: 0.85rem 1rem;
+  }
+}

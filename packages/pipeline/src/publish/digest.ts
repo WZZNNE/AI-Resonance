@@ -85,6 +85,7 @@ export function buildLlmsTxt(
     `- [manifest.json](${link(apiPaths.manifest)}): entry point — available dates and weeks, edition clock, board and signal metadata (weights, caps, curves, help text)`,
     `- [latest.json](${link(apiPaths.latest)}): the latest closed edition — five boards (top + runners-up) with score breakdowns, categories, resonance links, trend memory, clusters and an optional LLM brief`,
     `- [live.json](${link(apiPaths.live)}): the edition still in progress, ranked so far (absent between editions)`,
+    `- [beginner.json](${link(apiPaths.beginner)}): 100 beginner resources (30 resident picks and 70 dynamic recommendations), eight searchable types, monthly resident replacement and persistent first-entry / NEW / BACK history`,
     `- [daily/<date>.json](${link('daily/')}): the same for any edition in the window`,
     `- [weekly/<YYYY-Www>.json](${link('weekly/')}): weekly recap — heat (sum of daily scores), streaks, top clusters, brief`,
     `- [entities/<board>/<YYYY-MM>.json](${link('entities/')}): full history per entity (appearances, metric series), sharded by first-seen month`,

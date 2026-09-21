@@ -7,7 +7,7 @@
   "scripts": {
     "cli": "node src/cli.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run --maxWorkers=2"
   },
   "dependencies": {
     "@resonance/schema": "workspace:*",

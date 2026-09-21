@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run",
+    "test": "vitest run --maxWorkers=2",
     "mock": "node scripts/mock-api.ts"
   },
   "dependencies": {

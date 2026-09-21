@@ -111,12 +111,17 @@ export interface HttpOptions {
   minGap?: number
   method?: 'GET' | 'POST'
   body?: string
+  /** Public HTML only: no credentials, private hosts, non-HTTP redirects or unbounded bodies. */
+  publicPage?: boolean
+  maxBytes?: number
 }
 
 /** The only way stages touch the network — so tests can replay recorded fixtures. */
 export interface Http {
   text(url: string, opts?: HttpOptions): Promise<string>
   json<T = unknown>(url: string, opts?: HttpOptions): Promise<T>
+  /** Final URL and bounded HTML; optional so offline source fixtures remain simple. */
+  page?(url: string, opts?: HttpOptions): Promise<{ url: string; body: string }>
 }
 
 /**

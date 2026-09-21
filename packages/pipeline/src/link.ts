@@ -9,6 +9,7 @@
  * - every edge inside the pool is made two-way.
  */
 import { type EntityKey, keyFromUrl, keysInText, normalizeUrl } from '@resonance/schema'
+import { hydratePublicLinks } from './article.ts'
 import { githubHeaders } from './sources/util.ts'
 import type { Link, RawCandidate, RawLab, RawNews, RawPaper, RawRepo, RawSocial, RunContext } from './types.ts'
 
@@ -236,6 +237,11 @@ function symmetrise(candidates: RawCandidate[]): void {
 /** Merge duplicates, complete refs, make the graph symmetric. See `Link` in `types.ts`. */
 export const link: Link = async (candidates, ctx) => {
   const merged = mergeByKey(candidates)
+  try {
+    await hydratePublicLinks(merged, ctx)
+  } catch {
+    ctx.log.warn('public pages: optional enrichment unavailable; keeping source titles and links')
+  }
   for (const cand of merged) cand.refs = union(cand.refs, ownRefs(cand))
   const keys = new Set(merged.map((c) => c.key))
   const repos = merged.filter((c): c is RawRepo => c.board === 'repos')

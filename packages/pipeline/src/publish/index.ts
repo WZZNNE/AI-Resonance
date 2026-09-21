@@ -8,8 +8,18 @@ import { dirname, join, relative } from 'node:path'
 import { renderReport } from '@resonance/channels/report'
 import type { BoardMeta, Lang, PricingFile, WeeklyFile } from '@resonance/schema'
 import { apiPaths, diffDays, LANGS } from '@resonance/schema'
+import { beginnerCatalog } from '../beginner/catalog.ts'
+import { beginnerDiscoveryCatalog } from '../beginner/discovery-catalog.ts'
+import { BEGINNER_STATE, buildBeginnerTop } from '../beginner/index.ts'
+import { beginnerFileSchema, beginnerStateSchema } from '../beginner/validate.ts'
 import { isPublished } from '../edition.ts'
-import { citablesHash, editionCitables, weekCitables } from '../enrich.ts'
+import {
+  buildEnrichmentStatus,
+  citablesHash,
+  type EnrichmentAttempts,
+  editionCitables,
+  weekCitables,
+} from '../enrich.ts'
 import { rankWindow } from '../score.ts'
 import { boardMeta } from '../signals.ts'
 import { readIfExists } from '../store.ts'
@@ -33,6 +43,7 @@ import { mailStatusOf } from './mail.ts'
 import { buildManifest } from './manifest.ts'
 import { reportJobs } from './report.ts'
 import { buildSearchIndex } from './search.ts'
+import { writeSharePages } from './share.ts'
 import { resolveSiteUrl } from './text.ts'
 import { buildWeeklies } from './weekly.ts'
 
@@ -92,12 +103,32 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
   const stamp = now.toISOString()
 
   const briefs = await store.readBriefCache()
-  const days = rankWindow(snapshots, config, await store.readCopyCache()).map((day) => withDayBrief(day, briefs))
+  const copy = await store.readCopyCache()
+  const attempts = await store.state.get<EnrichmentAttempts>('enrichment')
+  const days = rankWindow(snapshots, config, copy).map((day) => ({
+    ...withDayBrief(day, briefs),
+    enrichment: buildEnrichmentStatus(day, copy, briefs, config, attempts?.[day.date]),
+  }))
   // A labs-only snapshot is ranking memory for the labs board, not an edition anyone collected (`isPublished`).
   const closed = days.filter((d) => d.date <= today && isPublished(d))
   const found = days.find((d) => d.date === openDate && openDate > today)
   // Exactly at its cutoff the open edition has not begun yet: there is nothing live to show.
   const live = found && Date.parse(stamp) > Date.parse(found.window.from) ? found : undefined
+
+  // Preserve entry history across fresh CI checkouts. Corrupt history must never silently mark everything NEW.
+  const rawBeginnerState = await store.state.get<unknown>(BEGINNER_STATE)
+  const previous = rawBeginnerState == null ? undefined : beginnerStateSchema.parse(rawBeginnerState)
+  const learning = buildBeginnerTop({
+    catalog: beginnerCatalog,
+    discoveryCatalog: beginnerDiscoveryCatalog,
+    editions: [...closed, ...(live ? [live] : [])],
+    previous,
+    now,
+    date: openDate,
+  })
+  const beginnerFile = await out.json(apiPaths.beginner, learning.file, beginnerFileSchema, 'keep')
+  await store.state.set(BEGINNER_STATE, beginnerStateSchema.parse(learning.state))
+  await writeSharePages(out, [...closed, ...(live ? [live] : [])], siteUrl, config.site.name, beginnerFile, live?.date)
 
   // The open edition, ranked so far: its window ends "now" and it is never settled.
   if (live) {
@@ -181,7 +212,7 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
     }
   }
 
-  const removed = await out.sweep(['daily', 'weekly', 'entities', 'report'])
+  const removed = await out.sweep(['daily', 'weekly', 'entities', 'report', '../../share'])
   if (removed) log.info(`publish: removed ${removed} stale file(s)`)
 
   // Anything rewritten or removed means readers must refetch, so the manifest gets a fresh stamp in that case.

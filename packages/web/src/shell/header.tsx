@@ -8,8 +8,9 @@ import { navigate } from '../core/router.ts'
 import { currentEdition, liveAvailable, manifest } from '../core/state.ts'
 import { lang, setLang, t } from '../i18n/index.ts'
 import { appearance, cycleMode, type ThemeMode } from '../theme/prefs.ts'
-import { IconButton } from '../ui/button.tsx'
+import { Button, IconButton } from '../ui/button.tsx'
 import { Icon, type IconName } from '../ui/icons.tsx'
+import { ExtLink } from '../ui/link.tsx'
 import { EditionPicker } from './edition.tsx'
 
 /** The mark: three linked dots in the first three board hues. */
@@ -88,6 +89,22 @@ export function Header() {
         <EditionPicker />
         {liveAvailable.value && <LiveToggle />}
         <span class="appbar__spacer" />
+        {hasRoute('/learn') && (
+          <Button class="wide-only" size="s" href="#/learn" icon="book">
+            {t('nav.learn')}
+          </Button>
+        )}
+        {manifest.data.value?.site.repoUrl && (
+          <ExtLink
+            class="header-source"
+            href={manifest.data.value.site.repoUrl}
+            title={t('header.star')}
+            aria-label={t('header.star')}
+          >
+            <Icon name="star" size={16} />
+            <span>GitHub</span>
+          </ExtLink>
+        )}
         {hasCommand('search.open') && (
           <button
             type="button"

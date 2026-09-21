@@ -23,7 +23,7 @@ import {
   itemTitle,
   itemWhy,
 } from '../items/text.ts'
-import { markRead } from '../reading/store.ts'
+import { acknowledgeReadEvents, markRead } from '../reading/store.ts'
 import { Button } from '../ui/button.tsx'
 import { LineChart } from '../ui/charts.tsx'
 import { Badge, boardHue, CategoryChip, Chip } from '../ui/chip.tsx'
@@ -187,7 +187,10 @@ function Detail({ located }: { located: LocatedItem }) {
   const metas = boardMetas.value
   const meta = metas.get(item.board)
   const date = ref.kind === 'live' ? 'live' : day.date
-  useEffect(() => markRead(item, date), [item.key, date])
+  useEffect(() => {
+    markRead(item, date)
+    acknowledgeReadEvents(day)
+  }, [item.key, date])
   const translated = isTranslated(item, l)
   const title = original ? item.title : itemTitle(item, l)
   const blurb = original ? '' : itemBlurb(item, l)
@@ -246,13 +249,6 @@ function Detail({ located }: { located: LocatedItem }) {
 
       <ItemActions item={item} placement="detail" date={date} />
 
-      <Section id="d-score" title={t('detail.score')}>
-        <div class="detail__plate detail__score">
-          <ScoreBar score={item.score} signals={meta?.signals} mode="full" />
-        </div>
-        <p class="detail__foot detail__formula">{t('score.formula')}</p>
-      </Section>
-
       <Section id="d-facts" title={t('detail.facts')}>
         {(original || !blurb) && <SourceText item={item} />}
         {!original && blurb && item.board === 'papers' && (
@@ -269,6 +265,19 @@ function Detail({ located }: { located: LocatedItem }) {
         )}
         <ItemFacts item={item} />
       </Section>
+
+      <details class="detail__plate detail__more detail__score-disclosure">
+        <summary>
+          <span>
+            {t('detail.score')} · {fmt.number(item.score.total, 1)}
+          </span>
+          <Icon name="chevron-down" size={16} />
+        </summary>
+        <div class="detail__score">
+          <ScoreBar score={item.score} signals={meta?.signals} mode="full" />
+        </div>
+        <p class="detail__foot detail__formula">{t('score.formula')}</p>
+      </details>
 
       {item.board === 'social' && item.social.topComments?.length ? (
         <Section id="d-comments" title={t('detail.comments')}>

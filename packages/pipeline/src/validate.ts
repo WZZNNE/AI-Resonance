@@ -254,6 +254,19 @@ export const dailyFileSchema = z.object({
   brief: perLang(brief).optional(),
   sources: z.array(sourceStatus),
   enriched: z.boolean(),
+  enrichment: z
+    .object({
+      state: z.enum(['complete', 'partial', 'disabled', 'missing-key', 'failed']),
+      languages: z.array(lang),
+      total: count,
+      covered: perLang(count),
+      briefReady: perLang(z.boolean()),
+      attemptedAt: isoTime.optional(),
+      reason: z
+        .enum(['unauthorized', 'rate-limit', 'endpoint-error', 'invalid-response', 'budget', 'missing-key', 'disabled'])
+        .optional(),
+    })
+    .optional(),
   coverage: z.object({ startedAt: isoTime, coldStart: z.boolean(), missingBoards: z.array(board) }).optional(),
 }) satisfies z.ZodType<DailyFile>
 

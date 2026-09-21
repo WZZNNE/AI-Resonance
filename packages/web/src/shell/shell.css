@@ -98,6 +98,29 @@
   padding: 0 calc(var(--gutter) - 6px) 0 var(--gutter);
 }
 
+.header-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem;
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: var(--fs-xs);
+  border-radius: var(--radius-m);
+}
+.header-source:hover {
+  background: var(--well-bg);
+  color: var(--text);
+}
+@media (max-width: 767px) {
+  .header-source span {
+    display: none;
+  }
+  .header-source {
+    padding-inline: 0.4rem;
+  }
+}
+
 .appbar__spacer {
   flex: 1;
 }

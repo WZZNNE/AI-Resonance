@@ -11,10 +11,10 @@ import { general } from '../core/settings.ts'
 import { lang, t } from '../i18n/index.ts'
 import { markRead } from '../reading/store.ts'
 import { Button, IconButton } from '../ui/button.tsx'
-import { absoluteRoute, copyText } from '../ui/link.tsx'
+import { copyText } from '../ui/link.tsx'
 import { safeHref } from '../ui/md.ts'
 import { Sheet } from '../ui/sheet.tsx'
-import { itemHref } from './text.ts'
+import { ShareAction, shareUrl } from './share.tsx'
 
 export interface ItemActionsProps {
   item: Item
@@ -36,7 +36,7 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
   const url = safeHref(item.url)
   const newTab = general.value.newTab
   const copy = async () => {
-    const ok = await copyText(absoluteRoute(itemHref(item, date)))
+    const ok = await copyText(shareUrl(item, date))
     toast(t(ok ? 'card.copied' : 'card.copyFailed'), { kind: ok ? 'ok' : 'warn' })
   }
   const labelled = placement === 'detail'
@@ -87,6 +87,7 @@ export function ItemActions({ item, placement, date }: ItemActionsProps) {
       ) : (
         <IconButton size="s" icon="more" label={t('card.more')} onClick={() => setMore(true)} />
       )}
+      {labelled && <ShareAction item={item} date={date} />}
       {!labelled && (
         <Sheet open={more} onClose={() => setMore(false)} title={t('card.more')} size="s">
           <div class="item-action-menu">
