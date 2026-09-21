@@ -3374,14 +3374,14 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.035,
+   "cr": 0.033,
    "ctx": 262144,
    "id": "tencent/Hy3",
-   "in": 0.14,
+   "in": 0.13,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.58,
+   "out": 0.53,
    "p": "deepinfra",
    "reasoning": true,
    "src": "models.dev",
@@ -7838,7 +7838,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.018018,
+   "cr": 0.018216,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7846,11 +7846,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.56628,
+   "in": 0.54648,
    "k": "deepseek-pro-latest",
-   "maxOut": 393216,
+   "maxOut": 384000,
    "name": "DeepSeek Pro Latest",
-   "out": 1.69884,
+   "out": 1.63944,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8932,18 +8932,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.077039,
+   "cr": 0.075067,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.924462,
+   "in": 0.900798,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.848924,
+   "out": 1.801596,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8951,7 +8951,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.018018,
+   "cr": 0.022,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8959,11 +8959,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.56628,
+   "in": 0.66,
    "k": "deepseek-v4-pro-0813",
-   "maxOut": 393216,
+   "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.69884,
+   "out": 1.98,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13427,6 +13427,51 @@
    "upd": "2026-04-22"
   },
   {
+   "cr": 0.0028,
+   "ctx": 1048576,
+   "id": "xiaomi/mimo-v2.6-flash",
+   "in": 0.14,
+   "k": "mimo-v2-6-flash",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Flash",
+   "out": 0.28,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.0036,
+   "ctx": 1048576,
+   "id": "xiaomi/mimo-v2.6-pro",
+   "in": 0.435,
+   "k": "mimo-v2-6-pro",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Pro",
+   "out": 0.87,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.036,
+   "ctx": 1048576,
+   "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+   "in": 4.35,
+   "k": "mimo-v2-6-pro-ultraspeed",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Pro-UltraSpeed",
+   "out": 8.7,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-21"
+  },
+  {
    "cr": 0.11,
    "ctx": 131072,
    "id": "z-ai/glm-4.5",
@@ -17269,5 +17314,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-21T18:49:36.464Z"
+ "updatedAt": "2026-09-21T21:43:37.130Z"
 }
