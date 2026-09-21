@@ -3615,6 +3615,7 @@
    "cr": 0.003625,
    "ctx": 1000000,
    "efforts": [
+    "low",
     "high",
     "max"
    ],
@@ -7837,7 +7838,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.022,
+   "cr": 0.019272,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7845,11 +7846,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.66,
+   "in": 0.57816,
    "k": "deepseek-pro-latest",
    "maxOut": 384000,
    "name": "DeepSeek Pro Latest",
-   "out": 1.98,
+   "out": 1.73448,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8088,7 +8089,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.127075,
+   "cr": 0.14352,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8096,11 +8097,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.7735,
+   "in": 0.7728,
    "k": "glm-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.431,
+   "out": 2.4288,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8888,18 +8889,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.017721,
+   "cr": 0.011088,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.088606,
+   "in": 0.05544,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.177212,
+   "out": 0.11088,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8947,18 +8948,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.078576,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.942906,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 1.885812,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8966,7 +8967,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.019272,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8974,11 +8975,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 0.57816,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 1.73448,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9810,11 +9811,11 @@
   {
    "ctx": 131072,
    "id": "meta-llama/llama-3.1-70b-instruct",
-   "in": 0.72,
+   "in": 0.4,
    "k": "llama-3-1-70b-instruct",
-   "maxOut": 8192,
+   "maxOut": 16384,
    "name": "Llama-3.1-70B-Instruct",
-   "out": 0.72,
+   "out": 0.4,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -13743,19 +13744,6 @@
    "upd": "2025-09-01"
   },
   {
-   "ctx": 131000,
-   "id": "baidu/ERNIE-4.5-300B-A47B",
-   "in": 0.28,
-   "k": "ernie-4-5-300b-a47b",
-   "maxOut": 131000,
-   "name": "baidu/ERNIE-4.5-300B-A47B",
-   "out": 1.1,
-   "p": "siliconflow",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
    "ctx": 262000,
    "id": "ByteDance-Seed/Seed-OSS-36B-Instruct",
    "in": 0.21,
@@ -13839,6 +13827,7 @@
     "max": 32768,
     "min": 128
    },
+   "cr": 0.135,
    "ctx": 164000,
    "id": "deepseek-ai/DeepSeek-V3.2",
    "in": 0.27,
@@ -13878,7 +13867,7 @@
    "cr": 0.028,
    "ctx": 1000000,
    "id": "deepseek-ai/DeepSeek-V4-Flash",
-   "in": 0.14,
+   "in": 0.13,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
@@ -13893,18 +13882,85 @@
     "max": 32768,
     "min": 128
    },
-   "cr": 0.145,
+   "cr": 0.014,
+   "ctx": 1000000,
+   "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "in": 0.22,
+   "k": "deepseek-v4-flash-0731",
+   "maxOut": 384000,
+   "name": "DeepSeek V4 Flash 0731",
+   "out": 0.66,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-07-31"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.028,
+   "ctx": 1000000,
+   "id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+   "in": 0.44,
+   "k": "deepseek-v4-flash-vision-exp",
+   "maxOut": 384000,
+   "name": "DeepSeek V4 Flash Vision Exp",
+   "out": 1.32,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-01"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.135,
    "ctx": 1000000,
    "id": "deepseek-ai/DeepSeek-V4-Pro",
-   "in": 1.74,
+   "in": 1.50162,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 3.48,
+   "out": 3.135,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-04-24"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.044,
+   "ctx": 1000000,
+   "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+   "in": 1.32,
+   "k": "deepseek-v4-pro-0813",
+   "maxOut": 384000,
+   "name": "DeepSeek V4 Pro 0813",
+   "out": 3.96,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-22"
+  },
+  {
+   "ctx": 262144,
+   "id": "google/gemma-4-12B-it",
+   "in": 0.1,
+   "k": "gemma-4-12b-it",
+   "maxOut": 262144,
+   "name": "Gemma 4 12B IT",
+   "out": 0.3,
+   "p": "siliconflow",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2026-06-09"
   },
   {
    "ctx": 262144,
@@ -13946,6 +14002,24 @@
    "upd": "2025-11-25"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.015,
+   "ctx": 1049000,
+   "id": "meituan-longcat/LongCat-2.0",
+   "in": 0.75,
+   "k": "longcat-2-0",
+   "maxOut": 131072,
+   "name": "LongCat-2.0",
+   "out": 2.95,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-30"
+  },
+  {
    "cr": 0.03,
    "ctx": 197000,
    "id": "MiniMaxAI/MiniMax-M2.5",
@@ -13958,6 +14032,24 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-06-15"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.06,
+   "ctx": 1048576,
+   "id": "MiniMaxAI/MiniMax-M3",
+   "in": 0.3,
+   "k": "minimax-m3",
+   "maxOut": 131000,
+   "name": "MiniMax-M3",
+   "out": 1.2,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-01"
   },
   {
    "budget": {
@@ -13982,18 +14074,72 @@
     "max": 32768,
     "min": 128
    },
-   "cr": 0.2,
+   "cr": 0.14,
    "ctx": 262000,
    "id": "moonshotai/Kimi-K2.6",
    "in": 0.77,
    "k": "kimi-k2-6",
    "maxOut": 262000,
    "name": "moonshotai/Kimi-K2.6",
-   "out": 4,
+   "out": 3.4,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-06-15"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.17993,
+   "ctx": 262144,
+   "id": "moonshotai/Kimi-K2.7-Code",
+   "in": 0.85916,
+   "k": "kimi-k2-7-code",
+   "maxOut": 262144,
+   "name": "Kimi K2.7 Code",
+   "out": 3.8,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-12"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.27,
+   "ctx": 1048576,
+   "id": "moonshotai/Kimi-K3",
+   "in": 2.7,
+   "k": "kimi-k3",
+   "maxOut": 262000,
+   "name": "Kimi K3",
+   "out": 13.5,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-07-16"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.25,
+   "ctx": 262144,
+   "id": "nex-agi/Nex-N2-Pro",
+   "in": 0.5,
+   "k": "nex-n2-pro",
+   "maxOut": 256000,
+   "name": "Nex-N2-Pro",
+   "out": 2.5,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-02"
   },
   {
    "budget": {
@@ -14070,23 +14216,6 @@
    "upd": "2025-11-25"
   },
   {
-   "budget": {
-    "max": 32768,
-    "min": 128
-   },
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-   "in": 0.13,
-   "k": "qwen3-235b-a22b-thinking-2507",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-   "out": 0.6,
-   "p": "siliconflow",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
    "ctx": 262000,
    "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
    "in": 0.09,
@@ -14158,33 +14287,6 @@
    "out": 1,
    "p": "siliconflow",
    "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
-   "in": 0.3,
-   "k": "qwen3-vl-235b-a22b-instruct",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-VL-235B-A22B-Instruct",
-   "out": 1.5,
-   "p": "siliconflow",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
-   "in": 0.45,
-   "k": "qwen3-vl-235b-a22b-thinking",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-VL-235B-A22B-Thinking",
-   "out": 3.5,
-   "p": "siliconflow",
-   "reasoning": true,
    "src": "models.dev",
    "upd": "2025-11-25"
   },
@@ -14347,6 +14449,24 @@
    "upd": "2026-04-17"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "cr": 0.25,
+   "ctx": 1049000,
+   "id": "Qwen/Qwen3.8-2.4T-A95B",
+   "in": 2,
+   "k": "qwen3-8-2-4t-a95b",
+   "maxOut": 131000,
+   "name": "Qwen3.8 2.4T A95B",
+   "out": 6,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-12"
+  },
+  {
    "alwaysOn": true,
    "ctx": 262000,
    "id": "stepfun-ai/Step-3.5-Flash",
@@ -14383,18 +14503,18 @@
     "max": 32768,
     "min": 128
    },
-   "cr": 0.029,
+   "cr": 0.033,
    "ctx": 262144,
-   "id": "tencent/Hy3-preview",
-   "in": 0.066,
-   "k": "hy3-preview",
+   "id": "tencent/Hy3",
+   "in": 0.132,
+   "k": "hy3",
    "maxOut": 262144,
-   "name": "Hy3 preview",
-   "out": 0.26,
+   "name": "Hy3",
+   "out": 0.528,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-04-20"
+   "upd": "2026-07-06"
   },
   {
    "ctx": 131000,
@@ -14432,15 +14552,15 @@
     "max": 32768,
     "min": 128
    },
-   "cr": 0.26,
+   "cr": 0.6,
    "ctx": 205000,
    "cw": 0,
    "id": "zai-org/GLM-5.1",
-   "in": 1.4,
+   "in": 1.19,
    "k": "glm-5-1",
-   "maxOut": 205000,
+   "maxOut": 131000,
    "name": "zai-org/GLM-5.1",
-   "out": 4.4,
+   "out": 3.74,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
@@ -14455,15 +14575,55 @@
     "max"
    ],
    "id": "zai-org/GLM-5.2",
-   "in": 1.4,
+   "in": 1.302,
    "k": "glm-5-2",
    "maxOut": 262000,
    "name": "GLM-5.2",
-   "out": 4.4,
+   "out": 4.092,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-06-13"
+  },
+  {
+   "cr": 0.26,
+   "ctx": 1049000,
+   "cw": 0,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "zai-org/GLM-5.3",
+   "in": 1.4,
+   "k": "glm-5-3",
+   "maxOut": 262000,
+   "name": "GLM-5.3",
+   "out": 4.4,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-14"
+  },
+  {
+   "cr": 0.03,
+   "ctx": 1049000,
+   "cw": 0,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "zai-org/GLM-5.3-Flash",
+   "in": 0.15,
+   "k": "glm-5-3-flash",
+   "maxOut": 262000,
+   "name": "GLM-5.3-Flash",
+   "out": 0.5,
+   "p": "siliconflow",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-26"
   },
   {
    "budget": {
@@ -14484,19 +14644,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-04-01"
-  },
-  {
-   "ctx": 131000,
-   "id": "baidu/ERNIE-4.5-300B-A47B",
-   "in": 0.28,
-   "k": "ernie-4-5-300b-a47b",
-   "maxOut": 131000,
-   "name": "baidu/ERNIE-4.5-300B-A47B",
-   "out": 1.1,
-   "p": "siliconflow-cn",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
   },
   {
    "ctx": 262000,
@@ -14905,33 +15052,6 @@
    "out": 1,
    "p": "siliconflow-cn",
    "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
-   "in": 0.3,
-   "k": "qwen3-vl-235b-a22b-instruct",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-VL-235B-A22B-Instruct",
-   "out": 1.5,
-   "p": "siliconflow-cn",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
-   "in": 0.45,
-   "k": "qwen3-vl-235b-a22b-thinking",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-VL-235B-A22B-Thinking",
-   "out": 3.5,
-   "p": "siliconflow-cn",
-   "reasoning": true,
    "src": "models.dev",
    "upd": "2025-11-25"
   },
@@ -16335,6 +16455,22 @@
    "upd": "2025-12-08"
   },
   {
+   "cr": 0,
+   "ctx": 128000,
+   "cw": 0,
+   "id": "glm-4.6v-flash",
+   "in": 0,
+   "k": "glm-4-6v-flash",
+   "maxOut": 32768,
+   "name": "GLM-4.6V-Flash",
+   "out": 0,
+   "p": "zai",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2025-12-08"
+  },
+  {
    "cr": 0.11,
    "ctx": 204800,
    "cw": 0,
@@ -16611,6 +16747,22 @@
    "maxOut": 32768,
    "name": "GLM-4.6V",
    "out": 0.9,
+   "p": "zhipuai",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2025-12-08"
+  },
+  {
+   "cr": 0,
+   "ctx": 128000,
+   "cw": 0,
+   "id": "glm-4.6v-flash",
+   "in": 0,
+   "k": "glm-4-6v-flash",
+   "maxOut": 32768,
+   "name": "GLM-4.6V-Flash",
+   "out": 0,
    "p": "zhipuai",
    "reasoning": true,
    "src": "models.dev",
@@ -17092,5 +17244,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-21T12:50:32.837Z"
+ "updatedAt": "2026-09-21T15:44:38.397Z"
 }

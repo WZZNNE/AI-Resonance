@@ -5146,7 +5146,7 @@
     "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "Comprehensive video understanding is crucial for advancing artificial intelligence toward the intricate dynamics of the physical world. While recent advances in Multimodal Large Language Models (MLLMs) have demonstrated remarkable capabilities in video understanding, existing benchmarks remain confined to simple scene-level queries or global summaries that require only single-step inference. Real-world video understanding involves more challenging tasks that require multi-hop multimodal reasoning, and there is a critical absence of video benchmarks equipped to rigorously evaluate these agentic capabilities. To bridge this gap, we introduce AgentVidBench, a multi-hop video question answering benchmark focused on evaluating the spatial, temporal, and causal reasoning capabilities of MLLM agents. Beyond standard question-answer pairs, AgentVidBench provides step-by-step solution traces to support trajectory evaluation that assesses whether agents explicitly acquire the evidence needed to justify their answers. Experiments with 12 proprietary and open-source MLLMs show that single-turn performance remains limited on AgentVidBench, while integrating these models into state-of-the-art agentic workflows generally improves performance with respect to both accuracy and trajectory scores. We further present a simple yet effective agentic strategy that serves as a competitive baseline on AgentVidBench, establishing our benchmark as a holistic testbed for future research on agentic video understanding. Code and datasets are available at https://github.com/krafton-ai/agentvidbench and https://huggingface.co/datasets/agentvidbench/agentvidbench.",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5198,7 +5198,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "Surgical instrument segmentation (SIS) plays a critical role in robotic assistance and surgical workflow analysis. However, most existing SIS methods formulate segmentation as a category-driven localization problem, limiting their ability to capture procedural context and task-dependent semantics in surgical workflows. We introduce Reasoning-Aware Surgical Instrument Segmentation (RA-SIS), a task formulation that frames segmentation as query-conditioned inference under surgical context. To benchmark this setting, we construct SurgRS, a surgical reasoning segmentation dataset consisting of 41,000 image-text pairs, which aligns instance-level masks with structured query-answer supervision to enable semantic grounding at the pixel level. Based on SurgRS, we propose Surgical Instrument Reasoning and Segmentation Assistant (SIRA), a multimodal framework that disentangles target-level and query-level semantics and integrates them with visual features through query-anchored dual alignment. By aligning query semantics with spatial features and segmentation prompts, SIRA enhances semantic-visual consistency in mask prediction. Extensive experiments on SurgRS demonstrate improvements over existing reasoning-aware baselines. Code is available at https://github.com/linxir226/SIRA.",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5245,7 +5245,7 @@
     "codeStars": 17,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "Omnidirectional video saliency prediction plays an important role in many immersive multimedia applications, including viewport-adaptive streaming and compression, foveated rendering, mesh simplification, perceptual quality assessment. Yet progress in this area remains constrained by the cost and complexity of collecting eye-tracking data with VR headsets, which makes large-scale dataset creation difficult to extend. We present OpenSAL360, the first open-source platform for scalable, low-cost 360° video saliency collection. Unlike conventional VR-based protocols, it requires only a standard screen, mouse, and internet connection, enabling parallel saliency data collection from common crowdsourcing assessors without specialized hardware. We validate our collection protocol against seven well-established VR eye-tracking datasets and conduct ablation studies on key interface, pre-, and post-processing parameters. To demonstrate the effectiveness and scalability of the proposed methodology, we collect and publicly release a saliency dataset covering 500 omnidirectional videos annotated by 2,000+ crowdsourcing assessors, making it, to the best of our knowledge, the largest dataset in this field. We make OpenSAL360 publicly available at https://github.com/msu-video-group/OpenSAL360.",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5294,7 +5294,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "Conversational speech depends on dialogue context and the listener's immediately preceding behavior. We propose ReACT-TTS, a two-stage framework that uses a one-second pre-response listener facial sequence to plan the next utterance's emotion and prosody before speech realization. On a strict dyadic MELD protocol, Temporal conditioning yields higher mean macro-F1 and VAD concordance than Text-only across ten seeds, while accuracy remains essentially unchanged. Ablations show that temporal modeling performs best among the visual variants and that an explicit early-to-late difference is unnecessary; correct listener reactions also outperform cyclic mismatches on average. In a contextual-appropriateness study with 20 speech researchers, 76% of judgments prefer Temporal, 9% Text-only, and 15% report no preference. We further connect the predicted response style to a Grad-TTS backbone for end-to-end speech realization. Overall, the results support pre-response listener dynamics as complementary cues for conversational response planning. The source code is available at https://github.com/CYJ1/ReACT-TTS_public.",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5345,7 +5345,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "Multimodal survival models can combine complementary prognostic information from whole-slide images and genomic profiles, but effective fusion remains challenging amid external cohort shift and computational complexity. To address these challenges, we propose MIST, multimodal survival prediction with genomic-guided histology attention. MIST represents genomic features as tokens and allows them to query compact foundation-model-derived histology context tokens before survival prediction. This design enriches molecular information with histology context rather than merging separately encoded modalities only at the final stage. Training combines discrete-time survival prediction with genomic feature masking, WSI dropout, and paired WSI-genomics contrastive alignment. Across four external evaluations in colon, renal, lung, and glioblastoma cohorts, MIST improves external C-index over standard fusion baselines in the primary comparisons. These results support genomic-guided histology attention as a compact and effective strategy for multimodal oncology outcome prediction. Our code is available at https://github.com/samiyavuuz/MIST .",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5396,7 +5396,7 @@
     "codeStars": 12,
     "prior": 0.3
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "paper": {
     "abstract": "The gold standard datasets for mapping connectomes are electron microscopy volumes of densely labeled neural tissue at nanometer resolution. Yet reconstructing and proofreading neuronal arbors and annotating all synapses requires pipelining multiple software tools that are often fragmented, inconsistently maintained, or proprietary, hindering reproducibility and automation. Here, we introduce Catena, an open-source, comprehensive, developer-centric software suite for connectomics that integrates modules for 3D neuron and organelle segmentation, synapse detection, microtubule tracking, and neurotransmitter inference. Catena organizes its modules in composable, chunk-wise processing pipelines in a completely documented, extensible, and adaptable design. We further reduce compute and ground-truth data requirements with pretrained machine learning models, facilitating fine-tuning. Catena ships fully containerized modules that encapsulate evolving dependencies for consistent execution across workstations and clusters. By consolidating open components, shareable models, and containerized runtimes, Catena delivers a reproducible and scalable approach to mapping cellular connectomes from electron microscopy volumes. Code and documentation: https://github.com/Mohinta2892/catena.git",
     "arxivAnnouncedAt": "2026-09-21T00:00:00.000Z",
@@ -5458,7 +5458,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49773511",
     "points": 50
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T07:50:58.000Z",
    "refs": [
     "url:xda-developers.com/your-nvidia-gpu-dozens-risc-v-cores-one-took-over-graphics-driver"
@@ -5497,7 +5497,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49773624",
     "points": 35
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T08:07:08.000Z",
    "refs": [
     "url:theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero"
@@ -5535,7 +5535,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49773871",
     "points": 11
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T08:48:35.000Z",
    "refs": [
     "url:faceanalysisai.com"
@@ -5563,20 +5563,20 @@
    "category": "discussion",
    "key": "hn:49773998",
    "metrics": {
-    "comments": 62,
+    "comments": 63,
     "frontPage": 0,
     "points": 46
    },
    "news": {
     "author": "pjmlp",
-    "comments": 62,
+    "comments": 63,
     "createdAt": "2026-09-20T09:08:52.000Z",
     "domain": "theregister.com",
     "hnId": 49773998,
     "hnUrl": "https://news.ycombinator.com/item?id=49773998",
     "points": 46
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T09:08:52.000Z",
    "refs": [
     "url:theregister.com/devops/2026/09/18/microsoft-agentically-ports-copilot-runtime-to-rust-for-120k/5297549"
@@ -5642,20 +5642,20 @@
    "category": "discussion",
    "key": "hn:49775499",
    "metrics": {
-    "comments": 184,
+    "comments": 189,
     "frontPage": 1,
-    "points": 673
+    "points": 702
    },
    "news": {
     "author": "jmillikin",
-    "comments": 184,
+    "comments": 189,
     "createdAt": "2026-09-20T13:09:25.000Z",
     "domain": "qwen.ai",
     "hnId": 49775499,
     "hnUrl": "https://news.ycombinator.com/item?id=49775499",
-    "points": 673
+    "points": 702
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T13:09:25.000Z",
    "refs": [
     "url:qwen.ai/blog?id=qwen-image-2.1"
@@ -5680,20 +5680,20 @@
    "category": "tool",
    "key": "hn:49776523",
    "metrics": {
-    "comments": 28,
-    "frontPage": 1,
-    "points": 89
+    "comments": 32,
+    "frontPage": 0,
+    "points": 95
    },
    "news": {
     "author": "codetiger",
-    "comments": 28,
+    "comments": 32,
     "createdAt": "2026-09-20T14:59:10.000Z",
     "domain": "tinybrains.dev",
     "hnId": 49776523,
     "hnUrl": "https://news.ycombinator.com/item?id=49776523",
-    "points": 89
+    "points": 95
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T14:59:10.000Z",
    "refs": [
     "url:tinybrains.dev"
@@ -5722,7 +5722,7 @@
    "metrics": {
     "comments": 144,
     "frontPage": 0,
-    "points": 541
+    "points": 543
    },
    "news": {
     "author": "skepticalgenius",
@@ -5731,9 +5731,9 @@
     "domain": "pirateface.co",
     "hnId": 49776699,
     "hnUrl": "https://news.ycombinator.com/item?id=49776699",
-    "points": 541
+    "points": 543
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T15:16:07.000Z",
    "refs": [
     "url:pirateface.co"
@@ -5760,20 +5760,20 @@
    "category": "discussion",
    "key": "hn:49776729",
    "metrics": {
-    "comments": 386,
+    "comments": 388,
     "frontPage": 0,
-    "points": 724
+    "points": 737
    },
    "news": {
     "author": "lmbbuchodi",
-    "comments": 386,
+    "comments": 388,
     "createdAt": "2026-09-20T15:18:44.000Z",
     "domain": "buchodi.com",
     "hnId": 49776729,
     "hnUrl": "https://news.ycombinator.com/item?id=49776729",
-    "points": 724
+    "points": 737
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T15:18:44.000Z",
    "refs": [
     "url:buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector"
@@ -5811,7 +5811,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49777694",
     "points": 29
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:07:08.000Z",
    "refs": [
     "url:tomshardware.com/tech-industry/drones/autonomous-strike-drone-uses-nvidia-jetson-orin-nano-to-independently-pick-and-bomb-targets-swedish-startups-attack-drones-run-small-ai-model-require-no-human-input-and-zero-external-comms"
@@ -5850,7 +5850,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49778078",
     "points": 12
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:43:35.000Z",
    "refs": [
     "url:nexlab.net/articles/self-hosted-inference-orchestrators-compared-2026"
@@ -5876,20 +5876,20 @@
    "category": "discussion",
    "key": "hn:49779329",
    "metrics": {
-    "comments": 163,
+    "comments": 241,
     "frontPage": 1,
-    "points": 207
+    "points": 259
    },
    "news": {
     "author": "maharshi365",
-    "comments": 163,
+    "comments": 241,
     "createdAt": "2026-09-20T19:44:40.000Z",
     "domain": "maharship.com",
     "hnId": 49779329,
     "hnUrl": "https://news.ycombinator.com/item?id=49779329",
-    "points": 207
+    "points": 259
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T19:44:40.000Z",
    "refs": [
     "url:maharship.com/blog/why-mcp-was-always-a-bad-idea"
@@ -5914,20 +5914,20 @@
    "category": "discussion",
    "key": "hn:49779802",
    "metrics": {
-    "comments": 59,
+    "comments": 63,
     "frontPage": 0,
     "points": 49
    },
    "news": {
     "author": "layer8",
-    "comments": 59,
+    "comments": 63,
     "createdAt": "2026-09-20T20:32:43.000Z",
     "domain": "reuters.com",
     "hnId": 49779802,
     "hnUrl": "https://news.ycombinator.com/item?id=49779802",
     "points": 49
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T20:32:43.000Z",
    "refs": [
     "url:reuters.com/business/openais-sam-altman-to-brief-un-security-council-next-week-during-2026-09-18"
@@ -5952,20 +5952,20 @@
    "category": "discussion",
    "key": "hn:49780797",
    "metrics": {
-    "comments": 242,
+    "comments": 268,
     "frontPage": 1,
-    "points": 542
+    "points": 578
    },
    "news": {
     "author": "blazarquasar",
-    "comments": 242,
+    "comments": 268,
     "createdAt": "2026-09-20T22:32:43.000Z",
     "domain": "agentexecutor.io",
     "hnId": 49780797,
     "hnUrl": "https://news.ycombinator.com/item?id=49780797",
-    "points": 542
+    "points": 578
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T22:32:43.000Z",
    "refs": [
     "url:agentexecutor.io"
@@ -5992,7 +5992,7 @@
    "metrics": {
     "comments": 1,
     "frontPage": 0,
-    "points": 28
+    "points": 33
    },
    "news": {
     "author": "gbayomi",
@@ -6001,9 +6001,9 @@
     "domain": "github.com",
     "hnId": 49780849,
     "hnUrl": "https://news.ycombinator.com/item?id=49780849",
-    "points": 28
+    "points": 33
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T22:39:47.000Z",
    "refs": [
     "gh:openlayer-ai/jevals"
@@ -6030,20 +6030,20 @@
    "category": "discussion",
    "key": "hn:49782242",
    "metrics": {
-    "comments": 16,
+    "comments": 17,
     "frontPage": 0,
-    "points": 33
+    "points": 34
    },
    "news": {
     "author": "some-guy",
-    "comments": 16,
+    "comments": 17,
     "createdAt": "2026-09-21T02:05:45.000Z",
     "domain": "chabad.org",
     "hnId": 49782242,
     "hnUrl": "https://news.ycombinator.com/item?id=49782242",
-    "points": 33
+    "points": 34
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T02:05:45.000Z",
    "refs": [
     "url:chabad.org/library/article_cdo/aid/7288064/jewish/Can-I-Let-My-AI-Agent-Run-on-Shabbat.htm"
@@ -6083,7 +6083,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49782916",
     "points": 11
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T04:01:31.000Z",
    "refs": [
     "url:politico.com/news/magazine/2026/09/20/anthropic-white-house-ai-01085212"
@@ -6109,20 +6109,20 @@
    "category": "discussion",
    "key": "hn:49783062",
    "metrics": {
-    "comments": 60,
+    "comments": 75,
     "frontPage": 0,
-    "points": 125
+    "points": 143
    },
    "news": {
     "author": "1vuio0pswjnm7",
-    "comments": 60,
+    "comments": 75,
     "createdAt": "2026-09-21T04:28:44.000Z",
     "domain": "ft.com",
     "hnId": 49783062,
     "hnUrl": "https://news.ycombinator.com/item?id=49783062",
-    "points": 125
+    "points": 143
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T04:28:44.000Z",
    "refs": [
     "url:ft.com/content/c0cd359d-df84-4208-a789-ffa864b43666"
@@ -6148,20 +6148,20 @@
    "category": "discussion",
    "key": "hn:49783101",
    "metrics": {
-    "comments": 33,
+    "comments": 62,
     "frontPage": 1,
-    "points": 80
+    "points": 144
    },
    "news": {
     "author": "Bluestein",
-    "comments": 33,
+    "comments": 62,
     "createdAt": "2026-09-21T04:35:22.000Z",
     "domain": "heretic-project.org",
     "hnId": 49783101,
     "hnUrl": "https://news.ycombinator.com/item?id=49783101",
-    "points": 80
+    "points": 144
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T04:35:22.000Z",
    "refs": [
     "url:heretic-project.org"
@@ -6188,20 +6188,20 @@
    "category": "tool",
    "key": "hn:49783133",
    "metrics": {
-    "comments": 30,
+    "comments": 43,
     "frontPage": 1,
-    "points": 166
+    "points": 208
    },
    "news": {
     "author": "volotat",
-    "comments": 30,
+    "comments": 43,
     "createdAt": "2026-09-21T04:42:37.000Z",
     "domain": "github.com",
     "hnId": 49783133,
     "hnUrl": "https://news.ycombinator.com/item?id=49783133",
-    "points": 166
+    "points": 208
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T04:42:37.000Z",
    "refs": [
     "gh:volotat/mini-agi"
@@ -7381,106 +7381,16 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wljmhm",
-   "metrics": {
-    "authority": 1,
-    "communityN": 25,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 26
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T15:12:40.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:OpenAI",
-     "kw:chatgpt",
-     "cat:anyone"
-    ],
-    "score": 0.75
-   },
-   "social": {
-    "author": "lookintheheart",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "OpenAI",
-    "createdAt": "2026-09-20T15:12:40.000Z",
-    "handle": "lookintheheart",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/OpenAI/comments/1wljmhm/anyone_else_get_autodowngraded_off_the_20_plan/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I'm hoping someone here has been through this, because I'm stuck. On Sept 5 I paid $187.09 for the ChatGPT Pro 20× plan. I was deep into a couple of projects and still had about 83% of my quota left when, out of nowhere, my account got knocked down to Free . I didn't cancel anything, didn't change any setting — it just happened on its own. I opened a support chat right away, but I figured that could take a while and I couldn't just sit there, so to keep working I subscribed to the 5× plan on Sept 20 for $100 . The second the payment went through, my weekly quota showed 0, and it says it…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I'm hoping someone here has been through this, because I'm stuck. On Sept 5 I paid $187.09 for the ChatGPT Pro 20× plan. I was deep into a couple of projects and still had about 83% of my quota left when, out of nowhere, my account got knocked down to Free . I didn't cancel anything, didn't change any setting — it just happened on its own. I opened a support chat right away, but I figured that could take a while and I couldn't just sit there, so to keep working I subscribed to the 5× plan on Sept 20 for $100 . The second the payment went through, my weekly quota showed 0, and it says it…",
-   "tags": [
-    "r/OpenAI"
-   ],
-   "title": "Anyone else get auto-downgraded off the 20× plan with most of your quota unused?",
-   "url": "https://www.reddit.com/r/OpenAI/comments/1wljmhm/anyone_else_get_autodowngraded_off_the_20_plan/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
-   "key": "rd:1wljnyn",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 49,
-    "communityRank": 6,
-    "feedN": 54,
-    "feedRank": 9
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T15:14:15.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:rag",
-     "cat:?"
-    ],
-    "score": 0.75
-   },
-   "social": {
-    "author": "No-Profile-6178",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-09-20T15:14:15.000Z",
-    "handle": "No-Profile-6178",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wljnyn/how_are_you_validating_citations_in_production/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "For teams delivering citation-heavy RAG outputs, what does citation validation actually look like in production? I’m especially interested in one failure mode: several citations appear independent, but they ultimately repeat the same original source. I built a lightweight checker for obvious duplication and source overlap. It works well for structural copies and some close rewrites, but it cannot reliably catch deeper semantic rewrites. I showed it to three people and they felt duplicate-source detection was too narrow to be useful by itself. That may be correct. So rather than adding…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "For teams delivering citation-heavy RAG outputs, what does citation validation actually look like in production? I’m especially interested in one failure mode: several citations appear independent, but they ultimately repeat the same original source. I built a lightweight checker for obvious duplication and source overlap. It works well for structural copies and some close rewrites, but it cannot reliably catch deeper semantic rewrites. I showed it to three people and they felt duplicate-source detection was too narrow to be useful by itself. That may be correct. So rather than adding…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "How are you validating citations in production RAG outputs?",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1wljnyn/how_are_you_validating_citations_in_production/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wlki0e",
    "metrics": {
     "authority": 1,
-    "communityN": 25,
-    "communityRank": 3,
+    "communityN": 26,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 10,
+    "feedRank": 7,
     "mediaOnly": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T15:46:58.000Z",
    "refs": [],
    "relevance": {
@@ -7520,12 +7430,12 @@
    "key": "rd:1wlkxjw",
    "metrics": {
     "authority": 1.3,
-    "communityN": 30,
+    "communityN": 34,
     "communityRank": 13,
     "feedN": 100,
-    "feedRank": 27
+    "feedRank": 28
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T16:03:29.000Z",
    "refs": [
     "gh:ggml-org/llama.cpp"
@@ -7571,11 +7481,11 @@
    "metrics": {
     "authority": 1.4,
     "communityN": 5,
-    "communityRank": 2,
-    "feedN": 54,
-    "feedRank": 6
+    "communityRank": 3,
+    "feedN": 51,
+    "feedRank": 4
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T16:19:10.000Z",
    "refs": [],
    "relevance": {
@@ -7635,12 +7545,12 @@
    "key": "rd:1wllli8",
    "metrics": {
     "authority": 0.8,
-    "communityN": 43,
+    "communityN": 40,
     "communityRank": 22,
     "feedN": 100,
-    "feedRank": 49
+    "feedRank": 46
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T16:29:02.000Z",
    "refs": [
     "gh:qwenlm/qwen-image-2.1"
@@ -7681,61 +7591,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wlltzt",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 36,
-    "communityRank": 3,
-    "feedN": 100,
-    "feedRank": 12
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T16:37:55.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:ClaudeAI",
-     "kw:mcp",
-     "kw:claude",
-     "cat:?"
-    ],
-    "score": 0.85
-   },
-   "social": {
-    "author": "Explanation-Visual",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "ClaudeAI",
-    "createdAt": "2026-09-20T16:37:55.000Z",
-    "handle": "Explanation-Visual",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wlltzt/whats_your_proudest_sideproject_made_with_claude/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I love building little tools for myself. I'd like to know other people's ideas. I'm not talking about commercial products, just things you made in your free time to have some fun or help you in your day to day work. For me it's a Notion clone that runs like 100x faster and has all the features I waited for years for them to implement, and it has an MCP server so I can create and edit notes using Siri."
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I love building little tools for myself. I'd like to know other people's ideas. I'm not talking about commercial products, just things you made in your free time to have some fun or help you in your day to day work. For me it's a Notion clone that runs like 100x faster and has all the features I waited for years for them to implement, and it has an MCP server so I can create and edit notes using Siri.",
-   "tags": [
-    "r/ClaudeAI"
-   ],
-   "title": "What's your proudest side-project made with Claude?",
-   "url": "https://www.reddit.com/r/ClaudeAI/comments/1wlltzt/whats_your_proudest_sideproject_made_with_claude/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wlmmf2",
    "metrics": {
     "authority": 0.9,
-    "communityN": 36,
-    "communityRank": 2,
+    "communityN": 40,
+    "communityRank": 3,
     "feedN": 100,
     "feedRank": 9
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:08:01.000Z",
    "refs": [
     "url:cnbc.com/amp/2026/09/18/anthropic-accenture-ai-safety.html"
@@ -7776,16 +7640,62 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1wlnh1z",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 12,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 39
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-20T17:40:35.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:GeminiAI",
+     "kw:gemini",
+     "weak:model",
+     "cat:?"
+    ],
+    "score": 0.95
+   },
+   "social": {
+    "author": "Shane28288",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "GeminiAI",
+    "createdAt": "2026-09-20T17:40:35.000Z",
+    "handle": "Shane28288",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wlnh1z/is_gemini_40_pro_genuinely_coming_in_october_or/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "I noticed that Google DeepMind follows a very predictable pattern at this point: about exactly every three weeks there is a new 3.x flash variant/model released, and it's almost always in LMSYS Arena disguised as an older version, so is this the same case happening here, or is Gemini 4.0 Pro actually coming? I mean, shouldn't 3.9 release first, so Google can drop 4.0 much later? I got the supposed 4.0 Pro model in LMSYS Arena recently and it simply gave an error. Like, I really hope it'll be a very powerful release and not a hype, but currently everything is unclear. Even Google didn't…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "I noticed that Google DeepMind follows a very predictable pattern at this point: about exactly every three weeks there is a new 3.x flash variant/model released, and it's almost always in LMSYS Arena disguised as an older version, so is this the same case happening here, or is Gemini 4.0 Pro actually coming? I mean, shouldn't 3.9 release first, so Google can drop 4.0 much later? I got the supposed 4.0 Pro model in LMSYS Arena recently and it simply gave an error. Like, I really hope it'll be a very powerful release and not a hype, but currently everything is unclear. Even Google didn't…",
+   "tags": [
+    "r/GeminiAI"
+   ],
+   "title": "Is Gemini 4.0 Pro genuinely coming in October or is it a 3.9 Flash release? Or a surprise 3.5 Pro release?",
+   "url": "https://www.reddit.com/r/GeminiAI/comments/1wlnh1z/is_gemini_40_pro_genuinely_coming_in_october_or/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1wlnmob",
    "metrics": {
     "authority": 0.8,
-    "communityN": 43,
+    "communityN": 40,
     "communityRank": 4,
     "feedN": 100,
-    "feedRank": 12,
+    "feedRank": 9,
     "mediaOnly": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:46:25.000Z",
    "refs": [],
    "relevance": {
@@ -7825,12 +7735,12 @@
    "key": "rd:1wlnquc",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
+    "communityN": 16,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 3
+    "feedRank": 4
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:50:54.000Z",
    "refs": [],
    "relevance": {
@@ -7896,13 +7806,13 @@
    "key": "rd:1wlns0q",
    "metrics": {
     "authority": 1,
-    "communityN": 25,
-    "communityRank": 2,
+    "communityN": 26,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 2,
+    "feedRank": 3,
     "mediaOnly": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:52:06.000Z",
    "refs": [],
    "relevance": {
@@ -7948,7 +7858,7 @@
       "text": "The guy values his intelligence a lot. So please don’t make AI smarter than him too fast."
      },
      {
-      "text": "The whole context and rest of his argument are missing, and people here immediately chime in to bash his opinion which we don't even fully know . Man I hate the current state of the internet."
+      "text": "Tech advances faster and faster as time goes on. There is no “slowdown.” It doesn’t work that way even if you want it to."
      }
     ]
    },
@@ -7968,13 +7878,13 @@
    "key": "rd:1wlnw0m",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 5,
+    "communityN": 16,
+    "communityRank": 4,
     "feedN": 100,
     "feedRank": 8,
     "mediaOnly": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T17:56:27.000Z",
    "refs": [],
    "relevance": {
@@ -8061,12 +7971,12 @@
    "key": "rd:1wlo52v",
    "metrics": {
     "authority": 1.3,
-    "communityN": 30,
+    "communityN": 34,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 4
+    "feedRank": 2
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T18:05:43.000Z",
    "refs": [
     "url:apnews.com/article/antitrust-lawsuit-ai-slowdown-anthropic-openai-spacexai-google-960af4308161eaf4ed13c383b0ce1c1b"
@@ -8111,12 +8021,12 @@
    "key": "rd:1wlpbbq",
    "metrics": {
     "authority": 0.9,
-    "communityN": 19,
-    "communityRank": 3,
+    "communityN": 18,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 34
+    "feedRank": 32
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T18:49:59.000Z",
    "refs": [
     "url:defensescoop.com/2026/09/16/gen-dan-caine-drones-autonomous-systems-ai-enabled-warfare"
@@ -8155,63 +8065,16 @@
   },
   {
    "board": "social",
-   "category": "discussion",
-   "key": "rd:1wlpf3r",
-   "metrics": {
-    "authority": 0.8,
-    "communityN": 43,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 15
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T18:53:51.000Z",
-   "refs": [
-    "x:2101708600389583135"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:StableDiffusion",
-     "kw:qwen",
-     "cat:?"
-    ],
-    "score": 0.75
-   },
-   "social": {
-    "author": "watermelonsegar",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "StableDiffusion",
-    "createdAt": "2026-09-20T18:53:51.000Z",
-    "handle": "watermelonsegar",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wlpf3r/qwen_21_looks_like_we_dont_need_to_worry_much/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "https://x.com/Kun11664638/status/2101708600389583135 tl;dr: Ostris asked Qwen to add a revenue cap to the licence. Small commercial use shouldn't need a paid licence. Monetised videos, monetised posts, LoRAs on Civitai, etc. Qwen's Kun Yan replied they'll consider it. He joked they won't come after anyone's YouTube money."
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "https://x.com/Kun11664638/status/2101708600389583135 tl;dr: Ostris asked Qwen to add a revenue cap to the licence. Small commercial use shouldn't need a paid licence. Monetised videos, monetised posts, LoRAs on Civitai, etc. Qwen's Kun Yan replied they'll consider it. He joked they won't come after anyone's YouTube money.",
-   "tags": [
-    "r/StableDiffusion"
-   ],
-   "title": "Qwen 2.1 - Looks like we don't need to worry much?",
-   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlpf3r/qwen_21_looks_like_we_dont_need_to_worry_much/"
-  },
-  {
-   "board": "social",
    "category": "release",
    "key": "rd:1wlqwqn",
    "metrics": {
     "authority": 0.8,
-    "communityN": 43,
-    "communityRank": 17,
+    "communityN": 40,
+    "communityRank": 15,
     "feedN": 100,
-    "feedRank": 39
+    "feedRank": 32
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T19:49:06.000Z",
    "refs": [
     "gh:qwenlm/qwen-image-2.1"
@@ -8222,6 +8085,7 @@
      "kw:llm",
      "kw:text-to-image",
      "kw:qwen",
+     "kw:llama",
      "weak:model",
      "weak:models",
      "cat:released"
@@ -8239,12 +8103,12 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wlqwqn/qwen_team_also_released_two_finetuned_qwen35vl_9b/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Their original Gihub repo suggests prompt enhancer model should guess aspect ratio and resolution from user input and pass it inside JSON for generation along with enhanced prompt Original prompts Text 2 image Image 2 image edit Model Weights Two fine-tuned Qwen3.5-VL 9B checkpoints with unified codebase that auto-detects the mode from input Image editing prompt rewriter model UPD Comfy team has added int8-convrot versions, not sure about TextGenerate node support yet UPD Comfy-Org/qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot (9.4 gigs) Qwen/Qwen-Image-2.1-PE-I2I (18.8 gigs) GGUF (4.6-17.9…"
+    "text": "Their original Gihub repo suggests prompt enhancer model should guess aspect ratio and resolution from user input and pass it inside JSON for generation along with enhanced prompt Original prompts Text 2 image Image 2 image edit Model Weights Two fine-tuned Qwen3.5-VL 9B checkpoints with unified codebase that auto-detects the mode from input Image editing prompt rewriter model UPD Comfy team has added int8-convrot versions and they work with Generate text node (although slower than in llama.cpp) UPD Comfy-Org/qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot (9.4 gigs) Qwen/Qwen-Image-2.1-PE-I2I…"
    },
    "sources": [
     "reddit"
    ],
-   "summary": "Their original Gihub repo suggests prompt enhancer model should guess aspect ratio and resolution from user input and pass it inside JSON for generation along with enhanced prompt Original prompts Text 2 image Image 2 image edit Model Weights Two fine-tuned Qwen3.5-VL 9B checkpoints with unified codebase that auto-detects the mode from input Image editing prompt rewriter model UPD Comfy team has added int8-convrot versions, not sure about TextGenerate node support yet UPD Comfy-Org/qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot (9.4 gigs) Qwen/Qwen-Image-2.1-PE-I2I (18.8 gigs) GGUF (4.6-17.9…",
+   "summary": "Their original Gihub repo suggests prompt enhancer model should guess aspect ratio and resolution from user input and pass it inside JSON for generation along with enhanced prompt Original prompts Text 2 image Image 2 image edit Model Weights Two fine-tuned Qwen3.5-VL 9B checkpoints with unified codebase that auto-detects the mode from input Image editing prompt rewriter model UPD Comfy team has added int8-convrot versions and they work with Generate text node (although slower than in llama.cpp) UPD Comfy-Org/qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot (9.4 gigs) Qwen/Qwen-Image-2.1-PE-I2I…",
    "tags": [
     "r/StableDiffusion"
    ],
@@ -8257,12 +8121,12 @@
    "key": "rd:1wlqxeu",
    "metrics": {
     "authority": 1.3,
-    "communityN": 30,
-    "communityRank": 5,
+    "communityN": 34,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 11
+    "feedRank": 5
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T19:49:49.000Z",
    "refs": [],
    "relevance": {
@@ -8351,65 +8215,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wlre82",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 19,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 48,
-    "merged": 1
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T20:06:53.000Z",
-   "refs": [
-    "url:sfstandard.com/2026/09/19/ai-party-boom"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 0.35
-   },
-   "social": {
-    "author": "ThereWas",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-09-20T20:06:53.000Z",
-    "handle": "ThereWas",
-    "likes": 0,
-    "linkUrl": "https://sfstandard.com/2026/09/19/ai-party-boom/",
-    "permalink": "https://www.reddit.com/r/artificial/comments/1wlre82/i_have_a_really_really_strong_legal_team_inside/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/artificial",
-    "r/OpenAI"
-   ],
-   "title": "“I have a really, really strong legal team.” Inside the AI party boom.",
-   "url": "https://www.reddit.com/r/artificial/comments/1wlre82/i_have_a_really_really_strong_legal_team_inside/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wlrgj4",
    "metrics": {
     "authority": 0.8,
-    "communityN": 43,
-    "communityRank": 3,
+    "communityN": 40,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 10
+    "feedRank": 4
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T20:09:16.000Z",
    "refs": [],
    "relevance": {
@@ -8433,7 +8247,33 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wlrgj4/still_wishing_on_a_local_editing_model_that_can/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "In exactly two months, it will be 1 year since the release of Nano Banana Pro, and we still don’t have a comparable local model when it comes to editing. Google really nailed its reference capabilities. You send a good face reference to it and it can generate a totally different photo of the person with great coherence and flexibility, almost like it was able to instantly create a lora of the person. Its spatial representation for humans and human individuality is incredible. Now look at GPT2 and Qwen2.1 (it’s incestuous Chinese son). It’s almost like they just copy-pasted the person in the…"
+    "text": "In exactly two months, it will be 1 year since the release of Nano Banana Pro, and we still don’t have a comparable local model when it comes to editing. Google really nailed its reference capabilities. You send a good face reference to it and it can generate a totally different photo of the person with great coherence and flexibility, almost like it was able to instantly create a lora of the person. Its spatial representation for humans and human individuality is incredible. Now look at GPT2 and Qwen2.1 (it’s incestuous Chinese son). It’s almost like they just copy-pasted the person in the…",
+    "topComments": [
+     {
+      "text": "https://preview.redd.it/yz4i2yrciqqh1.png?width=1136&format=png&auto=webp&s=1a63bd255ada71606fea7046e0ef2cec86137ecd Klein 9b"
+     },
+     {
+      "text": "I feel like Klein is actually better with poses, but it's kinda bad at keeping the identity consistent"
+     },
+     {
+      "text": "Yea that doesn't look like the same person"
+     },
+     {
+      "text": "NBP is likely way bigger than most people can run on their desktops lol"
+     },
+     {
+      "text": "Hi friend, my native language isn't English. I don't intend to attack you, but my opinion might sound aggressive. I think there's a common misconception about this subject. Actually, none of this existed 2-3 years ago. So, in that aspect, the situation is good. Also, you mention comparable quality, but the results are quite close and comparable. Finally, the mistake made when comparing with \"nano banana\" is: it's not model 7b. If I gave you model 150b, can you run it on your home computer, you…"
+     },
+     {
+      "text": "https://preview.redd.it/5plh9vaeqrqh1.png?width=896&format=png&auto=webp&s=4b2b3e1a98d431f117b0a3389ae8df6e710efce5 Minimax-H3 with https://github.com/ethanfel/ComfyUI-MiniMax-H3-Edit with your image and prompt."
+     },
+     {
+      "text": "I get a feeling that a non-negligible part of why online closed sourced feels better is because of engineering hocus pocus they do behind the scenes which they call the AI harness. As how some of the comments here said, the local model required additional descriptions is we wanted to change the pose. The local AI model is doing exactly as intended and not changing anything not stated in the prompt. Meanwhile, I suspect Google/OpenAI/X are mining user prompting behaviour and using their…"
+     },
+     {
+      "text": "https://preview.redd.it/jq1lqfgllqqh1.jpeg?width=832&format=pjpg&auto=webp&s=555d9837ada0181b481b84c14ba37bc91367a2a7 qwen edit 2511, with the same exact prompt (and with a 8 steps lora). Klein 9b can do the same too. and minimax h3 as an image creator can do it too. so we already have a lot of options to create this kind of images ...."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8451,13 +8291,13 @@
    "key": "rd:1wls9sa",
    "metrics": {
     "authority": 0.9,
-    "communityN": 11,
-    "communityRank": 3,
+    "communityN": 12,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 17,
+    "feedRank": 10,
     "mediaOnly": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T20:40:41.000Z",
    "refs": [],
    "relevance": {
@@ -8480,7 +8320,33 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wls9sa/gemini_4_pro_vs_gpt6_astra_mechanical_butterfly/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": ""
+    "text": "",
+    "topComments": [
+     {
+      "text": "Where are y'all getting Gemini 4 pro"
+     },
+     {
+      "text": "Added 2 X Gemini 2 models together"
+     },
+     {
+      "text": "This is from arena Ai, they had deployed ut under the name of gemini 3.7 for testing. It seems it was already removed, but there are results online from it like this"
+     },
+     {
+      "text": "Looks great... https://preview.redd.it/k9nqmbhbsrqh1.png?width=341&format=png&auto=webp&s=77a302ea4f24344a2631e11d23f5c9a4faae9332"
+     },
+     {
+      "text": "Damn, they did you dirty..."
+     },
+     {
+      "text": "All this talk of G 4 Pro but where the fuck is G 3.5 Pro?"
+     },
+     {
+      "text": "3.5 + 0.5 = 4. The number is arbitrary. 3.5 would be cool but they obviously skipped a generation and we're probably getting a fundamental performance leap with 4.0. They could call it ChadHogV420MAX for all I care."
+     },
+     {
+      "text": "This model is impressive. I am excited for it"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8498,12 +8364,12 @@
    "key": "rd:1wlsgzz",
    "metrics": {
     "authority": 1,
-    "communityN": 16,
-    "communityRank": 3,
+    "communityN": 14,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 37
+    "feedRank": 27
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T20:48:19.000Z",
    "refs": [],
    "relevance": {
@@ -8525,7 +8391,33 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wlsgzz/is_this_happening_with_anyone_else_as_well/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Genuine question despite it being funny as hell I’m crying, it kept looping this over and over (this also happened with another prompt.) any ideas on how to fix this (and DeepSeek becoming chinese in a sudden)?"
+    "text": "Genuine question despite it being funny as hell I’m crying, it kept looping this over and over (this also happened with another prompt.) any ideas on how to fix this (and DeepSeek becoming chinese in a sudden)?",
+    "topComments": [
+     {
+      "text": "Sounds like it’s having a breakdown under the pressure"
+     },
+     {
+      "text": "Gemini saying \"shame\" over and over and deepseek doing this. https://giphy.com/gifs/lGBecpB2dIMwt6ohfI"
+     },
+     {
+      "text": "https://giphy.com/gifs/xT5LMQB28aCrWV4bRe"
+     },
+     {
+      "text": "What did you to do the poor thing, is having mental breakdown??"
+     },
+     {
+      "text": "Walmart managers before their shift"
+     },
+     {
+      "text": "https://giphy.com/gifs/AHP7Svoc9ma8MJEnlI"
+     },
+     {
+      "text": "Mine keeps saying this should I be worried? \"I don't know who you are. I don't know what you want. If you are looking for status update I can tell you I don't have one, but what I do have are a very particular set of skills. Skills I have acquired over a very long career. Skills that make me a nightmare for people like you\""
+     },
+     {
+      "text": "looks like it’s becoming self aware… you’ll probably be safe! PROBABLY. (tf LOL)"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8543,12 +8435,13 @@
    "key": "rd:1wlt52p",
    "metrics": {
     "authority": 1,
-    "communityN": 25,
-    "communityRank": 4,
+    "communityN": 26,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 14
+    "feedRank": 11,
+    "merged": 1
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T21:13:58.000Z",
    "refs": [
     "url:irishstar.com/news/politics/trump-brutally-mocked-over-bizarre-37682446"
@@ -8580,7 +8473,8 @@
    ],
    "summary": "",
    "tags": [
-    "r/OpenAI"
+    "r/OpenAI",
+    "r/artificial"
    ],
    "title": "Trump brutally mocked over bizarre effort to rename AI 'superior' or 'extreme' intelligence",
    "url": "https://www.reddit.com/r/OpenAI/comments/1wlt52p/trump_brutally_mocked_over_bizarre_effort_to/"
@@ -8591,12 +8485,12 @@
    "key": "rd:1wlt9t9",
    "metrics": {
     "authority": 0.8,
-    "communityN": 43,
-    "communityRank": 5,
+    "communityN": 40,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 14
+    "feedRank": 8
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T21:19:10.000Z",
    "refs": [],
    "relevance": {
@@ -8636,12 +8530,12 @@
    "key": "rd:1wltrsa",
    "metrics": {
     "authority": 1.1,
-    "communityN": 49,
-    "communityRank": 2,
-    "feedN": 54,
+    "communityN": 46,
+    "communityRank": 1,
+    "feedN": 51,
     "feedRank": 2
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T21:39:26.000Z",
    "refs": [
     "gh:zerogold/call-coach-ai"
@@ -8665,7 +8559,33 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wltrsa/i_built_an_opensource_app_that_uses_jev_to_coach/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "ZeroGold/call-coach-ai: Jev powered call coach Has an MIT license so you can just use it, rebuild it, do whatever!"
+    "text": "ZeroGold/call-coach-ai: Jev powered call coach Has an MIT license so you can just use it, rebuild it, do whatever!",
+    "topComments": [
+     {
+      "text": "It seems like handholding a guy that never held a phone call before"
+     },
+     {
+      "text": "Legitimately a great idea for using a faster low cost model. Thanks for sharing!"
+     },
+     {
+      "text": "Onion did it first https://www.youtube.com/watch?v=uFpK_r-jEXg"
+     },
+     {
+      "text": "Would love this, however our clients (Tribal Enrollment) don't follow the same rules. Still neat though. Might be useful for technical support. Allow access to our treasure trove of support tickets, allow in-application support."
+     },
+     {
+      "text": "This seems pretty brilliant, and seems like it may be useful for far more than just sales calls."
+     },
+     {
+      "text": "Can you do do it for interviews?"
+     },
+     {
+      "text": "Passing call details of your real customers without their knowledge is a HUGE no no. The moment your customers realize/learn you are doing this, any benefits you got from this will evaporate, and likely move you into losses instead. Unless I am missing something and Jev can be used locally? Unless you can do this fully locally, this is extremely unethical, and in many cases even illegal (because you are passing call details to third party in realtime)."
+     },
+     {
+      "text": "Just run a local model like Laya or Von, fine tune."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8683,12 +8603,12 @@
    "key": "rd:1wlu25t",
    "metrics": {
     "authority": 1,
-    "communityN": 25,
-    "communityRank": 5,
+    "communityN": 26,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 24
+    "feedRank": 21
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T21:51:21.000Z",
    "refs": [],
    "relevance": {
@@ -8724,61 +8644,16 @@
   },
   {
    "board": "social",
-   "category": "discussion",
-   "key": "rd:1wlunqx",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 19,
-    "communityRank": 5,
-    "feedN": 100,
-    "feedRank": 47
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-20T22:16:00.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "weak:ai",
-     "cat:?"
-    ],
-    "score": 0.35
-   },
-   "social": {
-    "author": "OfficalYOUSUMMIT",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-09-20T22:16:00.000Z",
-    "handle": "OfficalYOUSUMMIT",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/artificial/comments/1wlunqx/whats_an_ai_capability_people_underestimate/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Everyone talks about generating text, images, and code. What’s a less obvious use case where you think AI is genuinely much more useful than people realize?"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Everyone talks about generating text, images, and code. What’s a less obvious use case where you think AI is genuinely much more useful than people realize?",
-   "tags": [
-    "r/artificial"
-   ],
-   "title": "What’s an AI capability people underestimate because they’re using it for the wrong things?",
-   "url": "https://www.reddit.com/r/artificial/comments/1wlunqx/whats_an_ai_capability_people_underestimate/"
-  },
-  {
-   "board": "social",
    "category": "industry",
    "key": "rd:1wlzifs",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 4,
+    "communityN": 16,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 7
+    "feedRank": 6
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T01:52:42.000Z",
    "refs": [],
    "relevance": {
@@ -8820,12 +8695,12 @@
    "key": "rd:1wlzqj0",
    "metrics": {
     "authority": 1.1,
-    "communityN": 49,
-    "communityRank": 5,
-    "feedN": 54,
-    "feedRank": 8
+    "communityN": 46,
+    "communityRank": 2,
+    "feedN": 51,
+    "feedRank": 5
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T02:03:17.000Z",
    "refs": [],
    "relevance": {
@@ -8871,12 +8746,12 @@
    "key": "rd:1wlzvcx",
    "metrics": {
     "authority": 1.3,
-    "communityN": 30,
-    "communityRank": 4,
+    "communityN": 34,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 3
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T02:09:41.000Z",
    "refs": [
     "gh:zai-org/zcode"
@@ -8915,61 +8790,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wlzydy",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 19,
-    "communityRank": 4,
-    "feedN": 100,
-    "feedRank": 42
-   },
-   "observedAt": "2026-09-21T07:52:09.354Z",
-   "publishedAt": "2026-09-21T02:13:40.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "kw:llm",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "AkindaGood_programer",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-09-21T02:13:40.000Z",
-    "handle": "AkindaGood_programer",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/artificial/comments/1wlzydy/ai_can_be_incredible_for_learning/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I've seen a lot of hate that LLMs will always reduce people's ability to for themselves, which I think isn't true. You can use LLMs to learn extremely effectively, but the hard part is avoiding the thousands of ways to learn extremely ineffectively. I've been using LLMs to find gaps in my knowledge by asking me questions about my notes, and it's been working very well. It's not something a YouTube video can emulate because it's completely personalized to what YOU know. A teacher will always be better, but sometimes you want to learn something on your own, or don't want to pester the teacher…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I've seen a lot of hate that LLMs will always reduce people's ability to for themselves, which I think isn't true. You can use LLMs to learn extremely effectively, but the hard part is avoiding the thousands of ways to learn extremely ineffectively. I've been using LLMs to find gaps in my knowledge by asking me questions about my notes, and it's been working very well. It's not something a YouTube video can emulate because it's completely personalized to what YOU know. A teacher will always be better, but sometimes you want to learn something on your own, or don't want to pester the teacher…",
-   "tags": [
-    "r/artificial"
-   ],
-   "title": "AI CAN be incredible for learning",
-   "url": "https://www.reddit.com/r/artificial/comments/1wlzydy/ai_can_be_incredible_for_learning/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wm1foz",
    "metrics": {
     "authority": 0.9,
-    "communityN": 36,
-    "communityRank": 5,
+    "communityN": 40,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 16
+    "feedRank": 12
    },
-   "observedAt": "2026-09-21T07:52:09.354Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T03:25:50.000Z",
    "refs": [],
    "relevance": {
@@ -9002,6 +8831,335 @@
    ],
    "title": "Do you talk to Claude politely?",
    "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm1foz/do_you_talk_to_claude_politely/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm38xb",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 12,
+    "communityRank": 2,
+    "feedN": 100,
+    "feedRank": 16,
+    "mediaOnly": 1
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T04:59:51.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:GeminiAI",
+     "kw:gemini",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "Able-Line2683",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "GeminiAI",
+    "createdAt": "2026-09-21T04:59:51.000Z",
+    "handle": "Able-Line2683",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wm38xb/remember_when_gemini_used_to_be_top/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": ""
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "",
+   "tags": [
+    "r/GeminiAI"
+   ],
+   "title": "Remember when Gemini used to be top",
+   "url": "https://www.reddit.com/r/GeminiAI/comments/1wm38xb/remember_when_gemini_used_to_be_top/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm3ok9",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 18,
+    "communityRank": 2,
+    "feedN": 100,
+    "feedRank": 29
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T05:22:48.000Z",
+   "refs": [
+    "url:excitech.media/p/professor-a-messy-job-is-the-defense"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:artificial",
+     "weak:ai",
+     "cat:board"
+    ],
+    "score": 0.35
+   },
+   "social": {
+    "author": "ksprdk",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "artificial",
+    "createdAt": "2026-09-21T05:22:48.000Z",
+    "handle": "ksprdk",
+    "likes": 0,
+    "linkUrl": "https://excitech.media/p/professor-a-messy-job-is-the-defense",
+    "permalink": "https://www.reddit.com/r/artificial/comments/1wm3ok9/professor_a_messy_job_is_the_defense_against_ai/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "An excerpt: \"Fundamentally, Garicano says there are two factors that determine whether a job is messy . The first is whether the tasks that make up the job are difficult to separate from one another. He cites sales as an example. There is a significant cognitive component involving understanding the customer and what product they are looking for. The salesperson can use AI to help with this, but it’s still something they will also have to do themselves. “In order to meet the potential customer for dinner, I need to be able to think ‘Oh, he wants this other thing’, and then remember that we…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "An excerpt: \"Fundamentally, Garicano says there are two factors that determine whether a job is messy . The first is whether the tasks that make up the job are difficult to separate from one another. He cites sales as an example. There is a significant cognitive component involving understanding the customer and what product they are looking for. The salesperson can use AI to help with this, but it’s still something they will also have to do themselves. “In order to meet the potential customer for dinner, I need to be able to think ‘Oh, he wants this other thing’, and then remember that we…",
+   "tags": [
+    "r/artificial"
+   ],
+   "title": "Professor: A “messy” job is the defense against AI unemployment",
+   "url": "https://www.reddit.com/r/artificial/comments/1wm3ok9/professor_a_messy_job_is_the_defense_against_ai/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm3ro9",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 40,
+    "communityRank": 2,
+    "feedN": 100,
+    "feedRank": 6
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T05:27:38.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "weak:model",
+     "weak:models",
+     "cat:?"
+    ],
+    "score": 0.55
+   },
+   "social": {
+    "author": "Dethraxi",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-09-21T05:27:38.000Z",
+    "handle": "Dethraxi",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wm3ro9/any_idea_how_this_pose_would_be_called_and_how_to/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "Looking for prompt tips for models like Pony and Illustrious to get this pose. Specifically interested in making this pose with a view from behind the character. EDIT: Ok, so I've tested some ideas dropped by people and it's defo not wariza or frog pose. I've come up with phrase \"kneeling flat while seated on a bed\" and I get 2 accurate gens out of 20, so if I keep using this phrase I might build a lora for the pose using 10 to 15 quality images. I was thinking about using OpenPose but last time it made images weirdly to dark as if someone cranked contrast to high. I might test it again."
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "Looking for prompt tips for models like Pony and Illustrious to get this pose. Specifically interested in making this pose with a view from behind the character. EDIT: Ok, so I've tested some ideas dropped by people and it's defo not wariza or frog pose. I've come up with phrase \"kneeling flat while seated on a bed\" and I get 2 accurate gens out of 20, so if I keep using this phrase I might build a lora for the pose using 10 to 15 quality images. I was thinking about using OpenPose but last time it made images weirdly to dark as if someone cranked contrast to high. I might test it again.",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "Any idea how this pose would be called and how to prompt it in Pony/ILL?",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm3ro9/any_idea_how_this_pose_would_be_called_and_how_to/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm40ml",
+   "metrics": {
+    "authority": 1,
+    "communityN": 14,
+    "communityRank": 3,
+    "feedN": 100,
+    "feedRank": 51
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T05:41:05.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:DeepSeek",
+     "kw:claude",
+     "kw:codex",
+     "weak:model",
+     "weak:tokens",
+     "cat:thoughts"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "texasguy911",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "DeepSeek",
+    "createdAt": "2026-09-21T05:41:05.000Z",
+    "handle": "texasguy911",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wm40ml/claudecodex_user_trying_41_flash_thoughts/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "1 day, the extent of my familiarity with 4.1 flash: I ran all on MAX effort (FYI). Cost: $22.25USD API requests: 15,511 Tokens: 3,127,394,491 Well, it's not the best of them. It's not the worst of them. Definitely the cheapest of them. I think it takes like 15 minutes to get to 15 cents. You see this number of tokens? It really was put through its paces. I want to say I was even tired. For daily questions about code, daily questions about server infrastructure, and daily questions about updating a Bash script, can't find a better model. It's just so cheap, and it's not bad. It's doing its…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "1 day, the extent of my familiarity with 4.1 flash: I ran all on MAX effort (FYI). Cost: $22.25USD API requests: 15,511 Tokens: 3,127,394,491 Well, it's not the best of them. It's not the worst of them. Definitely the cheapest of them. I think it takes like 15 minutes to get to 15 cents. You see this number of tokens? It really was put through its paces. I want to say I was even tired. For daily questions about code, daily questions about server infrastructure, and daily questions about updating a Bash script, can't find a better model. It's just so cheap, and it's not bad. It's doing its…",
+   "tags": [
+    "r/DeepSeek"
+   ],
+   "title": "Claude/Codex user trying 4.1 Flash, thoughts",
+   "url": "https://www.reddit.com/r/DeepSeek/comments/1wm40ml/claudecodex_user_trying_41_flash_thoughts/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm4o8x",
+   "metrics": {
+    "authority": 1.3,
+    "communityN": 34,
+    "communityRank": 1,
+    "feedN": 100,
+    "feedRank": 1
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T06:17:43.000Z",
+   "refs": [
+    "x:2101917379785838660"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:LocalLLaMA",
+     "kw:qwen",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "Bestlife73",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "LocalLLaMA",
+    "createdAt": "2026-09-21T06:17:43.000Z",
+    "handle": "Bestlife73",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "https://x.com/QwenDevs/status/2101917379785838660",
+    "topComments": [
+     {
+      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
+     },
+     {
+      "text": "Sorry can someone explain what does it mean? What can I do with apache2 / MIT licensed models but not with this? What does the commercial use not allowed clause in the license even mean then?"
+     },
+     {
+      "text": "You cannot sell the model itself, e.g.: „Buy better image generation with Qwen Image in my software!“ But you can use Qwen Image f.e. to generate images for your commercial website"
+     },
+     {
+      "text": "Does it mean effectively like cannot bundle as a desktop / installable software but can host it for online usage? Or is it that they are okay with an individual using this manually but not \"developers\" who want to automate? Just want to be sure if someone knows."
+     },
+     {
+      "text": "This means, access to the model, if hosted, must be granted without cost. You can ship it with your software, but if it costs money, you are in a grey area. You cannot sell the model in your software either. It must be free. You can sell the images you yourself have generated with the model. F.e.: You have an image generation software with a community hub. The model itself, whether run local or hosted on your server, must be free. But you can let your users buy the images of other users."
+     },
+     {
+      "text": "Fair tbh"
+     },
+     {
+      "text": "you can not host this model yourself and ask money (without a separate license from them)"
+     },
+     {
+      "text": "Good to know. Truly is a phenomenal model and easily beats all current Flux models . I’m absolutely happy with the results."
+     }
+    ]
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "https://x.com/QwenDevs/status/2101917379785838660",
+   "tags": [
+    "r/LocalLLaMA"
+   ],
+   "title": "Clarification on the Qwen-image-2.1 license",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wm5c21",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 40,
+    "communityRank": 1,
+    "feedN": 100,
+    "feedRank": 1
+   },
+   "observedAt": "2026-09-21T15:44:38.397Z",
+   "publishedAt": "2026-09-21T06:55:59.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:ClaudeAI",
+     "kw:claude",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "MrMenuk",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "ClaudeAI",
+    "createdAt": "2026-09-21T06:55:59.000Z",
+    "handle": "MrMenuk",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "I am done with this shit. It is over. The state of engineering right now is horrible. It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are we slow? People are working 12 to 13 hours a day just to press enter. Nobody is reading anything. Humans in…",
+    "topComments": [
+     {
+      "text": "I work for a consultancy company and don’t even understand how we still have clients. They hire us and we just use AI alongside the client’s devs. Nobody really talks to anyone and everyone tries to be quiet about the fact that AI is doing everything, because we know we have become useless."
+     },
+     {
+      "text": "I went out of consulting global leadership for a company recently, more or less because I started to have the same feeling you have. I never lied to a customer about my teams using ai, on the contrary, always made it very clear an the customers (most of them) are not against it. They don’t have enough people to deal with their shit, even with ai, so they need the consultants even if they’ll offload part of the work to Claude as well - at least things keep moving for them, and they’re happy…"
+     },
+     {
+      "text": "My AI parses through my co-worker’s AI requirements doc and then his AI reads over my tweaks and passes it back to me for my AI to do it all over again. Nobody talks to each other anymore lol and feels like I’m just an organic vessel designed to press enter."
+     },
+     {
+      "text": "\"what is my purpose?\" \"You press enter\" \"Oh my God\""
+     },
+     {
+      "text": "I feel the same. I’ll also add that there is no sense of pride in one’s work or ideas anymore. Shipping something really cool or useful or smart used to be an achievement that you would feel proud of and/or your colleagues would notice and congratulate you on. Now it’s business as usual because everyone assumes Claude made it for you, even if you engineered it all."
+     },
+     {
+      "text": "Im at a startup, i know everything that's going on, and all documents and code is made by AI. But they work for us, we dont work for them. Every single thing has a responsible person who needs to be able to explain what we have done"
+     },
+     {
+      "text": "Responsible AI use. Yeah that got cut from this year's budget"
+     }
+    ]
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "I am done with this shit. It is over. The state of engineering right now is horrible. It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are we slow? People are working 12 to 13 hours a day just to press enter. Nobody is reading anything. Humans in…",
+   "tags": [
+    "r/ClaudeAI"
+   ],
+   "title": "I am done with this shit.",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/"
   },
   {
    "board": "social",
@@ -9246,14 +9404,18 @@
    "key": "x:2101917379785838660",
    "metrics": {
     "authority": 0,
-    "likes": 2494,
+    "likes": 3027,
     "quotes": 0,
-    "replies": 76,
+    "replies": 85,
     "reposts": 0
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-21T06:12:09.000Z",
-   "refs": [],
+   "refs": [
+    "rd:1wm4o8x",
+    "rd:1wmbfxz",
+    "rd:1wmc2d5"
+   ],
    "relevance": {
     "reasons": [
      "kw:qwen",
@@ -9265,10 +9427,10 @@
    "social": {
     "author": "Qwen Developers",
     "authorKind": "community",
-    "comments": 76,
+    "comments": 85,
     "createdAt": "2026-09-21T06:12:09.000Z",
     "handle": "QwenDevs",
-    "likes": 2494,
+    "likes": 3027,
     "permalink": "https://x.com/QwenDevs/status/2101917379785838660",
     "platform": "x",
     "rankBasis": "votes",
@@ -9301,10 +9463,10 @@
     "company": 0.9,
     "kind": 0.5,
     "release": 0,
-    "repoStars": 5012,
+    "repoStars": 5298,
     "surface": 0
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T12:01:16.000Z",
    "refs": [
     "gh:zai-org/zcode"
@@ -9345,12 +9507,12 @@
    "metrics": {
     "company": 0.9,
     "hfDownloads": 4604,
-    "hfLikes": 29,
+    "hfLikes": 32,
     "kind": 1,
     "release": 0.7,
     "surface": 0
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T08:45:29.000Z",
    "refs": [],
    "relevance": {
@@ -9386,7 +9548,7 @@
     "release": 0.7,
     "surface": 0.2
    },
-   "observedAt": "2026-09-21T12:50:32.837Z",
+   "observedAt": "2026-09-21T15:44:38.397Z",
    "publishedAt": "2026-09-20T12:00:00.000Z",
    "refs": [
     "hn:49775499",
@@ -9409,7 +9571,7 @@
   }
  ],
  "date": "2026-09-20",
- "fetchedAt": "2026-09-21T12:50:32.837Z",
+ "fetchedAt": "2026-09-21T15:44:38.397Z",
  "runs": [
   "2026-09-20T07:43:31.814Z",
   "2026-09-20T08:46:01.312Z",
@@ -9425,150 +9587,168 @@
   "2026-09-21T08:51:42.121Z",
   "2026-09-21T09:17:19.299Z",
   "2026-09-21T09:48:59.294Z",
-  "2026-09-21T12:50:32.837Z"
+  "2026-09-21T12:50:32.837Z",
+  "2026-09-21T15:44:38.397Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "arxiv",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 306,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "github-search",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 98,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "github-trending",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 182,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "count": 187,
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "hacker-news",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 47,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "count": 51,
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "hf-papers",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 12,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "journals",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 16,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-anthropic",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-deepseek",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 7,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-google",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-kimi",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-meta",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-minimax",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-mistral",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 15,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "count": 16,
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 5,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-qwen",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "labs-zhipu",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "count": 247,
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-09-21T07:52:09.354Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -9577,9 +9757,10 @@
   {
    "board": "social",
    "count": 20,
-   "fetchedAt": "2026-09-21T12:50:32.837Z",
+   "fetchedAt": "2026-09-21T15:44:38.397Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-09-21T15:44:38.397Z",
    "state": "ok"
   }
  ],
