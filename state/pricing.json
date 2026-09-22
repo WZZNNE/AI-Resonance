@@ -7842,7 +7842,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.018621,
+   "cr": 0.021287,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7850,11 +7850,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.558624,
+   "in": 0.638616,
    "k": "deepseek-pro-latest",
    "maxOut": 384000,
    "name": "DeepSeek Pro Latest",
-   "out": 1.675872,
+   "out": 1.915848,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7874,7 +7874,7 @@
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.8,
+   "out": 1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8074,7 +8074,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.02,
+   "cr": 0.015,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8084,7 +8084,7 @@
    "id": "~z-ai/glm-flash-latest",
    "in": 0.075,
    "k": "glm-flash-latest",
-   "maxOut": 102400,
+   "maxOut": 943718,
    "name": "GLM Flash Latest",
    "out": 0.25,
    "p": "openrouter",
@@ -8093,7 +8093,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.14534,
+   "cr": 0.107525,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8101,11 +8101,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.7826,
+   "in": 0.6545,
    "k": "glm-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "GLM Latest",
-   "out": 2.4596,
+   "out": 2.057,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10556,6 +10556,25 @@
    "upd": "2025-07-07"
   },
   {
+   "cr": 0.0025,
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
+   "id": "nex-agi/nex-n2.5-mini",
+   "in": 0.025,
+   "k": "nex-n2-5-mini",
+   "maxOut": 235929,
+   "name": "Nex-N2.5-Mini",
+   "out": 0.1,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-08"
+  },
+  {
    "ctx": 262144,
    "efforts": [
     "none",
@@ -10568,6 +10587,25 @@
    "maxOut": 235929,
    "name": "Nex-N2.5-Mini (free)",
    "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-08"
+  },
+  {
+   "cr": 0.015,
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
+   "id": "nex-agi/nex-n2.5-pro",
+   "in": 0.075,
+   "k": "nex-n2-5-pro",
+   "maxOut": 235929,
+   "name": "Nex-N2.5-Pro",
+   "out": 0.25,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12312,7 +12350,7 @@
    "id": "qwen/qwen3-next-80b-a3b-thinking",
    "in": 0.15,
    "k": "qwen3-next-80b-a3b-thinking",
-   "maxOut": 32768,
+   "maxOut": 235929,
    "name": "Qwen3-Next 80B-A3B (Thinking)",
    "out": 1.2,
    "p": "openrouter",
@@ -16437,6 +16475,51 @@
    "upd": "2026-06-09"
   },
   {
+   "cr": 0.0028,
+   "ctx": 1048576,
+   "id": "mimo-v2.6-flash",
+   "in": 0.14,
+   "k": "mimo-v2-6-flash",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Flash",
+   "out": 0.28,
+   "p": "xiaomi",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.0036,
+   "ctx": 1048576,
+   "id": "mimo-v2.6-pro",
+   "in": 0.435,
+   "k": "mimo-v2-6-pro",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Pro",
+   "out": 0.87,
+   "p": "xiaomi",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.036,
+   "ctx": 1048576,
+   "id": "mimo-v2.6-pro-ultraspeed",
+   "in": 4.35,
+   "k": "mimo-v2-6-pro-ultraspeed",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Pro-UltraSpeed",
+   "out": 8.7,
+   "p": "xiaomi",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-21"
+  },
+  {
    "cr": 0.11,
    "ctx": 131072,
    "cw": 0,
@@ -17318,5 +17401,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-22T03:48:38.082Z"
+ "updatedAt": "2026-09-22T06:57:25.525Z"
 }
