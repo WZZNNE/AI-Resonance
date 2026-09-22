@@ -2351,6 +2351,28 @@
    "upd": "2026-07-24"
   },
   {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "claude-opus-5-5",
+   "in": 4,
+   "k": "claude-opus-5-5",
+   "maxOut": 128000,
+   "name": "Claude Opus 5.5",
+   "out": 20,
+   "p": "anthropic",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
    "budget": {
     "min": 1024
    },
@@ -3568,46 +3590,6 @@
    "k": "deepseek-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.6,
-   "p": "deepseek",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-09-10"
-  },
-  {
-   "cr": 0.003,
-   "ctx": 1000000,
-   "efforts": [
-    "low",
-    "high",
-    "max"
-   ],
-   "id": "deepseek-v4-flash",
-   "in": 0.15,
-   "k": "deepseek-v4-flash",
-   "maxOut": 384000,
-   "name": "DeepSeek V4 Flash",
-   "out": 0.6,
-   "p": "deepseek",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-09-10"
-  },
-  {
-   "cr": 0.003,
-   "ctx": 1000000,
-   "efforts": [
-    "low",
-    "high",
-    "max"
-   ],
-   "id": "deepseek-v4-flash-vision-exp",
-   "in": 0.15,
-   "k": "deepseek-v4-flash-vision-exp",
-   "maxOut": 384000,
-   "name": "DeepSeek V4 Flash Vision Exp",
    "out": 0.6,
    "p": "deepseek",
    "reasoning": true,
@@ -7776,9 +7758,9 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.5,
+   "cr": 0.2,
    "ctx": 1000000,
-   "cw": 6.25,
+   "cw": 5,
    "efforts": [
     "low",
     "medium",
@@ -7787,15 +7769,14 @@
     "max"
    ],
    "id": "~anthropic/claude-opus-latest",
-   "in": 5,
+   "in": 4,
    "k": "claude-opus-latest",
    "maxOut": 128000,
    "name": "Claude Opus Latest",
-   "out": 25,
+   "out": 20,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-21"
   },
   {
@@ -7842,7 +7823,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.019052,
+   "cr": 0.017304,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7850,11 +7831,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.57156,
+   "in": 0.54384,
    "k": "deepseek-pro-latest",
-   "maxOut": 384000,
+   "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 1.71468,
+   "out": 1.63152,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7964,9 +7945,9 @@
    "upd": "2026-09-11"
   },
   {
-   "cr": 0.02,
+   "cr": 0.01,
    "ctx": 1050000,
-   "cw": 0.25,
+   "cw": 0.125,
    "efforts": [
     "none",
     "low",
@@ -7976,11 +7957,11 @@
     "max"
    ],
    "id": "~openai/gpt-luna-latest",
-   "in": 0.2,
+   "in": 0.1,
    "k": "gpt-luna-latest",
    "maxOut": 128000,
    "name": "GPT Luna Latest",
-   "out": 1.2,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8447,6 +8428,28 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-07-24"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "anthropic/claude-opus-5.5",
+   "in": 4,
+   "k": "claude-opus-5-5",
+   "maxOut": 128000,
+   "name": "Claude Opus 5.5",
+   "out": 20,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
   },
   {
    "cr": 0.3,
@@ -8936,18 +8939,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.078025,
+   "cr": 0.075342,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.936294,
+   "in": 0.904104,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.872588,
+   "out": 1.808208,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11625,6 +11628,98 @@
    "upd": "2026-09-04"
   },
   {
+   "cr": 0.01,
+   "ctx": 1050000,
+   "cw": 0.125,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6-luna",
+   "in": 0.1,
+   "k": "gpt-6-luna",
+   "maxOut": 128000,
+   "name": "GPT-6 Luna",
+   "out": 0.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.01,
+   "ctx": 1050000,
+   "cw": 0.125,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6-luna-pro",
+   "in": 0.1,
+   "k": "gpt-6-luna-pro",
+   "maxOut": 128000,
+   "name": "GPT-6 Luna Pro",
+   "out": 0.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6-sol",
+   "in": 2,
+   "k": "gpt-6-sol",
+   "maxOut": 128000,
+   "name": "GPT-6 Sol",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6-sol-pro",
+   "in": 2,
+   "k": "gpt-6-sol-pro",
+   "maxOut": 128000,
+   "name": "GPT-6 Sol Pro",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
    "ctx": 128000,
    "id": "openai/gpt-audio",
    "in": 2.5,
@@ -12553,14 +12648,14 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.03,
+   "cr": 0.15,
    "ctx": 262144,
    "id": "qwen/qwen3.6-27b",
-   "in": 0.3,
+   "in": 0.32,
    "k": "qwen3-6-27b",
-   "maxOut": 65536,
+   "maxOut": 262140,
    "name": "Qwen3.6 27B",
-   "out": 2,
+   "out": 2.7,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13027,7 +13122,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13035,11 +13130,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17386,5 +17481,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-22T15:44:04.651Z"
+ "updatedAt": "2026-09-22T18:47:45.342Z"
 }
