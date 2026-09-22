@@ -1718,17 +1718,21 @@
    "upd": "2026-09-11"
   },
   {
+   "budget": {
+    "max": 81920
+   },
    "ctx": 262144,
    "id": "qwen3-max",
-   "in": 1.291,
+   "in": 0.359,
    "k": "qwen3-max",
    "maxOut": 65536,
    "name": "Qwen3 Max",
-   "out": 7.749,
+   "out": 1.434,
    "p": "alibaba-cn",
-   "reasoning": false,
+   "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-09-11"
+   "toggle": true,
+   "upd": "2026-09-22"
   },
   {
    "ctx": 131072,
@@ -1848,16 +1852,16 @@
    },
    "ctx": 1000000,
    "id": "qwen3.5-flash",
-   "in": 0.172,
+   "in": 0.029,
    "k": "qwen3-5-flash",
    "maxOut": 65536,
    "name": "Qwen3.5 Flash",
-   "out": 1.033,
+   "out": 0.287,
    "p": "alibaba-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-09-11"
+   "upd": "2026-09-22"
   },
   {
    "budget": {
@@ -1865,16 +1869,16 @@
    },
    "ctx": 1000000,
    "id": "qwen3.5-plus",
-   "in": 0.287,
+   "in": 0.115,
    "k": "qwen3-5-plus",
    "maxOut": 65536,
    "name": "Qwen3.5 Plus",
-   "out": 1.722,
+   "out": 0.688,
    "p": "alibaba-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-09-11"
+   "upd": "2026-09-22"
   },
   {
    "budget": {
@@ -7858,7 +7862,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.012,
+   "cr": 0.008,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -7870,7 +7874,7 @@
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1,
+   "out": 0.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8089,7 +8093,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.15678,
+   "cr": 0.14534,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8097,11 +8101,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.7839,
+   "in": 0.7826,
    "k": "glm-latest",
-   "maxOut": 235929,
+   "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.6532,
+   "out": 2.4596,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8951,7 +8955,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8959,11 +8963,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8971,7 +8975,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.003,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8979,11 +8983,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.15,
+   "in": 0.3,
    "k": "deepseek-v4-1-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.6,
+   "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13658,7 +13662,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.1456,
+   "cr": 0.156,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -13666,11 +13670,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.784,
+   "in": 0.84,
    "k": "glm-5-3",
    "maxOut": 131072,
    "name": "GLM-5.3",
-   "out": 2.464,
+   "out": 2.64,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17314,5 +17318,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-22T01:10:26.758Z"
+ "updatedAt": "2026-09-22T03:48:38.082Z"
 }
