@@ -7662,6 +7662,52 @@
    "upd": "2026-09-04"
   },
   {
+   "cr": 0.01,
+   "ctx": 1050000,
+   "cw": 0.125,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6-luna",
+   "in": 0.1,
+   "k": "gpt-6-luna",
+   "maxOut": 128000,
+   "name": "GPT-6 Luna",
+   "out": 0.5,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6-sol",
+   "in": 2,
+   "k": "gpt-6-sol",
+   "maxOut": 128000,
+   "name": "GPT-6 Sol",
+   "out": 10,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
    "cr": 0.4,
    "ctx": 128000,
    "efforts": [
@@ -7823,7 +7869,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.017304,
+   "cr": 0.012726,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7831,11 +7877,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.54384,
+   "in": 0.39996,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 1.63152,
+   "out": 1.19988,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7855,7 +7901,7 @@
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1,
+   "out": 0.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7903,7 +7949,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.15,
+   "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7911,11 +7957,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 1.5,
+   "in": 1.4,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 7.5,
+   "out": 13,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8095,7 +8141,7 @@
   {
    "alwaysOn": true,
    "cr": 0.2,
-   "ctx": 1048576,
+   "ctx": 131072,
    "id": "aion-labs/aion-2.0",
    "in": 0.8,
    "k": "aion-2-0",
@@ -8110,7 +8156,7 @@
   {
    "alwaysOn": true,
    "cr": 0.75,
-   "ctx": 1048576,
+   "ctx": 131072,
    "id": "aion-labs/aion-3.0",
    "in": 3,
    "k": "aion-3-0",
@@ -8125,7 +8171,7 @@
   {
    "alwaysOn": true,
    "cr": 0.18,
-   "ctx": 1048576,
+   "ctx": 131072,
    "id": "aion-labs/aion-3.0-mini",
    "in": 0.7,
    "k": "aion-3-0-mini",
@@ -8939,18 +8985,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.075342,
+   "cr": 0.073095,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.904104,
+   "in": 0.877134,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.808208,
+   "out": 1.754268,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12867,6 +12913,22 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-02"
+  },
+  {
+   "budget": {},
+   "cr": 0.016,
+   "ctx": 1000000,
+   "id": "qwen/qwen3.8-omni-flash",
+   "in": 0.15,
+   "k": "qwen3-8-omni-flash",
+   "maxOut": 131072,
+   "name": "Qwen3.8 Omni Flash",
+   "out": 0.47,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-17"
   },
   {
    "ctx": 16384,
@@ -17481,5 +17543,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-22T18:47:45.342Z"
+ "updatedAt": "2026-09-22T21:43:28.274Z"
 }
