@@ -1,6 +1,71 @@
 {
  "candidateRulesVersion": 5,
  "candidates": {
+  "discovery:arxiv:2609.25186": {
+   "observedAt": "2026-09-23T12:53:41.405Z",
+   "resource": {
+    "freshnessBasis": "published",
+    "id": "discovery:arxiv:2609.25186",
+    "level": "intermediate",
+    "publishedAt": "2026-09-23T12:00:00.000Z",
+    "scores": {
+     "authority": 4,
+     "clarity": 3,
+     "foundation": 5,
+     "practice": 2
+    },
+    "sourceName": "arxiv.org",
+    "sourceUpdatedAt": "2026-09-23T12:00:00.000Z",
+    "summary": {
+     "en": "The rising global prevalence of mental health conditions, together with longstanding barriers in traditional healthcare, such as limited resources, high cost, stigma, and privacy concerns, has created an urgent need for accessible and scalable support. Large Language Models (LLMs) have emerged as a transformative technology with strong potential to democratize mental health support through advanced natural language understanding and generation. However, the rapidly expanding, fragmented body of work in this area lacks a coherent evolutionary narrative, making it difficult to contextualize…",
+     "zh": ""
+    },
+    "title": {
+     "en": "From Pattern Recognizers to Personalized Companions: A Survey of Large Language Models in Mental Health",
+     "zh": ""
+    },
+    "topics": [],
+    "type": "paper",
+    "url": "https://arxiv.org/abs/2609.25186",
+    "why": {
+     "en": "Automatic selection: Explicit teaching or structured learning material. Check the original source for access requirements.",
+     "zh": "自动候选：有明确的教学或系统学习内容。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "arxiv:2609.25186"
+  },
+  "discovery:gh:atomicbot-ai/atomic-chat": {
+   "observedAt": "2026-09-23T12:53:41.405Z",
+   "resource": {
+    "freshnessBasis": "first-observed",
+    "id": "discovery:gh:atomicbot-ai/atomic-chat",
+    "level": "starter",
+    "scores": {
+     "authority": 5,
+     "clarity": 3,
+     "foundation": 3,
+     "practice": 4
+    },
+    "sourceName": "github.com",
+    "sourceUpdatedAt": "2026-09-23T12:53:41.405Z",
+    "summary": {
+     "en": "Local AI app and inference engine for agents. Run open-weight LLMs locally — private, 100% offline on your computer. Join our Discord: https://discord.com/invite/8wGSsvmg4V",
+     "zh": ""
+    },
+    "title": {
+     "en": "AtomicBot-ai/Atomic-Chat",
+     "zh": ""
+    },
+    "topics": [],
+    "type": "repo",
+    "url": "https://github.com/AtomicBot-ai/Atomic-Chat",
+    "why": {
+     "en": "Automatic selection: A concrete AI use case with an accessible tool. Check the original source for access requirements.",
+     "zh": "自动候选：提供明确的 AI 使用场景与可运行工具。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "gh:atomicbot-ai/atomic-chat"
+  },
   "discovery:gh:diegosouzapw/omniroute": {
    "observedAt": "2026-09-23T09:46:50.714Z",
    "resource": {
@@ -357,8 +422,40 @@
    },
    "sourceKey": "gh:panniantong/agent-reach"
   },
+  "discovery:gh:router-for-me/cliproxyapi": {
+   "observedAt": "2026-09-23T12:53:41.405Z",
+   "resource": {
+    "freshnessBasis": "first-observed",
+    "id": "discovery:gh:router-for-me/cliproxyapi",
+    "level": "starter",
+    "scores": {
+     "authority": 5,
+     "clarity": 3,
+     "foundation": 3,
+     "practice": 4
+    },
+    "sourceName": "github.com",
+    "sourceUpdatedAt": "2026-09-23T12:53:41.405Z",
+    "summary": {
+     "en": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build, Muse Code, Davin as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini Series, GPT Series, Grok Series, Claude model through API",
+     "zh": ""
+    },
+    "title": {
+     "en": "router-for-me/CLIProxyAPI",
+     "zh": ""
+    },
+    "topics": [],
+    "type": "repo",
+    "url": "https://github.com/router-for-me/CLIProxyAPI",
+    "why": {
+     "en": "Automatic selection: A concrete AI use case with an accessible tool. Check the original source for access requirements.",
+     "zh": "自动候选：提供明确的 AI 使用场景与可运行工具。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "gh:router-for-me/cliproxyapi"
+  },
   "discovery:gh:stablyai/orca": {
-   "observedAt": "2026-09-23T09:46:50.714Z",
+   "observedAt": "2026-09-23T12:53:41.405Z",
    "resource": {
     "freshnessBasis": "repo-updated",
     "id": "discovery:gh:stablyai/orca",
@@ -370,7 +467,7 @@
      "practice": 4
     },
     "sourceName": "github.com",
-    "sourceUpdatedAt": "2026-09-23T09:26:23.000Z",
+    "sourceUpdatedAt": "2026-09-23T12:37:56.000Z",
     "summary": {
      "en": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
      "zh": ""
@@ -397,6 +494,38 @@
     }
    },
    "sourceKey": "gh:stablyai/orca"
+  },
+  "discovery:gh:strands-agents/harness-sdk": {
+   "observedAt": "2026-09-23T12:53:41.405Z",
+   "resource": {
+    "freshnessBasis": "first-observed",
+    "id": "discovery:gh:strands-agents/harness-sdk",
+    "level": "starter",
+    "scores": {
+     "authority": 5,
+     "clarity": 3,
+     "foundation": 3,
+     "practice": 4
+    },
+    "sourceName": "github.com",
+    "sourceUpdatedAt": "2026-09-23T12:53:41.405Z",
+    "summary": {
+     "en": "Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python & TypeScript - any model, any cloud.",
+     "zh": ""
+    },
+    "title": {
+     "en": "strands-agents/harness-sdk",
+     "zh": ""
+    },
+    "topics": [],
+    "type": "repo",
+    "url": "https://github.com/strands-agents/harness-sdk",
+    "why": {
+     "en": "Automatic selection: A concrete AI use case with an accessible tool. Check the original source for access requirements.",
+     "zh": "自动候选：提供明确的 AI 使用场景与可运行工具。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "gh:strands-agents/harness-sdk"
   },
   "discovery:gh:tencent/weknora": {
    "observedAt": "2026-09-21T03:50:14.229Z",
@@ -502,8 +631,40 @@
    },
    "sourceKey": "gh:zhulinsen/daily_stock_analysis"
   },
+  "discovery:gh:zzet/gortex": {
+   "observedAt": "2026-09-23T12:53:41.405Z",
+   "resource": {
+    "freshnessBasis": "first-observed",
+    "id": "discovery:gh:zzet/gortex",
+    "level": "starter",
+    "scores": {
+     "authority": 5,
+     "clarity": 3,
+     "foundation": 3,
+     "practice": 4
+    },
+    "sourceName": "github.com",
+    "sourceUpdatedAt": "2026-09-23T12:53:41.405Z",
+    "summary": {
+     "en": "High-performance code-intelligence engine for AI agents and IDE, supports 257 languages, multi repositories, based on graph, with access via CLI, MCP Server, and API. AI coding agents teammate - expose only needed information, cutting token usage up to 50x. 100% local. Discord: https://discord.gg/39MFHu3J5d",
+     "zh": ""
+    },
+    "title": {
+     "en": "zzet/gortex",
+     "zh": ""
+    },
+    "topics": [],
+    "type": "repo",
+    "url": "https://github.com/zzet/gortex",
+    "why": {
+     "en": "Automatic selection: A concrete AI use case with an accessible tool. Check the original source for access requirements.",
+     "zh": "自动候选：提供明确的 AI 使用场景与可运行工具。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "gh:zzet/gortex"
+  },
   "discovery:hn:49800574": {
-   "observedAt": "2026-09-23T09:46:50.714Z",
+   "observedAt": "2026-09-23T12:53:41.405Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:hn:49800574",
@@ -637,7 +798,7 @@
    "sourceKey": "url:help.openai.com/en/articles/6825453-chatgpt-release-notes#9afd1ece"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#6a5af8d9": {
-   "observedAt": "2026-09-23T09:46:50.714Z",
+   "observedAt": "2026-09-23T12:53:41.405Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#6a5af8d9",
@@ -670,7 +831,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#6a5af8d9"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#91bb65ef": {
-   "observedAt": "2026-09-23T09:46:50.714Z",
+   "observedAt": "2026-09-23T12:53:41.405Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#91bb65ef",
@@ -736,7 +897,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#a1d0ea25"
   },
   "discovery:url:qwen.ai/blog?id=qwen-image-2.1": {
-   "observedAt": "2026-09-23T09:46:50.714Z",
+   "observedAt": "2026-09-23T12:53:41.405Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:qwen.ai/blog?id=qwen-image-2.1",
@@ -4157,6 +4318,7 @@
   "https://github.com/acly/krita-ai-diffusion": "2026-09-21T09:17:19.299Z",
   "https://github.com/aider-ai/aider": "2026-09-21T09:17:19.299Z",
   "https://github.com/anomalyco/opencode": "2026-09-21T09:17:19.299Z",
+  "https://github.com/atomicbot-ai/atomic-chat": "2026-09-23T12:53:41.405Z",
   "https://github.com/cherryhq/cherry-studio": "2026-09-21T09:17:19.299Z",
   "https://github.com/cline/cline": "2026-09-21T09:17:19.299Z",
   "https://github.com/comfy-org/comfyui": "2026-09-21T09:17:19.299Z",
@@ -4196,12 +4358,15 @@
   "https://github.com/openai/whisper": "2026-09-21T09:17:19.299Z",
   "https://github.com/paddlepaddle/paddleocr": "2026-09-21T09:17:19.299Z",
   "https://github.com/panniantong/agent-reach": "2026-09-21T09:17:19.299Z",
+  "https://github.com/router-for-me/cliproxyapi": "2026-09-23T12:53:41.405Z",
   "https://github.com/stablyai/orca": "2026-09-19T15:43:50.333Z",
+  "https://github.com/strands-agents/harness-sdk": "2026-09-23T12:53:41.405Z",
   "https://github.com/subtitleedit/subtitleedit": "2026-09-21T09:17:19.299Z",
   "https://github.com/tencent/weknora": "2026-09-19T15:43:50.333Z",
   "https://github.com/unclecode/crawl4ai": "2026-09-21T09:17:19.299Z",
   "https://github.com/vshulcz/deja-vu": "2026-09-21T09:17:19.299Z",
   "https://github.com/zhulinsen/daily_stock_analysis": "2026-09-21T09:17:19.299Z",
+  "https://github.com/zzet/gortex": "2026-09-23T12:53:41.405Z",
   "https://gradio.app/guides/quickstart": "2026-09-21T09:17:19.299Z",
   "https://hailuoai.com/": "2026-09-21T09:17:19.299Z",
   "https://help.openai.com/en/articles/6825453-chatgpt-release-notes": "2026-09-19T15:43:50.333Z",
