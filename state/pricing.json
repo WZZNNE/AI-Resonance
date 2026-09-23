@@ -9038,18 +9038,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079431,
+   "cr": 0.079011,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.953172,
+   "in": 0.948126,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.906344,
+   "out": 1.896252,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9772,27 +9772,13 @@
   },
   {
    "cr": 0.012,
-   "ctx": 131072,
+   "ctx": 262144,
    "id": "inclusionai/ling-3.0-flash-vl",
    "in": 0.06,
    "k": "ling-3-0-flash-vl",
    "maxOut": 32768,
    "name": "Ling 3.0 Flash VL",
    "out": 0.18,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-09-10"
-  },
-  {
-   "ctx": 262144,
-   "id": "inclusionai/ling-3.0-flash-vl:free",
-   "in": 0,
-   "k": "ling-3-0-flash-vl",
-   "maxOut": 32768,
-   "name": "Ling 3.0 Flash VL (free)",
-   "out": 0,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10270,20 +10256,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-08-01"
-  },
-  {
-   "cr": 0.04,
-   "ctx": 262144,
-   "id": "mistralai/devstral-2512",
-   "in": 0.4,
-   "k": "devstral-2512",
-   "maxOut": 209715,
-   "name": "Devstral 2",
-   "out": 2,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-12-09"
   },
   {
    "cr": 0.02,
@@ -13151,6 +13123,26 @@
    "upd": "2024-12-18"
   },
   {
+   "ctx": 1000000,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "stealth/space-bunny-alpha",
+   "in": 0,
+   "k": "space-bunny-alpha",
+   "maxOut": 524288,
+   "name": "Space Bunny Alpha",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-23"
+  },
+  {
    "alwaysOn": true,
    "ctx": 262144,
    "id": "stepfun/step-3.5-flash",
@@ -13237,7 +13229,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13245,11 +13237,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13956,7 +13948,7 @@
    "upd": "2026-08-26"
   },
   {
-   "cr": 0.075,
+   "cr": 0.09,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -17638,5 +17630,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-23T15:46:14.075Z"
+ "updatedAt": "2026-09-23T18:48:11.902Z"
 }
