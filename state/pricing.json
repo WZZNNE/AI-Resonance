@@ -7869,7 +7869,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.033,
+   "cr": 0.012726,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7877,11 +7877,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.4,
+   "in": 0.39996,
    "k": "deepseek-pro-latest",
-   "maxOut": 384000,
+   "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 4.3,
+   "out": 1.19988,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8120,7 +8120,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.125,
+   "cr": 0.10426,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8128,11 +8128,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.5625,
+   "in": 0.5614,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.5,
+   "out": 1.7644,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8182,6 +8182,44 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-07"
+  },
+  {
+   "cr": 0.75,
+   "ctx": 262144,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "aion-labs/aion-3.5",
+   "in": 3,
+   "k": "aion-3-5",
+   "maxOut": 32768,
+   "name": "Aion 3.5",
+   "out": 6,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-23"
+  },
+  {
+   "cr": 0.18,
+   "ctx": 262144,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "aion-labs/aion-3.5-mini",
+   "in": 0.7,
+   "k": "aion-3-5-mini",
+   "maxOut": 32768,
+   "name": "Aion 3.5 Mini",
+   "out": 1.4,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-23"
   },
   {
    "ctx": 32768,
@@ -8941,18 +8979,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.017721,
+   "cr": 0.016492,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.088606,
+   "in": 0.08246,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.177212,
+   "out": 0.16492,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9000,18 +9038,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.079431,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.953172,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 1.906344,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9019,7 +9057,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.016623,
+   "cr": 0.0154,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9027,11 +9065,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.498696,
+   "in": 0.462,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.496088,
+   "out": 1.386,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9039,7 +9077,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.003,
+   "cr": 0.01,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9047,11 +9085,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.15,
+   "in": 0.1,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 384000,
+   "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.6,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17600,5 +17638,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-23T12:53:41.405Z"
+ "updatedAt": "2026-09-23T15:46:14.075Z"
 }
