@@ -4845,7 +4845,7 @@
   },
   {
    "cr": 0.06,
-   "ctx": 1048576,
+   "ctx": 1000000,
    "id": "MiniMax-M3",
    "in": 0.3,
    "k": "minimax-m3",
@@ -7849,7 +7849,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.06,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7857,11 +7857,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.1,
+   "in": 0.099,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.5,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7869,7 +7869,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.012726,
+   "cr": 0.25,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7877,11 +7877,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.39996,
+   "in": 0.3865,
    "k": "deepseek-pro-latest",
-   "maxOut": 393216,
+   "maxOut": 943718,
    "name": "DeepSeek Pro Latest",
-   "out": 1.19988,
+   "out": 2.9,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8979,18 +8979,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.016492,
+   "cr": 0.015568,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.08246,
+   "in": 0.07784,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.16492,
+   "out": 0.15568,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9038,18 +9038,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079011,
+   "cr": 0.078866,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.948126,
+   "in": 0.946386,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.896252,
+   "out": 1.892772,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9077,7 +9077,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.01,
+   "cr": 0.003,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9085,11 +9085,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.1,
+   "in": 0.15,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.5,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12938,6 +12938,27 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-02"
+  },
+  {
+   "cr": 0.5,
+   "ctx": 1000000,
+   "efforts": [
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh"
+   ],
+   "id": "qwen/qwen3.8-max-prime",
+   "in": 4,
+   "k": "qwen3-8-max-prime",
+   "maxOut": 131072,
+   "name": "Qwen3.8 Max Prime",
+   "out": 12,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-23"
   },
   {
    "budget": {},
@@ -17630,5 +17651,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-23T18:48:11.902Z"
+ "updatedAt": "2026-09-23T21:43:21.400Z"
 }
