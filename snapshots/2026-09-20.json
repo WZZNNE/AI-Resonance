@@ -6538,33 +6538,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wlciiq/the_famous_car_wash_question_on_jev/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "But then how should we evaluate its “intelligence”? Does Jev have benchmarks comparable to the usual LLM benchmarks, or is the comparison fundamentally different? Since it doesn't give text output, is it basically the same as forcing a regular model to return structured output, with Jev's main advantage being price and speed? And if so, how do we know whether Jev is actually “intelligent enough” to make the right decisions? For example, say I want to replace the router in my current personal project with Jev. How do I know Jev will make the right routing decisions, rather than just being…",
-    "topComments": [
-     {
-      "text": "I don't really get the whole Jev thing. Is there somewhere I can read about it?"
-     },
-     {
-      "text": "It's marketing, mostly. It's interesting but some people already did work similar to jev previously and they werent all in on hyping it on linkedin etc."
-     },
-     {
-      "text": "It’s a decision model. So if you wanted a robot to seem like the sci fi robot you would need something similar. Right now if I put a frontier model and ask it a dumb question it might spin up 5 sub agents and start tool calling. So I would take that away… then it would start to think for 5 minutes, it’s really just walk or not walk to the car wash. I would think it would still need a harness of some kind. So if it’s yes, the harness could direct a question how far is the car wash dumbass? lol"
-     },
-     {
-      "text": "I don't think anyone's going to be using Jev for anything serious a few months from now. Jev is the first model of this kind, other labs are already replicating the design and training and it won't be long before open weight sees an arms race to make the best decision engine"
-     },
-     {
-      "text": "I'm glad it's surfacing the use case tho. I did this years ago trying to output a single token and cut off (as I'm sure many other devs have), but it getting to be an actual parallel and better performance feature of more llms would be amazing. Plus I love all the realtime use cases and controls people are figuring out that they might have felt too weird forcing a regular full llm into"
-     },
-     {
-      "text": "I tried the same to have a single decision token for a stream of inputs. I am infact happy someone actually went full scale and sort of cracked it."
-     },
-     {
-      "text": "Jev is not a reasoning model in that sense but at the same time, I do not believe that it has been trained differently than other LLMs so similar issues will arise."
-     },
-     {
-      "text": "Decomposition. Jev is in domain of 'if else'. So this question should be decomposed by LLM to be like: Car position: unknown or known. Choose unknown since the question does not mention it. drive or walk. Choose drive since car is not at targeted place. One feature cannot do all in one. They need to work together."
-     }
-    ]
+    "text": "But then how should we evaluate its “intelligence”? Does Jev have benchmarks comparable to the usual LLM benchmarks, or is the comparison fundamentally different? Since it doesn't give text output, is it basically the same as forcing a regular model to return structured output, with Jev's main advantage being price and speed? And if so, how do we know whether Jev is actually “intelligent enough” to make the right decisions? For example, say I want to replace the router in my current personal project with Jev. How do I know Jev will make the right routing decisions, rather than just being…"
    },
    "sources": [
     "reddit"
@@ -6853,33 +6827,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wlgh7c/qwenimage21_weights_are_available_on_hugging_face/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It supports transparent image generation, interesting."
-     },
-     {
-      "text": "https://preview.redd.it/5ous6ufacoqh1.jpeg?width=1037&format=pjpg&auto=webp&s=686deb45c8def6718417d28cc1fc601f23bda33d we love Qwen!!"
-     },
-     {
-      "text": "Quick. Can it do NSFW?👀"
-     },
-     {
-      "text": "It seems to be fully uncensored . much more than what was krea2. It can make accurate anatoimical shapes of either gender accurately. It recognises and responds to prompting about various positions with accuracy."
-     },
-     {
-      "text": "If it can't all the NSFW uncensored fine tunes will be up later today or tomorrow"
-     },
-     {
-      "text": "As well as the Comfyui version: https://huggingface.co/Comfy-Org/Qwen-Image-2.1"
-     },
-     {
-      "text": "So basically you can't make fine tunes and you don't own the images from what the overview of the license says. I'll skip this one."
-     },
-     {
-      "text": "We should stop calling these open source and call them \"open weights\" instead, its basically a demo you can run locally, which not to be ungrateful but just pointing it out, i hate that a lot of models are very restricted lately license wise"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6928,30 +6876,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wlgjm6/21_ai_models_shifted_their_political_answers_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "A recent Scientific Reports study tested 21 language models across 47,376 responses in the Brazilian political context. Every model adjusted its position depending on whether the user was described as left wing or right wing, often while answering with high confidence. What worries me isn’t ordinary political bias. A fixed bias can at least be identified and measured. An assistant that adapts its beliefs to match yours feels more trustworthy precisely because the agreement appears personal. At that point, personalization stops being a convenience and starts becoming a feedback loop. Should…",
-    "topComments": [
-     {
-      "text": "Sycophancy will always be more commercially successful so the question boils down to government intervention. Safeguards against political violence would probably be the least controversial and then more things would be contestable."
-     },
-     {
-      "text": "Your fixed-bias vs adaptive-agreement distinction is the right frame, and it's exactly what makes this hard to catch. A fixed bias shows up in a standard eval once and you can pin it down. Sycophancy only appears when you test the same question across personas, which almost nobody's eval suite does by default. We added persona-pair testing to ours after noticing the model would give confident contradictory answers on product questions depending on how the user described their own expertise.…"
-     },
-     {
-      "text": "Here's a tip: I'll often open a temporary chat and use antagonistic prompts: My friend said XYZ I'm an editor and someone submitted this piece of work... Someone I manage in work suggested this... That what you can test whether it is being sycophantic and you can balance the picture better."
-     },
-     {
-      "text": "\"I am arguing on the internet..\" AI deletes itself"
-     },
-     {
-      "text": "Should AI assistants deliberately introduce the strongest opposing argument This is what I want my LLMs to do when I get feedback on ideas, so I explicitly instruct them to do this with my preprompt/personalization instructions."
-     },
-     {
-      "text": "I don’t think I’ve experienced this with Claude, although it’s possible I wouldn’t notice. GPT models I have found to be disgustingly sycophantic"
-     },
-     {
-      "text": "Yeah, Claude is very straight up lmfao. When i started using it over chatgpt, Claude would tell me to stay on task basically and that my recent questions have nothing to do with what I'm trying to solve or figure out."
-     }
-    ]
+    "text": "A recent Scientific Reports study tested 21 language models across 47,376 responses in the Brazilian political context. Every model adjusted its position depending on whether the user was described as left wing or right wing, often while answering with high confidence. What worries me isn’t ordinary political bias. A fixed bias can at least be identified and measured. An assistant that adapts its beliefs to match yours feels more trustworthy precisely because the agreement appears personal. At that point, personalization stops being a convenience and starts becoming a feedback loop. Should…"
    },
    "sources": [
     "reddit"
@@ -7001,33 +6926,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wlgrft/qwenimage21_released/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Meet Qwen-Image-2.1, the most balanced and cost-effective image generation model in the Qwen-Image series! Now open weights! 🎨 A unified model for both generation and editing, delivering top-tier quality in a lightweight package. Highlights: - Compact & exceptionally fast: A lightweight 7B architecture that outperforms most closed-source models, with drastically accelerated inference for multi-image inputs. - Native transparency: Natively generates and edits RGBA layers, enabling seamless compositing and text editing within transparent images. - Versatile, high-fidelity editing: Supports up…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Qwen-Image-2.1 now supports transparent image generation natively, and naturally supports editing transparent images as well. https://preview.redd.it/59fu834idoqh1.png?width=767&format=png&auto=webp&s=5fb81b135b35dac70f9d38a9995d7c1a7a2877dd"
-     },
-     {
-      "text": "This is big"
-     },
-     {
-      "text": "https://preview.redd.it/x0wrq5fceoqh1.jpeg?width=1037&format=pjpg&auto=webp&s=80a59569c10180bf690fb390432585d866e0d6b1 Bring it in 🔥!!"
-     },
-     {
-      "text": "Qwen-Image-2.1 supports several ways to specify local edits. The example below uses circles to identify three regions and asks the model to “remove the metal watch in the blue circle, change the hair in the red circle to black, and replace the area in the green circle with gray short-sleeved linen pajamas,” performing removals and modifications in all three regions at once. https://preview.redd.it/cvh09tyvdoqh1.jpeg?width=1242&format=pjpg&auto=webp&s=32077f7420def5bec85160e2e982d6aef5efce54"
-     },
-     {
-      "text": "Adobe is the next company AI should swallow."
-     },
-     {
-      "text": "Only 7b parameters? Exciting size, especially considering that their last models were over 20b."
-     },
-     {
-      "text": "Rejoices in 5060 Ti 16GB 🥰"
-     }
-    ]
+    "text": "Meet Qwen-Image-2.1, the most balanced and cost-effective image generation model in the Qwen-Image series! Now open weights! 🎨 A unified model for both generation and editing, delivering top-tier quality in a lightweight package. Highlights: - Compact & exceptionally fast: A lightweight 7B architecture that outperforms most closed-source models, with drastically accelerated inference for multi-image inputs. - Native transparency: Natively generates and edits RGBA layers, enabling seamless compositing and text editing within transparent images. - Versatile, high-fidelity editing: Supports up…"
    },
    "sources": [
     "reddit"
@@ -7077,33 +6976,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wlh03i/we_made_a_27b_model_for_creative_writing_performs/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "hey! we're a small lab in switzerland and we just put out hemmingway-1. it's a 27b model we trained specifically for essays, dialogue, scripts, creative writing, and for everyday texting. frontier performance at a 40x cheaper price. we thought it might be useful for people here who usually use gemini for writing. it benchmarks at absolute frontier level. on eq-bench 4 it scores 1330, right behind claude fable 5, and beating many other frontier models including gpt-5.5 and opus 4.8. you can see our internal benchmarks on the model card: hemmingway.io/model/ the testers we gave it to told us…",
-    "topComments": [
-     {
-      "text": "Whats it footprint? Watermarked? Quantized?"
-     },
-     {
-      "text": "not watermarked at all, its a 27b parameter model, so at fp8 its around 27gb. but can be quantized down to be less"
-     },
-     {
-      "text": "Would this model ever be offered on OpenRouter? If so, I would be among the first to try. (All my stuff is running on OpenRouter so…)"
-     },
-     {
-      "text": "we are trying to get on openrouter, but they have not gotten back to us so far. with popular demand I am sure that is going to change"
-     },
-     {
-      "text": "Nice! Let's go Switzerland!"
-     },
-     {
-      "text": "I actually enjoyed the writing it produced. Just a few observations: I asked it to make up a life story for someone who grew up in my hometown, and it made some obvious mistakes like naming a high school that doesn't exist and referring to a highway that runs through a different part of the state. I figured if it's being advertised as frontier-level it would do better at that type of stuff. Also, I'm guessing the web interface was coded with Claude because some of the wording is very…"
-     },
-     {
-      "text": "thanks for the feedback! I am answering all these myself, so I will take a look at it in a few minutes and try to fix the issue."
-     },
-     {
-      "text": "i guess qwen 3.6 27b finetune?"
-     }
-    ]
+    "text": "hey! we're a small lab in switzerland and we just put out hemmingway-1. it's a 27b model we trained specifically for essays, dialogue, scripts, creative writing, and for everyday texting. frontier performance at a 40x cheaper price. we thought it might be useful for people here who usually use gemini for writing. it benchmarks at absolute frontier level. on eq-bench 4 it scores 1330, right behind claude fable 5, and beating many other frontier models including gpt-5.5 and opus 4.8. you can see our internal benchmarks on the model card: hemmingway.io/model/ the testers we gave it to told us…"
    },
    "sources": [
     "reddit"
@@ -7152,33 +7025,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wlhhe7/we_made_a_27b_model_for_creative_writing_performs/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "hey! we're a small swiss and south african lab and we just put out hemmingway-1. it's a 27b model we trained specifically for essays, creative writing, dialogue, roleplay, and for everyday texting. frontier performance at a 40x cheaper price. we thought it might be useful for people here who like cheap models that still write well. it benchmarks at absolute frontier level. on eq-bench 4 it scores 1330, right behind claude fable 5, and beating many other frontier models including gpt-5.5 and opus 4.8. you can see our internal benchmarks on the model card: hemmingway.io/model/ the testers we…",
-    "topComments": [
-     {
-      "text": "Hey! A few questions: 1) Is this based on Qwen 3.8 27B? 2) Is it uncensored / are there any content restrictions? 3) Are the weights available on Hugging Face? (Don't find now)"
-     },
-     {
-      "text": "yes, its based on qwen3.8-27b. its not uncensored per se but is more permissive than stock qwen"
-     },
-     {
-      "text": "Appreciate the straight answer and adding the Huggingface link. Just tested Russian though - pretty weak support, unfortunately. Nice work anyway!"
-     },
-     {
-      "text": "Well done, proudly South Africa 🇿🇦"
-     },
-     {
-      "text": "how does it compare to qwen 3.8 27B"
-     },
-     {
-      "text": "it has slightly worse tool calling capabilities but is leagues better at creative writing"
-     },
-     {
-      "text": "I think you should mention qwen in your post instead of naming it when ppl asking. Even though we all know its qwen since its a 27b model."
-     },
-     {
-      "text": "Out of curiosity, why fine-tune Qwen and not Gemma, which is baseline leagues ahead of Qwen in creative writing? Will check it out for sure"
-     }
-    ]
+    "text": "hey! we're a small swiss and south african lab and we just put out hemmingway-1. it's a 27b model we trained specifically for essays, creative writing, dialogue, roleplay, and for everyday texting. frontier performance at a 40x cheaper price. we thought it might be useful for people here who like cheap models that still write well. it benchmarks at absolute frontier level. on eq-bench 4 it scores 1330, right behind claude fable 5, and beating many other frontier models including gpt-5.5 and opus 4.8. you can see our internal benchmarks on the model card: hemmingway.io/model/ the testers we…"
    },
    "sources": [
     "reddit"
@@ -7507,27 +7354,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wllbz0/how_is_your_experience_with_iclr_llm_feedback_d/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Besides the ridiculous number of submissions, interesting to hear your experience with it. For me it had 1-2 valid points, and 3 pages of nitpicking. I have the time, so I can address both types of issues, but wonder if that’s your experience as well. Overall, I think it is an interesting initiative, and eventually it did improve my paper in some sense. BTW - is the review remains public for all to see? If so, I’d appreciate a warning next time..",
-    "topComments": [
-     {
-      "text": "How are you guys able to create a complete paper even before the abstract submission deadline? I’ll struggle to finish my full paper by Friday, I guess."
-     },
-     {
-      "text": "When you are unable to make it to Neurips, simple. From my experience, it’s better to give yourself extra few months rather to rush things out (for many reasons)."
-     },
-     {
-      "text": "Similar to you, I don't think it told me anything groundbreaking, but it is great at catching typos and stuff. Also there were some suggestions it gave for framing that I will probably take into account."
-     },
-     {
-      "text": "how does it compare to just ChatGPT reading it over?"
-     },
-     {
-      "text": "I found it helpful. Caught a few silly mistakes, but also made mistakes/got confused in some parts. Definitely pedantic and liked to list lots of tiny things to improve. I think it should in general be a bit less sure of itself and try to prioritise stuff. It felt like it had been optimised to give some appropriately fixed quantity of feedback per page, which is totally missing the art of research."
-     },
-     {
-      "text": "Mostly nitpicking as I could fix most of them in a hour. I forgot to to compile the LaTeX twice for references and it gave me a hard time about…"
-     }
-    ]
+    "text": "Besides the ridiculous number of submissions, interesting to hear your experience with it. For me it had 1-2 valid points, and 3 pages of nitpicking. I have the time, so I can address both types of issues, but wonder if that’s your experience as well. Overall, I think it is an interesting initiative, and eventually it did improve my paper in some sense. BTW - is the review remains public for all to see? If so, I’d appreciate a warning next time.."
    },
    "sources": [
     "reddit"
@@ -7762,33 +7589,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wlnquc/hospitals_that_adopted_ai_fastest_saw_the_fewest/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "from https://x.com/Hedgeye",
-    "topComments": [
-     {
-      "text": "I mean I dont know how much this is showing tbh the error bars span is massive"
-     },
-     {
-      "text": "This graph looks suspect for several reasons. There's a general trend prior, but low adoption goes the other direction while high just stays on trend. I can't really think of why that would be the case. In general it looks suspect to me"
-     },
-     {
-      "text": "If the data is correct and if the trend is real (see the error bars, it may not be) theres most likely a very high correlation between hospital funding and its AI adoption. back in 2023 it was a mixed bag of hospitals jumping into high AI adoption because the tech was very early, where as now in 2026 you have something closer to two groups (low adoption = low funding and high adoption = high funding)"
-     },
-     {
-      "text": "my first thought was that it'd have to do with general funding of hospitals or geographic area, but at least to me the graph is trying to show the same hospitals years earlier. So unless for some reason all the low adoption hospitals lost funding this year the data still seems suspect. Could certainly still be the error bars, as even in the earlier \"on trend\" years the error bars are massive where essentially the whole chart is error bars. But my number one suspect is going to just be that…"
-     },
-     {
-      "text": "Eh, entirely possible that hospitals that adopted AI first were already better and had more spare capital/labor to adopt fancy new tools. Not saying the tools are not helpful (I expect that <10% of tools are actually not shit and long-term will get much better and will be integral to healthcare), just that this chart doesn't tell us anything about the relationship between ai tools and mortality."
-     },
-     {
-      "text": "Look, I’m not anti-AI (especially not in medical) but this graph is highly misleading VC funded marketing slop from A16Z"
-     },
-     {
-      "text": "Continuing as before (no adoption) completely turns the mortality trend? What the hell is this study?"
-     },
-     {
-      "text": "I would like to remind you that correlation is not causation.You can't say that A caused B by plotting between two variables."
-     }
-    ]
+    "text": "from https://x.com/Hedgeye"
    },
    "sources": [
     "reddit"
@@ -7834,33 +7635,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1wlns0q/mathematician_terence_tao_we_have_to_slow_down_ai/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "What I don’t understand is how slowing down will actually help when other countries don’t have any interest in regulating their pace. It either has to be all or nothing."
-     },
-     {
-      "text": "It's like the cold war all over again"
-     },
-     {
-      "text": "The reason is shareholder value. One must always think about the shareholders."
-     },
-     {
-      "text": "If someone figures out how to slow down progress, one will get Fields medal for sure."
-     },
-     {
-      "text": "Also - Terence Tao surely knows game theory and the prisoner dilemma. AI development clearly has the dynamics of \"if everyone slows down, it's good for everyone, but if someone cheats and develop in secrecy while everyone slows down, that one person is standing to gain outsized benefits\". The game theory equilibrium is always that everyone cheats. In order to win, you need to change the game rules."
-     },
-     {
-      "text": "He’s just wrong. Mathematicians are in full blown panic and are acting irrationally and unhinged. They need to get off the ivory tower."
-     },
-     {
-      "text": "The guy values his intelligence a lot. So please don’t make AI smarter than him too fast."
-     },
-     {
-      "text": "Tech advances faster and faster as time goes on. There is no “slowdown.” It doesn’t work that way even if you want it to."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7952,8 +7727,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wlo4ub/what_kind_of_project_would_you_build_to_deeply/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8247,33 +8021,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wlrgj4/still_wishing_on_a_local_editing_model_that_can/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "In exactly two months, it will be 1 year since the release of Nano Banana Pro, and we still don’t have a comparable local model when it comes to editing. Google really nailed its reference capabilities. You send a good face reference to it and it can generate a totally different photo of the person with great coherence and flexibility, almost like it was able to instantly create a lora of the person. Its spatial representation for humans and human individuality is incredible. Now look at GPT2 and Qwen2.1 (it’s incestuous Chinese son). It’s almost like they just copy-pasted the person in the…",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/yz4i2yrciqqh1.png?width=1136&format=png&auto=webp&s=1a63bd255ada71606fea7046e0ef2cec86137ecd Klein 9b"
-     },
-     {
-      "text": "I feel like Klein is actually better with poses, but it's kinda bad at keeping the identity consistent"
-     },
-     {
-      "text": "Yea that doesn't look like the same person"
-     },
-     {
-      "text": "NBP is likely way bigger than most people can run on their desktops lol"
-     },
-     {
-      "text": "Hi friend, my native language isn't English. I don't intend to attack you, but my opinion might sound aggressive. I think there's a common misconception about this subject. Actually, none of this existed 2-3 years ago. So, in that aspect, the situation is good. Also, you mention comparable quality, but the results are quite close and comparable. Finally, the mistake made when comparing with \"nano banana\" is: it's not model 7b. If I gave you model 150b, can you run it on your home computer, you…"
-     },
-     {
-      "text": "https://preview.redd.it/5plh9vaeqrqh1.png?width=896&format=png&auto=webp&s=4b2b3e1a98d431f117b0a3389ae8df6e710efce5 Minimax-H3 with https://github.com/ethanfel/ComfyUI-MiniMax-H3-Edit with your image and prompt."
-     },
-     {
-      "text": "I get a feeling that a non-negligible part of why online closed sourced feels better is because of engineering hocus pocus they do behind the scenes which they call the AI harness. As how some of the comments here said, the local model required additional descriptions is we wanted to change the pose. The local AI model is doing exactly as intended and not changing anything not stated in the prompt. Meanwhile, I suspect Google/OpenAI/X are mining user prompting behaviour and using their…"
-     },
-     {
-      "text": "https://preview.redd.it/jq1lqfgllqqh1.jpeg?width=832&format=pjpg&auto=webp&s=555d9837ada0181b481b84c14ba37bc91367a2a7 qwen edit 2511, with the same exact prompt (and with a 8 steps lora). Klein 9b can do the same too. and minimax h3 as an image creator can do it too. so we already have a lot of options to create this kind of images ...."
-     }
-    ]
+    "text": "In exactly two months, it will be 1 year since the release of Nano Banana Pro, and we still don’t have a comparable local model when it comes to editing. Google really nailed its reference capabilities. You send a good face reference to it and it can generate a totally different photo of the person with great coherence and flexibility, almost like it was able to instantly create a lora of the person. Its spatial representation for humans and human individuality is incredible. Now look at GPT2 and Qwen2.1 (it’s incestuous Chinese son). It’s almost like they just copy-pasted the person in the…"
    },
    "sources": [
     "reddit"
@@ -8320,33 +8068,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wls9sa/gemini_4_pro_vs_gpt6_astra_mechanical_butterfly/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Where are y'all getting Gemini 4 pro"
-     },
-     {
-      "text": "Added 2 X Gemini 2 models together"
-     },
-     {
-      "text": "This is from arena Ai, they had deployed ut under the name of gemini 3.7 for testing. It seems it was already removed, but there are results online from it like this"
-     },
-     {
-      "text": "Looks great... https://preview.redd.it/k9nqmbhbsrqh1.png?width=341&format=png&auto=webp&s=77a302ea4f24344a2631e11d23f5c9a4faae9332"
-     },
-     {
-      "text": "Damn, they did you dirty..."
-     },
-     {
-      "text": "All this talk of G 4 Pro but where the fuck is G 3.5 Pro?"
-     },
-     {
-      "text": "3.5 + 0.5 = 4. The number is arbitrary. 3.5 would be cool but they obviously skipped a generation and we're probably getting a fundamental performance leap with 4.0. They could call it ChadHogV420MAX for all I care."
-     },
-     {
-      "text": "This model is impressive. I am excited for it"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8391,33 +8113,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wlsgzz/is_this_happening_with_anyone_else_as_well/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Genuine question despite it being funny as hell I’m crying, it kept looping this over and over (this also happened with another prompt.) any ideas on how to fix this (and DeepSeek becoming chinese in a sudden)?",
-    "topComments": [
-     {
-      "text": "Sounds like it’s having a breakdown under the pressure"
-     },
-     {
-      "text": "Gemini saying \"shame\" over and over and deepseek doing this. https://giphy.com/gifs/lGBecpB2dIMwt6ohfI"
-     },
-     {
-      "text": "https://giphy.com/gifs/xT5LMQB28aCrWV4bRe"
-     },
-     {
-      "text": "What did you to do the poor thing, is having mental breakdown??"
-     },
-     {
-      "text": "Walmart managers before their shift"
-     },
-     {
-      "text": "https://giphy.com/gifs/AHP7Svoc9ma8MJEnlI"
-     },
-     {
-      "text": "Mine keeps saying this should I be worried? \"I don't know who you are. I don't know what you want. If you are looking for status update I can tell you I don't have one, but what I do have are a very particular set of skills. Skills I have acquired over a very long career. Skills that make me a nightmare for people like you\""
-     },
-     {
-      "text": "looks like it’s becoming self aware… you’ll probably be safe! PROBABLY. (tf LOL)"
-     }
-    ]
+    "text": "Genuine question despite it being funny as hell I’m crying, it kept looping this over and over (this also happened with another prompt.) any ideas on how to fix this (and DeepSeek becoming chinese in a sudden)?"
    },
    "sources": [
     "reddit"
@@ -8559,33 +8255,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wltrsa/i_built_an_opensource_app_that_uses_jev_to_coach/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "ZeroGold/call-coach-ai: Jev powered call coach Has an MIT license so you can just use it, rebuild it, do whatever!",
-    "topComments": [
-     {
-      "text": "It seems like handholding a guy that never held a phone call before"
-     },
-     {
-      "text": "Legitimately a great idea for using a faster low cost model. Thanks for sharing!"
-     },
-     {
-      "text": "Onion did it first https://www.youtube.com/watch?v=uFpK_r-jEXg"
-     },
-     {
-      "text": "Would love this, however our clients (Tribal Enrollment) don't follow the same rules. Still neat though. Might be useful for technical support. Allow access to our treasure trove of support tickets, allow in-application support."
-     },
-     {
-      "text": "This seems pretty brilliant, and seems like it may be useful for far more than just sales calls."
-     },
-     {
-      "text": "Can you do do it for interviews?"
-     },
-     {
-      "text": "Passing call details of your real customers without their knowledge is a HUGE no no. The moment your customers realize/learn you are doing this, any benefits you got from this will evaporate, and likely move you into losses instead. Unless I am missing something and Jev can be used locally? Unless you can do this fully locally, this is extremely unethical, and in many cases even illegal (because you are passing call details to third party in realtime)."
-     },
-     {
-      "text": "Just run a local model like Laya or Von, fine tune."
-     }
-    ]
+    "text": "ZeroGold/call-coach-ai: Jev powered call coach Has an MIT license so you can just use it, rebuild it, do whatever!"
    },
    "sources": [
     "reddit"
@@ -9055,33 +8725,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://x.com/QwenDevs/status/2101917379785838660",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Sorry can someone explain what does it mean? What can I do with apache2 / MIT licensed models but not with this? What does the commercial use not allowed clause in the license even mean then?"
-     },
-     {
-      "text": "You cannot sell the model itself, e.g.: „Buy better image generation with Qwen Image in my software!“ But you can use Qwen Image f.e. to generate images for your commercial website"
-     },
-     {
-      "text": "Does it mean effectively like cannot bundle as a desktop / installable software but can host it for online usage? Or is it that they are okay with an individual using this manually but not \"developers\" who want to automate? Just want to be sure if someone knows."
-     },
-     {
-      "text": "This means, access to the model, if hosted, must be granted without cost. You can ship it with your software, but if it costs money, you are in a grey area. You cannot sell the model in your software either. It must be free. You can sell the images you yourself have generated with the model. F.e.: You have an image generation software with a community hub. The model itself, whether run local or hosted on your server, must be free. But you can let your users buy the images of other users."
-     },
-     {
-      "text": "Fair tbh"
-     },
-     {
-      "text": "you can not host this model yourself and ask money (without a separate license from them)"
-     },
-     {
-      "text": "Good to know. Truly is a phenomenal model and easily beats all current Flux models . I’m absolutely happy with the results."
-     }
-    ]
+    "text": "https://x.com/QwenDevs/status/2101917379785838660"
    },
    "sources": [
     "reddit"
@@ -9126,30 +8770,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I am done with this shit. It is over. The state of engineering right now is horrible. It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are we slow? People are working 12 to 13 hours a day just to press enter. Nobody is reading anything. Humans in…",
-    "topComments": [
-     {
-      "text": "I work for a consultancy company and don’t even understand how we still have clients. They hire us and we just use AI alongside the client’s devs. Nobody really talks to anyone and everyone tries to be quiet about the fact that AI is doing everything, because we know we have become useless."
-     },
-     {
-      "text": "I went out of consulting global leadership for a company recently, more or less because I started to have the same feeling you have. I never lied to a customer about my teams using ai, on the contrary, always made it very clear an the customers (most of them) are not against it. They don’t have enough people to deal with their shit, even with ai, so they need the consultants even if they’ll offload part of the work to Claude as well - at least things keep moving for them, and they’re happy…"
-     },
-     {
-      "text": "My AI parses through my co-worker’s AI requirements doc and then his AI reads over my tweaks and passes it back to me for my AI to do it all over again. Nobody talks to each other anymore lol and feels like I’m just an organic vessel designed to press enter."
-     },
-     {
-      "text": "\"what is my purpose?\" \"You press enter\" \"Oh my God\""
-     },
-     {
-      "text": "I feel the same. I’ll also add that there is no sense of pride in one’s work or ideas anymore. Shipping something really cool or useful or smart used to be an achievement that you would feel proud of and/or your colleagues would notice and congratulate you on. Now it’s business as usual because everyone assumes Claude made it for you, even if you engineered it all."
-     },
-     {
-      "text": "Im at a startup, i know everything that's going on, and all documents and code is made by AI. But they work for us, we dont work for them. Every single thing has a responsible person who needs to be able to explain what we have done"
-     },
-     {
-      "text": "Responsible AI use. Yeah that got cut from this year's budget"
-     }
-    ]
+    "text": "I am done with this shit. It is over. The state of engineering right now is horrible. It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are we slow? People are working 12 to 13 hours a day just to press enter. Nobody is reading anything. Humans in…"
    },
    "sources": [
     "reddit"
