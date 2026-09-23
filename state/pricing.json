@@ -7849,7 +7849,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.016,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7857,11 +7857,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.1,
+   "in": 0.04,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.5,
+   "out": 0.64,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9039,7 +9039,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.01,
+   "cr": 0.016,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9047,11 +9047,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.1,
+   "in": 0.04,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.5,
+   "out": 0.64,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15612,6 +15612,25 @@
    "upd": "2026-06-29"
   },
   {
+   "cr": 0.048,
+   "ctx": 1000000,
+   "efforts": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "id": "step-5-preview",
+   "in": 0.959,
+   "k": "step-5-preview",
+   "maxOut": 1000000,
+   "name": "Step 5 Preview",
+   "out": 2.741,
+   "p": "stepfun",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-20"
+  },
+  {
    "cr": 0,
    "ctx": 256000,
    "cw": 0,
@@ -17558,5 +17577,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-23T03:48:54.475Z"
+ "updatedAt": "2026-09-23T06:57:51.125Z"
 }
