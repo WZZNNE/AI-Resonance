@@ -9033,18 +9033,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.01526,
+   "cr": 0.013104,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.0763,
+   "in": 0.06552,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.1526,
+   "out": 0.13104,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9092,18 +9092,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.074356,
+   "cr": 0.071964,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.892272,
+   "in": 0.863562,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.784544,
+   "out": 1.727124,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10332,6 +10332,20 @@
    "upd": "2025-08-01"
   },
   {
+   "cr": 0.04,
+   "ctx": 262144,
+   "id": "mistralai/devstral-2512",
+   "in": 0.4,
+   "k": "devstral-2512",
+   "maxOut": 209715,
+   "name": "Devstral 2",
+   "out": 2,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-09"
+  },
+  {
    "cr": 0.02,
    "ctx": 262144,
    "id": "mistralai/ministral-14b-2512",
@@ -10400,6 +10414,20 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2024-11-19"
+  },
+  {
+   "cr": 0.05,
+   "ctx": 262144,
+   "id": "mistralai/mistral-large-2512",
+   "in": 0.5,
+   "k": "mistral-large-2512",
+   "maxOut": 209715,
+   "name": "Mistral Large 3",
+   "out": 1.5,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-02"
   },
   {
    "cr": 0.04,
@@ -13987,7 +14015,7 @@
    "upd": "2026-08-14"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0285,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -13995,11 +14023,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.15,
+   "in": 0.045,
    "k": "glm-5-3-flash",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM-5.3-Flash",
-   "out": 0.5,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17707,5 +17735,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-24T18:48:35.575Z"
+ "updatedAt": "2026-09-24T21:43:47.625Z"
 }
