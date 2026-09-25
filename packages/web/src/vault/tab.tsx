@@ -1,6 +1,6 @@
 /**
- * Settings › Credentials: where secrets live (mode + lock), the masked list (hold to reveal, edit, delete, last used),
- * the github.io shared-origin trust note, and "wipe everything".
+ * Settings › Credentials: the masked list first (hold to reveal, edit, delete, last used), then where secrets live
+ * (mode + lock, with the where-keys-go note folded underneath), and "wipe everything" last.
  */
 import { useState } from 'preact/hooks'
 import { toast } from '../core/events.ts'
@@ -280,85 +280,10 @@ export default function CredentialsTab() {
   const [changing, setChanging] = useState(false)
   const [wiping, setWiping] = useState(false)
   const encrypted = state.mode === 'device-encrypted'
+  const shared = onGithubIo()
 
   return (
     <div class="settings__stack vault">
-      <section class={`settings__group vtrust${onGithubIo() ? ' is-shared' : ''}`} aria-labelledby="vault-trust">
-        <h3 class="settings__subh" id="vault-trust">
-          <Icon name="info" size={16} /> {t('vault.trustTitle')}
-        </h3>
-        <p class="vnote">{t('vault.trustBody')}</p>
-      </section>
-
-      <section class="settings__group" aria-labelledby="vault-mode">
-        <h3 class="settings__subh" id="vault-mode">
-          {t('vault.storage')}
-        </h3>
-        <p class="settings__hint">{t('vault.storageHint')}</p>
-        <fieldset class="vmodes">
-          <legend class="sr-only">{t('vault.storage')}</legend>
-          {STORAGE_MODES.map((m) => (
-            <label key={m} class={`vmode${state.mode === m ? ' is-on' : ''}`}>
-              {/* Checked follows the stored mode; choosing another opens the confirmation dialog first. */}
-              <input
-                type="radio"
-                name="vault-mode"
-                class="vmode__input"
-                checked={state.mode === m}
-                onChange={() => state.mode !== m && setModeTarget(m)}
-              />
-              <span class="vmode__dot" aria-hidden="true" />
-              <span class="vmode__text">
-                <strong>{t(`vault.mode.${m}` as MessageKey)}</strong>
-                <span>{t(`vault.mode.${m}.hint` as MessageKey)}</span>
-              </span>
-              <Icon name={MODE_ICON[m]} size={16} class="vmode__icon" />
-            </label>
-          ))}
-        </fieldset>
-        {state.mode === 'device-plain' && items.length > 0 && (
-          <p class="vnote vnote--warn">
-            <Icon name="warn" size={16} />
-            <span>{t('vault.plainWarning')}</span>
-          </p>
-        )}
-        {encrypted && (
-          <>
-            <div class={`vlock ${state.locked ? 'is-locked' : 'is-open'}`}>
-              <span class="vlock__disc" aria-hidden="true">
-                <Icon name="lock" size={16} />
-              </span>
-              <span class="vlock__text">{state.locked ? t('vault.locked') : t('vault.unlocked')}</span>
-              {!state.locked && (
-                <Button size="s" variant="ghost" icon="lock" onClick={() => vault.lock()}>
-                  {t('vault.lockNow')}
-                </Button>
-              )}
-            </div>
-            {state.locked && <UnlockForm onDone={() => undefined} />}
-            <Field label={t('vault.autoLock')} hint={t('vault.autoLockHint')}>
-              {(id, d) => (
-                <Select
-                  id={id}
-                  aria-describedby={d}
-                  value={String(prefs.autoLockMin)}
-                  onValue={(v) => vaultPrefs.set({ autoLockMin: Number(v) })}
-                  options={AUTO_LOCK.map((n) => ({
-                    value: String(n),
-                    label: n ? t('vault.minutes', { n }) : t('vault.never'),
-                  }))}
-                />
-              )}
-            </Field>
-            <div class="settings__row">
-              <Button size="s" icon="key" onClick={() => setChanging(true)}>
-                {t('vault.changePassphrase')}
-              </Button>
-            </div>
-          </>
-        )}
-      </section>
-
       <section class="settings__group" aria-labelledby="vault-list">
         <h3 class="settings__subh" id="vault-list">
           {t('vault.credentials')}
@@ -400,6 +325,88 @@ export default function CredentialsTab() {
             </div>
           )
         )}
+      </section>
+
+      <section class="settings__group" aria-labelledby="vault-mode">
+        <h3 class="settings__subh" id="vault-mode">
+          {t('vault.storage')}
+        </h3>
+        <p class="settings__hint">{t('vault.storageHint')}</p>
+        <fieldset class="vmodes">
+          <legend class="sr-only">{t('vault.storage')}</legend>
+          {STORAGE_MODES.map((m) => (
+            <label key={m} class={`vmode${state.mode === m ? ' is-on' : ''}`}>
+              {/* Checked follows the stored mode; choosing another opens the confirmation dialog first. */}
+              <input
+                type="radio"
+                name="vault-mode"
+                class="vmode__input"
+                checked={state.mode === m}
+                onChange={() => state.mode !== m && setModeTarget(m)}
+              />
+              <span class="vmode__dot" aria-hidden="true" />
+              <span class="vmode__text">
+                <strong>{t(`vault.mode.${m}` as MessageKey)}</strong>
+                <span>{t(`vault.mode.${m}.hint` as MessageKey)}</span>
+              </span>
+              <Icon name={MODE_ICON[m]} size={16} class="vmode__icon" />
+            </label>
+          ))}
+        </fieldset>
+        {state.mode === 'device-plain' && items.length > 0 && (
+          <div class="vnote vnote--warn">
+            <Icon name="warn" size={16} />
+            <span class="vnote__text">{t('vault.plainWarning')}</span>
+            <Button size="s" icon="lock" onClick={() => setModeTarget('device-encrypted')}>
+              {t('vault.encryptNow')}
+            </Button>
+          </div>
+        )}
+        {encrypted && (
+          <>
+            <div class={`vlock ${state.locked ? 'is-locked' : 'is-open'}`}>
+              <span class="vlock__disc" aria-hidden="true">
+                <Icon name="lock" size={16} />
+              </span>
+              <span class="vlock__text">{state.locked ? t('vault.locked') : t('vault.unlocked')}</span>
+              {!state.locked && (
+                <Button size="s" variant="ghost" icon="lock" onClick={() => vault.lock()}>
+                  {t('vault.lockNow')}
+                </Button>
+              )}
+            </div>
+            {state.locked && <UnlockForm onDone={() => undefined} />}
+            <Field label={t('vault.autoLock')} hint={t('vault.autoLockHint')}>
+              {(id, d) => (
+                <Select
+                  id={id}
+                  aria-describedby={d}
+                  value={String(prefs.autoLockMin)}
+                  onValue={(v) => vaultPrefs.set({ autoLockMin: Number(v) })}
+                  options={AUTO_LOCK.map((n) => ({
+                    value: String(n),
+                    label: n ? t('vault.minutes', { n }) : t('vault.never'),
+                  }))}
+                />
+              )}
+            </Field>
+            <div class="settings__row">
+              <Button size="s" icon="key" onClick={() => setChanging(true)}>
+                {t('vault.changePassphrase')}
+              </Button>
+            </div>
+          </>
+        )}
+        {/* Where keys go: one line until asked; on *.github.io (shared origin) it starts open and in warn colour. */}
+        <details class={`vtrust${shared ? ' is-shared' : ''}`} open={shared}>
+          <summary class="vtrust__sum">
+            <Icon name={shared ? 'warn' : 'info'} size={16} />
+            <span>{t('vault.trustTitle')}</span>
+            <Icon name="chevron-down" size={16} class="vtrust__chev" />
+          </summary>
+          <p class="vnote">{t('vault.trustBody')}</p>
+          <p class="vnote">{t('vault.trustShared')}</p>
+        </details>
       </section>
 
       <section class="settings__group" aria-labelledby="vault-wipe">

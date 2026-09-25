@@ -37,14 +37,19 @@ describe('Credentials tab', () => {
     const radios = [...el.querySelectorAll<HTMLInputElement>('input[type="radio"][name="vault-mode"]')]
     expect(radios).toHaveLength(3)
     expect(radios.find((r) => r.checked)?.closest('label')?.textContent).toContain('This device')
-    expect(el.textContent).toContain('No credentials yet')
+    expect(el.textContent).toContain('No keys saved yet')
     await vault.add({ label: 'DeepSeek personal', kind: 'llm', secret: 'sk-1234567890abcdef' })
     await tick()
     expect(el.textContent).toContain('DeepSeek personal')
     expect(el.textContent).toContain('sk-…cdef')
     expect(el.textContent).not.toContain('sk-1234567890abcdef')
-    // Plain storage with keys in it warns.
-    expect(el.textContent).toContain('stored unencrypted')
+    // Plain storage with keys in it warns, and offers the fix right there.
+    expect(el.textContent).toContain('not encrypted')
+    const fix = [...el.querySelectorAll<HTMLButtonElement>('.vnote--warn button')]
+    expect(fix.map((b) => b.textContent)).toEqual(['Encrypt now'])
+    fix[0]!.click()
+    await tick()
+    expect(document.querySelectorAll('input[type="password"]')).toHaveLength(2)
     render(null, el)
   })
 })

@@ -27,25 +27,75 @@
   color: var(--warn);
 }
 
-.vtrust .settings__subh {
+/* The plain-text warning carries its own fix: text, then "Encrypt now" (drops under it on a narrow screen). */
+.vnote--warn {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.vnote__text {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+/* Where keys go: a one-line disclosure under the storage options. */
+.vtrust {
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+.vtrust__sum {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 32px;
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  cursor: pointer;
+  list-style: none;
 }
 
-.vtrust .settings__subh > .icon {
+.vtrust__sum::-webkit-details-marker {
+  display: none;
+}
+
+.vtrust__sum > .icon:first-child {
+  flex: none;
   color: var(--info);
 }
 
-/* On *.github.io the note matters: a warn hairline inside the plate, no loud fill. */
-.vtrust.is-shared {
-  box-shadow:
-    var(--plate-edge),
-    var(--elev-1),
-    inset 0 0 0 1px color-mix(in oklab, var(--warn) 40%, transparent);
+.vtrust__sum:focus-visible {
+  border-radius: var(--radius-s);
+  box-shadow: var(--ring);
 }
 
-.vtrust.is-shared .settings__subh > .icon {
+@media (hover: hover) {
+  .vtrust__sum:hover {
+    color: var(--text);
+  }
+}
+
+.vtrust__chev {
+  margin-left: auto;
+  color: var(--text-3);
+  transition: transform var(--dur-1) var(--ease);
+}
+
+.vtrust[open] .vtrust__chev {
+  transform: rotate(180deg);
+}
+
+.vtrust > .vnote {
+  margin-top: 0.4rem;
+  padding-left: 1.5rem;
+}
+
+/* On *.github.io the note matters: it starts open, its icon and title in warn colour. */
+.vtrust.is-shared .vtrust__sum {
+  color: var(--text);
+}
+
+.vtrust.is-shared .vtrust__sum > .icon:first-child {
   color: var(--warn);
 }
 

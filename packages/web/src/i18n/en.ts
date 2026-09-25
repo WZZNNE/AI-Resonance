@@ -806,29 +806,29 @@ const en = {
 
   // ═══════════ vault.* — credentials (src/vault) ═══════════
   'vault.tab': 'Credentials',
-  'vault.trustTitle': 'Where your keys go',
+  'vault.trustTitle': 'Where do my keys go?',
   'vault.trustBody':
-    'Keys stay in this browser and are sent only to the service they belong to. On *.github.io all project pages of one account share an origin, so another page of that account could read stored keys: use your own fork for your keys and prefer encrypted storage.',
-  'vault.storage': 'Storage',
-  'vault.storageHint':
-    'Labels and dates are always readable. The mode decides where secrets live and whether they are encrypted.',
+    'Each key is sent only to the service it belongs to: a DeepSeek key goes to DeepSeek and nowhere else. This site is static, with no server of its own, and never collects your keys.',
+  'vault.trustShared':
+    'On *.github.io, every project page of one GitHub account shares this browser storage, so another page of that account could read keys saved here. Save your own keys only on your own fork, preferably encrypted.',
+  'vault.storage': 'Where they’re kept',
+  'vault.storageHint': 'Change it any time; saved keys move with it.',
   'vault.mode.session': 'This tab only',
-  'vault.mode.session.hint': 'Kept for this tab; gone when you close it.',
+  'vault.mode.session.hint': 'Cleared when you close the tab. Safest, but you paste keys again each time.',
   'vault.mode.session.effect': 'Keys move to this tab’s session storage and vanish when the tab closes.',
   'vault.mode.device-plain': 'This device',
-  'vault.mode.device-plain.hint':
-    'Saved in this browser, unencrypted. Convenient; anyone with access to this browser profile can read them.',
+  'vault.mode.device-plain.hint': 'Stays in this browser as plain text. Easiest on your own computer.',
   'vault.mode.device-plain.effect': 'Keys are saved unencrypted in this browser.',
   'vault.mode.device-encrypted': 'This device, encrypted',
   'vault.mode.device-encrypted.hint':
-    'Saved with AES-256, unlocked with your passphrase once per tab. The passphrase cannot be recovered.',
+    'Stays, locked with your passphrase (AES-256); unlock once per tab. A forgotten passphrase cannot be recovered.',
   'vault.mode.device-encrypted.effect':
     'Choose a passphrase. You enter it once per tab; if you forget it, the stored keys are lost.',
   'vault.modeTo': 'Switch to “{mode}”',
   'vault.modeApply': 'Switch',
   'vault.modeChanged': 'Storage: {mode}',
-  'vault.plainWarning':
-    'Your keys are stored unencrypted. Encrypt them with a passphrase if anyone else uses this browser.',
+  'vault.plainWarning': 'Your keys are not encrypted. If anyone else uses this computer, encrypt them.',
+  'vault.encryptNow': 'Encrypt now',
   'vault.locked': 'Locked',
   'vault.unlocked': 'Unlocked in this tab',
   'vault.lockNow': 'Lock now',
@@ -847,10 +847,11 @@ const en = {
   'vault.autoLockHint': 'After this long without using a key.',
   'vault.minutes': '{n} min',
   'vault.never': 'Never',
-  'vault.credentials': 'Keys and tokens',
-  'vault.credentialsHint': 'Shown masked; hold the eye button to reveal. Never included in exported settings.',
-  'vault.empty': 'No credentials yet',
-  'vault.add': 'Add credential',
+  'vault.credentials': 'Your keys',
+  'vault.credentialsHint':
+    'API keys for AI summaries, web search and the like. Masked in the list (hold the eye to reveal) and never included in exported settings.',
+  'vault.empty': 'No keys saved yet',
+  'vault.add': 'Add a key',
   'vault.label': 'Label',
   'vault.labelHint': 'Your name for it, e.g. “DeepSeek personal”.',
   'vault.kind': 'Used for',
