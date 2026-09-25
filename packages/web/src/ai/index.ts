@@ -7,7 +7,7 @@ import './prefs.ts'
 import type { UserSummary } from '@resonance/channels/report'
 import type { EntityKey, Lang } from '@resonance/schema'
 import { lazy } from '../core/lazy.tsx'
-import { registerCommand, registerItemAction, registerSettingsTab } from '../core/registry.ts'
+import { registerCommand, registerCredentialLinker, registerItemAction, registerSettingsTab } from '../core/registry.ts'
 
 declare module '../core/registry.ts' {
   interface CommandMap {
@@ -36,3 +36,6 @@ registerCommand({
   id: 'ai.cachedSummaries',
   run: async (keys: EntityKey[], lang: Lang) => (await import('./cache.ts')).cachedSummaries(keys, lang),
 })
+
+// Which service a new key is for, and where each key is used (Settings › Credentials; loads with that tab).
+registerCredentialLinker({ id: 'ai', order: 10, load: async () => (await import('./linker.ts')).linker })

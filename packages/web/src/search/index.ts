@@ -6,7 +6,13 @@ import './prefs.ts'
  * file is all the initial bundle carries.
  */
 import { lazy } from '../core/lazy.tsx'
-import { registerCommand, registerItemAction, registerRoute, registerSettingsTab } from '../core/registry.ts'
+import {
+  registerCommand,
+  registerCredentialLinker,
+  registerItemAction,
+  registerRoute,
+  registerSettingsTab,
+} from '../core/registry.ts'
 import type { WebResult } from './runner.ts'
 import type { SearchOpenOptions } from './ui.tsx'
 import type { WebSearchOptions } from './web.ts'
@@ -44,3 +50,6 @@ registerSettingsTab({
   order: 30,
   component: lazy(() => import('./tab.tsx')),
 })
+
+// Which service a new key is for, and where each key is used (Settings › Credentials; loads with that tab).
+registerCredentialLinker({ id: 'search', order: 20, load: async () => (await import('./linker.ts')).linker })

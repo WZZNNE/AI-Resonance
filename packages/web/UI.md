@@ -50,6 +50,7 @@ Import order: `routes.ts` (shell) runs before `features.ts`, so a feature regist
 | `registerSettingsTab({ id, title, icon, order, component })` | A tab under `#/settings/<id>`. General is `order: 0`; pick 10, 20, … |
 | `registerItemAction({ id, label, icon, order, when?, run? \| component? })` | A button on every card (icon only) and on the detail (icon + label). `ctx = { lang, date, placement, toast, navigate }`. Built-ins Open ↗ and Copy link come last. |
 | `registerCommand({ id, run, title?, keys?, order? })` | A named command, optionally bound to shortcuts (`'/'`, `'mod+k'`, `'['`). Bare keys are ignored while typing. |
+| `registerCredentialLinker({ id, order?, load })` | How a feature ties vault keys to what it configures. `load()` imports a `CredentialLinker` on demand (only Settings › Credentials needs it): `kinds`, `area()`, `services?(kind)` offered when a key is added, `uses()` (where each key is used; shown on its row) and `attach?(kind, serviceId, credentialId)` to connect a new key. |
 | `runCommand(id, ...args)` | Call another feature without importing it. Returns the command's return value (e.g. a Promise), or `undefined` if not registered. |
 | `hasCommand(id)`, `hasRoute(path)` | Reactive checks: the shell hides the search trigger, tab-bar entries and export button until their feature registers. |
 | `settingsTabs`, `itemActions`, `commandList`, `routes` | Read-only signals (sorted). A command palette can list `commandList.value`. |
