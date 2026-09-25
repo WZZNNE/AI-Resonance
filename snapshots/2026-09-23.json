@@ -10716,6 +10716,41 @@
    ],
    "title": "Two years of OpenAI Academy",
    "url": "https://openai.com/index/two-years-of-openai-academy"
+  },
+  {
+   "board": "labs",
+   "category": "product",
+   "key": "url:platform.claude.com/docs/en/release-notes/overview#eada5055",
+   "lab": {
+    "company": "anthropic",
+    "companyName": "Anthropic",
+    "datePrecision": "day",
+    "kind": "product",
+    "publishedAt": "2026-09-23T19:00:00.000Z",
+    "surface": "changelog"
+   },
+   "metrics": {
+    "company": 1,
+    "kind": 0.7,
+    "release": 0,
+    "surface": 0.1
+   },
+   "publishedAt": "2026-09-23T19:00:00.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "lab:anthropic",
+     "cat:kind:product"
+    ],
+    "score": 1
+   },
+   "sources": [
+    "labs-anthropic"
+   ],
+   "summary": "Cache diagnostics is out of beta on the Claude API and no longer requires the cache-diagnosis-2026-04-07 beta header. Include the diagnostics object on a Messages request to opt in; requests that still send the header work as before. Responses from POST /v1/messages now always include the diagnostics field, which is null when the request did not include the diagnostics object.",
+   "tags": [],
+   "title": "Cache diagnostics is out of beta on the Claude API and no longer requires the cache-diagnosis-2026-04-07 beta header.",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#september-23-2026"
   }
  ],
  "date": "2026-09-23",
