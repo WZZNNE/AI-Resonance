@@ -23,7 +23,7 @@ function SavedCard({ entry }: { entry: ReadingEntry }) {
   }
   const route = `#/item/${keyToSlug(entry.key as EntityKey)}${entry.date ? `?d=${encodeURIComponent(entry.date)}` : ''}`
   return (
-    <article class="library__item mat-plate">
+    <article class="library__item glass">
       <p class="kicker">
         {boardTitle(entry.board)} · {fmt.dateTime(entry.updatedAt)}
       </p>

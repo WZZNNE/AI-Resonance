@@ -160,6 +160,8 @@ async function main() {
       `--remote-debugging-port=${port}`,
       `--user-data-dir=${profile}`,
       '--lang=zh-CN',
+      // Containers and CI often run as root, where Chromium refuses to start without this.
+      ...(process.getuid?.() === 0 ? ['--no-sandbox'] : []),
       'about:blank',
     ],
     { stdio: 'ignore' },

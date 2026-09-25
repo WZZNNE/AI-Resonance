@@ -1,0 +1,379 @@
+/*
+ * Glass and the tactical HUD layer (docs/VISUAL.md §3, §5a, §7a). Loaded right after ui.css, so a component's own rule
+ * still wins for anything it sets; this file only adds what components don't: the frosted backdrop, the refracting
+ * rim, HUD brackets, the pointer light and the entrance/route motion.
+ *
+ * Backdrop roots: an ancestor with opacity < 1, filter, mask or clip-path cuts a glass panel off from the scene it
+ * blurs. So route and refresh motion never fades a container of glass; each panel fades itself.
+ */
+
+/* The pointer light (ui/glass.ts writes --mx/--my on the hovered panel); registered so its strength can ease. */
+@property --spot-a {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* ── content glass: backdrop, the tints things inside it use, the pointer light ── */
+
+:is(
+  .board,
+  .brief,
+  .event-brief__list,
+  .sources__scroll,
+  .settings__group,
+  .settings__nav,
+  .banner,
+  .scoring__card,
+  .leaders__board,
+  .wboard,
+  .streaks__list,
+  .wclusters__list,
+  .rcluster,
+  .export__out,
+  .aisum__card,
+  .detail__plate,
+  .detail__source,
+  .facts,
+  .comments,
+  .health__card,
+  .health__notice,
+  .calc__result,
+  .spage .spal__inner,
+  .glass
+) {
+  /* Inside glass, "a slightly different surface" is a tint of the glass, never an opaque slab over it. */
+  --surface-2: var(--tint-2);
+  --surface-3: var(--tint-3);
+  -webkit-backdrop-filter: var(--panel-blur);
+  backdrop-filter: var(--panel-blur);
+}
+
+.glass {
+  border-radius: var(--radius-l);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
+}
+
+/*
+ * The refracting rim: a 1 px ring (mask) lit brightest where the light enters (top left), catching a little again at
+ * the far edge — and, under a fine pointer, a spot of signal light that follows the cursor along the edge.
+ */
+:is(
+  .board,
+  .event-brief__list,
+  .settings__group,
+  .scoring__card,
+  .leaders__board,
+  .wboard,
+  .streaks__list,
+  .wclusters__list,
+  .rcluster,
+  .export__out,
+  .detail__plate,
+  .detail__source,
+  .facts,
+  .comments,
+  .health__card,
+  .glass
+) {
+  position: relative;
+}
+
+:is(
+  .board,
+  .event-brief__list,
+  .settings__group,
+  .scoring__card,
+  .leaders__board,
+  .wboard,
+  .streaks__list,
+  .wclusters__list,
+  .rcluster,
+  .export__out,
+  .detail__plate,
+  .detail__source,
+  .facts,
+  .comments,
+  .health__card,
+  .glass
+)::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      240px circle at var(--mx, 50%) var(--my, -200px),
+      color-mix(in srgb, var(--hud-hot) calc(var(--spot-a) * 90%), transparent),
+      transparent 70%
+    ),
+    var(--rim);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* The pointer light eases in and out (its position is written per frame; its strength is transitioned). */
+@media (hover: hover) and (pointer: fine) {
+  :is(.board, .settings__group, .scoring__card, .leaders__board, .wboard, .rcluster, .detail__plate, .glass) {
+    transition:
+      --spot-a var(--dur-3) var(--ease),
+      transform var(--dur-2) var(--ease),
+      box-shadow var(--dur-2) var(--ease);
+  }
+
+  :is(.board, .settings__group, .scoring__card, .leaders__board, .wboard, .rcluster, .detail__plate, .glass)[data-lit] {
+    --spot-a: 1;
+  }
+}
+
+/* ── HUD brackets: a targeting frame just outside a panel; it closes in and lights up when the panel is engaged ── */
+
+.board::after,
+.hud-frame::after {
+  --bl: 14px;
+  --bw: 1.5px;
+  --bc: var(--hud);
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: -7px;
+  background:
+    linear-gradient(var(--bc) 0 0) 0 0 / var(--bl) var(--bw),
+    linear-gradient(var(--bc) 0 0) 0 0 / var(--bw) var(--bl),
+    linear-gradient(var(--bc) 0 0) 100% 0 / var(--bl) var(--bw),
+    linear-gradient(var(--bc) 0 0) 100% 0 / var(--bw) var(--bl),
+    linear-gradient(var(--bc) 0 0) 0 100% / var(--bl) var(--bw),
+    linear-gradient(var(--bc) 0 0) 0 100% / var(--bw) var(--bl),
+    linear-gradient(var(--bc) 0 0) 100% 100% / var(--bl) var(--bw),
+    linear-gradient(var(--bc) 0 0) 100% 100% / var(--bw) var(--bl);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transition:
+    inset var(--dur-2) var(--ease),
+    filter var(--dur-2) var(--ease);
+}
+
+.board:focus-within::after,
+.hud-frame:focus-within::after {
+  --bc: var(--hud-hot);
+  inset: -5px;
+  filter: drop-shadow(var(--hud-glow));
+}
+
+@media (hover: hover) {
+  .board:hover::after,
+  .hud-frame:hover::after {
+    --bc: var(--hud-hot);
+    --bl: 18px;
+    inset: -4px;
+    filter: drop-shadow(var(--hud-glow));
+  }
+}
+
+/* A panel's index, stencilled into its top-right corner (decoration: no text for assistive tech). */
+.boards {
+  counter-reset: panel;
+}
+
+.board {
+  counter-increment: panel;
+}
+
+.board__head::after {
+  content: counter(panel, decimal-leading-zero) / "";
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  color: var(--hud-faint);
+  font: 600 var(--fs-2xs) / 1 var(--font-hud);
+  letter-spacing: 0.14em;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .board__head::after {
+    top: 1.05rem;
+    right: 1.25rem;
+  }
+}
+
+/* One board at a time (phones): its place in the grid means nothing. */
+.boards--single .board__head::after {
+  content: none;
+}
+
+/* ── the scene behind the glass (fixed: it stays put while the glass slides over it) ── */
+
+.app::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: var(--scan), var(--grain), var(--vignette);
+  pointer-events: none;
+}
+
+/* ── route scan: one pass of light down the screen when the page changes (app.tsx remounts it per path) ── */
+
+.routescan {
+  position: fixed;
+  z-index: calc(var(--z-header) - 1);
+  top: calc(var(--header-h) + env(safe-area-inset-top));
+  right: 0;
+  left: 0;
+  height: 96px;
+  background:
+    linear-gradient(var(--hud-hot) 0 0) 0 100% / 100% 1px no-repeat,
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--signal) 12%, transparent));
+  opacity: 0;
+  filter: drop-shadow(var(--hud-glow));
+  pointer-events: none;
+  animation: route-scan 760ms var(--ease-in) both;
+}
+
+@keyframes route-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-96px);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(72vh);
+  }
+}
+
+[data-mode="light"] .routescan {
+  background:
+    linear-gradient(var(--signal) 0 0) 0 100% / 100% 2px no-repeat,
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--signal) 14%, transparent));
+}
+
+/* ── entrance: panels power on like a hologram (a flicker, then settle); their brackets lock on ── */
+
+@keyframes holo-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+
+  38% {
+    opacity: 0.85;
+  }
+
+  48% {
+    opacity: 0.45;
+  }
+
+  62% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lock-on {
+  0% {
+    inset: -22px;
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    inset: -7px;
+    opacity: 1;
+  }
+}
+
+/*
+ * `backwards`, never `both`: once settled, a panel must fall back to its own styles (hover lift, bracket moves).
+ * Only glass itself or glass-free blocks fade — never a wrapper of glass (see the header).
+ */
+:is(
+  .edition,
+  .brief,
+  .event-brief__list,
+  .reading-tabs--home,
+  .board-switch,
+  .catbar,
+  .board,
+  .settings__group,
+  .page__head
+) {
+  animation: holo-in 620ms var(--motion-settle) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+.board::after {
+  animation: lock-on 720ms var(--motion-settle) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 180ms);
+}
+
+:is(.brief, .event-brief__list) {
+  --i: 1;
+}
+
+.reading-tabs--home,
+.board-switch {
+  --i: 2;
+}
+
+.catbar {
+  --i: 2;
+}
+
+.boards > :nth-child(1),
+.boards--single {
+  --i: 3;
+}
+
+.boards > :nth-child(2) {
+  --i: 4;
+}
+
+.boards > :nth-child(3) {
+  --i: 5;
+}
+
+.boards > :nth-child(4) {
+  --i: 6;
+}
+
+.boards > :nth-child(5) {
+  --i: 7;
+}
+
+.boards > :nth-child(n + 6) {
+  --i: 8;
+}
+
+.settings__group:nth-child(2) {
+  --i: 1;
+}
+
+.settings__group:nth-child(3) {
+  --i: 2;
+}
+
+.settings__group:nth-child(n + 4) {
+  --i: 3;
+}

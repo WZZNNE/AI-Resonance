@@ -33,14 +33,14 @@ const SUBJECT_TAIL = 90
 // Gmail/Outlook, and no shadows or gradients. Light values inline; Apple Mail's dark mode swaps them via the classes
 // below. Board hues are the light system colours (repos one step deeper so it reads ≥ 4.5:1 as citation text).
 const C = {
-  bg: '#f5f5f7',
+  bg: '#e6e8eb',
   card: '#ffffff',
-  fg: '#1d1d1f',
-  fg2: '#424245',
-  mut: '#6e6e73',
-  line: '#e8e8ed',
-  acc: '#006bd6',
-  sig: '#0a84ff',
+  fg: '#111418',
+  fg2: '#3a4048',
+  mut: '#5b626c',
+  line: '#dfe2e6',
+  acc: '#8f4f00',
+  sig: '#f2b400',
 }
 const BOARD_HEX: Record<Board, string> = {
   repos: '#1f7a37',
@@ -53,9 +53,9 @@ const BOARD_HEX: Record<Board, string> = {
 const SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif"
 const HEAD_STYLE =
   '@media (max-width:660px){.w{width:100%!important}.p{padding-left:18px!important;padding-right:18px!important}}' +
-  `@media (prefers-color-scheme:dark){body,.bg{background:#07080b!important}.card{background:#111318!important}` +
-  `.fg{color:#f2f3f5!important}.fg2{color:#aeb4bf!important}.mut{color:#868d9a!important}` +
-  `.acc{color:#64d2ff!important}.ln{border-color:#23262d!important}}`
+  `@media (prefers-color-scheme:dark){body,.bg{background:#04060a!important}.card{background:#0f131a!important}` +
+  `.fg{color:#eef1f5!important}.fg2{color:#adb5c1!important}.mut{color:#8a93a1!important}` +
+  `.acc{color:#ffa04a!important}.ln{border-color:#1f252e!important}}`
 
 interface Level {
   perBoard: number

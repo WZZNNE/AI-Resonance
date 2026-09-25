@@ -12,16 +12,19 @@
   isolation: isolate;
 }
 
-/* Page light: one top spill (dark only) and a micro dot grid, faded out over the first ~700 px. Scrolls with the page. */
+/*
+ * The scene the glass refracts: the light sources (--spill) over the tactical grid, fixed to the viewport so panels
+ * slide over it (one composited layer; no background-attachment). Scanlines, grain and vignette sit on .app::after
+ * (ui/hud.css). Fading the grid towards the edges keeps the middle calm and the corners technical.
+ */
 .app::before {
   content: "";
-  position: absolute;
+  position: fixed;
   z-index: -1;
-  inset: 0 0 auto;
-  height: 760px;
+  inset: 0;
   background: var(--aurora), var(--grid);
-  -webkit-mask-image: linear-gradient(black 60px, transparent 700px);
-  mask-image: linear-gradient(black 60px, transparent 700px);
+  -webkit-mask-image: radial-gradient(140% 110% at 50% 20%, black 45%, rgb(0 0 0 / 0.55));
+  mask-image: radial-gradient(140% 110% at 50% 20%, black 45%, rgb(0 0 0 / 0.55));
   pointer-events: none;
 }
 
@@ -85,7 +88,27 @@
   background: var(--glass-bg);
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
-  box-shadow: inset 0 -1px 0 var(--line);
+  box-shadow:
+    inset 0 -1px 0 var(--line),
+    0 10px 30px -18px rgb(0 0 0 / 0.6);
+}
+
+/* The header's lower edge is a HUD rail: a lit segment under the brand, fading ticks, a faint line to the end. */
+.appbar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 4px;
+  background:
+    linear-gradient(var(--hud-hot) 0 0) var(--gutter) 100% / 56px 2px no-repeat,
+    var(--ticks) 0 100% / 100% 3px no-repeat,
+    linear-gradient(90deg, var(--hud), transparent 70%) 0 100% / 100% 1px no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.35) 55%, transparent);
+  mask-image: linear-gradient(90deg, black, rgb(0 0 0 / 0.35) 55%, transparent);
+  filter: drop-shadow(var(--hud-glow));
+  pointer-events: none;
 }
 
 .appbar__inner {
@@ -667,17 +690,18 @@ kbd {
     0 4px 12px -4px rgb(0 0 0 / 0.16);
 }
 
+/* The active tab's signal: a short lit bar on the thumb's lower edge (HUD tab light). */
 .tabbar__item[aria-current="page"]::after {
   content: "";
   position: absolute;
-  bottom: 4px;
+  bottom: 3px;
   left: 50%;
-  width: 4px;
-  height: 4px;
-  margin-left: -2px;
-  border-radius: 50%;
+  width: 16px;
+  height: 2px;
+  margin-left: -8px;
+  border-radius: 1px;
   background: var(--signal);
-  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--signal) var(--bloom), transparent);
+  box-shadow: 0 0 8px 1px color-mix(in srgb, var(--signal) var(--bloom), transparent);
 }
 
 .tabbar__item:focus-visible {
@@ -719,8 +743,8 @@ kbd {
   gap: 0.65rem;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
   color: var(--text-2);
   font-size: var(--fs-s);
   line-height: 1.45;
@@ -883,13 +907,8 @@ kbd {
     top: calc(var(--header-h) + 1.5rem);
     padding: 6px;
     border-radius: var(--radius-l);
-    background: var(--plate-bg);
-    box-shadow: var(--plate-edge), var(--elev-1);
-  }
-
-  /* Light: the list plate is a shade off-white so the raised white row reads. */
-  [data-mode="light"] .settings__nav {
-    background: color-mix(in oklab, var(--surface-3) 70%, var(--surface));
+    background: var(--panel-bg);
+    box-shadow: var(--panel-edge), var(--panel-drop);
   }
 }
 
@@ -972,8 +991,8 @@ kbd {
   padding: 1.25rem;
   border: 0;
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 /* Consecutive fields in one group are hairline-separated rows. */

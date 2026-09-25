@@ -25,7 +25,7 @@ scripts/mock-api.ts deterministic mock /api/v1 (node scripts/mock-api.ts)
 
 A feature is a folder with an `index.ts` that registers things when imported. `features.ts` finds it at build time
 (`import.meta.glob`), so there is no list to edit and a missing feature is simply absent. Everything imported from an
-`index.ts` is in the initial bundle (budget ≤ 90 KB gzip, DESIGN §7), so **register cheap stubs and `import()` the heavy parts**:
+`index.ts` is in the initial bundle (budget ≤ 95 KB gzip, DESIGN §7), so **register cheap stubs and `import()` the heavy parts**:
 
 ```ts
 // src/ai/index.ts
@@ -199,9 +199,10 @@ Tokens (`theme/tokens.css`; presets override values only):
 | Accent / status | `--accent` (text, links) `--accent-fill` (filled buttons) `--accent-2` `--accent-ink` `--focus` `--ok` `--warn` `--danger` `--info` `--live` `--up` `--down` `--res` |
 | Signal | `--signal` `--signal-2` `--signal-line` (gradient, hairlines only) `--signal-text` (signal as readable text/icon colour) |
 | Meaning | `--hue-{repos,papers,news,social,labs}` · `--cat-{release,product,research,tool,engineering,discussion,industry,policy}` · `--sig-1`…`--sig-8` |
-| Materials | `--plate-bg` `--plate-edge` · `--well-bg` `--well-edge` · `--glass-bg` `--glass-blur` `--glass-edge` · `--elev-0`…`--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` (§10) |
-| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (45 % dark, 0 % light) |
-| Page | `--spill` (top light, dark only) `--grid` `--grid-dot` |
+| Materials | `--panel-bg` `--panel-tint` `--panel-edge` `--panel-drop` `--panel-drop-2` `--panel-blur` `--rim` (content glass) · `--tint-1`…`--tint-3` (fills inside glass) · `--plate-bg` `--plate-edge` · `--well-bg` `--well-edge` · `--glass-bg` `--glass-blur` `--glass-edge` · `--elev-0`…`--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` · `--spot` `--spot-max` (pointer light) (§10) |
+| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (55 % dark, 0 % light) |
+| HUD | `--hud` `--hud-hot` (bracket/rail colour at rest / lit) `--hud-faint` (ticks) `--hud-glow` `--ticks` `--font-hud` |
+| Page | `--spill` (scene light) `--grid` `--grid-dot` `--grid-major` (tactical grid) `--scan` `--grain` `--vignette` |
 | Type | `--font-ui` `--font-text` (titles/body copy) `--font-display` `--font-num` `--font-serif` `--font-mono` (all with CJK fallbacks) · `--fs-2xs`…`--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--weight-title/section/display` `--tracking-hero/display/section/title/eyebrow` · `--lh` `--lh-title` `--lh-tight` |
 | Shape | `--radius-s` 8 `--radius-m` 12 `--radius-l` 18 `--radius-xl` 22 `--radius-2xl` 30 `--radius-pill` · `--space-1`…`--space-10` `--pad-card` `--gap-list` `--density` `--target` (44px) |
 | Motion | `--ease` (sheet curve) `--ease-pop` (knobs, thumbs) `--ease-in` · `--dur-1/2/3` 160/240/420 ms (0 under reduced motion) |
@@ -220,29 +221,35 @@ Stable `data-part` hooks (for custom CSS and `docs/CUSTOMIZE.md`): `app` `header
 ## 10. Visual language ("Titanium × Signal")
 
 `docs/VISUAL.md` is the spec (values there are the values in code); this is how to apply it in a surface. The look:
-Apple-grade restraint, tactile materials lit from the top, and one thin line of cool "signal" light. Build every
-surface from the three materials and the tokens below — **no raw hex, no local colours, no `border` for depth**.
+thick, lit glass over a tactical scene, and one amber (dark) / safety-yellow (light) line of HUD "signal" light. Build
+every surface from the materials and the tokens below — **no raw hex, no local colours, no `border` for depth**.
 
 **Materials** (tokens derive from the colour tokens with `color-mix()`, so every preset and mode gets them for free):
 
 | Material | Utility | Tokens | Use for | Never for |
 |---|---|---|---|---|
-| **Plate** (raised) | `.mat-plate` | `background: var(--plate-bg); box-shadow: var(--plate-edge), var(--elev-1)` | cards, board panels, settings groups, secondary buttons, pills, keycaps, knobs, the selected thumb | text inputs, tracks |
+| **Panel** (content glass) | `.glass` | `background: var(--panel-bg); box-shadow: var(--panel-edge), var(--panel-drop)`; `ui/hud.css` adds the backdrop blur, the refracting rim and the inner tints | board panels, the brief, settings groups, scoring/archive/weekly panels, detail plates, library cards | small controls; anything inside a container that fades, filters or masks (§7a of VISUAL.md) |
+| **Plate** (raised) | `.mat-plate` | `background: var(--plate-bg); box-shadow: var(--plate-edge), var(--elev-1)` | secondary buttons, pills, chips, keycaps, knobs, the selected thumb | text inputs, tracks, content panels |
 | **Well** (recessed) | `.mat-well` | `background: var(--well-bg); box-shadow: var(--well-edge)` | inputs, search field, segmented/tab tracks, score-bar and progress tracks, count chips, source-status chips, empty-state icon discs | anything clickable that is not a field or a track |
-| **Glass** (vibrancy) | `.mat-glass` | `background: var(--glass-bg); backdrop-filter: var(--glass-blur); box-shadow: var(--glass-edge), var(--elev-3)` | chrome only: header, tab bar, sheets, drawers, dialogs, popovers, toasts, the search palette | content cards (no glass on anything that scrolls with the page) |
+| **Glass** (chrome) | `.mat-glass` | `background: var(--glass-bg); backdrop-filter: var(--glass-blur); box-shadow: var(--glass-edge), var(--elev-3)` | header, tab bar, sheets, drawers, dialogs, popovers, toasts, the search palette | content (use a panel) |
 | **Press** | — | `box-shadow: var(--press); transform: scale(0.98)` | the `:active` state of any plate | — |
 
 - A plate's edge lives inside its shadow, so plates never use `border` and never shift layout. A plate inside a plate
   (a grouped list, the score table) is `background: var(--surface-2); box-shadow: var(--plate-edge)` — no elevation.
-- Elevation: `--elev-1` at rest, `--elev-2` on hover, `--elev-3` for floating chrome. **Panels lift, rows don't**:
-  add `.mat-lift` to a panel (1 px up + `--elev-2`, only under `(hover: hover)`); rows inside it change to
-  `--surface-2` on hover. Nothing lifts on touch.
+- Elevation: `--elev-1` at rest, `--elev-2` on hover, `--elev-3` for floating chrome; panels use `--panel-drop` /
+  `--panel-drop-2`. **Panels lift, rows don't**: add `.mat-lift` to a panel (2 px up + `--panel-drop-2`, only under
+  `(hover: hover)`); rows inside it change to `--surface-2` on hover — which inside glass is the `--tint-2` wash.
+  Nothing lifts on touch.
+- A new content panel: give it the `glass` class (or add its selector to the lists at the top of `ui/hud.css`), and
+  to `LIT_PANELS` in `ui/glass.ts` if it should catch the pointer light. Never fade, filter or mask a wrapper of glass;
+  animate the panel itself.
 - Shadow composition: primitives keep their resting shadow in `--sh` and state rules swap it
   (`--sh: var(--press)`), so focus can add to it: `box-shadow: var(--sh), var(--ring)`. Write "no shadow" as
   `0 0 #0000` (a list-able value), never `none`.
 - Rows, not cards: items inside a panel are rows with hairline separators (`var(--line)`) inset past the rank column
   (iOS grouped list). One plate per panel; don't nest cards in cards.
-- Glass needs no fallback code: without `backdrop-filter`, `--glass-bg` itself becomes a 96 % opaque surface.
+- Glass needs no fallback code: without `backdrop-filter`, `--glass-bg` and `--panel-tint` become near-opaque
+  surfaces; under `prefers-reduced-transparency` they turn solid.
 
 **Colour.** Neutral graphite / light grey everywhere; colour only where it means something: board hue (`--hue`,
 set on every card/board, `boardHue(b)`), category (`categoryHue(c)`), score signals (`--sig-N`), resonance

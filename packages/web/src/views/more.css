@@ -29,8 +29,8 @@
 .rcluster,
 .scoring__card {
   border-radius: var(--radius-xl);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 /* Hairline between rows of a grouped panel, inset to the text (set --inset). */
@@ -561,8 +561,8 @@ button.cal__day:active {
 .weekly .brief {
   margin-bottom: 1.5rem;
   border: 0;
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 .weekly__boards {

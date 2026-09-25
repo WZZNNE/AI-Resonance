@@ -11,15 +11,18 @@
  *   Text      --text --text-2 --text-3 — each ≥ 4.5:1 on --bg and --surface in every preset
  *   Accent    --accent (links, selection) · --accent-fill (primary buttons) · --accent-2 (hover) · --accent-ink (text
  *             on accent) · --focus
- *   Signal    --signal (the one cyber light: focus, active nav) · --signal-2 · --signal-line (cyan → violet hairline)
+ *   Signal    --signal (the one cyber light: focus, active nav) · --signal-2 · --signal-line (signal → signal-2 hairline)
  *   Status    --ok --warn --danger --info · --live (live dot) · --up --down (rank moves) · --res (resonance)
  *   Meaning   --hue-repos --hue-papers --hue-news --hue-social --hue-labs (boards; a card sets --hue to its board's)
  *             · --cat-release --cat-product --cat-research --cat-tool --cat-engineering --cat-discussion --cat-industry
  *             --cat-policy · --sig-1 … --sig-8 (score-bar segments, by signal position)
- *   Material  --plate-bg --plate-edge (raised) · --well-bg --well-edge (recessed) · --glass-bg --glass-blur --glass-edge
- *             (chrome only) · --elev-0 … --elev-3 · --press · --thumb-bg · --knob --knob-shadow · --switch-off (off
- *             switch track) · --hl (top light)
- *   Glow      --glow · --ring --ring-inset (focus) · --bloom (45 % dark, 0 light)
+ *   Material  --panel-bg --panel-tint --panel-edge --panel-drop --panel-drop-2 --panel-blur --rim (content glass) ·
+ *             --tint-1 … --tint-3 (fills inside glass) · --plate-bg --plate-edge (small raised parts) · --well-bg
+ *             --well-edge (recessed) · --glass-bg --glass-blur --glass-edge (chrome glass) · --elev-0 … --elev-3 ·
+ *             --press · --thumb-bg · --knob --knob-shadow · --switch-off (off switch track) · --hl (top light)
+ *   Glow      --glow · --ring --ring-inset (focus) · --bloom (55 % dark, 0 light)
+ *   HUD       --hud --hud-hot (bracket and rail colour at rest / lit) · --hud-faint (ticks) · --hud-glow · --ticks ·
+ *             --font-hud
  *   Type      --font-ui --font-text (titles, body copy) --font-display --font-num --font-serif --font-mono (all with CJK
  *             fallbacks) · --weight-title --weight-section --weight-display · --tracking-display --tracking-hero
  *             --tracking-section --tracking-title --tracking-eyebrow · --font-scale (0.85–1.3, set from Appearance) ·
@@ -27,7 +30,8 @@
  *             --fs-eyebrow · --lh --lh-tight --lh-title
  *   Shape     --radius-s --radius-m --radius-l --radius-xl --radius-2xl --radius-pill · --space-1 … --space-10 ·
  *             --density · --pad-card --gap-list · --target (44px minimum hit area)
- *   Page      --spill (top light; `--aurora` is its legacy alias — `none` turns it off) · --grid --grid-dot (dot grid)
+ *   Page      --spill (scene light; `--aurora` is its legacy alias — `none` turns it off) · --grid --grid-dot
+ *             --grid-major (tactical grid) · --scan (scanlines) · --grain (film grain) · --vignette
  *   Legacy    --shadow-1 --shadow-2 (= --elev-1 / --elev-2) · --inset (top highlight) · --header-bg (= --glass-bg)
  *   Motion    --ease (sheet curve) --ease-pop (knobs, thumbs) --ease-in · --dur-1 --dur-2 --dur-3 (0ms under reduced
  *             motion)
@@ -208,10 +212,12 @@ export function readableAccent(accent: Rgb, bg: Rgb, surface: Rgb, target = 4.5)
   return null
 }
 
-/** Pure: the tokens a custom accent must bring along so hover, focus and button text stay coherent and readable. */
+/** Pure: the tokens a custom accent must bring along so fills, hover, focus and button text stay coherent and readable. */
 export function accentTokens(accent: string, rgb: Rgb | null): Record<string, string> {
   if (!accent) return {}
   return {
+    // The preset's own fill (titanium light: safety yellow) would pair the new ink with the wrong colour.
+    '--accent-fill': accent,
     '--accent-2': `color-mix(in oklab, ${accent} 82%, var(--text))`,
     '--focus': accent,
     ...(rgb && rgb.a === 1 ? { '--accent-ink': inkFor(rgb) } : {}),
@@ -230,6 +236,10 @@ export const TOKENS: readonly string[] = [
     ' ',
   ),
   ...'thumb-bg knob knob-shadow switch-off hl glow ring ring-inset bloom spill grid grid-dot'.split(' '),
+  ...'panel-tint panel-bg panel-edge panel-drop panel-drop-2 panel-blur rim tint-1 tint-2 tint-3 signal-text'.split(
+    ' ',
+  ),
+  ...'hud hud-hot hud-faint hud-glow ticks font-hud grid-major scan grain vignette'.split(' '),
   ...['repos', 'papers', 'news', 'social', 'labs'].map((b) => `hue-${b}`),
   ...['release', 'product', 'research', 'tool', 'engineering', 'discussion', 'industry', 'policy'].map(
     (c) => `cat-${c}`,
@@ -392,7 +402,7 @@ export const PRESET_INFO: ReadonlyArray<{
   {
     id: 'titanium',
     mode: 'dark',
-    swatch: { dark: ['#07080b', '#111318', '#f2f3f5', '#64d2ff'], light: ['#f5f5f7', '#ffffff', '#1d1d1f', '#0a84ff'] },
+    swatch: { dark: ['#04060a', '#0f131a', '#eef1f5', '#ff9a3c'], light: ['#e6e8eb', '#ffffff', '#111418', '#f2b400'] },
   },
   {
     id: 'paper',
