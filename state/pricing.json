@@ -7903,7 +7903,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.06,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7911,11 +7911,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.1,
+   "in": 0.099,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.5,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7923,7 +7923,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.08832,
+   "cr": 0.249,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7931,11 +7931,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2528,
+   "in": 0.25,
    "k": "deepseek-pro-latest",
    "maxOut": 943718,
    "name": "DeepSeek Pro Latest",
-   "out": 1.9584,
+   "out": 3.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7943,7 +7943,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.016,
+   "cr": 0.012,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -7951,11 +7951,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.03,
+   "in": 0.0225,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.32,
+   "out": 0.42,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9092,18 +9092,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.055187,
+   "cr": 0.046734,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.662244,
+   "in": 0.560802,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.324488,
+   "out": 1.121604,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9111,7 +9111,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.011528,
+   "cr": 0.0088,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9119,11 +9119,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.34584,
+   "in": 0.264,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.03752,
+   "out": 0.792,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9131,7 +9131,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.003,
+   "cr": 0.06,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9139,9 +9139,9 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.15,
+   "in": 0.099,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 393216,
+   "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
    "out": 0.6,
    "p": "openrouter",
@@ -13765,7 +13765,7 @@
   },
   {
    "cr": 0.0036,
-   "ctx": 1048576,
+   "ctx": 1050000,
    "id": "xiaomi/mimo-v2.6-pro",
    "in": 0.435,
    "k": "mimo-v2-6-pro",
@@ -13955,24 +13955,6 @@
    "maxOut": 131072,
    "name": "GLM-5.2",
    "out": 2.0416,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-13"
-  },
-  {
-   "ctx": 131072,
-   "efforts": [
-    "high",
-    "xhigh"
-   ],
-   "id": "z-ai/glm-5.2:free",
-   "in": 0,
-   "k": "glm-5-2",
-   "maxOut": 117964,
-   "name": "GLM 5.2 (free)",
-   "out": 0,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17719,5 +17701,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-25T18:47:49.442Z"
+ "updatedAt": "2026-09-25T21:44:34.780Z"
 }
