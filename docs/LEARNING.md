@@ -1,6 +1,6 @@
 # 入门推荐 / Beginner picks
 
-产品更新与选材说明集中在 [中文 README](../README.zh-CN.md#更新--2026-09-21) 和 [English README](../README.md#update--2026-09-21)。阅读页保留简短介绍、来源和筛选，不重复展示规则说明。
+产品更新与选材说明集中在 [中文 README](../README.zh-CN.md#近期更新) 和 [English README](../README.md#recent-updates)。阅读页保留简短介绍、来源和筛选，不重复展示规则说明。
 
 ## 数据与入口
 

@@ -11,6 +11,14 @@
 </p>
 
 <p align="center">
+  ⚡ Zero servers (GitHub Actions + Pages) · 🔍 A score you can audit · 🔗 Cross-source resonance · 🧠 183-day memory · 🔑 Bring-your-own-key AI · 🌏 English / 中文
+</p>
+
+<p align="center">
+  <a href="https://wzznne.github.io/AI-Resonance/"><b>▶ Open today's radar</b></a> — nothing to install, no account
+</p>
+
+<p align="center">
   <a href="https://github.com/WZZNNE/AI-Resonance/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/WZZNNE/AI-Resonance/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white" alt="CI status"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license"></a>
   <a href="https://wzznne.github.io/AI-Resonance/"><img src="https://img.shields.io/badge/live%20demo-open-0a84ff?logo=githubpages&logoColor=white" alt="Live demo"></a>
@@ -39,32 +47,6 @@
   <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the hero date, today's brief and events at a glance on glass panels, the filters and the board grid (dark theme)" width="100%">
 </p>
 
-## Read it now — no deployment required
-
-[Open the daily radar](https://wzznne.github.io/AI-Resonance/) · [Beginner picks](https://wzznne.github.io/AI-Resonance/#/learn) · [Subscribe](https://wzznne.github.io/AI-Resonance/#/subscribe)
-
-The beginner library always shows 100 resources: 30 resident picks and 70 dynamic recommendations. Search by keyword and type, switch between resident and dynamic picks, or filter recent entries.
-
-Reading, Atom subscriptions, follow controls, bookmarks and reading-library backup need no key or account. A site operator can pre-generate bilingual explanations with a pipeline LLM key; coverage is shown honestly when explanations are unavailable. Deploy only if you want to run your own edition.
-
-## Update · 2026-09-21
-
-The library always shows **100 resources: 30 resident picks plus 70 dynamic recommendations**. Dynamic selection is reconsidered daily; resources need not be newly published, and useful selections stay when no better candidates qualify.
-
-- Removed historical launch news, specialist mathematics/research textbooks and duplicate repository/tutorial entry points. A few older foundations can remain when they still help users understand current tools.
-- Dynamic selection considers useful AI tools, repositories, tutorials and official releases regardless of age. Ordinary research papers, rants, hiring, funding and promotions are excluded. A reviewed starter pool and retained candidates keep all 70 slots filled while later resources compete on value.
-- Residents can be replaced. Rank all eligible candidates without reserved seats and use the 100th item's score as the daily threshold. A resident strictly below it can be replaced by the highest-scoring eligible resource that appeared in the dynamic 70 during the preceding 30 days and is not already resident. Equal scores do not trigger replacement.
-- Source publication or repository update dates stay separate from entry dates. Recrawling old material does not make it new. `NEW` and `BACK` last seven days and entry history survives deployment.
-- The page now prioritizes filters, short descriptions and source links. Long selection explanations, per-item recommendations and scoring details have moved out of the reading interface.
-
-This revision retains 40 entries from the original catalogue and replaces 60, including all 15 original research papers and five historical launch stories, plus specialist or duplicate courses, textbooks and low-level library entries. New resources cover document Q&A, PDF/OCR, subtitles, speech, coding, workflows, visual creation and presentations. Examples include Claude Code, n8n, Docling, PaddleOCR, Subtitle Edit, Codex and Cherry Studio, plus ten official Chinese-language tool entry points. Paper and news categories may initially be empty; suitable later resources can still enter those categories.
-
-The default GitHub Actions workflow collects and publishes every three hours, with extra runs around the daily cutoff. The visible page checks for updates every five minutes and supports manual refresh. This is scheduled refresh, not instant push. Initial resources receive editorial maintenance; dynamic selection and resident replacement use disclosed rules rather than individual editorial review. Missing translations fall back to the source text.
-
-Internal learning scores combine foundation, clarity, practice and authority, each 0–5, multiplied by five. They support stable ordering and represent editorial/rule-based judgments, not popularity or measured learning outcomes. Monthly replacement uses the mean score on days a resource appeared in the dynamic selection during the past 30 days, recording each day once; ties compare current score, latest appearance and stable ID. Both a replacement's current score and monthly mean must exceed the displaced item's score. Missing days receive no invented scores; one observed day is enough to compete. The update rescreens cached candidates while preserving entry history. See [data and implementation notes](./docs/LEARNING.md).
-
-The daily reader also gains clearer edition labels, content-first details, one-click follows, reading-library migration and a dedicated subscription page. Sharing now offers static preview pages and downloadable image cards. Explanation coverage and event changes are visible, so you can tell missing copy from missing source data. Details are in the [feature tour](#feature-tour).
-
 ## Why AI Resonance?
 
 Most AI digests are a feed that someone (or some model) picked for you. You can't see why an item made the cut, you
@@ -82,6 +64,14 @@ only see one source at a time, and yesterday is gone. AI Resonance does it diffe
 It runs entirely on GitHub Actions and GitHub Pages. There is no backend, database or account. Daily explanations can be
 pre-generated by the pipeline; optional personal AI tools run in your browser with your own keys. Change YAML to adapt
 the daily sources and topic; the AI beginner catalogue is maintained separately.
+
+## Read it now — no deployment required
+
+[Open the daily radar](https://wzznne.github.io/AI-Resonance/) · [Beginner picks](https://wzznne.github.io/AI-Resonance/#/learn) · [Subscribe](https://wzznne.github.io/AI-Resonance/#/subscribe)
+
+The beginner library always shows 100 resources: 30 resident picks and 70 dynamic recommendations. Search by keyword and type, switch between resident and dynamic picks, or filter recent entries.
+
+Reading, Atom subscriptions, follow controls, bookmarks and reading-library backup need no key or account. A site operator can pre-generate bilingual explanations with a pipeline LLM key; coverage is shown honestly when explanations are unavailable. Deploy only if you want to run your own edition.
 
 ## Screenshots
 
@@ -413,6 +403,29 @@ normal search pages in a new tab.
 
 **How big does the repository get?** The `data` branch keeps at most 60 raw candidates per board per edition and drops
 snapshots older than 183 days, so a few MB. Everything under `/api/v1` is rebuilt from it on every run.
+
+## Recent updates
+
+<details>
+<summary>2026-09-21 · Beginner library: 100 resources (30 resident + 70 dynamic picks), clearer edition labels, subscription page</summary>
+
+The library always shows **100 resources: 30 resident picks plus 70 dynamic recommendations**. Dynamic selection is reconsidered daily; resources need not be newly published, and useful selections stay when no better candidates qualify.
+
+- Removed historical launch news, specialist mathematics/research textbooks and duplicate repository/tutorial entry points. A few older foundations can remain when they still help users understand current tools.
+- Dynamic selection considers useful AI tools, repositories, tutorials and official releases regardless of age. Ordinary research papers, rants, hiring, funding and promotions are excluded. A reviewed starter pool and retained candidates keep all 70 slots filled while later resources compete on value.
+- Residents can be replaced. Rank all eligible candidates without reserved seats and use the 100th item's score as the daily threshold. A resident strictly below it can be replaced by the highest-scoring eligible resource that appeared in the dynamic 70 during the preceding 30 days and is not already resident. Equal scores do not trigger replacement.
+- Source publication or repository update dates stay separate from entry dates. Recrawling old material does not make it new. `NEW` and `BACK` last seven days and entry history survives deployment.
+- The page now prioritizes filters, short descriptions and source links. Long selection explanations, per-item recommendations and scoring details have moved out of the reading interface.
+
+This revision retains 40 entries from the original catalogue and replaces 60, including all 15 original research papers and five historical launch stories, plus specialist or duplicate courses, textbooks and low-level library entries. New resources cover document Q&A, PDF/OCR, subtitles, speech, coding, workflows, visual creation and presentations. Examples include Claude Code, n8n, Docling, PaddleOCR, Subtitle Edit, Codex and Cherry Studio, plus ten official Chinese-language tool entry points. Paper and news categories may initially be empty; suitable later resources can still enter those categories.
+
+The default GitHub Actions workflow collects and publishes every three hours, with extra runs around the daily cutoff. The visible page checks for updates every five minutes and supports manual refresh. This is scheduled refresh, not instant push. Initial resources receive editorial maintenance; dynamic selection and resident replacement use disclosed rules rather than individual editorial review. Missing translations fall back to the source text.
+
+Internal learning scores combine foundation, clarity, practice and authority, each 0–5, multiplied by five. They support stable ordering and represent editorial/rule-based judgments, not popularity or measured learning outcomes. Monthly replacement uses the mean score on days a resource appeared in the dynamic selection during the past 30 days, recording each day once; ties compare current score, latest appearance and stable ID. Both a replacement's current score and monthly mean must exceed the displaced item's score. Missing days receive no invented scores; one observed day is enough to compete. The update rescreens cached candidates while preserving entry history. See [data and implementation notes](./docs/LEARNING.md).
+
+The daily reader also gains clearer edition labels, content-first details, one-click follows, reading-library migration and a dedicated subscription page. Sharing now offers static preview pages and downloadable image cards. Explanation coverage and event changes are visible, so you can tell missing copy from missing source data. Details are in the [feature tour](#feature-tour).
+
+</details>
 
 ## Roadmap
 
