@@ -7911,11 +7911,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.04,
+   "in": 0.1,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.49,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8003,7 +8003,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.33,
+   "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8011,7 +8011,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.8845,
+   "in": 1.2,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -9033,18 +9033,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.009744,
+   "cr": 0.009408,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.04872,
+   "in": 0.04704,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.09744,
+   "out": 0.09408,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9092,18 +9092,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.06364,
+   "cr": 0.055187,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.763686,
+   "in": 0.662244,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.527372,
+   "out": 1.324488,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9111,7 +9111,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.011616,
+   "cr": 0.011528,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9119,11 +9119,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.34848,
+   "in": 0.34584,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.04544,
+   "out": 1.03752,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12065,6 +12065,26 @@
    "upd": "2026-05-12"
   },
   {
+   "ctx": 36864,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high"
+   ],
+   "id": "perceptron/perceptron-mk1.5",
+   "in": 0.15,
+   "k": "perceptron-mk1-5",
+   "maxOut": 8192,
+   "name": "Perceptron Mk1.5",
+   "out": 1.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-25"
+  },
+  {
    "ctx": 127072,
    "id": "perplexity/sonar",
    "in": 1,
@@ -13279,7 +13299,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13287,11 +13307,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13942,7 +13962,7 @@
    "upd": "2026-06-13"
   },
   {
-   "ctx": 32768,
+   "ctx": 131072,
    "efforts": [
     "high",
     "xhigh"
@@ -13950,7 +13970,7 @@
    "id": "z-ai/glm-5.2:free",
    "in": 0,
    "k": "glm-5-2",
-   "maxOut": 29491,
+   "maxOut": 117964,
    "name": "GLM 5.2 (free)",
    "out": 0,
    "p": "openrouter",
@@ -17699,5 +17719,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-25T15:45:07.408Z"
+ "updatedAt": "2026-09-25T18:47:49.442Z"
 }
