@@ -63,6 +63,40 @@ export interface CommandMap {
   'app.mode': () => void
 }
 
+/** A service a stored key can be for (a model provider, a search API…), offered when a key is added. */
+export interface CredentialService {
+  id: string
+  label: string
+  /** Where to create a key for it. */
+  keyUrl?: string
+}
+
+/** One place that uses a stored key, shown on the key's row. */
+export interface CredentialUse {
+  credentialId: string
+  /** Where, in the reader's words (`Models · DeepSeek`). */
+  label: string
+  /** Settings route that manages it. */
+  href: string
+}
+
+/**
+ * How a feature ties vault keys to what it configures, so the Credentials tab can offer "which service is this key
+ * for?" and show where each key is used — without the vault knowing about models or search engines.
+ */
+export interface CredentialLinker {
+  /** Credential kinds it takes (`llm`, `search`, `reader`, `github`). */
+  kinds: readonly string[]
+  /** The settings page it lives on, for "will be connected in …" (`Settings › Models`). */
+  area: () => string
+  /** Services a key of `kind` can be added for; empty when the feature just picks any key of that kind. */
+  services?: (kind: string) => Promise<CredentialService[]>
+  /** Every current binding. Reads settings signals, so it is reactive inside components. */
+  uses: () => CredentialUse[]
+  /** Connect a new key to `serviceId` (setting that service up if needed); what it is used by now, or `null`. */
+  attach?: (kind: string, serviceId: string, credentialId: string) => Promise<CredentialUse | null>
+}
+
 type AnyFn = (...args: never[]) => unknown
 export type CommandId = keyof CommandMap | (string & {})
 type CommandFn<K> = K extends keyof CommandMap ? CommandMap[K] : (...args: unknown[]) => unknown
@@ -110,6 +144,14 @@ const tabs = collection<SettingsTab>()
 const actions = collection<ItemAction>()
 const commands = collection<Command>()
 const routesSig = signal<RouteDef[]>([])
+/** A feature's linker, loaded on demand (only the Credentials tab needs it; it stays out of the initial bundle). */
+export interface CredentialLinkerEntry {
+  id: string
+  order?: number
+  load: () => Promise<CredentialLinker>
+}
+
+const linkers = collection<CredentialLinkerEntry>()
 
 /** All settings tabs, sorted by `order`. */
 export const settingsTabs: ReadonlySignal<SettingsTab[]> = tabs.list
@@ -124,6 +166,11 @@ export const routes: ReadonlySignal<RouteDef[]> = routesSig
 export const registerSettingsTab: (tab: SettingsTab) => () => void = tabs.register
 /** Add an action to every item card + detail (filter with `when`). */
 export const registerItemAction: (action: ItemAction) => () => void = actions.register
+
+/** Every feature's credential linker entry, sorted by `order`. */
+export const credentialLinkers: ReadonlySignal<CredentialLinkerEntry[]> = linkers.list
+/** Let the Credentials tab offer this feature's services and show where its keys are used. */
+export const registerCredentialLinker: (entry: CredentialLinkerEntry) => () => void = linkers.register
 
 /** Add a named command, optionally bound to keyboard shortcuts. Re-registering an id replaces it. */
 export function registerCommand<K extends CommandId>(cmd: Command<K>): () => void {

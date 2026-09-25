@@ -4,6 +4,7 @@
  */
 import { useState } from 'preact/hooks'
 import { toast } from '../core/events.ts'
+import type { CredentialUse } from '../core/registry.ts'
 import { fmt, type MessageKey, t } from '../i18n/index.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { Badge } from '../ui/chip.tsx'
@@ -12,6 +13,7 @@ import { Icon, type IconName } from '../ui/icons.tsx'
 import { Dialog } from '../ui/sheet.tsx'
 import { EmptyState } from '../ui/state.tsx'
 import { CredentialForm, KIND_ICON, kindLabel, UnlockForm, vaultErrorText } from './form.tsx'
+import { useLinkers } from './links.ts'
 import { type CredentialInfo, STORAGE_MODES, type StorageMode } from './model.ts'
 import { vault, vaultPrefs } from './state.ts'
 import { listOf, MIN_PASSPHRASE } from './store.ts'
@@ -52,7 +54,7 @@ function Reveal({ c, onReveal }: { c: CredentialInfo; onReveal: (secret: string 
   )
 }
 
-function Row({ c, locked }: { c: CredentialInfo; locked: boolean }) {
+function Row({ c, locked, uses }: { c: CredentialInfo; locked: boolean; uses: CredentialUse[] }) {
   const [revealed, setRevealed] = useState<string | null>(null)
   const [editing, setEditing] = useState(false)
   const [confirm, setConfirm] = useState(false)
@@ -76,6 +78,20 @@ function Row({ c, locked }: { c: CredentialInfo; locked: boolean }) {
             {revealed ?? c.hint ?? t('vault.lockedHint')}
           </code>
           <span>{c.lastUsedAt ? t('vault.lastUsed', { when: fmt.relative(c.lastUsedAt) }) : t('vault.neverUsed')}</span>
+        </span>
+        <span class={`vlist__uses${uses.length ? '' : ' is-idle'}`}>
+          {uses.length ? (
+            <>
+              <Icon name="link" size={12} />
+              {uses.map((u) => (
+                <a key={u.label} href={u.href}>
+                  {u.label}
+                </a>
+              ))}
+            </>
+          ) : (
+            t('vault.unused')
+          )}
         </span>
       </div>
       <div class="vlist__actions">
@@ -281,6 +297,8 @@ export default function CredentialsTab() {
   const [wiping, setWiping] = useState(false)
   const encrypted = state.mode === 'device-encrypted'
   const shared = onGithubIo()
+  // Where each key is used, as every feature reports it (reactive: rebinding a key elsewhere updates its row).
+  const uses = useLinkers().flatMap((l) => l.uses())
 
   return (
     <div class="settings__stack vault">
@@ -292,7 +310,7 @@ export default function CredentialsTab() {
         {items.length ? (
           <ul class="vlist">
             {items.map((c) => (
-              <Row key={c.id} c={c} locked={state.locked} />
+              <Row key={c.id} c={c} locked={state.locked} uses={uses.filter((u) => u.credentialId === c.id)} />
             ))}
           </ul>
         ) : (

@@ -420,3 +420,35 @@
 .vpick__chev {
   color: var(--text-3);
 }
+
+/* Where a key is used: links to the settings that hold it, or a quiet "not connected". */
+.vlist__uses {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+}
+
+.vlist__uses > .icon {
+  color: var(--text-3);
+}
+
+.vlist__uses a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, currentcolor 35%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+@media (hover: hover) {
+  .vlist__uses a:hover {
+    color: var(--text);
+    text-decoration-color: currentcolor;
+  }
+}
+
+.vlist__uses.is-idle {
+  color: var(--text-3);
+}
