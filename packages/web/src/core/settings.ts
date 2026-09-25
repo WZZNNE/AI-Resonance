@@ -140,7 +140,10 @@ export function defineSlice<T extends object>(name: string, defaults: T, opts: S
     redact: (opts.redact ?? prev?.redact) as SliceMeta['redact'],
     importing: (opts.importing ?? prev?.importing) as SliceMeta['importing'],
   })
-  const sig = computed(() => ({ ...merged, ...(doc.value.slices[name] ?? {}) }) as T)
+  // Each write replaces the document but keeps other slices' objects, so reading this slice's own object first stops
+  // a write to one slice from waking every other slice's subscribers (theme effects, the reading library …).
+  const own = computed(() => doc.value.slices[name])
+  const sig = computed(() => ({ ...merged, ...(own.value ?? {}) }) as T)
   return {
     name,
     signal: sig,

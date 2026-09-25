@@ -5,7 +5,7 @@
 import { type Board, type EntityHistory, type Item, monthOf, type ResonanceRel } from '@resonance/schema'
 import './item.css'
 import type { ComponentChildren } from 'preact'
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks'
 import { api, useResource } from '../core/api.ts'
 import type { RouteProps } from '../core/registry.ts'
 import { back, setTitle } from '../core/router.ts'
@@ -397,6 +397,9 @@ export default function ItemView({ params, query }: RouteProps) {
   const close = () => {
     setOpen(false)
   }
+  // One instance serves every /item/* route. Closing a sheet opened from inside another item's sheet goes back to
+  // that item, which must show its sheet again rather than stay closed over the page.
+  useLayoutEffect(() => setOpen(true), [params.slug, query.d])
   const item = res.data?.item
   return (
     <Sheet

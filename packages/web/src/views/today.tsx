@@ -5,7 +5,7 @@
  */
 import { BOARDS, type Board, CATEGORIES, type Category, type DailyFile, type DateStr } from '@resonance/schema'
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { useResource } from '../core/api.ts'
+import { useReloadOn, useResource } from '../core/api.ts'
 import { isWide } from '../core/media.ts'
 import { hasRoute, type RouteProps } from '../core/registry.ts'
 import { location, navigate, setTitle } from '../core/router.ts'
@@ -205,7 +205,8 @@ function EditionHead({
 
 function TodaySkeleton() {
   return (
-    <div class="today today--loading" aria-busy="true">
+    // `id="main"` from the first paint, so the skip link works while the edition loads.
+    <main class="today today--loading" id="main" aria-busy="true">
       <div class="edition">
         <Skeleton width="10rem" height="0.8rem" />
         <Skeleton width="min(24rem, 80%)" height="2.2rem" />
@@ -220,9 +221,13 @@ function TodaySkeleton() {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   )
 }
+
+/** Pure: a board's items in an edition, before any reader filter. */
+const boardTotal = (day: DailyFile, b: Board) =>
+  (day.boards[b]?.top.length ?? 0) + (day.boards[b]?.runnersUp.length ?? 0)
 
 /** The Today view. */
 export default function Today({ path, query }: RouteProps) {
@@ -230,7 +235,8 @@ export default function Today({ path, query }: RouteProps) {
   const refKey = ref.kind === 'date' ? ref.date : ref.kind
   // `latest` and `live` move when the pipeline publishes; a dated edition does not.
   const version = ref.kind === 'date' ? 0 : dataVersion.value
-  const res = useResource((signal, fresh) => loadEdition(ref, signal, fresh), [refKey, version])
+  const res = useResource((signal, fresh) => loadEdition(ref, signal, fresh), [refKey])
+  useReloadOn(version, res.reload)
   const g = general.value
   const { visible } = boardOrder(g.boards, g.hidden)
   const wide = isWide.value
@@ -300,6 +306,15 @@ export default function Today({ path, query }: RouteProps) {
   return (
     <main class={`today${res.loading ? ' is-refreshing' : ''}`} id="main" data-part="today">
       <EditionHead day={day} live={live} reload={res.reload} loading={res.loading} />
+      {res.error && !res.loading && (
+        <p class="banner today__notice" role="status">
+          <Icon name="warn" size={16} />
+          <span>{t('home.refreshFailed')}</span>
+          <Button size="s" variant="ghost" icon="refresh" onClick={res.reload}>
+            {t('home.refresh')}
+          </Button>
+        </p>
+      )}
       {day.coverage?.coldStart && (
         <aside class="home-note" role="note">
           <Icon name="history" size={18} />
@@ -378,6 +393,7 @@ export default function Today({ path, query }: RouteProps) {
               meta={metas.get(b)}
               category={category}
               span={spans[i]}
+              total={boardTotal(day, b)}
             />
           ))}
         </div>
@@ -391,6 +407,7 @@ export default function Today({ path, query }: RouteProps) {
             meta={metas.get(current)}
             category={category}
             panelProps={visible.length > 1 ? tabPanelProps('board', current) : undefined}
+            total={boardTotal(day, current)}
           />
         </div>
       )}

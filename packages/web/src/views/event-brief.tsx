@@ -1,10 +1,11 @@
+import { batch } from '@preact/signals'
 import type { DailyFile, DateStr } from '@resonance/schema'
 import { useEffect, useState } from 'preact/hooks'
 import { isWide } from '../core/media.ts'
 import { lang, t } from '../i18n/index.ts'
-import { boardTitle, itemBlurb, itemHref, itemTitle, itemWhy } from '../items/text.ts'
+import { boardTitle, itemBlurb, itemHref, itemTitle, itemWhy, joinSentences } from '../items/text.ts'
 import { completeEvent, eventChanges, eventContent, eventState, newsEvents, previousEvent } from '../reading/events.ts'
-import { acknowledgeReadEvents, markRead, reading, rememberEvent } from '../reading/store.ts'
+import { acknowledgeReadEvents, forgetEvent, markRead, reading, rememberEvent } from '../reading/store.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { Badge } from '../ui/chip.tsx'
 
@@ -51,7 +52,7 @@ export function EventBrief({
               .map((item) => itemBlurb(item, lang.value))
               .find(Boolean)
           const why = itemWhy(lead, lang.value)
-          const summary = [blurb, why && why !== blurb ? why : undefined].filter(Boolean).join(' ')
+          const summary = joinSentences([blurb, why !== blurb && why])
           const changedBoards = [...new Set(changes.added.map((item) => boardTitle(item.board)))].join(' · ')
           const explanation =
             state !== 'updated'
@@ -83,15 +84,24 @@ export function EventBrief({
                 size="s"
                 label={t('home.eventRead')}
                 pressed={state === 'repeat'}
-                onClick={() => {
-                  rememberEvent(
-                    full.key,
-                    full.signature,
-                    full.items.map((item) => item.key),
-                    eventContent(full),
-                  )
-                  for (const item of event.items) markRead(item, date)
-                }}
+                onClick={() =>
+                  // A real toggle: pressed (seen) → forget it and mark its items unread again.
+                  state === 'repeat'
+                    ? forgetEvent(
+                        full.key,
+                        full.items.map((item) => item.key),
+                      )
+                    : // One settings write for the event and all its items.
+                      batch(() => {
+                        rememberEvent(
+                          full.key,
+                          full.signature,
+                          full.items.map((item) => item.key),
+                          eventContent(full),
+                        )
+                        for (const item of event.items) markRead(item, date)
+                      })
+                }
               />
             </li>
           )

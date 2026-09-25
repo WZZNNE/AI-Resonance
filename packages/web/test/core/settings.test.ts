@@ -141,3 +141,28 @@ describe('boardOrder', () => {
     expect(boardOrder(undefined).order).toHaveLength(5)
   })
 })
+
+describe('slice isolation', () => {
+  beforeEach(() => resetSettings())
+
+  it('does not wake one slice’s subscribers when another slice is written', async () => {
+    const { effect } = await import('@preact/signals')
+    const quiet = defineSlice('isoQuiet', { a: 1 })
+    const busy = defineSlice('isoBusy', { n: 0 })
+    let runs = 0
+    const stop = effect(() => {
+      void quiet.value.a
+      runs++
+    })
+    try {
+      busy.set({ n: 1 })
+      busy.set({ n: 2 })
+      expect(runs).toBe(1)
+      quiet.set({ a: 2 })
+      expect(runs).toBe(2)
+      expect(quiet.value.a).toBe(2)
+    } finally {
+      stop()
+    }
+  })
+})
