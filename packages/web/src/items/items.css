@@ -258,6 +258,7 @@
 /* ── runners-up: one line each, the rank in the rank column ── */
 
 .runner {
+  position: relative;
   display: flex;
   align-items: center;
   gap: var(--rank-gap, 0.75rem);
@@ -316,4 +317,116 @@
   color: var(--text-3);
   font: 500 var(--fs-xs) / 1 var(--font-mono);
   letter-spacing: -0.02em;
+}
+
+/*
+ * Runner preview: a small glass card above the hovered (or keyboard-focused) row with the full title, the blurb and
+ * the facts that decide whether to open it. It waits a beat before showing, so sweeping the pointer down the list
+ * does not flash every card. Hover-capable pointers only; touch opens the detail as before.
+ */
+.runner__peek {
+  display: none;
+}
+
+@media (hover: hover) {
+  .runner__peek {
+    position: absolute;
+    z-index: 30;
+    bottom: calc(100% + 6px);
+    left: calc(var(--rank-w, 48px) + 0.75rem);
+    display: grid;
+    gap: 0.4rem;
+    width: min(360px, calc(100% - var(--rank-w, 48px)));
+    padding: 0.75rem 0.9rem 0.7rem;
+    border-radius: var(--radius-m);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-edge), var(--elev-3);
+    color: var(--text-2);
+    white-space: normal;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition:
+      opacity var(--dur-1) var(--ease),
+      transform var(--dur-1) var(--ease),
+      visibility 0s linear var(--dur-1);
+  }
+
+  .runner:hover .runner__peek,
+  .runner:focus-visible .runner__peek {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 220ms;
+  }
+
+  /* The hovered panel stacks above its neighbours, so a preview near its edge is never covered. */
+  .board:has(.runner:hover, .runner:focus-visible) {
+    z-index: 5;
+  }
+}
+
+.runner__peek-title {
+  color: var(--text);
+  font: 600 var(--fs-s) / 1.35 var(--font-text);
+}
+
+.runner__peek-blurb {
+  display: -webkit-box;
+  overflow: hidden;
+  font: 400 var(--fs-xs) / 1.5 var(--font-text);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+}
+
+.runner__peek-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  color: var(--text-3);
+  font: 500 var(--fs-2xs) / 1.3 var(--font-ui);
+}
+
+.runner__peek-meta .num {
+  font-family: var(--font-mono);
+}
+
+.runner__peek-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-2);
+}
+
+.runner__peek-cat::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--chip-hue);
+}
+
+/*
+ * The category tag on a card: a HUD label, not a raised chip — a hairline in the category's colour over a faint tint,
+ * squarer corners, the dot kept.
+ */
+.card__tags .chip--category {
+  --chip-h: 22px;
+  --sh: inset 0 0 0 1px color-mix(in srgb, var(--chip-hue) 22%, transparent);
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--chip-hue) 5%, transparent);
+  color: var(--text-2);
+  font: 600 var(--fs-2xs) / 1 var(--font-ui);
+  letter-spacing: 0.02em;
+}
+
+.card__tags .chip--category .chip__dot {
+  width: 5px;
+  height: 5px;
 }

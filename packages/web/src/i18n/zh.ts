@@ -267,6 +267,7 @@ const zh: Record<keyof Messages, string> = {
 
   // ── item card ──
   'card.rank': '第 {rank} 名',
+  'card.scoreShort': '热度 {score}',
   'card.spark': '{metric}，近 {n} 天',
   'card.open': '打开原始页面',
   'card.copyLink': '复制链接',

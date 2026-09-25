@@ -94,18 +94,7 @@
   margin-top: 0.15em;
 }
 
-/* HUD kicker: a hazard tag (signal stripes) leads the eyebrow line. */
-.edition__kicker::before {
-  content: "";
-  flex: none;
-  width: 22px;
-  height: 8px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(-45deg, var(--signal) 0 3px, transparent 3px 6px);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--signal) 55%, transparent);
-}
-
-/* Display date, lit from the top like the rank numerals, over a ruler whose first segment is lit (HUD rail). */
+/* Display date, lit from the top like the rank numerals. */
 .edition__date {
   margin: 0.35rem 0 0;
   background: linear-gradient(180deg, var(--text) 40%, color-mix(in oklab, var(--text) 70%, var(--text-3)));
@@ -117,19 +106,6 @@
   text-wrap: balance;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 22px color-mix(in srgb, var(--signal) calc(var(--bloom) * 0.35), transparent));
-}
-
-.edition__date::after {
-  content: "";
-  display: block;
-  width: min(100%, 380px);
-  height: 5px;
-  margin-top: 0.6rem;
-  background:
-    linear-gradient(var(--hud-hot) 0 0) 0 100% / 44px 2px no-repeat,
-    var(--ticks) 0 100% / 100% 5px no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, black 55%, transparent);
-  mask-image: linear-gradient(90deg, black 55%, transparent);
 }
 
 .edition__details {
@@ -823,9 +799,8 @@
 }
 
 /*
- * Board panel: thick glass (radius 22); its rows are inset 8 px so their hover tints are concentric with it. The top
- * edge carries the board's tab light (its hue, lit, with a short bloom) after the corner radius; the pointer light
- * (ui/glass.ts) blooms inside the glass under the cursor.
+ * Board panel: thick glass (radius 22); its rows are inset 8 px so their hover tints are concentric with it. The pointer
+ * light (ui/glass.ts) blooms faintly inside the glass under the cursor; an engaged panel lights its edge (ui/hud.css).
  */
 .board {
   --rank-w: 40px;
@@ -837,13 +812,6 @@
   padding-bottom: 0.5rem;
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(var(--hue) 0 0) 26px 0 / 44px 2px no-repeat,
-    radial-gradient(
-      64px 14px at 48px 0,
-      color-mix(in srgb, var(--hue) calc(var(--bloom) * 0.9), transparent),
-      transparent
-    )
-    no-repeat,
     radial-gradient(
       460px circle at var(--mx, 50%) var(--my, -400px),
       rgb(var(--spot) / calc(var(--spot-a) * var(--spot-max))),
@@ -995,7 +963,10 @@
   padding: 2rem 1.25rem 2.25rem;
 }
 
-/* Runners-up: a plate button, then the one-line rows — pinned to the panel's foot so a row of panels lines up. */
+/*
+ * Runners-up: a quiet rule-and-label bar pinned to the panel's foot (so a row of panels lines up), then the one-line
+ * rows. A hairline runs across; the label sits on it; hovering lights the hairline with the signal.
+ */
 .runners {
   margin-top: auto;
   padding: 0.35rem 0 0;
@@ -1005,22 +976,34 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   min-height: 40px;
-  margin: 0 1.25rem 0.75rem;
-  border-radius: var(--radius-m);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
-  color: var(--text-2);
-  font: 500 var(--fs-s) / 1 var(--font-ui);
+  margin: 0 1.25rem 0.35rem;
+  padding: 0 0.25rem;
+  color: var(--text-3);
+  font: 600 var(--fs-xs) / 1 var(--font-ui);
+  letter-spacing: 0.04em;
   list-style: none;
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
+  transition: color var(--dur-1) var(--ease);
+}
+
+.runners__summary::after {
+  content: "";
+  flex: 1;
+  order: 2;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line-2), transparent);
+  transition: background var(--dur-1) var(--ease);
+}
+
+.runners__summary > .icon {
+  order: 3;
+  color: var(--text-3);
   transition:
-    transform var(--dur-1) var(--ease),
-    box-shadow var(--dur-1) var(--ease),
+    transform var(--dur-2) var(--ease),
     color var(--dur-1) var(--ease);
 }
 
@@ -1035,30 +1018,27 @@
   display: none;
 }
 
-.runners__summary > .icon {
-  color: var(--text-3);
-  transition: transform var(--dur-2) var(--ease);
-}
-
 .runners[open] .runners__summary > .icon {
   transform: rotate(180deg);
 }
 
 @media (hover: hover) {
   .runners__summary:hover {
-    box-shadow: var(--plate-edge), var(--elev-2);
+    color: var(--text);
+  }
+
+  .runners__summary:hover::after {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--hud-hot) 60%, transparent), transparent);
+  }
+
+  .runners__summary:hover > .icon {
     color: var(--text);
   }
 }
 
-.runners__summary:active {
-  box-shadow: var(--press);
-  transform: scale(0.98);
-  transition-duration: 60ms;
-}
-
 .runners__summary:focus-visible {
-  box-shadow: var(--plate-edge), var(--elev-1), var(--ring);
+  border-radius: var(--radius-s);
+  box-shadow: var(--ring);
 }
 
 .runners__count {

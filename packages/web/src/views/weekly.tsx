@@ -175,7 +175,16 @@ function Entry({
       <div class="wentry__body">
         <p class="wentry__title">
           <a href={itemHref(e, lastDay)}>{e.title}</a>
-          {e.isNew && <span class="trend trend--new wentry__new">{t('views.weekly.new')}</span>}
+          {e.isNew && (
+            <span
+              class="trend trend--new trend--icon wentry__new"
+              role="img"
+              aria-label={t('views.weekly.new')}
+              title={t('views.weekly.new')}
+            >
+              <Icon name="sparkle" size={11} />
+            </span>
+          )}
         </p>
         {blurb && <p class="wentry__blurb">{blurb}</p>}
         <p class="wentry__meta">

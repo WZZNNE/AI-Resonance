@@ -10,7 +10,7 @@ import { boardMetas } from '../core/state.ts'
 import { lang, t, term } from '../i18n/index.ts'
 import { readingEntries } from '../reading/store.ts'
 import { Sparkline } from '../ui/charts.tsx'
-import { boardHue, CategoryChip } from '../ui/chip.tsx'
+import { boardHue, CategoryChip, categoryHue } from '../ui/chip.tsx'
 import { RankNumeral, ResonanceMark, TrendBadge } from '../ui/marks.tsx'
 import { ScoreBar } from '../ui/score.tsx'
 import { ItemActions } from './actions.tsx'
@@ -93,9 +93,25 @@ export interface RunnerRowProps {
   showBoard?: boolean
 }
 
-/** One-line row: rank · title · score · resonance dot. */
+/** The host of a source link, for the runner preview; empty when the URL does not parse. */
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return ''
+  }
+}
+
+/**
+ * One-line row: rank · title · score · resonance dot. On hover-capable pointers it also carries a preview (full title,
+ * blurb, category, source, score) that floats beside the row, so a runner-up can be judged without opening it. The
+ * preview repeats what the detail shows, so it is hidden from assistive tech (the link opens the full detail).
+ */
 export function RunnerRow({ item, date, showBoard }: RunnerRowProps) {
-  const title = itemTitle(item, lang.value)
+  const l = lang.value
+  const title = itemTitle(item, l)
+  const blurb = itemBlurb(item, l)
+  const host = hostOf(item.url)
   return (
     <a class="runner" href={itemHref(item, date)} data-part="runner-row" style={{ '--hue': boardHue(item.board) }}>
       <RankNumeral rank={item.rank} size="s" muted />
@@ -103,6 +119,19 @@ export function RunnerRow({ item, date, showBoard }: RunnerRowProps) {
       <span class="runner__title">{title}</span>
       {item.resonance.level > 1 && <span class="runner__res" title={t('res.echoes', { n: item.resonance.level })} />}
       <span class="runner__score num">{item.score.total.toFixed(1)}</span>
+      <span class="runner__peek" aria-hidden="true">
+        <span class="runner__peek-title">{title}</span>
+        {blurb && blurb !== title && <span class="runner__peek-blurb">{blurb}</span>}
+        <span class="runner__peek-meta">
+          {item.category && (
+            <span class="runner__peek-cat" style={{ '--chip-hue': categoryHue(item.category) }}>
+              {categoryLabel(item.category)}
+            </span>
+          )}
+          {host && <span>{host}</span>}
+          <span class="num">{t('card.scoreShort', { score: item.score.total.toFixed(1) })}</span>
+        </span>
+      </span>
     </a>
   )
 }

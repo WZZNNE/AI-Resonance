@@ -282,6 +282,7 @@ const en = {
 
   // ── item card ──
   'card.rank': 'Rank {rank}',
+  'card.scoreShort': 'Score {score}',
   'card.spark': '{metric}, last {n} days',
   'card.open': 'Open source page',
   'card.copyLink': 'Copy link',

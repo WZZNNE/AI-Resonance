@@ -7,7 +7,6 @@ import { boardTitle, itemBlurb, itemHref, itemTitle, itemWhy, joinSentences } fr
 import { completeEvent, eventChanges, eventContent, eventState, newsEvents, previousEvent } from '../reading/events.ts'
 import { acknowledgeReadEvents, forgetEvent, markRead, reading, rememberEvent } from '../reading/store.ts'
 import { Button, IconButton } from '../ui/button.tsx'
-import { Badge } from '../ui/chip.tsx'
 
 export function EventBrief({
   day,
@@ -67,11 +66,17 @@ export function EventBrief({
           return (
             <li key={event.key} class="event-brief__item">
               <div>
-                <Badge tone={state === 'new' ? 'accent' : state === 'updated' ? 'warn' : 'neutral'}>
-                  {t(
+                {/* The event's state as a small mark before the title; the word is its name and tooltip. */}
+                <span
+                  class={`event-brief__state event-brief__state--${state}`}
+                  role="img"
+                  aria-label={t(
                     state === 'new' ? 'home.eventNew' : state === 'updated' ? 'home.eventUpdated' : 'home.eventRepeat',
                   )}
-                </Badge>
+                  title={t(
+                    state === 'new' ? 'home.eventNew' : state === 'updated' ? 'home.eventUpdated' : 'home.eventRepeat',
+                  )}
+                />
                 <a class="event-brief__title" href={itemHref(lead, date)}>
                   {itemTitle(lead, lang.value)}
                 </a>

@@ -90,7 +90,7 @@ export function Header() {
         {liveAvailable.value && <LiveToggle />}
         <span class="appbar__spacer" />
         {hasRoute('/learn') && (
-          <Button class="wide-only" size="s" href="#/learn" icon="book">
+          <Button class="wide-only appbar__link" size="s" variant="ghost" href="#/learn" icon="book">
             {t('nav.learn')}
           </Button>
         )}
@@ -117,23 +117,26 @@ export function Header() {
             <kbd>/</kbd>
           </button>
         )}
-        {hasCommand('search.open') && (
-          <IconButton
-            class="mid-only"
-            icon="search"
-            label={t('header.search')}
-            onClick={() => runCommand('search.open')}
-          />
-        )}
-        <LangSwitch />
-        <ModeSwitch />
-        {hasRoute('/library') && (
-          <IconButton class="wide-only" icon="bookmark" label={t('reading.title')} href="#/library" />
-        )}
-        {hasRoute('/export') && (
-          <IconButton class="hide-narrow" icon="download" label={t('header.export')} href="#/export" />
-        )}
-        <IconButton class="wide-only" icon="settings" label={t('nav.settings')} href="#/settings" />
+        {/* One glass capsule for the tool buttons, so the right side reads as a single control. */}
+        <div class="appbar__dock">
+          {hasCommand('search.open') && (
+            <IconButton
+              class="mid-only"
+              icon="search"
+              label={t('header.search')}
+              onClick={() => runCommand('search.open')}
+            />
+          )}
+          <LangSwitch />
+          <ModeSwitch />
+          {hasRoute('/library') && (
+            <IconButton class="wide-only" icon="bookmark" label={t('reading.title')} href="#/library" />
+          )}
+          {hasRoute('/export') && (
+            <IconButton class="hide-narrow" icon="download" label={t('header.export')} href="#/export" />
+          )}
+          <IconButton class="wide-only" icon="settings" label={t('nav.settings')} href="#/settings" />
+        </div>
       </div>
     </header>
   )
