@@ -159,38 +159,35 @@
   --ring: var(--glow);
   --ring-inset: inset 0 0 0 1.5px color-mix(in oklab, var(--signal) 75%, transparent);
   /* Bloom strength for coloured marks: 55 % in dark, 0 in light (light gets halos, not bloom). */
-  --bloom: 55%;
+  --bloom: 40%;
 
   /* ── HUD (VISUAL §5a): the tactical layer — brackets, tab lights, tick rails, index labels ── */
   /* Line colour at rest, and when the thing it frames is hovered, focused or active. */
-  --hud: color-mix(in srgb, var(--signal) 40%, transparent);
+  --hud: color-mix(in srgb, var(--signal) 28%, transparent);
   --hud-hot: var(--signal);
   --hud-faint: color-mix(in srgb, var(--text) 14%, transparent);
   /* Bloom around lit HUD lines (none in light). */
-  --hud-glow: 0 0 12px color-mix(in srgb, var(--hud-hot) 60%, transparent);
+  --hud-glow: 0 0 8px color-mix(in srgb, var(--hud-hot) 45%, transparent);
   /* A ruler: 1 px ticks every 8 px. */
   --ticks: repeating-linear-gradient(90deg, var(--hud-faint) 0 1px, transparent 1px 8px);
   /* The label face for HUD text (index numbers, coordinates). */
   --font-hud: var(--font-mono);
 
   /* ── page background (VISUAL §4): the lit scene the glass refracts ── */
-  /* Two low light sources (signal from the bottom left, a cool key from the top right) and a haze between them. */
+  /* Two low light sources: signal from the bottom left, a cool key from the top right. Dim on purpose. */
   --spill:
-    radial-gradient(70vmax 55vmax at 6% 108%, color-mix(in srgb, var(--signal) 16%, transparent), transparent 62%),
-    radial-gradient(62vmax 50vmax at 98% -10%, color-mix(in srgb, var(--hue-social) 17%, transparent), transparent 60%),
-    radial-gradient(40vmax 30vmax at 58% 42%, color-mix(in srgb, var(--signal-2) 5%, transparent), transparent 70%);
+    radial-gradient(70vmax 55vmax at 6% 108%, color-mix(in srgb, var(--signal) 8%, transparent), transparent 62%),
+    radial-gradient(62vmax 50vmax at 98% -10%, color-mix(in srgb, var(--hue-social) 9%, transparent), transparent 60%);
   /* Legacy name of the page light (theme files and forks set `--aurora: none`). */
   --aurora: var(--spill);
-  /* A 32 px tactical grid with a brighter line every 4 cells. `--grid-dot` is the minor line colour (legacy name). */
-  --grid-dot: color-mix(in srgb, var(--text) 3.2%, transparent);
-  --grid-major: color-mix(in srgb, var(--text) 5.5%, transparent);
+  /* A sparse 128 px tactical grid (one faint line colour; `--grid-dot` is its legacy name). */
+  --grid-dot: color-mix(in srgb, var(--text) 3%, transparent);
+  --grid-major: var(--grid-dot);
   --grid:
     linear-gradient(var(--grid-major) 1px, transparent 1px) 0 0 / 128px 128px,
-    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px) 0 0 / 128px 128px,
-    linear-gradient(var(--grid-dot) 1px, transparent 1px) 0 0 / 32px 32px,
-    linear-gradient(90deg, var(--grid-dot) 1px, transparent 1px) 0 0 / 32px 32px;
-  /* Hologram scanlines and film grain over the scene (never over content). */
-  --scan: repeating-linear-gradient(180deg, rgb(255 255 255 / 0.014) 0 1px, transparent 1px 3px);
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px) 0 0 / 128px 128px;
+  /* Scanlines are available to forks (`--scan`); the default scene carries only film grain. */
+  --scan: none;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --vignette: radial-gradient(130% 95% at 50% 35%, transparent 50%, rgb(0 0 0 / 0.55));
 
@@ -421,12 +418,10 @@
   --hud-glow: 0 0 0 transparent;
 
   --spill:
-    radial-gradient(64vmax 46vmax at -4% -8%, color-mix(in srgb, var(--signal) 28%, transparent), transparent 62%),
-    radial-gradient(62vmax 52vmax at 106% 106%, rgb(84 120 170 / 0.26), transparent 62%),
-    radial-gradient(46vmax 34vmax at 72% 22%, rgb(255 255 255 / 0.7), transparent 70%),
-    radial-gradient(38vmax 30vmax at 22% 78%, color-mix(in srgb, var(--signal-2) 9%, transparent), transparent 70%);
+    radial-gradient(64vmax 46vmax at -4% -8%, color-mix(in srgb, var(--signal) 16%, transparent), transparent 62%),
+    radial-gradient(62vmax 52vmax at 106% 106%, rgb(84 120 170 / 0.16), transparent 62%),
+    radial-gradient(46vmax 34vmax at 72% 22%, rgb(255 255 255 / 0.6), transparent 70%);
   --grid-dot: color-mix(in srgb, var(--text) 4.5%, transparent);
-  --grid-major: color-mix(in srgb, var(--text) 7.5%, transparent);
   --scan: none;
   /* Grain reads only on a dark scene. */
   --grain: none;

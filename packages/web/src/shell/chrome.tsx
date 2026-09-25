@@ -146,7 +146,6 @@ export function Footer() {
             </ExtLink>
           )}
         </nav>
-        <p class="footer__fine">{t('footer.fine')}</p>
       </div>
     </footer>
   )

@@ -1,6 +1,7 @@
 /**
  * One category filter bar that works across all boards (DESIGN §4a). Categories never change scores.
- * Drawn as a segmented control (VISUAL §8): a well track, chips as text buttons, a raised thumb under the pressed one.
+ * Drawn as a row of HUD tabs (VISUAL §8): hairline chips; the pressed one is a lit plate with a signal bar. `useThumb` only
+ * keeps the scroller's edge fades (there is no thumb to move).
  */
 import { CATEGORIES, type Category, type Item } from '@resonance/schema'
 import { useRef } from 'preact/hooks'
@@ -32,7 +33,6 @@ export function CategoryBar({ items, value, onValue }: CategoryBarProps) {
   return (
     <nav class="catbar" data-part="category-bar" aria-label={t('cat.filter')} data-no-swipe>
       <div class="catbar__track" ref={track}>
-        <span class="thumb" aria-hidden="true" />
         <Chip selected={!value} onClick={() => onValue(null)} count={items.length}>
           {t('cat.all')}
         </Chip>
