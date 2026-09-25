@@ -16,11 +16,11 @@ If a screen needs something this file does not cover, extend this file in the sa
 2. **A scene to refract.** Glass needs something behind it: two low light sources and a tactical grid, fixed to the
    viewport so the glass slides over them (§4). Nothing else lives behind content.
 3. **One signal.** The HUD colour is the signal (`--signal`: amber in dark, safety yellow in light). It draws HUD
-   brackets, tab lights, rails, the focus ring and the lit states of navigation. Colour elsewhere still means
+   the lit edge of an engaged panel, the focus ring and the lit states of navigation. Colour elsewhere still means
    something: board hue, category, score segment, resonance, state.
-4. **Touchable.** Controls look pressable: raised at rest, recessed when pressed. Panels lift 2 px and their brackets
-   close in when engaged.
-5. **Motion answers a change.** Panels power on when they mount, brackets lock on, one scan line passes on a page
+4. **Touchable.** Controls look pressable: raised at rest, recessed when pressed. Panels lift 2 px and light their edge
+   when engaged.
+5. **Motion answers a change.** Panels power on when they mount, one scan line passes on a page
    change. No looping decoration except the live dot. Everything respects reduced motion.
 
 Forbidden: glass without lighting, animated gradients, neon borders around whole cards, glowing body text (the hero
@@ -47,7 +47,7 @@ same depth system (paper switches the HUD dressing off, §5a).
 | `--text-3` | `#8a93a1` | `#5b626c` | ≥ 4.5:1 on page, surface and glass (5.0:1 on the light page) |
 | `--accent` | `#ffa04a` | `#8f4f00` | links, text accents (10:1 / 5.2:1) |
 | `--accent-fill` / `--accent-ink` | `#ffa04a` / `#1a0d00` | `#ffc81f` / `#111418` | primary buttons, switches, sliders |
-| `--signal` | `#ff9a3c` | `#f2b400` | the HUD light: focus, active, brackets, rails |
+| `--signal` | `#ff9a3c` | `#f2b400` | the HUD light: focus, active, lit edges |
 | `--signal-2` | `#ffd27a` | `#ff7a1a` | end of `--signal-line` |
 | `--signal-text` | signal 80 % into text | `#7a4a00` | the signal as readable text (yellow never is) |
 | `--ok` / `--warn` / `--danger` / `--info` | `#30d158` `#ffd60a` `#ff453a` `#64d2ff` | `#248a3d` `#b25000` `#d70015` `#0066cc` | |
@@ -111,8 +111,7 @@ they are).
   (`70vmax 55vmax at 6% 108%`) and a cool key from the top right (social blue at 9 %). Light: signal at 16 % from the
   top left, a steel blue at 16 % from the bottom right, a white haze. (`--aurora` is its legacy alias; `none` turns it
   off.)
-- `--grid` — a sparse tactical grid: one 1 px line every 128 px (`--grid-dot` = `--grid-major`, text at 3 % / 4.5 %),
-  masked to soften towards the edges. No minor lines.
+- `--grid` — `none` by default (the scene is light only); a fork can set line gradients here.
 
 `.app::after`, fixed, above the scene and below content: `--scan` (`none` by default; forks may set scanlines), `--grain`
 (an SVG turbulence tile at 4.5 %, dark only) and `--vignette`. Paper sets spill, grid and scan to `none`.
@@ -128,35 +127,32 @@ Glow may appear on:
 1. `:focus-visible` (every interactive element) — `box-shadow: var(--ring)` instead of a hard outline.
 2. Navigation's active state: tab-bar light (16 × 2 px bar), segmented thumb's underline, settings nav marker.
 3. The live dot (a soft pulse ring, 1.8 s, the only looping animation; off under reduced motion).
-4. HUD lines when lit (§5a): engaged panel brackets, the header rail's lit segment, the board tab light, the route
-   scan line.
+4. HUD lines when lit (§5a): an engaged panel's edge, the route scan line.
 5. Score-bar segments **only in the full breakdown** (item detail), dark mode. Row bars never bloom; their segments are
    tempered into the track: `color-mix(in oklab, <segment colour> 78%, var(--well))`.
 6. Board-hue dots in panel headers; resonance level-3 mark; switch "on" track (faint accent halo).
 7. Primary buttons on hover (accent bloom, dark only). The podium rank numerals and the hero date carry a faint signal
    bloom in dark.
 
-At rest a panel shows one lit thing — its tab light. Body text never glows.
+At rest a panel shows nothing lit; engaged, its edge. Body text never glows.
 
-## 5a. HUD layer (`ui/hud.css`)
+## 5a. HUD layer (`ui/hud.css`) — kept small on purpose
 
-- **Brackets** — `.board::after` (and `.hud-frame::after`): four 14 × 1.5 px corner brackets 7 px outside the panel,
-  `--hud` at rest (signal at 28 %; light: ink at 30 %; paper: none). Hover/focus-within: they close to 4 px, grow to
-  18 px arms, turn `--hud-hot` and bloom with `--hud-glow`.
-- **Tab light** — the top edge of a board panel carries its hue: a 44 × 2 px bar 26 px in, with a 64 × 14 px bloom.
-- **Header rail** — `.appbar::after`: a lit 56 × 2 px segment under the brand, `--ticks` (1 px every 8 px), a faint
-  line fading to the right.
-- **Hero** — a hazard tag (signal stripes, 22 × 8 px) leads the eyebrow; under the date a ruler (`--ticks`) whose
-  first 44 px are lit.
-- **Index** — each board panel stencils its position (`01`, `02` …, `--font-hud`, `--hud-faint`) into its top-right
-  corner; hidden on phones (one board at a time).
-- **Rank numerals** read like a counter: single digits get a dim stencilled `0` (CSS content with empty alt text, so
-  assistive tech still hears "rank 1"); not in the item-detail hero.
-- **Gauges** — score tracks carry a `--hud-faint` tick every tenth.
+One decorative voice per screen: glass, a lit edge, a little amber. Brackets, corner indices, tab lights, a header
+rail, hazard tags and rulers were tried and removed — together they read as clutter.
+
+- **Lit edge** — a hovered (or focus-holding) board panel takes a 1 px `--hud-hot` edge at 55 % with a soft outer
+  glow (`--edge-lit`; light mode: a crisp ink edge, no bloom) and lifts 2 px.
 - **Pointer light** — under a fine pointer (`ui/glass.ts`), the panel under the cursor gets `data-lit` and `--mx/--my`:
-  a soft white bloom inside the glass (`--spot`, `--spot-max`: 7 % dark / 60 % light) and a spot of `--hud-hot`
-  along its rim. `--spot-a` is a registered property, so the light eases in and out. Off for touch and reduced
-  motion.
+  a faint white bloom inside the glass (`--spot-max`: 3.5 % dark / 30 % light) and a soft `--hud-hot` spot along
+  its rim (45 %). Off for touch and reduced motion.
+- **Marks, not words** — NEW is a sparkle and BACK a history icon in a small tinted disc (the word is the accessible
+  name and the tooltip); an event's state in "at a glance" is a dot (new: lit signal; updated: warn with a ring; seen:
+  hollow ring).
+- **Rank numerals** read like a counter: single digits get a dim stencilled `0` (CSS content with empty alt text).
+- **Gauges** — score tracks carry a `--hud-faint` tick every tenth.
+- **Runner preview** — on hover-capable pointers a runner-up row shows a small glass card above it after 220 ms: full
+  title, three lines of blurb, category, source host and score. Hidden from assistive tech (the link opens the detail).
 
 ## 6. Type
 
@@ -178,7 +174,6 @@ At rest a panel shows one lit thing — its tab light. Body text never glows.
 | Eyebrow | 0.75rem / 600 / +0.06em, uppercase for Latin, `--text-3` |
 | Rank numeral | 2.125rem / 200 (thin) / −0.04em, tabular; single digits with a stencilled `0` at 32 %; podium (1–3) solid `--text` at 250 with a faint signal bloom in dark; ranks ≥ 4 `--text-3` |
 | Scores, counts, raw/norm/points | `--font-mono`, tabular, 600 for totals |
-| HUD labels (index, coordinates) | `--font-hud` (= mono) 0.6875rem / 600 / +0.14em |
 CJK line-height 1.65 for body; titles 1.35.
 
 ## 7. Shape, space, motion
@@ -194,7 +189,6 @@ Motion: `--ease: cubic-bezier(0.32, 0.72, 0, 1)` (sheet curve), `--ease-pop: cub
 - **Power-on** (`holo-in`, 620 ms, `--motion-settle`): a panel rises 14 px from 98.5 % scale and fades in with a
   hologram flicker (0 → 0.85 → 0.45 → 1). Staggered 70 ms by `--i`: hero, then the brief and "at a glance", the
   filters, then the boards in grid order. Settings groups stagger the same way.
-- **Lock-on** (`lock-on`, 720 ms, 180 ms after its panel): the brackets close from 22 px out to their resting 7 px.
 - **Route scan** (760 ms): one line of `--hud-hot` with a signal wash above it sweeps down from under the header when
   the page *path* changes (`.routescan`, remounted by `app.tsx`; filters and overlays don't trigger it).
 - **Page** (`ui/motion.ts › usePageMotion`): the routed page slides 9 px (3 px for a query change) — transform only.
@@ -206,14 +200,15 @@ Motion: `--ease: cubic-bezier(0.32, 0.72, 0, 1)` (sheet curve), `--ease-pop: cub
 
 ## 8. Component recipes
 
-- **Header (glass)** 60 px, hairline bottom plus the HUD rail (§5a). Brand = 18 px glyph + wordmark 15 px/600. Edition picker = small raised
+- **Header (glass)** 60 px, hairline bottom. "Learn" and "GitHub" are quiet ghost links; the search field is a 250 px
+  well; the tool buttons (language, mode, library, export, settings) sit in one well capsule (`.appbar__dock`). Brand = 18 px glyph + wordmark 15 px/600. Edition picker = small raised
   pill with chevron. Live toggle = pill with the live dot. Desktop search = well field with a raised **keycap** (`/`)
   — keycap: plate, 1 px bottom shadow `0 1px 0 rgb(0 0 0 / 0.5)`, mono 11 px. Icon buttons are ghost; hover → plate.
 - **Mobile tab bar (glass capsule)** floating: `left/right 12px`, `bottom calc(10px + env(safe-area-inset-bottom))`,
   radius 26 px, height 62 px, `--elev-3`. Active item: a raised inner plate behind icon+label and a 16 × 2 px signal
   tab light with glow under it. Labels are short enough for six tabs at 390 px (the library tab says "Library" /
   "我的阅读"). Page bottom padding accounts for it.
-- **Hero** hazard tag + eyebrow (live chip alone, or "每日一期 · PT") → display date over its lit ruler → window line in `--text-3` (times in mono) →
+- **Hero** eyebrow (live chip alone, or "每日一期 · PT") → display date → window line in `--text-3` (times in mono) →
   on the live edition, its caveat as one `--text-3` line (no banner) → status chips. The header's edition picker shows
   the edition's date on the live page too ("9月18日 · PT"); "实时" is its label only below 400 px, where the Live
   toggle is hidden. The "coverage times & sources" disclosure wraps its status badge under its label on phones.
@@ -227,16 +222,16 @@ Motion: `--ease: cubic-bezier(0.32, 0.72, 0, 1)` (sheet curve), `--ease-pop: cub
   edge-fade mask; full bleed and 30 px below 1100 px.
 - **Board switcher** (below 1100 px) = segmented control: a well track (pill), items are text buttons, the selected
   item is a raised plate thumb (`--elev-1`) that animates between positions with `--ease-pop`.
-- **Board panel** panel glass, radius 22, with its tab light, brackets and index (§5a). Header: hue dot (8 px + halo),
+- **Board panel** panel glass, radius 22, lit edge on hover (§5a). Header: hue dot (8 px + halo),
   title, count as a small well chip, subtitle `--text-3`, source-status chips on the right as small wells with an
   icon. Items inside are **rows**, not cards:
   hairline separators inset to start after the rank column (iOS grouped-list style). Runners-up collapse behind a
-  plate button "展开其余 10 条", pinned to the panel's foot: panels in a grid row stretch to one height, so their
+  quiet bar ("候补 10", a hairline that lights on hover, a chevron), pinned to the panel's foot: panels in a grid row stretch to one height, so their
   bottoms and buttons line up.
 - **Display areas** inside a plate (resonance diagram, scoring formula) are nested plates, not wells: dark
   `--surface-2` + `--plate-edge`; light the page grey (`--bg` 70 % into `--surface`) + a `--line` hairline.
 - **Item row** grid `[rank 48px | content]`: rank numeral (§6) with trend badge under it (tiny pills: NEW = signal
-  tint `bg signal@12%, text --signal-text`; ▲ ok, ▼ danger, BACK res); title; blurb; meta row with 14 px icons; **score row**:
+  icon discs for NEW/BACK, §5a; ▲ ok, ▼ danger); title; blurb; meta row with 14 px icons; **score row**:
   well track 6 px pill with a tick every tenth, containing the coloured segments (each segment gets a 1 px top
   highlight; tempered, no glow in rows — §5.5),
   total in mono at the end; bottom row: category chip + action icons (ghost; `opacity .6` → 1 on row hover/focus on
@@ -250,7 +245,8 @@ Motion: `--ease: cubic-bezier(0.32, 0.72, 0, 1)` (sheet curve), `--ease-pop: cub
   grey) with a 1 px `--line-2` rim; on = accent fill + inner highlight + faint halo; knob = white plate
   `0 2px 4px rgb(0 0 0 / 0.3)`, moves with `--ease-pop`.
 - **Slider** 4 px well track, accent fill, 22 px white plate thumb.
-- **Chips** small plates (`--surface-3` + edge), 24 px tall, dot + label; interactive chips press like buttons.
+- **Chips** small plates (`--surface-3` + edge), 24 px tall, dot + label; interactive chips press like buttons. On a
+  card the category is a flat tag instead: 22 px, 5 px corners, a hairline and a faint tint in the category colour.
 - **Sheet / drawer / dialog** glass, radius 30 (mobile top) / 24 (drawer left edge) / 22 (dialog), `--elev-3`,
   grabber 36×5 pill; scrim `rgb(0 0 0 / 0.45)` + `blur(6px)` (light: `rgb(0 0 0 / 0.2)`).
 - **Popover / tooltip / toast** glass, radius 12 / 10 / 999, `--elev-3`.

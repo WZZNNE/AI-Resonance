@@ -128,7 +128,7 @@
   );
   /* The pointer light inside glass (ui/glass.ts): colour channels and peak alpha. */
   --spot: 255 255 255;
-  --spot-max: 0.07;
+  --spot-max: 0.035;
   /* Translucent fills for things drawn inside glass (hovered rows, nested plates, chips): they tint, never paint over. */
   --tint-1: rgb(255 255 255 / 0.035);
   --tint-2: rgb(255 255 255 / 0.06);
@@ -180,12 +180,10 @@
     radial-gradient(62vmax 50vmax at 98% -10%, color-mix(in srgb, var(--hue-social) 9%, transparent), transparent 60%);
   /* Legacy name of the page light (theme files and forks set `--aurora: none`). */
   --aurora: var(--spill);
-  /* A sparse 128 px tactical grid (one faint line colour; `--grid-dot` is its legacy name). */
+  /* No grid by default: the scene is light only. Forks can set `--grid` (e.g. two 128 px line gradients). */
   --grid-dot: color-mix(in srgb, var(--text) 3%, transparent);
   --grid-major: var(--grid-dot);
-  --grid:
-    linear-gradient(var(--grid-major) 1px, transparent 1px) 0 0 / 128px 128px,
-    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px) 0 0 / 128px 128px;
+  --grid: none;
   /* Scanlines are available to forks (`--scan`); the default scene carries only film grain. */
   --scan: none;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -390,7 +388,7 @@
     rgb(255 255 255 / 0.4) 85%,
     rgb(255 255 255 / 0.9)
   );
-  --spot-max: 0.6;
+  --spot-max: 0.3;
   --tint-1: rgb(12 16 22 / 0.028);
   --tint-2: rgb(12 16 22 / 0.045);
   --tint-3: rgb(12 16 22 / 0.07);

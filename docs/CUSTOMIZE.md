@@ -329,11 +329,11 @@ Everything visual reads CSS custom properties:
 | Surfaces | `--bg` `--bg-2` (page) `--surface` `--surface-2` `--surface-3` (plates, nested plates, chips) `--well` (recessed fill) `--line` `--line-2` `--scrim` |
 | Text | `--text` `--text-2` `--text-3` (≥ 4.5:1 contrast on `--bg` and `--surface` in every preset) |
 | Accent and status | `--accent` `--accent-fill` (primary buttons) `--accent-2` `--accent-ink` `--focus` `--ok` `--warn` `--danger` `--info` `--live` `--up` `--down` `--res` |
-| Signal | `--signal` (the HUD light: focus ring, active navigation, brackets) `--signal-2` `--signal-line` (signal → signal-2 hairline) `--signal-text` |
+| Signal | `--signal` (the HUD light: focus ring, active navigation, lit panel edges) `--signal-2` `--signal-line` (signal → signal-2 hairline) `--signal-text` |
 | Meaning | `--hue-repos` `--hue-papers` `--hue-news` `--hue-social` `--hue-labs` · `--cat-release` … `--cat-policy` · `--sig-1` … `--sig-8` |
 | Materials | `--panel-bg` `--panel-tint` `--panel-edge` `--panel-drop` `--panel-blur` `--rim` (content glass) · `--tint-1` … `--tint-3` · `--plate-bg` `--plate-edge` (raised) · `--well-bg` `--well-edge` (recessed) · `--glass-bg` `--glass-blur` `--glass-edge` (header, tab bar, sheets) · `--elev-0` … `--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` |
 | Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (40 % in dark, 0 in light: how much coloured marks glow) |
-| HUD | `--hud` `--hud-hot` (brackets and rails at rest / lit; `transparent` hides the brackets) · `--hud-faint` · `--hud-glow` · `--ticks` · `--font-hud` |
+| HUD | `--hud` `--hud-hot` (HUD line colour at rest / lit: the engaged panel edge, the rim spot) · `--hud-faint` · `--hud-glow` · `--ticks` · `--font-hud` |
 | Page | `--spill` (the scene light; `none` turns it off, `--aurora` is its old name) · `--grid` `--grid-dot` `--grid-major` (the tactical grid) · `--scan` `--grain` `--vignette` |
 | Type | `--font-ui` `--font-text` `--font-display` `--font-num` `--font-serif` `--font-mono` · `--fs-2xs` … `--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--lh` `--font-scale` |
 | Shape | `--radius-s` `--radius-m` `--radius-l` `--radius-xl` `--radius-2xl` `--radius-pill` · `--space-1` … `--space-10` `--pad-card` `--density` `--target` |

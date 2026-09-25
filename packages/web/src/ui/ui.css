@@ -2079,6 +2079,15 @@ button.scorebar__bar::before {
   text-transform: uppercase;
 }
 
+/* Icon-only trend marks (NEW, BACK): a small tinted disc. */
+.trend--icon {
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+}
+
 .trend--back {
   --tone: var(--res);
   text-transform: uppercase;

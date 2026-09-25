@@ -53,8 +53,19 @@ export function TrendBadge({ trend, rank, quiet }: TrendBadgeProps) {
   const { kind, delta } = trendBadgeKind(trend, rank)
   const streak = trend.streak >= 2 ? trend.streak : 0
   let main = null
-  if (kind === 'new') main = <span class="trend trend--new">{t('trend.new')}</span>
-  else if (kind === 'back') main = <span class="trend trend--back">{t('trend.back')}</span>
+  // NEW and BACK are icons (the word is the accessible name and the tooltip): a column of words crowds the rank.
+  if (kind === 'new')
+    main = (
+      <span class="trend trend--new trend--icon" role="img" aria-label={t('trend.new')} title={t('trend.new')}>
+        <Icon name="sparkle" size={11} />
+      </span>
+    )
+  else if (kind === 'back')
+    main = (
+      <span class="trend trend--back trend--icon" role="img" aria-label={t('trend.back')} title={t('trend.back')}>
+        <Icon name="history" size={11} />
+      </span>
+    )
   else if (kind === 'up') {
     main = (
       <span class="trend trend--up num" role="img" aria-label={t('trend.upBy', { n: delta })}>

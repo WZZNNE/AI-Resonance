@@ -146,9 +146,25 @@
   flex: 1;
   min-width: 0;
 }
-.event-brief__item .badge {
-  margin-right: 0.5rem;
+/* State mark: new = a lit signal dot, updated = a warn dot with a ring, seen = a hollow ring. */
+.event-brief__state {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.6rem;
+  border-radius: 50%;
   vertical-align: 2px;
+}
+.event-brief__state--new {
+  background: var(--signal);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--signal) var(--bloom), transparent);
+}
+.event-brief__state--updated {
+  background: var(--warn);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--warn) 25%, transparent);
+}
+.event-brief__state--repeat {
+  box-shadow: inset 0 0 0 1.5px var(--text-3);
 }
 .event-brief__title {
   font: 600 var(--fs-s) / 1.6 var(--font-text);
@@ -185,7 +201,7 @@
   line-height: 1.6;
   margin-top: 0.4rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

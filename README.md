@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the hero date over its HUD rail, today's brief and events at a glance on glass panels, the filters and the board grid with its bracket frames (dark theme)" width="100%">
+  <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the hero date, today's brief and events at a glance on glass panels, the filters and the board grid (dark theme)" width="100%">
 </p>
 
 ## Read it now — no deployment required
@@ -154,7 +154,7 @@ the daily sources and topic; the AI beginner catalogue is maintained separately.
 - **Read the event first.** A compact header distinguishes the latest complete edition from Live. Event cards show short summaries and group clear reports of the same event; casual conversation and promotions stay out of these picks without changing the five heat boards. Item details put the content before an expandable score breakdown.
 - **Pick up where you left off.** Follow a project or company from its details, save an item, queue it for later or mark it read/unread. Event updates distinguish added sources from changed content. The local reading library exports to JSON and previews imports before merging them with existing saves.
 - **Titanium × Signal UI, tactical glass.** Thick frosted-glass panels with real lighting (specular lip, refracting
-  rim, depth shadows) over a lit tactical grid; HUD brackets that lock on, amber signal glow in the dark mode and an
+  rim, depth shadows) over a soft lit scene; panel edges that light up under the pointer, amber signal glow in the dark mode and an
   industrial safety-yellow light mode; panels power on and a scan line passes on every page change (reduced motion
   respected). Dark and light modes follow your system. Two alternate presets (`paper`, `terminal`), plus accent, density, font size,
   reduced motion, custom CSS and theme import/export. The visual spec is in [docs/VISUAL.md](./docs/VISUAL.md).
