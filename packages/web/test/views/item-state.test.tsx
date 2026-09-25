@@ -42,3 +42,32 @@ it('loads each item history separately when following links inside the detail sh
     invalidate()
   }
 })
+
+it('shows the sheet again when closing lands on another item (back from a link followed inside the sheet)', async () => {
+  resetSettings()
+  const a = repo('gh:review/a', 1, 40, { title: 'ITEM A' })
+  const b = repo('gh:review/b', 2, 30, { title: 'ITEM B' })
+  const day = daily('2026-09-18', { repos: [a, b] })
+  manifest.data.value = manifestOf(['2026-09-18'])
+  vi.spyOn(api, 'daily').mockResolvedValue(day)
+  vi.spyOn(api, 'entities').mockResolvedValue({ entities: {} } as never)
+  const host = document.body.appendChild(document.createElement('div'))
+  const show = (item: typeof a) =>
+    render(<ItemView path="/item/example" params={{ slug: item.key }} query={{ d: day.date }} />, host)
+  try {
+    // A → (link inside the sheet) → B, then close B: the router goes back to A.
+    show(a)
+    await vi.waitFor(() => expect(document.querySelector('.detail__title')?.textContent).toBe(a.title))
+    show(b)
+    await vi.waitFor(() => expect(document.querySelector('.detail__title')?.textContent).toBe(b.title))
+    document.querySelector<HTMLButtonElement>('button[aria-label="Close"]')!.click()
+    await vi.waitFor(() => expect(document.querySelector('.detail__title')).toBeNull())
+    show(a)
+    await vi.waitFor(() => expect(document.querySelector('.detail__title')?.textContent).toBe(a.title))
+  } finally {
+    render(null, host)
+    host.remove()
+    vi.restoreAllMocks()
+    invalidate()
+  }
+})

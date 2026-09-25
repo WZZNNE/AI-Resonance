@@ -6,6 +6,7 @@ import {
   cleanRules,
   type FollowRule,
   filterReading,
+  forgetEvent,
   MAX_SAVED,
   markRead,
   matchesRule,
@@ -205,5 +206,27 @@ describe('local reading state', () => {
     expect(reading.value.events[repo.key].members).toEqual([repo.key, news.key])
     expect(reading.value.events[repo.key].signature.length).toBeLessThan(32)
     expect(JSON.stringify(reading.value.events)).not.toContain('editorial text')
+  })
+})
+
+describe('forgetEvent', () => {
+  it('undoes marking an event seen: its memory (and overlapping ones) go, its items are unread again', () => {
+    const a = repo
+    const b = news
+    markRead(a)
+    markRead(b)
+    rememberEvent(a.key, 'sig', [a.key, b.key])
+    rememberEvent('other', 'sig2', ['other'])
+    forgetEvent(a.key, [a.key, b.key])
+    expect(Object.keys(reading.value.events)).toEqual(['other'])
+    expect(readingEntries()[a.key]?.readAt).toBeUndefined()
+    expect(readingEntries()[b.key]?.readAt).toBeUndefined()
+    // The entries stay in the library; only their read state is undone.
+    expect(readingEntries()[a.key]?.title).toBe(a.title)
+  })
+
+  it('shares one validated view of the library until it changes', () => {
+    markRead(repo)
+    expect(readingEntries()).toBe(readingEntries())
   })
 })

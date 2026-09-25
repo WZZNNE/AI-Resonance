@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-import { api, useResource } from '../core/api.ts'
+import { api, useReloadOn, useResource } from '../core/api.ts'
 import { href } from '../core/router.ts'
 import { dataVersion, loadEdition, manifest } from '../core/state.ts'
 import { fmt, t } from '../i18n/index.ts'
@@ -14,9 +14,14 @@ import './health.css'
 
 export default function HealthPage() {
   const version = dataVersion.value
-  const latest = useResource((signal, fresh) => loadEdition({ kind: 'latest' }, signal, fresh), [version])
-  const live = useResource((signal, fresh) => api.live({ signal, fresh }), [version])
-  const mail = useResource((signal, fresh) => api.mailStatus({ signal, fresh }), [version])
+  const latest = useResource((signal, fresh) => loadEdition({ kind: 'latest' }, signal, fresh), [])
+  const live = useResource((signal, fresh) => api.live({ signal, fresh }), [])
+  const mail = useResource((signal, fresh) => api.mailStatus({ signal, fresh }), [])
+  useReloadOn(version, () => {
+    latest.reload()
+    live.reload()
+    mail.reload()
+  })
   const [now, setNow] = useState(Date.now())
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 60_000)

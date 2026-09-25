@@ -21,6 +21,11 @@ export interface BoardColumnProps {
   span?: number
   /** Narrow layout: the board switcher labels the region instead of the heading. */
   panelProps?: Record<string, unknown>
+  /**
+   * Items on this board before the reader's own filters (unread / following / mute rules) shaped `day`. When those
+   * filters empty a board that had news, it says so instead of blaming the edition or its sources.
+   */
+  total?: number
 }
 
 const matches = (category: Category | null) => (it: Item) => !category || it.category === category
@@ -30,11 +35,14 @@ function EmptyBoard({
   sources,
   category,
   hadItems,
+  readingHidden,
 }: {
   board: Board
   sources: SourceStatus[]
   category: Category | null
   hadItems: boolean
+  /** The reader's filters hid everything this board had. */
+  readingHidden: boolean
 }) {
   const name = boardTitle(board)
   if (category && hadItems) {
@@ -44,6 +52,15 @@ function EmptyBoard({
         icon="filter"
         title={t('board.emptyCategory', { category: categoryLabel(category), board: name })}
       />
+    )
+  }
+  if (readingHidden) {
+    return (
+      <EmptyState compact icon="filter" title={t('reading.filteredEmpty')}>
+        <p>
+          <a href="#/settings/interests">{t('reading.manage')}</a>
+        </p>
+      </EmptyState>
     )
   }
   const failed = sources.filter((s) => s.state === 'failed' || s.state === 'degraded')
@@ -72,7 +89,7 @@ function EmptyBoard({
 }
 
 /** A board's column (wide grid) or panel (narrow). */
-export function BoardColumn({ board, day, date, meta, category, span, panelProps }: BoardColumnProps) {
+export function BoardColumn({ board, day, date, meta, category, span, panelProps, total }: BoardColumnProps) {
   const data = day.boards[board] ?? { top: [], runnersUp: [] }
   const top = data.top.filter(matches(category))
   const runners = data.runnersUp.filter(matches(category))
@@ -131,6 +148,7 @@ export function BoardColumn({ board, day, date, meta, category, span, panelProps
           sources={sources}
           category={category}
           hadItems={data.top.length + data.runnersUp.length > 0}
+          readingHidden={data.top.length + data.runnersUp.length === 0 && (total ?? 0) > 0}
         />
       )}
       {runners.length > 0 && (

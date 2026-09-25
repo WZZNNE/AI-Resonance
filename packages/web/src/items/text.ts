@@ -25,6 +25,30 @@ export function itemWhy(item: Item, lang: Lang): string | undefined {
   return item.copy?.[lang]?.why || undefined
 }
 
+/** Already closed by sentence punctuation, allowing closing quotes/brackets after it. */
+const TERMINATED = /[.!?…。！？；;:：]['"’”)\]）」』]*$/u
+/** Ends in CJK (or full-width) text, so it closes with a full-width stop and takes no space after it. */
+const CJK_TAIL = /[\u3000-\u9fff\uac00-\ud7af\uff00-\uffef]$/u
+
+/**
+ * Pure: fragments (a one-line blurb, a "why it matters" sentence …) joined into readable prose. Pipeline blurbs often
+ * lack a final stop; each fragment is closed in its own script before the next one starts, so a Latin blurb never runs
+ * into the next sentence ("…Terminal-Bench An official model…") and a Chinese one ends with 。 and no space.
+ */
+export function joinSentences(parts: ReadonlyArray<string | null | undefined | false>): string {
+  let out = ''
+  for (const part of parts) {
+    const text = part ? part.trim() : ''
+    if (!text) continue
+    if (out) {
+      if (!TERMINATED.test(out)) out += CJK_TAIL.test(out) ? '。' : '.'
+      if (!/[。！？；：」』）]$/u.test(out)) out += ' '
+    }
+    out += text
+  }
+  return out
+}
+
 /** Pure: essence points (2–3) in `lang`, if written. */
 export function itemPoints(item: Item, lang: Lang): string[] {
   return item.copy?.[lang]?.points ?? []

@@ -1,4 +1,5 @@
 /** Local reading memory. No accounts or network; only a bounded, minimal snapshot is retained. */
+import { batch, computed } from '@preact/signals'
 import { BOARDS, type Board, type DateStr, type Item } from '@resonance/schema'
 import { defineSlice } from '../core/settings.ts'
 import { itemBlurb, itemTitle } from '../items/text.ts'
@@ -121,8 +122,18 @@ export function cleanEntries(raw: unknown): Record<string, ReadingEntry> {
   )
 }
 
+// Validated once per change of the stored entries, not once per card that asks (a page asks hundreds of times).
+const validEntries = computed(() => cleanEntries(reading.value.entries))
+const validRules = computed(() => cleanRules(reading.value.rules))
+
+/** The reading library, validated. Reactive; shared between callers, so treat it as read-only (copy to change). */
 export function readingEntries(): Record<string, ReadingEntry> {
-  return cleanEntries(reading.value.entries)
+  return validEntries.value
+}
+
+/** The follow/mute rules, validated. Reactive and shared: read-only. */
+export function readingRules(): FollowRule[] {
+  return validRules.value
 }
 
 /** Keep all saved/later entries, and the most recent ordinary reading history. */
@@ -270,7 +281,7 @@ export function filterReading(
   items: Item[],
   filter: ReadingFilter,
   entries = readingEntries(),
-  rules = cleanRules(reading.value.rules),
+  rules = readingRules(),
 ): Item[] {
   return items.filter((item) => {
     if (rules.some((r) => r.mode === 'mute' && matchesRule(item, r))) return false
@@ -294,24 +305,49 @@ export function rememberEvent(
   })
 }
 
+/**
+ * Undo "seen" for an event: forget every memory that `previousEvent` would match to it (any overlap with its key or
+ * members) and mark its items unread, in one write.
+ */
+export function forgetEvent(key: string, members: string[]): void {
+  const wanted = new Set([key, ...members])
+  const now = new Date().toISOString()
+  const entries = { ...readingEntries() }
+  for (const member of members) {
+    const old = entries[member]
+    if (old?.readAt) entries[member] = { ...old, readAt: undefined, readSignature: undefined, updatedAt: now }
+  }
+  reading.set({
+    events: Object.fromEntries(
+      Object.entries(cleanEventMemory(reading.value.events)).filter(
+        ([id, event]) => ![id, ...(event.members ?? [])].some((member) => wanted.has(member)),
+      ),
+    ),
+    entries,
+  })
+}
+
 /** A group is seen once every currently shown source has been read at its current content revision. */
 export function acknowledgeReadEvents(day: Parameters<typeof newsEvents>[0]): void {
   const entries = readingEntries()
-  for (const event of newsEvents(day)) {
-    if (previousEvent(event, reading.value.events)?.signature === event.signature) continue
-    if (
-      event.items.every(
-        (item) => entries[item.key]?.readAt && entries[item.key]?.readSignature === itemContentSignature(item),
-      )
-    ) {
-      rememberEvent(
-        event.key,
-        event.signature,
-        event.items.map((item) => item.key),
-        eventContent(event),
-      )
+  // One write (and one save) for the whole pass, however many events it remembers.
+  batch(() => {
+    for (const event of newsEvents(day)) {
+      if (previousEvent(event, reading.value.events)?.signature === event.signature) continue
+      if (
+        event.items.every(
+          (item) => entries[item.key]?.readAt && entries[item.key]?.readSignature === itemContentSignature(item),
+        )
+      ) {
+        rememberEvent(
+          event.key,
+          event.signature,
+          event.items.map((item) => item.key),
+          eventContent(event),
+        )
+      }
     }
-  }
+  })
 }
 
 /** Contextual follow actions use the same exact project/company rules as Interests. */

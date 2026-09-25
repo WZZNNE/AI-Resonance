@@ -213,7 +213,8 @@ export interface ResourceState<T> {
 
 /**
  * Reload the same resource while keeping its data visible. Changing deps immediately hides the previous resource,
- * including the render before the effect runs. A failed request clears the old data so consumers surface the error.
+ * including the render before the effect runs. A failed load of new deps leaves only the error; a failed reload keeps
+ * the stale data and sets `error` too, so a view can say "couldn't refresh" without throwing the page away.
  */
 export function useResource<T>(loader: Loader<T>, deps: unknown[]): ResourceState<T> {
   const [state, set] = useState<Omit<ResourceState<T>, 'reload'> & { deps: unknown[] }>({
@@ -234,7 +235,11 @@ export function useResource<T>(loader: Loader<T>, deps: unknown[]): ResourceStat
       .then(() => loader(ctl.signal, fresh))
       .then(
         (data) => !ctl.signal.aborted && set({ data, error: undefined, loading: false, deps }),
-        (err) => !ctl.signal.aborted && set({ data: undefined, error: toApiError(err), loading: false, deps }),
+        // A failed refresh of the same resource keeps what the reader already has (and reports the error beside it);
+        // only a failed load of a different resource leaves nothing to show.
+        (err) =>
+          !ctl.signal.aborted &&
+          set((s) => ({ data: same(s.deps, deps) ? s.data : undefined, error: toApiError(err), loading: false, deps })),
       )
     return () => ctl.abort()
   }, [...deps, tick])
@@ -244,4 +249,18 @@ export function useResource<T>(loader: Loader<T>, deps: unknown[]): ResourceStat
   }
   const current = same(state.deps, deps) ? state : { data: undefined, error: undefined, loading: true }
   return { data: current.data, error: current.error, loading: current.loading, reload }
+}
+
+/**
+ * Reload a resource in place when `version` moves (e.g. `dataVersion` after the pipeline published): the reader keeps
+ * the page, its scroll and open disclosures while the new data loads. Putting such a version in `useResource` deps
+ * would instead blank the view to its skeleton.
+ */
+export function useReloadOn(version: unknown, reload: () => void): void {
+  const seen = useRef(version)
+  useEffect(() => {
+    if (Object.is(seen.current, version)) return
+    seen.current = version
+    reload()
+  }, [version])
 }

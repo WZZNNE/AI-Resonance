@@ -1,7 +1,7 @@
 import { render } from 'preact'
 import { act } from 'preact/test-utils'
 import { afterEach, expect, it, vi } from 'vitest'
-import { type ResourceState, useResource } from '../../src/core/api.ts'
+import { type ResourceState, useReloadOn, useResource } from '../../src/core/api.ts'
 
 let host: HTMLDivElement | undefined
 let current: ResourceState<string>
@@ -38,7 +38,7 @@ it('clears the previous resource immediately on navigation and shows a failed ne
   await vi.waitFor(() => expect(host?.textContent).toBe('missing edition'))
   expect(current.data).toBeUndefined()
 })
-it('preserves data during a same-resource refresh but surfaces a refresh failure', async () => {
+it('preserves data during a same-resource refresh and keeps it, beside the error, when the refresh fails', async () => {
   let reject: (reason: Error) => void = () => undefined
   const load = vi.fn(async (_id: string, _signal: AbortSignal, fresh: boolean) =>
     fresh
@@ -53,6 +53,27 @@ it('preserves data during a same-resource refresh but surfaces a refresh failure
   await vi.waitFor(() => expect(load).toHaveBeenCalledTimes(2))
   expect(current.data).toBe('current')
   await act(async () => reject(Error('refresh failed')))
-  await vi.waitFor(() => expect(current.data).toBeUndefined())
-  expect(current.error?.message).toBe('refresh failed')
+  await vi.waitFor(() => expect(current.error?.message).toBe('refresh failed'))
+  expect(current.data).toBe('current')
+  expect(current.loading).toBe(false)
+})
+
+it('reloads in place when a version moves: the old data stays up and the reload is fresh', async () => {
+  let resolveNext: (v: string) => void = () => undefined
+  const load = vi.fn((_id: string, _signal: AbortSignal, fresh: boolean) =>
+    fresh ? new Promise<string>((r) => (resolveNext = r)) : Promise.resolve('first'),
+  )
+  function Versioned({ version }: { version: number }) {
+    current = useResource((signal, fresh) => load('latest', signal, fresh), ['latest'])
+    useReloadOn(version, current.reload)
+    return <p>{current.data ?? 'loading'}</p>
+  }
+  host ??= document.body.appendChild(document.createElement('div'))
+  await act(async () => render(<Versioned version={0} />, host!))
+  await vi.waitFor(() => expect(host?.textContent).toBe('first'))
+  await act(async () => render(<Versioned version={1} />, host!))
+  expect(host?.textContent).toBe('first')
+  expect(load).toHaveBeenLastCalledWith('latest', expect.anything(), true)
+  await act(async () => resolveNext('second'))
+  await vi.waitFor(() => expect(host?.textContent).toBe('second'))
 })

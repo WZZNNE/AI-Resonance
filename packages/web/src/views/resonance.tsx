@@ -16,7 +16,7 @@ import {
   type ResonanceRel,
 } from '@resonance/schema'
 import { useEffect } from 'preact/hooks'
-import { useResource } from '../core/api.ts'
+import { useReloadOn, useResource } from '../core/api.ts'
 import type { RouteProps } from '../core/registry.ts'
 import { href, setTitle } from '../core/router.ts'
 import { allItems, boardMetas, dataVersion, type EditionRef, loadEdition, manifest, neighbours } from '../core/state.ts'
@@ -342,7 +342,8 @@ export default function Resonance({ params, query }: RouteProps) {
   const ref = resonanceRef(params, query)
   const refKey = ref.kind === 'date' ? ref.date : ref.kind
   const version = ref.kind === 'date' ? 0 : dataVersion.value
-  const res = useResource((signal, fresh) => loadEdition(ref, signal, fresh), [refKey, version])
+  const res = useResource((signal, fresh) => loadEdition(ref, signal, fresh), [refKey])
+  useReloadOn(version, res.reload)
   const day: DailyFile | undefined = res.data
   const m = manifest.data.value
   useEffect(() => {
