@@ -468,7 +468,6 @@ const zh: Record<keyof Messages, string> = {
   'footer.api': '开放数据（JSON）',
   'footer.digest': '每日摘要',
   'footer.source': '源代码',
-  'footer.fine': '排名依据公开的公式。无需账号，没有追踪；普通阅读无需 API Key，可选的个人 AI 总结使用你自己的密钥。',
   'notFound.title': '页面不存在',
   'notFound.body': '{path} 这里什么也没有。',
   'notFound.home': '回到今日',

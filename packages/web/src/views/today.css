@@ -708,18 +708,20 @@
   }
 }
 
+/*
+ * A row of HUD tabs, not a segmented track: each chip is a hairline tab; the chosen one is a lit glass plate with a
+ * short signal bar at its foot. The selection is drawn on the chip itself (no sliding thumb to fall out of step).
+ */
 .catbar__track {
-  isolation: isolate;
   display: flex;
-  gap: 2px;
+  gap: 6px;
   width: fit-content;
   max-width: 100%;
-  padding: 3px;
-  border-radius: var(--radius-pill);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  /* The chips' 44 px hit areas reach 2 px past their sides; room for them keeps the row from counting as overflow. */
+  padding: 2px 2px 4px;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-padding-inline: 8px;
 }
 
 .catbar__track::-webkit-scrollbar {
@@ -741,34 +743,31 @@
   mask-image: linear-gradient(90deg, transparent, black 32px, black calc(100% - 32px), transparent);
 }
 
-/* Chips become text buttons on the track; the thumb (or, before it is measured, the chip itself) is the plate. */
 .catbar__track .chip {
-  --sh: 0 0 #0000;
-  z-index: 1;
+  --chip-h: 32px;
+  --sh: inset 0 0 0 1px var(--line-2);
   flex: none;
   padding: 0 0.85rem;
   background: transparent;
+  color: var(--text-2);
   font-size: var(--fs-s);
-}
-
-.catbar__track .chip.is-selected {
-  --sh: var(--plate-edge), var(--elev-1);
-  background: var(--thumb-bg);
-}
-
-.catbar__track[data-thumb] .chip.is-selected {
-  --sh: 0 0 #0000;
-  background: transparent;
 }
 
 @media (hover: hover) {
   .catbar__track .chip.is-interactive:hover {
-    background: transparent;
+    --sh: inset 0 0 0 1px color-mix(in srgb, var(--hud-hot) 45%, transparent);
+    background: var(--tint-1);
+    color: var(--text);
   }
+}
 
-  .catbar__track:not([data-thumb]) .chip.is-selected:hover {
-    background: var(--thumb-bg);
-  }
+.catbar__track .chip.is-selected,
+.catbar__track .chip.is-selected:hover {
+  --sh: var(--plate-edge), var(--elev-0);
+  background:
+    linear-gradient(var(--signal) 0 0) 50% calc(100% - 3px) / 14px 2px no-repeat,
+    var(--plate-bg);
+  color: var(--text);
 }
 
 /* Inside a scroller an outer ring would be clipped: draw it inside. */
@@ -780,49 +779,24 @@
   font-size: var(--fs-xs);
 }
 
-/*
- * Phones and tablets: the board switcher above is the page's one segmented track, so the filter steps back into a
- * light, full-bleed row of chips — hairline pills at rest, the raised thumb under the chosen one.
- */
+/* Phones and tablets: the board switcher above is the page's one segmented track; the filter row runs full bleed. */
 @media (max-width: 1099.98px) {
   .catbar {
     margin-bottom: 1rem;
   }
 
   .catbar__track {
-    gap: 6px;
     width: auto;
     max-width: none;
     margin: -4px calc(-1 * var(--gutter)) -8px;
     padding: 4px var(--gutter) 8px;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
     scroll-padding-inline: var(--gutter);
-  }
-
-  .catbar__track > .thumb {
-    border-radius: var(--radius-pill);
   }
 
   .catbar__track .chip {
     --chip-h: 30px;
-    --sh: inset 0 0 0 1px var(--line-2);
     padding: 0 0.75rem;
     font-size: var(--fs-xs);
-  }
-
-  .catbar__track .chip.is-selected,
-  .catbar__track[data-thumb] .chip.is-selected {
-    --sh: 0 0 #0000;
-  }
-
-  .catbar__track:not([data-thumb]) .chip.is-selected {
-    --sh: var(--plate-edge), var(--elev-1);
-  }
-
-  .catbar__track .chip:focus-visible {
-    box-shadow: var(--sh), var(--ring);
   }
 }
 

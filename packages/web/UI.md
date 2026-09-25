@@ -200,7 +200,7 @@ Tokens (`theme/tokens.css`; presets override values only):
 | Signal | `--signal` `--signal-2` `--signal-line` (gradient, hairlines only) `--signal-text` (signal as readable text/icon colour) |
 | Meaning | `--hue-{repos,papers,news,social,labs}` · `--cat-{release,product,research,tool,engineering,discussion,industry,policy}` · `--sig-1`…`--sig-8` |
 | Materials | `--panel-bg` `--panel-tint` `--panel-edge` `--panel-drop` `--panel-drop-2` `--panel-blur` `--rim` (content glass) · `--tint-1`…`--tint-3` (fills inside glass) · `--plate-bg` `--plate-edge` · `--well-bg` `--well-edge` · `--glass-bg` `--glass-blur` `--glass-edge` · `--elev-0`…`--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` · `--spot` `--spot-max` (pointer light) (§10) |
-| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (55 % dark, 0 % light) |
+| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (40 % dark, 0 % light) |
 | HUD | `--hud` `--hud-hot` (bracket/rail colour at rest / lit) `--hud-faint` (ticks) `--hud-glow` `--ticks` `--font-hud` |
 | Page | `--spill` (scene light) `--grid` `--grid-dot` `--grid-major` (tactical grid) `--scan` `--grain` `--vignette` |
 | Type | `--font-ui` `--font-text` (titles/body copy) `--font-display` `--font-num` `--font-serif` `--font-mono` (all with CJK fallbacks) · `--fs-2xs`…`--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--weight-title/section/display` `--tracking-hero/display/section/title/eyebrow` · `--lh` `--lh-title` `--lh-tight` |

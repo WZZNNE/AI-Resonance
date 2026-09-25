@@ -107,21 +107,21 @@ they are).
 ## 4. Page background — the scene
 
 `.app::before`, **fixed** to the viewport (one composited layer; no `background-attachment`), under everything:
-- `--spill` — the light sources. Dark: signal at 16 % from the bottom left (`70vmax 55vmax at 6% 108%`), a cool key
-  from the top right (social blue at 17 %), a faint signal-2 haze between. Light: signal at 28 % from the top left, a
-  steel blue from the bottom right, a white haze, a warm signal-2 hint low left. (`--aurora` is its legacy alias;
-  `none` turns it off.)
-- `--grid` — the tactical grid: 1 px lines every 32 px (`--grid-dot`, text at 3.2 % / 4.5 %) with a brighter line
-  every 128 px (`--grid-major`, 5.5 % / 7.5 %), masked to soften towards the edges.
+- `--spill` — the light sources, dim on purpose (no light pollution). Dark: signal at 8 % from the bottom left
+  (`70vmax 55vmax at 6% 108%`) and a cool key from the top right (social blue at 9 %). Light: signal at 16 % from the
+  top left, a steel blue at 16 % from the bottom right, a white haze. (`--aurora` is its legacy alias; `none` turns it
+  off.)
+- `--grid` — a sparse tactical grid: one 1 px line every 128 px (`--grid-dot` = `--grid-major`, text at 3 % / 4.5 %),
+  masked to soften towards the edges. No minor lines.
 
-`.app::after`, fixed, above the scene and below content: `--scan` (hologram scanlines, dark only, 1.4 %), `--grain`
+`.app::after`, fixed, above the scene and below content: `--scan` (`none` by default; forks may set scanlines), `--grain`
 (an SVG turbulence tile at 4.5 %, dark only) and `--vignette`. Paper sets spill, grid and scan to `none`.
 
 ## 5. Glow budget
 
 `--glow` = `0 0 0 1px <signal @ 60%>, 0 0 18px -2px <signal @ 55%>` in dark. In light, glow is a halo, never bloom,
 and the focus ring gets an ink core: `--ring` = `0 0 0 1px var(--text), 0 0 0 4px <signal @ 55%>` (≥ 3:1 on white).
-`--bloom` is 55 % in dark, 0 in light; every coloured bloom is written as `color-mix(… var(--bloom) …)` so light mode
+`--bloom` is 40 % in dark, 0 in light; every coloured bloom is written as `color-mix(… var(--bloom) …)` so light mode
 turns it off by itself.
 
 Glow may appear on:
@@ -141,7 +141,7 @@ At rest a panel shows one lit thing — its tab light. Body text never glows.
 ## 5a. HUD layer (`ui/hud.css`)
 
 - **Brackets** — `.board::after` (and `.hud-frame::after`): four 14 × 1.5 px corner brackets 7 px outside the panel,
-  `--hud` at rest (signal at 40 %; light: ink at 30 %; paper: none). Hover/focus-within: they close to 4 px, grow to
+  `--hud` at rest (signal at 28 %; light: ink at 30 %; paper: none). Hover/focus-within: they close to 4 px, grow to
   18 px arms, turn `--hud-hot` and bloom with `--hud-glow`.
 - **Tab light** — the top edge of a board panel carries its hue: a 44 × 2 px bar 26 px in, with a 64 × 14 px bloom.
 - **Header rail** — `.appbar::after`: a lit 56 × 2 px segment under the brand, `--ticks` (1 px every 8 px), a faint
@@ -221,11 +221,12 @@ Motion: `--ease: cubic-bezier(0.32, 0.72, 0, 1)` (sheet curve), `--ease-pop: cub
   bullets with small raised citation chips.
 - **Resonance cards** panels; top: a row of 2 px hue segments (glow in dark); strength top-right in mono `--text-3`;
   member rows with hue dots and hairline separators.
-- **Category bar & board switcher** = segmented control: a well track (pill), items are text buttons, the selected item
-  is a raised plate thumb (`--elev-1`) that animates between positions with `--ease-pop`; a coloured dot per
-  category/board; horizontal scroll with a soft edge-fade mask; counts in mono `--text-3`. Below 1100 px the board
-  switcher comes first and is the page's only segmented track; the category bar steps back to a full-bleed row of
-  30 px hairline chips (`inset 0 0 0 1px var(--line-2)`, no well) with the same raised thumb under the chosen one.
+- **Category bar** = a row of HUD tabs (no track, no sliding thumb): 32 px hairline chips (`inset 0 0 0 1px
+  var(--line-2)`), hover lights the hairline with `--hud-hot`; the chosen chip is a plate with a 14 × 2 px signal bar
+  at its foot, drawn on the chip itself. Coloured dot per category, counts in mono, horizontal scroll with an
+  edge-fade mask; full bleed and 30 px below 1100 px.
+- **Board switcher** (below 1100 px) = segmented control: a well track (pill), items are text buttons, the selected
+  item is a raised plate thumb (`--elev-1`) that animates between positions with `--ease-pop`.
 - **Board panel** panel glass, radius 22, with its tab light, brackets and index (§5a). Header: hue dot (8 px + halo),
   title, count as a small well chip, subtitle `--text-3`, source-status chips on the right as small wells with an
   icon. Items inside are **rows**, not cards:

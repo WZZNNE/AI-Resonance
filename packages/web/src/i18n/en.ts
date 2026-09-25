@@ -487,8 +487,6 @@ const en = {
   'footer.api': 'Open data (JSON)',
   'footer.digest': 'Daily digest',
   'footer.source': 'Source code',
-  'footer.fine':
-    'Ranked by a published formula. No accounts, no tracking. Reading needs no API key; optional personal AI summaries use your own key.',
   'notFound.title': 'Page not found',
   'notFound.body': 'Nothing lives at {path}.',
   'notFound.home': 'Go to today’s edition',

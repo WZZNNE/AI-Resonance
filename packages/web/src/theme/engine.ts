@@ -20,7 +20,7 @@
  *             --tint-1 … --tint-3 (fills inside glass) · --plate-bg --plate-edge (small raised parts) · --well-bg
  *             --well-edge (recessed) · --glass-bg --glass-blur --glass-edge (chrome glass) · --elev-0 … --elev-3 ·
  *             --press · --thumb-bg · --knob --knob-shadow · --switch-off (off switch track) · --hl (top light)
- *   Glow      --glow · --ring --ring-inset (focus) · --bloom (55 % dark, 0 light)
+ *   Glow      --glow · --ring --ring-inset (focus) · --bloom (40 % dark, 0 light)
  *   HUD       --hud --hud-hot (bracket and rail colour at rest / lit) · --hud-faint (ticks) · --hud-glow · --ticks ·
  *             --font-hud
  *   Type      --font-ui --font-text (titles, body copy) --font-display --font-num --font-serif --font-mono (all with CJK

@@ -1,11 +1,28 @@
 import { CATEGORIES, type Category } from '@resonance/schema'
 import { render } from 'preact'
+import { useRef } from 'preact/hooks'
 import { act } from 'preact/test-utils'
 import { afterEach, expect, it, vi } from 'vitest'
 import { resetSettings } from '../../src/core/settings.ts'
 import { appearance } from '../../src/theme/prefs.ts'
-import { CategoryBar } from '../../src/views/catbar.tsx'
-import { repo } from '../views/fixtures.ts'
+import { useThumb } from '../../src/ui/thumb.ts'
+
+/** A thumbed track (the board switcher's shape): pressed buttons, the thumb as the track's first child. */
+function Track({ values, value }: { values: readonly Category[]; value: Category | null }) {
+  const track = useRef<HTMLDivElement>(null)
+  useThumb(track)
+  if (!values.length) return null
+  return (
+    <div class="catbar__track" ref={track}>
+      <span class="thumb" aria-hidden="true" />
+      {[null, ...values].map((v) => (
+        <button key={v ?? 'all'} type="button" aria-pressed={v === value}>
+          {v ?? 'all'}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 afterEach(() => {
   resetSettings()
@@ -13,7 +30,7 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-it('binds a category track after null, animates pressed selections, and rebinds after hiding', async () => {
+it('binds a thumbed track after null, animates pressed selections, and rebinds after hiding', async () => {
   const host = document.body.appendChild(document.createElement('div'))
   appearance.set({ motion: 'full' })
   const observed: HTMLElement[] = []
@@ -53,9 +70,9 @@ it('binds a category track after null, animates pressed selections, and rebinds 
       32,
     )
   })
-  const items = CATEGORIES.slice(0, 2).map((category, i) => ({ ...repo(`gh:test/${i}`, i + 1, 1), category }))
+  const values = CATEGORIES.slice(0, 2)
   const show = (visible: boolean, selected: Category | null = null) =>
-    render(<CategoryBar items={visible ? items : []} value={selected} onValue={() => undefined} />, host)
+    render(<Track values={visible ? values : []} value={selected} />, host)
   try {
     await act(async () => show(false))
     expect(observed).toHaveLength(0)
