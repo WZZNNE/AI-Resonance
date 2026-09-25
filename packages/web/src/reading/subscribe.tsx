@@ -16,7 +16,7 @@ export default function Subscribe() {
         <h1 class="page__title">{t('subscribe.title')}</h1>
         <p class="page__lead">{t('subscribe.lead')}</p>
       </header>
-      <section class="mat-plate subscribe__card">
+      <section class="glass subscribe__card">
         <h2>{t('subscribe.feedTitle')}</h2>
         <p>{t('subscribe.feedHelp')}</p>
         {(['zh', 'en'] as const).map((language) => (

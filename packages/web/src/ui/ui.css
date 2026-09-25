@@ -42,8 +42,8 @@
 
 @media (hover: hover) {
   .mat-lift:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--plate-edge), var(--elev-2);
+    transform: translateY(-2px);
+    box-shadow: var(--panel-edge), var(--panel-drop-2);
   }
 }
 
@@ -181,7 +181,9 @@
 
 @media (hover: hover) {
   .btn--primary:hover:not(:disabled, [aria-busy="true"]) {
-    --sh: inset 0 1px 0 var(--hl), var(--elev-2);
+    --sh:
+      inset 0 1px 0 var(--hl), var(--elev-2),
+      0 0 22px -4px color-mix(in srgb, var(--accent-fill) calc(var(--bloom) * 1.1), transparent);
   }
 }
 
@@ -1817,13 +1819,16 @@ button.scorebar__bar::before {
   cursor: default;
 }
 
+/* A gauge: the well carries a tick every tenth, so the empty remainder reads as scale, not as nothing. */
 .scorebar__track {
   --r: 3px;
   position: relative;
   flex: 1;
   height: 6px;
   border-radius: var(--r);
-  background: var(--well-bg);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--hud-faint) calc(10% - 1px) 10%),
+    var(--well-bg);
   box-shadow: var(--well-edge);
   transition: background-color var(--dur-1) var(--ease);
 }
@@ -1835,7 +1840,7 @@ button.scorebar__bar::before {
 
 @media (hover: hover) {
   button.scorebar__bar:hover .scorebar__track {
-    background: color-mix(in oklab, var(--well) 88%, var(--text));
+    background-color: color-mix(in oklab, var(--well) 88%, var(--text));
   }
 }
 
@@ -2004,7 +2009,10 @@ button.scorebar__bar::before {
 
 /* ── marks ── */
 
-/* Thin metallic numeral for the podium; flat --text-3 from rank 4. */
+/*
+ * Thin metallic numeral, read like a HUD counter: single digits get a dim stencilled "0" (decoration, not text). The
+ * podium is lit — metal fading into the signal at its foot, with a faint bloom in dark; flat --text-3 from rank 4.
+ */
 .rank {
   display: block;
   color: var(--text-3);
@@ -2013,12 +2021,16 @@ button.scorebar__bar::before {
   letter-spacing: -0.04em;
 }
 
+.rank--pad:not(.rank--s)::before {
+  content: "0" / "";
+  opacity: 0.32;
+}
+
+/* Solid, not clipped metal: a background-clip:text gradient would swallow the stencilled zero. */
 .rank--podium {
   color: var(--text);
-  background: linear-gradient(180deg, var(--text) 10%, var(--text-3) 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 250;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--signal) calc(var(--bloom) * 0.45), transparent));
 }
 
 .rank--m {
@@ -2062,6 +2074,8 @@ button.scorebar__bar::before {
 
 .trend--new {
   --tone: var(--signal);
+  /* The readable form of the signal (light: safety yellow never reads as text). */
+  color: var(--signal-text);
   text-transform: uppercase;
 }
 

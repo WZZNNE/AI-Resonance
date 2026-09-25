@@ -15,7 +15,8 @@
   }
 }
 
-.today.is-refreshing .boards {
+/* Each panel dims itself: dimming the grid would cut the glass off from the scene it blurs (ui/hud.css). */
+.today.is-refreshing .board {
   opacity: 0.7;
   transition: opacity var(--dur-2) var(--ease);
 }
@@ -93,29 +94,60 @@
   margin-top: 0.15em;
 }
 
-/* Display date, lit from the top like the rank numerals (titanium, not glow). */
+/* HUD kicker: a hazard tag (signal stripes) leads the eyebrow line. */
+.edition__kicker::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 8px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(-45deg, var(--signal) 0 3px, transparent 3px 6px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--signal) 55%, transparent);
+}
+
+/* Display date, lit from the top like the rank numerals, over a ruler whose first segment is lit (HUD rail). */
 .edition__date {
-  margin: 0.25rem 0 0;
+  margin: 0.35rem 0 0;
   background: linear-gradient(180deg, var(--text) 40%, color-mix(in oklab, var(--text) 70%, var(--text-3)));
   -webkit-background-clip: text;
   background-clip: text;
   color: var(--text);
-  font: var(--weight-display) clamp(1.35rem, 1rem + 1vw, 1.8rem) / 1.25 var(--font-display);
+  font: var(--weight-display) clamp(1.6rem, 1.1rem + 1.5vw, 2.4rem) / 1.2 var(--font-display);
   letter-spacing: var(--tracking-hero);
   text-wrap: balance;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px color-mix(in srgb, var(--signal) calc(var(--bloom) * 0.35), transparent));
+}
+
+.edition__date::after {
+  content: "";
+  display: block;
+  width: min(100%, 380px);
+  height: 5px;
+  margin-top: 0.6rem;
+  background:
+    linear-gradient(var(--hud-hot) 0 0) 0 100% / 44px 2px no-repeat,
+    var(--ticks) 0 100% / 100% 5px no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, black 55%, transparent);
+  mask-image: linear-gradient(90deg, black 55%, transparent);
 }
 
 .edition__details {
   margin-top: 0.4rem;
 }
+/* The label keeps its line; a long status badge wraps under it instead of squeezing it (phones). */
 .edition__details > summary {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.35rem 0.45rem;
   color: var(--text-3);
   font-size: var(--fs-xs);
+  list-style: none;
   cursor: pointer;
+}
+.edition__details > summary::-webkit-details-marker {
+  display: none;
 }
 .edition__details > summary::before {
   content: "+";
@@ -201,6 +233,12 @@
   background: var(--badge-hue);
 }
 
+/* The summary's status badge may wrap under its label on phones (see `.edition__details > summary`). */
+.edition__details > summary > .badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
 /* …the one that does something is a small raised plate. */
 .edition__sources {
   --sh: var(--plate-edge), var(--elev-0);
@@ -282,6 +320,16 @@
   }
 }
 
+/* A refresh that failed while the reader keeps the edition they had. */
+.today__notice {
+  --tone: var(--warn);
+  margin: -0.25rem 0 1.25rem;
+}
+
+.today__notice > span {
+  flex: 1;
+}
+
 /* ── brief + resonance strip ── */
 
 /* Stacked sections: the brief (the day's story), then resonance, then the boards. */
@@ -310,8 +358,8 @@
   min-width: 0;
   padding: 1.35rem 1.35rem 1.2rem 1.5rem;
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 @media (min-width: 768px) {
@@ -517,8 +565,8 @@
   min-width: 0;
   padding: 1rem 1.1rem 0.45rem;
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
   scroll-snap-align: start;
 }
 
@@ -800,7 +848,11 @@
   touch-action: pan-y pinch-zoom;
 }
 
-/* Board panel: one plate (radius 22); its rows are inset 8 px so their hover plates are concentric with it. */
+/*
+ * Board panel: thick glass (radius 22); its rows are inset 8 px so their hover tints are concentric with it. The top
+ * edge carries the board's tab light (its hue, lit, with a short bloom) after the corner radius; the pointer light
+ * (ui/glass.ts) blooms inside the glass under the cursor.
+ */
 .board {
   --rank-w: 40px;
   --rank-gap: 0.75rem;
@@ -810,8 +862,21 @@
   min-width: 0;
   padding-bottom: 0.5rem;
   border-radius: var(--radius-xl);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background:
+    linear-gradient(var(--hue) 0 0) 26px 0 / 44px 2px no-repeat,
+    radial-gradient(
+      64px 14px at 48px 0,
+      color-mix(in srgb, var(--hue) calc(var(--bloom) * 0.9), transparent),
+      transparent
+    )
+    no-repeat,
+    radial-gradient(
+      460px circle at var(--mx, 50%) var(--my, -400px),
+      rgb(var(--spot) / calc(var(--spot-a) * var(--spot-max))),
+      transparent 65%
+    ),
+    var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 @media (min-width: 768px) {
@@ -1055,8 +1120,8 @@
   padding: 0.25rem 1.1rem;
   overflow-x: auto;
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 /* One line-height for every cell, so top-aligned cells share their first baseline. */

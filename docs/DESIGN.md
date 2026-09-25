@@ -222,7 +222,7 @@ board's primary metric (`stars` / `hfUpvotes` / `points`) and rank history. Full
 ## 7. Web app
 
 Stack: Vite + Preact + @preact/signals + TypeScript. No UI kit, no CSS framework, no chart lib (hand-rolled SVG).
-Hash router (works on any static host and sub-path). Budget: **≤ 90 KB gzip** for the initial JS+CSS.
+Hash router (works on any static host and sub-path). Budget: **≤ 95 KB gzip** for the initial JS+CSS (raised from 90 KB for the tactical-glass visual layer, docs/VISUAL.md §10).
 
 ### 7.1 Information architecture
 
@@ -365,7 +365,7 @@ Summary language = UI language unless overridden. Adding a language = one dictio
 ## 11. Appearance & customisation seam
 
 * Design tokens as CSS custom properties (`theme/tokens.css`): colour roles, board hues, signal hues, radius, density, font stacks, motion.
-* Presets (`titanium` default: graphite materials and one line of signal light, see `docs/VISUAL.md`; `paper` light
+* Presets (`titanium` default: tactical glass with an amber / safety-yellow HUD light, see `docs/VISUAL.md`; `paper` light
   editorial; `terminal` mono) = token maps; light/dark/auto per preset. A stored or configured `aurora` (the retired
   default) is read as `titanium`.
 * Fork-level: `config.yaml › site.theme`, and an optional `web/public/custom.css` that is loaded last if present.

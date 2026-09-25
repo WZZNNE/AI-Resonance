@@ -32,8 +32,8 @@
 .facts,
 .comments {
   border-radius: var(--radius-l);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
 /* ── hero ── */
@@ -56,6 +56,11 @@
   font-size: 3.25rem;
   line-height: 0.84;
   letter-spacing: -0.05em;
+}
+
+/* The hero column is sized for one figure: no stencilled zero here. */
+.detail__rankcol .rank::before {
+  content: none;
 }
 
 .detail__titles {

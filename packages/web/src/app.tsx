@@ -57,6 +57,8 @@ export function App() {
       <SkipLink />
       <Header />
       <OfflineBanner />
+      {/* One pass of scan light per page (remounted by path; filters and overlays don't trigger it). */}
+      <div class="routescan" key={base.path} aria-hidden="true" />
       <div class="app__page" ref={page}>
         <Page path={base.path} params={baseHit?.params ?? {}} query={base.query} />
       </div>

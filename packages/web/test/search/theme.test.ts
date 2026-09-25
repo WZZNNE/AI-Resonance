@@ -62,6 +62,7 @@ describe('WCAG contrast', () => {
     expect(inkFor(rgb('#ffcc4d'))).toBe('#0b0e1a')
     expect(inkFor(rgb('#4c58d6'))).toBe('#ffffff')
     expect(accentTokens('#ffcc4d', rgb('#ffcc4d'))).toEqual({
+      '--accent-fill': '#ffcc4d',
       '--accent-2': 'color-mix(in oklab, #ffcc4d 82%, var(--text))',
       '--focus': '#ffcc4d',
       '--accent-ink': '#0b0e1a',
@@ -74,8 +75,8 @@ describe('WCAG contrast', () => {
     expect(pale.level).toBe('AAA')
     expect(pale.ink).toBe('#0b0e1a')
     // titanium: the accent reads as text on the page and on plates in both modes
-    expect(accentReport(rgb('#0a84ff'), rgb('#07080b'), rgb('#111318')).level).toBe('AA')
-    expect(accentReport(rgb('#006bd6'), rgb('#f5f5f7'), rgb('#ffffff')).level).toBe('AA')
+    expect(accentReport(rgb('#ffa04a'), rgb('#04060a'), rgb('#0f131a')).level).toBe('AAA')
+    expect(accentReport(rgb('#8f4f00'), rgb('#e6e8eb'), rgb('#ffffff')).level).toBe('AA')
     const paleOnLight = accentReport(rgb('#8f9bff'), rgb('#f4f6fa'), rgb('#ffffff'))
     expect(paleOnLight.level).toBe('fail')
   })

@@ -5,6 +5,7 @@
 import './theme/tokens.css'
 import './theme/presets.css'
 import './ui/ui.css'
+import './ui/hud.css'
 import './ui/motion.css'
 import './shell/shell.css'
 import './items/items.css'
@@ -19,9 +20,11 @@ import { setSiteName, startRouter } from './core/router.ts'
 import { manifest, startData } from './core/state.ts'
 import { lang, siteLang, startLang } from './i18n/index.ts'
 import { setSiteTheme, startAppearance } from './theme/prefs.ts'
+import { startGlass } from './ui/glass.ts'
 
 startAppearance()
 startData()
+startGlass()
 
 effect(() => {
   const m = manifest.data.value

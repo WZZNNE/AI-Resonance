@@ -94,20 +94,13 @@ export function usePageMotion(ref: { current: HTMLElement | null }, key: string)
     }
     if (!changed) return
     const interrupted = active.has(el)
-    const opacity = interrupted ? getComputedStyle(el).opacity : samePath ? '0.88' : '0'
+    // Transform only: fading the page would make it a backdrop root and cut every glass panel off from the scene it
+    // blurs (ui/hud.css). Panels fade themselves in (holo-in) when they mount.
     const transform = interrupted ? getComputedStyle(el).transform : `translateY(${samePath ? 3 : 9}px)`
     el.dataset.routeMoving = ''
-    animateMotion(
-      el,
-      [
-        { opacity, transform },
-        { opacity: 1, transform: 'translateY(0)' },
-      ],
-      MOTION.route,
-      () => {
-        delete el.dataset.routeMoving
-      },
-    )
+    animateMotion(el, [{ transform }, { transform: 'translateY(0)' }], MOTION.route, () => {
+      delete el.dataset.routeMoving
+    })
   }, [key, reduced])
   useLayoutEffect(
     () => () => {

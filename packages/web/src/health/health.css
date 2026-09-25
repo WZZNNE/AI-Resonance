@@ -23,9 +23,9 @@
 .health__card {
   min-width: 0;
   padding: 1.25rem;
-  background: var(--plate-bg);
+  background: var(--panel-bg);
   border-radius: var(--radius-xl);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 .health__card h2 {
   font-size: var(--fs-body);
@@ -38,7 +38,7 @@
 .health__notice {
   padding: 1rem 1.25rem;
   border-inline-start: 3px solid var(--warn);
-  background: var(--plate-bg);
+  background: var(--panel-bg);
   border-radius: var(--radius-l);
 }
 .health__notice p {

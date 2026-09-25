@@ -1,6 +1,6 @@
 /**
- * The report's inline stylesheet — "Titanium × Signal" (docs/VISUAL.md §9): the web app's palette, system fonts and
- * plate/well materials in compact CSS. Light/dark via `prefers-color-scheme` plus an explicit `data-theme`; no glass
+ * The report's inline stylesheet — "Titanium × Signal" (docs/VISUAL.md §9): the web app's palette (amber signal in
+ * dark, safety yellow in light), system fonts and plate/well materials in compact CSS. Light/dark via `prefers-color-scheme` plus an explicit `data-theme`; no glass
  * (it must print) and no external anything. Material recipes are literal per mode (no `color-mix()` inside tokens, so
  * a browser without it still gets every surface); `color-mix()` only tints optional halos.
  *
@@ -11,8 +11,8 @@
 import { BOARDS, CATEGORIES, LANGS } from '@resonance/schema'
 
 const LIGHT =
-  '--bg:#f5f5f7;--sf:#fff;--sf2:#fbfbfd;--sf3:#f2f2f6;--well:#ebebf0;--line:rgb(0 0 0/.08);--line2:rgb(0 0 0/.14);' +
-  '--fg:#1d1d1f;--fg2:#424245;--mut:#6e6e73;--mutw:#636366;--acc:#006bd6;--sig:#0a84ff;--sig2:#8944ab;--sigt:#1d6fcd;' +
+  '--bg:#e6e8eb;--sf:#fff;--sf2:#f6f7f9;--sf3:#eceef1;--well:#dde0e5;--line:rgb(12 16 22/.09);--line2:rgb(12 16 22/.16);' +
+  '--fg:#111418;--fg2:#3a4048;--mut:#5b626c;--mutw:#50565f;--acc:#8f4f00;--sig:#f2b400;--sig2:#ff7a1a;--sigt:#7a4a00;' +
   '--up:#1f7a37;--down:#d70015;--warn:#b25000;--res:#a05a00;' +
   '--repos:#248a3d;--papers:#8944ab;--news:#c93400;--social:#0066cc;--labs:#d30f45;' +
   '--c-release:#248a3d;--c-product:#0071a4;--c-research:#8944ab;--c-tool:#a05a00;--c-engineering:#0066cc;' +
@@ -23,23 +23,23 @@ const LIGHT =
   '--e2:0 2px 6px rgb(0 0 0/.06),0 18px 40px -16px rgb(0 0 0/.16);' +
   '--wedge:inset 0 1px 2px rgb(0 0 0/.08),inset 0 0 0 1px rgb(0 0 0/.06),0 1px 0 #fff;' +
   '--press:inset 0 2px 5px rgb(0 0 0/.12),inset 0 0 0 1px rgb(0 0 0/.08);--thumb:#fff;--hl:rgb(255 255 255/.3);' +
-  '--bloom:0%;--halo:14%;--ring:0 0 0 1px #0a84ff,0 0 0 4px rgb(10 132 255/.22);--dots:rgb(0 0 0/.035);--spill:none'
+  '--bloom:0%;--halo:14%;--ring:0 0 0 1px #111418,0 0 0 4px rgb(242 180 0/.55);--dots:rgb(12 16 22/.045);--spill:none'
 const DARK =
-  '--bg:#07080b;--sf:#111318;--sf2:#171a21;--sf3:#1e222b;--well:#050608;--line:rgb(255 255 255/.07);' +
-  '--line2:rgb(255 255 255/.12);--fg:#f2f3f5;--fg2:#aeb4bf;--mut:#868d9a;--mutw:#868d9a;--acc:#0a84ff;--sig:#64d2ff;' +
-  '--sig2:#bf5af2;--sigt:#86d9fe;--up:#30d158;--down:#ff453a;--warn:#ffd60a;--res:#ffd60a;' +
+  '--bg:#04060a;--sf:#0f131a;--sf2:#151a23;--sf3:#1b212c;--well:#03050a;--line:rgb(255 255 255/.075);' +
+  '--line2:rgb(255 255 255/.13);--fg:#eef1f5;--fg2:#adb5c1;--mut:#8a93a1;--mutw:#8a93a1;--acc:#ffa04a;--sig:#ff9a3c;' +
+  '--sig2:#ffd27a;--sigt:#ffae66;--up:#30d158;--down:#ff453a;--warn:#ffd60a;--res:#ffd60a;' +
   '--repos:#30d158;--papers:#bf5af2;--news:#ff9f0a;--social:#0a84ff;--labs:#ff375f;' +
   '--c-release:#30d158;--c-product:#64d2ff;--c-research:#bf5af2;--c-tool:#ffd60a;--c-engineering:#0a84ff;' +
   '--c-discussion:#98989d;--c-industry:#ff9f0a;--c-policy:#ff453a;' +
   '--s1:#5e5ce6;--s2:#30d158;--s3:#ffd60a;--s4:#ff375f;--s5:#64d2ff;--s6:#bf5af2;--s7:#ac8e68;--s8:#8e8e93;' +
-  '--plate:linear-gradient(180deg,#1c1e23 0%,#111318 42%);' +
+  '--plate:linear-gradient(180deg,#1b2029 0%,#0f131a 46%);' +
   '--edge:inset 0 1px 0 rgb(255 255 255/.07),inset 0 0 0 1px rgb(255 255 255/.045);--e0:0 1px 1px rgb(0 0 0/.3);' +
   '--e1:0 1px 1px rgb(0 0 0/.35),0 10px 28px -14px rgb(0 0 0/.65);' +
   '--e2:0 2px 4px rgb(0 0 0/.4),0 22px 44px -18px rgb(0 0 0/.75);' +
   '--wedge:inset 0 1px 2px rgb(0 0 0/.55),inset 0 0 0 1px rgb(0 0 0/.45),0 1px 0 rgb(255 255 255/.05);' +
   '--press:inset 0 2px 5px rgb(0 0 0/.5),inset 0 0 0 1px rgb(0 0 0/.4);--thumb:#2c3038;--hl:rgb(255 255 255/.22);' +
-  '--bloom:45%;--halo:0%;--ring:0 0 0 1px rgb(100 210 255/.55),0 0 16px -2px rgb(100 210 255/.45);' +
-  '--dots:rgb(255 255 255/.035);--spill:radial-gradient(1200px 520px at 50% -260px,rgb(100 210 255/.07),transparent 70%)'
+  '--bloom:55%;--halo:0%;--ring:0 0 0 1px rgb(255 154 60/.6),0 0 18px -2px rgb(255 154 60/.55);' +
+  '--dots:rgb(255 255 255/.035);--spill:radial-gradient(1200px 520px at 50% -260px,rgb(255 154 60/.08),transparent 70%)'
 const SANS =
   '-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI Variable Text","Segoe UI","PingFang SC",' +
   '"HarmonyOS Sans SC","MiSans","Microsoft YaHei UI","Noto Sans CJK SC",system-ui,sans-serif'

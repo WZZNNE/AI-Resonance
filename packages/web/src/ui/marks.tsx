@@ -18,7 +18,7 @@ export interface RankNumeralProps {
 export function RankNumeral({ rank, size = 'l', muted }: RankNumeralProps) {
   return (
     <span
-      class={`rank rank--${size}${muted ? ' rank--muted' : ''}${rank <= 3 ? ' rank--podium' : ''} num`}
+      class={`rank rank--${size}${muted ? ' rank--muted' : ''}${rank <= 3 ? ' rank--podium' : ''}${rank < 10 ? ' rank--pad' : ''} num`}
       role="img"
       aria-label={t('card.rank', { rank })}
       data-part="rank"

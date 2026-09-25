@@ -20,7 +20,7 @@ interface Tab {
   active: boolean
 }
 
-/** Bottom navigation on narrow screens: Today · Resonance · Archive · Search · Settings. */
+/** Bottom navigation on narrow screens: Today · Learn · Library · Archive · Search · Settings (installed ones). */
 export function TabBar() {
   const path = location.value.path
   const today = path === '/' || path.startsWith('/d/') || path === '/live' || path.startsWith('/item/')
@@ -31,7 +31,8 @@ export function TabBar() {
     tabs.push({
       id: 'library',
       icon: 'bookmark',
-      label: t('reading.title'),
+      // "My reading" does not fit a sixth of a phone; the short name keeps the tab from truncating.
+      label: t('nav.library'),
       href: '#/library',
       active: path.startsWith('/library'),
     })

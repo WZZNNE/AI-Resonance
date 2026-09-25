@@ -1,7 +1,7 @@
 /*
  * Presets beyond titanium: COLOUR maps (plus the type and corner shape that are each preset's identity). Materials —
- * plate, well, glass, press, glow — are never set here: tokens.css derives them from these colours per mode, so every
- * preset gets the same depth system. Loaded after tokens.css, so `:root[data-preset=…]` (same specificity as
+ * plate, well, glass, press, glow, HUD — are never set here: tokens.css derives them from these colours per mode, so
+ * every preset gets the same depth system. A preset may only switch the tactical dressing off (paper does). Loaded after tokens.css, so `:root[data-preset=…]` (same specificity as
  * titanium's light block) wins; each preset defines its primary mode first and the other mode as an override.
  */
 
@@ -23,6 +23,7 @@
   --accent: #a3302a;
   --accent-fill: var(--accent);
   --accent-2: #86241f;
+  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
   --accent-ink: #fffaf2;
   --signal: #25609e;
   --signal-2: #a3302a;
@@ -35,6 +36,11 @@
   --scrim: rgb(28 25 20 / 0.28);
   --spill: none;
   --grid: none;
+  /* Editorial, not tactical: no brackets at rest, no scanlines; a hovered panel only earns a quiet ink frame. */
+  --hud: transparent;
+  --hud-hot: color-mix(in srgb, var(--text) 28%, transparent);
+  --hud-glow: 0 0 0 transparent;
+  --scan: none;
 
   --hue-repos: #2b7552;
   --hue-papers: #6445a3;
@@ -93,6 +99,7 @@
   --accent: #e2786c;
   --accent-2: #ec8f84;
   --accent-ink: #1b0f0d;
+  --accent-fill: var(--accent);
   --signal: #7fb2e8;
   --signal-2: #e2786c;
   --ok: #6cc28f;
@@ -216,6 +223,8 @@
   --accent: #946200;
   --accent-2: #7a5100;
   --accent-ink: #fffbe8;
+  --accent-fill: var(--accent);
+  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
   --signal: #0c7a3c;
   --signal-2: #146aa6;
   --ok: #0c7a3c;
