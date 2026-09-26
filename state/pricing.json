@@ -3837,29 +3837,6 @@
    "upd": "2026-08-11"
   },
   {
-   "budget": {
-    "min": 1
-   },
-   "cr": 0.08,
-   "ctx": 262144,
-   "efforts": [
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "accounts/fireworks/models/qwen3p7-plus",
-   "in": 0.4,
-   "k": "qwen3p7-plus",
-   "maxOut": 65536,
-   "name": "Qwen 3.7 Plus",
-   "out": 1.6,
-   "p": "fireworks-ai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-12"
-  },
-  {
    "cr": 0.25,
    "ctx": 262144,
    "efforts": [
@@ -3912,25 +3889,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-09-10"
-  },
-  {
-   "cr": 0.21,
-   "ctx": 1048575,
-   "efforts": [
-    "high",
-    "max"
-   ],
-   "id": "accounts/fireworks/routers/glm-5p2-fast",
-   "in": 2.1,
-   "k": "glm-5p2-fast",
-   "maxOut": 131072,
-   "name": "GLM 5.2 Fast",
-   "out": 6.6,
-   "p": "fireworks-ai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-26"
   },
   {
    "cr": 0.39,
@@ -9097,7 +9055,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.006,
+   "cr": 0.001,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9105,11 +9063,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.3,
+   "in": 0.035,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 943718,
+   "maxOut": 384000,
    "name": "DeepSeek V4.1 Flash",
-   "out": 1.2,
+   "out": 0.29,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12623,7 +12581,7 @@
    "id": "qwen/qwen3.5-122b-a10b",
    "in": 0.26,
    "k": "qwen3-5-122b-a10b",
-   "maxOut": 65536,
+   "maxOut": 235929,
    "name": "Qwen3.5 122B-A10B",
    "out": 2.08,
    "p": "openrouter",
@@ -13264,7 +13222,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13272,11 +13230,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17666,5 +17624,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-26T15:44:18.592Z"
+ "updatedAt": "2026-09-26T18:47:51.272Z"
 }
