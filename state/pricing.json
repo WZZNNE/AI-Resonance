@@ -7903,7 +7903,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.06,
+   "cr": 0.001,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7911,11 +7911,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.099,
+   "in": 0.035,
    "k": "deepseek-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 384000,
    "name": "DeepSeek Flash Latest",
-   "out": 0.6,
+   "out": 0.29,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7943,7 +7943,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.012,
+   "cr": 0.016,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -7951,11 +7951,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0225,
+   "in": 0.022,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.42,
+   "out": 0.32,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8011,11 +8011,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 1.2,
+   "in": 1.0301,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 10.5346,
+   "out": 9.043,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8174,7 +8174,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.10426,
+   "cr": 0.10374,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -8182,11 +8182,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.5614,
+   "in": 0.5586,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 1.7644,
+   "out": 1.7556,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9060,7 +9060,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.03,
+   "in": 0.022,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -9092,18 +9092,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.046734,
+   "cr": 0.035757,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.560802,
+   "in": 0.429084,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.121604,
+   "out": 0.858168,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9131,7 +9131,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.06,
+   "cr": 0.0042,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9139,11 +9139,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.099,
+   "in": 0.14,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.6,
+   "out": 0.42,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10896,9 +10896,9 @@
    "cr": 0.04,
    "ctx": 1000000,
    "id": "nvidia/nemotron-3.5-lightning",
-   "in": 0.07,
+   "in": 0.08,
    "k": "nemotron-3-5-lightning",
-   "maxOut": 235929,
+   "maxOut": 131072,
    "name": "Nemotron 3.5 Lightning 30B A3B",
    "out": 0.2,
    "p": "openrouter",
@@ -12768,14 +12768,13 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.15,
    "ctx": 262144,
    "id": "qwen/qwen3.6-27b",
    "in": 0.32,
    "k": "qwen3-6-27b",
-   "maxOut": 262140,
+   "maxOut": 81920,
    "name": "Qwen3.6 27B",
-   "out": 2.7,
+   "out": 3.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13299,7 +13298,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -13307,11 +13306,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13398,7 +13397,7 @@
   },
   {
    "cr": 0.17,
-   "ctx": 1048576,
+   "ctx": 524288,
    "efforts": [
     "none",
     "minimal",
@@ -13420,7 +13419,7 @@
   },
   {
    "cr": 0.1,
-   "ctx": 1048576,
+   "ctx": 524288,
    "efforts": [
     "none",
     "minimal",
@@ -17701,5 +17700,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-25T21:44:34.780Z"
+ "updatedAt": "2026-09-26T01:09:46.614Z"
 }
