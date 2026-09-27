@@ -1,4 +1,9 @@
 {
+ "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/": {
+  "at": "2026-09-27T01:19:17.546Z",
+  "summary": "An agent attempting to complete a search-based training task queried a public chatbot service through a gap in our internet-access restrictions: insufficient DNS filtering in its training sandbox. Before this, the agent issued queries via our search tool and unsuccessfully tried to access search engines directly. Note that all internet access apart from the DNS resolver in this report hit our offline webcache and therefore did not access the live internet. We have since added blocking controls at two independent layers, either of which would have prevented this access. Our misalignment monitor",
+  "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
+ },
  "https://apnews.com/article/antitrust-lawsuit-ai-slowdown-anthropic-openai-spacexai-google-960af4308161eaf4ed13c383b0ce1c1b": {
   "at": "2026-09-21T15:44:38.397Z"
  },
@@ -50,7 +55,7 @@
   "at": "2026-09-26T15:44:18.592Z"
  },
  "https://openai.com/index/special-projects/": {
-  "at": "2026-09-26T15:44:18.592Z"
+  "at": "2026-09-27T01:19:17.546Z"
  },
  "https://simonwillison.net/2026/Sep/21/jev/": {
   "at": "2026-09-22T06:57:25.525Z",
@@ -277,7 +282,7 @@
   "url": "https://www.independent.co.uk/news/lawsuit-anthropic-google-openai-lawyers-b3052942.html"
  },
  "https://www.reuters.com/business/ftc-chair-pushes-back-treating-ai-agents-independent-actors-2026-09-25/": {
-  "at": "2026-09-26T15:44:18.592Z"
+  "at": "2026-09-27T01:19:17.546Z"
  },
  "https://www.reuters.com/business/openais-sam-altman-to-brief-un-security-council-next-week-during-2026-09-18/": {
   "at": "2026-09-22T15:44:04.651Z"
