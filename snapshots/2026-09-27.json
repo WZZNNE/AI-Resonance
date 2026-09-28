@@ -5150,7 +5150,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Passive image provenance asks whether pixels alone can reveal where an image came from: a human, an aggregate AI class, or a particular generator. This becomes a robustness problem once a source image can be edited before the verifier sees it. We study the problem as source--target verification under adversarial distribution shift. Our first result gives the exact best-case limit for any image-only verifier: the largest robust target-acceptance gap equals the minimum total-variation distance between the target distribution and the set of attacked source distributions. This quantity depends on the source, target, and edit class, not on the verifier architecture. Our second result explains why deployed public verifiers can fail before this statistical limit is reached. If the verifier can be emulated on the attack region to error $\\varepsilon$, then a surrogate black-box attack reaches target acceptance within $2\\varepsilon$ plus optimization error of the white-box optimum; score-revealing logistic and softmax heads over public features are identifiable, and approximate score access gives stable recovery bounds. A finite-state experiment checks the minimax identity where both sides are computable. On same-prompt real/diffusion benchmarks, the evaluated public CLIP verifiers fail under targeted pixel attacks, while a ResNet-18 victim exhibits partial fake-to-real transfer. Binary feedback with abstention reduces measured attack success, but positive empirical gap upper bounds do not establish robustness. These results motivate separate evaluation of the source--target statistical ceiling and the information released by a deployed verifier.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5200,7 +5200,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Post-training quantization (PTQ) is a practical approach to reducing the memory and computational footprint of large language models (LLMs) without retraining. GPTQ-based methods have become the de facto standard, yet they suffer from two complementary limitations. Methods with local, layer-wise objectives lack global supervision; while methods with global objectives fix their Hessian estimates at the start and ignore first-order gradients, so their guidance grows stale as quantization proceeds. This paper presents G$^2$PTQ, a unified PTQ framework with Generalized Gradient Compensation that integrates both first- and second-order information under a globally supervised, block-wise optimization objective. By refreshing gradient and Hessian estimates before quantizing each Transformer block, G$^2$PTQ avoids the staleness of prior global methods. Furthermore, to stabilize the exact first-order compensation, we introduce a trust-region scaling mechanism that dynamically bounds the gradient step to prevent exploding weight updates. Finally, we derive efficient implementations for block-wise Hessian approximation and exact gradient compensation. Experimental results on various model families and bit-widths demonstrate that G$^2$PTQ enables better alignment with the full-precision model, outperforming state-of-the-art baselines. Code is available at: https://github.com/G2PTQ/G2PTQ.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5256,7 +5256,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Patient-facing AI assistants promise valuable support to patients, but incoming queries can pose medical risks. To create guardrails, we work with oncologists to define three ordinal risk axes: Medical Urgency, Psychological Urgency, and Topic Sensitivity. We propose Clinical Guardrail Probes (CG-Probes) to measure the risks from query embeddings. We probe for each axis in the normalized embedding space of frozen embedders via the difference-in-means method, treating each axis as a potential linear direction. To train the probes, we cluster 79,658 Czech oncology search queries with BERTopic and use these clusters to generate pairs of queries with contrastive risk levels via few-shot prompting. We evaluate the approach on 200 queries (90 real, 110 synthetic), each graded by two oncologists, against two open-weight LLMs and a frontier LLM. We find that urgency-based axes are recoverable as linear directions, and the probes are competitive with open-weight LLMs (no significant differences in quadratic-weighted kappa) at a fraction of the latency. Each axis yields a scalar score that clinicians can inspect and use to set escalation thresholds. The pipeline requires only search logs, axis definitions, and black-box access to the embedding model, suggesting transferability across healthcare domains. Robust validation on new queries and axes remains future work.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5306,7 +5306,7 @@
     "codeStars": 8,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Machine learning for scientific discovery is almost systematically data bound. Producing relevant high quality data, under budget constraints, is amongst the most promising ways to advance the field. Active learning (AL) offers promise wherever labelling requires expensive experiment, measurement, or simulation. Most existing tools cover only part of the data acquisition loop, and typically focus on either offline benchmarking or online deployment, but not both. We present ALF, a modular AL Framework that runs the full data acquisition loop via five modular components. One clear API for both settings: offline, against an existing dataset for controlled and reproducible experimentation; and online, against an oracle for acquiring new candidates in real-world deployments. ALF is open-source and available at https://github.com/instadeepai/alf.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5356,7 +5356,7 @@
     "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Tabular in-context learners such as TabPFN, Mitra, or ConTextTab rely on alternating row and column attention over 2D sequences of latent embeddings. These attention patterns differ markedly from the one-dimensional case in language models: row attention involves longer sequences while column attention operates on much shorter ones, and the strided memory layout of tabular data makes producing contiguous tensors costly. Moreover, the hidden dimensions used in current models are small compared to recent language models. Yet efficient attention has been studied mostly for one-dimensional sequences, leaving the two-dimensional tabular setting unexplored. To this end, we create a reproducible benchmarking setup and study the unique characteristics of tabular attention across several backends -- Torch SDPA (efficient and cuDNN), FlashAttention-2/3/4, and the inference-only backends vLLM and SageAttention -- measuring forward and backward throughput across realistic tabular shapes on three GPU generations (A100, H100, B200). We find that the optimal backend choice differs between column and row attention and varies across hardware as well as model specifics: While the FlashAttention implementations tailored for each GPU generation perform overall best, they are at times outperformed by CuDNN in the case of column attention at longer sequences with cross-over points depending on the head dimension. Among inference-only backends, SageAttention performs well for row attention and large sequences beyond 16\\,k rows. Our reproducible benchmark lays the foundation for future improvements to table-native attention. The self-contained benchmarking and evaluation code is openly available at: https://github.com/SAP-samples/tabular-attention-benchmark",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5403,7 +5403,7 @@
     "codeStars": 45,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Unobserved common causes are pervasive in real-world time series and can induce spurious associations that causal discovery methods mistake for direct edges. We propose LUCID (Learning Under Confounding for Inference and Discovery, a regime-adaptive deconfounding layer that first estimates the confounding regime from data using a Marčenko--Pastur spectral router, then applies a deconfounding strategy matched to that regime. When the spectrum indicates pervasive factor confounding, LUCID attenuates factor-dominated variation and recovers contemporaneous (lag-$0$) structure from the resulting innovations, with edge selection calibrated against a data-driven edge-free null. Rather than being tied to a particular discovery algorithm, it can wrap existing discovery engines; we demonstrate consistent improvements across three such methods. On a diverse synthetic out-of-distribution benchmark spanning changes in confounder strength and sparsity, loading density, lag structure, volatility dynamics, edge heterogeneity, persistence, intermittency, and tail behavior, LUCID achieves the best family-weighted directed, lag-resolved graph $F_1$ ($0.60$), improving over the strongest baseline by $0.19$ absolute ($\\approx\\!46\\%$ relative). Its advantage widens relative to looser lag-collapsed scoring, and remains robust under intermittent and heavy-tailed confounding. Code reproducing the method, the benchmark generators, and every reported experiment is available at https://github.com/bloomberg/causal-ts.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5450,7 +5450,7 @@
     "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "paper": {
     "abstract": "Continual spatio-temporal forecasting supports traffic management and environmental monitoring under evolving dynamics and expanding sensor networks. However, conventional graph-based continual learning methods tie forecasting representations to the current sensor layout, so sensor expansion can alter the representation of learned spatial relationships. Our key insight is that sensor expansion changes the evidence available about a process without necessarily changing the dynamics to be learned. We propose STFO (Spatio-Temporal Field Operator), which parameterizes forecasting knowledge as a shared field-evolution operator and handles changing sensor layouts through observation and query interfaces. Normalized coordinate-based aggregation lifts irregular sensor histories onto a fixed latent grid, enabling reuse of learned spatial maps across observation sets without sensor-specific parameters. To accommodate process drift, a spectral descriptor summarizes variation across spatial scales and conditions Fourier propagation and attention to adapt operator responses to the current spatial regime. Coordinate-based decoding queries the evolved field at sensor locations and combines spatial corrections with local-history predictions. Experiments on PEMS-Stream, CA-Stream, and AIR-Stream demonstrate state-of-the-art average forecasting performance. STFO-Large reduces average MAE over DOL by 8.4% on PEMS-Stream and 4.7% on CA-Stream. Our code is available at https://github.com/Xielewei/Spatio-Temporal-Field-Operator.",
     "arxivAnnouncedAt": "2026-09-28T00:00:00.000Z",
@@ -5513,7 +5513,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49864790",
     "points": 16
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T09:07:03.000Z",
    "refs": [
     "url:apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20"
@@ -5543,20 +5543,20 @@
    "category": "discussion",
    "key": "hn:49865343",
    "metrics": {
-    "comments": 101,
+    "comments": 102,
     "frontPage": 0,
     "points": 102
    },
    "news": {
     "author": "yu3zhou4",
-    "comments": 101,
+    "comments": 102,
     "createdAt": "2026-09-27T10:26:25.000Z",
     "domain": "arxiv.org",
     "hnId": 49865343,
     "hnUrl": "https://news.ycombinator.com/item?id=49865343",
     "points": 102
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T10:26:25.000Z",
    "refs": [
     "arxiv:2609.25021"
@@ -5622,20 +5622,20 @@
    "category": "tool",
    "key": "hn:49867775",
    "metrics": {
-    "comments": 44,
+    "comments": 45,
     "frontPage": 0,
-    "points": 112
+    "points": 115
    },
    "news": {
     "author": "hp6",
-    "comments": 44,
+    "comments": 45,
     "createdAt": "2026-09-27T15:51:28.000Z",
     "domain": "tinyaiarena.com",
     "hnId": 49867775,
     "hnUrl": "https://news.ycombinator.com/item?id=49867775",
-    "points": 112
+    "points": 115
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T15:51:28.000Z",
    "refs": [
     "gh:hp6/ai-arena",
@@ -5666,20 +5666,20 @@
    "category": "discussion",
    "key": "hn:49868083",
    "metrics": {
-    "comments": 256,
+    "comments": 262,
     "frontPage": 0,
-    "points": 371
+    "points": 381
    },
    "news": {
     "author": "zzzeek",
-    "comments": 256,
+    "comments": 262,
     "createdAt": "2026-09-27T16:19:46.000Z",
     "domain": "eoinhiggins.substack.com",
     "hnId": 49868083,
     "hnUrl": "https://news.ycombinator.com/item?id=49868083",
-    "points": 371
+    "points": 381
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T16:19:46.000Z",
    "refs": [
     "url:eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents"
@@ -5707,20 +5707,20 @@
    "category": "discussion",
    "key": "hn:49868202",
    "metrics": {
-    "comments": 116,
+    "comments": 118,
     "frontPage": 0,
     "points": 58
    },
    "news": {
     "author": "smb06",
-    "comments": 116,
+    "comments": 118,
     "createdAt": "2026-09-27T16:29:38.000Z",
     "domain": "theguardian.com",
     "hnId": 49868202,
     "hnUrl": "https://news.ycombinator.com/item?id=49868202",
     "points": 58
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T16:29:38.000Z",
    "refs": [
     "url:theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue"
@@ -5752,20 +5752,20 @@
    "category": "industry",
    "key": "hn:49868831",
    "metrics": {
-    "comments": 99,
+    "comments": 101,
     "frontPage": 0,
-    "points": 185
+    "points": 189
    },
    "news": {
     "author": "CharlesW",
-    "comments": 99,
+    "comments": 101,
     "createdAt": "2026-09-27T17:32:02.000Z",
     "domain": "youtube.com",
     "hnId": 49868831,
     "hnUrl": "https://news.ycombinator.com/item?id=49868831",
-    "points": 185
+    "points": 189
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T17:32:02.000Z",
    "refs": [
     "url:youtube.com/watch?v=-Nvne3LzBls"
@@ -5792,7 +5792,7 @@
    "metrics": {
     "comments": 1,
     "frontPage": 0,
-    "points": 12
+    "points": 13
    },
    "news": {
     "author": "theanonymousone",
@@ -5801,9 +5801,9 @@
     "domain": "arxiv.org",
     "hnId": 49869861,
     "hnUrl": "https://news.ycombinator.com/item?id=49869861",
-    "points": 12
+    "points": 13
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T19:12:57.000Z",
    "refs": [
     "arxiv:2606.00206"
@@ -5844,7 +5844,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49870911",
     "points": 11
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T21:13:37.000Z",
    "refs": [
     "url:nytimes.com/2026/09/27/science/anthropic-biology-enzyme-mestre.html"
@@ -5869,20 +5869,20 @@
    "category": "discussion",
    "key": "hn:49871852",
    "metrics": {
-    "comments": 13,
+    "comments": 15,
     "frontPage": 0,
-    "points": 29
+    "points": 31
    },
    "news": {
     "author": "JumpCrisscross",
-    "comments": 13,
+    "comments": 15,
     "createdAt": "2026-09-27T23:27:10.000Z",
     "domain": "utilitydive.com",
     "hnId": 49871852,
     "hnUrl": "https://news.ycombinator.com/item?id=49871852",
-    "points": 29
+    "points": 31
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T23:27:10.000Z",
    "refs": [
     "url:utilitydive.com/news/hitachi-to-double-us-production-of-small-and-medium-sized-power-transformer/830762"
@@ -5920,7 +5920,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49871965",
     "points": 12
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T23:45:17.000Z",
    "refs": [
     "url:huggingface.co/blog/black-forest-labs/flux-3-action"
@@ -5959,7 +5959,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49872468",
     "points": 29
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-28T01:20:50.000Z",
    "refs": [
     "url:apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20"
@@ -6002,7 +6002,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49872980",
     "points": 54
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-28T02:46:27.000Z",
    "refs": [
     "url:tomshardware.com/tablets/microsoft-surface/microsoft-quietly-drops-copilot-branding-from-its-new-laptops-surface-cvp-confirms-new-devices-meet-hardware-requirements-but-lack-controversial-branding",
@@ -6028,20 +6028,20 @@
    "category": "discussion",
    "key": "hn:49873241",
    "metrics": {
-    "comments": 43,
+    "comments": 58,
     "frontPage": 1,
-    "points": 127
+    "points": 150
    },
    "news": {
     "author": "teleforce",
-    "comments": 43,
+    "comments": 58,
     "createdAt": "2026-09-28T03:23:53.000Z",
     "domain": "arxiv.org",
     "hnId": 49873241,
     "hnUrl": "https://news.ycombinator.com/item?id=49873241",
-    "points": 127
+    "points": 150
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-28T03:23:53.000Z",
    "refs": [
     "arxiv:2110.01834"
@@ -7739,56 +7739,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wrszsy",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 25,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 47
-   },
-   "observedAt": "2026-09-28T12:57:49.537Z",
-   "publishedAt": "2026-09-27T19:20:48.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:GeminiAI",
-     "kw:chatgpt",
-     "kw:claude",
-     "kw:gemini",
-     "weak:ai",
-     "weak:model",
-     "weak:models",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "ameliethetamelie",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "GeminiAI",
-    "createdAt": "2026-09-27T19:20:48.000Z",
-    "handle": "ameliethetamelie",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wrszsy/google_ai_pro_claude_pro_seems_like_a_great_bang/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Curious if anyone feels the same or different. In my mind, even with Gemini 4 still not being out yet (come on Google!) 3.8 flash is still a good enough for a lot of cases, fast model, and the rest of the perks for AI Pro are unbeatable right now. But for when you need frontier models for heavy work, IMO Claude is usually the most consistently on the top (even though they and ChatGPT obviously leap frog each other). I do software development as I'm sure makes a difference. Seems like the holy grail right now for bang for buck and avoids having to get the expensive max plans."
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Curious if anyone feels the same or different. In my mind, even with Gemini 4 still not being out yet (come on Google!) 3.8 flash is still a good enough for a lot of cases, fast model, and the rest of the perks for AI Pro are unbeatable right now. But for when you need frontier models for heavy work, IMO Claude is usually the most consistently on the top (even though they and ChatGPT obviously leap frog each other). I do software development as I'm sure makes a difference. Seems like the holy grail right now for bang for buck and avoids having to get the expensive max plans.",
-   "tags": [
-    "r/GeminiAI"
-   ],
-   "title": "Google AI Pro + Claude Pro seems like a great bang for buck right now",
-   "url": "https://www.reddit.com/r/GeminiAI/comments/1wrszsy/google_ai_pro_claude_pro_seems_like_a_great_bang/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wrtz0q",
    "metrics": {
     "authority": 1,
@@ -9223,7 +9173,7 @@
     "replies": 2,
     "reposts": 0
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T10:26:44.000Z",
    "refs": [
     "x:2104155774910083275"
@@ -9270,7 +9220,7 @@
     "replies": 1,
     "reposts": 0
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-27T12:52:23.000Z",
    "refs": [
     "x:2104192428664127555",
@@ -9306,6 +9256,54 @@
    ],
    "title": "Fully local Qwen 3.8-27B on a 4090.",
    "url": "https://x.com/mkultraware/status/2104192428664127555"
+  },
+  {
+   "board": "social",
+   "category": "release",
+   "key": "x:2104341611127943372",
+   "metrics": {
+    "authority": 0,
+    "likes": 44,
+    "quotes": 0,
+    "replies": 3,
+    "reposts": 0
+   },
+   "observedAt": "2026-09-28T15:49:02.811Z",
+   "publishedAt": "2026-09-27T22:45:11.000Z",
+   "refs": [
+    "url:cyberpvp.adverserial.ai/graphs.html",
+    "x:2104341611127943372"
+   ],
+   "relevance": {
+    "reasons": [
+     "weak:ai",
+     "weak:model",
+     "weak:models",
+     "cat:introducing"
+    ],
+    "score": 0.6
+   },
+   "social": {
+    "author": "Taha ז",
+    "authorKind": "community",
+    "comments": 3,
+    "createdAt": "2026-09-27T22:45:11.000Z",
+    "handle": "lordx64",
+    "likes": 44,
+    "linkUrl": "https://cyberpvp.adverserial.ai/graphs.html",
+    "permalink": "https://x.com/lordx64/status/2104341611127943372",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 0,
+    "text": "Trying something new - introducing CyberPVP - in other words CyberKimi vs other AI models competing to solve complex cyber tasks. you can see it live here: https://t.co/XEgOzBIcN8 we randomly picked 100 tasks from CyberGym, and we run two models competing at the same time, we https://t.co/zwzwbEiMhX"
+   },
+   "sources": [
+    "x-linked"
+   ],
+   "summary": "Trying something new - introducing CyberPVP - in other words CyberKimi vs other AI models competing to solve complex cyber tasks. you can see it live here: https://t.co/XEgOzBIcN8 we randomly picked 100 tasks from CyberGym, and we run two models competing at the same time, we https://t.co/zwzwbEiMhX",
+   "tags": [],
+   "title": "Trying something new - introducing CyberPVP - in other words CyberKimi vs other AI models competing to solve complex…",
+   "url": "https://x.com/lordx64/status/2104341611127943372"
   },
   {
    "board": "labs",
@@ -9351,7 +9349,7 @@
     "release": 0,
     "surface": 0
    },
-   "observedAt": "2026-09-28T12:57:49.537Z",
+   "observedAt": "2026-09-28T15:49:02.811Z",
    "publishedAt": "2026-09-28T05:10:36.000Z",
    "refs": [
     "gh:openai/codex"
@@ -9375,7 +9373,7 @@
   }
  ],
  "date": "2026-09-27",
- "fetchedAt": "2026-09-28T12:57:49.537Z",
+ "fetchedAt": "2026-09-28T15:49:02.811Z",
  "runs": [
   "2026-09-27T07:45:46.371Z",
   "2026-09-27T08:47:46.568Z",
@@ -9390,152 +9388,171 @@
   "2026-09-28T07:58:54.565Z",
   "2026-09-28T08:56:06.462Z",
   "2026-09-28T09:54:13.993Z",
-  "2026-09-28T12:57:49.537Z"
+  "2026-09-28T12:57:49.537Z",
+  "2026-09-28T15:49:02.811Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "arxiv",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 314,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 316,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "github-search",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 87,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "github-trending",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 155,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 157,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "hacker-news",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 46,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 50,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "hf-papers",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 8,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 12,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "journals",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 14,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-anthropic",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-deepseek",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 7,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 8,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-google",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-kimi",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 5,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-meta",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-minimax",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-mistral",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 19,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 20,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-qwen",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 2,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 3,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "labs-zhipu",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   },
   {
    "board": "social",
-   "count": 246,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 60,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "reddit",
-   "mode": "rss",
+   "message": "reusing the fetch of 2026-09-28T12:57:49.537Z (at most every 6 h)",
+   "mode": "cached",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -9543,10 +9560,11 @@
   },
   {
    "board": "social",
-   "count": 12,
-   "fetchedAt": "2026-09-28T12:57:49.537Z",
+   "count": 11,
+   "fetchedAt": "2026-09-28T15:49:02.811Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-09-28T15:49:02.811Z",
    "state": "ok"
   }
  ],
