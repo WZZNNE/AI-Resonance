@@ -4902,30 +4902,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wpq8by/testing_claude_for_3d_creation_max_took_a_whole/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Which version do you think is the best? Prompt: “Create a low-poly 3D horse running in a seamless loop using Three.js. Build it procedurally from primitive geometry, animate the legs, body, head, and tail, and return a single self-contained HTML file.”",
-    "topComments": [
-     {
-      "text": "Bonus video https://reddit.com/link/pbxh86q/video/6y5hjl8bgmrh1/player"
-     },
-     {
-      "text": "https://preview.redd.it/jam8n3klhmrh1.png?width=360&format=png&auto=webp&s=d6d9fec275012e08a252183da212551535f224e2"
-     },
-     {
-      "text": "Hahaha best one. And I almost mean it, they all are bad but this one is funny"
-     },
-     {
-      "text": "That's really cool test, but you forgot to include Haiku. Took 61 seconds. https://reddit.com/link/pbxjdeh/video/pyrhaocbjmrh1/player"
-     },
-     {
-      "text": "Me sneaking back from the fridge at night"
-     },
-     {
-      "text": "https://reddit.com/link/pby4urc/video/k2frjof1enrh1/player Qwen 3.8 27B, honestly a lot better than I expected. Took 4 minutes in chat UI."
-     },
-     {
-      "text": "https://reddit.com/link/pbxun9o/video/5lf2od5p0nrh1/player GPT 5.6 Sol High - Chat mode, not work/codex. Took 14m."
-     }
-    ]
+    "text": "Which version do you think is the best? Prompt: “Create a low-poly 3D horse running in a seamless loop using Three.js. Build it procedurally from primitive geometry, animate the legs, body, head, and tail, and return a single self-contained HTML file.”"
    },
    "sources": [
     "reddit"
@@ -5015,30 +4992,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wprgxw/claude_opus_evolution_is_getting_out_of_hand/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://preview.redd.it/h5o92i7ttmrh1.png?width=1206&format=png&auto=webp&s=195c2d05614fc45b1f7d04e8730485a4e64a92e8 The Opus character development is insane",
-    "topComments": [
-     {
-      "text": "I've never seen a company get checked as hard as OpenAI did this week. They went all in, built a model that they can barely host, hyped it to the moon. Then Anthropic quietly wiped the floor with them. It's now crystal clear who the dominant lab is."
-     },
-     {
-      "text": "I’m not really a fan of company tribalism. Competition is good for us. And the back and forth helps us get better and cheaper models. IMO there’s no lab that’s more “dominant” than the other. After all without the pressure from OAI, Anthropic wouldn’t have given out resets or improved rate limits. Also, let’s not forget how terrible Opus 5 was, and this was Anthropic’s product. Even now, I’m very skeptical they keep Opus 5.5 at current quality before they nerf it like they have done with all…"
-     },
-     {
-      "text": "This. No doubt Anthropic won this round on the top tier, but what OpenAI has accomplished with Luna (which, let's be real, could handle 90% of the requests people make but we're too lazy to switch) is pretty insane. That model matches Opus 4.6/Sonnet 5 and costs nothing ."
-     },
-     {
-      "text": "NANOMACHINES, SON"
-     },
-     {
-      "text": "Ngl, Opus is the best name of any model."
-     },
-     {
-      "text": "Fable is unironically cool too"
-     },
-     {
-      "text": "Ok I laughed a lot harder than I should have at this."
-     }
-    ]
+    "text": "https://preview.redd.it/h5o92i7ttmrh1.png?width=1206&format=png&auto=webp&s=195c2d05614fc45b1f7d04e8730485a4e64a92e8 The Opus character development is insane"
    },
    "sources": [
     "reddit"
@@ -5227,30 +5181,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wpt4mz/i_reproduced_an_open_zeroshot_classifiers/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been testing Laya (convaiinnovations/laya), an open-weights zero-shot classifier that picks one of N labels and gives a confidence score. What drew me to it is that it runs locally, so none of my text leaves the machine. Step 1: make sure the tool works. I reproduced the published MASSIVE (en) number, 78.33%, matching to the 4th decimal on three setups (ROCm GPU, CPU on Windows, CPU on Linux). So this isn't a broken install. Step 2: my own data. I compared it against three baselines: majority class, a keyword if/else I wrote in an afternoon, and TF-IDF + logistic regression, always…",
-    "topComments": [
-     {
-      "text": "that 97.5% confidence on a coin flip is the tell, those scores are never calibrated so only look at argmax. criteria descriptions flatten everything with overlapping words so bare labels is the cheapest test. long paragraphs bury the signal, chunk to a couple sentences and average the logits instead of voting. for the area task where the answer is not in the text, that is a priors job, which is why tf-idf wins there, it learns your dataset bias."
-     },
-     {
-      "text": "That's a really useful breakdown, thanks. Agreed on the confidence: the numbers in the post are accuracy on the top pick, and the 97.5% is exactly why I stopped trusting the scores. Averaging the logits over short chunks instead of voting makes sense for the paper-section task. And you're right about the area task: TF-IDF's 46.1% comes from leaning on the most frequent area, and area by area it's actually the worst of the lot. So nothing really read that question. For my kind of text I think…"
-     },
-     {
-      "text": "Anecdotally, I've seen full-text search outperform semantic search on a given corpus, but I've seen semantic perform better on a different corpus. Corpus matters."
-     },
-     {
-      "text": "Exactly, and that's the whole point of the post. The published benchmark is someone else's corpus, and mine behaved differently. That's why the kit's second step runs on your own labeled data: it's the only number that tells you anything about your case."
-     },
-     {
-      "text": "Good writeup. The gap between the benchmark number and your text is probably the utterance length, classifiers tuned on short snippets tend to get lost in the weeds with paragraphs. I'd try bare labels first, criteria prompts can over-constrain the scoring and make everything look like a toss-up. Chunking might help too if you can break long docs into smaller pieces and aggregate the votes"
-     },
-     {
-      "text": "Thanks. Utterance length is my main suspect too, though I haven't measured it. Bare labels and chunking make sense for the paper-section task, but my actual work texts are a different story. For the note type, I think it'd need more training (which I'd rather not do) or a different model (also not keen on that, haha). For the area label it's worse: the answer isn't written in the text at all, so no prompt tweak, chunking or model fixes that."
-     },
-     {
-      "text": "49.6% accuracy at 97.5% confidence is a calibration plot asking for help."
-     }
-    ]
+    "text": "I've been testing Laya (convaiinnovations/laya), an open-weights zero-shot classifier that picks one of N labels and gives a confidence score. What drew me to it is that it runs locally, so none of my text leaves the machine. Step 1: make sure the tool works. I reproduced the published MASSIVE (en) number, 78.33%, matching to the 4th decimal on three setups (ROCm GPU, CPU on Windows, CPU on Linux). So this isn't a broken install. Step 2: my own data. I compared it against three baselines: majority class, a keyword if/else I wrote in an afternoon, and TF-IDF + logistic regression, always…"
    },
    "sources": [
     "reddit"
@@ -5441,33 +5372,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wpu7ns/meanwhile_gemini/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Gemini brings out the worst in me"
-     },
-     {
-      "text": "Gemini was my GOAT a year ago. But since moving to Claude a few months ago, whenever I have to go back to Gemini for something it feels like talking to a Kindergartener."
-     },
-     {
-      "text": "Gemini pro 3.1 or whatever is also thousand times slower than opus 5.5 all while being more brain dead. On pro 3.1, even for the simplest answers it'll take a while so you have to do answer now. Opus just knows if it's an easy question and can answer in a few seconds"
-     },
-     {
-      "text": "https://giphy.com/gifs/WPRJfpqxa9RF6"
-     },
-     {
-      "text": "https://giphy.com/gifs/xUPGcl3ijl0vAEyIDK"
-     },
-     {
-      "text": "You forgot to add \"make no mistakes\". This is on you"
-     },
-     {
-      "text": "Can't believe nothing has changed in that year I haven't used Gemini and it's still completely illiterate. Imagine literally inventing GPT architecture, then your models can't fucking read."
-     },
-     {
-      "text": "Tbf I've had chatgpt do this too!"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -5519,33 +5424,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wpvep4/qwengram08b_i_transferred_qwen38_flashnexts_ngram/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’ve been experimenting with whether Qwen3.8-Flash-Next’s pretrained PLE n-gram memory can improve a much smaller Qwen3.5-0.8B model. I trained the 0.8B setup with limited resources, mostly using free Kaggle notebook GPUs. The setup keeps both the Qwen3.5-0.8B backbone and the roughly 51B-parameter PLE memory frozen. A small R=1 reader is trained at decoder layers 3 and 9, with a token-dependent linear gate controlling the later injection. There is no backbone fine-tuning . The current balanced checkpoint uses a reader trained for 15M tokens and a separately calibrated dynamic gate. On the…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Kinda funny to imagine that frankenqwen with a tiny prefrontal cortex but a HUUUGE memory section."
-     },
-     {
-      "text": "franqwenstein sounds better:v"
-     },
-     {
-      "text": "The monster of dr franquenstein? 🤣"
-     },
-     {
-      "text": "Interesting! I understand about 10% of the words used but I’m fascinated. What would that ngram table be good for in real world scenarios compared to the same model without it? 35b is quite useful, what would the ngram bring with it?"
-     },
-     {
-      "text": "I actually started testing the 35B MoE version as well, and the early results were promising, but I was using Modal’s free credits and burned through them pretty quickly, so I had to pause that experiment. The interesting part with the 35B-A3B model is that although it has ~35B total parameters, only around ~3B are active per token. So, in principle, adding a large external n-gram memory could be especially useful there: you keep the relatively low active compute of the MoE, while giving the…"
-     },
-     {
-      "text": "The devil is in the details. Your data is correct - a linear layer (adapter) outperforms other shapes I already tested this on both Qwen 3.5 4B and Qwen 3.5 35B, and there is one important outcome you missed in your testing - training a LoRA with the frozen backbone outperforms PLE+Adapter+LoRA, so the PLE transfer is a dead end. The data trained into the PLE is something more like a correction of the data in the output, not data itself, so it doesn't transfer across models. Your control when…"
-     },
-     {
-      "text": "Did you test vs normal lora training as a control? Something to consider. The 0.8B model is small enough that just shifting it more towards expecting English text can show up as better perplexity."
-     }
-    ]
+    "text": "I’ve been experimenting with whether Qwen3.8-Flash-Next’s pretrained PLE n-gram memory can improve a much smaller Qwen3.5-0.8B model. I trained the 0.8B setup with limited resources, mostly using free Kaggle notebook GPUs. The setup keeps both the Qwen3.5-0.8B backbone and the roughly 51B-parameter PLE memory frozen. A small R=1 reader is trained at decoder layers 3 and 9, with a token-dependent linear gate controlling the later injection. There is no backbone fine-tuning . The current balanced checkpoint uses a reader trained for 15M tokens and a separately calibrated dynamic gate. On the…"
    },
    "sources": [
     "reddit"
@@ -5590,33 +5469,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wpvptu/at_what_point_did_vector_search_alone_stop_being/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Vector search is mostly fine if you're asking for documents about database architecture. If you ask it for a specific customer record with ID 48291 it won't get anything, because similarity search was never meant to do exact lookups. It's kinda obvious when you think about it. But a lot of RAG setups start out vector-only and then run into this. What I see people suggest is doing vector, keyword and metadata filtering in one query rather than keeping a vector store and a relational store side by side and merging results yourself. The argument being that two stores means two calls, two things…",
-    "topComments": [
-     {
-      "text": "Moved when I realized the thing couldn't answer \"find all tickets from last Tuesday\" without hallucinating the date. Vector search just grabs whatever feels similar, which is useless for structured data. Now I run a hybrid setup where metadata filtering handles exact matches and date ranges, then vector does the conceptual heavy lifting. Works wayy better than trying to force one approach to do everything."
-     },
-     {
-      "text": "Vector search is a great librarian for 'suggest me something like this'. It’s a terrible accountant for 'give me ticket 48291 from last Tuesday'. The moment you need date ranges or exact IDs, you’re asking a thesaurus to do bookkeeping. Hybrid isn’t fancy, it’s admitting similarity and equality are different jobs."
-     },
-     {
-      "text": "Be careful combining semantic and FTS results. If you use reciprocal rank fusion (RRF) in a search for a specific order ID or whatever, the crap results from the semantic search pollute the good results from FTS. Idea: it would be interesting to use Jev to decide whether to use semantic, FTS, or hybrid. 🤔 Otherwise, it's honestly best left to the human."
-     },
-     {
-      "text": "Yep, I’d keep hard constraints out of RRF. Route queries with an ID, date, or other exact predicate to the structured filter first, then use vector ranking inside that candidate set. Only fuse when there isn’t a reliable exact signal, otherwise the semantic noise can bury the one correct row."
-     },
-     {
-      "text": "At no point in time, was vector search ever good enough. It never was good. I don't know what you're even asking. It should be used in situations where you don't have accurate data to start with."
-     },
-     {
-      "text": "The first production RAG I ever made, was when I found that out. It was clear a hybrid filtering approach was needed from the very start."
-     },
-     {
-      "text": "I'd actually back up a step before the whole \"one store or two\" question. Something like 48291 is what I'd call an anchor. It's an exact thing you can check, same as a party name, an amount, a date, or a clause reference. Embeddings are built to smooth that kind of detail out, so 48291 and 48219 end up looking like neighbours. So do \"shall\" and \"shall not,\" which is kind of alarming. You can bolt keyword scoring on top and it helps, but you're still treating the ID as a hint about relevance,…"
-     },
-     {
-      "text": "I think you can still get pretty far by combing vector search against known question/answer sets. But the vector search does not search for answers by itself, it only looks for similarity. Question/answer sets in this case can also be SQL queries with variables, and you can extract the variable(s) using regex."
-     }
-    ]
+    "text": "Vector search is mostly fine if you're asking for documents about database architecture. If you ask it for a specific customer record with ID 48291 it won't get anything, because similarity search was never meant to do exact lookups. It's kinda obvious when you think about it. But a lot of RAG setups start out vector-only and then run into this. What I see people suggest is doing vector, keyword and metadata filtering in one query rather than keeping a vector store and a relational store side by side and merging results yourself. The argument being that two stores means two calls, two things…"
    },
    "sources": [
     "reddit"
@@ -5761,33 +5614,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wpwaje/i_built_openghost_a_fully_opensource_ai_agent_for/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey everyone. I’ve tried almost every existing agent out there. And every time I ran into the same issues: either it was too complicated, or the visualization of heavy data just wasn’t good enough. So I decided to build my own. Meet OpenGhost - an agent made specifically for DeepSeek with one main goal: maximum visualization. What’s inside: • Agent engine written from scratch • Render engine also written from scratch - full control over design, animations, and how data is displayed • Put a lot of effort into animations, even the smallest UI details • Built-in browser: the agent moves the…",
-    "topComments": [
-     {
-      "text": "Cool"
-     },
-     {
-      "text": "I want to say this right away: I didn’t make this app as a competitor to any existing agent. I built an application that I will enjoy using while working. I really love perceiving information visually. I’m sure there are people like that among you too. The entire design was created from scratch. But you can change it. Send a PR or don’t - it’s up to you:)"
-     },
-     {
-      "text": "Intro animation is top notch! But will it blend? will it work with other providers, like custom API endpoints?"
-     },
-     {
-      "text": "Look interesting. Do you have a small video about the biggest features? Does it have a cron function to trigger jobs by time? Can we run it as an dedicated webserver like the deep seek harness, to use it on the phone while away from desktop? Will download later:-)"
-     },
-     {
-      "text": "There’s no scheduled-tasks mode yet - it’ll come a bit later. The main feature is our own graphics rendering engine. Plus small but nice options that make the work more pleasant. OpenGhost is more about visuals and interaction than “super serious” work. That said, it can already fully control a browser, write apps, and test them. This is only the first beta. More coming soon. Once you download and try it, leave a review ф I’d really appreciate it ☺️"
-     },
-     {
-      "text": "So beautifulll, i love this idea"
-     },
-     {
-      "text": "How would I use this when my oc is in a vcn?"
-     },
-     {
-      "text": "This is so cool and as a data scientist I would love to try it as soon as you drop a MacOS version 😁"
-     }
-    ]
+    "text": "Hey everyone. I’ve tried almost every existing agent out there. And every time I ran into the same issues: either it was too complicated, or the visualization of heavy data just wasn’t good enough. So I decided to build my own. Meet OpenGhost - an agent made specifically for DeepSeek with one main goal: maximum visualization. What’s inside: • Agent engine written from scratch • Render engine also written from scratch - full control over design, animations, and how data is displayed • Put a lot of effort into animations, even the smallest UI details • Built-in browser: the agent moves the…"
    },
    "sources": [
     "reddit"
@@ -5973,33 +5800,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wpynd7/people_hyping_gemini_4_pro_dont_forget_this/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "My selective memory depends entirely on how good Gemini 4 turns out to be"
-     },
-     {
-      "text": "lmaoo so true tho"
-     },
-     {
-      "text": "If you squint enough that 3.5 post almost look like a warning sign"
-     },
-     {
-      "text": "nah, drop 3.5 pro a day before 4 pro, trust"
-     },
-     {
-      "text": "sometime around 2030 https://preview.redd.it/41h0zfa4yorh1.png?width=3264&format=png&auto=webp&s=784d1476f35559be89016d8239113bccec2bc80d"
-     },
-     {
-      "text": "My guess it was released as 3.7 Flash, that way free users still on 3.6. By this point they going to skip Gemini 4 pro and make 5 pro instead."
-     },
-     {
-      "text": "It's too fast to be pro model."
-     },
-     {
-      "text": "I think they made the flash versions of 3.5 pro and that's what we got in 3.6-8"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6048,33 +5849,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wpzc8b/update_to_the_krea_2_turbo_style_gallery_397/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Update to the [KREA 2 Turbo Style Gallery](https://www.reddit.com/r/StableDiffusion/comments/1v4u1bu/krea\\_2\\_turbo\\_style\\_gallery/) from July. There's an actual finding in this one, so here's what changed: The fix: the style's name was missing from the prompt . u/Dear-Spend-2865 's wildcards are written as Style Name: description . When I converted them into the node I only kept the description, so for 290 of the 397 styles the name never reached the prompt at all. For styles whose description is fairly generic (\"bold flat cartoon, thick outline, flat color…\") KREA had no way to know which…",
-    "topComments": [
-     {
-      "text": "So these are all prompts for krea2? For a second i though it was a lora library… krea2 is so complex"
-     },
-     {
-      "text": "No LoRAs were harmed in the building of this gallery lol. But yeah, these are all done using purely prose."
-     },
-     {
-      "text": "This style guide is simply amazing. Incredible work!"
-     },
-     {
-      "text": "\"Thin Delicate Outline Romantic Anime-Photographic Hybrid\" - how in the world did you stumble upon that? lol"
-     },
-     {
-      "text": "In reality I fed Claude an image and he came up with this style"
-     },
-     {
-      "text": "Oh boy the gooning here we go again"
-     },
-     {
-      "text": "Can I get the original Rick and Morty style? I think it’s unique and looks nice. Kind of like Wind Waker but better"
-     },
-     {
-      "text": "I knew about those wildcards, but not about your node. Cool. The filename prefix output, however, indicates a krea 2 folder, but these wildcards and your node can be used in any model that uses an LLM for a text encoder (though probably won't work so well on Anima) - they can be used with Klein, ZIT, Qwen 2.1 and others."
-     }
-    ]
+    "text": "Update to the [KREA 2 Turbo Style Gallery](https://www.reddit.com/r/StableDiffusion/comments/1v4u1bu/krea\\_2\\_turbo\\_style\\_gallery/) from July. There's an actual finding in this one, so here's what changed: The fix: the style's name was missing from the prompt . u/Dear-Spend-2865 's wildcards are written as Style Name: description . When I converted them into the node I only kept the description, so for 290 of the 397 styles the name never reached the prompt at all. For styles whose description is fairly generic (\"bold flat cartoon, thick outline, flat color…\") KREA had no way to know which…"
    },
    "sources": [
     "reddit"
@@ -6261,30 +6036,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wq32z0/what_should_an_llm_app_do_when_a_provider_times/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’m trying to understand how developers design fallback behavior when an LLM provider fails after a response has started streaming. If some tokens have already reached the user, switching to another model seems harder than retrying a request that failed before any output. The second model may produce a different answer, and the user could end up with a confusing mix of both. How do you handle this in practice? Do you stop and show an error, restart the whole answer with another model, or let the user choose whether to retry? I’d especially like to hear how you handle conversation state and…",
-    "topComments": [
-     {
-      "text": "we just abort and show a timeout error with a retry button. switching mid-stream is asking for trouble when the next model picks up in a completely different direction for tool calls we tag each attempt with a unique id and dedupe on that. if the retry fires the same tool again the backend just ignores it cause it already saw that id. keeps things clean without having to track state across models"
-     },
-     {
-      "text": "I’d treat an interrupted stream as a failed attempt, not merge outputs. Persist the user-visible prefix as provisional, then offer Retry from scratch. Before retrying, replay only the original prompt plus a server-side idempotency key. Never rerun side-effecting tools unless their call ID is confirmed unresolved. For tool calls, checkpoint intent and result separately and make handlers idempotent. If the provider supports resume, use it only with a validated cursor; otherwise close the stream,…"
-     },
-     {
-      "text": "yeah don't splice another model into the same bubble, freeze the partial and mark it interrupted then kick the fallback as a fresh reply with the same prompt so the cut is obvious."
-     },
-     {
-      "text": "don’t splice two answers together."
-     },
-     {
-      "text": "I use everstack.ai"
-     },
-     {
-      "text": "Time out the app and restart, and ask for refund"
-     },
-     {
-      "text": "Blocking the duplicate tool call is half the fix, you also need to tell the new model that the action already happened, otherwise it might reply as if the booking, email, etc, never went through, even if it did."
-     }
-    ]
+    "text": "I’m trying to understand how developers design fallback behavior when an LLM provider fails after a response has started streaming. If some tokens have already reached the user, switching to another model seems harder than retrying a request that failed before any output. The second model may produce a different answer, and the user could end up with a confusing mix of both. How do you handle this in practice? Do you stop and show an error, restart the whole answer with another model, or let the user choose whether to retry? I’d especially like to hear how you handle conversation state and…"
    },
    "sources": [
     "reddit"
@@ -6332,8 +6084,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wq34s2/akamai_announces_116_billion_multiyear_agreement/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6570,33 +6321,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wq52am/in_just_100_days_ai_crossed_into_real_medical/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Soon we will receive a letter from the medical community explaining why finding accurate diagnosis and devising new treatments is not the goal of medicine as a field, it will probably be signed by lots of eminent people from the field."
-     },
-     {
-      "text": "Souless medical treatment"
-     },
-     {
-      "text": "Since my GP started using ChatGPT they actually took my complaints more serious. In Netherlands the national medical board is actually concerned AI recommends science based diagnosis more and that costs a lot. This is what doctors should be doing to begin with."
-     },
-     {
-      "text": "Yes, AI does not have interpersonal bias so it follows the science much more purely (although you still have to audit it for errors). doctors judge you based on your age, your gender and your race way more than I think they really want to admit. and clinical reasoning has overemphasized anxiety to the point where it blocks accurate diagnosis."
-     },
-     {
-      "text": "Not only that, but AI doesn't have a massive ego like most doctors. So it won't be reluctant to consider things other than it's first diagnosis."
-     },
-     {
-      "text": "To be clear, nothing went from AI conception to phase 3 in 100 days"
-     },
-     {
-      "text": "Is there no one else that finds posts like this far less credible when they are obviously sensationalized and written by AI? I would be far more convinced by a post actually written by a cardiologist, not one that I felt like they just asked ChatGPT \"make a tweet of the 10 biggest AI news stories in medicine in the last 90 days\"."
-     },
-     {
-      "text": "It’s things like this that should make doctors question the assertion that they are not vulnerable to AI. Medicine is one of the most lucrative areas that AI is currently targeting. It definitely won’t replace all medical professionals, but it will almost certainly reduce demand for them."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7164,33 +6889,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wqaywn/trump_admin_using_ai_to_deny_medical_care_for/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It's not an experiment. Its a practice run. These are the same people that got the covid vaccine (and had access to it first, before anyone else) and were against the covid vaccine when it became available to everyone. They were against people wearing masks. \"Covid is a democratic hoax!\" Remember that? When covid was tearing through Europe. The same people that keep taking money from social security and saying that social security is going to fail for other reasons. They are probably planning…"
-     },
-     {
-      "text": "Yeah I think a lot of people here on reddit and elsewhere are generally good people and don't see this as the power play it is. The billionaires -hate- poor/middle class. They will use AI/kickbacks to congress/whatever to make more money and keep the lower classes down. Keeping them sicker and more in debt from medical debt is one of those ways."
-     },
-     {
-      "text": "Death Panels ❌ Death AI ✅"
-     },
-     {
-      "text": "Would love to see their system prompts."
-     },
-     {
-      "text": "\"Deny everything you can, make no mistakes\""
-     },
-     {
-      "text": "Considering how many seniors voted for Trump, this feels like a \"I can't believe leopards ate my face\" moment."
-     },
-     {
-      "text": "Insurance = legalized mafia scam"
-     },
-     {
-      "text": "Wait until they ingest all of that sweet, sweet 23andme genome data. Whoo doggy. Insurance shareholders gonna go, \"CHA CHING! CHA CHING!\""
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7237,27 +6936,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wqb1ur/i_made_this_playable_pokémon_battle_demo_using/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hi all, Like many others, I'm blown away with how good the new Opus model is. I was inspired by this tweet and decided to see if I could turn it into something playable. A couple of hours later, I was able to make this demo! Check it out! -> https://pokemon-battle-sim-1vq.pages.dev/ I used an image model to create the background but pretty much everything else was made with Opus on high including the SFX, music, and animations. I was able to create the assets by prompting it to recreate the pixel sprites from some reference images and then tweaked stuff on the margins from there.…",
-    "topComments": [
-     {
-      "text": "I smell lawyers for some reason"
-     },
-     {
-      "text": "The other problem is that it’s for sure trained from scraped sprite art, assets, and custom code from rom hacks. It’s why more and more of those communities no longer have public projects. Which is ironic because they took from one corporation to make a fan creation and now it’s being used on these models without permission as well."
-     },
-     {
-      "text": "Gamefreak to its dev team: “Tony Stark was able to build this in a cave, with a box of scraps!”"
-     },
-     {
-      "text": "The Pokemon company somewhere https://preview.redd.it/l78teegpmrrh1.jpeg?width=528&format=pjpg&auto=webp&s=205f842b691e6bdfbc3c0a2a86c34fc6e8176117"
-     },
-     {
-      "text": "It’s incredible, but now you owe Nintendo a whopping 5 million dollars. Congratulations!"
-     },
-     {
-      "text": "This style is super cool! Thanks for sharing!"
-     }
-    ]
+    "text": "Hi all, Like many others, I'm blown away with how good the new Opus model is. I was inspired by this tweet and decided to see if I could turn it into something playable. A couple of hours later, I was able to make this demo! Check it out! -> https://pokemon-battle-sim-1vq.pages.dev/ I used an image model to create the background but pretty much everything else was made with Opus on high including the SFX, music, and animations. I was able to create the assets by prompting it to recreate the pixel sprites from some reference images and then tweaked stuff on the margins from there.…"
    },
    "sources": [
     "reddit"
@@ -7350,33 +7029,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wqbjrg/deepseek_v41_pro_leaked_via_opencode_sitemap/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Its coming eventually, but this is probably just a premature ejaculation."
-     },
-     {
-      "text": "r/AngryUpvote"
-     },
-     {
-      "text": "Big if true. Fake news. I believe. I am not a bot."
-     },
-     {
-      "text": "That’s what a bot would say."
-     },
-     {
-      "text": "Good bot"
-     },
-     {
-      "text": "how do i ejaculate deepseeck pro into my claude"
-     },
-     {
-      "text": "Vaseline"
-     },
-     {
-      "text": "DeepSeek v4.1 Flash is just brilliant. Can you imagine what Pro would make?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7660,30 +7313,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wqcrly/ling_tiny_30_is_a_glimpse_of_the_future/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been playing around with Ling 3.0 Tiny, which is an 8 billion parameter model (MoE, 1B active). And I've had a lot of poignant thoughts as a result. Just for fun, I got it running with llama.cpp on an old laptop. This is a laptop from 2017 with a 7th gen i5 and 8 gigs of RAM, like barely even usable for modern tasks. No VRAM, no GPU. Well, I got Pi running on it and asked it to make a script to scan the local network for all available models on llama.cpp servers. It started chugging along at about 10 tokens per second. And 20 minutes later, it was done. It had several back and forth…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "The turning point for me was Gemma 3 4b. I was using llama 3 8b inside a cpu only vm to perform summarisation of articles overnight for me (and I mean overnight, it’d start at 10pm to give me three finished articles by 6am) because it absolutely crawled. Gemma not only did the summaries better, but MUCH faster, as in twenty minutes per article, not multiple HOURS per article. On the same vm inside a nuc. It was then I knew that local really has a future."
-     },
-     {
-      "text": "The Gemma 4 models don't get anywhere near enough praise."
-     },
-     {
-      "text": "E2B is by far the best 2B on the market, only beaten by LFM2.5 2.6B for agentic coding."
-     },
-     {
-      "text": "I’m pretty sure all frontier models are MoE models."
-     },
-     {
-      "text": "Ddr3 ram prices about to explode."
-     },
-     {
-      "text": "Ling Tiny 3.0 really surprised me too. It does a great job summarizing and translating text, and it rarely gets stuck in a loop. When I started working with Pi, I found the summarization there pretty clunky, so I wrote an extension to chunk chat history to handle context compression of any length. I needed a small model to handle that summarization to save time. I ran some tests comparing the results, and Ling Tiny 3.0 was head and shoulders above all the other similar models. Plus, it's fast.…"
-     }
-    ]
+    "text": "I've been playing around with Ling 3.0 Tiny, which is an 8 billion parameter model (MoE, 1B active). And I've had a lot of poignant thoughts as a result. Just for fun, I got it running with llama.cpp on an old laptop. This is a laptop from 2017 with a 7th gen i5 and 8 gigs of RAM, like barely even usable for modern tasks. No VRAM, no GPU. Well, I got Pi running on it and asked it to make a script to scan the local network for all available models on llama.cpp servers. It started chugging along at about 10 tokens per second. And 20 minutes later, it was done. It had several back and forth…"
    },
    "sources": [
     "reddit"
@@ -7868,33 +7498,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wqh0ti/new_uncensored_image_model_nanosaur_2_full_release/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hello everyone. I have to preface this by saying this is NOT my model, though I'm very familiar with the person who made it. I can with full confidence tell you that for any model smaller than anima, this is the best one out there. This is a 670m parameter image model trained on all of e6/danbooru, 14 million images. Takes natural language OR tags, your choice. It comes packaged with a new vae, a 270m parameter text encoder, and a 670m dit. This model can do all, and I mean ALL concepts you can think of, artist styles, and characters. That being said, it's still a 670m parameter image model,…",
-    "topComments": [
-     {
-      "text": "its always furries"
-     },
-     {
-      "text": "I mean nearly all the recent modern models focus on realism. How many different ways do we need to make realistic porn anyway? Zit, Krea, Ideogram, Qwen, Ming, Wan, LTX, Minimax, Flux3, Wan3, etc. Of course some of us will be excited by something that caters to us."
-     },
-     {
-      "text": "My impressions: - Around the same speed as ZIT (smaller, but needs more steps) - Low seed variety for detailed prompts, feels like a distilled model in this regard, especially for backgrounds - Quality around the same as SDXL, maybe? Missing fingers, odd anatomy and crooked swords do happen EDIT: Seems to be obsessed with big boobs, even for established characters that don't have them XD"
-     },
-     {
-      "text": "If quality is even close to SDXL at this size, it's kinda nuts. SD 1.5 was around this size (even a bit bigger, IIRC), and SDXL is 3.5B parameters."
-     },
-     {
-      "text": "Also just as a side note, if you're into researching diffusion image models, this model is the best place to look and build on top of."
-     },
-     {
-      "text": "OK, i know this is worse vae than anima but.. hands and feet are deformed,eyes as well on full body shots, it needs facedetailer... and the speed is just normal - compared to superfast anima with turbo lora and similar model size convrot int8 which is about 2.5GB... i think ppl will just use anima to be honest.While this quality is nice for such tiny model - its hard to go back to face detailers and deformed fingers - the only way i see it winning with anima (models size and speed vs quality)…"
-     },
-     {
-      "text": "Yeah, I know. Anima still wins, but also to be fair, it's 3 times larger. The model dev wants to make a 2b version, but he'd need funding for it. The reason he didn't use the flux 2 vae was for training speed, I'm not going to go into details but essentially he traded quality for training speed so more of danbooru could be trained in. This model is intended for 2 people. Those who don't have the power to run anima, and those who want to mess around with finetuning and modifying dits."
-     },
-     {
-      "text": "This person is asking for money to fund training for a 2b model. Honest question - why should this person spend money funding a 2b model when Anima already exists? Sort of a \"What's the point?\" question, you'd figure if they wanted anything more they could just finetune the existing Anima model, no?"
-     }
-    ]
+    "text": "Hello everyone. I have to preface this by saying this is NOT my model, though I'm very familiar with the person who made it. I can with full confidence tell you that for any model smaller than anima, this is the best one out there. This is a 670m parameter image model trained on all of e6/danbooru, 14 million images. Takes natural language OR tags, your choice. It comes packaged with a new vae, a 270m parameter text encoder, and a 670m dit. This model can do all, and I mean ALL concepts you can think of, artist styles, and characters. That being said, it's still a 670m parameter image model,…"
    },
    "sources": [
     "reddit"
@@ -8206,9 +7810,8 @@
   }
  ],
  "date": "2026-09-25",
- "fetchedAt": "2026-09-28T03:55:17.748Z",
+ "fetchedAt": "2026-09-28T07:14:28.260Z",
  "runs": [
-  "2026-09-26T06:55:12.756Z",
   "2026-09-26T07:44:21.144Z",
   "2026-09-26T08:47:03.932Z",
   "2026-09-26T09:44:08.792Z",
@@ -8227,7 +7830,8 @@
   "2026-09-27T18:47:45.944Z",
   "2026-09-27T21:43:49.556Z",
   "2026-09-28T01:20:30.911Z",
-  "2026-09-28T03:55:17.748Z"
+  "2026-09-28T03:55:17.748Z",
+  "2026-09-28T07:14:28.260Z"
  ],
  "schema": 2,
  "sources": [
@@ -8388,9 +7992,9 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-09-28T03:55:17.748Z",
+   "fetchedAt": "2026-09-28T07:14:28.260Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 18 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
    "state": "degraded"
   },
