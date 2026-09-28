@@ -2534,6 +2534,28 @@
    "upd": "2026-06-30"
   },
   {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "claude-sonnet-5-5",
+   "in": 2,
+   "k": "claude-sonnet-5-5",
+   "maxOut": 128000,
+   "name": "Claude Sonnet 5.5",
+   "out": 10,
+   "p": "anthropic",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-28"
+  },
+  {
    "ctx": 131072,
    "efforts": [
     "low",
@@ -7325,7 +7347,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.001,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7333,11 +7355,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.03,
+   "in": 0.035,
    "k": "deepseek-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 384000,
    "name": "DeepSeek Flash Latest",
-   "out": 0.6,
+   "out": 0.29,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7425,7 +7447,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.176987,
+   "cr": 0.29,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7433,11 +7455,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.97575,
+   "in": 0.875,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 8.5442,
+   "out": 11.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8074,6 +8096,28 @@
    "upd": "2026-06-30"
   },
   {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "anthropic/claude-sonnet-5.5",
+   "in": 2,
+   "k": "claude-sonnet-5-5",
+   "maxOut": 128000,
+   "name": "Claude Sonnet 5.5",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-28"
+  },
+  {
    "alwaysOn": true,
    "cr": 0.06,
    "ctx": 262144,
@@ -8383,26 +8427,11 @@
    "upd": "2025-05-28"
   },
   {
-   "ctx": 8192,
-   "id": "deepseek/deepseek-r1-distill-llama-70b",
-   "in": 0.8,
-   "k": "deepseek-r1-distill-llama-70b",
-   "maxOut": 7372,
-   "name": "R1 Distill Llama 70B",
-   "out": 0.8,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-01-23"
-  },
-  {
-   "cr": 0.135,
    "ctx": 163840,
    "id": "deepseek/deepseek-v3.1-terminus",
    "in": 0.27,
    "k": "deepseek-v3-1-terminus",
-   "maxOut": 32768,
+   "maxOut": 147456,
    "name": "DeepSeek V3.1 Terminus",
    "out": 1,
    "p": "openrouter",
@@ -8427,13 +8456,14 @@
    "upd": "2025-12-01"
   },
   {
+   "cr": 0.0672,
    "ctx": 163840,
    "id": "deepseek/deepseek-v3.2-exp",
-   "in": 0.27,
+   "in": 0.1344,
    "k": "deepseek-v3-2-exp",
-   "maxOut": 65536,
+   "maxOut": 147456,
    "name": "DeepSeek V3.2 Exp",
-   "out": 0.41,
+   "out": 0.2016,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8441,18 +8471,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.015232,
+   "cr": 0.012768,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.07616,
+   "in": 0.06384,
    "k": "deepseek-v4-flash",
    "maxOut": 131072,
    "name": "DeepSeek V4 Flash",
-   "out": 0.15232,
+   "out": 0.12768,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9218,20 +9248,6 @@
    "maxOut": 235929,
    "name": "Ling 3.0 Flash Fin",
    "out": 0.18,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-08-27"
-  },
-  {
-   "ctx": 262144,
-   "id": "inclusionai/ling-3.0-flash-fin:free",
-   "in": 0,
-   "k": "ling-3-0-flash-fin",
-   "maxOut": 32768,
-   "name": "Ling 3.0 Flash Fin (free)",
-   "out": 0,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10126,6 +10142,44 @@
    "upd": "2025-07-07"
   },
   {
+   "cr": 0.0025,
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
+   "id": "nex-agi/nex-n2.5-mini",
+   "in": 0.025,
+   "k": "nex-n2-5-mini",
+   "maxOut": 235929,
+   "name": "Nex-N2.5-Mini",
+   "out": 0.1,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-08"
+  },
+  {
+   "cr": 0.015,
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
+   "id": "nex-agi/nex-n2.5-pro",
+   "in": 0.075,
+   "k": "nex-n2-5-pro",
+   "maxOut": 235929,
+   "name": "Nex-N2.5-Pro",
+   "out": 0.25,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-08"
+  },
+  {
    "ctx": 131072,
    "id": "nousresearch/hermes-3-llama-3.1-405b",
    "in": 1,
@@ -10306,7 +10360,7 @@
    "id": "nvidia/nemotron-3.5-lightning",
    "in": 0.08,
    "k": "nemotron-3-5-lightning",
-   "maxOut": 131072,
+   "maxOut": 32768,
    "name": "Nemotron 3.5 Lightning 30B A3B",
    "out": 0.2,
    "p": "openrouter",
@@ -11022,9 +11076,9 @@
    "upd": "2026-07-09"
   },
   {
-   "cr": 0.2,
+   "cr": 0.4,
    "ctx": 1050000,
-   "cw": 2.5,
+   "cw": 5,
    "efforts": [
     "none",
     "low",
@@ -11034,11 +11088,11 @@
     "max"
    ],
    "id": "openai/gpt-5.6-sol-pro",
-   "in": 2,
+   "in": 4,
    "k": "gpt-5-6-sol-pro",
    "maxOut": 128000,
    "name": "GPT-5.6 Sol Pro",
-   "out": 10,
+   "out": 20,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12705,7 +12759,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12713,11 +12767,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13368,7 +13422,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.26,
+   "cr": 0.146625,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -13376,11 +13430,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 1.4,
+   "in": 0.1785,
    "k": "glm-5-3",
-   "maxOut": 943717,
+   "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 4.4,
+   "out": 2.805,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17107,5 +17161,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-28T15:49:02.811Z"
+ "updatedAt": "2026-09-28T18:51:19.417Z"
 }
