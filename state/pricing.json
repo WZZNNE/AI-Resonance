@@ -7153,6 +7153,28 @@
    "upd": "2026-09-22"
   },
   {
+   "cr": 0.1,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6.1-sol",
+   "in": 2,
+   "k": "gpt-6-1-sol",
+   "maxOut": 128000,
+   "name": "GPT-6.1 Sol",
+   "out": 10,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-29"
+  },
+  {
    "cr": 0.4,
    "ctx": 1050000,
    "cw": 5,
@@ -7525,11 +7547,10 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.2,
+   "cr": 0.1,
    "ctx": 1050000,
    "cw": 2.5,
    "efforts": [
-    "none",
     "low",
     "medium",
     "high",
@@ -7610,7 +7631,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.19,
+   "cr": 0.15,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -7618,7 +7639,7 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.19,
+   "in": 0.15,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
@@ -8522,18 +8543,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.078025,
+   "cr": 0.077314,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.936294,
+   "in": 0.927768,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.872588,
+   "out": 1.855536,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8541,7 +8562,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.3799,
+   "cr": 0.3199,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8549,11 +8570,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.4749,
+   "in": 0.3999,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 943718,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 4.2,
+   "out": 3.49,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11273,6 +11294,50 @@
    "upd": "2026-09-22"
   },
   {
+   "cr": 0.1,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6.1-sol",
+   "in": 2,
+   "k": "gpt-6-1-sol",
+   "maxOut": 128000,
+   "name": "GPT-6.1 Sol",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-29"
+  },
+  {
+   "cr": 0.1,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6.1-sol-pro",
+   "in": 2,
+   "k": "gpt-6-1-sol-pro",
+   "maxOut": 128000,
+   "name": "GPT-6.1 Sol Pro",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-29"
+  },
+  {
    "ctx": 128000,
    "id": "openai/gpt-audio",
    "in": 2.5,
@@ -12752,7 +12817,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12760,11 +12825,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13415,7 +13480,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.19,
+   "cr": 0.26,
    "ctx": 1310720,
    "efforts": [
     "low",
@@ -13423,11 +13488,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.19,
+   "in": 1.4,
    "k": "glm-5-3",
-   "maxOut": 131072,
+   "maxOut": 943717,
    "name": "GLM-5.3",
-   "out": 4,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17124,5 +17189,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-29T15:49:00.907Z"
+ "updatedAt": "2026-09-29T18:50:59.237Z"
 }
