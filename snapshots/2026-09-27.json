@@ -6243,33 +6243,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wrg8wp/gemini_pro_models_removed_from_google_ai_studio/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I have a yearly subscription to Gemini AI Pro Plan with 5TB storage and have been using daily for vibe coding an app idea I have. But suddenly today, I do not see the Pro Models. What changed?",
-    "topComments": [
-     {
-      "text": "3.1 Pro was outdated. It costs more tokens, is slower and much dumber than 3.8 Flash."
-     },
-     {
-      "text": "Wow i was going to say you was wrong and it's not dumber but it in fact seems to be dumber. At least at reasoning it sucks, it might still know slightly more obscure facts. Wild how far the pro model is behind. When some flash model ultimately is smarter."
-     },
-     {
-      "text": "maybe its 4 pro launch LMAO"
-     },
-     {
-      "text": "Next month!"
-     },
-     {
-      "text": "https://preview.redd.it/3x79j01ge1sh1.png?width=1351&format=png&auto=webp&s=a25e16fce5ece6411dd239d0e34d3435cf5b0cfa still there for me"
-     },
-     {
-      "text": "did you try scrolling up https://preview.redd.it/o5hk4ew5i1sh1.jpeg?width=704&format=pjpg&auto=webp&s=4e8f9d03bbe950556648f33b93b95b87fa02fe9e"
-     },
-     {
-      "text": "Yes. Only flash and flash lite models."
-     },
-     {
-      "text": "it is there and it fully works. and it will be around until google releases another milestone model like 5 pro after 4 pro. it's a crucial model for my use case of generating straight uncensored ai slop because it's the single intellegent model left that still allows to change the temperature and top p. https://preview.redd.it/km5sz9dpn1sh1.jpeg?width=1440&format=pjpg&auto=webp&s=e60c2fb8d525bdc6ac28484c2cfb10847e1505f8"
-     }
-    ]
+    "text": "I have a yearly subscription to Gemini AI Pro Plan with 5TB storage and have been using daily for vibe coding an app idea I have. But suddenly today, I do not see the Pro Models. What changed?"
    },
    "sources": [
     "reddit"
@@ -6360,15 +6334,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wrgt9e/what_has_your_experience_with_knowledge/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey! I’ve been doing some research around model compression lately, mostly focused on knowledge distillation (logit-based distillation specifically). The research was mostly exploratory: I was looking at how to choose distillation hyperparameters, how architectural differences between teacher and student affect the process, and how we can get more insight into *why* distillation works. I experimented with different ResNet architectures and compression levels (quantization and 90% pruning) for simple image classification on CIFAR-10/100. I’m attaching a screenshot from my technical report for…",
-    "topComments": [
-     {
-      "text": "That calibration gap in your screenshot is really something, especially with the pruned student just going off the rails. In my own tinkering I always feel like I'm guessing with the temperature parameter, it's never clear if the student is actually learning the right boundaries or just mimicking softmax outputs blindly. The biggest headache I ran into was when the student started outperforming the teacher on validation but was clearly cheating on some spurious features, took me forever to…"
-     },
-     {
-      "text": "Thanks for the feedback! I also ran into this problem related to temperature and alpha tuning, as just switching from CIFAR-10 to CIFAR-100 during the experiments killed the metrics for distillation models compared to training without any distillation. However, using the Optuna library for hyperparameter optimization and extra compute, I was able to find a working temperature and alpha for this dataset. As for understanding whether the student actually learns from the teacher or is just…"
-     }
-    ]
+    "text": "Hey! I’ve been doing some research around model compression lately, mostly focused on knowledge distillation (logit-based distillation specifically). The research was mostly exploratory: I was looking at how to choose distillation hyperparameters, how architectural differences between teacher and student affect the process, and how we can get more insight into *why* distillation works. I experimented with different ResNet architectures and compression levels (quantization and 90% pruning) for simple image classification on CIFAR-10/100. I’m attaching a screenshot from my technical report for…"
    },
    "sources": [
     "reddit"
@@ -6464,12 +6430,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wrj0t3/clashroyaleai_an_opensource_deterministic_clash/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "The opponent plans by simulation: every second it scores each candidate play by running the match 10 seconds ahead in the engine. Our PPO agent learned to park its Cannon behind its own King. Losing a building in a fight cost reward, and letting it decay cost nothing, so it found the loophole. It's one of many things we learned building a Clash Royale simulator from scratch so an agent could learn the game. The engine is deterministic C++ with Python bindings, plays a full match in about 10 ms on one laptop core, and can fork any game state in microseconds, so lookahead is cheap. Best result…",
-    "topComments": [
-     {
-      "text": "Interesting! Im currently considering doing something similar for Mechabellum. Mostly as a coach to teach me what I could have done better when I fuck up, but of course also creating a capable bot in the meantime."
-     }
-    ]
+    "text": "The opponent plans by simulation: every second it scores each candidate play by running the match 10 seconds ahead in the engine. Our PPO agent learned to park its Cannon behind its own King. Losing a building in a fight cost reward, and letting it decay cost nothing, so it found the loophole. It's one of many things we learned building a Clash Royale simulator from scratch so an agent could learn the game. The engine is deterministic C++ with Python bindings, plays a full match in about 10 ms on one laptop core, and can fork any game state in microseconds, so lookahead is cheap. Best result…"
    },
    "sources": [
     "reddit"
@@ -6710,30 +6671,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wrkvdw/this_is_proving_how_anthropic_was_taking_even/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "i know it's a cacophony of praise right now, but man it's like i had to work with that weird coworker who had terrible social skills for 4 months and suddenly they got replaced with someone capable of communicating properly"
-     },
-     {
-      "text": "I feel attacked"
-     },
-     {
-      "text": "No, you were replaced by AI."
-     },
-     {
-      "text": "soon all mainstream LLMs will get rid of em dashes I guess"
-     },
-     {
-      "text": "I don't know why it's such a big deal. Just writing it in the system prompt gets rid of it, no reason to retrain the model completely for it, especially since using em dashes is not incorrect or anything, people just hate them because AI uses it more than an average person."
-     },
-     {
-      "text": "I like EM dashes — I used to use them all the time until people associated it with AI slop. It has a different pace to it compared to a period, comma, or semicolon. Sad to see it go, although maybe it will mean, in a couple years, I can use my EM dashes without people accusing me of falsehoods!"
-     },
-     {
-      "text": "small? emdashes were overused like crazy"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6825,33 +6763,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wrm4kg/what_are_chinese_labs_doing_differently/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Chinese models seem to keep getting better while only spending a fraction of what American labs do and i’m curious what the actual explanation is. Is it better efficiency? Better post-training? Better use of open research? I know recently they have been buying up tons of specialized training data sets from US data annotation companies, which is a very worrying thought, but surely it can’t just be this.",
-    "topComments": [
-     {
-      "text": "Mass distillation"
-     },
-     {
-      "text": "I hear they’ve been buying up a ton of under-utilized distilleries in Kentucky/Tennessee to achieve this. With GenZ drinking less bourbon and Canada not importing due to U.S. tariffs, I think it’s an exercise in efficient markets in the end."
-     },
-     {
-      "text": "Is this thread about AI or alcohol?"
-     },
-     {
-      "text": "First one, then the other"
-     },
-     {
-      "text": "They are throwing engineers/researchers at the problem as in quantity and quality. Where the US is throwing money at the problem, as in focusing on top talent and datacenters. Also the chinese structure of open sourcing a lot of their research speeds up all their labs where as only some of the knowledge gets shared in the US, so every lab is reinventing the wheel when they independently discover the same tech."
-     },
-     {
-      "text": "Chinese open-source speeds up everybody, including the US labs."
-     },
-     {
-      "text": "All the \"distillation\" talk is overhyped. China has a far higher research output than the US in this area, and it has far, far more excellent researchers. The better question is, what does the US have to be ahead? The answer is compute. Very little is said about how American labs are \"free riding\" on Chinese research. All the Chinese papers are open for you to read. You can't just \"distill\" your way to models like V4.1 flash, Kimi K3, GLM 5.3, etc; which is not to say that distillation doesn't…"
-     },
-     {
-      "text": "With population at least 4 times higher than USA China just way more people don't Ai research. Their top tier people are really really smart and good at Ai. They also have more Ai companies workings Ai than USA. They are also more sane about creating Ai model for specialized applications. USA is obsessed with \"AGI\" and frontier models. China is really just good at AI. Given the limitation on their hardware, It's impressive."
-     }
-    ]
+    "text": "Chinese models seem to keep getting better while only spending a fraction of what American labs do and i’m curious what the actual explanation is. Is it better efficiency? Better post-training? Better use of open research? I know recently they have been buying up tons of specialized training data sets from US data annotation companies, which is a very worrying thought, but surely it can’t just be this."
    },
    "sources": [
     "reddit"
@@ -6897,33 +6809,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wrm72l/price_check_whats_the_rtx_pro_6000_96gb_going_for/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hi all! Long-time lurker, first time posting here. Some context: I recently picked up four DGX Spark units to self-host DeepSeek V4.1 Flash (the new 552B MoE with the Causal-Encoder-Decoder architecture — the KV cache compression is insane, it runs way lighter than you'd expect for a model this size). Four Sparks give me a nice little unified-memory cluster for it. Now I'm looking to add a few RTX PRO 6000 96GB cards to the setup, and I'm trying to get a sense of street prices around the world before I pull the trigger. In China the supply situation is... let's say \"dynamic\", so I'm curious:…",
-    "topComments": [
-     {
-      "text": "Also check the /blackwellperformance sub Right now at micro center they're selling for 15,999 with an msrp of 17,999. What are they going for in China?"
-     },
-     {
-      "text": "Ouch — joined the sub, thanks for the tip! China's used market is somehow even worse, around $20k for a second-hand one. Hard to justify at that point. Guess I'll wait it out. Appreciate the info!"
-     },
-     {
-      "text": "I picked up 2 units at 华强北 in 深圳 for 95k CNY each, just last week. Brand new Been running it for 4 days and zero issues so far."
-     },
-     {
-      "text": "In Russia, if converted to dollars, the price is around $31,000 per unit."
-     },
-     {
-      "text": "$31k... I knew I should've bought RTX futures instead of crypto. Genuine question though: is converting rubles to dollars still possible over there, or is there a secret GPU-to-ruble exchange rate I don't know about? 😂"
-     },
-     {
-      "text": "During the gold rush, the shovel sellers are the richest of all."
-     },
-     {
-      "text": "Try r/LocalLLM"
-     },
-     {
-      "text": "Hi there. Best price in my country: €15,000 VAT included (France). It’s in stock, but not for long. Hope it helps you a little bit 😂"
-     }
-    ]
+    "text": "Hi all! Long-time lurker, first time posting here. Some context: I recently picked up four DGX Spark units to self-host DeepSeek V4.1 Flash (the new 552B MoE with the Causal-Encoder-Decoder architecture — the KV cache compression is insane, it runs way lighter than you'd expect for a model this size). Four Sparks give me a nice little unified-memory cluster for it. Now I'm looking to add a few RTX PRO 6000 96GB cards to the setup, and I'm trying to get a sense of street prices around the world before I pull the trigger. In China the supply situation is... let's say \"dynamic\", so I'm curious:…"
    },
    "sources": [
     "reddit"
@@ -6971,33 +6857,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wrm7gt/one_char_model_consistent_face_body_cloths/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey Guys, Based on my last post on stills, I thought to experiment the same .char model with Minimax H3. I created a character model sia.char which encodes references, prompts around face, body & cloths. Checkout previous post for full detail. How it works? - Build .Char: You drop max 9 reference reference, I prefer to use a ratio 2:2:1(face:cloths:body). YuNet finds the face, SFace takes a per-reference face signature, DINOv2 takes a subject signature, and the references get cleaned and normalised. All of that packs into a single portable file, a .char. Only face/ref is required body &…",
-    "topComments": [
-     {
-      "text": "Don't refmods take care of that already in H3?"
-     },
-     {
-      "text": "Yes that's true, along with ref this method encodes, character prompts, cropped face which is scored by sface & dinov2 . Same method trains one character format to support multi model generation such as Minimax & Flux2. Krea2 & LTX 2.5 is also supported. Idea is to build .char once & use it across every model. For krea2, it uses lora embeddings not ref. So for some models ref path is faster, some model if there is no ref channel e,g. Krea2, we have to train the lora payload, then everything is…"
-     },
-     {
-      "text": "This looks really cool, I just wish it worked inside comfy, so I could use it with my existing workflows and setups. The effort required to rebase all my prior work and relearn things is just too much."
-     },
-     {
-      "text": "I could have sworn someone posted a gallery of hundreds of .char files they made for various people a couple weeks ago. Did anyone else catch who made those?"
-     },
-     {
-      "text": "Very cool. I've been playing around with Blender trying to get a 3D model wrapped correctly using ComfyUI generations and I think this approach would be helpful because of its consistency. The issue that I'm running into is that generating different character angles using a well trained Character LoRA has subtle changes that cause overlap issues when trying to 3D the character model with the images. Its been a complete headache without a solution that does not require hand painting. Minimax…"
-     },
-     {
-      "text": "Just curious why not build everything in comfyui vs building a new studio? Asking since comfyui ecosystem is much bigger and you will have better chance of driving adoption for the technique you invented"
-     },
-     {
-      "text": "Very nice work!"
-     },
-     {
-      "text": "the YuNet+SFace combo for face signatures is a smart approach. curious if it holds up on reference images with sunglasses or heavy side profiles -- that is where most identity pipelines I have tried start drifting. the multi-ref channel in Flux native is doing most of the lifting here I assume?"
-     }
-    ]
+    "text": "Hey Guys, Based on my last post on stills, I thought to experiment the same .char model with Minimax H3. I created a character model sia.char which encodes references, prompts around face, body & cloths. Checkout previous post for full detail. How it works? - Build .Char: You drop max 9 reference reference, I prefer to use a ratio 2:2:1(face:cloths:body). YuNet finds the face, SFace takes a per-reference face signature, DINOv2 takes a subject signature, and the references get cleaned and normalised. All of that packs into a single portable file, a .char. Only face/ref is required body &…"
    },
    "sources": [
     "reddit"
@@ -7091,33 +6951,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wrnqlf/i_built_a_linkedin_ai_slop_detector_using_jev/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Built using Claude Code as a local Chrome extension, it scans the text and rates it based on a number of questions. The box in the corner gives you a summary of why. Promoted Ads (the ones that look like regular LI posts but are not) are also flagged. It's extremely fast and cheap - I was running it for about 10 minutes of page scrolling and it didn't even break 1c. Example output: Possibly Al Jev • medium confidence (59%) • 94 ms JEV CHECKS Hook, then generic lesson 94% Formulaic contrasts 86% Template formatting 73% Inflated significance / promo tone 63% RULES FIRED One sentence per…",
-    "topComments": [
-     {
-      "text": "you don't need ai for that, a simple while True; do echo slop; done will do 😂"
-     },
-     {
-      "text": "I mean it flags 50% plus...! That's the issue itself lol"
-     },
-     {
-      "text": "Live filtering of random content seems like a good task for JEV."
-     },
-     {
-      "text": "I feel like my eyeballs do a good job of detecting it"
-     },
-     {
-      "text": "LMAO nice"
-     },
-     {
-      "text": "This is great! Would love to see it done for slack, half of my messages are just slop 😅"
-     },
-     {
-      "text": "Amazing now somehow turn it into a ublock filter so I don't even have to see it."
-     },
-     {
-      "text": "It's LinkedIn all the post are slop. Nobody post there seriously"
-     }
-    ]
+    "text": "Built using Claude Code as a local Chrome extension, it scans the text and rates it based on a number of questions. The box in the corner gives you a summary of why. Promoted Ads (the ones that look like regular LI posts but are not) are also flagged. It's extremely fast and cheap - I was running it for about 10 minutes of page scrolling and it didn't even break 1c. Example output: Possibly Al Jev • medium confidence (59%) • 94 ms JEV CHECKS Hook, then generic lesson 94% Formulaic contrasts 86% Template formatting 73% Inflated significance / promo tone 63% RULES FIRED One sentence per…"
    },
    "sources": [
     "reddit"
@@ -7163,33 +6997,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1wrolgj/dario_amodei_on_snl_assuring_viewers_that/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "I think this sketch is on-point on how tone-deaf the \"new\" generation is."
-     },
-     {
-      "text": "Awesome! If still a bit too fluid for a believable Dario 😂"
-     },
-     {
-      "text": "Close enough….Welcome back, Halahala"
-     },
-     {
-      "text": "Great sketch"
-     },
-     {
-      "text": "Im no Dario fan but they went hard on the autism/stuttering. kinda mean"
-     },
-     {
-      "text": "As someone on the spectrum, I would generally agree. But I really don’t mind people crossing that line to make fun of people who have so much self-accrued power over our lives. Feel similarly for Elon, Altman et al."
-     },
-     {
-      "text": "Im pretty sure Altman is a sociopath, not autistic He has that Elizabeth Holmes stare"
-     },
-     {
-      "text": "Looks like Elliot Page"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7241,33 +7049,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wromzr/adding_logit_penalty_for_wait_maybe_and_perhaps/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Meta came out with a banger paper https://arxiv.org/pdf/2606.00206, but it did not look at various quantizations supported in llama.cpp. So I did a run on 50 random MATH-500 questions (https://huggingface.co/datasets/HuggingFaceH4/MATH-500) and ran it on various quantizations of https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF and tried --logit-bias 466-2 --logit-bias 694-2 --logit-bias 1362-2 \\ --logit-bias 1412-2 --logit-bias 1921-2 --logit-bias 1990-2 \\ --logit-bias 2086-2 --logit-bias 2361-2 --logit-bias 2441-2 \\ --logit-bias 2493-2 --logit-bias 2892-2 --logit-bias 3222-2 \\…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "big if true (and replicatable across many benchmarks and doesn't lead to some silent degredation under non benchmark tasks)"
-     },
-     {
-      "text": "Oh I’m sure it’s true. The list of absurdly stupid hacks that improve model performance is long, such as when you say a baby will die if the model doesn’t answer correctly, and the likelihood of hallucinations suddenly drops dramatically. The common denominator is that we still only have a very rudimentary understanding of how LLMs work at a high level, so alchemy routinely beats science."
-     },
-     {
-      "text": "when you say a baby will die if the model doesn’t answer correctly Has that actually been quantified? We need a \"baby threatening\" benchmark"
-     },
-     {
-      "text": "> The common denominator is that we still only have a very rudimentary understanding of how LLMs work at a high level, so alchemy routinely beats science. I feel like this has been true to some extent with deep learning in general, especially as it became less science and more engineering. > Oh I’m sure it’s true You're mostly likely correct, but sometimes we discover random shit that for some reason works on this one thing, but doesn't generalize well"
-     },
-     {
-      "text": "I’d be interested to know how this works on 3.8 27b"
-     },
-     {
-      "text": "We literally already have this for Qwen3.8 27B and Flash-Next, this is essentially exactly what the Swift finetunes are doing (and 1.5 applies RL on top of that). I'm seriously confused why nobody is bringing this up."
-     },
-     {
-      "text": "We identified this a few months ago and made an article and tool for training the model so it's fixed permanently. The increase in scores is because these tokens are responsible for the model's doom looping propensity. Suppress them, and you get more responses running to completion and producing a parseable answer. https://preview.redd.it/b6f002qv94sh1.png?width=2048&format=png&auto=webp&s=37e66b68b49884fc3660e4b34640c159a97b951c"
-     }
-    ]
+    "text": "Meta came out with a banger paper https://arxiv.org/pdf/2606.00206, but it did not look at various quantizations supported in llama.cpp. So I did a run on 50 random MATH-500 questions (https://huggingface.co/datasets/HuggingFaceH4/MATH-500) and ran it on various quantizations of https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF and tried --logit-bias 466-2 --logit-bias 694-2 --logit-bias 1362-2 \\ --logit-bias 1412-2 --logit-bias 1921-2 --logit-bias 1990-2 \\ --logit-bias 2086-2 --logit-bias 2361-2 --logit-bias 2441-2 \\ --logit-bias 2493-2 --logit-bias 2892-2 --logit-bias 3222-2 \\…"
    },
    "sources": [
     "reddit"
@@ -7603,33 +7385,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wrqoxp/are_there_machine_learning_subfields_that_are/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I was reading a paper that surveyed the field of neural architecture search, where it said within 5 years, around 3000+ new models were proposed. The amount of compute and resources spent on this is absolutely astronomical. However, the transformer was notably not one of the models that was found through NAS and then the field of NAS just quietly went away afterwards. In my mind this really raises question if any research in NAS should be continued. Then I recently found a talk by Nicholas Carlini, arguably one of the most famous researcher in adversarial ML and this is one of his slide…",
-    "topComments": [
-     {
-      "text": "\"stop researching things that don't ultimately pan out\" isn't really actionable advice in any scientific field. You can't know what's going to turn out to be useful until you test it. You're not asking for science, you're asking for divination."
-     },
-     {
-      "text": "Not just divination, but timing too! Ask Schmidhuber"
-     },
-     {
-      "text": "The difficulty is that it's quite hard to predict what will or will not be useful. For example, when neural networks were introduced, they seemed pretty clunky and not all clear this would be impactful."
-     },
-     {
-      "text": "There’s also a lock-in effect where things become more useful when lots of research is done on them, which is self-reinforcing. This happens in every engineering discipline. Most automotive engineers will tell you that rotary engines “should” be superior to piston engines, but piston engines have 130 years of intense development behind them so every attempt to bring rotary engines into the mainstream has failed because piston engines have been optimized almost beyond human comprehension. I…"
-     },
-     {
-      "text": "I’m also not convinced that neural architecture search didn’t do anything to help the current wave of LLMs. Maybe these models aren’t built with NAS techniques, I’m not in a place to say for sure. I bet we learned something along the lines about how to stabilize network training, and how to set up the compute. I’d bet a bunch of folks working on GANs and NAS have moved on to work on LLMs and brought significant experience with them."
-     },
-     {
-      "text": "I think all takes like this really betray a poor understanding of modeling. ML is modeling. Your model needs to do at least two things: (1) faithfully(ish) represent the true data generating process and (2) provide you, the analyst/researcher/user of the model, with values you can interpret for your task. Language is complex and the output you generally want are sequences of tokens. Transformers are killer for these purposes. But if your goal is to determine whether a new observation in high…"
-     },
-     {
-      "text": "LLM RL training with a judge model is adversarial learning. This slide is only true if you close you eyes. This is literally the big thing going on since about a year and the foundation for what Google now call rsi."
-     },
-     {
-      "text": "I haven’t seen that talk in particular, but my strong guess is that the thesis isn’t “AML is dead and not worth studying”, it’s that “We haven’t been able to create robust model defenses, so we shouldn’t claim model alignment is easy (and might be impossible).” I could totally be wrong though. I think it’s super short sided to think people should stop studying interesting topics because they aren’t currently “useful.” All of AI research “wasn’t useful” for a long time, and the state of the…"
-     }
-    ]
+    "text": "I was reading a paper that surveyed the field of neural architecture search, where it said within 5 years, around 3000+ new models were proposed. The amount of compute and resources spent on this is absolutely astronomical. However, the transformer was notably not one of the models that was found through NAS and then the field of NAS just quietly went away afterwards. In my mind this really raises question if any research in NAS should be continued. Then I recently found a talk by Nicholas Carlini, arguably one of the most famous researcher in adversarial ML and this is one of his slide…"
    },
    "sources": [
     "reddit"
@@ -7914,33 +7670,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wrvki8/five_frontier_ais_were_told_to_engineer_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Man, this is why general purpose models are exactly the correct path currently, the intelligence just keeps transferring so well to different applications."
-     },
-     {
-      "text": "yep, we're starting to see different kind of benchmark in which llm's are being used IRL and it's working, still not there for real applications (mostly because of they are too slow and the cost is high) but it's getting there, soon we'll have models that can drive, paint, cook, repair, teach, build and much more all at the same, it's gonna be crazy"
-     },
-     {
-      "text": "Now this is a benchmark I can stand on"
-     },
-     {
-      "text": "This is honestly a really fun metric. I'd love to see more things like this and MineBench haha."
-     },
-     {
-      "text": "This is the kind of content I want to see more often. AI versus AI in a single type of test! Kind of makes me want to create a subreddit just for that kind of content..... 🤔 Edit: I made r/AIThunderdome for this kind of content. Please help me throw some stuff in there!"
-     },
-     {
-      "text": "Why is there a limit on print time? That seems like a pointless parameter when you are trying to get the max strength."
-     },
-     {
-      "text": "Because they were only willing to spend so many hours on this project, perhaps similar to how projects have deadlines, even though a better project might be made if more time was available"
-     },
-     {
-      "text": "It shows the strength of a model as it can't just use infinite time to make up for deficiencies."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8092,21 +7822,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wrxp48/autotrustjev27b_so_far_best_opensource_jev_model/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Six public decision benchmarks, one protocol: JEV-27B averages 84.07, TypeSafe Jev 1.13 83.85 Close to Jev at the level of whole probability distributions: mean KL ≈ 0.017 on 25,376 held-out questions labelled with Jev's own outputs. An observer needs about 60 sampled decisions to gather one nat of evidence about which model produced them.",
-    "topComments": [
-     {
-      "text": "The best? So you haven't tried Drex yet? Because that's a smaller model, less than 6B, and it outperforms JEV in a couple of benchmarks. And there's also Laya too."
-     },
-     {
-      "text": "laya is a joke, very low score on every benchmark."
-     },
-     {
-      "text": "vs CLM-8B?"
-     },
-     {
-      "text": "I'm not sure that's a good idea to name a project using the name of its direct closed-source competitor. That's asking for trouble"
-     }
-    ]
+    "text": "Six public decision benchmarks, one protocol: JEV-27B averages 84.07, TypeSafe Jev 1.13 83.85 Close to Jev at the level of whole probability distributions: mean KL ≈ 0.017 on 25,376 held-out questions labelled with Jev's own outputs. An observer needs about 60 sampled decisions to gather one nat of evidence about which model produced them."
    },
    "sources": [
     "reddit"
@@ -8391,33 +8107,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wrzcwy/i_still_cant_believe_i_can_generate_this_all/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Spent the whole day today trying to create this random transformation video. In total, I generated around 180 videos. A few initial images were generated with Krea2, and later all edits were done with the Qwen 2.1 edit model. All done using i2v with first / last frame technique. Everything was done in ComfyUI with multiple workflows and later stitched together in a video editor. The video was upscaled locally with my custom-trained model \" Skrisp Texture \" (it's not released yet, but I'm planning to release it in the future; still in progress) and with many custom nodes for colors and so on.…",
-    "topComments": [
-     {
-      "text": "Honestly looks more or about as realistic than Tony's nanosuit armour in Infinity War which is pretty mad really"
-     },
-     {
-      "text": "Haha, I appreciate it!"
-     },
-     {
-      "text": "https://reddit.com/link/pchk58t/video/3pg3zzxbw5sh1/player I’m over here just doing anything on my 3060 🤣🤣🤣🤣"
-     },
-     {
-      "text": "That's pretty damned good. Can you imagine what the next new model is gonna be like?"
-     },
-     {
-      "text": "can you imagine the one after the next one?"
-     },
-     {
-      "text": "Wow, looking at your video, I can hardly believe it was made with MinimaxH3—the same model I use to create meaningless videos every day."
-     },
-     {
-      "text": "For one second we all thought https://giphy.com/gifs/XbQ0Kkd5wGMU1cYIYq"
-     },
-     {
-      "text": "Can we get an example prompt from one of the transformation segments?"
-     }
-    ]
+    "text": "Spent the whole day today trying to create this random transformation video. In total, I generated around 180 videos. A few initial images were generated with Krea2, and later all edits were done with the Qwen 2.1 edit model. All done using i2v with first / last frame technique. Everything was done in ComfyUI with multiple workflows and later stitched together in a video editor. The video was upscaled locally with my custom-trained model \" Skrisp Texture \" (it's not released yet, but I'm planning to release it in the future; still in progress) and with many custom nodes for colors and so on.…"
    },
    "sources": [
     "reddit"
@@ -8565,30 +8255,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1ws08mu/claude_opus_55_official_prompting_guide/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "We know Opus 5.5 is good but did you know Anthropic released an official prompting guide?? Were we all to busy making animated videos??? I took 5 minutes to read this and then summarise the information into 12 key points covered by the guide time budgets for agent teams. Adding elapsed time against a budget, like \"elapsed 340s / 1200s\", makes a team of agents pace itself and finish sooner progress updates moved. Notes between tool calls now arrive as thinking blocks, empty by default, so apps that only show text blocks can look frozen. API plumbing thinking can't be turned off. If you ran…",
-    "topComments": [
-     {
-      "text": "Don’t tell it to “think carefully” tell it to “look around first”. Brilliant. /s"
-     },
-     {
-      "text": "It does sound ridiculous and I don’t think they literally mean say that verbatim. But at least look around is a concrete action unlike think carefully."
-     },
-     {
-      "text": "One means \"sniff your own thinking-tokens fart until you come up with a solution on your own\", the other means \"look for prior art on the concept of \"wheel\" in this cave painting. Maybe you don't need to invent it\". Can't see what possible differences in behavior those might breed. /s"
-     },
-     {
-      "text": "The elapsed time thing feels weird to me, even if it works: How would the user know, if an agent team would need 340s or 1200s to finish a task? And given that output speed after TTFT is constant (?), wouldn‘t it be more meaningful to set a token budget?"
-     },
-     {
-      "text": "the time budget one was new to me. telling it roughly how long a task should take stopped it wrapping up early on long refactors"
-     },
-     {
-      "text": "Point 4 about agents stopping early sounds like the bigger gotcha than the guardrails thing. Have you actually hit that where it quits before finishing the task, or is it more that the API docs warn about it happening"
-     },
-     {
-      "text": "Re #9 \"think carefully\" and \"make no mistakes\" don't do anything, but \"verify every citation with careful web searching\" does a lot better than just \"verify the citations\". Re #11, their own benchmarking shows high is a lot better than medium, but extra and max can and do get caught in logic loops."
-     }
-    ]
+    "text": "We know Opus 5.5 is good but did you know Anthropic released an official prompting guide?? Were we all to busy making animated videos??? I took 5 minutes to read this and then summarise the information into 12 key points covered by the guide time budgets for agent teams. Adding elapsed time against a budget, like \"elapsed 340s / 1200s\", makes a team of agents pace itself and finish sooner progress updates moved. Notes between tool calls now arrive as thinking blocks, empty by default, so apps that only show text blocks can look frozen. API plumbing thinking can't be turned off. If you ran…"
    },
    "sources": [
     "reddit"
@@ -8641,21 +8308,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1ws0zdh/i_want_to_be_the_very_best_reexamining_llm/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It's natural to wonder how much LLM progress is \"real\" intelligence versus memorization or overfitting or whatever. LLMs now play Pokemon Red very well (arguably better than a human child)... but the game is famous, has been an RL/DRL target for years, and the internet has every form of training data you could name (from screenshots to detailed walkthroughs to input sequences that will automatically win). It's also possible that labs now have specialized RL environments for games - notably, Anthropic soon stopped claiming that Claude had never been explicitly trained to play Pokemon.…",
-    "topComments": [
-     {
-      "text": "I also found a fascinating historical artifact: GPT-4 playing Pokemon in 2023. https://www.youtube.com/watch?v=Dct7dffObpY It goes about as well as you'd think: not great. It may as well be blind. Watching it try to go through doors is pure torture to watch. It successfully goes outside and collects its starting Pokemon (wasting like $6 in token fees - GPT-4 was not cheap), but it's hard to imagine it getting even one badge. To be fair, its harness (5 screenshots and a scratchpad) was…"
-     },
-     {
-      "text": "I have noticed this trend in other domains; small models memorize, large models generalize. This seems very counterintuitive because you would think that large models have much more capacity for memorization. My theory is that small models lack the capacity to learn the true solution, so they memorize shallow heuristics."
-     },
-     {
-      "text": "What about Jev?"
-     },
-     {
-      "text": "What about classifiers?"
-     }
-    ]
+    "text": "It's natural to wonder how much LLM progress is \"real\" intelligence versus memorization or overfitting or whatever. LLMs now play Pokemon Red very well (arguably better than a human child)... but the game is famous, has been an RL/DRL target for years, and the internet has every form of training data you could name (from screenshots to detailed walkthroughs to input sequences that will automatically win). It's also possible that labs now have specialized RL environments for games - notably, Anthropic soon stopped claiming that Claude had never been explicitly trained to play Pokemon.…"
    },
    "sources": [
     "reddit"
@@ -8754,33 +8407,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1ws350r/openghost_a_new_version_of_the_most_beautiful/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Here comes the third version of OpenGhost. It runs on macOS, Linux, and Windows. What’s new: Added OpenAI API support and sign-in with a ChatGPT account (Free, Plus, and Pro). Claude API is supported too. You can set a password on a chat. Encryption isn’t only inside the app - it’s on disk on your PC, AES-256. Polished UI details and fixed a lot of bugs. As usual, the project is fully open: all files and git included. Download OpenGhost or build it from scratch: https://github.com/ANDRETRIPOL/OpenGhost If you like the project, leave a star on GitHub 🫠☺️",
-    "topComments": [
-     {
-      "text": "Does it handle Deepseek caching correctly?"
-     },
-     {
-      "text": "Didn't expect the on-disk encryption part. Nice."
-     },
-     {
-      "text": "looks cool but sadly its electron base my potato wont be able to run it (memory hog)"
-     },
-     {
-      "text": "Thanks ☺️ On memory: normal usage is about 500–600 MB of RAM. Give it a try anyway. It’s free. You can connect your ChatGPT account even without a subscription, and you’ll get access to GPT-6."
-     },
-     {
-      "text": "that's the worst part my potato is still on 4gigs ram and you know how much win 11 taking up ram even on idle 🥲"
-     },
-     {
-      "text": "Everytime I see electron/web app for something that's supposed to be a native desktop app, it pisses me off. No matter what slop u make, it's not usable. You want us to spend GBs of resources for something that should have taken <= 10mb?"
-     },
-     {
-      "text": "It looks and feels sleek. A question and a couple of requests. What is the sliding popup control just to the left of the upload button? It doesn't seem to do anything other than looking cool. The requests: 1) could you implement renaming a session? Deepseek often uses chinese ideograms for its automated naming and it quickly get confusing if you can't speak chinese, like me; 2) can you somehow show the token usage of the requests and of the overall session? It can be useful to keep the cost…"
-     },
-     {
-      "text": "I'm checking it out... thanks for sharing"
-     }
-    ]
+    "text": "Here comes the third version of OpenGhost. It runs on macOS, Linux, and Windows. What’s new: Added OpenAI API support and sign-in with a ChatGPT account (Free, Plus, and Pro). Claude API is supported too. You can set a password on a chat. Encryption isn’t only inside the app - it’s on disk on your PC, AES-256. Polished UI details and fixed a lot of bugs. As usual, the project is fully open: all files and git included. Download OpenGhost or build it from scratch: https://github.com/ANDRETRIPOL/OpenGhost If you like the project, leave a star on GitHub 🫠☺️"
    },
    "sources": [
     "reddit"
@@ -8825,33 +8452,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1ws3wh2/elon_musk_directly_shtting_on_gemini/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Again Gemini in the bottom of a list! where is the Gemini 4 PRO! This is not possible!!! Do you guys think the new Gemini 4 pro will fix this? Or Gemini is lost forever?",
-    "topComments": [
-     {
-      "text": "Shouldn't grok be in SS after the whole MechaHitler thing?"
-     },
-     {
-      "text": "Grok should be in the garbage can because it's fucking trash"
-     },
-     {
-      "text": "I thought each S was a dollar sign for how much it costs to run."
-     },
-     {
-      "text": "Elons models are also shit so this is funny"
-     },
-     {
-      "text": "Gemini is a lot better at grok at a lot of shit."
-     },
-     {
-      "text": "Grok as an A? https://preview.redd.it/5oe1k7hzp6sh1.jpeg?width=447&format=pjpg&auto=webp&s=1ece6f7ac2e370e08f6c690e9dab8513fde3a784"
-     },
-     {
-      "text": "Tbh, I would rather the public to keep shitting on gemini if that means you won't have any server load issue lol Also Kimi/GLM/Deepseek/Luna in the same tier is wild. Also gpt-6 sol with Fable 5.1 lol Man there are so amny things wrong about this tier list"
-     },
-     {
-      "text": "I don’t think he was looking at Gemini at all. He was probably more interested in the position of Grok"
-     }
-    ]
+    "text": "Again Gemini in the bottom of a list! where is the Gemini 4 PRO! This is not possible!!! Do you guys think the new Gemini 4 pro will fix this? Or Gemini is lost forever?"
    },
    "sources": [
     "reddit"
