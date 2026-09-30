@@ -2813,20 +2813,6 @@
    "upd": "2024-12-26"
   },
   {
-   "cr": 0.135,
-   "ctx": 163840,
-   "id": "deepseek-ai/DeepSeek-V3-0324",
-   "in": 0.24,
-   "k": "deepseek-v3-0324",
-   "maxOut": 163840,
-   "name": "DeepSeek V3 0324",
-   "out": 0.9,
-   "p": "deepinfra",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-03-24"
-  },
-  {
    "cr": 0.13,
    "ctx": 163840,
    "id": "deepseek-ai/DeepSeek-V3.1",
@@ -3122,21 +3108,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-04-21"
-  },
-  {
-   "cr": 0.136,
-   "ctx": 262144,
-   "id": "moonshotai/Kimi-K2.7-Code",
-   "in": 0.68,
-   "k": "kimi-k2-7-code",
-   "maxOut": 262144,
-   "name": "Kimi K2.7 Code",
-   "out": 3.4,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-12"
   },
   {
    "cr": 0.285,
@@ -3560,36 +3531,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-30"
-  },
-  {
-   "cr": 0.0028,
-   "ctx": 262144,
-   "id": "XiaomiMiMo/MiMo-V2.5",
-   "in": 0.14,
-   "k": "mimo-v2-5",
-   "maxOut": 16384,
-   "name": "MiMo-V2.5",
-   "out": 0.28,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-22"
-  },
-  {
-   "cr": 0.2,
-   "ctx": 1048576,
-   "id": "XiaomiMiMo/MiMo-V2.5-Pro",
-   "in": 1,
-   "k": "mimo-v2-5-pro",
-   "maxOut": 16384,
-   "name": "MiMo-V2.5-Pro",
-   "out": 3,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-22"
   },
   {
    "cr": 0.0028,
@@ -7402,7 +7343,7 @@
   },
   {
    "cr": 0.01,
-   "ctx": 1310720,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
@@ -7613,7 +7554,7 @@
   },
   {
    "cr": 0.01,
-   "ctx": 1310720,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
@@ -7631,19 +7572,19 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.1955,
-   "ctx": 1310720,
+   "cr": 0.12,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.1428,
+   "in": 0.12,
    "k": "glm-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.992,
+   "out": 1.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8484,18 +8425,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.01526,
+   "cr": 0.028,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.0763,
+   "in": 0.14,
    "k": "deepseek-v4-flash",
    "maxOut": 131072,
    "name": "DeepSeek V4 Flash",
-   "out": 0.1526,
+   "out": 0.28,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8504,7 +8445,7 @@
   },
   {
    "cr": 0.018,
-   "ctx": 1310720,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
@@ -8543,18 +8484,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.076328,
+   "cr": 0.079605,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.915936,
+   "in": 0.95526,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.831872,
+   "out": 1.91052,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8562,7 +8503,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.3153,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8570,11 +8511,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.3942,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 3.49,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9496,11 +9437,11 @@
     "xhigh"
    ],
    "id": "meta/muse-glimmer-30b",
-   "in": 0.3,
+   "in": 0.35,
    "k": "muse-glimmer-30b",
-   "maxOut": 16384,
+   "maxOut": 117964,
    "name": "Muse Glimmer 30B",
-   "out": 1.2,
+   "out": 1.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11887,11 +11828,11 @@
   {
    "ctx": 131072,
    "id": "qwen/qwen3-30b-a3b",
-   "in": 0.12,
+   "in": 0.13,
    "k": "qwen3-30b-a3b",
-   "maxOut": 16384,
+   "maxOut": 8192,
    "name": "Qwen3 30B A3B",
-   "out": 0.5,
+   "out": 0.52,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12429,7 +12370,7 @@
    "upd": "2026-08-12"
   },
   {
-   "cr": 0.0199,
+   "cr": 0.085,
    "ctx": 1000000,
    "efforts": [
     "low",
@@ -12437,11 +12378,11 @@
     "xhigh"
    ],
    "id": "qwen/qwen3.8-27b",
-   "in": 0.0249,
+   "in": 0.42,
    "k": "qwen3-8-27b",
-   "maxOut": 235929,
+   "maxOut": 131072,
    "name": "Qwen3.8 27B",
-   "out": 4.4,
+   "out": 3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12817,7 +12758,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12825,11 +12766,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13446,14 +13387,14 @@
    "upd": "2026-03-16"
   },
   {
-   "cr": 0.17914,
+   "cr": 0.26,
    "ctx": 204800,
    "id": "z-ai/glm-5.1",
-   "in": 0.9646,
+   "in": 1.4,
    "k": "glm-5-1",
    "maxOut": 131072,
    "name": "GLM-5.1",
-   "out": 3.0316,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13461,14 +13402,14 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.2245,
+   "cr": 0.1159,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.2807,
+   "in": 0.1449,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -13481,7 +13422,7 @@
   },
   {
    "cr": 0.26,
-   "ctx": 1310720,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
@@ -13500,7 +13441,7 @@
   },
   {
    "cr": 0.03,
-   "ctx": 1310720,
+   "ctx": 1048576,
    "efforts": [
     "low",
     "high",
@@ -17189,5 +17130,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-09-29T21:45:42.246Z"
+ "updatedAt": "2026-09-30T01:19:58.143Z"
 }
