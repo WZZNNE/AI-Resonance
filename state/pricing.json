@@ -7301,7 +7301,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.025,
+   "cr": 0.0255,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7309,7 +7309,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.025,
+   "in": 0.0255,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7321,7 +7321,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.005544,
+   "cr": 0.004872,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7329,11 +7329,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.17424,
+   "in": 0.15312,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 0.52272,
+   "out": 0.45936,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7401,7 +7401,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.6572,
+   "cr": 0.6635,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7409,7 +7409,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.6572,
+   "in": 0.6635,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7571,7 +7571,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.176,
+   "cr": 0.067,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7579,11 +7579,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.06,
+   "in": 0.12,
    "k": "glm-latest",
-   "maxOut": 943718,
+   "maxOut": 235929,
    "name": "GLM Latest",
-   "out": 2.694,
+   "out": 1.14,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8069,6 +8069,20 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-28"
+  },
+  {
+   "ctx": 262144,
+   "id": "apodex/apodex-1.1-mini:free",
+   "in": 0,
+   "k": "apodex-1-1-mini",
+   "maxOut": 235929,
+   "name": "Apodex 1.1 Mini (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-01"
   },
   {
    "alwaysOn": true,
@@ -10048,7 +10062,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.6572,
+   "cr": 0.6635,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10056,7 +10070,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.6572,
+   "in": 0.6635,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -12756,7 +12770,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12764,11 +12778,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12794,7 +12808,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12802,11 +12816,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17142,5 +17156,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-01T15:48:05.476Z"
+ "updatedAt": "2026-10-01T18:51:23.158Z"
 }
