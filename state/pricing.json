@@ -7301,7 +7301,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.0243,
+   "cr": 0.025,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7309,7 +7309,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0243,
+   "in": 0.025,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7321,7 +7321,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.1853,
+   "cr": 0.005544,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7329,11 +7329,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.1853,
+   "in": 0.17424,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 3.5,
+   "out": 0.52272,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7401,7 +7401,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.6797,
+   "cr": 0.6572,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7409,7 +7409,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.6797,
+   "in": 0.6572,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -10048,7 +10048,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.6797,
+   "cr": 0.6572,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10056,7 +10056,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.6797,
+   "in": 0.6572,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -12954,6 +12954,20 @@
    "upd": "2026-09-17"
   },
   {
+   "cr": 0.03,
+   "ctx": 1048576,
+   "id": "unbiased/pareto-26.10-preview",
+   "in": 0.8,
+   "k": "pareto-26-10-preview",
+   "maxOut": 131072,
+   "name": "Pareto 26.10 Preview",
+   "out": 3.2,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2026-10-01"
+  },
+  {
    "ctx": 6144,
    "id": "undi95/remm-slerp-l2-13b",
    "in": 0.35,
@@ -13407,11 +13421,11 @@
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 1.4,
+   "in": 0.41,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
-   "out": 4.4,
+   "out": 3.99,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17128,5 +17142,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-01T12:57:53.997Z"
+ "updatedAt": "2026-10-01T15:48:05.476Z"
 }
