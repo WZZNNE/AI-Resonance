@@ -3016,11 +3016,11 @@
   {
    "ctx": 262144,
    "id": "google/gemma-4-31B-it",
-   "in": 0.13,
+   "in": 0.15,
    "k": "gemma-4-31b-it",
    "maxOut": 32768,
    "name": "Gemma 4 31B IT",
-   "out": 0.38,
+   "out": 0.4,
    "p": "deepinfra",
    "reasoning": true,
    "src": "models.dev",
@@ -3708,7 +3708,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.007,
+   "cr": 0.006,
    "ctx": 1000000,
    "efforts": [
     "low",
@@ -3716,11 +3716,11 @@
     "max"
    ],
    "id": "accounts/fireworks/models/deepseek-v4p1-flash",
-   "in": 0.22,
+   "in": 0.3,
    "k": "deepseek-v4p1-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.66,
+   "out": 1.2,
    "p": "fireworks-ai",
    "reasoning": true,
    "src": "models.dev",
@@ -3931,7 +3931,7 @@
    "upd": "2026-08-03"
   },
   {
-   "cr": 0.007,
+   "cr": 0.006,
    "ctx": 1000000,
    "efforts": [
     "low",
@@ -3939,11 +3939,11 @@
     "max"
    ],
    "id": "accounts/fireworks/routers/deepseek-flash-latest",
-   "in": 0.22,
+   "in": 0.3,
    "k": "deepseek-flash-latest",
    "maxOut": 384000,
    "name": "DeepSeek Flash Latest",
-   "out": 0.66,
+   "out": 1.2,
    "p": "fireworks-ai",
    "reasoning": true,
    "src": "models.dev",
@@ -5592,6 +5592,47 @@
    "upd": "2026-04-30"
   },
   {
+   "ctx": 1000000,
+   "efforts": [
+    "none",
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "deepseek-ai/deepseek-v4.1-flash",
+   "in": 0,
+   "k": "deepseek-v4-1-flash",
+   "maxOut": 384000,
+   "name": "DeepSeek V4.1 Flash",
+   "out": 0,
+   "p": "nvidia",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-10"
+  },
+  {
+   "ctx": 250000,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "google/diffusiongemma-26b-a4b-it",
+   "in": 0,
+   "k": "diffusiongemma-26b-a4b-it",
+   "maxOut": 32768,
+   "name": "DiffusionGemma 26B A4B IT",
+   "out": 0,
+   "p": "nvidia",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-07-15"
+  },
+  {
    "ctx": 131072,
    "id": "google/gemma-3-12b-it",
    "in": 0,
@@ -5770,45 +5811,6 @@
    "upd": "2025-09-25"
   },
   {
-   "ctx": 128000,
-   "id": "mistralai/mistral-nemotron",
-   "in": 0,
-   "k": "mistral-nemotron",
-   "maxOut": 8192,
-   "name": "mistral-nemotron",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-06-12"
-  },
-  {
-   "ctx": 65536,
-   "id": "mistralai/mixtral-8x22b-instruct",
-   "in": 0,
-   "k": "mixtral-8x22b-instruct",
-   "maxOut": 13108,
-   "name": "Mistral: Mixtral 8x22B Instruct",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-04-17"
-  },
-  {
-   "ctx": 32768,
-   "id": "mistralai/mixtral-8x7b-instruct",
-   "in": 0,
-   "k": "mixtral-8x7b-instruct",
-   "maxOut": 16384,
-   "name": "Mistral: Mixtral 8x7B Instruct",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-03-15"
-  },
-  {
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -5959,6 +5961,20 @@
    "maxOut": 65536,
    "name": "Nemotron 3 Ultra 550B A55B",
    "out": 2.5,
+   "p": "nvidia",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-06-04"
+  },
+  {
+   "ctx": 128000,
+   "id": "nvidia/nemotron-3.5-content-safety",
+   "in": 0,
+   "k": "nemotron-3-5-content-safety",
+   "maxOut": 8192,
+   "name": "Nemotron 3.5 Content Safety",
+   "out": 0,
    "p": "nvidia",
    "reasoning": true,
    "src": "models.dev",
@@ -7301,7 +7317,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.0255,
+   "cr": 0.0264,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7309,7 +7325,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0255,
+   "in": 0.0264,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7401,7 +7417,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.6635,
+   "cr": 0.415,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7409,7 +7425,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.6635,
+   "in": 0.415,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7571,7 +7587,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.067,
+   "cr": 0.176,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7579,11 +7595,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.12,
+   "in": 0.106,
    "k": "glm-latest",
-   "maxOut": 235929,
+   "maxOut": 943718,
    "name": "GLM Latest",
-   "out": 1.14,
+   "out": 2.653,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9023,14 +9039,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10062,7 +10078,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.6635,
+   "cr": 0.415,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10070,7 +10086,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.6635,
+   "in": 0.415,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -13428,14 +13444,14 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.26,
+   "cr": 0.112,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.41,
+   "in": 0.14,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -17156,5 +17172,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-01T18:51:23.158Z"
+ "updatedAt": "2026-10-01T21:47:10.904Z"
 }
