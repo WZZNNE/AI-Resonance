@@ -3029,20 +3029,6 @@
   },
   {
    "ctx": 131072,
-   "id": "google/gemma-4-E4B-it",
-   "in": 0.02,
-   "k": "gemma-4-e4b-it",
-   "maxOut": 8192,
-   "name": "Gemma 4 E4B IT",
-   "out": 0.1,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-02"
-  },
-  {
-   "ctx": 131072,
    "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
    "in": 0.1,
    "k": "llama-3-3-70b-instruct-turbo",
@@ -3053,19 +3039,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2024-12-06"
-  },
-  {
-   "ctx": 1048576,
-   "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-   "in": 0.2,
-   "k": "llama-4-maverick-17b-128e-instruct-fp8",
-   "maxOut": 16384,
-   "name": "Llama 4 Maverick 17B FP8",
-   "out": 0.8,
-   "p": "deepinfra",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-04-05"
   },
   {
    "ctx": 327680,
@@ -3277,20 +3250,6 @@
   {
    "alwaysOn": true,
    "ctx": 262144,
-   "id": "Qwen/Qwen3.5-122B-A10B",
-   "in": 0.29,
-   "k": "qwen3-5-122b-a10b",
-   "maxOut": 65536,
-   "name": "Qwen3.5 122B-A10B",
-   "out": 2.4,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-23"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 262144,
    "id": "Qwen/Qwen3.5-27B",
    "in": 0.26,
    "k": "qwen3-5-27b",
@@ -3457,21 +3416,6 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.04,
-   "ctx": 262144,
-   "id": "stepfun-ai/Step-3.7-Flash",
-   "in": 0.2,
-   "k": "step-3-7-flash",
-   "maxOut": 256000,
-   "name": "Step 3.7 Flash",
-   "out": 1.15,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-05-29"
-  },
-  {
-   "alwaysOn": true,
    "cr": 0.033,
    "ctx": 262144,
    "id": "tencent/Hy3",
@@ -3592,21 +3536,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2025-12-22"
-  },
-  {
-   "cr": 0.205,
-   "ctx": 202752,
-   "id": "zai-org/GLM-5.1",
-   "in": 1.05,
-   "k": "glm-5-1",
-   "maxOut": 16384,
-   "name": "GLM-5.1",
-   "out": 3.5,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-07"
   },
   {
    "cr": 0.14,
@@ -7317,7 +7246,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.0264,
+   "cr": 0.027,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7325,7 +7254,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0264,
+   "in": 0.027,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7337,7 +7266,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.004872,
+   "cr": 0.1431,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7345,11 +7274,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.15312,
+   "in": 0.1431,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 0.45936,
+   "out": 3.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7417,7 +7346,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.415,
+   "cr": 0.3644,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7425,7 +7354,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.415,
+   "in": 0.3644,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -8357,7 +8286,7 @@
    "id": "deepseek/deepseek-chat-v3-0324",
    "in": 0.29,
    "k": "deepseek-chat-v3-0324",
-   "maxOut": 147456,
+   "maxOut": 115200,
    "name": "DeepSeek V3 0324",
    "out": 1.14,
    "p": "openrouter",
@@ -8454,18 +8383,18 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.008372,
+   "cr": 0.0084,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.04186,
+   "in": 0.042,
    "k": "deepseek-v4-flash",
-   "maxOut": 131072,
+   "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.08372,
+   "out": 0.084,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10021,11 +9950,12 @@
   },
   {
    "alwaysOn": true,
+   "cr": 0.15,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2-thinking",
    "in": 0.6,
    "k": "kimi-k2-thinking",
-   "maxOut": 235929,
+   "maxOut": 98304,
    "name": "Kimi K2 Thinking",
    "out": 2.5,
    "p": "openrouter",
@@ -10078,7 +10008,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.415,
+   "cr": 0.3644,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10086,7 +10016,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.415,
+   "in": 0.3644,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -10271,18 +10201,18 @@
   },
   {
    "budget": {},
-   "cr": 0.12,
+   "cr": 0.1,
    "ctx": 262144,
    "efforts": [
     "medium",
     "high"
    ],
    "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "in": 0.6,
+   "in": 0.5,
    "k": "nemotron-3-ultra-550b-a55b",
-   "maxOut": 182520,
+   "maxOut": 16384,
    "name": "Nemotron 3 Ultra 550B A55B",
-   "out": 2.4,
+   "out": 2.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10337,14 +10267,14 @@
    "upd": "2026-06-04"
   },
   {
-   "cr": 0.02975,
+   "cr": 0.03,
    "ctx": 262144,
    "id": "nvidia/nemotron-3.5-lightning",
-   "in": 0.0595,
+   "in": 0.06,
    "k": "nemotron-3-5-lightning",
-   "maxOut": 131072,
+   "maxOut": 32768,
    "name": "Nemotron 3.5 Lightning 30B A3B",
-   "out": 0.17,
+   "out": 0.16,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11870,11 +11800,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3-30b-a3b-instruct-2507",
-   "in": 0.04815,
+   "in": 0.1,
    "k": "qwen3-30b-a3b-instruct-2507",
-   "maxOut": 32000,
+   "maxOut": 235929,
    "name": "Qwen3 30B A3B Instruct 2507",
-   "out": 0.19305,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -12786,7 +12716,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12794,11 +12724,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12824,7 +12754,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12832,11 +12762,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12884,7 +12814,7 @@
    "upd": "2024-11-08"
   },
   {
-   "cr": 0.17,
+   "cr": 0.16,
    "ctx": 524288,
    "efforts": [
     "none",
@@ -12895,9 +12825,9 @@
     "max"
    ],
    "id": "thinkingmachines/inkling",
-   "in": 1,
+   "in": 0.95,
    "k": "inkling",
-   "maxOut": 471859,
+   "maxOut": 262144,
    "name": "Inkling",
    "out": 4.05,
    "p": "openrouter",
@@ -13444,14 +13374,14 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.112,
+   "cr": 0.26,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.14,
+   "in": 0.41,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -13463,7 +13393,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.1775,
+   "cr": 0.14,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -13471,11 +13401,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.2219,
+   "in": 1.4,
    "k": "glm-5-3",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM-5.3",
-   "out": 3.39,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15316,20 +15246,6 @@
    "upd": "2026-08-28"
   },
   {
-   "ctx": 163840,
-   "id": "deepcogito/cogito-v2-1-671b",
-   "in": 1.25,
-   "k": "cogito-v2-1-671b",
-   "maxOut": 163840,
-   "name": "Cogito v2.1 671B",
-   "out": 1.25,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-11-13"
-  },
-  {
    "cr": 0.03,
    "ctx": 1048576,
    "efforts": [
@@ -15347,25 +15263,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-07-31"
-  },
-  {
-   "cr": 0.2,
-   "ctx": 512000,
-   "efforts": [
-    "high",
-    "max"
-   ],
-   "id": "deepseek-ai/DeepSeek-V4-Pro",
-   "in": 1.74,
-   "k": "deepseek-v4-pro",
-   "maxOut": 384000,
-   "name": "DeepSeek V4 Pro",
-   "out": 3.48,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-24"
   },
   {
    "cr": 0.13,
@@ -15408,33 +15305,6 @@
   },
   {
    "ctx": 32768,
-   "id": "google/gemma-3n-E4B-it",
-   "in": 0.06,
-   "k": "gemma-3n-e4b-it",
-   "maxOut": 32768,
-   "name": "Gemma 3N E4B Instruct",
-   "out": 0.12,
-   "p": "togetherai",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-05-20"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 262144,
-   "id": "google/gemma-4-31B-it",
-   "in": 0.39,
-   "k": "gemma-4-31b-it",
-   "maxOut": 131072,
-   "name": "Gemma 4 31B Instruct",
-   "out": 0.97,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-04-07"
-  },
-  {
-   "ctx": 32768,
    "id": "LiquidAI/LFM2-24B-A2B",
    "in": 0.03,
    "k": "lfm2-24b-a2b",
@@ -15458,19 +15328,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-07-02"
-  },
-  {
-   "ctx": 8192,
-   "id": "meta-llama/Meta-Llama-3-8B-Instruct-Lite",
-   "in": 0.14,
-   "k": "meta-llama-3-8b-instruct-lite",
-   "maxOut": 8192,
-   "name": "Meta Llama 3 8B Instruct Lite",
-   "out": 0.14,
-   "p": "togetherai",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-04-18"
   },
   {
    "alwaysOn": true,
@@ -15553,38 +15410,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2025-08-05"
-  },
-  {
-   "ctx": 131072,
-   "efforts": [
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "openai/gpt-oss-20b",
-   "in": 0.05,
-   "k": "gpt-oss-20b",
-   "maxOut": 131072,
-   "name": "GPT OSS 20B",
-   "out": 0.2,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-08-05"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 32000,
-   "id": "pearl-ai/gemma-4-31b-it",
-   "in": 0.28,
-   "k": "gemma-4-31b-it",
-   "maxOut": 32000,
-   "name": "Pearl AI Gemma 4 31B Instruct",
-   "out": 0.86,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-04-07"
   },
   {
    "ctx": 32768,
@@ -17172,5 +16997,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-01T21:47:10.904Z"
+ "updatedAt": "2026-10-02T01:16:46.396Z"
 }
