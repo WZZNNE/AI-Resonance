@@ -3631,7 +3631,7 @@
    "upd": "2026-09-10"
   },
   {
-   "cr": 0.003625,
+   "cr": 0.022,
    "ctx": 1000000,
    "efforts": [
     "low",
@@ -3639,11 +3639,11 @@
     "max"
    ],
    "id": "deepseek-v4-pro",
-   "in": 0.435,
+   "in": 0.66,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 0.87,
+   "out": 1.98,
    "p": "deepseek",
    "reasoning": true,
    "src": "models.dev",
@@ -7260,7 +7260,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.002115,
+   "cr": 0.02,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7268,11 +7268,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.015,
+   "in": 0.02,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 1.2,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7300,7 +7300,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.008625,
+   "cr": 0.005775,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7308,11 +7308,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.008625,
+   "in": 0.005775,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1.6,
+   "out": 1.472,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8416,7 +8416,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0115,
+   "cr": 0.0077,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8424,7 +8424,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0115,
+   "in": 0.0077,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8495,7 +8495,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.006,
+   "cr": 0.02,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8503,11 +8503,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.3,
+   "in": 0.02,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 1.2,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10229,18 +10229,18 @@
   },
   {
    "budget": {},
-   "cr": 0.1,
+   "cr": 0.12,
    "ctx": 262144,
    "efforts": [
     "medium",
     "high"
    ],
    "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "in": 0.5,
+   "in": 0.6,
    "k": "nemotron-3-ultra-550b-a55b",
-   "maxOut": 16384,
+   "maxOut": 182520,
    "name": "Nemotron 3 Ultra 550B A55B",
-   "out": 2.2,
+   "out": 2.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12745,7 +12745,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12753,11 +12753,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12783,7 +12783,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12791,11 +12791,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17026,5 +17026,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-02T15:48:55.915Z"
+ "updatedAt": "2026-10-02T18:50:08.109Z"
 }
