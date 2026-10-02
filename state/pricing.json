@@ -2736,6 +2736,19 @@
    "upd": "2026-06-09"
   },
   {
+   "ctx": 32768,
+   "id": "north-small-translate-09-2026",
+   "in": 0,
+   "k": "north-small-translate-09-2026",
+   "maxOut": 16000,
+   "name": "North Small Translate",
+   "out": 0,
+   "p": "cohere",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2026-09-09"
+  },
+  {
    "cr": 0.1,
    "ctx": 256000,
    "efforts": [
@@ -7246,7 +7259,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.027,
+   "cr": 0.0189,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7254,11 +7267,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.027,
+   "in": 0.0189,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.6,
+   "out": 0.75,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7266,7 +7279,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.1431,
+   "cr": 0.1325,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7274,7 +7287,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.1431,
+   "in": 0.1325,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7286,7 +7299,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0108,
+   "cr": 0.00465,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7294,11 +7307,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0108,
+   "in": 0.00465,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1.28,
+   "out": 1.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7346,7 +7359,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.3644,
+   "cr": 0.29,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7354,11 +7367,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.3644,
+   "in": 1.125,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 10,
+   "out": 11.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7497,7 +7510,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.01,
+   "cr": 0.02625,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7505,18 +7518,18 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.02,
+   "in": 0.02625,
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 0.3,
+   "out": 0.625,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.176,
+   "cr": 0.067,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7524,11 +7537,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.106,
+   "in": 0.12,
    "k": "glm-latest",
-   "maxOut": 943718,
+   "maxOut": 235929,
    "name": "GLM Latest",
-   "out": 2.653,
+   "out": 1.14,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8402,7 +8415,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0108,
+   "cr": 0.0062,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8410,7 +8423,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0108,
+   "in": 0.0062,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8461,7 +8474,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8469,11 +8482,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8481,7 +8494,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.01,
+   "cr": 0.0189,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8489,11 +8502,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.03,
+   "in": 0.0189,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.5,
+   "out": 0.75,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10008,7 +10021,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.3644,
+   "cr": 0.29,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10016,11 +10029,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.3644,
+   "in": 1.125,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 10,
+   "out": 11.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16997,5 +17010,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-02T01:16:46.396Z"
+ "updatedAt": "2026-10-02T03:51:00.925Z"
 }
