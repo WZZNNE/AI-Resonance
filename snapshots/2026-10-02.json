@@ -9887,7 +9887,7 @@
   }
  ],
  "date": "2026-10-02",
- "fetchedAt": "2026-10-03T16:58:10.980Z",
+ "fetchedAt": "2026-10-03T19:34:12.432Z",
  "runs": [
   "2026-10-02T07:00:41.583Z",
   "2026-10-02T07:51:43.328Z",
@@ -9904,17 +9904,18 @@
   "2026-10-03T08:51:23.558Z",
   "2026-10-03T09:46:21.747Z",
   "2026-10-03T14:20:49.542Z",
-  "2026-10-03T16:58:10.980Z"
+  "2026-10-03T16:58:10.980Z",
+  "2026-10-03T19:34:12.432Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
-   "count": 0,
-   "fetchedAt": "2026-10-03T16:58:10.980Z",
+   "count": 200,
+   "fetchedAt": "2026-10-03T19:34:12.432Z",
    "id": "arxiv",
-   "message": "HTTP 429 for GET https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.LG+OR+cat:cs.CV&sortBy=submittedDate&sortOrder=descending&start=0&max_results=200",
-   "state": "failed"
+   "settledAt": "2026-10-03T19:34:12.432Z",
+   "state": "ok"
   },
   {
    "board": "repos",
@@ -10046,15 +10047,16 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-03T16:58:10.980Z",
+   "fetchedAt": "2026-10-03T19:34:12.432Z",
    "id": "labs-zhipu",
-   "message": "zhipu-news: json: GET https://www.zhipuai.cn/api/articles?limit=10&sort=-createAt&depth=0 failed: fetch failed",
-   "state": "degraded"
+   "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-03T19:34:12.432Z",
+   "state": "ok"
   },
   {
    "board": "social",
    "count": 60,
-   "fetchedAt": "2026-10-03T16:58:10.980Z",
+   "fetchedAt": "2026-10-03T19:34:12.432Z",
    "id": "reddit",
    "message": "reusing the fetch of 2026-10-03T14:20:49.542Z (at most every 6 h)",
    "mode": "cached",
@@ -10064,7 +10066,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-03T16:58:10.980Z",
+   "fetchedAt": "2026-10-03T19:34:12.432Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
