@@ -7916,101 +7916,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1ww09ab",
-   "metrics": {
-    "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 15
-   },
-   "observedAt": "2026-10-03T14:20:49.542Z",
-   "publishedAt": "2026-10-02T17:47:44.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LocalLLaMA",
-     "kw:llm",
-     "weak:ai",
-     "weak:model",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Recoil42",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LocalLLaMA",
-    "createdAt": "2026-10-02T17:47:44.000Z",
-    "handle": "Recoil42",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1ww09ab/new_architecture_from_percepta_spotlight/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "https://www.percepta.ai/blog/can-llms-grow-their-own-capabilities https://www.percepta.ai/blog/spotlight-memory \"Our new architecture, Spotlight, replaces attention with a memory that escapes this trade-off: it is the first architecture to achieve infinitely growing memory without increasing the access cost. Every token reads from and writes to an unbounded memory, but because the model learns to index individual memory cells, each token only touches a small number at a time. While other sparse architectures fix the fraction of capacity used at each step—a mixture-of-experts model, for…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "https://www.percepta.ai/blog/can-llms-grow-their-own-capabilities https://www.percepta.ai/blog/spotlight-memory \"Our new architecture, Spotlight, replaces attention with a memory that escapes this trade-off: it is the first architecture to achieve infinitely growing memory without increasing the access cost. Every token reads from and writes to an unbounded memory, but because the model learns to index individual memory cells, each token only touches a small number at a time. While other sparse architectures fix the fraction of capacity used at each step—a mixture-of-experts model, for…",
-   "tags": [
-    "r/LocalLLaMA"
-   ],
-   "title": "New Architecture from Percepta: Spotlight — separating intelligence from memory, allowing knowledge and skills to grow without changing the model's weights.",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww09ab/new_architecture_from_percepta_spotlight/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
-   "key": "rd:1ww0rrf",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 12,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 48
-   },
-   "observedAt": "2026-10-03T14:20:49.542Z",
-   "publishedAt": "2026-10-02T18:07:32.000Z",
-   "refs": [
-    "url:techspot.com/news/114053-mcdonald-using-ai-decide-how-much-you-pay.html"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:artificial",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 0.35
-   },
-   "social": {
-    "author": "shield_x",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "artificial",
-    "createdAt": "2026-10-02T18:07:32.000Z",
-    "handle": "shield_x",
-    "likes": 0,
-    "linkUrl": "https://www.techspot.com/news/114053-mcdonald-using-ai-decide-how-much-you-pay.html",
-    "permalink": "https://www.reddit.com/r/artificial/comments/1ww0rrf/mcdonalds_has_been_using_ai_to_decide_how_much/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/artificial"
-   ],
-   "title": "McDonald's has been using AI to decide how much you should pay for a Big Mac",
-   "url": "https://www.reddit.com/r/artificial/comments/1ww0rrf/mcdonalds_has_been_using_ai_to_decide_how_much/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1ww0u3i",
    "metrics": {
     "authority": 0.9,
@@ -8255,53 +8160,6 @@
   },
   {
    "board": "social",
-   "category": "tool",
-   "key": "rd:1ww2cn3",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 36,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 16
-   },
-   "observedAt": "2026-10-03T14:20:49.542Z",
-   "publishedAt": "2026-10-02T19:09:14.000Z",
-   "refs": [
-    "gh:henrik-thevibe/claude-fables"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:ClaudeAI",
-     "kw:claude",
-     "cat:i built"
-    ],
-    "score": 0.75
-   },
-   "social": {
-    "author": "dagerika",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "ClaudeAI",
-    "createdAt": "2026-10-02T19:09:14.000Z",
-    "handle": "dagerika",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1ww2cn3/i_built_claude_fables_a_claude_code_mod_that/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I built Claude Fables, a mod for the Claude Code desktop app. While Claude works, it watches each tool call and each line Claude says. Every few seconds it retells the latest moment as a short art scene in the band above the prompt. A bug hunt becomes a nature documentary, a failing test makes Claude trip, and when the turn ends Claude naps in a moonlit village. What it does Claude appears as a small orange critter with 20 actions (sneak, dig, trip, shrug, celebrate, sleep…) across 7 hand-lit scenes. 11 visual styles, switched with /fables style <name>: pixel art, blueprint, ukiyo-e, golden…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I built Claude Fables, a mod for the Claude Code desktop app. While Claude works, it watches each tool call and each line Claude says. Every few seconds it retells the latest moment as a short art scene in the band above the prompt. A bug hunt becomes a nature documentary, a failing test makes Claude trip, and when the turn ends Claude naps in a moonlit village. What it does Claude appears as a small orange critter with 20 actions (sneak, dig, trip, shrug, celebrate, sleep…) across 7 hand-lit scenes. 11 visual styles, switched with /fables style <name>: pixel art, blueprint, ukiyo-e, golden…",
-   "tags": [
-    "r/ClaudeAI"
-   ],
-   "title": "I built Claude Fables, a Claude Code mod that turns what Claude is doing into a little animated cartoon above the prompt",
-   "url": "https://www.reddit.com/r/ClaudeAI/comments/1ww2cn3/i_built_claude_fables_a_claude_code_mod_that/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
    "key": "rd:1ww3rq7",
    "metrics": {
@@ -8472,54 +8330,6 @@
   },
   {
    "board": "social",
-   "category": "discussion",
-   "key": "rd:1ww556a",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 17,
-    "communityRank": 6,
-    "feedN": 21,
-    "feedRank": 7
-   },
-   "observedAt": "2026-10-03T14:20:49.542Z",
-   "publishedAt": "2026-10-02T21:02:52.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:chatgpt",
-     "kw:claude",
-     "kw:gemini",
-     "weak:ai",
-     "cat:?"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Psychological_Mud337",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-10-02T21:02:52.000Z",
-    "handle": "Psychological_Mud337",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1ww556a/how_many_ai_subscriptions_are_you_paying_for/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Curious how common it is to stack AI subscriptions. What counts: - Personal paid plans (ChatGPT Plus/Pro, Claude Pro/Max, Gemini Advanced, Perplexity Pro, SuperGrok, etc.) What doesn't count: - API usage - Anything your employer pays for If you pay for 2 or more, drop a comment on what you use each one for. I'd love to hear how people split them up. View Poll"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Curious how common it is to stack AI subscriptions. What counts: - Personal paid plans (ChatGPT Plus/Pro, Claude Pro/Max, Gemini Advanced, Perplexity Pro, SuperGrok, etc.) What doesn't count: - API usage - Anything your employer pays for If you pay for 2 or more, drop a comment on what you use each one for. I'd love to hear how people split them up. View Poll",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "How many AI subscriptions are you paying for right now?",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1ww556a/how_many_ai_subscriptions_are_you_paying_for/"
-  },
-  {
-   "board": "social",
    "category": "research",
    "key": "rd:1ww5ijc",
    "metrics": {
@@ -8622,11 +8432,11 @@
    "metrics": {
     "authority": 1,
     "communityN": 5,
-    "communityRank": 2,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 43
+    "feedRank": 31
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-02T23:01:38.000Z",
    "refs": [],
    "relevance": {
@@ -8648,7 +8458,33 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1ww7twx/is_it_more_lobotomized_again_all_of_a_sudden/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Did something happen today? Because it worked fine yesterday, and here all of a sudden deepseek api began giving a lot more refusals in roleplay scenarios, it still dishes out replies as normal, but occasionally there’s your “I can’t continue this roleplay” And it’s no matter the context. It can be the tamest most vanilla scenario with light erotica that gives out a refusal, or some dead dove stuff. And it’s not like extreme stuff gives out more refusals either, they’re both pretty much the same. It still works relatively fine as of now. But it’s sorta threatening."
+    "text": "Did something happen today? Because it worked fine yesterday, and here all of a sudden deepseek api began giving a lot more refusals in roleplay scenarios, it still dishes out replies as normal, but occasionally there’s your “I can’t continue this roleplay” And it’s no matter the context. It can be the tamest most vanilla scenario with light erotica that gives out a refusal, or some dead dove stuff. And it’s not like extreme stuff gives out more refusals either, they’re both pretty much the same. It still works relatively fine as of now. But it’s sorta threatening.",
+    "topComments": [
+     {
+      "text": "Definitely lobotomized. Had it be like “sorry I can’t talk about that, let’s talk about something else” twice, it’s never done that for my stories lore. I work with huge documents (15k-30k words) first time this has ever happened to me. And it makes so many mistakes now. Wish they’d bring back expert mode. Also been hit with the “chatting too frequently” or whatever bs it is now. Had to wait 20 minutes to send a message at all."
+     },
+     {
+      "text": "Chinese law is notoriously strict around fictional scenarios, you can’t depict skulls, it’s something about preventing their citizens the opportunity to imagine a different political world. Kinda wild how those regulations are becoming more universal."
+     },
+     {
+      "text": "Deeply disturbing omg"
+     },
+     {
+      "text": "A series of incidents like that happened to me, but then it stopped... I don't know what they do."
+     },
+     {
+      "text": "yep, same here, started getting refusals yesterday afternoon, even for basic vanilla scenes. tried a few prompts with no red flags, still got blocked. could be a server-side tweak, not sure if it's regional or global."
+     },
+     {
+      "text": "I had a hunch that they may have locked the web version to low effort. it replied quickly but went off the path so often too."
+     },
+     {
+      "text": "It’s the opposite for me. At first it was much more strict, but now I hardly encounter refusals. Though I also never update the app so that could have something to do with it."
+     },
+     {
+      "text": "Check the news. DeepSeek the company lifted Anthropic's Claude Opus weights without permission, and now they're being investigated by the Chinese government. DeepSeek is basically Claude at this point. I loved that LLM at V4. I hate the company that did this."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8666,12 +8502,12 @@
    "key": "rd:1ww7uga",
    "metrics": {
     "authority": 0.9,
-    "communityN": 28,
+    "communityN": 26,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 5
+    "feedRank": 2
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-02T23:02:16.000Z",
    "refs": [
     "url:dev.ua/en/news/astra-rozshyfruvala-lyst-1809-ho-roku-1790927012"
@@ -8711,15 +8547,63 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1ww86dg",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 8,
+    "communityRank": 5,
+    "feedN": 100,
+    "feedRank": 49
+   },
+   "observedAt": "2026-10-03T22:32:24.923Z",
+   "publishedAt": "2026-10-02T23:17:55.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:artificial",
+     "kw:deepseek",
+     "weak:ai",
+     "weak:model",
+     "weak:models",
+     "cat:?"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "BaronVonLongfellow",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "artificial",
+    "createdAt": "2026-10-02T23:17:55.000Z",
+    "handle": "BaronVonLongfellow",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/artificial/comments/1ww86dg/slms_are_underrated_is_it_on_purpose/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "We've been having this discussion quite a bit with our clients lately. Most (if not all) of them feel the utilization of frontier models is not justifying the cost, but they are generally reluctant to pursue an SLM strategy. It's as if SLMs have been positioned as the homeopathic option for enterprise AI. Why purchase an expensive anti-viral from Merck when a povidone iodine solution works as good or better? This is not a meme. It's a machine I built over a year ago to test DeepSeek R1, but it has turned into a workhorse. Yet most of our clients (FINTECH) are skittish of small, secure, local…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "We've been having this discussion quite a bit with our clients lately. Most (if not all) of them feel the utilization of frontier models is not justifying the cost, but they are generally reluctant to pursue an SLM strategy. It's as if SLMs have been positioned as the homeopathic option for enterprise AI. Why purchase an expensive anti-viral from Merck when a povidone iodine solution works as good or better? This is not a meme. It's a machine I built over a year ago to test DeepSeek R1, but it has turned into a workhorse. Yet most of our clients (FINTECH) are skittish of small, secure, local…",
+   "tags": [
+    "r/artificial"
+   ],
+   "title": "SLMs Are Underrated. Is It On Purpose?",
+   "url": "https://www.reddit.com/r/artificial/comments/1ww86dg/slms_are_underrated_is_it_on_purpose/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1ww97y7",
    "metrics": {
     "authority": 0.9,
-    "communityN": 30,
-    "communityRank": 6,
+    "communityN": 41,
+    "communityRank": 5,
     "feedN": 100,
-    "feedRank": 14
+    "feedRank": 9
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T00:07:29.000Z",
    "refs": [],
    "relevance": {
@@ -8761,12 +8645,12 @@
    "key": "rd:1ww992z",
    "metrics": {
     "authority": 1.1,
-    "communityN": 17,
-    "communityRank": 2,
+    "communityN": 16,
+    "communityRank": 4,
     "feedN": 21,
-    "feedRank": 3
+    "feedRank": 6
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T00:09:01.000Z",
    "refs": [
     "gh:daragontech/liblayax",
@@ -8817,13 +8701,13 @@
    "key": "rd:1ww9myb",
    "metrics": {
     "authority": 0.9,
-    "communityN": 28,
-    "communityRank": 4,
+    "communityN": 26,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 7,
+    "feedRank": 1,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T00:28:11.000Z",
    "refs": [],
    "relevance": {
@@ -8845,7 +8729,33 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1ww9myb/openai_is_now_working_directly_with_lockheed/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": ""
+    "text": "",
+    "topComments": [
+     {
+      "text": "https://preview.redd.it/pvzyjesbf5th1.png?width=875&format=png&auto=webp&s=db9530a41e3680e328faccf4db308f5feb30e040"
+     },
+     {
+      "text": "Yikes this is too close lol"
+     },
+     {
+      "text": "And just like her, we were warned. Sorry, thats just such a good movie. But like, humanoid robots with flesh suits arent going to kill us. What a waste of resources."
+     },
+     {
+      "text": "Ya we're not getting that model"
+     },
+     {
+      "text": "No in fact they will eventually hoard the technology with regulation under the guise of safety. Which only means the public doesn't get access but the models will still be built and used. A lot of the new discoveries they are making are entirely with unreleased models due to \"safety\"."
+     },
+     {
+      "text": "Chiming in here as a somewhat expert. I worked on the flight control system of the F35 VTOL model in late stage development (2008-2009) and during the first successful test flights. I worked closely with the engineering team who did the Prognostics Health Management aka sensor system that detects future faults. My friend was the main programmer (he was a 24 yr old genius from RIT) that coded the initial software to receive the sensor signals and integrate them into the FCS to monitor…"
+     },
+     {
+      "text": "Don’t worry guys they will get to curing cancer right after this."
+     },
+     {
+      "text": "This is why we need to ban open source models right?"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8863,12 +8773,12 @@
    "key": "rd:1ww9n5a",
    "metrics": {
     "authority": 0.8,
-    "communityN": 27,
-    "communityRank": 21,
+    "communityN": 26,
+    "communityRank": 19,
     "feedN": 100,
-    "feedRank": 84
+    "feedRank": 77
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T00:28:26.000Z",
    "refs": [
     "arxiv:2609.37690"
@@ -8913,12 +8823,12 @@
    "key": "rd:1ww9nq3",
    "metrics": {
     "authority": 0.9,
-    "communityN": 36,
-    "communityRank": 4,
+    "communityN": 45,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 11
+    "feedRank": 3
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T00:29:15.000Z",
    "refs": [],
    "relevance": {
@@ -8942,7 +8852,30 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1ww9nq3/i_use_claude_daily_but_i_know_im_only_using_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey everyone, this is my first time posting here and it's a bit of a longer loaded one. Background on myself: I'm a college senior with my time spread across classes, gym / health, networking, learning AI, and more. My current stack: Claude (Pro Subscription), Claude Code, GitHub, Notion (PARA setup with relational databases and more like a CRM, etc), Google features like Calendar, Google Drive, Google Docs, Gmail, Otter for recording classes, plus Gemini and NotebookLM, etc. What I currently do: Claude Code: I'm building an analytics database (DuckDB) with no real significant coding…"
+    "text": "Hey everyone, this is my first time posting here and it's a bit of a longer loaded one. Background on myself: I'm a college senior with my time spread across classes, gym / health, networking, learning AI, and more. My current stack: Claude (Pro Subscription), Claude Code, GitHub, Notion (PARA setup with relational databases and more like a CRM, etc), Google features like Calendar, Google Drive, Google Docs, Gmail, Otter for recording classes, plus Gemini and NotebookLM, etc. What I currently do: Claude Code: I'm building an analytics database (DuckDB) with no real significant coding…",
+    "topComments": [
+     {
+      "text": "without sounding like a cock, all of this stuff, feed it all into claude and see what it comes out with. Opus 5.5 is surprisingly cleaver and good at understanding context."
+     },
+     {
+      "text": "Im confused.. do you think that OP wrote this post? .. by themselves?"
+     },
+     {
+      "text": "I know and that’s what I’ve done and it still hasn’t met my expectations and still feels like it’s lacking. Maybe I’m doing something wrong but it doesn’t feel like it knows what I want even though I had it ask me 100+ questions and answered every single one."
+     },
+     {
+      "text": "Have some semblance of an idea of what YOU want to do that’s the main piece"
+     },
+     {
+      "text": "Also, people don’t need to use AI for every single thing it can do. Just focus on things that are productive to you. If you don’t see a problem doing things manually like you always did, you don’t need to create an automation for that, like managing emails, calendar, task list, etc. I personally just use Claude Code and nothing more. My technical ability suffered at lot, but my imagination and creativity improved a ton because I just need to conceptualized something and Claude will handle it…"
+     },
+     {
+      "text": "I dumped findings from a couple of full stack projects here: gitlab.com/macrodream/blueprint Of note, there may be some skills you can reuse What keeps me on track is using GitLab for projects, GitLab for issue tracking (they renamed it to work items.. ok.. sure.. whatever) and GitLab CI to test what the LLM finally spits out."
+     },
+     {
+      "text": "Hey OP, not sure what you are studying, but here is some advice for what I see in a small business space. ADHD types tend to fail in project/product delivery by either going too deep or too wide. Too deep might look like creating an incredible website for an idea without thinking of how to commercialise. Too wide might be a bunch of technically built products that have never been revisited or optimised. The solution for both is to get a customer as early as possible and solve for their…"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -8999,6 +8932,52 @@
    ],
    "title": "How to use deepseek on mobile",
    "url": "https://www.reddit.com/r/DeepSeek/comments/1ww9xcm/how_to_use_deepseek_on_mobile/"
+  },
+  {
+   "board": "social",
+   "category": "release",
+   "key": "rd:1ww9zt9",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 26,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 9
+   },
+   "observedAt": "2026-10-03T22:32:24.923Z",
+   "publishedAt": "2026-10-03T00:46:45.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:singularity",
+     "kw:gemini",
+     "weak:model",
+     "cat:introducing"
+    ],
+    "score": 0.95
+   },
+   "social": {
+    "author": "QH96",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "singularity",
+    "createdAt": "2026-10-03T00:46:45.000Z",
+    "handle": "QH96",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/singularity/comments/1ww9zt9/google_introducing_tiered_model_access/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "https://support.google.com/gemini/answer/17004136"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "https://support.google.com/gemini/answer/17004136",
+   "tags": [
+    "r/singularity"
+   ],
+   "title": "Google introducing tiered model access",
+   "url": "https://www.reddit.com/r/singularity/comments/1ww9zt9/google_introducing_tiered_model_access/"
   },
   {
    "board": "social",
@@ -9077,12 +9056,12 @@
    "key": "rd:1wwah6s",
    "metrics": {
     "authority": 0.9,
-    "communityN": 30,
-    "communityRank": 5,
+    "communityN": 41,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 10
+    "feedRank": 3
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T01:11:34.000Z",
    "refs": [
     "url:support.google.com/gemini/answer/17004136?hl=en&sjid=3885420599677516671-EU"
@@ -9127,13 +9106,13 @@
    "key": "rd:1wwalmc",
    "metrics": {
     "authority": 0.9,
-    "communityN": 30,
+    "communityN": 41,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 5,
+    "feedRank": 2,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T01:18:05.000Z",
    "refs": [
     "hn:49942592"
@@ -9175,12 +9154,12 @@
    "key": "rd:1wwbfqz",
    "metrics": {
     "authority": 0.8,
-    "communityN": 27,
-    "communityRank": 4,
+    "communityN": 26,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 20
+    "feedRank": 13
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T02:03:00.000Z",
    "refs": [],
    "relevance": {
@@ -9217,65 +9196,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wwbpvi",
-   "metrics": {
-    "authority": 1,
-    "communityN": 5,
-    "communityRank": 4,
-    "feedN": 100,
-    "feedRank": 83
-   },
-   "observedAt": "2026-10-03T14:20:49.542Z",
-   "publishedAt": "2026-10-03T02:18:01.000Z",
-   "refs": [
-    "url:dwarfstar.sh"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:DeepSeek",
-     "kw:deepseek",
-     "kw:qwen",
-     "kw:glm",
-     "cat:board"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "yogthos",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "DeepSeek",
-    "createdAt": "2026-10-03T02:18:01.000Z",
-    "handle": "yogthos",
-    "likes": 0,
-    "linkUrl": "https://dwarfstar.sh/",
-    "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wwbpvi/dwarfstar_4_ds4_local_deepseek_v41_qwen_and_glm/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/DeepSeek"
-   ],
-   "title": "DwarfStar 4 (ds4): Local DeepSeek V4.1, Qwen and GLM",
-   "url": "https://www.reddit.com/r/DeepSeek/comments/1wwbpvi/dwarfstar_4_ds4_local_deepseek_v41_qwen_and_glm/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wwc4tl",
    "metrics": {
     "authority": 0.9,
-    "communityN": 28,
-    "communityRank": 21,
+    "communityN": 26,
+    "communityRank": 17,
     "feedN": 100,
-    "feedRank": 49
+    "feedRank": 40
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T02:40:30.000Z",
    "refs": [
     "arxiv:2609.37690"
@@ -9320,12 +9249,12 @@
    "key": "rd:1wwccsz",
    "metrics": {
     "authority": 0.9,
-    "communityN": 12,
-    "communityRank": 2,
+    "communityN": 8,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 20
+    "feedRank": 10
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T02:52:27.000Z",
    "refs": [
     "url:tomshardware.com/tech-industry/artificial-intelligence/pewdiepie-unveils-uncensored-ajax-ai-model-built-to-run-on-home-pcs-creator-says-openai-banned-him-twice-while-making-it"
@@ -9352,7 +9281,33 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wwccsz/pewdiepie_unveils_uncensored_ajax_ai_model_built/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": ""
+    "text": "",
+    "topComments": [
+     {
+      "text": "I love that OpenAI basically argues that they should be exempt from copyright laws after scraping the entirety of the internet, but if someone uses their bot to train their another model, IP suddenly matters and it's hands off."
+     },
+     {
+      "text": "Might makes right."
+     },
+     {
+      "text": "How dare you do what we did. How dare you!"
+     },
+     {
+      "text": "Kinda like Disney who keeps arguing for extension of copyright laws to the point where they now last for 70 years after the death of the creator. You know who Disney is, right? They're the company that grew big by making movies based on other people's IP with lapsed copyright. Alice in Wonderland, Pinocchio, Snow white, Sleeping Beauty.. They didn't pay for any of that."
+     },
+     {
+      "text": "He was banned for violating their TOS. As far as I'm aware he hasn't been sued for IP infringement."
+     },
+     {
+      "text": "I'm sure OpenAI violated countless TOS to collect their data."
+     },
+     {
+      "text": "i ran a small model on my home pc last month. slow, but it worked fine. who gets to decide what training data is ok?"
+     },
+     {
+      "text": "Who has more money"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9371,11 +9326,11 @@
    "metrics": {
     "authority": 1,
     "communityN": 5,
-    "communityRank": 3,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 68
+    "feedRank": 51
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T03:29:40.000Z",
    "refs": [],
    "relevance": {
@@ -9412,15 +9367,64 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1wwddm2",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 26,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 18
+   },
+   "observedAt": "2026-10-03T22:32:24.923Z",
+   "publishedAt": "2026-10-03T03:47:44.000Z",
+   "refs": [
+    "gh:riverside71/qwen-image-2.1-viggle-turbo"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "kw:qwen",
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "RiverSide71h",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-10-03T03:47:44.000Z",
+    "handle": "RiverSide71h",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wwddm2/use_qwenimage21viggleturbo_to_generate_character/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "The Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-int8_convrot is a 7.26 GB model which paired with the 676MB Texture_fix_vae_for_qwen_image_2.1 vae is a really lightweight and fast solution to generate character sheets. The website Qwen-Image-2.1-viggle-turbo has all the viggle-turbo models plus workflows. If you want a quick download of only the ComfyUI nodes and t2i and image edit workflows, you can download them from my repo here Github:RiverSide71/Qwen-Image-2.1-viggle-turbo"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "The Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-int8_convrot is a 7.26 GB model which paired with the 676MB Texture_fix_vae_for_qwen_image_2.1 vae is a really lightweight and fast solution to generate character sheets. The website Qwen-Image-2.1-viggle-turbo has all the viggle-turbo models plus workflows. If you want a quick download of only the ComfyUI nodes and t2i and image edit workflows, you can download them from my repo here Github:RiverSide71/Qwen-Image-2.1-viggle-turbo",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "Use Qwen-Image-2.1-viggle-turbo to generate character sheets in ComfyUI",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wwddm2/use_qwenimage21viggleturbo_to_generate_character/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1wwdomh",
    "metrics": {
     "authority": 1.1,
-    "communityN": 17,
-    "communityRank": 4,
+    "communityN": 16,
+    "communityRank": 3,
     "feedN": 21,
     "feedRank": 5
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T04:04:44.000Z",
    "refs": [
     "gh:mokahq/mokalabs"
@@ -9468,12 +9472,12 @@
    "key": "rd:1wwdsmr",
    "metrics": {
     "authority": 0.9,
-    "communityN": 30,
-    "communityRank": 3,
+    "communityN": 41,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 7
+    "feedRank": 1
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T04:11:00.000Z",
    "refs": [],
    "relevance": {
@@ -9495,7 +9499,33 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wwdsmr/im_sorry_what/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Such a slap to the face as a high volume power user doing free QA work on the free tier. Good knowing you 3.6 flash, on to the next ai then 😒."
+    "text": "Such a slap to the face as a high volume power user doing free QA work on the free tier. Good knowing you 3.6 flash, on to the next ai then 😒.",
+    "topComments": [
+     {
+      "text": "power user and free tier cannot exist on the same sentence"
+     },
+     {
+      "text": "Complaining that the free tier is being restricted and then expecting Google to care if you leave is peak Gen Z"
+     },
+     {
+      "text": "Not only complaining, but acting like they're doing Google a favor by being a high volume user for free lol"
+     },
+     {
+      "text": "I'm on plus. If they don't upgrade flash 3,6 to 3,8 and take away pro, it will be unusable."
+     },
+     {
+      "text": "Yeah I am cancelling too if they take away Pro but don't give us 3.8."
+     },
+     {
+      "text": "The Plus plan is already awful because they don't even give you access to Flash 3.8, and now they're going to remove the Pro model? It's rubbish what Google is doing, and I have a yearly Plus subscription 😞"
+     },
+     {
+      "text": "The power user on the free tier part made me chuckle"
+     },
+     {
+      "text": "At least you would expect they update the flash models on Plus tier. It's still stuck on 3.6"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9510,15 +9540,112 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1wwfhn1",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 8,
+    "communityRank": 3,
+    "feedN": 100,
+    "feedRank": 31
+   },
+   "observedAt": "2026-10-03T22:32:24.923Z",
+   "publishedAt": "2026-10-03T05:49:57.000Z",
+   "refs": [
+    "url:techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:artificial",
+     "kw:grok",
+     "weak:ai",
+     "weak:chatbot",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "esporx",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "artificial",
+    "createdAt": "2026-10-03T05:49:57.000Z",
+    "handle": "esporx",
+    "likes": 0,
+    "linkUrl": "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/",
+    "permalink": "https://www.reddit.com/r/artificial/comments/1wwfhn1/musks_ai_chatbot_grok_reportedly_encouraged_trump/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": ""
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "",
+   "tags": [
+    "r/artificial"
+   ],
+   "title": "Musk's AI chatbot Grok reportedly encouraged Trump to capture Venezuela's president",
+   "url": "https://www.reddit.com/r/artificial/comments/1wwfhn1/musks_ai_chatbot_grok_reportedly_encouraged_trump/"
+  },
+  {
+   "board": "social",
+   "category": "release",
+   "key": "rd:1wwfke8",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 41,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 7
+   },
+   "observedAt": "2026-10-03T22:32:24.923Z",
+   "publishedAt": "2026-10-03T05:54:39.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:GeminiAI",
+     "kw:claude",
+     "weak:model",
+     "weak:models",
+     "cat:now available"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "jeheskielsunloy",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "GeminiAI",
+    "createdAt": "2026-10-03T05:54:39.000Z",
+    "handle": "jeheskielsunloy",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wwfke8/opus_and_sonnet_55_is_now_available_on_antigravity/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "never thought they will ever update the claude models but here it is. what u guys think?"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "never thought they will ever update the claude models but here it is. what u guys think?",
+   "tags": [
+    "r/GeminiAI"
+   ],
+   "title": "Opus and Sonnet 5.5 is now available on Antigravity!",
+   "url": "https://www.reddit.com/r/GeminiAI/comments/1wwfke8/opus_and_sonnet_55_is_now_available_on_antigravity/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1wwfyv6",
    "metrics": {
     "authority": 1.3,
-    "communityN": 38,
-    "communityRank": 13,
+    "communityN": 28,
+    "communityRank": 6,
     "feedN": 100,
-    "feedRank": 36
+    "feedRank": 24
    },
-   "observedAt": "2026-10-03T14:20:49.542Z",
+   "observedAt": "2026-10-03T22:32:24.923Z",
    "publishedAt": "2026-10-03T06:18:34.000Z",
    "refs": [
     "gh:ggml-org/llama.cpp"
@@ -9887,7 +10014,7 @@
   }
  ],
  "date": "2026-10-02",
- "fetchedAt": "2026-10-03T19:34:12.432Z",
+ "fetchedAt": "2026-10-03T22:32:24.923Z",
  "runs": [
   "2026-10-02T07:00:41.583Z",
   "2026-10-02T07:51:43.328Z",
@@ -9905,7 +10032,8 @@
   "2026-10-03T09:46:21.747Z",
   "2026-10-03T14:20:49.542Z",
   "2026-10-03T16:58:10.980Z",
-  "2026-10-03T19:34:12.432Z"
+  "2026-10-03T19:34:12.432Z",
+  "2026-10-03T22:32:24.923Z"
  ],
  "schema": 2,
  "sources": [
@@ -10055,18 +10183,18 @@
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-10-03T19:34:12.432Z",
+   "count": 221,
+   "fetchedAt": "2026-10-03T22:32:24.923Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-10-03T14:20:49.542Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-10-03T22:32:24.923Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-03T19:34:12.432Z",
+   "fetchedAt": "2026-10-03T22:32:24.923Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
