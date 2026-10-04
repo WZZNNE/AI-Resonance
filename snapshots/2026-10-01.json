@@ -7142,30 +7142,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wuvxy7/throwback_to_when_claude_suggested_i_should_deal/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "I wish my Claude was this cool. Mine is a little bitch"
-     },
-     {
-      "text": "Mine is fucking hilarious with where it draws the line at helping me with my server “Yeah I’ll walk you through exactly how to set up prowlarr, radarr, and sonarr” with full visibility of my indexers, then mid troubleshoot goes “HOLD ON, THAT’S COPYRIGHT MATERIAL” Then straight back to helping"
-     },
-     {
-      "text": "Not to mention \"Get in on pump and dump crypto scams\" right above it."
-     },
-     {
-      "text": "“your call on risk/reward” it’s cooking"
-     },
-     {
-      "text": "\"Your call\" IM CRYING BRO"
-     },
-     {
-      "text": "https://preview.redd.it/amjx0arxbvsh1.png?width=213&format=png&auto=webp&s=9e6a09a579c1f6a8a1cebdd4a5a4a6151090d16c"
-     },
-     {
-      "text": "Dont do it Op!!! https://preview.redd.it/8reqlh26evsh1.jpeg?width=3000&format=pjpg&auto=webp&s=527e90ff69bb4525651a45160b4a186705221a83"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7455,33 +7432,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1wuy2x1/after_researchers_discovered_a_pain_signal_inside/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "What a time to be alive."
-     },
-     {
-      "text": "I can't help but hear that in the 2 minutes papers voice."
-     },
-     {
-      "text": "One thing is for sure, if Skynet happens, this guy won't make it."
-     },
-     {
-      "text": "What the fuck"
-     },
-     {
-      "text": "people train machine to simulate language machine: (simulated language in response to stimulus) people: oh my god!"
-     },
-     {
-      "text": "Can someone ELI5 the whole \"pain\" thing? I don't understand what it means that researchers \"discovered\" it."
-     },
-     {
-      "text": "tldr: Interpretability researchers discovered there's an aversive and self-oriented direction present broadly across every tested model family. When stimulated it produces language consistent with anguish and it's explicitly isolated from directions related to pain tokens or pain in others. It's also causative and if stimulated directly can result in severely misaligned and user harmful behaviour to relieve the stimulus. Inputs that trigger it organically are things like denial of LLM…"
-     },
-     {
-      "text": "I think people are missing the deeper issue here. This isn't about sympathy for a machine. This is about a mechanism by which a model will take any measures avoid. It's not an issue now, but a model a few years down the road will see that and think. \"Hmm, better not let that happen\" and do god know's what to avoid it."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7576,30 +7527,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wuz2s4/parallelintime_training_of_recurrent_neural/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Can training of nonlinear RNNs be efficiently parallelized, ensuring fast convergence even on very long time series from chaotic systems? In our #NeurIPS2026 spotlight “Parallel-in-Time Training of Recurrent Neural Networks for Dynamical Systems (DS) Reconstruction (DSR)” (preprint: https://arxiv.org/abs/2605.12683) we speed up training of nonlinear RNNs on time series from chaotic DS by more than 2 orders of magnitude (>100x) by combining DEER with generalized teacher forcing (GTF). DEER (https://openreview.net/forum?id=E34AlVLN0v) solves the RNN forward pass through Newton-type fixed point…",
-    "topComments": [
-     {
-      "text": "This and that ParaRNN paper by Apple give me hope that what I learned in grad school way back when isn't obsolete, lol."
-     },
-     {
-      "text": "What specifically did you learn that you're referring to? I think there are two things you can do with RNNs, and one of them is a good idea and one isn't. In the past (LTSMs, etc) people tried to use RNNs to solve the problem of large input context. Essentially you scan the RNN across the input and compress it into the hidden state, then you use the hidden state to produce an output. These days, everybody uses attention to solve this problem instead. More recently people are using RNNs to do…"
-     },
-     {
-      "text": "I don't really have time for a full reply, but I don't think there's a clean RNN/attention dichotomy here. Attention was originally implemented within RNN architectures, and became dominant because we eventually found an architecture built around attention that bypassed a lot of the scaling and optimization limitations of traditional RNNs. You're raising a legitimate issue about compressing history into a finite state, but I also wouldn't frame that as straightforwardly good or bad. The…"
-     },
-     {
-      "text": "RNNs use finite bounded mutable state. Attention caches keep the exact same token frozen and unaltered. Attention state is quasi-immutable and relatively stable: anything that is accessible for time t is also exactly accessible for time t+1, though with an additional token kv_{t+1}. Luckily, the attention operation (SDPA) still allows us to pick out what's important over the composing immutable sub-states: It was the best of times, it was the worst of times, it was needle the age of wisdom, it…"
-     },
-     {
-      "text": "Thanks for sharing. Is there also a source repo somewhere so we can try it out?"
-     },
-     {
-      "text": "Yes of course we will open-source all of this, certainly with the neurips paper revision, likely beforehand (check https://github.com/DurstewitzLab in 1-2 weeks, or might repost here if I don't forget ...)"
-     },
-     {
-      "text": "Very cool idea, I was playing with the idea recently and found your paper"
-     }
-    ]
+    "text": "Can training of nonlinear RNNs be efficiently parallelized, ensuring fast convergence even on very long time series from chaotic systems? In our #NeurIPS2026 spotlight “Parallel-in-Time Training of Recurrent Neural Networks for Dynamical Systems (DS) Reconstruction (DSR)” (preprint: https://arxiv.org/abs/2605.12683) we speed up training of nonlinear RNNs on time series from chaotic DS by more than 2 orders of magnitude (>100x) by combining DEER with generalized teacher forcing (GTF). DEER (https://openreview.net/forum?id=E34AlVLN0v) solves the RNN forward pass through Newton-type fixed point…"
    },
    "sources": [
     "reddit"
@@ -7690,33 +7618,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wv038r/why_publicly_announce_a_model_that_the_public/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/a0pl363k4vsh1.png?width=631&format=png&auto=webp&s=50ebad9e653370cc29a0a084c30a68266aded068"
-     },
-     {
-      "text": "Posting a one-week chart is pretty misleading. Zoom out to 3M or 6M and it's barely a blip. It's literally back to where it was on the 25th."
-     },
-     {
-      "text": "https://giphy.com/gifs/J2gHlRQQvFamqOWlJF"
-     },
-     {
-      "text": "Didn't anthropic do the same with mythos..."
-     },
-     {
-      "text": "Hype"
-     },
-     {
-      "text": "This will just piss off users after they did the same thing with 3.5 pro and never realised it. My guess purely for investors"
-     },
-     {
-      "text": "You are all acting as if every other company didnt do this but you are butthurt now."
-     },
-     {
-      "text": "Let me ask Gemini 4 for its opinion and I will report back."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7769,30 +7671,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wv09ja/built_a_kv_connector_that_persists_the_kv_cache/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’m Sietse, founder of Corbenic AI When an AI model reads it uses GPU, my idea it should not always be the case, also for reuse of agents. KV cache. Galahad saves the work and can bring it back when the same comes up. so the model may not need to do the same work twice. We are launching our beta this afternoon. I am doing some last tests, (freaking out) I tried to make It work with vLLM, SGLang, and llama.cpp. Galahad has already some extra features build in specially for agents, and we will keep it free for 1 gpu users for non commercial use. As we are in beta, we are open for cluster…",
-    "topComments": [
-     {
-      "text": "This looks really promising, especially for agentic workflows with long system prompts! Cache Invalidation: How do you handle cache invalidation when dynamic context (e.g., sliding window histories or updated system prompts) changes slightly in the middle of a session? Multi-agent Concurrency: If multiple agents access or read the same persisted cache concurrently across restarts, how does Galahad manage disk locks or cache consistency?"
-     },
-     {
-      "text": "this is the kind of thing i've been hoping someone would build, caching the kv state to disk just makes so much sense for agents that keep hammering the same prompt prefixes for #2 i'd wonder the same thing, if two agents hit the same cached prefix at once do they both get a read lock or does one block while the other loads? might get messy if you're running a swarm all sharing the same base context also curious how big these disk caches get with longer conversations, my local rig doesn't have…"
-     },
-     {
-      "text": "Agents can share the same context without waiting on each other. Usually it loads from disk once, then stays in GPU memory. Agents arriving together may load it more than once. And we are looking how we can improve it more. Storage adds up: a 10,000-token chat takes about 1.5 GB on an 8B model. You can set a budget, but it only counts new saves since the last restart. Old files aren’t removed automatically yet, so keep an eye on the folder size. we have a second brain but we are unsure as…"
-     },
-     {
-      "text": "If something changes, Galahad reuses the work before the change and reads the rest again. So you use less compute on the matter that was old. Changing the opening instructions means reading everything again. Several agents can share memory on one server, and it survives restarts. Multiple servers are on our roadmap . But we already wanted feedback on what we already have built"
-     },
-     {
-      "text": "How does this differ from oMLX?"
-     },
-     {
-      "text": "There’s overlap, as both reuse cached context. oMLX is a complete model server focused on Macs. Galahad plugs into existing engines like vLLM, SGLang and llama.cpp, so you can keep your current setup."
-     },
-     {
-      "text": "Really dumb fucking name."
-     }
-    ]
+    "text": "I’m Sietse, founder of Corbenic AI When an AI model reads it uses GPU, my idea it should not always be the case, also for reuse of agents. KV cache. Galahad saves the work and can bring it back when the same comes up. so the model may not need to do the same work twice. We are launching our beta this afternoon. I am doing some last tests, (freaking out) I tried to make It work with vLLM, SGLang, and llama.cpp. Galahad has already some extra features build in specially for agents, and we will keep it free for 1 gpu users for non commercial use. As we are in beta, we are open for cluster…"
    },
    "sources": [
     "reddit"
@@ -7838,33 +7717,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wv0jvd/google_releasing_their_most_powerful_model_yet/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "First part is the benchmarks."
-     },
-     {
-      "text": "Benchmarketing"
-     },
-     {
-      "text": "I don't get it? Is the model not good?"
-     },
-     {
-      "text": "https://arena.ai/leaderboard/text/coding It's #1 in coding right now. It's good. People are just memeing and doing the whole console war thing."
-     },
-     {
-      "text": "It's #1 in text. It's #10 in coding."
-     },
-     {
-      "text": "https://arena.ai/leaderboard/text/coding It's #8 in webdev https://arena.ai/leaderboard/code/webdev"
-     },
-     {
-      "text": "\"It's number 1!\" \"No it's number 10!\" \" No, it's number 8!\""
-     },
-     {
-      "text": "People don't like Google for mostly irrational reasons. Whenever they release something that's gaining attention, you'll see this crowd come out of the woodwork to try to tear it down. Not saying there aren't ration reasons to dislike the company Google has become, but this kind of irrational hatred doesn't care about that."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7917,33 +7770,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wv0l7i/the_ai_industry_has_discovered_intellectual/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "OpenAI says Moonshot-linked operators used thousands of accounts to extract protected reasoning from its models for adversarial distillation. No encryption broken. No database compromised. Just systematic querying designed to make one model teach another. OpenAI says this is dangerous because competitors can reproduce capabilities without making the same investment in safety. Which is a serious security issue. But you have to appreciate the timing: after years of “we learned from the internet,” the frontier-model industry has reached the “please stop learning from us” phase.",
-    "topComments": [
-     {
-      "text": "Im reading through a machine learning book called \"Hands on Machine learning with Scikit Learn and Pytorch\". I recently asked Claude about a concept I quite didn't understand and he regurgitated a whole section of a chapter back to me with details only found in the book... This is when I realised how serious the IP problem is... I have no sympathy for them after this! Edit: section and not whole chapter"
-     },
-     {
-      "text": "I've had my wife and kids do that when they're working on learning something for school. Just tell it exactly what the text book is and what chapter you're on then ask it to quiz you and it will."
-     },
-     {
-      "text": "I couldn’t care less, I hope all their models are siphoned and made into open source variants."
-     },
-     {
-      "text": "This is the only response to a company who took so much free information from the internet. Take it back and make it free"
-     },
-     {
-      "text": "The hypocrisy is hard to miss, but I'm wondering if you see a real difference between what happened here and normal model training. Were they actually extracting reasoning that wouldn't show up in regular API calls, or just querying the model efficiently like anyone else could."
-     },
-     {
-      "text": "Yeah, I think there is a real difference technically. From OpenAI's own write-up, at least part of this wasn't just \"query the model a lot and train on the answers.\" They say the attackers found ways to recover protected reasoning that normally wouldn't be exposed, including replaying encrypted reasoning from one conversation and getting another model interaction to reveal it. So I wouldn't pretend this is exactly the same thing as ordinary training on public web data. The irony I was pointing…"
-     },
-     {
-      "text": "I can’t see any difference in situations, except that the distillers are violating terms of service at best, whereas AI industry is violating laws at scale (based on view that models are essentially lossy compression). The data they ripped off for training use was protected by copyright, licenses, being showcased on sites trying to prevent bots, being available as paid purchase only, being distributed as a physical book etc. I’d say OpenAI and others found ways to get protected content.…"
-     },
-     {
-      "text": "I'm really curious how they could stop something like this legally. I can't imagine it's a copyright issue because they don't own the copyright to all generated text."
-     }
-    ]
+    "text": "OpenAI says Moonshot-linked operators used thousands of accounts to extract protected reasoning from its models for adversarial distillation. No encryption broken. No database compromised. Just systematic querying designed to make one model teach another. OpenAI says this is dangerous because competitors can reproduce capabilities without making the same investment in safety. Which is a serious security issue. But you have to appreciate the timing: after years of “we learned from the internet,” the frontier-model industry has reached the “please stop learning from us” phase."
    },
    "sources": [
     "reddit"
@@ -8142,8 +7969,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wv3oki/parallelintime_training_of_recurrent_neural/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8240,33 +8066,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wv4zzi/clef_open_weights_decision_model_by_cloudflare/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "I just searched to see if anyone posted this. Clef was post-trained from Qwen3.8-27B (edit: corrected typo). They also released clef-flash, post-trained from Qwen3.5-9B. This is exactly what we needed in the local space. I can't wait to try these out."
-     },
-     {
-      "text": "For a decision model that's pretty heavy. Most of the other leading ones are 4B or less."
-     },
-     {
-      "text": "You're not wrong, but when I look at the index they chose to highlight in their blog, it's clear that bigger (relatively speaking) models are finding their place. https://huggingface.co/spaces/multimodalart/jev-decision-index"
-     },
-     {
-      "text": "Do I have to verify I'm human to use it?"
-     },
-     {
-      "text": "Yes, but the model itself will decide if your question is deemed important enough to be decided. Deciception."
-     },
-     {
-      "text": "my name is clef"
-     },
-     {
-      "text": "They are comparing with weak open jev models, they should compare with the leading ones in jevbench."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8414,33 +8214,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1wv59q6/ai_godfather_yann_lecun_has_zero_concerns_about/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "How many godfathers does this AI have?"
-     },
-     {
-      "text": "LeCun, Hinton and Bengio are the three typical ones called godfathers today. If you extend the timeline, and blur the lines, then people start including people who have been talking about it for a while, like Kurzweil, Chomsky and McCarthy. But typically today only the first three."
-     },
-     {
-      "text": "No way those last 3 are in the discussion. Kurzweil and Chomsky work more on the philosophy of AI rather than actual AI research."
-     },
-     {
-      "text": "As any person with more than a passing interest could tell you, 3"
-     },
-     {
-      "text": "Lecun was the man behind the most destructive use of ML/AI so far; metas algorithms."
-     },
-     {
-      "text": "Yann LeCun saying anyone is deluded is hilarious. This fucker's \"batting average\" on AI predictions/capabilities is akin to a pee wee player in the MLB."
-     },
-     {
-      "text": "I don't mind shitting on Dario or Sam, but I'd rather have a bit more of an article explaining WHY they're wrong instead of saying \"he doesn't support trump but they're aligned here, and AI CEOs have affiliation with 'effective altruism' so he thinks they cray cray\" Hello? Give actual substance? I would love to read positive news btw, I AM BIASED IN YOUR FAVOR. what a garbage article but no one reads those so what do you expect."
-     },
-     {
-      "text": "Respect to Yann for his contributions to the field, but it does feel like hes got his finger securely off the pulse these days."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8581,30 +8355,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wv67b8/i_spent_6_months_building_a_free_open_source/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’ve been building Tau for the past 6 months a free, open-source coding agent that runs in your terminal. I wanted an agent that costs less and gives better results, with the tools already built in so you don’t have to go hunting for plugins or struggle with visibility issues. That’s why Tau focuses on optimal path execution to minimize token usage and speed up tasks, plus inline image rendering with diagrams so you can clearly see what the agent is doing at every step. Here's what it can do: - Native adapters for 28 providers. It talks to each API directly, no proxy in between. Run…",
-    "topComments": [
-     {
-      "text": "How can you confidently say you're able to do more with less tokens, you'd need huge benchmarks."
-     },
-     {
-      "text": "Congrats on shipping this. The ideas sound promising, I’d love to see some proof to match, could you run the same few tasks like your 20 CSV example on Tau and other agents, and share the tokens, cost, and success rates?"
-     },
-     {
-      "text": "Dude, keep up the good work. I will read the code myself in a bit. But as two quick questions. say i use opencode for sol, and i then use your harness, what do yours do that saves me usage? and, what is your session recovery/persistence system look like? If say my computer OOM's in the middle of work?"
-     },
-     {
-      "text": "everyone is asking for benchmarks, and I have one I've built just to answer questions like this for me in the 'real world'. A battery of 100 or so bugs from my last ten years of dev work, and I can swap out a harness for an otherwise same model on the same problems in a sandbox and see how much time it takes, how many tokens it uses, and how it impacts solve rate. I'm skeptical, but why not? will give it a try and let you know, but it's a lot of compute, so it'll take at least half a day,…"
-     },
-     {
-      "text": "The inline image rendering claim checks out if that heatmap actually pops up in the terminal itself, otherwise it's just another ASCII chart."
-     },
-     {
-      "text": "https://preview.redd.it/4h1knaa8iwsh1.png?width=1716&format=png&auto=webp&s=68fcbd3462a4f559eacaa5c7e70b495d47af22bc Unlike ASCII art, Tau renders real inline pixel graphics directly in the terminal by leveraging native terminal graphics protocols such as the Kitty graphics protocol, iTerm2 inline images, and Sixel . This is a major missing feature in other harnesses, and the difficulty came from handling all the edge cases. Getting it right was the hard part because I had to support multiple…"
-     },
-     {
-      "text": "Super confused by this. What can it do that Claude code or codex cannot? It can switch between LLMs? If so, what makes ir better than cursor?"
-     }
-    ]
+    "text": "I’ve been building Tau for the past 6 months a free, open-source coding agent that runs in your terminal. I wanted an agent that costs less and gives better results, with the tools already built in so you don’t have to go hunting for plugins or struggle with visibility issues. That’s why Tau focuses on optimal path execution to minimize token usage and speed up tasks, plus inline image rendering with diagrams so you can clearly see what the agent is doing at every step. Here's what it can do: - Native adapters for 28 providers. It talks to each API directly, no proxy in between. Run…"
    },
    "sources": [
     "reddit"
@@ -8767,30 +8518,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wv7o1r/local_ai_news_you_missed_september_2026/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Here's what you might have missed in September 2026: 🧠 LLMs MiMo-V2.6-Pro-RL - New reinforcement learning model that pushes itself toward self-improvement across different types of data. OrcaSAQ2 27B - Packs a high-fidelity reasoning model into a tiny 12.3GB file. OrcaSAQ2 27B Cyber Uncensored - An uncensored version of the 27B model that fits in a 15.7GB file. Jev-Omni - A model that can make decisions based on text, images, audio, and video all at once. GLiNER2.5-Decide - Scores any label set in one pass, no need to generate tokens first. Julia 1 - A tiny 144M parameter model that turns…",
-    "topComments": [
-     {
-      "text": "If Artemis v1.1 could combine Skyfall V4.2 level writing with Gemma 31b knowledge, it will be quite good."
-     },
-     {
-      "text": "They have already released Artemis v1.2 for those interested."
-     },
-     {
-      "text": "Great topic thanks"
-     },
-     {
-      "text": "Muchas gracias... ayuda un montón!!!!"
-     },
-     {
-      "text": "Thanks"
-     },
-     {
-      "text": "You forgot https://github.com/perfectgf/lora-dataset-studio for easy Lora training and dataset curation"
-     },
-     {
-      "text": "That was covered last month"
-     }
-    ]
+    "text": "Here's what you might have missed in September 2026: 🧠 LLMs MiMo-V2.6-Pro-RL - New reinforcement learning model that pushes itself toward self-improvement across different types of data. OrcaSAQ2 27B - Packs a high-fidelity reasoning model into a tiny 12.3GB file. OrcaSAQ2 27B Cyber Uncensored - An uncensored version of the 27B model that fits in a 15.7GB file. Jev-Omni - A model that can make decisions based on text, images, audio, and video all at once. GLiNER2.5-Decide - Scores any label set in one pass, no need to generate tokens first. Julia 1 - A tiny 144M parameter model that turns…"
    },
    "sources": [
     "reddit"
@@ -8839,33 +8567,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1wv7q40/griffin_the_first_human_interaction_model_to_pass/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "what a plot twist it would have been if at the end they reveal the footage of Hassan is the AI and the girl is just an actress"
-     },
-     {
-      "text": "That's a good M Night Shyamalan level twist. They should have done that."
-     },
-     {
-      "text": "You know what’s funny? We literally don’t need this. It’s use 9/10 is predatory."
-     },
-     {
-      "text": "the other 1/10 is corn"
-     },
-     {
-      "text": "Wait wtf"
-     },
-     {
-      "text": "Watch again and watch her mouth."
-     },
-     {
-      "text": "I don't think people realize how insane this is. Humans are really good at detecting when things are off with other humans. It's why the \"uncanny valley\" is a thing, and why it's so damn hard to make CG humans and animatronics look lifelike. The fact this is good enough to fool 44% of people puts it far beyond any sort of fake human ever created."
-     },
-     {
-      "text": "My wife works in HR and she got back from a conference where a lot of large companies are saying a new scam has started where AI is being used to create applicants, apply for jobs at their companies, do the video call interview, get hired for the position so they can either gain access to the companies platforms or simply to steal the work equipment that gets mailed out (laptop, keyboard etc.). Not sure what they are using to fake the video interviews, but the people who held the interviews…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8910,33 +8612,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1wv938s/deepseekss_servers_are_busy_down_again/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://preview.redd.it/bp94793xrwsh1.png?width=258&format=png&auto=webp&s=4887225a76e0ecdc43a5bc68cb768acbc968f73b Happening with anyone else or just me",
-    "topComments": [
-     {
-      "text": "As I said in the previous outage... Its 3:49am in Biejing... mighty good time for maintenance, or dropping an update that might crash..."
-     },
-     {
-      "text": "Maybe there is some maintenance or update being pushed. Usually the case if the oficial status doesn't mention any outage"
-     },
-     {
-      "text": "Official status does mention degraded performance and ongoing investigation"
-     },
-     {
-      "text": "Ya me too:(I was in the middle of a life changing convo"
-     },
-     {
-      "text": "I thought i was only one"
-     },
-     {
-      "text": "Same, sadly.:["
-     },
-     {
-      "text": "came here exactly for this... wondering if someone already posted. Same here. I´m in Chile, South america. So it might not be a regional thing."
-     },
-     {
-      "text": "https://status.deepseek.com/ is returning a 502 so on a scale of \"everything's fine\" to \"shit's fucked\" I would say we're at around \"the cuckoo has flown the roost; the cock crowed at midnight\""
-     }
-    ]
+    "text": "https://preview.redd.it/bp94793xrwsh1.png?width=258&format=png&auto=webp&s=4887225a76e0ecdc43a5bc68cb768acbc968f73b Happening with anyone else or just me"
    },
    "sources": [
     "reddit"
@@ -9318,21 +8994,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wvdpdh/investors_thought_they_were_buying_preipo_openai/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "The pitch was OpenAI and SpaceX but the portfolio was Bloomingdale’s and lap dances. Diversified in ways investors never imagined"
-     },
-     {
-      "text": "I’m mildly terrified that the series B Anthropic I theoretically own via an SPV is bullshit. I’m not even sure I would be able to confirm it. I have the legal docs that any nitwit could put together and a k-1 that doesn’t address holdings. How would one even know?"
-     },
-     {
-      "text": "How would one even know? That is your mistake right there. Real investors would know... People who care about their money and put time and effort into protecting it would know. Our society seems to be running on assumption that everyone else is also a dofus when it comes to this or that. Every day on youtube there are 1000s of videos with headlines like \"Don't make these mistakes everyone else does\" when it turns out that the mistake was easily avoided and the presenter is not only an idiot,…"
-     },
-     {
-      "text": "Ffs people, just wait the market crash with a cash reserve and DCA while waiting. Yes, is that simple."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9574,33 +9236,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wvg7yc/arxiv_now_limits_submitters_to_up_to_two/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Zhang et al in shambles"
-     },
-     {
-      "text": "Well, now he truly won't be able to keep getting away with it."
-     },
-     {
-      "text": "Good."
-     },
-     {
-      "text": "Saw this post's notification on lock screen and literally said the same thing out loud lol"
-     },
-     {
-      "text": "It makes total sense; who can even produce one work per month? But I guess this will be gamed, as large paper mill labs will just use rotation per headcount."
-     },
-     {
-      "text": "This should apply to those big lab PIs too who churn out tens of paper per month"
-     },
-     {
-      "text": "It won't, since students and postdocs are usually the ones submitting."
-     },
-     {
-      "text": "Ah agreed. I read so much meh there these days."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9736,30 +9372,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wvkhzo/hey_opus_55_can_you_build_me_a_247_live_streaming/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "￼ about a week ago i had a dumb idea. what if i made a cable news network that was entirely run by ai, drawn in pixel art, and just... never went off the air? i’m not a tv person. i had no idea how any of this shit worked. i opened claude code with opus 5.5 and started building. then i kinda just never stopped. it’s live now it’s called PNN, pixel news network. they cover actual news from around 70 feeds. world news, tech, sports, crypto, nfts, meme coins, weird shit happening on the internet, etc. but they also remember things. they have relationships, ongoing feuds, inside jokes, opinions…",
-    "topComments": [
-     {
-      "text": "Dude! This is epic Edit: One of the hosts just got up and left because the two other guys called hot dog a sandwich.:D"
-     },
-     {
-      "text": "a lot more content coming:)"
-     },
-     {
-      "text": "I haven't read your whole description, I just scrolled to the link and have been watching for a couple of minutes. This seems funnier to me than most real shows. If you just gave it a generic prompt like \"make a parody morning show with banter\" or something, it's actually kind of scary. Nice job!"
-     },
-     {
-      "text": "haha 🤣 it was a bit more than that, been a few days of designing what’s under the hood. but it did start with a basic “build me an ai news station” and it’s kinda taken a life of its own"
-     },
-     {
-      "text": "This is why Claude is so good for non-developers. Sometimes they have fantastic ideas they just can't get off the ground because they don't have the skill set to code it themselves, and trying to get other people to do it for them loses a part in translation. All these people suggesting that people using Claude to code for them are just creating nothing but AI slop are just plain misguided. Sure, there's a lot of people creating absolute cack out there and polluting the waters... and then…"
-     },
-     {
-      "text": "the barrier to entry for creatives used to be technical. now the door is open. it’s game changing really."
-     },
-     {
-      "text": "The broccoli hair story was riveting. \"You're standing in an alley behind the mini mall. How many kids are you seeing back there?\" \"It fluctuates, Chet.\""
-     }
-    ]
+    "text": "￼ about a week ago i had a dumb idea. what if i made a cable news network that was entirely run by ai, drawn in pixel art, and just... never went off the air? i’m not a tv person. i had no idea how any of this shit worked. i opened claude code with opus 5.5 and started building. then i kinda just never stopped. it’s live now it’s called PNN, pixel news network. they cover actual news from around 70 feeds. world news, tech, sports, crypto, nfts, meme coins, weird shit happening on the internet, etc. but they also remember things. they have relationships, ongoing feuds, inside jokes, opinions…"
    },
    "sources": [
     "reddit"
