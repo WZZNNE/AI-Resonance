@@ -7268,11 +7268,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.02,
+   "in": 0.003,
    "k": "deepseek-flash-latest",
-   "maxOut": 393216,
+   "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.4,
+   "out": 2.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7360,7 +7360,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.45,
+   "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7368,7 +7368,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.5112,
+   "in": 0.3992,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7511,7 +7511,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0245,
+   "cr": 0.0234,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7519,7 +7519,7 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0272,
+   "in": 0.026,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
@@ -7530,7 +7530,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.06,
+   "cr": 0.0528,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7542,7 +7542,7 @@
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
-   "out": 2.4,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8295,14 +8295,13 @@
    "upd": "2026-02-28"
   },
   {
-   "cr": 0.11,
    "ctx": 163840,
    "id": "deepseek/deepseek-chat-v3-0324",
-   "in": 0.29,
+   "in": 0.25,
    "k": "deepseek-chat-v3-0324",
-   "maxOut": 115200,
+   "maxOut": 147456,
    "name": "DeepSeek V3 0324",
-   "out": 1.14,
+   "out": 1,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -9361,13 +9360,14 @@
    "upd": "2024-09-25"
   },
   {
+   "cr": 0.11,
    "ctx": 131072,
    "id": "meta-llama/llama-3.3-70b-instruct",
-   "in": 0.1,
+   "in": 0.22,
    "k": "llama-3-3-70b-instruct",
    "maxOut": 16384,
    "name": "Llama-3.3-70B-Instruct",
-   "out": 0.32,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10034,7 +10034,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.62,
+   "cr": 0.49,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10042,7 +10042,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.639,
+   "in": 0.499,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -12743,7 +12743,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12751,11 +12751,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12781,7 +12781,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12789,11 +12789,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13401,14 +13401,14 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.075,
+   "cr": 0.26,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.08,
+   "in": 0.3,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -13420,7 +13420,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.176,
+   "cr": 0.14,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -13428,11 +13428,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.22,
+   "in": 1.4,
    "k": "glm-5-3",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM-5.3",
-   "out": 3.39,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17024,5 +17024,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-03T22:32:24.923Z"
+ "updatedAt": "2026-10-04T01:47:40.627Z"
 }
