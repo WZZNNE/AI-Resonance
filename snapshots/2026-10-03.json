@@ -6538,7 +6538,7 @@
   }
  ],
  "date": "2026-10-03",
- "fetchedAt": "2026-10-04T17:05:11.833Z",
+ "fetchedAt": "2026-10-04T19:46:03.748Z",
  "runs": [
   "2026-10-03T07:05:10.974Z",
   "2026-10-03T07:49:57.565Z",
@@ -6554,7 +6554,8 @@
   "2026-10-04T09:48:09.360Z",
   "2026-10-04T11:10:42.284Z",
   "2026-10-04T14:31:58.289Z",
-  "2026-10-04T17:05:11.833Z"
+  "2026-10-04T17:05:11.833Z",
+  "2026-10-04T19:46:03.748Z"
  ],
  "schema": 2,
  "sources": [
@@ -6650,10 +6651,11 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-04T17:05:11.833Z",
+   "fetchedAt": "2026-10-04T19:46:03.748Z",
    "id": "labs-minimax",
-   "message": "minimax-hf: hfModels: MiniMaxAI: GET https://huggingface.co/api/models?author=MiniMaxAI&sort=createdAt&direction=-1&limit=10 failed: The operation was aborted due to timeout",
-   "state": "degraded"
+   "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-04T19:46:03.748Z",
+   "state": "ok"
   },
   {
    "board": "labs",
@@ -6695,15 +6697,16 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-04T17:05:11.833Z",
+   "fetchedAt": "2026-10-04T19:46:03.748Z",
    "id": "labs-zhipu",
-   "message": "zhipu-hf: hfModels: zai-org: GET https://huggingface.co/api/models?author=zai-org&sort=createdAt&direction=-1&limit=10 failed: The operation was aborted due to timeout",
-   "state": "degraded"
+   "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-04T19:46:03.748Z",
+   "state": "ok"
   },
   {
    "board": "social",
    "count": 60,
-   "fetchedAt": "2026-10-04T17:05:11.833Z",
+   "fetchedAt": "2026-10-04T19:46:03.748Z",
    "id": "reddit",
    "message": "reusing the fetch of 2026-10-04T14:31:58.289Z (at most every 6 h)",
    "mode": "cached",
@@ -6713,9 +6716,9 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-04T17:05:11.833Z",
+   "fetchedAt": "2026-10-04T19:46:03.748Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 8 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
    "state": "degraded"
   },
