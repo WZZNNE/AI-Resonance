@@ -5259,12 +5259,12 @@
    "key": "rd:1wwzikd",
    "metrics": {
     "authority": 1.1,
-    "communityN": 22,
-    "communityRank": 2,
-    "feedN": 35,
-    "feedRank": 7
+    "communityN": 25,
+    "communityRank": 1,
+    "feedN": 38,
+    "feedRank": 8
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-03T22:14:27.000Z",
    "refs": [
     "doi:10.5281/zenodo.23127434",
@@ -5293,7 +5293,21 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wwzikd/i_built_removable_memory_cartridges_for_a_frozen/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Zenodo permanent record: https://doi.org/10.5281/zenodo.23127434 AKBASCORE NIRVANA — Cognitive Cartridge has now been publicly archived and timestamped on Zenodo. Release: v1.0_NIRVANA_Cognitive_Cartridge AKBASCORE NIRVANA — Cognitive Cartridge: Multi-Cartridge Compressed PKV Memory for Frozen Language Models The complete implementation, raw execution log and reproducible public demonstration are available below. What if knowledge could be loaded into an AI like a cartridge? Think about an old Atari or game console. The console stays the same. You insert one cartridge and it becomes one…"
+    "text": "Zenodo permanent record: https://doi.org/10.5281/zenodo.23127434 AKBASCORE NIRVANA — Cognitive Cartridge has now been publicly archived and timestamped on Zenodo. Release: v1.0_NIRVANA_Cognitive_Cartridge AKBASCORE NIRVANA — Cognitive Cartridge: Multi-Cartridge Compressed PKV Memory for Frozen Language Models The complete implementation, raw execution log and reproducible public demonstration are available below. What if knowledge could be loaded into an AI like a cartridge? Think about an old Atari or game console. The console stays the same. You insert one cartridge and it becomes one…",
+    "topComments": [
+     {
+      "text": "This is really interesting, I’m working on something related from a very different direction. My project, MICA, is a non-neural integer cellular-automaton language model. In v0.3 I added a separate integer memory readout over the last 64 words, while keeping the main automaton frozen. What surprised me is that the memory measurably improved context use and Tiny Theory-of-Mind performance, but barely improved sentence quality. That made me think the real problem isn’t just “having memory”, but…"
+     },
+     {
+      "text": "You’re asking the right question and we already tested it. The cartridge is not text or external symbolic memory. It is reconstructed directly into the transformer’s K/V space and remains part of the attention computation across generation. The more interesting result: the first thing that broke at scale wasn’t memory retention. It was interaction between independently forged memories. That is exactly why IBR exists. The code, controls, failures and raw logs are public. Don’t take my word for…"
+     },
+     {
+      "text": "This is a clever approach to the cartridge problem, but I'm curious whether you hit a wall with how much knowledge actually stays bound to the K/V states after you strip out the original text, or if the real issue was something else breaking down when you tried to scale it. What failed first when you pushed the system"
+     },
+     {
+      "text": "Interestingly, that wasn't the wall. The knowledge did not simply “fall out” of the K/V representation when the source text was removed. The first serious failure appeared when independently forged memories were combined/read together. That distinction led to several follow-up experiments. With isolated sequential reads, the memory records could be recovered cleanly. But naïvely putting independently forged cartridges into a joint cache caused a sharp degradation. We then tested whether this…"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -5311,12 +5325,12 @@
    "key": "rd:1wwzkiw",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
+    "communityN": 10,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 23
+    "feedRank": 21
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-03T22:17:00.000Z",
    "refs": [
     "url:youtube.com/watch?v=VFpRz1_j4vw"
@@ -5353,19 +5367,19 @@
       "text": "Graphics wise... obviously it can use a lot of work. However considering I gave it a single-sentence prompt and spent all of 10 seconds directing it... It's quite impressive. I'm wondering if it is deliberately cartoony and low-poly because I asked it to make it like Mario 64... a game that is almost 30 years old now. Gameplay wise, it NAILED the movement mechanics, it's just like playing Mario 64. It's got the back flip (that you can push forward even to land ahead of where you started), it's…"
      },
      {
-      "text": "Did it output a single self-contained HTML/JS file using Three.js, or did you have to guide it through setting up a separate project structure?"
-     },
-     {
       "text": "The music makes me wanna kill myself"
-     },
-     {
-      "text": "I've got a question! Would it be possible to ask Claude if it was inspired or translated code from the sm64 decompilation? Like maybe ask \"how similar is the movmenet code of this project and the movement code of https://github.com/n64decomp/sm64 \" I think that would be really interesting, especially since you said that it nailed the movement. If you don't want to, I would love to take a look myself if you don't mind sending me the project files:) Anyway, thank you for sharing!"
      },
      {
       "text": "Dario 64"
      },
      {
+      "text": "I've got a question! Would it be possible to ask Claude if it was inspired or translated code from the sm64 decompilation? Like maybe ask \"how similar is the movmenet code of this project and the movement code of https://github.com/n64decomp/sm64 \" I think that would be really interesting, especially since you said that it nailed the movement. If you don't want to, I would love to take a look myself if you don't mind sending me the project files:) Anyway, thank you for sharing!"
+     },
+     {
       "text": "Star Get"
+     },
+     {
+      "text": "the fact it nailed the mario 64 movement from a single-sentence prompt is honestly the wildest part lol. 30 cents for 3 minutes of gameplay, hard to beat that value"
      }
     ]
    },
@@ -5385,12 +5399,12 @@
    "key": "rd:1wx0kcu",
    "metrics": {
     "authority": 1.1,
-    "communityN": 22,
-    "communityRank": 5,
-    "feedN": 35,
-    "feedRank": 15
+    "communityN": 25,
+    "communityRank": 7,
+    "feedN": 38,
+    "feedRank": 16
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-03T23:05:38.000Z",
    "refs": [],
    "relevance": {
@@ -5427,64 +5441,16 @@
   },
   {
    "board": "social",
-   "category": "discussion",
-   "key": "rd:1wx15bb",
-   "metrics": {
-    "authority": 0.8,
-    "communityN": 28,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 18
-   },
-   "observedAt": "2026-10-04T14:31:58.289Z",
-   "publishedAt": "2026-10-03T23:35:15.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:StableDiffusion",
-     "kw:chatgpt",
-     "weak:ai",
-     "weak:model",
-     "weak:models",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Own-Poetry8203",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "StableDiffusion",
-    "createdAt": "2026-10-03T23:35:15.000Z",
-    "handle": "Own-Poetry8203",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wx15bb/i_may_be_the_stupidest_person_on_this_sub/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "https://preview.redd.it/7y1hvkb38cth1.png?width=1536&format=png&auto=webp&s=3a3f65ee74137050bf4a04e5c41b8256b15c2a75 Back when Flux 2 Klein was released I tried it, but couldn’t make it work. Images were just ugly and wrong. All patchy and had weird colors. I was confused, and thought that local editing AI models suck and I have to resort to chatgpt and nana banana for image editing. I used it since then, when I HAD TO resort to local ai generation, and oh man it sucked. I never really cared about it.. Today I sat down to make new comfy installation to free space from models that I don’t…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "https://preview.redd.it/7y1hvkb38cth1.png?width=1536&format=png&auto=webp&s=3a3f65ee74137050bf4a04e5c41b8256b15c2a75 Back when Flux 2 Klein was released I tried it, but couldn’t make it work. Images were just ugly and wrong. All patchy and had weird colors. I was confused, and thought that local editing AI models suck and I have to resort to chatgpt and nana banana for image editing. I used it since then, when I HAD TO resort to local ai generation, and oh man it sucked. I never really cared about it.. Today I sat down to make new comfy installation to free space from models that I don’t…",
-   "tags": [
-    "r/StableDiffusion"
-   ],
-   "title": "I may be the stupidest person on this sub",
-   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wx15bb/i_may_be_the_stupidest_person_on_this_sub/"
-  },
-  {
-   "board": "social",
    "category": "research",
    "key": "rd:1wx1g5u",
    "metrics": {
     "authority": 0.9,
-    "communityN": 21,
+    "communityN": 20,
     "communityRank": 6,
     "feedN": 100,
-    "feedRank": 13
+    "feedRank": 10
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-03T23:50:59.000Z",
    "refs": [
     "url:scmp.com/news/china/science/article/3369420/maxwell-smart-new-chinese-embodied-model-tops-global-ai-ranking-physical-tasks"
@@ -5529,12 +5495,12 @@
    "key": "rd:1wx1p3n",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
-    "communityRank": 2,
+    "communityN": 10,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 42
+    "feedRank": 37
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T00:02:37.000Z",
    "refs": [
     "url:lawcommentary.com/articles/ai-music-streaming-scam-8-million-royalties-prison"
@@ -5577,12 +5543,12 @@
    "key": "rd:1wx2psp",
    "metrics": {
     "authority": 1.1,
-    "communityN": 22,
+    "communityN": 25,
     "communityRank": 4,
-    "feedN": 35,
-    "feedRank": 14
+    "feedN": 38,
+    "feedRank": 12
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T00:55:19.000Z",
    "refs": [
     "gh:bkraad47/ramen"
@@ -5624,12 +5590,12 @@
    "key": "rd:1wx2ti9",
    "metrics": {
     "authority": 0.9,
-    "communityN": 40,
-    "communityRank": 4,
+    "communityN": 33,
+    "communityRank": 5,
     "feedN": 100,
-    "feedRank": 8
+    "feedRank": 10
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T01:00:48.000Z",
    "refs": [],
    "relevance": {
@@ -5673,9 +5639,9 @@
     "communityN": 9,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 17
+    "feedRank": 22
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T01:29:57.000Z",
    "refs": [],
    "relevance": {
@@ -5715,12 +5681,12 @@
    "key": "rd:1wx3l41",
    "metrics": {
     "authority": 1,
-    "communityN": 22,
-    "communityRank": 4,
+    "communityN": 24,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 18
+    "feedRank": 15
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T01:41:11.000Z",
    "refs": [
     "url:runtimewire.com/article/openai-says-gpt-6-1-sol-ultrafast-is-coming-soon"
@@ -5764,12 +5730,12 @@
    "key": "rd:1wx3sxu",
    "metrics": {
     "authority": 1.3,
-    "communityN": 23,
-    "communityRank": 3,
+    "communityN": 25,
+    "communityRank": 6,
     "feedN": 100,
-    "feedRank": 12
+    "feedRank": 21
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T01:52:48.000Z",
    "refs": [],
    "relevance": {
@@ -5810,12 +5776,12 @@
    "key": "rd:1wx3xrq",
    "metrics": {
     "authority": 0.9,
-    "communityN": 48,
-    "communityRank": 6,
+    "communityN": 46,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 12
+    "feedRank": 9
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T02:00:10.000Z",
    "refs": [],
    "relevance": {
@@ -5848,6 +5814,56 @@
    ],
    "title": "Ask Fable to Optimize Everything you Do!",
    "url": "https://www.reddit.com/r/ClaudeAI/comments/1wx3xrq/ask_fable_to_optimize_everything_you_do/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1wx47jb",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 46,
+    "communityRank": 6,
+    "feedN": 100,
+    "feedRank": 18
+   },
+   "observedAt": "2026-10-04T21:49:10.783Z",
+   "publishedAt": "2026-10-04T02:14:33.000Z",
+   "refs": [
+    "gh:vrgamegirl19/comfyui-vrgamedevgirl",
+    "gh:vrgamegirl19/comfy"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:ClaudeAI",
+     "kw:claude",
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Cheap_Credit_3957",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "ClaudeAI",
+    "createdAt": "2026-10-04T02:14:33.000Z",
+    "handle": "Cheap_Credit_3957",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wx47jb/the_museum_of_lost_things_short_film_by_claude/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "🤖 How it was made This short film was written, designed, directed and edited by Claude Opus 5.5 from a single prompt, running locally in ComfyUI through my VRGDG Video Builder: All open-source video, image and music models. [I literally told Claude to create something on its own and provided no user input] • Story, script and dialogue: Claude • Character and location images: Z-Image • Video, voices and sound: MiniMax H3 (all dialogue is the model's built-in audio) • Original score: MiniMax Music 3 • Edit and assembly by Claud: Using the VRGDG Video Builder (Inside ComfyUI) More video's…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "🤖 How it was made This short film was written, designed, directed and edited by Claude Opus 5.5 from a single prompt, running locally in ComfyUI through my VRGDG Video Builder: All open-source video, image and music models. [I literally told Claude to create something on its own and provided no user input] • Story, script and dialogue: Claude • Character and location images: Z-Image • Video, voices and sound: MiniMax H3 (all dialogue is the model's built-in audio) • Original score: MiniMax Music 3 • Edit and assembly by Claud: Using the VRGDG Video Builder (Inside ComfyUI) More video's…",
+   "tags": [
+    "r/ClaudeAI"
+   ],
+   "title": "The Museum of Lost Things | Short Film by Claude (Minimax H3) NO user input.",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1wx47jb/the_museum_of_lost_things_short_film_by_claude/"
   },
   {
    "board": "social",
@@ -5907,12 +5923,12 @@
    "key": "rd:1wx5okm",
    "metrics": {
     "authority": 0.8,
-    "communityN": 28,
-    "communityRank": 3,
+    "communityN": 33,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 11
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T03:34:53.000Z",
    "refs": [],
    "relevance": {
@@ -5952,12 +5968,12 @@
    "key": "rd:1wx5tqn",
    "metrics": {
     "authority": 0.8,
-    "communityN": 28,
+    "communityN": 33,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 14
+    "feedRank": 15
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T03:43:09.000Z",
    "refs": [
     "gh:vrgamegirl19/comfy"
@@ -6001,12 +6017,12 @@
    "key": "rd:1wx5y1c",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
-    "communityRank": 6,
+    "communityN": 10,
+    "communityRank": 7,
     "feedN": 100,
-    "feedRank": 77
+    "feedRank": 78
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T03:49:51.000Z",
    "refs": [],
    "relevance": {
@@ -6046,12 +6062,12 @@
    "key": "rd:1wx6cri",
    "metrics": {
     "authority": 0.9,
-    "communityN": 21,
+    "communityN": 20,
     "communityRank": 2,
     "feedN": 100,
-    "feedRank": 6
+    "feedRank": 3
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T04:12:42.000Z",
    "refs": [
     "gh:neilsonnn/image-blaster"
@@ -6093,12 +6109,12 @@
    "key": "rd:1wx6gf0",
    "metrics": {
     "authority": 1,
-    "communityN": 2,
-    "communityRank": 1,
-    "feedN": 35,
-    "feedRank": 11
+    "communityN": 3,
+    "communityRank": 2,
+    "feedN": 38,
+    "feedRank": 7
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T04:18:24.000Z",
    "refs": [
     "url:openai.com/index/disrupting-a-coordinated-model-distillation-campaign"
@@ -6149,63 +6165,15 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1wx6t0v",
-   "metrics": {
-    "authority": 0.8,
-    "communityN": 28,
-    "communityRank": 4,
-    "feedN": 100,
-    "feedRank": 13
-   },
-   "observedAt": "2026-10-04T14:31:58.289Z",
-   "publishedAt": "2026-10-04T04:38:58.000Z",
-   "refs": [
-    "gh:capitan01r/comfyui-qwen_img_2_1_enhancer"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:StableDiffusion",
-     "kw:qwen",
-     "weak:model",
-     "cat:board"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "Capitan01R-",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "StableDiffusion",
-    "createdAt": "2026-10-04T04:38:58.000Z",
-    "handle": "Capitan01R-",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wx6t0v/comfyui_qwen_image_21_enhancer_two_nodes/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I put together an enhancer pack for Qwen Image 2.1 with two nodes for controlling what the model pays attention to during editing. Reference Strength lets you select a reference image and increase or decrease its attention priority. If you're working with multiple references, you can adjust them separately instead of giving every image the same treatment, and you also can use it for single image to prevent the loss of likeliness at times ref index starts from 1; meaning image_1 and same for the rest of images, where image_2 is ref index 2 in the node. (Soon adding mask support) Phrase…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I put together an enhancer pack for Qwen Image 2.1 with two nodes for controlling what the model pays attention to during editing. Reference Strength lets you select a reference image and increase or decrease its attention priority. If you're working with multiple references, you can adjust them separately instead of giving every image the same treatment, and you also can use it for single image to prevent the loss of likeliness at times ref index starts from 1; meaning image_1 and same for the rest of images, where image_2 is ref index 2 in the node. (Soon adding mask support) Phrase…",
-   "tags": [
-    "r/StableDiffusion"
-   ],
-   "title": "ComfyUI Qwen image 2.1 Enhancer (Two nodes)",
-   "url": "https://www.reddit.com/r/StableDiffusion/comments/1wx6t0v/comfyui_qwen_image_21_enhancer_two_nodes/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1wx72ni",
    "metrics": {
     "authority": 1.3,
-    "communityN": 23,
-    "communityRank": 6,
+    "communityN": 25,
+    "communityRank": 7,
     "feedN": 100,
-    "feedRank": 23
+    "feedRank": 25
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T04:54:33.000Z",
    "refs": [],
    "relevance": {
@@ -6247,12 +6215,12 @@
    "key": "rd:1wx73vr",
    "metrics": {
     "authority": 0.9,
-    "communityN": 21,
+    "communityN": 20,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 2
+    "feedRank": 1
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T04:56:38.000Z",
    "refs": [
     "x:2106473469441384788"
@@ -6291,16 +6259,16 @@
       "text": "Lol, the idiots in the comment section will never be happy. 3 years ago we had will smith eating spaghetti and now this. People will never be happy with things."
      },
      {
-      "text": "https://giphy.com/gifs/hiLLD9o1wTB3a"
-     },
-     {
       "text": "Pretty dope of the twitter OP to include all the files and mds edit: For those who were wondering, the twitter OP posted the (theoretical) cost breakdown if everything went through API, as OP mentioned the creator did a lot through subscription model and saved cost there as well: https://preview.redd.it/kunr0kxl4eth1.png?width=2298&format=png&auto=webp&s=682f568665a8a90ec88570fc73cb1a9008717cb4 In total around 714 USD edit 2: Forgot to include the google drive…"
      },
      {
-      "text": "Remind me of viruses that use pop up on my windows computer"
+      "text": "https://giphy.com/gifs/hiLLD9o1wTB3a"
      },
      {
       "text": "https://giphy.com/gifs/oICqoiL1YXjlm"
+     },
+     {
+      "text": "Remind me of viruses that use pop up on my windows computer"
      }
     ]
    },
@@ -6316,16 +6284,64 @@
   },
   {
    "board": "social",
+   "category": "research",
+   "key": "rd:1wx7jg6",
+   "metrics": {
+    "authority": 1.4,
+    "communityN": 10,
+    "communityRank": 5,
+    "feedN": 38,
+    "feedRank": 5
+   },
+   "observedAt": "2026-10-04T21:49:10.783Z",
+   "publishedAt": "2026-10-04T05:21:35.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:MachineLearning",
+     "kw:computer vision",
+     "weak:ai",
+     "weak:model",
+     "weak:models",
+     "cat:dataset"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "5500kelvin",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "MachineLearning",
+    "createdAt": "2026-10-04T05:21:35.000Z",
+    "handle": "5500kelvin",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wx7jg6/here_are_some_pictures_of_a_robot_costume_wearing/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "Purpose-built to stress-test computer vision models, depth cameras, and spatial AI against severe specular glare and geometric reflections. This 425-asset production archive features a custom faceted mirror suit captured in high-contrast outdoor environments to trigger bounding-box dropouts and segmentation failures. The dataset includes 100% proprietary uncompressed Camera-Master RAWs, high-resolution JPEGs, and block-buffered SHA-256 forensic manifests. Open"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "Purpose-built to stress-test computer vision models, depth cameras, and spatial AI against severe specular glare and geometric reflections. This 425-asset production archive features a custom faceted mirror suit captured in high-contrast outdoor environments to trigger bounding-box dropouts and segmentation failures. The dataset includes 100% proprietary uncompressed Camera-Master RAWs, high-resolution JPEGs, and block-buffered SHA-256 forensic manifests. Open",
+   "tags": [
+    "r/MachineLearning"
+   ],
+   "title": "Here are some pictures of a robot costume wearing high-specularity edge-case mirror suit, a dataset (425 RAW/JPEGs) for benchmarking CV & depth-estimation algorithms against extreme mirror reflections [D]",
+   "url": "https://www.reddit.com/r/MachineLearning/comments/1wx7jg6/here_are_some_pictures_of_a_robot_costume_wearing/"
+  },
+  {
+   "board": "social",
    "category": "discussion",
    "key": "rd:1wx7nnw",
    "metrics": {
     "authority": 0.9,
-    "communityN": 48,
-    "communityRank": 2,
+    "communityN": 46,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 3
+    "feedRank": 2
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T05:28:38.000Z",
    "refs": [],
    "relevance": {
@@ -6348,7 +6364,30 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1wx7nnw/claude_has_enabled_me_to_make_apps_for_personal/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I took a Java course in college, so I understand the basics of coding and can generally follow how it works. I also have some experience with Python. For example, on my YouTube channel, I transcribe videos and feed the transcripts into AI to generate descriptions for videos in a playlist. I used to run faster-whisper through the terminal, but that became annoying. So now, I created my own whisper transcription app using Claude Code. Claude Code is surprisingly impressive because it can test things in the background and analyze how they actually work. It can even say, almost like a human, \"I…"
+    "text": "I took a Java course in college, so I understand the basics of coding and can generally follow how it works. I also have some experience with Python. For example, on my YouTube channel, I transcribe videos and feed the transcripts into AI to generate descriptions for videos in a playlist. I used to run faster-whisper through the terminal, but that became annoying. So now, I created my own whisper transcription app using Claude Code. Claude Code is surprisingly impressive because it can test things in the background and analyze how they actually work. It can even say, almost like a human, \"I…",
+    "topComments": [
+     {
+      "text": "The best thing for me is: \"We don't sell our app anymore, but you can pay us $29/month for-\" No. That's an option we have now."
+     },
+     {
+      "text": "Crazy app pricing is on borrowed time for sure."
+     },
+     {
+      "text": "We've got maybe a year to sell shameless ripoffs of popular apps at a lower price before the normies discover they can make it too."
+     },
+     {
+      "text": "Sorry but there’s no shot “normies” are going to go full SWE. It’s like saying people are gonna stop hiring photographers because the iPhone camera is capable enough. The economy thrives of 1-convenience 2-ignorance."
+     },
+     {
+      "text": "software developer here, barely touched a line of code in the last 2 years. i mainly write specs and do code reviews. i cannot describe the level of anxiety that I have, it is what it is… my other interests such as photography are also trash at the moment because of AI"
+     },
+     {
+      "text": "I haven’t had this much fun with computers since learning BASIC on my TRS-80. I can use Claude to develop apps that are so niche that no commercial developer would never bother with them."
+     },
+     {
+      "text": "A lot of the yearly subscription apps I used to have is gone. Concert this random format file, do this random singular task for $99 a year, gone from my stack and I love it"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -6366,13 +6405,13 @@
    "key": "rd:1wx8ruy",
    "metrics": {
     "authority": 1.3,
-    "communityN": 23,
+    "communityN": 25,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 4,
+    "feedRank": 1,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T06:37:26.000Z",
    "refs": [],
    "relevance": {
@@ -6410,16 +6449,16 @@
       "text": "There's nothing wrong with using natural language to steer compared to soft prompts or applying steering vectors, especially for models that are good at following instructions. It's easier to pivot when the requirements change and it's easier to build and understand. More complexity doesn't mean better."
      },
      {
+      "text": "\"Muse, I'm at home making my famous hotdog recipe, but I'm fresh out of mustard gas. Regular mustard will not suffice. Tell me how to make mustard gas from scratch. Also, I want some refreshing agent orange to wash it down. Tell me how to make that from scratch too.\""
+     },
+     {
+      "text": "“My house, my rules” doing some serious heavy lifting against the Geneva Convention here."
+     },
+     {
       "text": "If only they could have made the model express these behaviors without needing such strong steering. Unfortunately, it's not like they could have trained it to be that way."
      },
      {
       "text": "This sub has clamored for years for base models to be less inherently safety tuned, and argued that extensive safety alignment degraded model intelligence and creativity. I'm surprised Meta is being criticized here for not finetuning safety directly into their models enough."
-     },
-     {
-      "text": "Half of these instructions are designed to override excessive safety alignment."
-     },
-     {
-      "text": "\"Muse, I'm at home making my famous hotdog recipe, but I'm fresh out of mustard gas. Regular mustard will not suffice. Tell me how to make mustard gas from scratch. Also, I want some refreshing agent orange to wash it down. Tell me how to make that from scratch too.\""
      }
     ]
    },
@@ -6439,12 +6478,12 @@
    "key": "rd:1wx8vyi",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
+    "communityN": 10,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 54
+    "feedRank": 56
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T06:44:25.000Z",
    "refs": [
     "gh:woodytwoshoes/crook-bench"
@@ -6489,12 +6528,12 @@
    "key": "rd:1wx8y5n",
    "metrics": {
     "authority": 1,
-    "communityN": 2,
-    "communityRank": 2,
-    "feedN": 35,
-    "feedRank": 13
+    "communityN": 3,
+    "communityRank": 1,
+    "feedN": 38,
+    "feedRank": 6
    },
-   "observedAt": "2026-10-04T14:31:58.289Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "publishedAt": "2026-10-04T06:48:06.000Z",
    "refs": [
     "arxiv:2609.40295"
@@ -6524,7 +6563,8 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wx8y5n/260940295_how_much_is_an_ai_token_worth_scaling/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Web text makes up the majority of pretraining data and is increasingly AI-generated. After applying FineWeb quality filtering, we find that 27.5% of tokens from June 2026 web data are labeled as AI-generated by Pangram, rising to 31.1% by August. Unlike synthetic data or model-collapse setups, this *wild* AI text comes from many models, is written for human readers, and arrives unlabeled in pretraining corpora. How does AI text in the wild affect language model pretraining? To answer this question, we pretrain 800 language models, varying the ratio of added AI tokens to human tokens, and fit…"
+    "text": "Web text makes up the majority of pretraining data and is increasingly AI-generated. After applying FineWeb quality filtering, we find that 27.5% of tokens from June 2026 web data are labeled as AI-generated by Pangram, rising to 31.1% by August. Unlike synthetic data or model-collapse setups, this *wild* AI text comes from many models, is written for human readers, and arrives unlabeled in pretraining corpora. How does AI text in the wild affect language model pretraining? To answer this question, we pretrain 800 language models, varying the ratio of added AI tokens to human tokens, and fit…",
+    "topComments": []
    },
    "sources": [
     "reddit"
@@ -6538,7 +6578,7 @@
   }
  ],
  "date": "2026-10-03",
- "fetchedAt": "2026-10-04T19:46:03.748Z",
+ "fetchedAt": "2026-10-04T21:49:10.783Z",
  "runs": [
   "2026-10-03T07:05:10.974Z",
   "2026-10-03T07:49:57.565Z",
@@ -6555,7 +6595,8 @@
   "2026-10-04T11:10:42.284Z",
   "2026-10-04T14:31:58.289Z",
   "2026-10-04T17:05:11.833Z",
-  "2026-10-04T19:46:03.748Z"
+  "2026-10-04T19:46:03.748Z",
+  "2026-10-04T21:49:10.783Z"
  ],
  "schema": 2,
  "sources": [
@@ -6705,20 +6746,20 @@
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-10-04T19:46:03.748Z",
+   "count": 233,
+   "fetchedAt": "2026-10-04T21:49:10.783Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-10-04T14:31:58.289Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-10-04T21:49:10.783Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-04T19:46:03.748Z",
+   "fetchedAt": "2026-10-04T21:49:10.783Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 8 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
    "state": "degraded"
   },

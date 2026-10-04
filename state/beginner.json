@@ -35,7 +35,7 @@
    "sourceKey": "arxiv:2609.25186"
   },
   "discovery:arxiv:2609.39027": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:arxiv:2609.39027",
@@ -260,7 +260,7 @@
    "sourceKey": "gh:aws/agent-toolkit-for-aws"
   },
   "discovery:gh:calesthio/openmontage": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:calesthio/openmontage",
@@ -324,7 +324,7 @@
    "sourceKey": "gh:datawhalechina/deepagents-in-action"
   },
   "discovery:gh:diegosouzapw/omniroute": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "repo-updated",
     "id": "discovery:gh:diegosouzapw/omniroute",
@@ -954,7 +954,7 @@
    "sourceKey": "gh:nirdiamant/rag_techniques"
   },
   "discovery:gh:nvidia/model-optimizer": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:nvidia/model-optimizer",
@@ -1018,7 +1018,7 @@
    "sourceKey": "gh:openai/tunnel-client"
   },
   "discovery:gh:panniantong/agent-reach": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:panniantong/agent-reach",
@@ -1114,7 +1114,7 @@
    "sourceKey": "gh:qdrant/qdrant"
   },
   "discovery:gh:router-for-me/cliproxyapi": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:router-for-me/cliproxyapi",
@@ -1146,7 +1146,7 @@
    "sourceKey": "gh:router-for-me/cliproxyapi"
   },
   "discovery:gh:stablyai/orca": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "repo-updated",
     "id": "discovery:gh:stablyai/orca",
@@ -1315,7 +1315,7 @@
    "sourceKey": "gh:vercel/ai"
   },
   "discovery:gh:vshulcz/deja-vu": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:vshulcz/deja-vu",
@@ -1379,7 +1379,7 @@
    "sourceKey": "gh:zackriya-solutions/meetily"
   },
   "discovery:gh:zhaoxuya520/reverse-skill": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:zhaoxuya520/reverse-skill",
@@ -1654,6 +1654,41 @@
    },
    "sourceKey": "rd:1ws6e9p"
   },
+  "discovery:rd:1wxiy8y": {
+   "observedAt": "2026-10-04T21:49:10.783Z",
+   "resource": {
+    "freshnessBasis": "published",
+    "id": "discovery:rd:1wxiy8y",
+    "level": "starter",
+    "publishedAt": "2026-10-04T15:50:54.000Z",
+    "scores": {
+     "authority": 3,
+     "clarity": 4,
+     "foundation": 4,
+     "practice": 4
+    },
+    "sourceName": "www.reddit.com",
+    "sourceUpdatedAt": "2026-10-04T15:50:54.000Z",
+    "summary": {
+     "en": "First of all, thank you for reading. I trained a small MoE model completely from scratch (no external base weights) and wanted to share the results + a couple of lessons. Apex-2 - Architecture: Decoder-only MoE, every layer is MoE (no dense layers) - Size: 3.87B total parameters, 1.45B active per token - 32 layers, d_model 2048, GQA 16Q/4KV, 16 experts, top-4 - Context: 4096 - Tokenizer: Qwen3 (151k) - Hugging Face: https://huggingface.co/YOON1v/Apex-2 (loads with transformers / vLLM via Qwen3MoeForCausalLM mapping) Training - Pretrain: 86.5B tokens (GH200 ×1 → ×2 with DiLoCo) - SFT: ~2.5B…",
+     "zh": ""
+    },
+    "title": {
+     "en": "I trained a 3.87B MoE (1.45B active) from scratch on only 86.5B tokens",
+     "zh": ""
+    },
+    "topics": [
+     "r/LocalLLaMA"
+    ],
+    "type": "article",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wxiy8y/i_trained_a_387b_moe_145b_active_from_scratch_on/",
+    "why": {
+     "en": "Automatic selection: Explicit teaching or structured learning material. Check the original source for access requirements.",
+     "zh": "自动候选：有明确的教学或系统学习内容。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "rd:1wxiy8y"
+  },
   "discovery:url:ai.google.dev/gemini-api/docs/changelog#2861c4e5": {
    "observedAt": "2026-09-22T15:44:04.651Z",
    "resource": {
@@ -1688,7 +1723,7 @@
    "sourceKey": "url:ai.google.dev/gemini-api/docs/changelog#2861c4e5"
   },
   "discovery:url:developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk",
@@ -1721,7 +1756,7 @@
    "sourceKey": "url:developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk"
   },
   "discovery:url:developers.googleblog.com/turn-your-rest-apis-into-mcp-tools-with-google-cloud-api-gateway": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:developers.googleblog.com/turn-your-rest-apis-into-mcp-tools-with-google-cloud-api-gateway",
@@ -1853,7 +1888,7 @@
    "sourceKey": "url:help.openai.com/en/articles/6825453-chatgpt-release-notes#9afd1ece"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#0616d673": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#0616d673",
@@ -1886,7 +1921,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#0616d673"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#5ee4f77b": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#5ee4f77b",
@@ -1952,7 +1987,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#6a5af8d9"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#780ae849": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#780ae849",
@@ -2084,7 +2119,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#eada5055"
   },
   "discovery:url:qwen.ai/blog?id=qwen-image-2.1": {
-   "observedAt": "2026-10-04T19:46:03.748Z",
+   "observedAt": "2026-10-04T21:49:10.783Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:qwen.ai/blog?id=qwen-image-2.1",
@@ -6466,6 +6501,7 @@
   "https://qianwen.com/": "2026-09-21T09:17:19.299Z",
   "https://qwen.ai/blog?id=qwen-image-2.1": "2026-09-21T09:17:19.299Z",
   "https://recraft.ai/": "2026-09-21T09:17:19.299Z",
+  "https://reddit.com/r/LocalLLaMA/comments/1wxiy8y/i_trained_a_387b_moe_145b_active_from_scratch_on": "2026-10-04T21:49:10.783Z",
   "https://reddit.com/r/MachineLearning/comments/1ws6e9p/free_opensource_ai_engineering_course_where_you": "2026-09-28T12:57:49.537Z",
   "https://runwayml.com/": "2026-09-21T09:17:19.299Z",
   "https://spark.xfyun.cn/": "2026-09-21T09:17:19.299Z",
