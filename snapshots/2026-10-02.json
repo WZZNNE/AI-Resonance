@@ -6656,33 +6656,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wvpxg8/does_anyone_know_if_any_new_releases_from_mistral/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It’s been a long time since the last models came out. I notice they are selling GLM on the site, and I wonder if they are developing something, given the long silence.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "It's crazy that we thought Mistral would actually be Europe's LLM and compete globally"
-     },
-     {
-      "text": "Growing an AI company under European data laws has got to be like growing bacteria in ethanol"
-     },
-     {
-      "text": "True. But tbh European data protection laws are fair and reasonable. Which means... that all other AI companies are just feeding on our private data (not protected in US or China as in EU) or illegal one. I'm not fine with this."
-     },
-     {
-      "text": "Yep, they are developing more servers to host and serve Chinese models."
-     },
-     {
-      "text": "https://preview.redd.it/1t5rv8l261th1.png?width=960&format=png&auto=webp&s=8b209cbb56e41729ef263b465ca57948dd998d6d"
-     },
-     {
-      "text": "Mensch said in an interview that with their next model they will close the gap with U.S. labs very significantly and that the debate over AI safety in the US is used to cover up negligence of some competitors."
-     },
-     {
-      "text": "For those wondering wtf is going on at mistral: It's a very french thing, in france things turn political very fast, and this never ends well. One of the most visible example is when france decided to be a \"startup nation\" they sent 315 startups to the CES in 2019 (vs \"only\" 293 for the whole US), thing is most of this startups were not really startups, I know because I developed some of these (crappy) products s a freelance dev, basically they picked random dudes in public companies like…"
-     }
-    ]
+    "text": "It’s been a long time since the last models came out. I notice they are selling GLM on the site, and I wonder if they are developing something, given the long silence."
    },
    "sources": [
     "reddit"
@@ -7215,15 +7189,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wvujp6/our_generative_music_recommender_showed_no/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Our tech report on Sona, a generative music recommender in A/B testing at Yandex Music, has two scaling sweeps that might interest this sub. We trained three encoder-decoder sizes (20M, 130M and 260M transformer-core parameters) on 8,192-event histories. Training next-token loss at matched exposure kept dropping with each step up. That sweep reports training loss only. For the data sweep, we took the 130M backbone with 2k-event histories and grew the training window from 1 to 8 weeks, one pass each. Recall@10 on held-out requests went from 0.1798 to 0.2519 and was still rising from 4 to 8…",
-    "topComments": [
-     {
-      "text": "Isnt this just scaling laws in a new domain? I dont think plateaus are the expected prior anymore"
-     },
-     {
-      "text": "Can you dumb this down?"
-     }
-    ]
+    "text": "Our tech report on Sona, a generative music recommender in A/B testing at Yandex Music, has two scaling sweeps that might interest this sub. We trained three encoder-decoder sizes (20M, 130M and 260M transformer-core parameters) on 8,192-event histories. Training next-token loss at matched exposure kept dropping with each step up. That sweep reports training loss only. For the data sweep, we took the 130M backbone with 2k-event histories and grew the training window from 1 to 8 weeks, one pass each. Recall@10 on held-out requests went from 0.1798 to 0.2519 and was still rising from 4 to 8…"
    },
    "sources": [
     "reddit"
@@ -7367,12 +7333,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1wvwodf/topological_outofdomain_generalization_in/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "In our #NeurIPS2026 paper “ Topological Out-of-Domain Generalization in Dynamical Systems Reconstruction ” (preprint: https://arxiv.org/abs/2606.22969) we try to address a fundamental issue in dynamical systems reconstruction (DSR) and time series forecasting (TSF): Many recent SOTA DSR & TSF models can generalize to new initial conditions or time series with changing statistical properties. But the really hard problem in DSR and TSF is topological out-of-domain generalization (OODG) (https://proceedings.mlr.press/v235/goring24a.html) where the dynamical regime changes, for instance from…",
-    "topComments": [
-     {
-      "text": "Really interesting paper! I really like the idea of topology / bifurcation preservation. Do you think this framework could extend to LLM distillation / student evaluation? E.g. a student may preserve high-probability behavior while destroying low-probability pathways between reasoning regimes. Could preserving this structure be a better fidelity criterion than KL divergence alone?"
-     }
-    ]
+    "text": "In our #NeurIPS2026 paper “ Topological Out-of-Domain Generalization in Dynamical Systems Reconstruction ” (preprint: https://arxiv.org/abs/2606.22969) we try to address a fundamental issue in dynamical systems reconstruction (DSR) and time series forecasting (TSF): Many recent SOTA DSR & TSF models can generalize to new initial conditions or time series with changing statistical properties. But the really hard problem in DSR and TSF is topological out-of-domain generalization (OODG) (https://proceedings.mlr.press/v235/goring24a.html) where the dynamical regime changes, for instance from…"
    },
    "sources": [
     "reddit"
@@ -7611,33 +7572,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1wvy4hl/menai_a_safe_programming_language_for_llms_to_use/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "For the last year I've been working on an open-source programming language (Menai) for LLMs to use. Humans can use it too, but sorry people, this wasn't really designed for you 😂 It has a few key ideas: It's a pure functional language - no I/O, no state mutation - just pure expression computation It needs to be very fast to compile It needs to be quite quick to run The \"no I/O\" ideal might seem like a very strange, but just because the language can't do I/O doesn't mean it can't process data from inputs or generate data for outputs. It just does this by something else passing it all input…",
-    "topComments": [
-     {
-      "text": "How often does/do the model(s) you’re using miscount, misplace, or forget parentheses? Lisp-like syntax is great imo but i’ve heard LLMs mess it up with regularity. I’m guessing you’ve found that not to be true or you wouldn’t be using it. Curious about your experience."
-     },
-     {
-      "text": "It depends on the depth of the expressions. I tend to find at around 5 to 6 levels deep then everything is fine. For most of the on-demand programs thats quite common so I rarely see an issue. Building library components (200-700 lines of code) is harder and I'd say the hit rate is about 60-70% right first time. DeepSeek is pretty good at this but I should probably check what Sonnet 5.5, GPT 6.1, and Grok 4.7 do (Humbug supports all of them) as they may be better. The Menai compiler has been…"
-     },
-     {
-      "text": "Can you throw up some cost benchmarks? Those have been really helpful when trying to understand how \"good\" a model is outside of the \"completed successfully\" metrics. e.g Codex/Claude/Cloud API costs with and without Menai and/or Humbug."
-     },
-     {
-      "text": "That's a great question! I can't directly compare with codex or claude code as I don't use them. I can speak to cost though. Humbug switched to a fully agentic model from one that was largely human driven about 13 months ago. My current workflow has probably been in place since the start of 2026. For a very long time everything was built by Claude Sonnet and that did get super expensive (hundreds of dollars a month) until GLM 5.2 came out. GLM took this down dramatically for a larger amount of…"
-     },
-     {
-      "text": "At some point yer gonna need state. The classic solution is \"pass the world\". Haskell uses Monads mostly and STM (which is slow). You might want to look at how Clean handles it or what comes after monads in haskell. State isn't necessarily bad just that you have to enforce a ordering."
-     },
-     {
-      "text": "State is inevitable! Right now it's a \"pass the world\" approach where state gets injected by the tool framework on the way in and it gets captured on the way out. For the current use cases (LLM assistance) this hasn't really proven to be a big problem as the LLM turns are invariably much slower and it's still faster than spinning up a container. I have some ideas on how we can avoid some of the round-tripping costs between the VM and the caller, but haven't started on them yet as it hasn't…"
-     },
-     {
-      "text": "I doubt this would work without an extensive corpus of examples and training or at least fine tuning runs on the new language. LLMs notoriously struggle with less well known languages, and it doesn't get less well known than new"
-     },
-     {
-      "text": "If the LLM wants to use a Menai-based tool it gets redirected to call a \"help\" tool first (if it hasn't already done so in the session). That gives it the core syntax and library structure. That also contains a pointer to where to find the standard libraries and it can discover their capabilities on-demand. The s-expr structure is well known to LLMs and the rest is just recognizing the special forms (some of which, such as the module/import/export forms are unique). This is enough for them to…"
-     }
-    ]
+    "text": "For the last year I've been working on an open-source programming language (Menai) for LLMs to use. Humans can use it too, but sorry people, this wasn't really designed for you 😂 It has a few key ideas: It's a pure functional language - no I/O, no state mutation - just pure expression computation It needs to be very fast to compile It needs to be quite quick to run The \"no I/O\" ideal might seem like a very strange, but just because the language can't do I/O doesn't mean it can't process data from inputs or generate data for outputs. It just does this by something else passing it all input…"
    },
    "sources": [
     "reddit"
@@ -7682,8 +7617,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1wvy56i/sparse_attention_on_rk3588_158_faster_decode_at/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I ran with sparse attention on for the better part of a month before I sat down and benchmarked it at short context, and it had been costing me time that whole stretch without me noticing. There are two separate things in the engine that both get called sparse attention, and only one of them is the one people mean when they say it's free. Decode-side, only the top-k KV blocks get a full softmax, and that's where the speed comes from. Prefill-side, you skip blocks while prefill runs, and that's the one that was quietly working against me. Numbers below are RK3588, Qwen3-VL-2B, 3 repeats per…",
-    "topComments": []
+    "text": "I ran with sparse attention on for the better part of a month before I sat down and benchmarked it at short context, and it had been costing me time that whole stretch without me noticing. There are two separate things in the engine that both get called sparse attention, and only one of them is the one people mean when they say it's free. Decode-side, only the top-k KV blocks get a full softmax, and that's where the speed comes from. Prefill-side, you skip blocks while prefill runs, and that's the one that was quietly working against me. Numbers below are RK3588, Qwen3-VL-2B, 3 repeats per…"
    },
    "sources": [
     "reddit"
@@ -7779,33 +7713,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "**DISCLAIMER** THE PREFILLING TPS SHOWN ON THE PHONE IS COMPUTED ONLY FOR THE LAYERS IT HOLDS. ALREADY FIXING IT TO SHOW END-TO-END PREFILL RATE. NUMBERS BELOW ARE ACCURATE FOR E2E PREFILL RATE. Every file or tool result my agent reads on a 24 GB M4 Pro MacBook is a wait, and 64k of 8-bit context is all that fits next to Qwen 3.8 27B (IQ4_XS), even with the wired limit raised to 20480. An iPhone 17 Pro Max was sitting in my pocket, so I figured what can I do to make use of this extra silicon. Turns out a 10 Gb/s USB-C cable & some software is all you need. The Mac runs layers 1–40 of each…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Here we go, the prices of cellphones are going to skyrocket thanks to OP"
-     },
-     {
-      "text": "Breaking news: OpenAI and Anthropic are now buying up tens of thousands of iPhones"
-     },
-     {
-      "text": "Amazing use of free will"
-     },
-     {
-      "text": "This is like in a sci fi tv show where they reroute the power from the warp confabulator via the eponymous oscillator sink to get more power during the final battle."
-     },
-     {
-      "text": "Cloud AI providers hate this one weird trick."
-     },
-     {
-      "text": "I look forward to the dude who eventually posts with 1 Macbook and 32 iPads through some kind of frankenstein fan-out running GLM."
-     },
-     {
-      "text": "Woah, this looks impressive as hell. That's a considerable boost. I wonder if it would also work for the iPads? Since they have an even more powerful chip, as well as potentially more ram on the max config pros."
-     }
-    ]
+    "text": "**DISCLAIMER** THE PREFILLING TPS SHOWN ON THE PHONE IS COMPUTED ONLY FOR THE LAYERS IT HOLDS. ALREADY FIXING IT TO SHOW END-TO-END PREFILL RATE. NUMBERS BELOW ARE ACCURATE FOR E2E PREFILL RATE. Every file or tool result my agent reads on a 24 GB M4 Pro MacBook is a wait, and 64k of 8-bit context is all that fits next to Qwen 3.8 27B (IQ4_XS), even with the wired limit raised to 20480. An iPhone 17 Pro Max was sitting in my pocket, so I figured what can I do to make use of this extra silicon. Turns out a 10 Gb/s USB-C cable & some software is all you need. The Mac runs layers 1–40 of each…"
    },
    "sources": [
     "reddit"
@@ -7996,33 +7904,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1ww13p5/bytedance_release_4step_for_minimaxh3_dmad/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Model: https://huggingface.co/ZhengmingYu/DMAD/tree/main Project: https://yzmblog.github.io/projects/DMAD/ Paper: https://arxiv.org/pdf/2610.02188",
-    "topComments": [
-     {
-      "text": "Thanks ByteDance, but the ultimate dream is getting Seedance 2.0 open."
-     },
-     {
-      "text": "Nah the ultimate dream is getting turbo lora speeds with base Minimax quality and the 2k native upscaler, we really don't need Seedance honestly Minimax is just slightly behind"
-     },
-     {
-      "text": "Minimax is a big improvement from wan and ltx but its not close behind seedance. Not even close"
-     },
-     {
-      "text": "That's how I feel every time someone releases a new H3 Turbo LoRA: https://i.redd.it/p9w20lxd94th1.gif"
-     },
-     {
-      "text": "Shame it can't fix the audio shimmer at the same time. This audio is painful to listen to. How can people not hear that?"
-     },
-     {
-      "text": "I'm already lost in this sea of 4-step loras for H3..."
-     },
-     {
-      "text": "how can this work in Comfy?"
-     },
-     {
-      "text": "I'm sure it's a great model but I found the inconsistent characters in the clip very distracting."
-     }
-    ]
+    "text": "Model: https://huggingface.co/ZhengmingYu/DMAD/tree/main Project: https://yzmblog.github.io/projects/DMAD/ Paper: https://arxiv.org/pdf/2610.02188"
    },
    "sources": [
     "reddit"
@@ -8120,33 +8002,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1ww21vu/openghost_update_best_agent_for_deepseek_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey everyone. This update tightens a lot of pieces across the app. Graphics engine refresh: 40+ scenarios — learning, cooking, sports, travel, docs, and more. Better cache handling. Chat stats. Mini chat no longer wipes history when you close it. Video support. Plus a bunch of smaller fixes. OpenGhost is still fully open source — download or build it yourself here: https://github.com/ANDRETRIPOL/OpenGhost",
-    "topComments": [
-     {
-      "text": "Please, add an OpenAI API so we can use local models."
-     },
-     {
-      "text": "Oh, and one more thing. OpenGhost can now search YouTube for videos and pull photos from Google when that helps the answer - so on top of charts, it can send photos and video too. That’s honestly awesome. And it’s only going to get better from here: more languages, more models, unique features no other agent has, and a lot more. All of this thanks to the folks sending PRs and the Reddit commenters. You’re the best ❤️"
-     },
-     {
-      "text": "Could you please let the user choose the installation folder and add auto-update feature? Thank you."
-     },
-     {
-      "text": "Brother I just got done forking the v1.2 to support local models,now gonna start again 😅"
-     },
-     {
-      "text": "Hi, im new to all of this. And this looks great. Could you tell us how this is different from opencode or claude code?"
-     },
-     {
-      "text": "Can you add custom OpenAI-compatible providers?"
-     },
-     {
-      "text": "Can you please add more customisability for the appearance. for example specifically wider chat, ability to zoom in and out etc. its nice other wise. also ctrl+shit+o to open new convo. Its amazing so far I love it. do you know if these features are considered or will be added any time soon?"
-     },
-     {
-      "text": "Just got done porting all the frontend stuff from 1.2, pixel to pixel perfect in C++ & QT6 for linux. And then you come out with another release already! You're a machine man. Again, everything looks amazing as always. Keep up the good work! And i agree with the other guy mentioning you should let some of us help out. I have 3 weeks of codex resets to use in a week, so if you need a hand with something, let me know. I've already replaced the backend stuff with a pi/dsh hybrid i made in rust.…"
-     }
-    ]
+    "text": "Hey everyone. This update tightens a lot of pieces across the app. Graphics engine refresh: 40+ scenarios — learning, cooking, sports, travel, docs, and more. Better cache handling. Chat stats. Mini chat no longer wipes history when you close it. Video support. Plus a bunch of smaller fixes. OpenGhost is still fully open source — download or build it yourself here: https://github.com/ANDRETRIPOL/OpenGhost"
    },
    "sources": [
     "reddit"
@@ -8195,33 +8051,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1ww3rq7/pewdiepie_is_trying_to_distill_gptsol/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "he has been trying to build a local model by learning from GPT-Sol’s responses. He says OpenAI banned his account twice during the process. Irony is OpenAI’s own models were trained on vast amounts of information from the open web. So where do we draw the line between learning from AI and copying it?",
-    "topComments": [
-     {
-      "text": "No AI lab ever gets to complain about distillation being theft when they stole the entirety of human knowledge & creative expression without consequence or compensation. At least when their models get distilled they get paid for the usage. The hypocrisy is absurd."
-     },
-     {
-      "text": "Remember when Aaron Swartz got prosecuted for downloading academic papers and later died by suicide? Funny how the rules seem to change depending on who's doing it"
-     },
-     {
-      "text": "There’s a moment in his documentary where his girlfriend at the time recounts him looking at the White House and depressingly telling her that they don’t let felons work there. Look at us now"
-     },
-     {
-      "text": "AI companies are complete hypocrites. One rule for them another for anyone else. They have some fucking cheek complaining about distillation."
-     },
-     {
-      "text": "Its actually how most things work. Those who make money -> Give to those in charge of the country -> Who give them exceptions -> So those who make money can break laws that most lay people cannot break so they can keep making money. Oil & Gas did it, tech before did it, now tech stilll doing it. Its just part of the play book."
-     },
-     {
-      "text": "Why not try to distill Astra? and when did this guy become an AI engineer?"
-     },
-     {
-      "text": "From what I saw over the years, PwePiePie seems doing so well that he can actually decide to dedicate his time and focus on whatever he wants. And he seems to do this then seriously. At some point he practiced drawing and I must say, it did look quite good. Maybe you and me could also become AI engineers if our lives wouldn't force us to spend time on work. Especially with help of AI in first place."
-     },
-     {
-      "text": "Pewdiepie has been doing more than well for easily 10+ years now"
-     }
-    ]
+    "text": "he has been trying to build a local model by learning from GPT-Sol’s responses. He says OpenAI banned his account twice during the process. Irony is OpenAI’s own models were trained on vast amounts of information from the open web. So where do we draw the line between learning from AI and copying it?"
    },
    "sources": [
     "reddit"
@@ -8458,33 +8288,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1ww7twx/is_it_more_lobotomized_again_all_of_a_sudden/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Did something happen today? Because it worked fine yesterday, and here all of a sudden deepseek api began giving a lot more refusals in roleplay scenarios, it still dishes out replies as normal, but occasionally there’s your “I can’t continue this roleplay” And it’s no matter the context. It can be the tamest most vanilla scenario with light erotica that gives out a refusal, or some dead dove stuff. And it’s not like extreme stuff gives out more refusals either, they’re both pretty much the same. It still works relatively fine as of now. But it’s sorta threatening.",
-    "topComments": [
-     {
-      "text": "Definitely lobotomized. Had it be like “sorry I can’t talk about that, let’s talk about something else” twice, it’s never done that for my stories lore. I work with huge documents (15k-30k words) first time this has ever happened to me. And it makes so many mistakes now. Wish they’d bring back expert mode. Also been hit with the “chatting too frequently” or whatever bs it is now. Had to wait 20 minutes to send a message at all."
-     },
-     {
-      "text": "Chinese law is notoriously strict around fictional scenarios, you can’t depict skulls, it’s something about preventing their citizens the opportunity to imagine a different political world. Kinda wild how those regulations are becoming more universal."
-     },
-     {
-      "text": "Deeply disturbing omg"
-     },
-     {
-      "text": "A series of incidents like that happened to me, but then it stopped... I don't know what they do."
-     },
-     {
-      "text": "yep, same here, started getting refusals yesterday afternoon, even for basic vanilla scenes. tried a few prompts with no red flags, still got blocked. could be a server-side tweak, not sure if it's regional or global."
-     },
-     {
-      "text": "I had a hunch that they may have locked the web version to low effort. it replied quickly but went off the path so often too."
-     },
-     {
-      "text": "It’s the opposite for me. At first it was much more strict, but now I hardly encounter refusals. Though I also never update the app so that could have something to do with it."
-     },
-     {
-      "text": "Check the news. DeepSeek the company lifted Anthropic's Claude Opus weights without permission, and now they're being investigated by the Chinese government. DeepSeek is basically Claude at this point. I loved that LLM at V4. I hate the company that did this."
-     }
-    ]
+    "text": "Did something happen today? Because it worked fine yesterday, and here all of a sudden deepseek api began giving a lot more refusals in roleplay scenarios, it still dishes out replies as normal, but occasionally there’s your “I can’t continue this roleplay” And it’s no matter the context. It can be the tamest most vanilla scenario with light erotica that gives out a refusal, or some dead dove stuff. And it’s not like extreme stuff gives out more refusals either, they’re both pretty much the same. It still works relatively fine as of now. But it’s sorta threatening."
    },
    "sources": [
     "reddit"
@@ -8729,33 +8533,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1ww9myb/openai_is_now_working_directly_with_lockheed/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/pvzyjesbf5th1.png?width=875&format=png&auto=webp&s=db9530a41e3680e328faccf4db308f5feb30e040"
-     },
-     {
-      "text": "Yikes this is too close lol"
-     },
-     {
-      "text": "And just like her, we were warned. Sorry, thats just such a good movie. But like, humanoid robots with flesh suits arent going to kill us. What a waste of resources."
-     },
-     {
-      "text": "Ya we're not getting that model"
-     },
-     {
-      "text": "No in fact they will eventually hoard the technology with regulation under the guise of safety. Which only means the public doesn't get access but the models will still be built and used. A lot of the new discoveries they are making are entirely with unreleased models due to \"safety\"."
-     },
-     {
-      "text": "Chiming in here as a somewhat expert. I worked on the flight control system of the F35 VTOL model in late stage development (2008-2009) and during the first successful test flights. I worked closely with the engineering team who did the Prognostics Health Management aka sensor system that detects future faults. My friend was the main programmer (he was a 24 yr old genius from RIT) that coded the initial software to receive the sensor signals and integrate them into the FCS to monitor…"
-     },
-     {
-      "text": "Don’t worry guys they will get to curing cancer right after this."
-     },
-     {
-      "text": "This is why we need to ban open source models right?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8852,30 +8630,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1ww9nq3/i_use_claude_daily_but_i_know_im_only_using_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey everyone, this is my first time posting here and it's a bit of a longer loaded one. Background on myself: I'm a college senior with my time spread across classes, gym / health, networking, learning AI, and more. My current stack: Claude (Pro Subscription), Claude Code, GitHub, Notion (PARA setup with relational databases and more like a CRM, etc), Google features like Calendar, Google Drive, Google Docs, Gmail, Otter for recording classes, plus Gemini and NotebookLM, etc. What I currently do: Claude Code: I'm building an analytics database (DuckDB) with no real significant coding…",
-    "topComments": [
-     {
-      "text": "without sounding like a cock, all of this stuff, feed it all into claude and see what it comes out with. Opus 5.5 is surprisingly cleaver and good at understanding context."
-     },
-     {
-      "text": "Im confused.. do you think that OP wrote this post? .. by themselves?"
-     },
-     {
-      "text": "I know and that’s what I’ve done and it still hasn’t met my expectations and still feels like it’s lacking. Maybe I’m doing something wrong but it doesn’t feel like it knows what I want even though I had it ask me 100+ questions and answered every single one."
-     },
-     {
-      "text": "Have some semblance of an idea of what YOU want to do that’s the main piece"
-     },
-     {
-      "text": "Also, people don’t need to use AI for every single thing it can do. Just focus on things that are productive to you. If you don’t see a problem doing things manually like you always did, you don’t need to create an automation for that, like managing emails, calendar, task list, etc. I personally just use Claude Code and nothing more. My technical ability suffered at lot, but my imagination and creativity improved a ton because I just need to conceptualized something and Claude will handle it…"
-     },
-     {
-      "text": "I dumped findings from a couple of full stack projects here: gitlab.com/macrodream/blueprint Of note, there may be some skills you can reuse What keeps me on track is using GitLab for projects, GitLab for issue tracking (they renamed it to work items.. ok.. sure.. whatever) and GitLab CI to test what the LLM finally spits out."
-     },
-     {
-      "text": "Hey OP, not sure what you are studying, but here is some advice for what I see in a small business space. ADHD types tend to fail in project/product delivery by either going too deep or too wide. Too deep might look like creating an incredible website for an idea without thinking of how to commercialise. Too wide might be a bunch of technically built products that have never been revisited or optimised. The solution for both is to get a customer as early as possible and solve for their…"
-     }
-    ]
+    "text": "Hey everyone, this is my first time posting here and it's a bit of a longer loaded one. Background on myself: I'm a college senior with my time spread across classes, gym / health, networking, learning AI, and more. My current stack: Claude (Pro Subscription), Claude Code, GitHub, Notion (PARA setup with relational databases and more like a CRM, etc), Google features like Calendar, Google Drive, Google Docs, Gmail, Otter for recording classes, plus Gemini and NotebookLM, etc. What I currently do: Claude Code: I'm building an analytics database (DuckDB) with no real significant coding…"
    },
    "sources": [
     "reddit"
@@ -9012,33 +8767,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1wwabjk/what_image_model_was_used_here/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Anyone knows what could've been used here? Which model generates such photorealism? I've been using flux 2 but this seems to be next level https://www.instagram.com/reel/Dd6SKMRuJ7D/?stkn=MThjc2M5anI3b2Q0bA== EDIT: I know it's seedance for video. I'm asking about the image generator. What can produce this photorealism?",
-    "topComments": [
-     {
-      "text": "The answer is the same every single time. Seedance. Next question?"
-     },
-     {
-      "text": "The Mask universe is made for AI"
-     },
-     {
-      "text": "I would watch this tv show."
-     },
-     {
-      "text": "The actual movie this was based on isn’t far off"
-     },
-     {
-      "text": "For image? hard to say. For the video? Seedance 2.5, most likely."
-     },
-     {
-      "text": "wooooooooow amazing quality and super funny"
-     },
-     {
-      "text": "I'm confident you could do this in MH3."
-     },
-     {
-      "text": "I'd pay to watch the hardcore Mask movie lmao"
-     }
-    ]
+    "text": "Anyone knows what could've been used here? Which model generates such photorealism? I've been using flux 2 but this seems to be next level https://www.instagram.com/reel/Dd6SKMRuJ7D/?stkn=MThjc2M5anI3b2Q0bA== EDIT: I know it's seedance for video. I'm asking about the image generator. What can produce this photorealism?"
    },
    "sources": [
     "reddit"
@@ -9281,33 +9010,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1wwccsz/pewdiepie_unveils_uncensored_ajax_ai_model_built/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "I love that OpenAI basically argues that they should be exempt from copyright laws after scraping the entirety of the internet, but if someone uses their bot to train their another model, IP suddenly matters and it's hands off."
-     },
-     {
-      "text": "Might makes right."
-     },
-     {
-      "text": "How dare you do what we did. How dare you!"
-     },
-     {
-      "text": "Kinda like Disney who keeps arguing for extension of copyright laws to the point where they now last for 70 years after the death of the creator. You know who Disney is, right? They're the company that grew big by making movies based on other people's IP with lapsed copyright. Alice in Wonderland, Pinocchio, Snow white, Sleeping Beauty.. They didn't pay for any of that."
-     },
-     {
-      "text": "He was banned for violating their TOS. As far as I'm aware he hasn't been sued for IP infringement."
-     },
-     {
-      "text": "I'm sure OpenAI violated countless TOS to collect their data."
-     },
-     {
-      "text": "i ran a small model on my home pc last month. slow, but it worked fine. who gets to decide what training data is ok?"
-     },
-     {
-      "text": "Who has more money"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9499,33 +9202,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1wwdsmr/im_sorry_what/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Such a slap to the face as a high volume power user doing free QA work on the free tier. Good knowing you 3.6 flash, on to the next ai then 😒.",
-    "topComments": [
-     {
-      "text": "power user and free tier cannot exist on the same sentence"
-     },
-     {
-      "text": "Complaining that the free tier is being restricted and then expecting Google to care if you leave is peak Gen Z"
-     },
-     {
-      "text": "Not only complaining, but acting like they're doing Google a favor by being a high volume user for free lol"
-     },
-     {
-      "text": "I'm on plus. If they don't upgrade flash 3,6 to 3,8 and take away pro, it will be unusable."
-     },
-     {
-      "text": "Yeah I am cancelling too if they take away Pro but don't give us 3.8."
-     },
-     {
-      "text": "The Plus plan is already awful because they don't even give you access to Flash 3.8, and now they're going to remove the Pro model? It's rubbish what Google is doing, and I have a yearly Plus subscription 😞"
-     },
-     {
-      "text": "The power user on the free tier part made me chuckle"
-     },
-     {
-      "text": "At least you would expect they update the flash models on Plus tier. It's still stuck on 3.6"
-     }
-    ]
+    "text": "Such a slap to the face as a high volume power user doing free QA work on the free tier. Good knowing you 3.6 flash, on to the next ai then 😒."
    },
    "sources": [
     "reddit"
@@ -10014,9 +9691,8 @@
   }
  ],
  "date": "2026-10-02",
- "fetchedAt": "2026-10-05T04:00:48.558Z",
+ "fetchedAt": "2026-10-05T07:18:27.434Z",
  "runs": [
-  "2026-10-03T04:00:59.700Z",
   "2026-10-03T07:05:10.974Z",
   "2026-10-03T07:49:57.565Z",
   "2026-10-03T08:51:23.558Z",
@@ -10035,7 +9711,8 @@
   "2026-10-04T19:46:03.748Z",
   "2026-10-04T21:49:10.783Z",
   "2026-10-05T01:22:32.551Z",
-  "2026-10-05T04:00:48.558Z"
+  "2026-10-05T04:00:48.558Z",
+  "2026-10-05T07:18:27.434Z"
  ],
  "schema": 2,
  "sources": [
@@ -10196,9 +9873,9 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-05T04:00:48.558Z",
+   "fetchedAt": "2026-10-05T07:18:27.434Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 9 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
    "state": "degraded"
   },
