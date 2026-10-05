@@ -10198,6 +10198,41 @@
    ],
    "title": "The eternal complement",
    "url": "https://openai.com/index/the-eternal-complement"
+  },
+  {
+   "board": "labs",
+   "category": "product",
+   "key": "url:platform.claude.com/docs/en/release-notes/overview#7550fb2f",
+   "lab": {
+    "company": "anthropic",
+    "companyName": "Anthropic",
+    "datePrecision": "day",
+    "kind": "product",
+    "publishedAt": "2026-10-01T19:00:00.000Z",
+    "surface": "changelog"
+   },
+   "metrics": {
+    "company": 1,
+    "kind": 0.7,
+    "release": 0,
+    "surface": 0.1
+   },
+   "publishedAt": "2026-10-01T19:00:00.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "lab:anthropic",
+     "cat:kind:product"
+    ],
+    "score": 1
+   },
+   "sources": [
+    "labs-anthropic"
+   ],
+   "summary": "We've added a line field to the Models API. GET /v1/models and GET /v1/models/{model_id} now return the model line each model belongs to. Claude Opus 4.5 and Claude Opus 4.6 both report opus, for example. Use line to group models without parsing their IDs. line is null for a model that belongs to no line. See Using the Models API.",
+   "tags": [],
+   "title": "We've added a line field to the Models API.",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#october-1-2026"
   }
  ],
  "date": "2026-10-01",
