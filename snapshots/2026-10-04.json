@@ -5173,7 +5173,7 @@
     "codeStars": 4,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "We present WAMpy, a Python framework optimized for synthesizing Prolog programs. Unlike general-purpose Prolog systems, WAMpy targets workloads that repeatedly generate and evaluate small candidate programs. WAMpy compiles Prolog clauses into NumPy array-based WAM instructions and supports partial recompilation of hypotheses against fixed background knowledge. Performance-critical routines are accelerated using Numba just-in-time (JIT) compilation. In a benchmark of repeated compilation-and-evaluation workloads, WAMpy improves end-to-end performance compared with SWI-Prolog accessed from Python using Janus.",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5188,6 +5188,7 @@
      "cs.PL",
      "cs.AI"
     ],
+    "codeStars": 4,
     "codeUrl": "https://github.com/cognitive-modeling/WAMpy",
     "pdfUrl": "https://arxiv.org/pdf/2610.03234"
    },
@@ -5221,7 +5222,7 @@
     "codeStars": 3,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "Panoramic images provide a complete 360-degree field of view, enabling comprehensive scene understanding for embodied perception. However, heterogeneous embodied platforms exhibit substantial differences in observation viewpoints and spatial layouts, giving rise to cross-embodiment observation shifts that pose additional challenges to consistent and reliable panoramic perception, while systematic studies of this problem remain limited. To bridge this gap, we introduce a new task, termed Cross-Embodiment Open Panoramic Segmentation. Meanwhile, we establish EmbPASS, a multi-platform panoramic semantic segmentation benchmark spanning Vehicle, Drone, Wearable, and Quadruped platforms under a unified semantic taxonomy, providing a testbed for systematically studying cross-embodiment panoramic perception. We further propose EPONet, an open-vocabulary panoramic semantic segmentation network that integrates Relation-Aware Metric Adapter (RAMA) and Content-Adaptive Semantic Transfer (CAST) to enhance spatial modeling and semantic transfer under heterogeneous embodied observations. Extensive experiments show that EPONet achieves the best platform-balanced performance on EmbPASS with 35.82% mIoU, outperforming the strongest baseline by 1.10%, while remaining competitive on existing panoramic segmentation benchmarks. The source code and EmbPASS benchmark will be made publicly available at https://github.com/guopj1/EmbPASS.",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5241,6 +5242,7 @@
      "cs.CV",
      "cs.RO"
     ],
+    "codeStars": 3,
     "codeUrl": "https://github.com/guopj1/EmbPASS",
     "pdfUrl": "https://arxiv.org/pdf/2610.03248"
    },
@@ -5274,7 +5276,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "Flow- and diffusion-based generative models have recently emerged as flexible and highly efficient forecasting models for dynamical systems. When combined with inference-time guidance, they offer a promising route to high-dimensional non-Gaussian data assimilation (DA), the problem of combining forecasts with observations to estimate latent system states. Existing filters, however, condition on a fixed history and assimilate only the most recent observation, leaving them unable to revise past states when new observations arrive. Estimates then stay tethered to a history that later observations may contradict, and errors accumulate over the assimilation run. To this end, we introduce **DAWIS**, a unified DA method covering filtering, fixed-lag smoothing, and block smoothing within a single framework. DAWIS replaces the single flow time of a state-level prior with a multitask stochastic interpolant over a window of consecutive states, assigning a separate flow time to each. An assimilation cycle inverts the window to a vector of per-state turning points and regenerates it under observation guidance, with the turning points controlling how strongly each state is held fixed, revised, or generated from scratch. The same construction can also absorb the forecast into the assimilation cycle, removing the need for a separate forecasting model. Experiments on challenging nonlinear systems show that DAWIS improves on both filtering and smoothing baselines under sparse, noisy, and nonlinear observations. The code for DAWIS is available at https://github.com/Erik-Wikingsson/DAWIS",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5326,7 +5328,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "Empirical claims about the connection between over-squashing and long-range interactions in GNNs, can only be trusted if the benchmarks used to validate them genuinely require long-range interactions. The de-facto standard, the Long Range Graph Benchmark, has been repeatedly shown to be saturated by tuned short-range models, with existing synthetic alternatives being tied to specific topologies. As such, there is a lack of principled certificate of long-rangedness on arbitrary graphs. This state reflects the absence of a precise characterization of long-ranged benchmarks. We address this fundamental gap by introducing four verifiable axioms: Predictability, Tightness, Strictly $k$-Range, and Topology-Invariance, that any task claiming to test $k$-hop interactions must satisfy. We formally prove that violating any one of them admits failure modes that undermine conclusions drawn from the task. Based on these axioms, we introduce TRIP (Truly Ranged Interactions Problem) and its generalisation GRIP (Generally Ranged Interactions Problem), constructive procedures that turn any graph into a provably long-ranged task by drawing features from stable distributions. Moreover, by construction, GRIP admits a closed-form, per-range Maximum-Likelihood oracle that yields the first a priori per-range lower bound on test error available on any benchmark. Using our framework, we: (i) audit 4 common long-range benchmarks and identify their failures modes with respect to our axioms; (ii) on TRIP-instantiated topologies, we find a popular notion of curvature is uncorrelated with GNN performance, supporting topological-vs-computational bottleneck distinction; and (iii) we show that a novel benchmark's over-squashing measures factors beyond pure long-rangedness. Code to use the framework and reproduce experiments is released https://github.com/ferranhernandezc/graph-grip.",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5376,7 +5378,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "Online reinforcement learning (RL) enables robot policies to improve through physical interaction, but the assistance they require changes as their competence evolves. Existing intervention strategies based on offline estimates or fixed decision rules can therefore become mismatched to the current policy. To address this, we propose UniIntervene++, an adaptive intervention agent that learns to allocate control between autonomous execution and heterogeneous assisted behaviors during online RL. Specifically, UniIntervene++ first formulates the evolving RL policy, trajectory correction, and a task-structured CodePolicy as Options in a unified semi-Markov decision process and learns their relative values online. Building on this, competence-adaptive intervention periodically probes the RL policy through unassisted execution, keeping control allocation responsive to its evolving capability. Finally, coupled experience learning allows assisted behaviors to improve the RL policy, whose evolving outcomes in turn reshape future intervention decisions. In this way, UniIntervene++ jointly determines when to intervene, how to intervene, and when to return control as the RL policy improves. Across five real-world manipulation tasks, UniIntervene++ achieves an average success rate of 89.67%, outperforming all baselines by at least 6 percentage points, while reducing human intervention to 0.77%, a relative reduction of at least 94.6% from the best baseline. Code is available in our \\href{https://github.com/dannyyudong/An-Adaptive-Intervention-Agent-for-Efficient-Real-World-Reinforcement-Learning}{GitHub repository}.",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5425,10 +5427,10 @@
    "category": "research",
    "key": "arxiv:2610.03691",
    "metrics": {
-    "codeStars": 31,
+    "codeStars": 37,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "We present FlowHMR, a framework for recovering physically plausible global 3D human motion from monocular video. Previous learning-based methods typically regress human motion directly from video and train the network with geometric supervision. However, recovering human motion from monocular video is inherently ambiguous in depth, and direct regression tends to collapse toward an averaged solution. Moreover, the recovered motions are not guaranteed to be physically plausible, so physics-based tracking of them often fails. To address these challenges, we formulate video motion capture as a video-conditioned motion generation problem and first pretrain a flow matching model for this task. Given an input video, the pretrained model generates diverse motion candidates, but not all of them are faithful to the video or physically trackable. We therefore post-train the model using Group Relative Policy Optimization (GRPO) with two rewards. A fidelity reward encourages consistency with the input video. A tracking reward favors motions that a physics-based controller can track successfully. Together, these rewards shift the model's output preference, so the post-trained model stays faithful to the input video while producing more physically plausible motion. We further introduce Wild-4K, a large and diverse dataset of about 4K internet videos, for evaluating human motion recovery in the wild. Qualitative and quantitative experiments on Wild-4K show that our method outperforms state-of-the-art methods in overall motion fidelity and achieves a physical tracking success rate of 82.47%, compared with 62.82% for the strongest baseline, GVHMR.",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5450,7 +5452,7 @@
     "categories": [
      "cs.CV"
     ],
-    "codeStars": 31,
+    "codeStars": 37,
     "codeUrl": "https://github.com/flowhmr/flowhmr",
     "pdfUrl": "https://arxiv.org/pdf/2610.03691"
    },
@@ -5480,10 +5482,10 @@
    "category": "research",
    "key": "arxiv:2610.03715",
    "metrics": {
-    "codeStars": 4,
+    "codeStars": 5,
     "prior": 0.3
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "paper": {
     "abstract": "We introduce 4DCodeBench, a benchmark for 4D inverse graphics through code generation, in which agents reconstruct dynamic scenes from video as executable graphics programs. To accomplish this, agents must translate visual observations into compact representations of scene structure and dynamics, by implementing abstractions such as physical simulations to reproduce complex behavior. To evaluate this capability, we curate a set of real-world videos and construct synthetic scenes spanning diverse physical phenomena, including deformation, fluid flow, and fracture. We perform extensive benchmarking of frontier models, finding that strong static reconstruction capabilities do not yet translate into reliable reconstruction of complex dynamics. 4DCodeBench provides a testbed for tracking progress toward agents that can interpret the dynamics of the world through code. Our benchmark is available at https://github.com/4DCodeBench/4DCodeBench",
     "arxivAnnouncedAt": "2026-10-05T00:00:00.000Z",
@@ -5505,7 +5507,7 @@
      "cs.AI",
      "cs.GR"
     ],
-    "codeStars": 4,
+    "codeStars": 5,
     "codeUrl": "https://github.com/4DCodeBench/4DCodeBench",
     "pdfUrl": "https://arxiv.org/pdf/2610.03715"
    },
@@ -5550,7 +5552,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49951684",
     "points": 46
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-04T08:02:33.000Z",
    "refs": [
     "url:404media.co/someone-torturing-llms-in-a-robot-prison-has-triggered-the-dumbest-debate-in-ai-yet"
@@ -5589,7 +5591,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49953179",
     "points": 12
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-04T12:06:57.000Z",
    "refs": [
     "url:ft.com/content/2c24ece3-ac99-43a8-b0e6-4a3867e37ebf"
@@ -5614,20 +5616,20 @@
    "category": "discussion",
    "key": "hn:49953495",
    "metrics": {
-    "comments": 370,
+    "comments": 390,
     "frontPage": 1,
-    "points": 842
+    "points": 872
    },
    "news": {
     "author": "snehesht",
-    "comments": 370,
+    "comments": 390,
     "createdAt": "2026-10-04T12:51:53.000Z",
     "domain": "github.com",
     "hnId": 49953495,
     "hnUrl": "https://news.ycombinator.com/item?id=49953495",
-    "points": 842
+    "points": 872
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-04T12:51:53.000Z",
    "refs": [
     "gh:niko1221/strata"
@@ -5654,7 +5656,7 @@
    "metrics": {
     "comments": 9,
     "frontPage": 0,
-    "points": 36
+    "points": 38
    },
    "news": {
     "author": "saikatsg",
@@ -5663,9 +5665,9 @@
     "domain": "blog.jetbrains.com",
     "hnId": 49956148,
     "hnUrl": "https://news.ycombinator.com/item?id=49956148",
-    "points": 36
+    "points": 38
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-04T17:51:48.000Z",
    "refs": [
     "url:blog.jetbrains.com/ai/2026/09/building-a-rag-pipeline-for-semantic-code-search-a-developer-diary-and-field-notes"
@@ -5703,7 +5705,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=49957191",
     "points": 30
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-04T19:49:12.000Z",
    "refs": [
     "url:island-three.gruberbuilds.workers.dev"
@@ -5728,20 +5730,20 @@
    "category": "discussion",
    "key": "hn:49959361",
    "metrics": {
-    "comments": 7,
+    "comments": 8,
     "frontPage": 0,
     "points": 15
    },
    "news": {
     "author": "JumpCrisscross",
-    "comments": 7,
+    "comments": 8,
     "createdAt": "2026-10-05T00:17:37.000Z",
     "domain": "ft.com",
     "hnId": 49959361,
     "hnUrl": "https://news.ycombinator.com/item?id=49959361",
     "points": 15
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-05T00:17:37.000Z",
    "refs": [
     "url:ft.com/content/2c24ece3-ac99-43a8-b0e6-4a3867e37ebf"
@@ -5766,20 +5768,20 @@
    "category": "discussion",
    "key": "hn:49961057",
    "metrics": {
-    "comments": 63,
+    "comments": 69,
     "frontPage": 0,
-    "points": 79
+    "points": 87
    },
    "news": {
     "author": "emptybits",
-    "comments": 63,
+    "comments": 69,
     "createdAt": "2026-10-05T05:37:40.000Z",
     "domain": "techspot.com",
     "hnId": 49961057,
     "hnUrl": "https://news.ycombinator.com/item?id=49961057",
-    "points": 79
+    "points": 87
    },
-   "observedAt": "2026-10-05T12:59:32.256Z",
+   "observedAt": "2026-10-05T15:49:59.557Z",
    "publishedAt": "2026-10-05T05:37:40.000Z",
    "refs": [
     "url:techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html"
@@ -8911,7 +8913,7 @@
   }
  ],
  "date": "2026-10-04",
- "fetchedAt": "2026-10-05T12:59:32.256Z",
+ "fetchedAt": "2026-10-05T15:49:59.557Z",
  "runs": [
   "2026-10-04T08:43:38.756Z",
   "2026-10-04T09:48:09.360Z",
@@ -8926,160 +8928,180 @@
   "2026-10-05T08:03:36.474Z",
   "2026-10-05T08:59:17.013Z",
   "2026-10-05T09:56:18.927Z",
-  "2026-10-05T12:59:32.256Z"
+  "2026-10-05T12:59:32.256Z",
+  "2026-10-05T15:49:59.557Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "arxiv",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 309,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 307,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "github-search",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 82,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 83,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "github-trending",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 137,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 146,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "hacker-news",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 125,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 131,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "hf-papers",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 13,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "journals",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 14,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 15,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-anthropic",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 4,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-deepseek",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 8,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 7,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-google",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-kimi",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-meta",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-minimax",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 4,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-mistral",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 34,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 35,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-qwen",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 3,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 2,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "labs-zhipu",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   },
   {
    "board": "social",
-   "count": 221,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "count": 60,
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "reddit",
-   "mode": "rss",
+   "message": "reusing the fetch of 2026-10-05T12:59:32.256Z (at most every 6 h)",
+   "mode": "cached",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 9 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
    "state": "degraded"
   },
   {
    "board": "social",
    "count": 5,
-   "fetchedAt": "2026-10-05T12:59:32.256Z",
+   "fetchedAt": "2026-10-05T15:49:59.557Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-10-05T15:49:59.557Z",
    "state": "ok"
   }
  ],
