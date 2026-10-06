@@ -5045,6 +5045,24 @@
    "upd": "2025-12-02"
   },
   {
+   "cr": 0.07,
+   "ctx": 524288,
+   "efforts": [
+    "none",
+    "high"
+   ],
+   "id": "mistral-large-4",
+   "in": 0.68,
+   "k": "mistral-large-4",
+   "maxOut": 262144,
+   "name": "Mistral Large 4",
+   "out": 2.09,
+   "p": "mistral",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-06"
+  },
+  {
    "cr": 0.05,
    "ctx": 262144,
    "id": "mistral-large-latest",
@@ -7268,7 +7286,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.019474,
+   "in": 0.0395,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7280,7 +7298,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.15,
+   "cr": 0.24,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7288,7 +7306,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.152,
+   "in": 0.2444,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7300,7 +7318,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0134,
+   "cr": 0.009,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7308,7 +7326,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0134,
+   "in": 0.009,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
@@ -7368,7 +7386,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.83,
+   "in": 0.82,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7511,7 +7529,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0244,
+   "cr": 0.0214,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7519,7 +7537,7 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0244,
+   "in": 0.0214,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
@@ -8396,14 +8414,14 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.012,
+   "cr": 0.0031,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.012,
+   "in": 0.0031,
    "k": "deepseek-v4-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash",
@@ -8415,7 +8433,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0134,
+   "cr": 0.009,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8423,7 +8441,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0134,
+   "in": 0.009,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8502,7 +8520,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.021421,
+   "in": 0.0495,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
@@ -9375,6 +9393,7 @@
    "upd": "2024-12-06"
   },
   {
+   "cr": 0.05,
    "ctx": 1048576,
    "id": "meta-llama/llama-4-maverick",
    "in": 0.1875,
@@ -9794,6 +9813,20 @@
    "upd": "2025-12-02"
   },
   {
+   "cr": 0.07,
+   "ctx": 524288,
+   "id": "mistralai/mistral-large-4-0",
+   "in": 0.68,
+   "k": "mistral-large-4-0",
+   "maxOut": 262144,
+   "name": "Mistral Large 4",
+   "out": 2.09,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2026-10-06"
+  },
+  {
    "cr": 0.04,
    "ctx": 131072,
    "id": "mistralai/mistral-medium-3",
@@ -10035,7 +10068,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.31,
+   "cr": 0.27,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10043,7 +10076,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.95,
+   "in": 0.83,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -16987,5 +17020,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-06T12:56:11.381Z"
+ "updatedAt": "2026-10-06T15:48:06.611Z"
 }
