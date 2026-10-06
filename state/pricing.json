@@ -7272,7 +7272,7 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 1.2,
+   "out": 3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7280,7 +7280,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.28,
+   "cr": 0.27,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7288,11 +7288,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2765,
+   "in": 0.2715,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 6,
+   "out": 4.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7300,7 +7300,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.006,
+   "cr": 0.0118,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7308,7 +7308,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.006,
+   "in": 0.0118,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
@@ -7368,7 +7368,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.664,
+   "in": 0.82,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7511,7 +7511,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0183,
+   "cr": 0.0278,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8396,14 +8396,14 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.0031,
+   "cr": 0.0015,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.0031,
+   "in": 0.0015,
    "k": "deepseek-v4-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash",
@@ -8415,7 +8415,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.006,
+   "cr": 0.0118,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8423,7 +8423,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.006,
+   "in": 0.0118,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8494,7 +8494,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.003,
+   "cr": 0.0033,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8502,11 +8502,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.003,
+   "in": 0.0033,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 1.2,
+   "out": 3.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9978,12 +9978,11 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.15,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2-thinking",
    "in": 0.6,
    "k": "kimi-k2-thinking",
-   "maxOut": 98304,
+   "maxOut": 235929,
    "name": "Kimi K2 Thinking",
    "out": 2.5,
    "p": "openrouter",
@@ -12127,14 +12126,14 @@
    "upd": "2026-02-23"
   },
   {
-   "cr": 0.05,
+   "cr": 0.04,
    "ctx": 262144,
    "id": "qwen/qwen3.5-35b-a3b",
-   "in": 0.15,
+   "in": 0.08,
    "k": "qwen3-5-35b-a3b",
-   "maxOut": 235929,
+   "maxOut": 32768,
    "name": "Qwen3.5 35B-A3B",
-   "out": 1,
+   "out": 0.75,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16988,5 +16987,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-06T07:52:35.041Z"
+ "updatedAt": "2026-10-06T08:53:23.168Z"
 }
