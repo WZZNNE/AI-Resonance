@@ -213,11 +213,11 @@
   {
    "ctx": 34096,
    "id": "qwen-vl-ocr",
-   "in": 0.72,
+   "in": 0.07,
    "k": "qwen-vl-ocr",
    "maxOut": 4096,
    "name": "Qwen-VL OCR",
-   "out": 0.72,
+   "out": 0.16,
    "p": "alibaba",
    "reasoning": false,
    "src": "models.dev",
@@ -4793,7 +4793,7 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.06,
+   "cr": 0.03,
    "ctx": 204800,
    "cw": 0.375,
    "id": "MiniMax-M2.5-highspeed",
@@ -4966,6 +4966,20 @@
   {
    "cr": 0.03,
    "ctx": 256000,
+   "id": "codestral-2508",
+   "in": 0.3,
+   "k": "codestral-2508",
+   "maxOut": 8192,
+   "name": "Codestral 25.08",
+   "out": 0.9,
+   "p": "mistral",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-07-30"
+  },
+  {
+   "cr": 0.03,
+   "ctx": 256000,
    "id": "codestral-latest",
    "in": 0.3,
    "k": "codestral-latest",
@@ -4978,8 +4992,47 @@
    "upd": "2025-01-04"
   },
   {
-   "alwaysOn": true,
-   "ctx": 128000,
+   "cr": 0.14,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "high",
+    "max"
+   ],
+   "id": "glm-5-2",
+   "in": 1.4,
+   "k": "glm-5-2",
+   "maxOut": 131072,
+   "name": "GLM-5.2",
+   "out": 4.4,
+   "p": "mistral",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-13"
+  },
+  {
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "high"
+   ],
+   "id": "labs-leanstral-1-5-1",
+   "in": 0,
+   "k": "labs-leanstral-1-5-1",
+   "maxOut": 128000,
+   "name": "Leanstral 1.5",
+   "out": 0,
+   "p": "mistral",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-30"
+  },
+  {
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "high"
+   ],
    "id": "magistral-medium-latest",
    "in": 2,
    "k": "magistral-medium-latest",
@@ -4990,6 +5043,34 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2025-03-20"
+  },
+  {
+   "cr": 0.02,
+   "ctx": 262144,
+   "id": "ministral-14b-2512",
+   "in": 0.2,
+   "k": "ministral-14b-2512",
+   "maxOut": 262144,
+   "name": "Ministral 3 14B",
+   "out": 0.2,
+   "p": "mistral",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-02"
+  },
+  {
+   "cr": 0.01,
+   "ctx": 131072,
+   "id": "ministral-3b-2512",
+   "in": 0.1,
+   "k": "ministral-3b-2512",
+   "maxOut": 262144,
+   "name": "Ministral 3 3B",
+   "out": 0.1,
+   "p": "mistral",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-02"
   },
   {
    "ctx": 131072,
@@ -5003,6 +5084,20 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2024-10-04"
+  },
+  {
+   "cr": 0.015,
+   "ctx": 262144,
+   "id": "ministral-8b-2512",
+   "in": 0.15,
+   "k": "ministral-8b-2512",
+   "maxOut": 262144,
+   "name": "Ministral 3 8B",
+   "out": 0.15,
+   "p": "mistral",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-02"
   },
   {
    "ctx": 262144,
@@ -5267,6 +5362,19 @@
   },
   {
    "ctx": 32768,
+   "id": "voxtral-small-2507",
+   "in": 0.1,
+   "k": "voxtral-small-2507",
+   "maxOut": 32000,
+   "name": "Voxtral Small",
+   "out": 0.4,
+   "p": "mistral",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-07-15"
+  },
+  {
+   "ctx": 32768,
    "id": "voxtral-small-latest",
    "in": 0.1,
    "k": "voxtral-small-latest",
@@ -5459,6 +5567,7 @@
   {
    "cr": 0.3,
    "ctx": 1048576,
+   "cw": 3,
    "efforts": [
     "low",
     "high",
@@ -5523,6 +5632,7 @@
   {
    "cr": 0.3,
    "ctx": 1048576,
+   "cw": 3,
    "efforts": [
     "low",
     "high",
@@ -6471,6 +6581,24 @@
    "upd": "2026-01-19"
   },
   {
+   "cr": 0.14,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "high"
+   ],
+   "id": "mistral-large-4",
+   "in": 1.36,
+   "k": "mistral-large-4",
+   "maxOut": 262144,
+   "name": "Mistral Large 4",
+   "out": 4.18,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-06"
+  },
+  {
    "ctx": 1048576,
    "id": "nemotron-3-nano:30b",
    "in": 0.06,
@@ -7278,7 +7406,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.02,
+   "cr": 0.01,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7529,7 +7657,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0214,
+   "cr": 0.0317,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7537,7 +7665,7 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0214,
+   "in": 0.0317,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
@@ -8512,7 +8640,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.02,
+   "cr": 0.01,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -9711,12 +9839,12 @@
    "in": 0.3,
    "k": "codestral-2508",
    "maxOut": 204800,
-   "name": "Codestral 2508",
+   "name": "Codestral 25.08",
    "out": 0.9,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-08-01"
+   "upd": "2025-07-30"
   },
   {
    "cr": 0.04,
@@ -10200,12 +10328,11 @@
    "upd": "2025-08-26"
   },
   {
-   "cr": 0.03,
    "ctx": 262144,
    "id": "nvidia/nemotron-3-nano-30b-a3b",
    "in": 0.05,
    "k": "nemotron-3-nano-30b-a3b",
-   "maxOut": 235929,
+   "maxOut": 32768,
    "name": "Nemotron 3 Nano 30B A3B",
    "out": 0.2,
    "p": "openrouter",
@@ -10335,14 +10462,14 @@
    "upd": "2026-06-04"
   },
   {
-   "cr": 0.03,
+   "cr": 0.0245,
    "ctx": 262144,
    "id": "nvidia/nemotron-3.5-lightning",
-   "in": 0.06,
+   "in": 0.049,
    "k": "nemotron-3-5-lightning",
-   "maxOut": 32768,
+   "maxOut": 131072,
    "name": "Nemotron 3.5 Lightning 30B A3B",
-   "out": 0.16,
+   "out": 0.14,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17028,5 +17155,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-07T12:59:46.822Z"
+ "updatedAt": "2026-10-07T15:53:49.530Z"
 }
