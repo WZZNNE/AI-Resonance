@@ -10656,7 +10656,7 @@
   }
  ],
  "date": "2026-10-06",
- "fetchedAt": "2026-10-07T15:53:49.530Z",
+ "fetchedAt": "2026-10-07T18:53:56.425Z",
  "runs": [
   "2026-10-06T07:01:26.836Z",
   "2026-10-06T07:52:35.041Z",
@@ -10673,7 +10673,8 @@
   "2026-10-07T08:54:55.943Z",
   "2026-10-07T09:50:54.035Z",
   "2026-10-07T12:59:46.822Z",
-  "2026-10-07T15:53:49.530Z"
+  "2026-10-07T15:53:49.530Z",
+  "2026-10-07T18:53:56.425Z"
  ],
  "schema": 2,
  "sources": [
@@ -10818,15 +10819,16 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-07T15:53:49.530Z",
+   "fetchedAt": "2026-10-07T18:53:56.425Z",
    "id": "labs-zhipu",
-   "message": "zhipu-news: json: GET https://www.zhipuai.cn/api/articles?limit=10&sort=-createAt&depth=0 failed: fetch failed",
-   "state": "degraded"
+   "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-07T18:53:56.425Z",
+   "state": "ok"
   },
   {
    "board": "social",
    "count": 60,
-   "fetchedAt": "2026-10-07T15:53:49.530Z",
+   "fetchedAt": "2026-10-07T18:53:56.425Z",
    "id": "reddit",
    "message": "reusing the fetch of 2026-10-07T12:59:46.822Z (at most every 6 h)",
    "mode": "cached",
