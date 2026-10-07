@@ -2293,6 +2293,29 @@
    "upd": "2025-10-15"
   },
   {
+   "cr": 0.01,
+   "ctx": 1000000,
+   "cw": 0.125,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "claude-haiku-5-5",
+   "in": 0.1,
+   "k": "claude-haiku-5-5",
+   "maxOut": 128000,
+   "name": "Claude Haiku 5.5",
+   "out": 0.5,
+   "p": "anthropic",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-07"
+  },
+  {
    "budget": {
     "min": 1024
    },
@@ -4992,59 +5015,6 @@
    "upd": "2025-01-04"
   },
   {
-   "cr": 0.14,
-   "ctx": 1048576,
-   "efforts": [
-    "none",
-    "high",
-    "max"
-   ],
-   "id": "glm-5-2",
-   "in": 1.4,
-   "k": "glm-5-2",
-   "maxOut": 131072,
-   "name": "GLM-5.2",
-   "out": 4.4,
-   "p": "mistral",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-13"
-  },
-  {
-   "ctx": 262144,
-   "efforts": [
-    "none",
-    "high"
-   ],
-   "id": "labs-leanstral-1-5-1",
-   "in": 0,
-   "k": "labs-leanstral-1-5-1",
-   "maxOut": 128000,
-   "name": "Leanstral 1.5",
-   "out": 0,
-   "p": "mistral",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-30"
-  },
-  {
-   "ctx": 262144,
-   "efforts": [
-    "none",
-    "high"
-   ],
-   "id": "magistral-medium-latest",
-   "in": 2,
-   "k": "magistral-medium-latest",
-   "maxOut": 16384,
-   "name": "Magistral Medium (latest)",
-   "out": 5,
-   "p": "mistral",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-03-20"
-  },
-  {
    "cr": 0.02,
    "ctx": 262144,
    "id": "ministral-14b-2512",
@@ -5113,19 +5083,6 @@
    "upd": "2024-10-04"
   },
   {
-   "ctx": 131072,
-   "id": "mistral-large-2411",
-   "in": 2,
-   "k": "mistral-large-2411",
-   "maxOut": 16384,
-   "name": "Mistral Large 2.1",
-   "out": 6,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-11-18"
-  },
-  {
    "cr": 0.05,
    "ctx": 262144,
    "id": "mistral-large-2512",
@@ -5172,32 +5129,6 @@
    "upd": "2025-12-02"
   },
   {
-   "ctx": 131072,
-   "id": "mistral-medium-2505",
-   "in": 0.4,
-   "k": "mistral-medium-2505",
-   "maxOut": 131072,
-   "name": "Mistral Medium 3",
-   "out": 2,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-05-07"
-  },
-  {
-   "ctx": 262144,
-   "id": "mistral-medium-2508",
-   "in": 0.4,
-   "k": "mistral-medium-2508",
-   "maxOut": 262144,
-   "name": "Mistral Medium 3.1",
-   "out": 2,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-08-12"
-  },
-  {
    "cr": 0.15,
    "ctx": 262144,
    "efforts": [
@@ -5232,32 +5163,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-04-29"
-  },
-  {
-   "ctx": 128000,
-   "id": "mistral-nemo",
-   "in": 0.15,
-   "k": "mistral-nemo",
-   "maxOut": 128000,
-   "name": "Mistral Nemo",
-   "out": 0.15,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-07-01"
-  },
-  {
-   "ctx": 128000,
-   "id": "mistral-small-2506",
-   "in": 0.1,
-   "k": "mistral-small-2506",
-   "maxOut": 16384,
-   "name": "Mistral Small 3.2",
-   "out": 0.3,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-06-20"
   },
   {
    "cr": 0.015,
@@ -5296,71 +5201,6 @@
    "upd": "2026-03-16"
   },
   {
-   "ctx": 8000,
-   "id": "open-mistral-7b",
-   "in": 0.25,
-   "k": "open-mistral-7b",
-   "maxOut": 8000,
-   "name": "Mistral 7B",
-   "out": 0.25,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2023-09-27"
-  },
-  {
-   "ctx": 64000,
-   "id": "open-mixtral-8x22b",
-   "in": 2,
-   "k": "open-mixtral-8x22b",
-   "maxOut": 64000,
-   "name": "Mixtral 8x22B",
-   "out": 6,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-04-17"
-  },
-  {
-   "ctx": 32000,
-   "id": "open-mixtral-8x7b",
-   "in": 0.7,
-   "k": "open-mixtral-8x7b",
-   "maxOut": 32000,
-   "name": "Mixtral 8x7B",
-   "out": 0.7,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2023-12-11"
-  },
-  {
-   "ctx": 128000,
-   "id": "pixtral-12b",
-   "in": 0.15,
-   "k": "pixtral-12b",
-   "maxOut": 128000,
-   "name": "Pixtral 12B",
-   "out": 0.15,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-09-01"
-  },
-  {
-   "ctx": 128000,
-   "id": "pixtral-large-latest",
-   "in": 2,
-   "k": "pixtral-large-latest",
-   "maxOut": 128000,
-   "name": "Pixtral Large (latest)",
-   "out": 6,
-   "p": "mistral",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-11-04"
-  },
-  {
    "ctx": 32768,
    "id": "voxtral-small-2507",
    "in": 0.1,
@@ -5385,25 +5225,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-07-15"
-  },
-  {
-   "cr": 0.14,
-   "ctx": 1048576,
-   "efforts": [
-    "none",
-    "high",
-    "max"
-   ],
-   "id": "zai-glm-5-2",
-   "in": 1.4,
-   "k": "zai-glm-5-2",
-   "maxOut": 131072,
-   "name": "GLM-5.2",
-   "out": 4.4,
-   "p": "mistral",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-13"
   },
   {
    "cr": 0.14,
@@ -7346,15 +7167,22 @@
    "upd": "2026-06-09"
   },
   {
-   "cr": 0.1,
-   "ctx": 200000,
-   "cw": 1.25,
+   "cr": 0.01,
+   "ctx": 1000000,
+   "cw": 0.125,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
    "id": "~anthropic/claude-haiku-latest",
-   "in": 1,
+   "in": 0.1,
    "k": "claude-haiku-latest",
-   "maxOut": 64000,
+   "maxOut": 128000,
    "name": "Claude Haiku Latest",
-   "out": 5,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7384,7 +7212,7 @@
    "upd": "2026-04-21"
   },
   {
-   "cr": 0.2,
+   "cr": 0.1,
    "ctx": 1000000,
    "cw": 2.5,
    "efforts": [
@@ -7406,7 +7234,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.03,
+   "cr": 0.02,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7414,9 +7242,9 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.049,
+   "in": 0.0248,
    "k": "deepseek-flash-latest",
-   "maxOut": 393216,
+   "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
    "out": 1.2,
    "p": "openrouter",
@@ -7426,7 +7254,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.29,
+   "cr": 0.2,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7434,7 +7262,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2917,
+   "in": 0.2862,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7676,7 +7504,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.0585,
+   "cr": 0.06,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7684,11 +7512,11 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.063,
+   "in": 0.062,
    "k": "glm-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "GLM Latest",
-   "out": 6.3,
+   "out": 3.39,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7931,6 +7759,29 @@
    "upd": "2025-10-15"
   },
   {
+   "cr": 0.01,
+   "ctx": 1000000,
+   "cw": 0.125,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "anthropic/claude-haiku-5.5",
+   "in": 0.1,
+   "k": "claude-haiku-5-5",
+   "maxOut": 128000,
+   "name": "Claude Haiku 5.5",
+   "out": 0.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-07"
+  },
+  {
    "cr": 1.5,
    "ctx": 200000,
    "cw": 18.75,
@@ -8154,7 +8005,7 @@
    "upd": "2026-06-30"
   },
   {
-   "cr": 0.2,
+   "cr": 0.1,
    "ctx": 1000000,
    "cw": 2.5,
    "efforts": [
@@ -8513,12 +8364,12 @@
    "upd": "2025-09-22"
   },
   {
-   "cr": 0.028,
+   "cr": 0.135,
    "ctx": 163840,
    "id": "deepseek/deepseek-v3.2",
-   "in": 0.28,
+   "in": 0.259,
    "k": "deepseek-v3-2",
-   "maxOut": 65536,
+   "maxOut": 147456,
    "name": "DeepSeek V3.2",
    "out": 0.42,
    "p": "openrouter",
@@ -9145,14 +8996,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13551,7 +13402,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.065,
+   "cr": 0.06,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -13559,11 +13410,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.07,
+   "in": 0.062,
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 7,
+   "out": 3.39,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17155,5 +17006,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-07T18:53:56.425Z"
+ "updatedAt": "2026-10-07T21:47:28.240Z"
 }

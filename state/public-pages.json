@@ -94,11 +94,6 @@
   "summary": "Fine-tuned on DROID, it places first on the RoboLab benchmark at 42.92% success, against 36.8% for the 16B Cosmos 3 Nano policy. We also fine-tuned it on the SO-101 arm, and both the DROID and SO-101 checkpoints are integrated into LeRobot. Table 1: RoboLab-120 overall success rates. Types and weight availability follow the RoboLab leaderboard. Weights are released under the FLUX Kommunity License v1.0 in the FLUX 3 Action collection, and the code is at github.com/black-forest-labs/flux-action. FLUX 3 Action is an open weights world action model (WAM); it predicts future frames and actions tog",
   "url": "https://huggingface.co/blog/black-forest-labs/flux-3-action"
  },
- "https://huggingface.co/papers/2605.07019": {
-  "at": "2026-09-23T21:43:21.400Z",
-  "summary": "Vision-Language Models can process text as rendered images, but accuracy degrades with compression; LensVLM addresses this by scanning compressed images and selectively expanding relevant parts through learned tools, maintaining high accuracy even at high compression ratios. Vision Language Models (VLMs) offer the exciting possibility of processing text as rendered images, bypassing the need for tokenizing the text into long token sequences. Since VLM image encoders map fixed-size images to a fixed number of visual tokens, varying rendering resolution provides a fine-grained compression knob. ",
-  "url": "https://huggingface.co/papers/2605.07019"
- },
  "https://mistral.ai/news/mistral-large-4/": {
   "at": "2026-10-06T15:48:06.611Z",
   "summary": "Today, we’re launching a public preview of Mistral Large 4. Unofficially ML4, very officially: le Chonk. ML4 pushes the frontier of open-weight performance. You can try the preview API today on Mistral Studio. Weights drop end of this month. ML4 is a 1 trillion-parameter natively multimodal model with 49 billion active parameters. It is our largest and most capable model to date, and it continues to improve rapidly as we refine it. The model demonstrates exceptional performance across coding, agentic workflows, and multimodal understanding. It already achieves performance competitive with the ",
