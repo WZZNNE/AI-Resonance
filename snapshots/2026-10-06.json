@@ -10727,6 +10727,41 @@
    ],
    "title": "Sharing AI progress in mathematics",
    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
+  },
+  {
+   "board": "labs",
+   "category": "product",
+   "key": "url:platform.claude.com/docs/en/release-notes/overview#100bf7b7",
+   "lab": {
+    "company": "anthropic",
+    "companyName": "Anthropic",
+    "datePrecision": "day",
+    "kind": "product",
+    "publishedAt": "2026-10-06T19:00:00.000Z",
+    "surface": "changelog"
+   },
+   "metrics": {
+    "company": 1,
+    "kind": 0.7,
+    "release": 0,
+    "surface": 0.1
+   },
+   "publishedAt": "2026-10-06T19:00:00.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "lab:anthropic",
+     "cat:kind:product"
+    ],
+    "score": 1
+   },
+   "sources": [
+    "labs-anthropic"
+   ],
+   "summary": "We've added capabilities.server_tools to the Models API. GET /v1/models and GET /v1/models/{model_id} now report whether each model accepts the web search and code execution tools. To check whether a model accepts the code execution tool, read capabilities.server_tools.code_execution. The top-level capabilities.code_execution reports whether code can call your request's other tools. See Using the Models API.",
+   "tags": [],
+   "title": "We've added capabilities.server_tools to the Models API.",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#october-6-2026"
   }
  ],
  "date": "2026-10-06",
