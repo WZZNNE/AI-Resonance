@@ -3269,6 +3269,19 @@
    "upd": "2025-09-23"
   },
   {
+   "ctx": 262144,
+   "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "in": 0.15,
+   "k": "qwen3-vl-30b-a3b-instruct",
+   "maxOut": 32768,
+   "name": "Qwen3 VL 30B A3B Instruct",
+   "out": 0.6,
+   "p": "deepinfra",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-10-04"
+  },
+  {
    "alwaysOn": true,
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-27B",
@@ -7204,7 +7217,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.005,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7216,7 +7229,7 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 1.2,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7244,7 +7257,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0079,
+   "cr": 0.00512,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7252,11 +7265,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0079,
+   "in": 0.00512,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1.28,
+   "out": 0.01467,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7304,7 +7317,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.3,
+   "cr": 0.29,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7312,11 +7325,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.49,
+   "in": 0.45,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 13,
+   "out": 14,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7467,7 +7480,7 @@
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 0.264718,
+   "out": 0.140682,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8298,7 +8311,7 @@
    "in": 0.5,
    "k": "deepseek-r1-0528",
    "maxOut": 32768,
-   "name": "R1 0528",
+   "name": "DeepSeek R1 0528",
    "out": 2.15,
    "p": "openrouter",
    "reasoning": true,
@@ -8349,14 +8362,14 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.03,
+   "cr": 0.0131,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.03,
+   "in": 0.0131,
    "k": "deepseek-v4-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash",
@@ -8368,7 +8381,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0079,
+   "cr": 0.0064,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8376,7 +8389,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0079,
+   "in": 0.0064,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8408,18 +8421,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.023925,
+   "cr": 0.0174,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.2871,
+   "in": 0.2088,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.5742,
+   "out": 0.4176,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9946,20 +9959,21 @@
    "in": 0.6,
    "k": "kimi-k2-0905",
    "maxOut": 98304,
-   "name": "Kimi K2 0905",
+   "name": "Kimi K2 Instruct 0905",
    "out": 2.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-09-04"
+   "upd": "2025-09-05"
   },
   {
    "alwaysOn": true,
+   "cr": 0.15,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2-thinking",
    "in": 0.6,
    "k": "kimi-k2-thinking",
-   "maxOut": 235929,
+   "maxOut": 98304,
    "name": "Kimi K2 Thinking",
    "out": 2.5,
    "p": "openrouter",
@@ -9982,10 +9996,10 @@
    "toggle": true
   },
   {
-   "cr": 0.1202,
+   "cr": 0.1077,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2.6",
-   "in": 0.4348,
+   "in": 0.4344,
    "k": "kimi-k2-6",
    "maxOut": 235929,
    "name": "Kimi K2.6",
@@ -10012,7 +10026,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.33,
+   "cr": 0.6,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10020,11 +10034,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.5,
+   "in": 0.9,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 12,
+   "out": 14,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11705,19 +11719,6 @@
    "upd": "2025-09-11"
   },
   {
-   "ctx": 1000000,
-   "id": "qwen/qwen-plus-2025-07-28",
-   "in": 0.26,
-   "k": "qwen-plus-2025-07-28",
-   "maxOut": 32768,
-   "name": "Qwen Plus 0728",
-   "out": 0.78,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-08"
-  },
-  {
    "cr": 0.4,
    "ctx": 128000,
    "id": "qwen/qwen2.5-vl-72b-instruct",
@@ -11732,7 +11733,7 @@
    "upd": "2025-02-01"
   },
   {
-   "ctx": 131072,
+   "ctx": 40960,
    "id": "qwen/qwen3-14b",
    "in": 0.12,
    "k": "qwen3-14b",
@@ -11744,19 +11745,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2025-04-28"
-  },
-  {
-   "ctx": 131072,
-   "id": "qwen/qwen3-235b-a22b",
-   "in": 0.455,
-   "k": "qwen3-235b-a22b",
-   "maxOut": 8192,
-   "name": "Qwen3 235B-A22B",
-   "out": 1.82,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true
   },
   {
    "ctx": 262144,
@@ -11773,20 +11761,20 @@
   },
   {
    "alwaysOn": true,
-   "ctx": 131072,
+   "ctx": 128000,
    "id": "qwen/qwen3-235b-a22b-thinking-2507",
-   "in": 0.23,
+   "in": 0.45,
    "k": "qwen3-235b-a22b-thinking-2507",
-   "maxOut": 117964,
+   "maxOut": 16384,
    "name": "Qwen3 235B A22B Thinking 2507",
-   "out": 2.3,
+   "out": 3.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2025-07-25"
   },
   {
-   "ctx": 131072,
+   "ctx": 40960,
    "id": "qwen/qwen3-30b-a3b",
    "in": 0.12,
    "k": "qwen3-30b-a3b",
@@ -11813,20 +11801,6 @@
    "upd": "2025-07-29"
   },
   {
-   "alwaysOn": true,
-   "ctx": 81920,
-   "id": "qwen/qwen3-30b-a3b-thinking-2507",
-   "in": 0.2,
-   "k": "qwen3-30b-a3b-thinking-2507",
-   "maxOut": 32768,
-   "name": "Qwen3 30B A3B Thinking 2507",
-   "out": 2.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-08-28"
-  },
-  {
    "ctx": 131072,
    "id": "qwen/qwen3-32b",
    "in": 0.08,
@@ -11838,20 +11812,6 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true
-  },
-  {
-   "ctx": 131072,
-   "id": "qwen/qwen3-8b",
-   "in": 0.117,
-   "k": "qwen3-8b",
-   "maxOut": 8192,
-   "name": "Qwen3 8B",
-   "out": 0.455,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-04-28"
   },
   {
    "cr": 0.1,
@@ -11909,50 +11869,6 @@
    "upd": "2026-02-03"
   },
   {
-   "cr": 0.13,
-   "ctx": 1000000,
-   "cw": 0.8125,
-   "id": "qwen/qwen3-coder-plus",
-   "in": 0.65,
-   "k": "qwen3-coder-plus",
-   "maxOut": 65536,
-   "name": "Qwen3 Coder Plus",
-   "out": 3.25,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-07-23"
-  },
-  {
-   "cr": 0.156,
-   "ctx": 262144,
-   "cw": 0.975,
-   "id": "qwen/qwen3-max",
-   "in": 0.78,
-   "k": "qwen3-max",
-   "maxOut": 65536,
-   "name": "Qwen3 Max",
-   "out": 3.9,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-23"
-  },
-  {
-   "ctx": 262144,
-   "id": "qwen/qwen3-max-thinking",
-   "in": 0.78,
-   "k": "qwen3-max-thinking",
-   "maxOut": 65536,
-   "name": "Qwen3 Max Thinking",
-   "out": 3.9,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-02-09"
-  },
-  {
    "cr": 0.07,
    "ctx": 262144,
    "id": "qwen/qwen3-next-80b-a3b-instruct",
@@ -11971,7 +11887,7 @@
    "id": "qwen/qwen3-next-80b-a3b-thinking",
    "in": 0.15,
    "k": "qwen3-next-80b-a3b-thinking",
-   "maxOut": 32768,
+   "maxOut": 235929,
    "name": "Qwen3-Next 80B-A3B (Thinking)",
    "out": 1.2,
    "p": "openrouter",
@@ -11993,20 +11909,6 @@
    "upd": "2025-09-23"
   },
   {
-   "alwaysOn": true,
-   "ctx": 131072,
-   "id": "qwen/qwen3-vl-235b-a22b-thinking",
-   "in": 0.4,
-   "k": "qwen3-vl-235b-a22b-thinking",
-   "maxOut": 32768,
-   "name": "Qwen3 VL 235B A22B Thinking",
-   "out": 4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-09-23"
-  },
-  {
    "ctx": 262144,
    "id": "qwen/qwen3-vl-30b-a3b-instruct",
    "in": 0.15,
@@ -12017,59 +11919,33 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-10-06"
+   "upd": "2025-10-04"
   },
   {
    "alwaysOn": true,
    "ctx": 262144,
    "id": "qwen/qwen3-vl-30b-a3b-thinking",
-   "in": 0.2,
+   "in": 0.29,
    "k": "qwen3-vl-30b-a3b-thinking",
-   "maxOut": 32768,
+   "maxOut": 235929,
    "name": "Qwen3 VL 30B A3B Thinking",
-   "out": 2.4,
+   "out": 1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2025-10-06"
   },
   {
-   "ctx": 131072,
-   "id": "qwen/qwen3-vl-32b-instruct",
-   "in": 0.104,
-   "k": "qwen3-vl-32b-instruct",
-   "maxOut": 32768,
-   "name": "Qwen3 VL 32B Instruct",
-   "out": 0.416,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-10-23"
-  },
-  {
+   "cr": 0.12,
    "ctx": 262144,
    "id": "qwen/qwen3-vl-8b-instruct",
-   "in": 0.117,
+   "in": 0.25,
    "k": "qwen3-vl-8b-instruct",
-   "maxOut": 32768,
+   "maxOut": 235929,
    "name": "Qwen3 VL 8B Instruct",
-   "out": 0.455,
+   "out": 0.75,
    "p": "openrouter",
    "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-10-14"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 131072,
-   "id": "qwen/qwen3-vl-8b-thinking",
-   "in": 0.18,
-   "k": "qwen3-vl-8b-thinking",
-   "maxOut": 32768,
-   "name": "Qwen3 VL 8B Thinking",
-   "out": 2.1,
-   "p": "openrouter",
-   "reasoning": true,
    "src": "models.dev",
    "upd": "2025-10-14"
   },
@@ -12231,21 +12107,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-04-27"
-  },
-  {
-   "ctx": 262144,
-   "cw": 1.28375,
-   "id": "qwen/qwen3.6-max-preview",
-   "in": 1.027,
-   "k": "qwen3-6-max-preview",
-   "maxOut": 65536,
-   "name": "Qwen3.6 Max Preview",
-   "out": 6.162,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-20"
   },
   {
    "ctx": 1000000,
@@ -12700,7 +12561,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12708,11 +12569,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12738,7 +12599,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12746,11 +12607,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13369,7 +13230,7 @@
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
-   "out": 4.2,
+   "out": 8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13389,7 +13250,7 @@
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 7,
+   "out": 4.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16981,5 +16842,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-09T15:50:00.417Z"
+ "updatedAt": "2026-10-09T18:52:01.165Z"
 }
