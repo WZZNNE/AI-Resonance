@@ -7204,7 +7204,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.005,
+   "cr": 0.01,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7216,7 +7216,7 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.6,
+   "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7244,7 +7244,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.00832,
+   "cr": 0.00368,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7252,11 +7252,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.00832,
+   "in": 0.00368,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.148972,
+   "out": 0.134075,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7467,7 +7467,7 @@
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 1.58731,
+   "out": 1.428579,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8237,11 +8237,11 @@
   {
    "ctx": 163840,
    "id": "deepseek/deepseek-chat",
-   "in": 0.2574,
+   "in": 0.32,
    "k": "deepseek-chat",
-   "maxOut": 16000,
+   "maxOut": 16384,
    "name": "DeepSeek Chat",
-   "out": 1.0287,
+   "out": 0.89,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -8349,14 +8349,14 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.0228,
+   "cr": 0.0099,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.0228,
+   "in": 0.0099,
    "k": "deepseek-v4-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash",
@@ -8368,7 +8368,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0104,
+   "cr": 0.0046,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8376,7 +8376,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0104,
+   "in": 0.0046,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -11953,11 +11953,12 @@
    "upd": "2026-02-09"
   },
   {
+   "cr": 0.07,
    "ctx": 262144,
    "id": "qwen/qwen3-next-80b-a3b-instruct",
-   "in": 0.09,
+   "in": 0.1,
    "k": "qwen3-next-80b-a3b-instruct",
-   "maxOut": 16384,
+   "maxOut": 235929,
    "name": "Qwen3-Next 80B-A3B Instruct",
    "out": 1.1,
    "p": "openrouter",
@@ -16980,5 +16981,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-09T07:03:25.117Z"
+ "updatedAt": "2026-10-09T07:55:10.102Z"
 }
