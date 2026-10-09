@@ -3139,21 +3139,6 @@
    "upd": "2026-07-16"
   },
   {
-   "cr": 0.025,
-   "ctx": 262144,
-   "id": "nvidia/Nemotron-3-Nano-30B-A3B",
-   "in": 0.05,
-   "k": "nemotron-3-nano-30b-a3b",
-   "maxOut": 262144,
-   "name": "Nemotron 3 Nano 30B A3B",
-   "out": 0.2,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-12-15"
-  },
-  {
    "ctx": 131072,
    "efforts": [
     "low",
@@ -3450,21 +3435,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-08-03"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.033,
-   "ctx": 262144,
-   "id": "tencent/Hy3",
-   "in": 0.13,
-   "k": "hy3",
-   "maxOut": 128000,
-   "name": "Hy3",
-   "out": 0.53,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-07-06"
   },
   {
    "cr": 0.042,
@@ -7242,7 +7212,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0283,
+   "in": 0.016,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7254,7 +7224,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.13,
+   "cr": 0.18,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7262,7 +7232,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.1271,
+   "in": 0.18,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7274,7 +7244,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0137,
+   "cr": 0.00632,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7282,11 +7252,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0137,
+   "in": 0.00632,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 1.28,
+   "out": 0.388408,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7342,7 +7312,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.81,
+   "in": 0.75,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7497,14 +7467,14 @@
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 3.109323,
+   "out": 2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.0446,
+   "cr": 0.029,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7512,7 +7482,7 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.048,
+   "in": 0.0312,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
@@ -8379,14 +8349,14 @@
    "upd": "2025-09-29"
   },
   {
-   "cr": 0.0057,
+   "cr": 0.0131,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-flash",
-   "in": 0.0057,
+   "in": 0.0131,
    "k": "deepseek-v4-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash",
@@ -8398,7 +8368,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0137,
+   "cr": 0.0079,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8406,7 +8376,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0137,
+   "in": 0.0079,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8438,18 +8408,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.02394,
+   "cr": 0.079605,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.287274,
+   "in": 0.95526,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.574548,
+   "out": 1.91052,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8457,7 +8427,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8465,11 +8435,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9349,13 +9319,14 @@
    "upd": "2024-09-25"
   },
   {
+   "cr": 0.11,
    "ctx": 131072,
    "id": "meta-llama/llama-3.3-70b-instruct",
-   "in": 0.1,
+   "in": 0.22,
    "k": "llama-3-3-70b-instruct",
    "maxOut": 16384,
    "name": "Llama-3.3-70B-Instruct",
-   "out": 0.32,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10011,10 +9982,10 @@
    "toggle": true
   },
   {
-   "cr": 0.12,
+   "cr": 0.0975,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2.6",
-   "in": 0.4344,
+   "in": 0.465,
    "k": "kimi-k2-6",
    "maxOut": 235929,
    "name": "Kimi K2.6",
@@ -10041,7 +10012,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.55,
+   "cr": 0.4,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -10049,11 +10020,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.82,
+   "in": 0.76,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 13.5,
+   "out": 13,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12130,14 +12101,13 @@
    "upd": "2026-02-23"
   },
   {
-   "cr": 0.05,
    "ctx": 262144,
    "id": "qwen/qwen3.5-35b-a3b",
-   "in": 0.15,
+   "in": 0.1625,
    "k": "qwen3-5-35b-a3b",
-   "maxOut": 235929,
+   "maxOut": 65536,
    "name": "Qwen3.5 35B-A3B",
-   "out": 1,
+   "out": 1.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12145,14 +12115,14 @@
    "upd": "2026-02-23"
   },
   {
-   "cr": 0.22,
+   "cr": 0.225,
    "ctx": 262144,
    "id": "qwen/qwen3.5-397b-a17b",
-   "in": 0.45,
+   "in": 0.55,
    "k": "qwen3-5-397b-a17b",
-   "maxOut": 81920,
+   "maxOut": 235929,
    "name": "Qwen3.5 397B-A17B",
-   "out": 3,
+   "out": 3.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12217,14 +12187,13 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.03,
    "ctx": 262144,
    "id": "qwen/qwen3.6-27b",
-   "in": 0.3,
+   "in": 0.45,
    "k": "qwen3-6-27b",
    "maxOut": 65536,
    "name": "Qwen3.6 27B",
-   "out": 2,
+   "out": 2.7,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12729,7 +12698,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12737,11 +12706,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12767,7 +12736,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12775,11 +12744,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13387,16 +13356,16 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.07,
+   "cr": 0.083,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.07,
+   "in": 0.084,
    "k": "glm-5-2",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "GLM-5.2",
    "out": 4.3,
    "p": "openrouter",
@@ -13406,7 +13375,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.048,
+   "cr": 0.038,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -13414,7 +13383,7 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.05,
+   "in": 0.039,
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
@@ -17010,5 +16979,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-08T21:48:18.871Z"
+ "updatedAt": "2026-10-09T01:22:16.520Z"
 }
