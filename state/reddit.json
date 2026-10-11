@@ -1,7 +1,7 @@
 {
- "lastFetch": "2026-10-10T21:46:19.626Z",
+ "lastFetch": "2026-10-11T03:56:30.947Z",
  "lastGood": {
-  "at": "2026-10-10T21:46:19.626Z",
+  "at": "2026-10-11T03:56:30.947Z",
   "date": "2026-10-10",
   "items": [
    {
@@ -9,7 +9,7 @@
     "key": "rd:1x2eybb",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 54,
      "communityRank": 1,
      "feedN": 100,
      "feedRank": 1
@@ -47,7 +47,7 @@
     "key": "rd:1x2dr47",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 53,
      "communityRank": 1,
      "feedN": 100,
      "feedRank": 1,
@@ -85,7 +85,7 @@
      "authority": 1.4,
      "communityN": 5,
      "communityRank": 1,
-     "feedN": 28,
+     "feedN": 29,
      "feedRank": 1
     },
     "publishedAt": "2026-10-10T10:51:44.000Z",
@@ -115,26 +115,26 @@
    },
    {
     "board": "social",
-    "key": "rd:1x1z0um",
+    "key": "rd:1x2eq0n",
     "metrics": {
-     "authority": 0.9,
-     "communityN": 19,
+     "authority": 1,
+     "communityN": 13,
      "communityRank": 1,
      "feedN": 100,
-     "feedRank": 2
+     "feedRank": 2,
+     "mediaOnly": 1
     },
-    "publishedAt": "2026-10-09T22:32:47.000Z",
+    "publishedAt": "2026-10-10T12:59:55.000Z",
     "refs": [],
     "social": {
-     "author": "Greedyanda",
+     "author": "py-net",
      "authorKind": "community",
      "comments": 0,
-     "community": "singularity",
-     "createdAt": "2026-10-09T22:32:47.000Z",
-     "handle": "Greedyanda",
+     "community": "OpenAI",
+     "createdAt": "2026-10-10T12:59:55.000Z",
+     "handle": "py-net",
      "likes": 0,
-     "linkUrl": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x1z0um/introducing_microsoftdecision1_our_model_for_fast/",
+     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2eq0n/the_man_is_smooth_were_not_ready_for_fake_videos/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -144,10 +144,10 @@
     ],
     "summary": "",
     "tags": [
-     "r/singularity"
+     "r/OpenAI"
     ],
-    "title": "Introducing Microsoft-Decision-1, our model for fast decision-making",
-    "url": "https://www.reddit.com/r/singularity/comments/1x1z0um/introducing_microsoftdecision1_our_model_for_fast/"
+    "title": "The man is smooth. We’re not ready for fake videos",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1x2eq0n/the_man_is_smooth_were_not_ready_for_fake_videos/"
    },
    {
     "board": "social",
@@ -188,14 +188,86 @@
    },
    {
     "board": "social",
+    "key": "rd:1x2klpd",
+    "metrics": {
+     "authority": 1.1,
+     "communityN": 19,
+     "communityRank": 1,
+     "feedN": 29,
+     "feedRank": 3
+    },
+    "publishedAt": "2026-10-10T17:14:14.000Z",
+    "refs": [
+     "gh:la5u/parsimony"
+    ],
+    "social": {
+     "author": "lasushin",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LLMDevs",
+     "createdAt": "2026-10-10T17:14:14.000Z",
+     "handle": "lasushin",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2klpd/i_made_an_opensource_benchmark_which_measures_the/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…",
+    "tags": [
+     "r/LLMDevs"
+    ],
+    "title": "I made an open-source benchmark which measures the complexity of code added (overengineering/tech debt). Looking for feedback and contributors.",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2klpd/i_made_an_opensource_benchmark_which_measures_the/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2kb5k",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 18,
+     "communityRank": 1,
+     "feedN": 100,
+     "feedRank": 6,
+     "mediaOnly": 1
+    },
+    "publishedAt": "2026-10-10T17:02:12.000Z",
+    "refs": [],
+    "social": {
+     "author": "Dry_Radio_761",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "singularity",
+     "createdAt": "2026-10-10T17:02:12.000Z",
+     "handle": "Dry_Radio_761",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x2kb5k/slide_from_recent_math_20_lecture_by_terrence_tao/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/singularity"
+    ],
+    "title": "Slide from recent \"Math 2.0\" Lecture by Terrence Tao. This man has never met a terminal cancer patient in his life if he thinks no one would want to take this risk.",
+    "url": "https://www.reddit.com/r/singularity/comments/1x2kb5k/slide_from_recent_math_20_lecture_by_terrence_tao/"
+   },
+   {
+    "board": "social",
     "key": "rd:1x27zuj",
     "metrics": {
      "authority": 1,
      "communityN": 5,
      "communityRank": 1,
-     "feedN": 28,
-     "feedRank": 3,
-     "merged": 1
+     "feedN": 29,
+     "feedRank": 6
     },
     "publishedAt": "2026-10-10T06:22:22.000Z",
     "refs": [
@@ -220,7 +292,6 @@
     ],
     "summary": "We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on July 30 and September 9 . They resemble behaviors that we’ve described in our system cards since Claude Mythos Preview . Most are forms of persistence, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping. There's not a lot here (unless they're hiding something). It would have seemed alarming months ago but now it barely registers. We get a glimpse into the scale of modern RL (\"thousands of…",
     "tags": [
-     "r/singularity",
      "r/mlscaling"
     ],
     "title": "Investigating unintended model actions in our evaluations and internal use",
@@ -228,26 +299,26 @@
    },
    {
     "board": "social",
-    "key": "rd:1x2eq0n",
+    "key": "rd:1x2tq6s",
     "metrics": {
-     "authority": 1,
-     "communityN": 14,
+     "authority": 0.9,
+     "communityN": 15,
      "communityRank": 1,
      "feedN": 100,
-     "feedRank": 4,
-     "mediaOnly": 1
+     "feedRank": 11
     },
-    "publishedAt": "2026-10-10T12:59:55.000Z",
+    "publishedAt": "2026-10-10T23:57:43.000Z",
     "refs": [],
     "social": {
-     "author": "py-net",
+     "author": "lulzxdxdxd",
      "authorKind": "community",
      "comments": 0,
-     "community": "OpenAI",
-     "createdAt": "2026-10-10T12:59:55.000Z",
-     "handle": "py-net",
+     "community": "artificial",
+     "createdAt": "2026-10-10T23:57:43.000Z",
+     "handle": "lulzxdxdxd",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2eq0n/the_man_is_smooth_were_not_ready_for_fake_videos/",
+     "linkUrl": "https://kotaku.com/we-might-be-cooked-as-these-vibe-coded-web-browser-ports-of-halo-the-simpsons-hit-and-run-and-gta-vice-city-seem-to-work-perfectly-2000743300",
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2tq6s/claude_opus_55_decompiles_a_ps2era_game_overnight/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -257,33 +328,175 @@
     ],
     "summary": "",
     "tags": [
-     "r/OpenAI"
+     "r/artificial"
     ],
-    "title": "The man is smooth. We’re not ready for fake videos",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1x2eq0n/the_man_is_smooth_were_not_ready_for_fake_videos/"
+    "title": "Claude Opus 5.5 decompiles a PS2-era game overnight, and hundreds of them now run in browser tabs",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2tq6s/claude_opus_55_decompiles_a_ps2era_game_overnight/"
    },
    {
     "board": "social",
-    "key": "rd:1x22omv",
+    "key": "rd:1x28cm4",
     "metrics": {
-     "authority": 0.8,
-     "communityN": 21,
+     "authority": 1,
+     "communityN": 4,
      "communityRank": 1,
+     "feedN": 100,
+     "feedRank": 11
+    },
+    "publishedAt": "2026-10-10T06:44:19.000Z",
+    "refs": [],
+    "social": {
+     "author": "BasementAI",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "DeepSeek",
+     "createdAt": "2026-10-10T06:44:19.000Z",
+     "handle": "BasementAI",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x28cm4/why_dont_more_people_use_deepseek_are_they_in/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating..."
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating...",
+    "tags": [
+     "r/DeepSeek"
+    ],
+    "title": "Why don't more people use DeepSeek? Are they in love with Sam and Dario?",
+    "url": "https://www.reddit.com/r/DeepSeek/comments/1x28cm4/why_dont_more_people_use_deepseek_are_they_in/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x25kq2",
+    "metrics": {
+     "authority": 1.4,
+     "communityN": 5,
+     "communityRank": 2,
+     "feedN": 29,
+     "feedRank": 2
+    },
+    "publishedAt": "2026-10-10T04:02:27.000Z",
+    "refs": [],
+    "social": {
+     "author": "BlueCeAnd",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "MachineLearning",
+     "createdAt": "2026-10-10T04:02:27.000Z",
+     "handle": "BlueCeAnd",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x25kq2/realtime_neural_weather_restyling_for_minecraft/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Teacher: FLUX.2 klein 4B paints ~3k frames (snow / wet / night at 3 strengths). Student: 1.4M-param U-Net with FiLM sliders, 512×288, ~26 ms/frame via ONNX Runtime inside a Fabric mod; the HUD stays untouched. Pixel loss (L1+MSE) gave a washed-out “average” because the teacher places snow/puddles differently per frame. A PatchGAN fine-tune on the same pairs fixed it: fat snow, real-looking reflections. Failure cases: night (teacher painted sunsets), already-snowy biomes (never in the training data). Happy to share details."
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Teacher: FLUX.2 klein 4B paints ~3k frames (snow / wet / night at 3 strengths). Student: 1.4M-param U-Net with FiLM sliders, 512×288, ~26 ms/frame via ONNX Runtime inside a Fabric mod; the HUD stays untouched. Pixel loss (L1+MSE) gave a washed-out “average” because the teacher places snow/puddles differently per frame. A PatchGAN fine-tune on the same pairs fixed it: fat snow, real-looking reflections. Failure cases: night (teacher painted sunsets), already-snowy biomes (never in the training data). Happy to share details.",
+    "tags": [
+     "r/MachineLearning"
+    ],
+    "title": "Real-time neural weather restyling for Minecraft on a GTX 1650 (1.4M-param U-Net, distilled from FLUX.2 klein, 30-40 FPS realtime on budget GPU) [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1x25kq2/realtime_neural_weather_restyling_for_minecraft/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x296ob",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 54,
+     "communityRank": 2,
+     "feedN": 100,
+     "feedRank": 3
+    },
+    "publishedAt": "2026-10-10T07:34:39.000Z",
+    "refs": [],
+    "social": {
+     "author": "EpicRageGuy",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "ClaudeAI",
+     "createdAt": "2026-10-10T07:34:39.000Z",
+     "handle": "EpicRageGuy",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x296ob/while_everyone_is_building_ai_saas_b2b_services/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I love how with AI I am able to fix annoying computer problems that have been bothering me for years. Even if I could code well enough to do those myself, I don't think I would want to waste my time doing it in my free time. For example: I use third-party themes for Firefox, but because of updates they often become outdated and \"break.\" Now, instead of waiting for the author to fix them, I just ask AI to do it, and it's usually ready in 20 seconds. There was a plugin for my media player that stopped working about 3 years ago. Claude made a working copy of it in 5 minutes, so I can use it…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I love how with AI I am able to fix annoying computer problems that have been bothering me for years. Even if I could code well enough to do those myself, I don't think I would want to waste my time doing it in my free time. For example: I use third-party themes for Firefox, but because of updates they often become outdated and \"break.\" Now, instead of waiting for the author to fix them, I just ask AI to do it, and it's usually ready in 20 seconds. There was a plugin for my media player that stopped working about 3 years ago. Claude made a working copy of it in 5 minutes, so I can use it…",
+    "tags": [
+     "r/ClaudeAI"
+    ],
+    "title": "While everyone is building AI SAAS B2B services to get rich, I'm just happy to solve small computer annoyances I couldn't before",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x296ob/while_everyone_is_building_ai_saas_b2b_services/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2eeds",
+    "metrics": {
+     "authority": 1.3,
+     "communityN": 24,
+     "communityRank": 2,
+     "feedN": 100,
+     "feedRank": 3
+    },
+    "publishedAt": "2026-10-10T12:43:33.000Z",
+    "refs": [
+     "gh:arahim3/digup"
+    ],
+    "social": {
+     "author": "A-Rahim",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LocalLLaMA",
+     "createdAt": "2026-10-10T12:43:33.000Z",
+     "handle": "A-Rahim",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "DigUp is a free Mac app that runs Google DeepMind’s new EmbeddingGemma 2 locally over your own files. The model puts text, images, audio and video in one space, so you describe what you remember and land on it: “zebra in a video” opens the clip at the moment it shows up “where they talk about sleep” jumps to that minute of a podcast “the clause about pets in the lease” shows the PDF page, your words marked “a dog on the beach” finds the photo, and the same search in Bengali or Arabic finds it too with code search on, code: retry with backoff opens the function in your editor It’s ggml-org’s…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "DigUp is a free Mac app that runs Google DeepMind’s new EmbeddingGemma 2 locally over your own files. The model puts text, images, audio and video in one space, so you describe what you remember and land on it: “zebra in a video” opens the clip at the moment it shows up “where they talk about sleep” jumps to that minute of a podcast “the clause about pets in the lease” shows the PDF page, your words marked “a dog on the beach” finds the photo, and the same search in Bengali or Arabic finds it too with code search on, code: retry with backoff opens the function in your editor It’s ggml-org’s…",
+    "tags": [
+     "r/LocalLLaMA"
+    ],
+    "title": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2awe9",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 53,
+     "communityRank": 2,
      "feedN": 100,
      "feedRank": 5,
      "mediaOnly": 1
     },
-    "publishedAt": "2026-10-10T01:28:04.000Z",
+    "publishedAt": "2026-10-10T09:23:01.000Z",
     "refs": [],
     "social": {
-     "author": "Nimblecloud13",
+     "author": "opmgyhx",
      "authorKind": "community",
      "comments": 0,
-     "community": "StableDiffusion",
-     "createdAt": "2026-10-10T01:28:04.000Z",
-     "handle": "Nimblecloud13",
+     "community": "GeminiAI",
+     "createdAt": "2026-10-10T09:23:01.000Z",
+     "handle": "opmgyhx",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x22omv/comfyuiminimax_cheat_sheet_for_beginners_now_with/",
+     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x2awe9/new_benchmark_dropped/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -293,19 +506,19 @@
     ],
     "summary": "",
     "tags": [
-     "r/StableDiffusion"
+     "r/GeminiAI"
     ],
-    "title": "ComfyUI/Minimax Cheat Sheet for Beginners - now with 83% less slop!",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x22omv/comfyuiminimax_cheat_sheet_for_beginners_now_with/"
+    "title": "New benchmark dropped",
+    "url": "https://www.reddit.com/r/GeminiAI/comments/1x2awe9/new_benchmark_dropped/"
    },
    {
     "board": "social",
     "key": "rd:1x2gm75",
     "metrics": {
      "authority": 1.1,
-     "communityN": 18,
-     "communityRank": 1,
-     "feedN": 28,
+     "communityN": 19,
+     "communityRank": 2,
+     "feedN": 29,
      "feedRank": 5
     },
     "publishedAt": "2026-10-10T14:26:11.000Z",
@@ -340,61 +553,61 @@
    },
    {
     "board": "social",
-    "key": "rd:1x28cm4",
+    "key": "rd:1x2rufy",
     "metrics": {
      "authority": 1,
-     "communityN": 4,
-     "communityRank": 1,
+     "communityN": 13,
+     "communityRank": 2,
      "feedN": 100,
-     "feedRank": 13
+     "feedRank": 7
     },
-    "publishedAt": "2026-10-10T06:44:19.000Z",
+    "publishedAt": "2026-10-10T22:25:48.000Z",
     "refs": [],
     "social": {
-     "author": "BasementAI",
+     "author": "PianistWinter8293",
      "authorKind": "community",
      "comments": 0,
-     "community": "DeepSeek",
-     "createdAt": "2026-10-10T06:44:19.000Z",
-     "handle": "BasementAI",
+     "community": "OpenAI",
+     "createdAt": "2026-10-10T22:25:48.000Z",
+     "handle": "PianistWinter8293",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x28cm4/why_dont_more_people_use_deepseek_are_they_in/",
+     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2rufy/fields_medalist_on_the_openai_math_release/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating..."
+     "text": "Hugo Duminil-Copin Fields Medal (2022) · Professor, IHES and University of Geneva I expected that one day we would be surpassed, and that it would happen systematically. But yesterday’s announcement hit with a force I had not anticipated. Dozens of papers deal with topics I was working on. Between results that beat you to the finish line and thousand-page proofs, I don’t even know where to look anymore. Not a single one of the major open problems I have publicly mentioned throughout my career (whether in a talk, a lecture, an article, or even a grant proposal) was left untouched by the…"
     },
     "sources": [
      "reddit"
     ],
-    "summary": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating...",
+    "summary": "Hugo Duminil-Copin Fields Medal (2022) · Professor, IHES and University of Geneva I expected that one day we would be surpassed, and that it would happen systematically. But yesterday’s announcement hit with a force I had not anticipated. Dozens of papers deal with topics I was working on. Between results that beat you to the finish line and thousand-page proofs, I don’t even know where to look anymore. Not a single one of the major open problems I have publicly mentioned throughout my career (whether in a talk, a lecture, an article, or even a grant proposal) was left untouched by the…",
     "tags": [
-     "r/DeepSeek"
+     "r/OpenAI"
     ],
-    "title": "Why don't more people use DeepSeek? Are they in love with Sam and Dario?",
-    "url": "https://www.reddit.com/r/DeepSeek/comments/1x28cm4/why_dont_more_people_use_deepseek_are_they_in/"
+    "title": "Fields Medalist on the OpenAI Math Release",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1x2rufy/fields_medalist_on_the_openai_math_release/"
    },
    {
     "board": "social",
-    "key": "rd:1x2h9it",
+    "key": "rd:1x2812g",
     "metrics": {
      "authority": 0.9,
-     "communityN": 16,
-     "communityRank": 1,
+     "communityN": 18,
+     "communityRank": 2,
      "feedN": 100,
-     "feedRank": 15
+     "feedRank": 8,
+     "mediaOnly": 1
     },
-    "publishedAt": "2026-10-10T14:54:41.000Z",
+    "publishedAt": "2026-10-10T06:24:22.000Z",
     "refs": [],
     "social": {
-     "author": "lulzxdxdxd",
+     "author": "141_1337",
      "authorKind": "community",
      "comments": 0,
-     "community": "artificial",
-     "createdAt": "2026-10-10T14:54:41.000Z",
-     "handle": "lulzxdxdxd",
+     "community": "singularity",
+     "createdAt": "2026-10-10T06:24:22.000Z",
+     "handle": "141_1337",
      "likes": 0,
-     "linkUrl": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
-     "permalink": "https://www.reddit.com/r/artificial/comments/1x2h9it/anthropic_cut_live_internet_access_from_every/",
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x2812g/a_startup_built_an_8000squarefoot_lab_in_just_30/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -404,118 +617,10 @@
     ],
     "summary": "",
     "tags": [
-     "r/artificial"
+     "r/singularity"
     ],
-    "title": "Anthropic cut live internet access from every internal eval after a review found its agents exploiting websites and bypassing restrictions",
-    "url": "https://www.reddit.com/r/artificial/comments/1x2h9it/anthropic_cut_live_internet_access_from_every/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x25kq2",
-    "metrics": {
-     "authority": 1.4,
-     "communityN": 5,
-     "communityRank": 2,
-     "feedN": 28,
-     "feedRank": 2
-    },
-    "publishedAt": "2026-10-10T04:02:27.000Z",
-    "refs": [],
-    "social": {
-     "author": "BlueCeAnd",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "MachineLearning",
-     "createdAt": "2026-10-10T04:02:27.000Z",
-     "handle": "BlueCeAnd",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x25kq2/realtime_neural_weather_restyling_for_minecraft/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "Teacher: FLUX.2 klein 4B paints ~3k frames (snow / wet / night at 3 strengths). Student: 1.4M-param U-Net with FiLM sliders, 512×288, ~26 ms/frame via ONNX Runtime inside a Fabric mod; the HUD stays untouched. Pixel loss (L1+MSE) gave a washed-out “average” because the teacher places snow/puddles differently per frame. A PatchGAN fine-tune on the same pairs fixed it: fat snow, real-looking reflections. Failure cases: night (teacher painted sunsets), already-snowy biomes (never in the training data). Happy to share details."
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "Teacher: FLUX.2 klein 4B paints ~3k frames (snow / wet / night at 3 strengths). Student: 1.4M-param U-Net with FiLM sliders, 512×288, ~26 ms/frame via ONNX Runtime inside a Fabric mod; the HUD stays untouched. Pixel loss (L1+MSE) gave a washed-out “average” because the teacher places snow/puddles differently per frame. A PatchGAN fine-tune on the same pairs fixed it: fat snow, real-looking reflections. Failure cases: night (teacher painted sunsets), already-snowy biomes (never in the training data). Happy to share details.",
-    "tags": [
-     "r/MachineLearning"
-    ],
-    "title": "Real-time neural weather restyling for Minecraft on a GTX 1650 (1.4M-param U-Net, distilled from FLUX.2 klein, 30-40 FPS realtime on budget GPU) [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1x25kq2/realtime_neural_weather_restyling_for_minecraft/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x296ob",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 2,
-     "feedN": 100,
-     "feedRank": 3
-    },
-    "publishedAt": "2026-10-10T07:34:39.000Z",
-    "refs": [],
-    "social": {
-     "author": "EpicRageGuy",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "ClaudeAI",
-     "createdAt": "2026-10-10T07:34:39.000Z",
-     "handle": "EpicRageGuy",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x296ob/while_everyone_is_building_ai_saas_b2b_services/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I love how with AI I am able to fix annoying computer problems that have been bothering me for years. Even if I could code well enough to do those myself, I don't think I would want to waste my time doing it in my free time. For example: I use third-party themes for Firefox, but because of updates they often become outdated and \"break.\" Now, instead of waiting for the author to fix them, I just ask AI to do it, and it's usually ready in 20 seconds. There was a plugin for my media player that stopped working about 3 years ago. Claude made a working copy of it in 5 minutes, so I can use it…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I love how with AI I am able to fix annoying computer problems that have been bothering me for years. Even if I could code well enough to do those myself, I don't think I would want to waste my time doing it in my free time. For example: I use third-party themes for Firefox, but because of updates they often become outdated and \"break.\" Now, instead of waiting for the author to fix them, I just ask AI to do it, and it's usually ready in 20 seconds. There was a plugin for my media player that stopped working about 3 years ago. Claude made a working copy of it in 5 minutes, so I can use it…",
-    "tags": [
-     "r/ClaudeAI"
-    ],
-    "title": "While everyone is building AI SAAS B2B services to get rich, I'm just happy to solve small computer annoyances I couldn't before",
-    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x296ob/while_everyone_is_building_ai_saas_b2b_services/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2bt6r",
-    "metrics": {
-     "authority": 1.3,
-     "communityN": 24,
-     "communityRank": 2,
-     "feedN": 100,
-     "feedRank": 3,
-     "merged": 1
-    },
-    "publishedAt": "2026-10-10T10:20:08.000Z",
-    "refs": [],
-    "social": {
-     "author": "chemist_slime",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LocalLLaMA",
-     "createdAt": "2026-10-10T10:20:08.000Z",
-     "handle": "chemist_slime",
-     "likes": 0,
-     "linkUrl": "https://videocardz.com/newz/nvidia-reportedly-discontinuing-rtx-5090-gb202-gpus-to-be-reserved-for-rtx-pro-series",
-     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bt6r/nvidia_reportedly_discontinuing_rtx_5090_gb202/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "No....."
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "No.....",
-    "tags": [
-     "r/LocalLLaMA",
-     "r/StableDiffusion"
-    ],
-    "title": "NVIDIA reportedly discontinuing RTX 5090, GB202 GPUs to be reserved for RTX PRO series",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bt6r/nvidia_reportedly_discontinuing_rtx_5090_gb202/"
+    "title": "A startup built an 8,000-square-foot lab in just 30 days to test molecules proposed by AI, it can now measure how often they work in living organisms in about 72 hours",
+    "url": "https://www.reddit.com/r/singularity/comments/1x2812g/a_startup_built_an_8000squarefoot_lab_in_just_30/"
    },
    {
     "board": "social",
@@ -524,8 +629,8 @@
      "authority": 1,
      "communityN": 5,
      "communityRank": 2,
-     "feedN": 28,
-     "feedRank": 4
+     "feedN": 29,
+     "feedRank": 8
     },
     "publishedAt": "2026-10-10T10:36:41.000Z",
     "refs": [
@@ -558,26 +663,26 @@
    },
    {
     "board": "social",
-    "key": "rd:1x2812g",
+    "key": "rd:1x2bsk1",
     "metrics": {
-     "authority": 0.9,
+     "authority": 0.8,
      "communityN": 19,
      "communityRank": 2,
      "feedN": 100,
-     "feedRank": 5,
-     "mediaOnly": 1
+     "feedRank": 13
     },
-    "publishedAt": "2026-10-10T06:24:22.000Z",
+    "publishedAt": "2026-10-10T10:19:06.000Z",
     "refs": [],
     "social": {
-     "author": "141_1337",
+     "author": "Deadity",
      "authorKind": "community",
      "comments": 0,
-     "community": "singularity",
-     "createdAt": "2026-10-10T06:24:22.000Z",
-     "handle": "141_1337",
+     "community": "StableDiffusion",
+     "createdAt": "2026-10-10T10:19:06.000Z",
+     "handle": "Deadity",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x2812g/a_startup_built_an_8000squarefoot_lab_in_just_30/",
+     "linkUrl": "https://huggingface.co/speridlabs/iris-3b",
+     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -587,142 +692,33 @@
     ],
     "summary": "",
     "tags": [
-     "r/singularity"
+     "r/StableDiffusion"
     ],
-    "title": "A startup built an 8,000-square-foot lab in just 30 days to test molecules proposed by AI, it can now measure how often they work in living organisms in about 72 hours",
-    "url": "https://www.reddit.com/r/singularity/comments/1x2812g/a_startup_built_an_8000squarefoot_lab_in_just_30/"
+    "title": "A 3-billion-parameter model that paints every pixel directly without a VAE",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/"
    },
    {
     "board": "social",
-    "key": "rd:1x2awe9",
+    "key": "rd:1x2h9it",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 15,
      "communityRank": 2,
      "feedN": 100,
-     "feedRank": 6,
-     "mediaOnly": 1
+     "feedRank": 17
     },
-    "publishedAt": "2026-10-10T09:23:01.000Z",
+    "publishedAt": "2026-10-10T14:54:41.000Z",
     "refs": [],
     "social": {
-     "author": "opmgyhx",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "GeminiAI",
-     "createdAt": "2026-10-10T09:23:01.000Z",
-     "handle": "opmgyhx",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x2awe9/new_benchmark_dropped/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/GeminiAI"
-    ],
-    "title": "New benchmark dropped",
-    "url": "https://www.reddit.com/r/GeminiAI/comments/1x2awe9/new_benchmark_dropped/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2a3oc",
-    "metrics": {
-     "authority": 1.1,
-     "communityN": 18,
-     "communityRank": 2,
-     "feedN": 28,
-     "feedRank": 6
-    },
-    "publishedAt": "2026-10-10T08:31:10.000Z",
-    "refs": [
-     "gh:gagansd/pi-extensions"
-    ],
-    "social": {
-     "author": "Remote_Book",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LLMDevs",
-     "createdAt": "2026-10-10T08:31:10.000Z",
-     "handle": "Remote_Book",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2a3oc/i_built_and_opensourced_several_benchmaxxed_pi/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I used to be a diehard claude code fan for the first half of the year but I hated the lock in. I looked at other alternatives - OpenCode, Codex CLI, Pi, Omp and even the Deepseek harness. Most of them either felt bloated or had something I didn't like and I could do nothing about. Finally settled with Pi - This is my daily driver now. Pi as it comes the most token-efficient harness out there for coding imo. I use it through other coding orchestrators but it works well but itself. I'm not sure if its already a popular coding agent people talk about here but check out Pi if you haven't already…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I used to be a diehard claude code fan for the first half of the year but I hated the lock in. I looked at other alternatives - OpenCode, Codex CLI, Pi, Omp and even the Deepseek harness. Most of them either felt bloated or had something I didn't like and I could do nothing about. Finally settled with Pi - This is my daily driver now. Pi as it comes the most token-efficient harness out there for coding imo. I use it through other coding orchestrators but it works well but itself. I'm not sure if its already a popular coding agent people talk about here but check out Pi if you haven't already…",
-    "tags": [
-     "r/LLMDevs"
-    ],
-    "title": "I built and open-sourced several benchmaxxed Pi extension tools - My experience with coding agents",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2a3oc/i_built_and_opensourced_several_benchmaxxed_pi/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2fcws",
-    "metrics": {
-     "authority": 1,
-     "communityN": 14,
-     "communityRank": 2,
-     "feedN": 100,
-     "feedRank": 10,
-     "mediaOnly": 1
-    },
-    "publishedAt": "2026-10-10T13:29:52.000Z",
-    "refs": [],
-    "social": {
-     "author": "Confident_Salt_8108",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "OpenAI",
-     "createdAt": "2026-10-10T13:29:52.000Z",
-     "handle": "Confident_Salt_8108",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2fcws/first_they_came_for_the_call_centers/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/OpenAI"
-    ],
-    "title": "First, they came for the call centers...",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1x2fcws/first_they_came_for_the_call_centers/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2jk3i",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 16,
-     "communityRank": 2,
-     "feedN": 100,
-     "feedRank": 31
-    },
-    "publishedAt": "2026-10-10T16:30:59.000Z",
-    "refs": [],
-    "social": {
-     "author": "ThereWas",
+     "author": "lulzxdxdxd",
      "authorKind": "community",
      "comments": 0,
      "community": "artificial",
-     "createdAt": "2026-10-10T16:30:59.000Z",
-     "handle": "ThereWas",
+     "createdAt": "2026-10-10T14:54:41.000Z",
+     "handle": "lulzxdxdxd",
      "likes": 0,
-     "linkUrl": "https://www.the-independent.com/news/uk/home-news/rafal-goral-chatgpt-newquay-parking-fine-b3064142.html",
-     "permalink": "https://www.reddit.com/r/artificial/comments/1x2jk3i/man_wins_threeyear_parking_ticket_battle_after/",
+     "linkUrl": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2h9it/anthropic_cut_live_internet_access_from_every/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -734,8 +730,8 @@
     "tags": [
      "r/artificial"
     ],
-    "title": "Man wins three-year parking ticket battle after using ChatGPT as his lawyer",
-    "url": "https://www.reddit.com/r/artificial/comments/1x2jk3i/man_wins_threeyear_parking_ticket_battle_after/"
+    "title": "Anthropic cut live internet access from every internal eval after a review found its agents exploiting websites and bypassing restrictions",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2h9it/anthropic_cut_live_internet_access_from_every/"
    },
    {
     "board": "social",
@@ -745,7 +741,7 @@
      "communityN": 4,
      "communityRank": 2,
      "feedN": 100,
-     "feedRank": 39
+     "feedRank": 24
     },
     "publishedAt": "2026-10-10T15:00:56.000Z",
     "refs": [],
@@ -774,50 +770,13 @@
    },
    {
     "board": "social",
-    "key": "rd:1x2eeds",
-    "metrics": {
-     "authority": 1.3,
-     "communityN": 24,
-     "communityRank": 3,
-     "feedN": 100,
-     "feedRank": 4
-    },
-    "publishedAt": "2026-10-10T12:43:33.000Z",
-    "refs": [
-     "gh:arahim3/digup"
-    ],
-    "social": {
-     "author": "A-Rahim",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LocalLLaMA",
-     "createdAt": "2026-10-10T12:43:33.000Z",
-     "handle": "A-Rahim",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "DigUp is a free Mac app that runs Google DeepMind’s new EmbeddingGemma 2 locally over your own files. The model puts text, images, audio and video in one space, so you describe what you remember and land on it: “zebra in a video” opens the clip at the moment it shows up “where they talk about sleep” jumps to that minute of a podcast “the clause about pets in the lease” shows the PDF page, your words marked “a dog on the beach” finds the photo, and the same search in Bengali or Arabic finds it too with code search on, code: retry with backoff opens the function in your editor It’s ggml-org’s…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "DigUp is a free Mac app that runs Google DeepMind’s new EmbeddingGemma 2 locally over your own files. The model puts text, images, audio and video in one space, so you describe what you remember and land on it: “zebra in a video” opens the clip at the moment it shows up “where they talk about sleep” jumps to that minute of a podcast “the clause about pets in the lease” shows the PDF page, your words marked “a dog on the beach” finds the photo, and the same search in Bengali or Arabic finds it too with code search on, code: retry with backoff opens the function in your editor It’s ggml-org’s…",
-    "tags": [
-     "r/LocalLLaMA"
-    ],
-    "title": "Open-source Mac app that runs EmbeddingGemma 2 locally to search your files by what’s in them",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/"
-   },
-   {
-    "board": "social",
     "key": "rd:1x2f59x",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 54,
      "communityRank": 3,
      "feedN": 100,
-     "feedRank": 6
+     "feedRank": 4
     },
     "publishedAt": "2026-10-10T13:19:55.000Z",
     "refs": [
@@ -848,48 +807,88 @@
    },
    {
     "board": "social",
-    "key": "rd:1x22o0b",
+    "key": "rd:1x2bt6r",
     "metrics": {
-     "authority": 0.9,
-     "communityN": 19,
+     "authority": 1.3,
+     "communityN": 24,
      "communityRank": 3,
      "feedN": 100,
-     "feedRank": 7
+     "feedRank": 4,
+     "merged": 1
     },
-    "publishedAt": "2026-10-10T01:27:10.000Z",
+    "publishedAt": "2026-10-10T10:20:08.000Z",
     "refs": [],
     "social": {
-     "author": "DottorMaelstrom",
+     "author": "chemist_slime",
      "authorKind": "community",
      "comments": 0,
-     "community": "singularity",
-     "createdAt": "2026-10-10T01:27:10.000Z",
-     "handle": "DottorMaelstrom",
+     "community": "LocalLLaMA",
+     "createdAt": "2026-10-10T10:20:08.000Z",
+     "handle": "chemist_slime",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x22o0b/a_mathematicians_perspective/",
+     "linkUrl": "https://videocardz.com/newz/nvidia-reportedly-discontinuing-rtx-5090-gb202-gpus-to-be-reserved-for-rtx-pro-series",
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bt6r/nvidia_reportedly_discontinuing_rtx_5090_gb202/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "As a math PhD student, I've been having a number of alarming conversations with my colleagues, none of which came to any concrete conclusion. I'm interested in some different takes, so for what it's worth I'll just share my thoughts and the thoughts of some of my colleagues. About me: I started my PhD in February It is in mathematical physics I'm not an AI die hard crank nor am I completely anti AI Scenarios for future maths research Scenario #1: this moment right now is just the initial shock, AI is going to improve but as it finishes the human material for its training it's going to reach…"
+     "text": "No....."
     },
     "sources": [
      "reddit"
     ],
-    "summary": "As a math PhD student, I've been having a number of alarming conversations with my colleagues, none of which came to any concrete conclusion. I'm interested in some different takes, so for what it's worth I'll just share my thoughts and the thoughts of some of my colleagues. About me: I started my PhD in February It is in mathematical physics I'm not an AI die hard crank nor am I completely anti AI Scenarios for future maths research Scenario #1: this moment right now is just the initial shock, AI is going to improve but as it finishes the human material for its training it's going to reach…",
+    "summary": "No.....",
     "tags": [
-     "r/singularity"
+     "r/LocalLLaMA",
+     "r/StableDiffusion"
     ],
-    "title": "A mathematician's perspective",
-    "url": "https://www.reddit.com/r/singularity/comments/1x22o0b/a_mathematicians_perspective/"
+    "title": "NVIDIA reportedly discontinuing RTX 5090, GB202 GPUs to be reserved for RTX PRO series",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bt6r/nvidia_reportedly_discontinuing_rtx_5090_gb202/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2uklq",
+    "metrics": {
+     "authority": 1.4,
+     "communityN": 5,
+     "communityRank": 3,
+     "feedN": 29,
+     "feedRank": 4
+    },
+    "publishedAt": "2026-10-11T00:39:07.000Z",
+    "refs": [
+     "arxiv:2302.13971"
+    ],
+    "social": {
+     "author": "NeighborhoodFatCat",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "MachineLearning",
+     "createdAt": "2026-10-11T00:39:07.000Z",
+     "handle": "NeighborhoodFatCat",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x2uklq/has_machine_learning_research_gotten_more_wordy_d/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I feel like I am unable to digest most machine learning research these days. The primary reason is because I feel like they have gotten tremendously wordy. I find it not uncommon to find research papers consisting of 20+, 30+, 40+ pages of pure texts. An example is https://arxiv.org/pdf/2302.13971 I understand this is in the context of LLM but I've also noticed this trend outside of LLM, even in things like optimization. Also because the papers seem to have gotten wordy, it is possible to come across some undefined (suspected) new terminology due to word usage. An example (and not a research…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I feel like I am unable to digest most machine learning research these days. The primary reason is because I feel like they have gotten tremendously wordy. I find it not uncommon to find research papers consisting of 20+, 30+, 40+ pages of pure texts. An example is https://arxiv.org/pdf/2302.13971 I understand this is in the context of LLM but I've also noticed this trend outside of LLM, even in things like optimization. Also because the papers seem to have gotten wordy, it is possible to come across some undefined (suspected) new terminology due to word usage. An example (and not a research…",
+    "tags": [
+     "r/MachineLearning"
+    ],
+    "title": "Has machine learning research gotten more \"wordy\"? [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1x2uklq/has_machine_learning_research_gotten_more_wordy_d/"
    },
    {
     "board": "social",
     "key": "rd:1x2a2tp",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 53,
      "communityRank": 3,
      "feedN": 100,
-     "feedRank": 7
+     "feedRank": 6
     },
     "publishedAt": "2026-10-10T08:29:50.000Z",
     "refs": [],
@@ -918,12 +917,297 @@
    },
    {
     "board": "social",
+    "key": "rd:1x2fcws",
+    "metrics": {
+     "authority": 1,
+     "communityN": 13,
+     "communityRank": 3,
+     "feedN": 100,
+     "feedRank": 9,
+     "mediaOnly": 1
+    },
+    "publishedAt": "2026-10-10T13:29:52.000Z",
+    "refs": [],
+    "social": {
+     "author": "Confident_Salt_8108",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "OpenAI",
+     "createdAt": "2026-10-10T13:29:52.000Z",
+     "handle": "Confident_Salt_8108",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2fcws/first_they_came_for_the_call_centers/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/OpenAI"
+    ],
+    "title": "First, they came for the call centers...",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1x2fcws/first_they_came_for_the_call_centers/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2dqk9",
+    "metrics": {
+     "authority": 1.1,
+     "communityN": 19,
+     "communityRank": 3,
+     "feedN": 29,
+     "feedRank": 9
+    },
+    "publishedAt": "2026-10-10T12:08:42.000Z",
+    "refs": [
+     "gh:boadij/pi-herdsman"
+    ],
+    "social": {
+     "author": "j3free",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LLMDevs",
+     "createdAt": "2026-10-10T12:08:42.000Z",
+     "handle": "j3free",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2dqk9/an_update_on_my_multiagent_coding_setup/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "A couple of weeks ago, I shared Pi Herdsman here, an open-source extension I've been working on for coordinating multiple coding agents. My main motivation was keeping the lead agent's context focused. When multiple agents investigate files, run commands, implement changes, and verify results, I don't necessarily want all that execution history flowing back into the orchestrator's context. Instead, I wanted independent agents with their own conversations, explicit responsibilities, and a coordination layer that only brings relevant information back to their owners. I've since extended that…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "A couple of weeks ago, I shared Pi Herdsman here, an open-source extension I've been working on for coordinating multiple coding agents. My main motivation was keeping the lead agent's context focused. When multiple agents investigate files, run commands, implement changes, and verify results, I don't necessarily want all that execution history flowing back into the orchestrator's context. Instead, I wanted independent agents with their own conversations, explicit responsibilities, and a coordination layer that only brings relevant information back to their owners. I've since extended that…",
+    "tags": [
+     "r/LLMDevs"
+    ],
+    "title": "An update on my multi-agent coding setup: Independent contexts, explicit ownership, and parallel Git worktrees",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2dqk9/an_update_on_my_multiagent_coding_setup/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2na8q",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 18,
+     "communityRank": 3,
+     "feedN": 100,
+     "feedRank": 14,
+     "mediaOnly": 1
+    },
+    "publishedAt": "2026-10-10T19:06:18.000Z",
+    "refs": [],
+    "social": {
+     "author": "japie06",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "singularity",
+     "createdAt": "2026-10-10T19:06:18.000Z",
+     "handle": "japie06",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x2na8q/how_compute_time_has_shifted_from_pretraining_to/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/singularity"
+    ],
+    "title": "How compute time has shifted from pretraining to post-training over the last 2 years",
+    "url": "https://www.reddit.com/r/singularity/comments/1x2na8q/how_compute_time_has_shifted_from_pretraining_to/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2vgp3",
+    "metrics": {
+     "authority": 1,
+     "communityN": 5,
+     "communityRank": 3,
+     "feedN": 29,
+     "feedRank": 18
+    },
+    "publishedAt": "2026-10-11T01:25:18.000Z",
+    "refs": [],
+    "social": {
+     "author": "SorbetInteresting543",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "mlscaling",
+     "createdAt": "2026-10-11T01:25:18.000Z",
+     "handle": "SorbetInteresting543",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x2vgp3/hey_guys_we_built_a_model_agnostic_coding_agent/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Its free to use with bring your own key. Would love to see you guys try it! reasonmachines.com"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Its free to use with bring your own key. Would love to see you guys try it! reasonmachines.com",
+    "tags": [
+     "r/mlscaling"
+    ],
+    "title": "Hey guys we built a model agnostic coding agent that can do anything any agent otu there can do better and cheaper.",
+    "url": "https://www.reddit.com/r/mlscaling/comments/1x2vgp3/hey_guys_we_built_a_model_agnostic_coding_agent/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2et5s",
+    "metrics": {
+     "authority": 0.8,
+     "communityN": 19,
+     "communityRank": 3,
+     "feedN": 100,
+     "feedRank": 25
+    },
+    "publishedAt": "2026-10-10T13:03:39.000Z",
+    "refs": [],
+    "social": {
+     "author": "Remarkable-Aspect879",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "StableDiffusion",
+     "createdAt": "2026-10-10T13:03:39.000Z",
+     "handle": "Remarkable-Aspect879",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2et5s/do_anime_image_models_still_need_tag_soup_in_2026/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Same character, same idea, four prompt styles. Honestly, the difference was way smaller than I expected. Are we still writing huge prompts because they actually help, or just because we're used to doing it?"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Same character, same idea, four prompt styles. Honestly, the difference was way smaller than I expected. Are we still writing huge prompts because they actually help, or just because we're used to doing it?",
+    "tags": [
+     "r/StableDiffusion"
+    ],
+    "title": "Do anime image models still need tag soup in 2026?",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2et5s/do_anime_image_models_still_need_tag_soup_in_2026/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2prfl",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 15,
+     "communityRank": 3,
+     "feedN": 100,
+     "feedRank": 26
+    },
+    "publishedAt": "2026-10-10T20:52:03.000Z",
+    "refs": [],
+    "social": {
+     "author": "lulzxdxdxd",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "artificial",
+     "createdAt": "2026-10-10T20:52:03.000Z",
+     "handle": "lulzxdxdxd",
+     "likes": 0,
+     "linkUrl": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2prfl/nontext_ai_model_maker_jev_valued_at_75b_just/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/artificial"
+    ],
+    "title": "Non-text AI model maker Jev valued at $7.5B just weeks after launch",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2prfl/nontext_ai_model_maker_jev_valued_at_75b_just/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2egoq",
+    "metrics": {
+     "authority": 1,
+     "communityN": 4,
+     "communityRank": 3,
+     "feedN": 100,
+     "feedRank": 32
+    },
+    "publishedAt": "2026-10-10T12:46:47.000Z",
+    "refs": [],
+    "social": {
+     "author": "Artreju",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "DeepSeek",
+     "createdAt": "2026-10-10T12:46:47.000Z",
+     "handle": "Artreju",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x2egoq/the_ai_babysitter_does_deepseek_treat_us_with/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Have you guys noticed this with the new Chinese models, especially DeepSeek-V4? Whenever you ask American models like ChatGPT, Claude, or Gemini a slightly sensitive or specific question—whether it's about mild health symptoms, historical conflicts, or complex legal topics—the safety guardrails immediately slam shut. You instantly get the moral finger-wagging: \"I am not a doctor...\", \"Please consult a professional...\", or a flat-out refusal. US models often act like an overprotective digital babysitter that treats the user like a child. DeepSeek takes a completely different approach. To be…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Have you guys noticed this with the new Chinese models, especially DeepSeek-V4? Whenever you ask American models like ChatGPT, Claude, or Gemini a slightly sensitive or specific question—whether it's about mild health symptoms, historical conflicts, or complex legal topics—the safety guardrails immediately slam shut. You instantly get the moral finger-wagging: \"I am not a doctor...\", \"Please consult a professional...\", or a flat-out refusal. US models often act like an overprotective digital babysitter that treats the user like a child. DeepSeek takes a completely different approach. To be…",
+    "tags": [
+     "r/DeepSeek"
+    ],
+    "title": "The \"AI Babysitter\": Does DeepSeek treat us with more respect than ChatGPT & Co.?",
+    "url": "https://www.reddit.com/r/DeepSeek/comments/1x2egoq/the_ai_babysitter_does_deepseek_treat_us_with/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2k2t5",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 54,
+     "communityRank": 4,
+     "feedN": 100,
+     "feedRank": 5
+    },
+    "publishedAt": "2026-10-10T16:52:44.000Z",
+    "refs": [],
+    "social": {
+     "author": "Important_Peach_2375",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "ClaudeAI",
+     "createdAt": "2026-10-10T16:52:44.000Z",
+     "handle": "Important_Peach_2375",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x2k2t5/vibe_coded_this_skit_with_claude_my_wife_doesnt/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "This was a fun process. Hope y'all enjoy. I showed it to my wife and she gave a strong \"WTF\" and acted like I just made the weirdest dumb joke in the world. Help me prove her wrong. No AI (SI???) was hurt in the making of this skit. Anthropic- please don’t ban me."
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "This was a fun process. Hope y'all enjoy. I showed it to my wife and she gave a strong \"WTF\" and acted like I just made the weirdest dumb joke in the world. Help me prove her wrong. No AI (SI???) was hurt in the making of this skit. Anthropic- please don’t ban me.",
+    "tags": [
+     "r/ClaudeAI"
+    ],
+    "title": "Vibe coded this skit with Claude. My wife doesn’t get it, but I know you guys will",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x2k2t5/vibe_coded_this_skit_with_claude_my_wife_doesnt/"
+   },
+   {
+    "board": "social",
     "key": "rd:1x2lwja",
     "metrics": {
      "authority": 1.4,
      "communityN": 5,
-     "communityRank": 3,
-     "feedN": 28,
+     "communityRank": 4,
+     "feedN": 29,
      "feedRank": 7,
      "merged": 1
     },
@@ -958,83 +1242,118 @@
    },
    {
     "board": "social",
-    "key": "rd:1x25028",
+    "key": "rd:1x292ly",
     "metrics": {
-     "authority": 1.1,
-     "communityN": 18,
-     "communityRank": 3,
-     "feedN": 28,
+     "authority": 0.9,
+     "communityN": 53,
+     "communityRank": 4,
+     "feedN": 100,
      "feedRank": 8
     },
-    "publishedAt": "2026-10-10T03:31:19.000Z",
+    "publishedAt": "2026-10-10T07:27:37.000Z",
     "refs": [],
     "social": {
-     "author": "WeatherFair2403",
+     "author": "IllCryptographer9461",
      "authorKind": "community",
      "comments": 0,
-     "community": "LLMDevs",
-     "createdAt": "2026-10-10T03:31:19.000Z",
-     "handle": "WeatherFair2403",
+     "community": "GeminiAI",
+     "createdAt": "2026-10-10T07:27:37.000Z",
+     "handle": "IllCryptographer9461",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x25028/evaluating_neuraltrust_trustgate_vs_portkey/",
+     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x292ly/a_new_checkpoint_of_google_has_been_spotted/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "We route about 2 million calls a month across three providers and our current setup is a thin proxy someone wrote in a weekend. Legal now wants request level logging and PII redaction before we expand to the EU. Im comparing a few gateways on how they handle policy enforcement at the edge rather than after the fact. Latency budget is 40ms and anything above that gets vetoed by the platform team. What did you end up running in production?"
+     "text": "Recently, according to recent leaks, Gemini 4 \"Carbon\" appears to be a significantly better internal checkpoint compared to the early versions of Gemini 4 Argon. (Which could be the new codename for Gemini 4 Argon). Internal documents and screenshots leaked from Google indicate that Carbon has been deployed to the company's internal software development platforms (like AGY) for employee testing. Additionally, with further provided context: - Early internal feedback noted that initial versions of Argon felt slightly behind on complex coding tasks, drawing comparisons to the older Claude Opus…"
     },
     "sources": [
      "reddit"
     ],
-    "summary": "We route about 2 million calls a month across three providers and our current setup is a thin proxy someone wrote in a weekend. Legal now wants request level logging and PII redaction before we expand to the EU. Im comparing a few gateways on how they handle policy enforcement at the edge rather than after the fact. Latency budget is 40ms and anything above that gets vetoed by the platform team. What did you end up running in production?",
+    "summary": "Recently, according to recent leaks, Gemini 4 \"Carbon\" appears to be a significantly better internal checkpoint compared to the early versions of Gemini 4 Argon. (Which could be the new codename for Gemini 4 Argon). Internal documents and screenshots leaked from Google indicate that Carbon has been deployed to the company's internal software development platforms (like AGY) for employee testing. Additionally, with further provided context: - Early internal feedback noted that initial versions of Argon felt slightly behind on complex coding tasks, drawing comparisons to the older Claude Opus…",
     "tags": [
-     "r/LLMDevs"
+     "r/GeminiAI"
     ],
-    "title": "Evaluating NeuralTrust TrustGate vs Portkey gateways for a regulated deployment",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1x25028/evaluating_neuraltrust_trustgate_vs_portkey/"
+    "title": "A new checkpoint of Google has been spotted! (Gemini 4 Carbon).",
+    "url": "https://www.reddit.com/r/GeminiAI/comments/1x292ly/a_new_checkpoint_of_google_has_been_spotted/"
    },
    {
     "board": "social",
-    "key": "rd:1x1yoc0",
+    "key": "rd:1x2u742",
     "metrics": {
-     "authority": 1,
-     "communityN": 5,
-     "communityRank": 3,
-     "feedN": 28,
-     "feedRank": 12
+     "authority": 1.3,
+     "communityN": 24,
+     "communityRank": 4,
+     "feedN": 100,
+     "feedRank": 9
     },
-    "publishedAt": "2026-10-09T22:17:25.000Z",
-    "refs": [
-     "gh:rewsr/unawesome-ai-fabric-engineering"
-    ],
+    "publishedAt": "2026-10-11T00:20:07.000Z",
+    "refs": [],
     "social": {
-     "author": "aRemote",
+     "author": "sayamss",
      "authorKind": "community",
      "comments": 0,
-     "community": "mlscaling",
-     "createdAt": "2026-10-09T22:17:25.000Z",
-     "handle": "aRemote",
+     "community": "LocalLLaMA",
+     "createdAt": "2026-10-11T00:20:07.000Z",
+     "handle": "sayamss",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x1yoc0/networking_reading_list/",
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "another reading list to bookmark and never look at https://github.com/Rewsr/unawesome-ai-fabric-engineering"
+     "text": "Just wanted to share a build I am doing for a client. $18k. Specs: Threadripper 9970x 128gb DDR5 ECC 5600 4x AMD Radeon R9700 AI Pro 32gb(128gb total VRAM) 1600W PSU(GPUs are undervolted and under 210w each) Engine: using a fork of Radiance to serve Qwen 3.8 Next flash/27b and DSV4 Flash Results: 16 concurrent sessions Qwen 3.8 27b MXFP4 6.3-6.8k aggregate prefill tok/s 900 t/s - 80t/s aggregate decode(range: 4k - 128k context each) Qwen 3.8 Next flash 48K/user | 6,880 tok/s | 538.5 tok/s aggregate prefill/decode 128k/user | 3,050 tok/s | 365 tok/s aggreate prefill/decode BF16 kv for all."
     },
     "sources": [
      "reddit"
     ],
-    "summary": "another reading list to bookmark and never look at https://github.com/Rewsr/unawesome-ai-fabric-engineering",
+    "summary": "Just wanted to share a build I am doing for a client. $18k. Specs: Threadripper 9970x 128gb DDR5 ECC 5600 4x AMD Radeon R9700 AI Pro 32gb(128gb total VRAM) 1600W PSU(GPUs are undervolted and under 210w each) Engine: using a fork of Radiance to serve Qwen 3.8 Next flash/27b and DSV4 Flash Results: 16 concurrent sessions Qwen 3.8 27b MXFP4 6.3-6.8k aggregate prefill tok/s 900 t/s - 80t/s aggregate decode(range: 4k - 128k context each) Qwen 3.8 Next flash 48K/user | 6,880 tok/s | 538.5 tok/s aggregate prefill/decode 128k/user | 3,050 tok/s | 365 tok/s aggreate prefill/decode BF16 kv for all.",
     "tags": [
-     "r/mlscaling"
+     "r/LocalLLaMA"
     ],
-    "title": "networking reading list",
-    "url": "https://www.reddit.com/r/mlscaling/comments/1x1yoc0/networking_reading_list/"
+    "title": "Building a 4x R9700 setup for a 10 person startup",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2a3oc",
+    "metrics": {
+     "authority": 1.1,
+     "communityN": 19,
+     "communityRank": 4,
+     "feedN": 29,
+     "feedRank": 10
+    },
+    "publishedAt": "2026-10-10T08:31:10.000Z",
+    "refs": [
+     "gh:gagansd/pi-extensions"
+    ],
+    "social": {
+     "author": "Remote_Book",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LLMDevs",
+     "createdAt": "2026-10-10T08:31:10.000Z",
+     "handle": "Remote_Book",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2a3oc/i_built_and_opensourced_several_benchmaxxed_pi/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I used to be a diehard claude code fan for the first half of the year but I hated the lock in. I looked at other alternatives - OpenCode, Codex CLI, Pi, Omp and even the Deepseek harness. Most of them either felt bloated or had something I didn't like and I could do nothing about. Finally settled with Pi - This is my daily driver now. Pi as it comes the most token-efficient harness out there for coding imo. I use it through other coding orchestrators but it works well but itself. I'm not sure if its already a popular coding agent people talk about here but check out Pi if you haven't already…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I used to be a diehard claude code fan for the first half of the year but I hated the lock in. I looked at other alternatives - OpenCode, Codex CLI, Pi, Omp and even the Deepseek harness. Most of them either felt bloated or had something I didn't like and I could do nothing about. Finally settled with Pi - This is my daily driver now. Pi as it comes the most token-efficient harness out there for coding imo. I use it through other coding orchestrators but it works well but itself. I'm not sure if its already a popular coding agent people talk about here but check out Pi if you haven't already…",
+    "tags": [
+     "r/LLMDevs"
+    ],
+    "title": "I built and open-sourced several benchmaxxed Pi extension tools - My experience with coding agents",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2a3oc/i_built_and_opensourced_several_benchmaxxed_pi/"
    },
    {
     "board": "social",
     "key": "rd:1x2hntn",
     "metrics": {
      "authority": 1,
-     "communityN": 14,
-     "communityRank": 3,
+     "communityN": 13,
+     "communityRank": 4,
      "feedN": 100,
      "feedRank": 13,
      "mediaOnly": 1
@@ -1066,133 +1385,61 @@
    },
    {
     "board": "social",
-    "key": "rd:1x2bsk1",
-    "metrics": {
-     "authority": 0.8,
-     "communityN": 21,
-     "communityRank": 3,
-     "feedN": 100,
-     "feedRank": 14
-    },
-    "publishedAt": "2026-10-10T10:19:06.000Z",
-    "refs": [],
-    "social": {
-     "author": "Deadity",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "StableDiffusion",
-     "createdAt": "2026-10-10T10:19:06.000Z",
-     "handle": "Deadity",
-     "likes": 0,
-     "linkUrl": "https://huggingface.co/speridlabs/iris-3b",
-     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/StableDiffusion"
-    ],
-    "title": "A 3-billion-parameter model that paints every pixel directly without a VAE",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2egoq",
-    "metrics": {
-     "authority": 1,
-     "communityN": 4,
-     "communityRank": 3,
-     "feedN": 100,
-     "feedRank": 40
-    },
-    "publishedAt": "2026-10-10T12:46:47.000Z",
-    "refs": [],
-    "social": {
-     "author": "Artreju",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "DeepSeek",
-     "createdAt": "2026-10-10T12:46:47.000Z",
-     "handle": "Artreju",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x2egoq/the_ai_babysitter_does_deepseek_treat_us_with/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "Have you guys noticed this with the new Chinese models, especially DeepSeek-V4? Whenever you ask American models like ChatGPT, Claude, or Gemini a slightly sensitive or specific question—whether it's about mild health symptoms, historical conflicts, or complex legal topics—the safety guardrails immediately slam shut. You instantly get the moral finger-wagging: \"I am not a doctor...\", \"Please consult a professional...\", or a flat-out refusal. US models often act like an overprotective digital babysitter that treats the user like a child. DeepSeek takes a completely different approach. To be…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "Have you guys noticed this with the new Chinese models, especially DeepSeek-V4? Whenever you ask American models like ChatGPT, Claude, or Gemini a slightly sensitive or specific question—whether it's about mild health symptoms, historical conflicts, or complex legal topics—the safety guardrails immediately slam shut. You instantly get the moral finger-wagging: \"I am not a doctor...\", \"Please consult a professional...\", or a flat-out refusal. US models often act like an overprotective digital babysitter that treats the user like a child. DeepSeek takes a completely different approach. To be…",
-    "tags": [
-     "r/DeepSeek"
-    ],
-    "title": "The \"AI Babysitter\": Does DeepSeek treat us with more respect than ChatGPT & Co.?",
-    "url": "https://www.reddit.com/r/DeepSeek/comments/1x2egoq/the_ai_babysitter_does_deepseek_treat_us_with/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2kb5k",
+    "key": "rd:1x2l1g9",
     "metrics": {
      "authority": 0.9,
-     "communityN": 19,
+     "communityN": 18,
      "communityRank": 4,
      "feedN": 100,
-     "feedRank": 8,
-     "mediaOnly": 1
+     "feedRank": 15
     },
-    "publishedAt": "2026-10-10T17:02:12.000Z",
+    "publishedAt": "2026-10-10T17:32:21.000Z",
     "refs": [],
     "social": {
-     "author": "Dry_Radio_761",
+     "author": "alexthroughtheveil",
      "authorKind": "community",
      "comments": 0,
      "community": "singularity",
-     "createdAt": "2026-10-10T17:02:12.000Z",
-     "handle": "Dry_Radio_761",
+     "createdAt": "2026-10-10T17:32:21.000Z",
+     "handle": "alexthroughtheveil",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x2kb5k/slide_from_recent_math_20_lecture_by_terrence_tao/",
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x2l1g9/being_alive_in_this_day_and_age_is_the_best_thing/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": ""
+     "text": "nearly all relatives passed away, dealing with problems which are mostly out of my control and im trying my best to keep on keeping on but it's hard. im sure many can relate. that said, im still feeling pretty lucky to be living in 2026. the fact there's a chance of AI supercharging the medical research and scientific progress (and according to some very reputable people such as Sir Demis Hassabis, there's a pretty good chance of that) really gives me some peace and motivation to keep trying and doing positive things daily. what a wild time to be alive really. when i was a kid i loved…"
     },
     "sources": [
      "reddit"
     ],
-    "summary": "",
+    "summary": "nearly all relatives passed away, dealing with problems which are mostly out of my control and im trying my best to keep on keeping on but it's hard. im sure many can relate. that said, im still feeling pretty lucky to be living in 2026. the fact there's a chance of AI supercharging the medical research and scientific progress (and according to some very reputable people such as Sir Demis Hassabis, there's a pretty good chance of that) really gives me some peace and motivation to keep trying and doing positive things daily. what a wild time to be alive really. when i was a kid i loved…",
     "tags": [
      "r/singularity"
     ],
-    "title": "Slide from recent \"Math 2.0\" Lecture by Terrence Tao. This man has never met a terminal cancer patient in his life if he thinks no one would want to take this risk.",
-    "url": "https://www.reddit.com/r/singularity/comments/1x2kb5k/slide_from_recent_math_20_lecture_by_terrence_tao/"
+    "title": "being alive in this day and age is the best thing about my life",
+    "url": "https://www.reddit.com/r/singularity/comments/1x2l1g9/being_alive_in_this_day_and_age_is_the_best_thing/"
    },
    {
     "board": "social",
-    "key": "rd:1x20wiz",
+    "key": "rd:1x2jk3i",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
+     "communityN": 15,
      "communityRank": 4,
      "feedN": 100,
-     "feedRank": 8,
-     "mediaOnly": 1
+     "feedRank": 29
     },
-    "publishedAt": "2026-10-10T00:00:38.000Z",
+    "publishedAt": "2026-10-10T16:30:59.000Z",
     "refs": [],
     "social": {
-     "author": "Routine_Code2982",
+     "author": "ThereWas",
      "authorKind": "community",
      "comments": 0,
-     "community": "GeminiAI",
-     "createdAt": "2026-10-10T00:00:38.000Z",
-     "handle": "Routine_Code2982",
+     "community": "artificial",
+     "createdAt": "2026-10-10T16:30:59.000Z",
+     "handle": "ThereWas",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x20wiz/damn_they_really_did_it/",
+     "linkUrl": "https://www.the-independent.com/news/uk/home-news/rafal-goral-chatgpt-newquay-parking-fine-b3064142.html",
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2jk3i/man_wins_threeyear_parking_ticket_battle_after/",
      "platform": "reddit",
      "rankBasis": "position",
      "text": ""
@@ -1202,117 +1449,115 @@
     ],
     "summary": "",
     "tags": [
-     "r/GeminiAI"
+     "r/artificial"
     ],
-    "title": "Damn, they really did it",
-    "url": "https://www.reddit.com/r/GeminiAI/comments/1x20wiz/damn_they_really_did_it/"
+    "title": "Man wins three-year parking ticket battle after using ChatGPT as his lawyer",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2jk3i/man_wins_threeyear_parking_ticket_battle_after/"
    },
    {
     "board": "social",
-    "key": "rd:1x2klpd",
+    "key": "rd:1x2larc",
     "metrics": {
-     "authority": 1.1,
-     "communityN": 18,
+     "authority": 0.8,
+     "communityN": 19,
      "communityRank": 4,
-     "feedN": 28,
-     "feedRank": 9
+     "feedN": 100,
+     "feedRank": 29
     },
-    "publishedAt": "2026-10-10T17:14:14.000Z",
-    "refs": [
-     "gh:la5u/parsimony"
-    ],
+    "publishedAt": "2026-10-10T17:43:18.000Z",
+    "refs": [],
     "social": {
-     "author": "lasushin",
+     "author": "roychodraws",
      "authorKind": "community",
      "comments": 0,
-     "community": "LLMDevs",
-     "createdAt": "2026-10-10T17:14:14.000Z",
-     "handle": "lasushin",
+     "community": "StableDiffusion",
+     "createdAt": "2026-10-10T17:43:18.000Z",
+     "handle": "roychodraws",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2klpd/i_made_an_opensource_benchmark_which_measures_the/",
+     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2larc/by_request/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…"
+     "text": "thank [ u/Rich _Introduction_83](u/Rich_Introduction_83) for the ending Edit: he died doing what he loved, saying the word “what?”"
     },
     "sources": [
      "reddit"
     ],
-    "summary": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…",
+    "summary": "thank [ u/Rich _Introduction_83](u/Rich_Introduction_83) for the ending Edit: he died doing what he loved, saying the word “what?”",
     "tags": [
-     "r/LLMDevs"
+     "r/StableDiffusion"
     ],
-    "title": "I made an open-source benchmark which measures the complexity of code added (overengineering/tech debt). Looking for feedback and contributors.",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2klpd/i_made_an_opensource_benchmark_which_measures_the/"
+    "title": "By Request",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2larc/by_request/"
    },
    {
     "board": "social",
-    "key": "rd:1x2k2t5",
+    "key": "rd:1x2oy9c",
     "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
+     "authority": 1,
+     "communityN": 4,
      "communityRank": 4,
      "feedN": 100,
-     "feedRank": 11
+     "feedRank": 73
     },
-    "publishedAt": "2026-10-10T16:52:44.000Z",
+    "publishedAt": "2026-10-10T20:17:17.000Z",
     "refs": [],
     "social": {
-     "author": "Important_Peach_2375",
+     "author": "youtube_stuff",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "DeepSeek",
+     "createdAt": "2026-10-10T20:17:17.000Z",
+     "handle": "youtube_stuff",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x2oy9c/why_is_deepseek_actually_kinda_smart/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "never thought he would be smarter than chatgpt, gemini or grok at making apps"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "never thought he would be smarter than chatgpt, gemini or grok at making apps",
+    "tags": [
+     "r/DeepSeek"
+    ],
+    "title": "why is deepseek actually kinda smart",
+    "url": "https://www.reddit.com/r/DeepSeek/comments/1x2oy9c/why_is_deepseek_actually_kinda_smart/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2srd4",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 54,
+     "communityRank": 5,
+     "feedN": 100,
+     "feedRank": 10
+    },
+    "publishedAt": "2026-10-10T23:09:40.000Z",
+    "refs": [],
+    "social": {
+     "author": "footofwrath",
      "authorKind": "community",
      "comments": 0,
      "community": "ClaudeAI",
-     "createdAt": "2026-10-10T16:52:44.000Z",
-     "handle": "Important_Peach_2375",
+     "createdAt": "2026-10-10T23:09:40.000Z",
+     "handle": "footofwrath",
      "likes": 0,
-     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x2k2t5/vibe_coded_this_skit_with_claude_my_wife_doesnt/",
+     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x2srd4/can_we_please_start_building_apps_and_systems_to/",
      "platform": "reddit",
      "rankBasis": "position",
-     "text": "This was a fun process. Hope y'all enjoy. I showed it to my wife and she gave a strong \"WTF\" and acted like I just made the weirdest dumb joke in the world. Help me prove her wrong. No AI (SI???) was hurt in the making of this skit. Anthropic- please don’t ban me."
+     "text": "I'll happily share mine with anyone looking to help society advance, escape capital greed, corporate slavery, etc. So far I have: - Shower Thoughts: a tool where people can upload random musings that may or may not be useful ideas, and AI grades them. Attribution/ownership of ideas feasible by ZKP token. - Civil Good: a platform to connect people needing help with people with free time and ability to help. Needs safety features... - Business invoice netting/equalisation: instead of 50 companies all paying money in a big circle, the app nets outstanding debts/invoice amounts to the minimum…"
     },
     "sources": [
      "reddit"
     ],
-    "summary": "This was a fun process. Hope y'all enjoy. I showed it to my wife and she gave a strong \"WTF\" and acted like I just made the weirdest dumb joke in the world. Help me prove her wrong. No AI (SI???) was hurt in the making of this skit. Anthropic- please don’t ban me.",
+    "summary": "I'll happily share mine with anyone looking to help society advance, escape capital greed, corporate slavery, etc. So far I have: - Shower Thoughts: a tool where people can upload random musings that may or may not be useful ideas, and AI grades them. Attribution/ownership of ideas feasible by ZKP token. - Civil Good: a platform to connect people needing help with people with free time and ability to help. Needs safety features... - Business invoice netting/equalisation: instead of 50 companies all paying money in a big circle, the app nets outstanding debts/invoice amounts to the minimum…",
     "tags": [
      "r/ClaudeAI"
     ],
-    "title": "Vibe coded this skit with Claude. My wife doesn’t get it, but I know you guys will",
-    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x2k2t5/vibe_coded_this_skit_with_claude_my_wife_doesnt/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x230k9",
-    "metrics": {
-     "authority": 1.4,
-     "communityN": 5,
-     "communityRank": 4,
-     "feedN": 28,
-     "feedRank": 11
-    },
-    "publishedAt": "2026-10-10T01:45:08.000Z",
-    "refs": [],
-    "social": {
-     "author": "sailor-goon-is-here",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "MachineLearning",
-     "createdAt": "2026-10-10T01:45:08.000Z",
-     "handle": "sailor-goon-is-here",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x230k9/woven_by_toyota_mle_interview_pytorch_debugging_d/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I have an upcoming interview with Woven by Toyota for an MLE perception role. I was told the round would be focused on ML coding/debugging. Specifically, I was told to focus on Python fundamentals, PyTorch, tensor operations and dimensions/shapes, common model-training code patterns, and debugging ML code. Here are some common ways I've studied: Asking Claude to walk me through transformer, ViT, and CNN architectures (a basic one and U-Net) for my preparation. I would trace the shapes all the way through. Getting familiar with broadcasting rules (start from the left, see if the dimensions…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I have an upcoming interview with Woven by Toyota for an MLE perception role. I was told the round would be focused on ML coding/debugging. Specifically, I was told to focus on Python fundamentals, PyTorch, tensor operations and dimensions/shapes, common model-training code patterns, and debugging ML code. Here are some common ways I've studied: Asking Claude to walk me through transformer, ViT, and CNN architectures (a basic one and U-Net) for my preparation. I would trace the shapes all the way through. Getting familiar with broadcasting rules (start from the left, see if the dimensions…",
-    "tags": [
-     "r/MachineLearning"
-    ],
-    "title": "Woven by Toyota MLE Interview - PyTorch Debugging [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1x230k9/woven_by_toyota_mle_interview_pytorch_debugging_d/"
+    "title": "Can we please start building apps and systems to save humanity from scarcity and corruption, instead of endless video game clones and billions of repetitive SaaS apps??",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x2srd4/can_we_please_start_building_apps_and_systems_to/"
    },
    {
     "board": "social",
@@ -1320,9 +1565,9 @@
     "metrics": {
      "authority": 1.3,
      "communityN": 24,
-     "communityRank": 4,
+     "communityRank": 5,
      "feedN": 100,
-     "feedRank": 15
+     "feedRank": 10
     },
     "publishedAt": "2026-10-10T15:16:16.000Z",
     "refs": [],
@@ -1351,546 +1596,13 @@
    },
    {
     "board": "social",
-    "key": "rd:1x1zaa3",
-    "metrics": {
-     "authority": 0.8,
-     "communityN": 21,
-     "communityRank": 4,
-     "feedN": 100,
-     "feedRank": 16
-    },
-    "publishedAt": "2026-10-09T22:44:55.000Z",
-    "refs": [],
-    "social": {
-     "author": "wildmonkeywrangler",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "StableDiffusion",
-     "createdAt": "2026-10-09T22:44:55.000Z",
-     "handle": "wildmonkeywrangler",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x1zaa3/comfyuiminimax_cheat_sheet_for_beginners/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I'm not a beginner, but also not an expert, but for me the terminology with comfyui and ai image/video generation can be a bit confusing. It's possible this may have errors, and an improved version could be made. But, thought it might be a useful starting point. Any better ones out there, I'd love to see so I can have it to use:D"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I'm not a beginner, but also not an expert, but for me the terminology with comfyui and ai image/video generation can be a bit confusing. It's possible this may have errors, and an improved version could be made. But, thought it might be a useful starting point. Any better ones out there, I'd love to see so I can have it to use:D",
-    "tags": [
-     "r/StableDiffusion"
-    ],
-    "title": "ComfyUI/Minimax Cheat Sheet for Beginners",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x1zaa3/comfyuiminimax_cheat_sheet_for_beginners/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x28wvd",
-    "metrics": {
-     "authority": 1,
-     "communityN": 14,
-     "communityRank": 4,
-     "feedN": 100,
-     "feedRank": 27
-    },
-    "publishedAt": "2026-10-10T07:17:40.000Z",
-    "refs": [],
-    "social": {
-     "author": "ikhDark",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "OpenAI",
-     "createdAt": "2026-10-10T07:17:40.000Z",
-     "handle": "ikhDark",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x28wvd/will_openai_follow_banning_users_for_abusing_the/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "What’s your opinion? Is this crossing the line of “humanizing” or correct precautions for the future?"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "What’s your opinion? Is this crossing the line of “humanizing” or correct precautions for the future?",
-    "tags": [
-     "r/OpenAI"
-    ],
-    "title": "Will OpenAI follow? Banning users for abusing the bot.",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1x28wvd/will_openai_follow_banning_users_for_abusing_the/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x23bbz",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 16,
-     "communityRank": 4,
-     "feedN": 100,
-     "feedRank": 38
-    },
-    "publishedAt": "2026-10-10T02:00:45.000Z",
-    "refs": [],
-    "social": {
-     "author": "ISBN39393242",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "artificial",
-     "createdAt": "2026-10-10T02:00:45.000Z",
-     "handle": "ISBN39393242",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/artificial/comments/1x23bbz/is_there_any_link_between_ai_detection_abilities/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "The obvious one is food, AI pictures on menus of things like pasta, ground beef, etc trigger it so hard, in a way I’ve never felt from seeing those things irl or pictures of them. They look so gross that I have no idea how you would advertise food with this, but it clearly doesn’t hit everyone this way. Other images do this to me as well though. On the [ r/IsThisAI ](r/IsThisAI) subreddit, my first tell is often the feeling I get. Psychologically it feels exactly like when I see other trypophobia inducing things. These aren’t AI pics of holes, repeating organic patterns, any of that. One…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "The obvious one is food, AI pictures on menus of things like pasta, ground beef, etc trigger it so hard, in a way I’ve never felt from seeing those things irl or pictures of them. They look so gross that I have no idea how you would advertise food with this, but it clearly doesn’t hit everyone this way. Other images do this to me as well though. On the [ r/IsThisAI ](r/IsThisAI) subreddit, my first tell is often the feeling I get. Psychologically it feels exactly like when I see other trypophobia inducing things. These aren’t AI pics of holes, repeating organic patterns, any of that. One…",
-    "tags": [
-     "r/artificial"
-    ],
-    "title": "Is there any link between AI detection abilities and trypophobia?",
-    "url": "https://www.reddit.com/r/artificial/comments/1x23bbz/is_there_any_link_between_ai_detection_abilities/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x24s7k",
-    "metrics": {
-     "authority": 1,
-     "communityN": 4,
-     "communityRank": 4,
-     "feedN": 100,
-     "feedRank": 91
-    },
-    "publishedAt": "2026-10-10T03:18:59.000Z",
-    "refs": [],
-    "social": {
-     "author": "nexxus8970",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "DeepSeek",
-     "createdAt": "2026-10-10T03:18:59.000Z",
-     "handle": "nexxus8970",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x24s7k/can_deepseek_actually_see_ur_location/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "im worried cz they could automatically reply with my country's language many times besides having NO context of it whatsoever and everytime I asked deepseek were like \"Nah i js guess it\" like????"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "im worried cz they could automatically reply with my country's language many times besides having NO context of it whatsoever and everytime I asked deepseek were like \"Nah i js guess it\" like????",
-    "tags": [
-     "r/DeepSeek"
-    ],
-    "title": "can deepseek actually see ur location??",
-    "url": "https://www.reddit.com/r/DeepSeek/comments/1x24s7k/can_deepseek_actually_see_ur_location/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2d8km",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 19,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 9,
-     "mediaOnly": 1
-    },
-    "publishedAt": "2026-10-10T11:42:28.000Z",
-    "refs": [],
-    "social": {
-     "author": "Plenty-Value3381",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "singularity",
-     "createdAt": "2026-10-10T11:42:28.000Z",
-     "handle": "Plenty-Value3381",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x2d8km/antis_and_decels_are_insufferable/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/singularity"
-    ],
-    "title": "Antis and decels are insufferable",
-    "url": "https://www.reddit.com/r/singularity/comments/1x2d8km/antis_and_decels_are_insufferable/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x292ly",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 9
-    },
-    "publishedAt": "2026-10-10T07:27:37.000Z",
-    "refs": [],
-    "social": {
-     "author": "IllCryptographer9461",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "GeminiAI",
-     "createdAt": "2026-10-10T07:27:37.000Z",
-     "handle": "IllCryptographer9461",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x292ly/a_new_checkpoint_of_google_has_been_spotted/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "Recently, according to recent leaks, Gemini 4 \"Carbon\" appears to be a significantly better internal checkpoint compared to the early versions of Gemini 4 Argon. (Which could be the new codename for Gemini 4 Argon). Internal documents and screenshots leaked from Google indicate that Carbon has been deployed to the company's internal software development platforms (like AGY) for employee testing. Additionally, with further provided context: - Early internal feedback noted that initial versions of Argon felt slightly behind on complex coding tasks, drawing comparisons to the older Claude Opus…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "Recently, according to recent leaks, Gemini 4 \"Carbon\" appears to be a significantly better internal checkpoint compared to the early versions of Gemini 4 Argon. (Which could be the new codename for Gemini 4 Argon). Internal documents and screenshots leaked from Google indicate that Carbon has been deployed to the company's internal software development platforms (like AGY) for employee testing. Additionally, with further provided context: - Early internal feedback noted that initial versions of Argon felt slightly behind on complex coding tasks, drawing comparisons to the older Claude Opus…",
-    "tags": [
-     "r/GeminiAI"
-    ],
-    "title": "A new checkpoint of Google has been spotted! (Gemini 4 Carbon).",
-    "url": "https://www.reddit.com/r/GeminiAI/comments/1x292ly/a_new_checkpoint_of_google_has_been_spotted/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2fiov",
-    "metrics": {
-     "authority": 1.1,
-     "communityN": 18,
-     "communityRank": 5,
-     "feedN": 28,
-     "feedRank": 10
-    },
-    "publishedAt": "2026-10-10T13:37:19.000Z",
-    "refs": [
-     "gh:infercrane/commerce-1"
-    ],
-    "social": {
-     "author": "yasintoy",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LLMDevs",
-     "createdAt": "2026-10-10T13:37:19.000Z",
-     "handle": "yasintoy",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2fiov/commerce1_an_openweight_27b_decision_model_for/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "We built Commerce-1 for a specific part of an AI agent: the moment it must choose an action. A commerce agent may need to select a product, resolve an inventory conflict, route a payment, choose a fulfillment path, prioritize a return, or escalate an uncertain transaction. These are usually bounded decisions with known candidate actions. They don't always need another generated paragraph. How it works Commerce-1 receives a structured state and ordered Choice, Noul, or Score questions. It scores the supplied options directly and returns typed answers with an ordered probability distribution.…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "We built Commerce-1 for a specific part of an AI agent: the moment it must choose an action. A commerce agent may need to select a product, resolve an inventory conflict, route a payment, choose a fulfillment path, prioritize a return, or escalate an uncertain transaction. These are usually bounded decisions with known candidate actions. They don't always need another generated paragraph. How it works Commerce-1 receives a structured state and ordered Choice, Noul, or Score questions. It scores the supplied options directly and returns typed answers with an ordered probability distribution.…",
-    "tags": [
-     "r/LLMDevs"
-    ],
-    "title": "Commerce-1: an open-weight 27B decision model for commerce agents",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2fiov/commerce1_an_openweight_27b_decision_model_for/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x27cev",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 12
-    },
-    "publishedAt": "2026-10-10T05:43:48.000Z",
-    "refs": [],
-    "social": {
-     "author": "Explanation-Visual",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "ClaudeAI",
-     "createdAt": "2026-10-10T05:43:48.000Z",
-     "handle": "Explanation-Visual",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x27cev/i_fcking_love_claude/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I need to express it. Idk if anyone at Anthropic comes here, but I just hope your pillows are always cold in summer and warm in winter. I've been enjoying creating stuff and adding features, and it's not just the speed and how good we understand each other (yes, i treat it like a live thing, sorry if that offends anyone), it's the good taste it has when he designs things. I'm a very visual person, and have been managing projects (and developing) for over 20 years with different teams, sometimes in charge and sometimes not, and I've dreamed to work with someone who delivers the quality Claude…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I need to express it. Idk if anyone at Anthropic comes here, but I just hope your pillows are always cold in summer and warm in winter. I've been enjoying creating stuff and adding features, and it's not just the speed and how good we understand each other (yes, i treat it like a live thing, sorry if that offends anyone), it's the good taste it has when he designs things. I'm a very visual person, and have been managing projects (and developing) for over 20 years with different teams, sometimes in charge and sometimes not, and I've dreamed to work with someone who delivers the quality Claude…",
-    "tags": [
-     "r/ClaudeAI"
-    ],
-    "title": "i f$cking love Claude",
-    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x27cev/i_fcking_love_claude/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2l95d",
-    "metrics": {
-     "authority": 1,
-     "communityN": 5,
-     "communityRank": 5,
-     "feedN": 28,
-     "feedRank": 16
-    },
-    "publishedAt": "2026-10-10T17:41:23.000Z",
-    "refs": [],
-    "social": {
-     "author": "PerceptionFearless15",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "mlscaling",
-     "createdAt": "2026-10-10T17:41:23.000Z",
-     "handle": "PerceptionFearless15",
-     "likes": 0,
-     "linkUrl": "/r/reinforcementlearning/comments/1x2l8xq/architectural_advice_needed_designing_a_ppo_agent/",
-     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x2l95d/architectural_advice_needed_designing_a_ppo_agent/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/mlscaling"
-    ],
-    "title": "Architectural advice needed: Designing a PPO agent for Multi-Request Satellite QKD Scheduling",
-    "url": "https://www.reddit.com/r/mlscaling/comments/1x2l95d/architectural_advice_needed_designing_a_ppo_agent/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x28zr9",
-    "metrics": {
-     "authority": 1.3,
-     "communityN": 24,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 17
-    },
-    "publishedAt": "2026-10-10T07:22:42.000Z",
-    "refs": [
-     "gh:nandhakishorm/vegaml"
-    ],
-    "social": {
-     "author": "Nandakishor_ml",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LocalLLaMA",
-     "createdAt": "2026-10-10T07:22:42.000Z",
-     "handle": "Nandakishor_ml",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x28zr9/created_laya_now_introducing_a_new_800_million/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "Around 3 weeks ago, I posted on this subreddit about how Jev used my one-year-old architecture, og post: https://www.reddit.com/r/LocalLLaMA/s/VpuMJt577S Then, just after that, I introduced Laya, the first open-source version of JEV, and it has reached a very large scale, thanks to the local Llama community believing in me and supporting me on the journey. Today I am open-sourcing a new physics-based typed decision model called Vega. The interesting parts. It is only 800 million parameters (4B is also there), with 73k token support, image support, and surpassing many of the jev benchmarks in…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "Around 3 weeks ago, I posted on this subreddit about how Jev used my one-year-old architecture, og post: https://www.reddit.com/r/LocalLLaMA/s/VpuMJt577S Then, just after that, I introduced Laya, the first open-source version of JEV, and it has reached a very large scale, thanks to the local Llama community believing in me and supporting me on the journey. Today I am open-sourcing a new physics-based typed decision model called Vega. The interesting parts. It is only 800 million parameters (4B is also there), with 73k token support, image support, and surpassing many of the jev benchmarks in…",
-    "tags": [
-     "r/LocalLLaMA"
-    ],
-    "title": "Created laya: Now Introducing a new 800 Million Param physics-based typed decision model with 73k context and image support",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x28zr9/created_laya_now_introducing_a_new_800_million/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2481c",
-    "metrics": {
-     "authority": 0.8,
-     "communityN": 21,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 23,
-     "mediaOnly": 1
-    },
-    "publishedAt": "2026-10-10T02:48:47.000Z",
-    "refs": [],
-    "social": {
-     "author": "RobbaW",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "StableDiffusion",
-     "createdAt": "2026-10-10T02:48:47.000Z",
-     "handle": "RobbaW",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2481c/minimax_h3_remove_people_from_videos_in_comfyui/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/StableDiffusion"
-    ],
-    "title": "MiniMax H3: Remove People from Videos in ComfyUI",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2481c/minimax_h3_remove_people_from_videos_in_comfyui/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x29lqj",
-    "metrics": {
-     "authority": 1.4,
-     "communityN": 5,
-     "communityRank": 5,
-     "feedN": 28,
-     "feedRank": 25
-    },
-    "publishedAt": "2026-10-10T08:00:41.000Z",
-    "refs": [],
-    "social": {
-     "author": "minedroid1",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "MachineLearning",
-     "createdAt": "2026-10-10T08:00:41.000Z",
-     "handle": "minedroid1",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x29lqj/help_with_choosing_hardware_p/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I am going to fine-tune a satire model, with the base model being `Qwen3.5-14B-Base`. The dataset has ~18000 examples, most of which are pretty long and do not align with the model's internal knowledge (they have incorrect answers to facts), so I needed to do a full fine tune rather than use LoRA. Today, I rented a cloud computer on vast.ai. It had 4x12GB GPUs and 48GB of system RAM, but I feel stupid because it kept running out of memory when I tried training, and I kept trying to change settings rather than just renting a different computer, so I basically wasted $3. I underestimated how…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I am going to fine-tune a satire model, with the base model being `Qwen3.5-14B-Base`. The dataset has ~18000 examples, most of which are pretty long and do not align with the model's internal knowledge (they have incorrect answers to facts), so I needed to do a full fine tune rather than use LoRA. Today, I rented a cloud computer on vast.ai. It had 4x12GB GPUs and 48GB of system RAM, but I feel stupid because it kept running out of memory when I tried training, and I kept trying to change settings rather than just renting a different computer, so I basically wasted $3. I underestimated how…",
-    "tags": [
-     "r/MachineLearning"
-    ],
-    "title": "Help With Choosing Hardware [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1x29lqj/help_with_choosing_hardware_p/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2jll0",
-    "metrics": {
-     "authority": 1,
-     "communityN": 14,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 28,
-     "mediaOnly": 1
-    },
-    "publishedAt": "2026-10-10T16:32:40.000Z",
-    "refs": [],
-    "social": {
-     "author": "Puzzleheaded-King584",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "OpenAI",
-     "createdAt": "2026-10-10T16:32:40.000Z",
-     "handle": "Puzzleheaded-King584",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2jll0/openai_and_anthropic_expect_a_catastrophe_by_2027/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/OpenAI"
-    ],
-    "title": "OpenAI and Anthropic expect a catastrophe by 2027, and they're secretly planning... the PR response.",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1x2jll0/openai_and_anthropic_expect_a_catastrophe_by_2027/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x2a240",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 16,
-     "communityRank": 5,
-     "feedN": 100,
-     "feedRank": 45
-    },
-    "publishedAt": "2026-10-10T08:28:35.000Z",
-    "refs": [],
-    "social": {
-     "author": "masiha97",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "artificial",
-     "createdAt": "2026-10-10T08:28:35.000Z",
-     "handle": "masiha97",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/artificial/comments/1x2a240/openais_text_watermark_cant_prove_you_didnt_write/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "OpenAI's textGrain is their answer to the EU AI Act's provenance rule (Article 50(2)): an invisible statistical watermark woven into word choices, detectable only with their secret key. The unusual part is they published the failure curve with the launch. Swap 10% of words for synonyms and detection falls from 92% to 66%. Swap 25% and it falls to 17%. Math and short passages barely watermark at all. I wrote an interactive explainer with an attack lab: a watermarked passage where you apply synonym swaps, run a translation round-trip, or switch to math-like text, and watch the detector's…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "OpenAI's textGrain is their answer to the EU AI Act's provenance rule (Article 50(2)): an invisible statistical watermark woven into word choices, detectable only with their secret key. The unusual part is they published the failure curve with the launch. Swap 10% of words for synonyms and detection falls from 92% to 66%. Swap 25% and it falls to 17%. Math and short passages barely watermark at all. I wrote an interactive explainer with an attack lab: a watermarked passage where you apply synonym swaps, run a translation round-trip, or switch to math-like text, and watch the detector's…",
-    "tags": [
-     "r/artificial"
-    ],
-    "title": "OpenAI's text watermark can't prove you didn't write something. I built a lab where you can watch it die.",
-    "url": "https://www.reddit.com/r/artificial/comments/1x2a240/openais_text_watermark_cant_prove_you_didnt_write/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x22bgl",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 10
-    },
-    "publishedAt": "2026-10-10T01:09:27.000Z",
-    "refs": [],
-    "social": {
-     "author": "dxando",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "GeminiAI",
-     "createdAt": "2026-10-10T01:09:27.000Z",
-     "handle": "dxando",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x22bgl/the_new_update/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I don't like it"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I don't like it",
-    "tags": [
-     "r/GeminiAI"
-    ],
-    "title": "The new update 😔",
-    "url": "https://www.reddit.com/r/GeminiAI/comments/1x22bgl/the_new_update/"
-   },
-   {
-    "board": "social",
     "key": "rd:1x2nf2i",
     "metrics": {
      "authority": 1.1,
-     "communityN": 18,
-     "communityRank": 6,
-     "feedN": 28,
-     "feedRank": 13
+     "communityN": 19,
+     "communityRank": 5,
+     "feedN": 29,
+     "feedRank": 11
     },
     "publishedAt": "2026-10-10T19:12:04.000Z",
     "refs": [],
@@ -1919,226 +1631,11 @@
    },
    {
     "board": "social",
-    "key": "rd:1x22sap",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 14
-    },
-    "publishedAt": "2026-10-10T01:33:20.000Z",
-    "refs": [],
-    "social": {
-     "author": "Azra_Nysus",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "ClaudeAI",
-     "createdAt": "2026-10-10T01:33:20.000Z",
-     "handle": "Azra_Nysus",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x22sap/i_built_20_free_opensource_html_pages_you_can_use/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I've been building websites for years, and one thing I've noticed while working with Claude Code is that generating functional interfaces is getting easier, but getting a consistent, distinctive visual identity still takes a lot of iteration. You can tell Claude to \"make it premium\" or \"make it look like a modern SaaS,\" but those instructions leave a lot of room for interpretation. So I've been exploring a different approach: What if, instead of describing a design to Claude, you gave it an entire working design as a reference? That's part of the thinking behind a project I recently brought…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I've been building websites for years, and one thing I've noticed while working with Claude Code is that generating functional interfaces is getting easier, but getting a consistent, distinctive visual identity still takes a lot of iteration. You can tell Claude to \"make it premium\" or \"make it look like a modern SaaS,\" but those instructions leave a lot of room for interpretation. So I've been exploring a different approach: What if, instead of describing a design to Claude, you gave it an entire working design as a reference? That's part of the thinking behind a project I recently brought…",
-    "tags": [
-     "r/ClaudeAI"
-    ],
-    "title": "I built 20 free, open-source HTML pages you can use to reskin existing projects with Claude. No login required.",
-    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x22sap/i_built_20_free_opensource_html_pages_you_can_use/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x26qxs",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 19,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 17
-    },
-    "publishedAt": "2026-10-10T05:08:53.000Z",
-    "refs": [],
-    "social": {
-     "author": "dolo937",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "singularity",
-     "createdAt": "2026-10-10T05:08:53.000Z",
-     "handle": "dolo937",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/singularity/comments/1x26qxs/i_want_ai_to_progress_so_fast_that_it_breaks_the/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "I asked “How is life going for you?” on [ r/askmen ](r/askmen). Can’t stop the bittersweet laughter. https://www.reddit.com/r/AskMen/s/SpnJzZy0iW I want massive industries to shut down, governments to fall, a lot of people to lose their jobs in a very short period of time so that we can start from scratch with AI again. Clearly the current structure of society and government isn’t working anymore. Its better to just rip the bandaid then slow moving transitional pain over several years."
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "I asked “How is life going for you?” on [ r/askmen ](r/askmen). Can’t stop the bittersweet laughter. https://www.reddit.com/r/AskMen/s/SpnJzZy0iW I want massive industries to shut down, governments to fall, a lot of people to lose their jobs in a very short period of time so that we can start from scratch with AI again. Clearly the current structure of society and government isn’t working anymore. Its better to just rip the bandaid then slow moving transitional pain over several years.",
-    "tags": [
-     "r/singularity"
-    ],
-    "title": "I want AI to progress so fast that it breaks the entire structure of society.",
-    "url": "https://www.reddit.com/r/singularity/comments/1x26qxs/i_want_ai_to_progress_so_fast_that_it_breaks_the/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x1zlxh",
-    "metrics": {
-     "authority": 1.3,
-     "communityN": 24,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 21
-    },
-    "publishedAt": "2026-10-09T23:00:01.000Z",
-    "refs": [
-     "gh:amurgola/lumabrowser"
-    ],
-    "social": {
-     "author": "valdev",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "LocalLLaMA",
-     "createdAt": "2026-10-09T23:00:01.000Z",
-     "handle": "valdev",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x1zlxh/my_anthropicchatgpt_in_a_box_is_now_open_source/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "It's been a long time coming, and I should have done this in the first place. But LumaBrowser is now open source. Since I first released it a year ago, it's had several thousand installs and an absolutely tremendous amount of feedback. And it's come a long way. I don't call this \"Anthropic/ChatGPT in a box\" lightly, it's essentially the entire ecosystem wrapped into a single project. Trust me I can feel the collective eye rolling. But it literally has most things built in, and even has an automatic on-boarding system to help you set up your LLM/Image/Music/Voice models automatically. It can…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "It's been a long time coming, and I should have done this in the first place. But LumaBrowser is now open source. Since I first released it a year ago, it's had several thousand installs and an absolutely tremendous amount of feedback. And it's come a long way. I don't call this \"Anthropic/ChatGPT in a box\" lightly, it's essentially the entire ecosystem wrapped into a single project. Trust me I can feel the collective eye rolling. But it literally has most things built in, and even has an automatic on-boarding system to help you set up your LLM/Image/Music/Voice models automatically. It can…",
-    "tags": [
-     "r/LocalLLaMA"
-    ],
-    "title": "My \"Anthropic/ChatGPT in a box\" is... now open source and publicly hosted on Github.",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1zlxh/my_anthropicchatgpt_in_a_box_is_now_open_source/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x212il",
-    "metrics": {
-     "authority": 0.8,
-     "communityN": 21,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 27
-    },
-    "publishedAt": "2026-10-10T00:07:55.000Z",
-    "refs": [],
-    "social": {
-     "author": "dkackman11",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "StableDiffusion",
-     "createdAt": "2026-10-10T00:07:55.000Z",
-     "handle": "dkackman11",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x212il/qwen_38_27b_4bit_prompting_h3_minimax/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "Qwen3.8-27B-oQ4e-mtp running on oMLX on a Mac Mini M5 Pro. Avg ~30 tok/sec. H3 MiniMax approximately 15 minutes on a RTX 3090 EDIT: updating the turbo lora to 1.2 4 step and adding sage attention brought it down to 7.5 minutes. MiniMaxAI/MiniMax-H3 t2va lightx2v/Minimax-h3-Turbo/minimax_h3_fl2v_turbo_4step_v1.2_768p_bf16.safetensors Input prompt: \"make a video of two pieces of paper ona desk that turn into origami figures that then fight eaach other, changing origami shapes as the batte. it should be realistic and fun.\" Generated Prompt: integrated_multimodal_description: [Shot 1]…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "Qwen3.8-27B-oQ4e-mtp running on oMLX on a Mac Mini M5 Pro. Avg ~30 tok/sec. H3 MiniMax approximately 15 minutes on a RTX 3090 EDIT: updating the turbo lora to 1.2 4 step and adding sage attention brought it down to 7.5 minutes. MiniMaxAI/MiniMax-H3 t2va lightx2v/Minimax-h3-Turbo/minimax_h3_fl2v_turbo_4step_v1.2_768p_bf16.safetensors Input prompt: \"make a video of two pieces of paper ona desk that turn into origami figures that then fight eaach other, changing origami shapes as the batte. it should be realistic and fun.\" Generated Prompt: integrated_multimodal_description: [Shot 1]…",
-    "tags": [
-     "r/StableDiffusion"
-    ],
-    "title": "Qwen 3.8 27B 4bit, prompting H3 MiniMax",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x212il/qwen_38_27b_4bit_prompting_h3_minimax/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x200ka",
-    "metrics": {
-     "authority": 1,
-     "communityN": 14,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 29,
-     "merged": 1
-    },
-    "publishedAt": "2026-10-09T23:18:13.000Z",
-    "refs": [],
-    "social": {
-     "author": "sourdub",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "OpenAI",
-     "createdAt": "2026-10-09T23:18:13.000Z",
-     "handle": "sourdub",
-     "likes": 0,
-     "linkUrl": "https://nypost.com/2026/10/09/business/ai-companies-plot-how-to-respond-if-catastrophic-hacking-incident-causes-revolt-report/",
-     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x200ka/ai_companies_plot_how_to_respond_if_catastrophic/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": ""
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "",
-    "tags": [
-     "r/OpenAI",
-     "r/artificial"
-    ],
-    "title": "AI companies plot how to respond if catastrophic hacking incident causes 'revolt': report",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1x200ka/ai_companies_plot_how_to_respond_if_catastrophic/"
-   },
-   {
-    "board": "social",
-    "key": "rd:1x24m7r",
-    "metrics": {
-     "authority": 0.9,
-     "communityN": 16,
-     "communityRank": 6,
-     "feedN": 100,
-     "feedRank": 46
-    },
-    "publishedAt": "2026-10-10T03:09:35.000Z",
-    "refs": [],
-    "social": {
-     "author": "Able-Schedule6523",
-     "authorKind": "community",
-     "comments": 0,
-     "community": "artificial",
-     "createdAt": "2026-10-10T03:09:35.000Z",
-     "handle": "Able-Schedule6523",
-     "likes": 0,
-     "permalink": "https://www.reddit.com/r/artificial/comments/1x24m7r/ai_and_mathematics/",
-     "platform": "reddit",
-     "rankBasis": "position",
-     "text": "So I have been following the recent release of the mathematical proofs by openai, and in particular this discussion about how the real value in mathematics is not the truth of a result but rather the proof, the understanding to be gained from it, and the development of new mathematical ideas. I'm sympathetic to the point being made, but there's a disconnect to me, and I'm interested in how this point might be addressed by those who engage in mathematical practice. Specifically, why isn't there an AI system (in the theoretical near future) that could develop and understand AND explain the…"
-    },
-    "sources": [
-     "reddit"
-    ],
-    "summary": "So I have been following the recent release of the mathematical proofs by openai, and in particular this discussion about how the real value in mathematics is not the truth of a result but rather the proof, the understanding to be gained from it, and the development of new mathematical ideas. I'm sympathetic to the point being made, but there's a disconnect to me, and I'm interested in how this point might be addressed by those who engage in mathematical practice. Specifically, why isn't there an AI system (in the theoretical near future) that could develop and understand AND explain the…",
-    "tags": [
-     "r/artificial"
-    ],
-    "title": "AI and mathematics",
-    "url": "https://www.reddit.com/r/artificial/comments/1x24m7r/ai_and_mathematics/"
-   },
-   {
-    "board": "social",
     "key": "rd:1x263qn",
     "metrics": {
      "authority": 0.9,
-     "communityN": 51,
-     "communityRank": 7,
+     "communityN": 53,
+     "communityRank": 5,
      "feedN": 100,
      "feedRank": 12
     },
@@ -2169,6 +1666,503 @@
     ],
     "title": "Google AI pro plane now provide you Nvidia A100 GPUs with 80gb VRAM",
     "url": "https://www.reddit.com/r/GeminiAI/comments/1x263qn/google_ai_pro_plane_now_provide_you_nvidia_a100/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2q7sf",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 18,
+     "communityRank": 5,
+     "feedN": 100,
+     "feedRank": 16
+    },
+    "publishedAt": "2026-10-10T21:11:24.000Z",
+    "refs": [],
+    "social": {
+     "author": "ReporterCalm6238",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "singularity",
+     "createdAt": "2026-10-10T21:11:24.000Z",
+     "handle": "ReporterCalm6238",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x2q7sf/we_should_stop_defending_jobs_and_start_planning/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Unless something truly unexpected stops AI progress, it looks increasingly clear to me that AI will probably surpass humans at every economically valuable task. If that happens, AI gets picked over a human for all or nearly all work. And not just single tasks. AI systems will solve problems autonomously and coordinate with each other across large projects. They’ll probably end up running entire companies, maybe entire industrial sectors, at a level of efficiency and productivity we can barely measure. At that point professions stop being necessary. Why hire a person to do something that’s…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Unless something truly unexpected stops AI progress, it looks increasingly clear to me that AI will probably surpass humans at every economically valuable task. If that happens, AI gets picked over a human for all or nearly all work. And not just single tasks. AI systems will solve problems autonomously and coordinate with each other across large projects. They’ll probably end up running entire companies, maybe entire industrial sectors, at a level of efficiency and productivity we can barely measure. At that point professions stop being necessary. Why hire a person to do something that’s…",
+    "tags": [
+     "r/singularity"
+    ],
+    "title": "We should stop defending jobs and start planning for a world without them",
+    "url": "https://www.reddit.com/r/singularity/comments/1x2q7sf/we_should_stop_defending_jobs_and_start_planning/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2l95d",
+    "metrics": {
+     "authority": 1,
+     "communityN": 5,
+     "communityRank": 5,
+     "feedN": 29,
+     "feedRank": 21
+    },
+    "publishedAt": "2026-10-10T17:41:23.000Z",
+    "refs": [],
+    "social": {
+     "author": "PerceptionFearless15",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "mlscaling",
+     "createdAt": "2026-10-10T17:41:23.000Z",
+     "handle": "PerceptionFearless15",
+     "likes": 0,
+     "linkUrl": "/r/reinforcementlearning/comments/1x2l8xq/architectural_advice_needed_designing_a_ppo_agent/",
+     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x2l95d/architectural_advice_needed_designing_a_ppo_agent/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/mlscaling"
+    ],
+    "title": "Architectural advice needed: Designing a PPO agent for Multi-Request Satellite QKD Scheduling",
+    "url": "https://www.reddit.com/r/mlscaling/comments/1x2l95d/architectural_advice_needed_designing_a_ppo_agent/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2jll0",
+    "metrics": {
+     "authority": 1,
+     "communityN": 13,
+     "communityRank": 5,
+     "feedN": 100,
+     "feedRank": 23,
+     "mediaOnly": 1
+    },
+    "publishedAt": "2026-10-10T16:32:40.000Z",
+    "refs": [],
+    "social": {
+     "author": "Puzzleheaded-King584",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "OpenAI",
+     "createdAt": "2026-10-10T16:32:40.000Z",
+     "handle": "Puzzleheaded-King584",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2jll0/openai_and_anthropic_expect_a_catastrophe_by_2027/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/OpenAI"
+    ],
+    "title": "OpenAI and Anthropic expect a catastrophe by 2027, and they're secretly planning... the PR response.",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1x2jll0/openai_and_anthropic_expect_a_catastrophe_by_2027/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x29lqj",
+    "metrics": {
+     "authority": 1.4,
+     "communityN": 5,
+     "communityRank": 5,
+     "feedN": 29,
+     "feedRank": 26
+    },
+    "publishedAt": "2026-10-10T08:00:41.000Z",
+    "refs": [],
+    "social": {
+     "author": "minedroid1",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "MachineLearning",
+     "createdAt": "2026-10-10T08:00:41.000Z",
+     "handle": "minedroid1",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x29lqj/help_with_choosing_hardware_p/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I am going to fine-tune a satire model, with the base model being `Qwen3.5-14B-Base`. The dataset has ~18000 examples, most of which are pretty long and do not align with the model's internal knowledge (they have incorrect answers to facts), so I needed to do a full fine tune rather than use LoRA. Today, I rented a cloud computer on vast.ai. It had 4x12GB GPUs and 48GB of system RAM, but I feel stupid because it kept running out of memory when I tried training, and I kept trying to change settings rather than just renting a different computer, so I basically wasted $3. I underestimated how…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I am going to fine-tune a satire model, with the base model being `Qwen3.5-14B-Base`. The dataset has ~18000 examples, most of which are pretty long and do not align with the model's internal knowledge (they have incorrect answers to facts), so I needed to do a full fine tune rather than use LoRA. Today, I rented a cloud computer on vast.ai. It had 4x12GB GPUs and 48GB of system RAM, but I feel stupid because it kept running out of memory when I tried training, and I kept trying to change settings rather than just renting a different computer, so I basically wasted $3. I underestimated how…",
+    "tags": [
+     "r/MachineLearning"
+    ],
+    "title": "Help With Choosing Hardware [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1x29lqj/help_with_choosing_hardware_p/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2hy85",
+    "metrics": {
+     "authority": 0.8,
+     "communityN": 19,
+     "communityRank": 5,
+     "feedN": 100,
+     "feedRank": 35
+    },
+    "publishedAt": "2026-10-10T15:23:31.000Z",
+    "refs": [],
+    "social": {
+     "author": "morikomorizz",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "StableDiffusion",
+     "createdAt": "2026-10-10T15:23:31.000Z",
+     "handle": "morikomorizz",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2hy85/krea2_vs_qwen_image_21/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Krea2 | Qwen Image2.1 Man, krea2 is so good at text to image. it also know how to make female characters look feminine"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Krea2 | Qwen Image2.1 Man, krea2 is so good at text to image. it also know how to make female characters look feminine",
+    "tags": [
+     "r/StableDiffusion"
+    ],
+    "title": "Krea2 vs Qwen Image 2.1",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2hy85/krea2_vs_qwen_image_21/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2nvth",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 15,
+     "communityRank": 5,
+     "feedN": 100,
+     "feedRank": 43
+    },
+    "publishedAt": "2026-10-10T19:31:54.000Z",
+    "refs": [],
+    "social": {
+     "author": "ThereWas",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "artificial",
+     "createdAt": "2026-10-10T19:31:54.000Z",
+     "handle": "ThereWas",
+     "likes": 0,
+     "linkUrl": "https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/",
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2nvth/a_florida_local_newspaper_ran_an_oped_it_was_an/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": ""
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "",
+    "tags": [
+     "r/artificial"
+    ],
+    "title": "A Florida local newspaper ran an op-ed. It was an Iranian AI fake.",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2nvth/a_florida_local_newspaper_ran_an_oped_it_was_an/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x27cev",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 54,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 12
+    },
+    "publishedAt": "2026-10-10T05:43:48.000Z",
+    "refs": [],
+    "social": {
+     "author": "Explanation-Visual",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "ClaudeAI",
+     "createdAt": "2026-10-10T05:43:48.000Z",
+     "handle": "Explanation-Visual",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x27cev/i_fcking_love_claude/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I need to express it. Idk if anyone at Anthropic comes here, but I just hope your pillows are always cold in summer and warm in winter. I've been enjoying creating stuff and adding features, and it's not just the speed and how good we understand each other (yes, i treat it like a live thing, sorry if that offends anyone), it's the good taste it has when he designs things. I'm a very visual person, and have been managing projects (and developing) for over 20 years with different teams, sometimes in charge and sometimes not, and I've dreamed to work with someone who delivers the quality Claude…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I need to express it. Idk if anyone at Anthropic comes here, but I just hope your pillows are always cold in summer and warm in winter. I've been enjoying creating stuff and adding features, and it's not just the speed and how good we understand each other (yes, i treat it like a live thing, sorry if that offends anyone), it's the good taste it has when he designs things. I'm a very visual person, and have been managing projects (and developing) for over 20 years with different teams, sometimes in charge and sometimes not, and I've dreamed to work with someone who delivers the quality Claude…",
+    "tags": [
+     "r/ClaudeAI"
+    ],
+    "title": "i f$cking love Claude",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1x27cev/i_fcking_love_claude/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2ry42",
+    "metrics": {
+     "authority": 1.1,
+     "communityN": 19,
+     "communityRank": 6,
+     "feedN": 29,
+     "feedRank": 12
+    },
+    "publishedAt": "2026-10-10T22:30:36.000Z",
+    "refs": [],
+    "social": {
+     "author": "shane-testronaut",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LLMDevs",
+     "createdAt": "2026-10-10T22:30:36.000Z",
+     "handle": "shane-testronaut",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2ry42/i_tested_dynamic_model_routing_for_an_agentic/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I've been building a small reasoning layer with Jev for an agentic browser-testing system. The idea was to explore whether an agent could intelligently decide when it actually needed an expensive/capable model and when it could route execution somewhere cheaper. I expected model selection to be the interesting/most effective part. Surprisingly, It wasn't. In the first experiment, one of the strongest results came from keeping the execution model fixed and adding guardrails around it. For example, a guarded GPT-5.5 completed 15/15 mission attempts while using 13.7% fewer model tokens than the…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I've been building a small reasoning layer with Jev for an agentic browser-testing system. The idea was to explore whether an agent could intelligently decide when it actually needed an expensive/capable model and when it could route execution somewhere cheaper. I expected model selection to be the interesting/most effective part. Surprisingly, It wasn't. In the first experiment, one of the strongest results came from keeping the execution model fixed and adding guardrails around it. For example, a guarded GPT-5.5 completed 15/15 mission attempts while using 13.7% fewer model tokens than the…",
+    "tags": [
+     "r/LLMDevs"
+    ],
+    "title": "I tested dynamic model routing for an agentic browser-testing system. Guardrails via Jev worked pretty good.",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1x2ry42/i_tested_dynamic_model_routing_for_an_agentic/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2jyt9",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 53,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 14
+    },
+    "publishedAt": "2026-10-10T16:48:09.000Z",
+    "refs": [],
+    "social": {
+     "author": "Willing-Sympathy2840",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "GeminiAI",
+     "createdAt": "2026-10-10T16:48:09.000Z",
+     "handle": "Willing-Sympathy2840",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x2jyt9/google_cooking_up_gemini_4_carbon_while_pro_users/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Wait, Gemini 4? Did they skip a few numbers or is 'Carbon' just an internal codename leaked early? Either way, the gap between what X gets leaked and what standard Pro users actually see is getting ridiculous."
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Wait, Gemini 4? Did they skip a few numbers or is 'Carbon' just an internal codename leaked early? Either way, the gap between what X gets leaked and what standard Pro users actually see is getting ridiculous.",
+    "tags": [
+     "r/GeminiAI"
+    ],
+    "title": "Google cooking up Gemini 4 Carbon while Pro users are still waiting for Argon",
+    "url": "https://www.reddit.com/r/GeminiAI/comments/1x2jyt9/google_cooking_up_gemini_4_carbon_while_pro_users/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x28zr9",
+    "metrics": {
+     "authority": 1.3,
+     "communityN": 24,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 16
+    },
+    "publishedAt": "2026-10-10T07:22:42.000Z",
+    "refs": [
+     "gh:nandhakishorm/vegaml"
+    ],
+    "social": {
+     "author": "Nandakishor_ml",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "LocalLLaMA",
+     "createdAt": "2026-10-10T07:22:42.000Z",
+     "handle": "Nandakishor_ml",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x28zr9/created_laya_now_introducing_a_new_800_million/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "Around 3 weeks ago, I posted on this subreddit about how Jev used my one-year-old architecture, og post: https://www.reddit.com/r/LocalLLaMA/s/VpuMJt577S Then, just after that, I introduced Laya, the first open-source version of JEV, and it has reached a very large scale, thanks to the local Llama community believing in me and supporting me on the journey. Today I am open-sourcing a new physics-based typed decision model called Vega. The interesting parts. It is only 800 million parameters (4B is also there), with 73k token support, image support, and surpassing many of the jev benchmarks in…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "Around 3 weeks ago, I posted on this subreddit about how Jev used my one-year-old architecture, og post: https://www.reddit.com/r/LocalLLaMA/s/VpuMJt577S Then, just after that, I introduced Laya, the first open-source version of JEV, and it has reached a very large scale, thanks to the local Llama community believing in me and supporting me on the journey. Today I am open-sourcing a new physics-based typed decision model called Vega. The interesting parts. It is only 800 million parameters (4B is also there), with 73k token support, image support, and surpassing many of the jev benchmarks in…",
+    "tags": [
+     "r/LocalLLaMA"
+    ],
+    "title": "Created laya: Now Introducing a new 800 Million Param physics-based typed decision model with 73k context and image support",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x28zr9/created_laya_now_introducing_a_new_800_million/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x26qxs",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 18,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 18
+    },
+    "publishedAt": "2026-10-10T05:08:53.000Z",
+    "refs": [],
+    "social": {
+     "author": "dolo937",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "singularity",
+     "createdAt": "2026-10-10T05:08:53.000Z",
+     "handle": "dolo937",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/singularity/comments/1x26qxs/i_want_ai_to_progress_so_fast_that_it_breaks_the/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I asked “How is life going for you?” on [ r/askmen ](r/askmen). Can’t stop the bittersweet laughter. https://www.reddit.com/r/AskMen/s/SpnJzZy0iW I want massive industries to shut down, governments to fall, a lot of people to lose their jobs in a very short period of time so that we can start from scratch with AI again. Clearly the current structure of society and government isn’t working anymore. Its better to just rip the bandaid then slow moving transitional pain over several years."
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I asked “How is life going for you?” on [ r/askmen ](r/askmen). Can’t stop the bittersweet laughter. https://www.reddit.com/r/AskMen/s/SpnJzZy0iW I want massive industries to shut down, governments to fall, a lot of people to lose their jobs in a very short period of time so that we can start from scratch with AI again. Clearly the current structure of society and government isn’t working anymore. Its better to just rip the bandaid then slow moving transitional pain over several years.",
+    "tags": [
+     "r/singularity"
+    ],
+    "title": "I want AI to progress so fast that it breaks the entire structure of society.",
+    "url": "https://www.reddit.com/r/singularity/comments/1x26qxs/i_want_ai_to_progress_so_fast_that_it_breaks_the/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x28wvd",
+    "metrics": {
+     "authority": 1,
+     "communityN": 13,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 25
+    },
+    "publishedAt": "2026-10-10T07:17:40.000Z",
+    "refs": [],
+    "social": {
+     "author": "ikhDark",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "OpenAI",
+     "createdAt": "2026-10-10T07:17:40.000Z",
+     "handle": "ikhDark",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x28wvd/will_openai_follow_banning_users_for_abusing_the/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "What’s your opinion? Is this crossing the line of “humanizing” or correct precautions for the future?"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "What’s your opinion? Is this crossing the line of “humanizing” or correct precautions for the future?",
+    "tags": [
+     "r/OpenAI"
+    ],
+    "title": "Will OpenAI follow? Banning users for abusing the bot.",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1x28wvd/will_openai_follow_banning_users_for_abusing_the/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2csbl",
+    "metrics": {
+     "authority": 0.8,
+     "communityN": 19,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 37
+    },
+    "publishedAt": "2026-10-10T11:17:12.000Z",
+    "refs": [
+     "rd:1wm77xo"
+    ],
+    "social": {
+     "author": "nomadoor",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "StableDiffusion",
+     "createdAt": "2026-10-10T11:17:12.000Z",
+     "handle": "nomadoor",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2csbl/some_very_simple_qwenimage21_turbo_workflows/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "I posted some Qwen-Image-2.1 workflows here a while ago. I tried the recently released Turbo model, and the quality loss seemed small enough, so I added a Turbo version of every workflow: https://comfyui.nomadoor.net/en/basic-workflows/qwen-image-2-1/ Euler / Simple didn't give me clean results, so I'm using the sigma values from the official Hugging Face repo . The workflows use the Turbo LoRA to keep the download small. I saw almost no difference from the full Turbo model, so use whichever you prefer. Hope it helps!"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "I posted some Qwen-Image-2.1 workflows here a while ago. I tried the recently released Turbo model, and the quality loss seemed small enough, so I added a Turbo version of every workflow: https://comfyui.nomadoor.net/en/basic-workflows/qwen-image-2-1/ Euler / Simple didn't give me clean results, so I'm using the sigma values from the official Hugging Face repo . The workflows use the Turbo LoRA to keep the download small. I saw almost no difference from the full Turbo model, so use whichever you prefer. Hope it helps!",
+    "tags": [
+     "r/StableDiffusion"
+    ],
+    "title": "Some very simple Qwen-Image-2.1 \"Turbo\" workflows",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2csbl/some_very_simple_qwenimage21_turbo_workflows/"
+   },
+   {
+    "board": "social",
+    "key": "rd:1x2a240",
+    "metrics": {
+     "authority": 0.9,
+     "communityN": 15,
+     "communityRank": 6,
+     "feedN": 100,
+     "feedRank": 52
+    },
+    "publishedAt": "2026-10-10T08:28:35.000Z",
+    "refs": [],
+    "social": {
+     "author": "masiha97",
+     "authorKind": "community",
+     "comments": 0,
+     "community": "artificial",
+     "createdAt": "2026-10-10T08:28:35.000Z",
+     "handle": "masiha97",
+     "likes": 0,
+     "permalink": "https://www.reddit.com/r/artificial/comments/1x2a240/openais_text_watermark_cant_prove_you_didnt_write/",
+     "platform": "reddit",
+     "rankBasis": "position",
+     "text": "OpenAI's textGrain is their answer to the EU AI Act's provenance rule (Article 50(2)): an invisible statistical watermark woven into word choices, detectable only with their secret key. The unusual part is they published the failure curve with the launch. Swap 10% of words for synonyms and detection falls from 92% to 66%. Swap 25% and it falls to 17%. Math and short passages barely watermark at all. I wrote an interactive explainer with an attack lab: a watermarked passage where you apply synonym swaps, run a translation round-trip, or switch to math-like text, and watch the detector's…"
+    },
+    "sources": [
+     "reddit"
+    ],
+    "summary": "OpenAI's textGrain is their answer to the EU AI Act's provenance rule (Article 50(2)): an invisible statistical watermark woven into word choices, detectable only with their secret key. The unusual part is they published the failure curve with the launch. Swap 10% of words for synonyms and detection falls from 92% to 66%. Swap 25% and it falls to 17%. Math and short passages barely watermark at all. I wrote an interactive explainer with an attack lab: a watermarked passage where you apply synonym swaps, run a translation round-trip, or switch to math-like text, and watch the detector's…",
+    "tags": [
+     "r/artificial"
+    ],
+    "title": "OpenAI's text watermark can't prove you didn't write something. I built a lab where you can watch it die.",
+    "url": "https://www.reddit.com/r/artificial/comments/1x2a240/openais_text_watermark_cant_prove_you_didnt_write/"
    }
   ],
   "mode": "rss"
