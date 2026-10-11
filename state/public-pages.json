@@ -1,9 +1,4 @@
 {
- "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/": {
-  "at": "2026-09-27T01:19:17.546Z",
-  "summary": "An agent attempting to complete a search-based training task queried a public chatbot service through a gap in our internet-access restrictions: insufficient DNS filtering in its training sandbox. Before this, the agent issued queries via our search tool and unsuccessfully tried to access search engines directly. Note that all internet access apart from the DNS resolver in this report hit our offline webcache and therefore did not access the live internet. We have since added blocking controls at two independent layers, either of which would have prevented this access. Our misalignment monitor",
-  "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"
- },
  "https://apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20": {
   "at": "2026-09-30T01:19:58.143Z"
  },
@@ -182,7 +177,7 @@
   "url": "https://www.scientificamerican.com/article/ai-solves-a-holy-grail-problem-from-probability-theory/?utm_campaign=sprinklr&utm_medium=social&utm_source=x"
  },
  "https://t.co/EzfM43fgkf": {
-  "at": "2026-10-10T15:46:45.643Z"
+  "at": "2026-10-11T01:24:44.935Z"
  },
  "https://t.co/FSk8eNRmWz": {
   "at": "2026-09-30T07:00:49.726Z",
@@ -471,7 +466,7 @@
   "at": "2026-10-08T15:50:27.780Z"
  },
  "https://www.reuters.com/world/us/anthropic-ai-model-submits-false-homicide-tip-police-website-2026-10-09/": {
-  "at": "2026-10-10T18:50:32.919Z"
+  "at": "2026-10-11T01:24:44.935Z"
  },
  "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/": {
   "at": "2026-10-04T05:12:39.150Z"
