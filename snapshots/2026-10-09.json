@@ -6708,33 +6708,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x1etty/take_benchmarks_with_a_grain_of_salt_deepseek/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Based on my experience, which is primarily with open-source LLMs and coding agents, DS v4.1 Flash is the most suitable model for managing all types of workflows, including orchestration that some closed-source Flash models are unable to handle.",
-    "topComments": [
-     {
-      "text": "With the overwhelming amount of data your presented, I can only agree with you. Well done!"
-     },
-     {
-      "text": "Truly an amazing bit research done by the OP, they should definitely publish this research paper."
-     },
-     {
-      "text": "It's definitely a lot more capable than you would expect for the price. Very good at following documentation too"
-     },
-     {
-      "text": "I am eagerly waiting for DS pro version. Anyone has any insight / release pattern when could it possibly released"
-     },
-     {
-      "text": "This is why agentic coding benchmarks are so hard to trust. A model can lose on a benchmark and still feel way better in an actual multi-step workflow. Tool use, recovery from mistakes, and staying on track matter way more than a single score."
-     },
-     {
-      "text": "GLM 5.3 Flash King!!!"
-     },
-     {
-      "text": "But how good is it for my Cid Highwind and Cid Kramer life partners fanfic?"
-     },
-     {
-      "text": "It's definitely good but it's a value play. With unlimited money Fable, Opus, Astra etc must be amazing."
-     }
-    ]
+    "text": "Based on my experience, which is primarily with open-source LLMs and coding agents, DS v4.1 Flash is the most suitable model for managing all types of workflows, including orchestration that some closed-source Flash models are unable to handle."
    },
    "sources": [
     "reddit"
@@ -6785,27 +6759,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x1fjrv/i_built_marn_a_pytorch_library_for_training/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I built MaRN (Mapping Networks), a PyTorch library that lets you optimize a compact latent representation instead of directly training every model parameter. Some results from my current benchmarks: MNIST CNN: Reduced a 537,748-parameter CNN to 4,080 trainable parameters (131.8× reduction), with accuracy decreasing from 99.07% → 98.10% (−0.97 pp). A smaller 107,998-parameter CNN was reduced to 1,872 trainable parameters (57.7× reduction), with accuracy decreasing from 98.83% → 97.18% (−1.65 pp). These results come with trade-offs: mapped models can train substantially slower, and performance…",
-    "topComments": [
-     {
-      "text": "Hey, haven't looked at code or docs, just wanted to flag that 92% accuracy on MNIST is what you get with a linear classifier (meaning anything that is not 97%+ means something is wrong with training)"
-     },
-     {
-      "text": "update: you were right to point it out, there was a bug, I'll be updating the OP, thanks"
-     },
-     {
-      "text": "Don't you need handcrafted features for that though?"
-     },
-     {
-      "text": "Not sure what you mean (maybe related to how your code works, so sorry if I'm saying something irrelevant). What I mean is that for any neural network you put the input pixels in the first layer and the output label in the last, you should get 97%+ on MNIST. It is basically a baseline test to see \"my training works\"."
-     },
-     {
-      "text": "I mean that you don't have pixels as input, but some other derived features like edge positions or something like that. Are you sure you don't mean a multilayer perceptron (feed forward network)? That would have many layers and very likely many more parameters than the 1800 prams of the CNN. Also, they would have nonlinearities at each layer, so that would be different than a linear classifier."
-     },
-     {
-      "text": "Some intro into use cases and methodology would be really nice in the web page."
-     }
-    ]
+    "text": "I built MaRN (Mapping Networks), a PyTorch library that lets you optimize a compact latent representation instead of directly training every model parameter. Some results from my current benchmarks: MNIST CNN: Reduced a 537,748-parameter CNN to 4,080 trainable parameters (131.8× reduction), with accuracy decreasing from 99.07% → 98.10% (−0.97 pp). A smaller 107,998-parameter CNN was reduced to 1,872 trainable parameters (57.7× reduction), with accuracy decreasing from 98.83% → 97.18% (−1.65 pp). These results come with trade-offs: mapped models can train substantially slower, and performance…"
    },
    "sources": [
     "reddit"
@@ -6945,30 +6899,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x1grtv/why_does_claude_need_to_see_my_ovulation_cycle/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It's that time of the month for me, Claude, so generate a browser-based version of GTA 6 without any errors, or I'll get angry.",
-    "topComments": [
-     {
-      "text": "THE VESSEL IS RIPE, PREPARE THE SEED"
-     },
-     {
-      "text": "I suppose it's just preparation for becoming a full assistant... although I don't actually use those kinds of features for now."
-     },
-     {
-      "text": "lmao, Claude being horny."
-     },
-     {
-      "text": "it also has read_intermenstrual_bleeding, read_menstruation, read_sexual_activity... claude is a freak, I just knew it"
-     },
-     {
-      "text": "Consequences of being trained on redditors. 🥀"
-     },
-     {
-      "text": "\"Yes the build failed, and I know it's that time of month again so don't get your panties in a twist...\""
-     },
-     {
-      "text": "Penis inspection day!"
-     }
-    ]
+    "text": "It's that time of the month for me, Claude, so generate a browser-based version of GTA 6 without any errors, or I'll get angry."
    },
    "sources": [
     "reddit"
@@ -7255,12 +7186,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x1kmg7/i_built_alhr_a_tree_based_sparse_attention_system/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "ALHR - Adaptive Learnable Hierarchical Routing, uses static binary trees and learnable functions to minimize the amount of keys to be read. It does use a dense teacher while phase 1 of training however. MQAR TEST AT 1024 TOKENS - Average keys read per query by dense - 512 Keys Average keys read per query by ALHR - 30 keys Top - 1 accuracy of dense - 94.9% Top - 1 accuracy of ALHR - 92.1% KV Compression of dense - 1x(100% read) KV Compression of ALHR - 35.3x(2.83% read) Peak VRAM of dense - 57 MB (Scales quadratically) Peak VRAM of ALHR - 422 MB (scales linearly) Cache compression of ALHR -…",
-    "topComments": [
-     {
-      "text": "pretty cool to see someone grinding this out on just a phone and kaggle, the compression numbers are wild. 30 keys per query vs 512 is no joke even if the accuracy dips a couple points. one thing that sticks out is the vram being way higher for your method at this scale, i get that it's linear vs quadratic so the crossover will come later but it's an interesting tradeoff for smaller contexts. the static tree structure is a neat choice, curious how much that limits flexibility compared to…"
-     }
-    ]
+    "text": "ALHR - Adaptive Learnable Hierarchical Routing, uses static binary trees and learnable functions to minimize the amount of keys to be read. It does use a dense teacher while phase 1 of training however. MQAR TEST AT 1024 TOKENS - Average keys read per query by dense - 512 Keys Average keys read per query by ALHR - 30 keys Top - 1 accuracy of dense - 94.9% Top - 1 accuracy of ALHR - 92.1% KV Compression of dense - 1x(100% read) KV Compression of ALHR - 35.3x(2.83% read) Peak VRAM of dense - 57 MB (Scales quadratically) Peak VRAM of ALHR - 422 MB (scales linearly) Cache compression of ALHR -…"
    },
    "sources": [
     "reddit"
@@ -7305,33 +7231,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x1ku7k/william_shatner_gives_take_on_ai/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "From the \"Dropping Names with Brent and Jonny\" podcast.",
-    "topComments": [
-     {
-      "text": "Gotta just say, man looks amazing for 95."
-     },
-     {
-      "text": "I want his longevity secrets!"
-     },
-     {
-      "text": "Apparently he's kind of an acolyte of Ray Kurzweil, he's on a very regimented diet and supplements routine based on the latest in longevity science. He hopes he can live long enough to see AI develop treatments that extend lives even further."
-     },
-     {
-      "text": "Remarkably sharp sounding too."
-     },
-     {
-      "text": "I started this skeptically, but realized later that Captain Kirk’s got a point: Embrace and dominate is way better than evade and wither."
-     },
-     {
-      "text": "He, and you, dont seem to realize that the AI will not retain any of it. It will just adjust the context to agree with you."
-     },
-     {
-      "text": "I'm less worried about the AI systems, enshittification aside some are amazing tools... I'm very worried about the very small group of ultra greedy \"profit over all else\" people currently in control of how AI is developed and whatever their ultimate agenda might be. The tool is great, the people behind it, not so much"
-     },
-     {
-      "text": "\"I befriended the AI and the AI befriended me\" Oh dear god. No you didn't, and it didn't either. Its not a thinking thing."
-     }
-    ]
+    "text": "From the \"Dropping Names with Brent and Jonny\" podcast."
    },
    "sources": [
     "reddit"
@@ -7481,33 +7381,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x1ldef/qwenqwenimage21turbo_hugging_face/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "What's the simplest way to run this locally? Ideally where I don't have to stitch together 30 boxes before the output box."
-     },
-     {
-      "text": "ComfyUI. Just wait a little for templates to come out by other people if you don't want to put it together yourself. I've been so impressed with Qwen Image 2.1 both in its quality and its speed that I wouldn't really have thought there'd be a need for a turbo model! I wasn't even planning on using any loras to speed things up like with Qwen Image 1 as it's good enough as it is for me."
-     },
-     {
-      "text": "ComfyUI It's not very comfy, and it doesn't feel like an actual UI. I don't doubt it works, but whoever looked at the initial design and went \"yeah, that's fine\" should probably make a living raising turkeys or something."
-     },
-     {
-      "text": "https://preview.redd.it/gnabkyq92guh1.jpeg?width=718&format=pjpg&auto=webp&s=dd739b32fab287cc8f603c4b616718a7b8f36fae"
-     },
-     {
-      "text": "https://preview.redd.it/ymlou9nh3guh1.jpeg?width=1312&format=pjpg&auto=webp&s=1eb97e839b09bae66fe1f82e99e0613200d93022"
-     },
-     {
-      "text": "What's the difference between this and 2.1?"
-     },
-     {
-      "text": "this turbo version will generate/edit your images in less steps, so you dont need the turbo lora for it anymore!!"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7556,30 +7430,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x1lo40/i_pointed_claude_at_400_years_of_historical/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Crazy how so many amazing things are happening at once that no one seems to care. In the last week I have seen so many amazing discoveries across disciplines that jts kinda all just mush."
-     },
-     {
-      "text": "Well people are hating so much on AI that they don't want to hear about it."
-     },
-     {
-      "text": "Awesome!!!"
-     },
-     {
-      "text": "Thank you! I'm so proud of it, but it doesn't seem to be taking off elsewhere online, so your appreciation means a lot!"
-     },
-     {
-      "text": "Not only is the topic of the blog cool, but you can see the nice little touches and design you integrated into the blog. This is a perfect example of AI up-skilling!"
-     },
-     {
-      "text": "Okay, for those of you that do not enjoy fun, I just added a button at the top of the page to turn off the special effects."
-     },
-     {
-      "text": "haha ok nevermind about this not taking off, it's currently on the front page of Hacker News!"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7673,33 +7524,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x1m6rb/day_9_no_gemini_4/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "\"want early access?\"",
-    "topComments": [
-     {
-      "text": "We want public access, not early access. I’m starting to suspect their margins are so bad they don’t want this model public."
-     },
-     {
-      "text": "I suspect more or less the same, and I also think it doesn't perform well. Internal leaks confirmed by Bloomberg press stated that the AI was not that great. Another person stated it was about the same as Opus 4.8. So basically, Argon might be something that is as expensive to run as Astra but performs like Opus 4.8. Might be why they are holding it."
-     },
-     {
-      "text": "Yeah they added opus and sonnet 5.5 to their plans after announcing gemini 4. This is a really suspicious time to add competing models to your ai plan when youre supposedly going to release your model thats mean to be competing with those models. My guess is that gemini 4 is a small upgrade from 3.8 flash with a whole lot of benchmaxing like they did with their previous models. It does not follow instructions and was designed to reduce compute consumption because they want to keep serving…"
-     },
-     {
-      "text": "I would have never guessed google would lose the AI war"
-     },
-     {
-      "text": "Eventually they'll put out something worthwhile because they have the most resources and best research people But for now they'll just be stumbling and derping, for reasons I don't know why"
-     },
-     {
-      "text": "He's trolling you guys on X when he writes stuff like that Just laughing at you guys still waiting, thinking Gemini 4 is gonna come"
-     },
-     {
-      "text": "Day 11"
-     },
-     {
-      "text": "he is becoming a joke"
-     }
-    ]
+    "text": "\"want early access?\""
    },
    "sources": [
     "reddit"
@@ -7840,33 +7665,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1x1mzkn/hugo_duminilcopin_2022_fields_medalist_openais/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Maybe now spend your time figuring out how to use these new math superpowers? Surely mathematicians are the ones we need to do that?"
-     },
-     {
-      "text": "Yeah to me as a mathematician it really feels like this scene when Tony Stark uses his Iron man suit for the first time, super exciting! But at the same time of course there is also a huge sense of insecurity which I guess everyone whose job is impacted by AI is feeling. And Duminil-Copin is just expressing this and trying to process it. I'm frankly appalled by some of the almost inhumane reactions in this sub, these are people who devoted decades of their careers and personal lifes to these…"
-     },
-     {
-      "text": "There is a lot of anti intellectualism around here. Some are just thrilled to see people they despise suffer."
-     },
-     {
-      "text": "You guys are all trashtalking like he's saying it's bad and it must be stopped. I listened to the original extract and he's not saying this. He's one of the most brilliant mind on this planet and he just lost his life's work, his life's purpose in the span of a month. Feeling like you've been run over by trucks is to be expected. Idk guys, have at least a bit of compassion, \"just dont fucking dance\"."
-     },
-     {
-      "text": "It's shocking the lack of empathy on this subreddit. Perhaps that's just the standard in our culture these days"
-     },
-     {
-      "text": "Mathematics is endless and those proofs provide zero additional conjectures or any new math besides the process of the proof. He has now the most fertile ground to make new conjectures and advances. This is the new era of math whether we want it or not. Proving results will soon become trivial. What will distinguish mathematicians from each other is the quality of math they can produce. And in this aspect is where we, mathematicians, still find space, because what we lack in theorem proving…"
-     },
-     {
-      "text": "Good is bad, bad is good. Math solutions bad, unsolved math good. Cancer cure bad, cancer good. Knowledge bad, ignorance good. Intelligence bad, stupidity good. Free time bad, always occupied and burdened good. Financial freedom bad, wage slavery good."
-     },
-     {
-      "text": "The assumption that this is going to liberate us all from wage slavery to financial freedom is completely delusional."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8058,30 +7857,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x1oxol/i_gave_claude_a_batch_job_overnight_woke_up_to_96/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "im just frustrated, i genuinely am and it is entirely my fault. so the job was simple. two keyframes, one camera move i wanted to test, and i wanted a pile of variations by morning so i could pick a composition and then run that one properly. wrote the instruction about half eleven, watched the first two come back fine, went to bed. what i didn't do was tell it which model. my scratch model is seedance 1.5 at 480p, dirt cheap, exists for exactly this. the default on the project was 2.0 pro at 1080p, which is about 25x the cost per second. so it used the default and ran the batch. four hours…",
-    "topComments": [
-     {
-      "text": "People like you are the reason why we still have cheap subscription costs. So thank you 😊"
-     },
-     {
-      "text": "happy to help:)"
-     },
-     {
-      "text": "Someone gotta pay for our compute usage lmao"
-     },
-     {
-      "text": "May wanna turn off auto renew in the future for cases like this. Edit - It appears OP had $2500 ready to go in the account which I hadn't ever had considered an option dang! That being said I still would keep auto renew off."
-     },
-     {
-      "text": "He didn't blow $2,500 on claude, Claude blew $2,500 on Seedance."
-     },
-     {
-      "text": "Hilarious"
-     },
-     {
-      "text": "When Opus 5 came out I was trying to build some autonomous fact checker that checks news articles against official statistics and transcripts. The Agent should first find out which datasets of the local 120GB Database was relevant to the topic. Then Go ahead, Upload everything relevant as a prompt and hold it against the News article. I told it to test the system with only 1 Input Claim and 1 statistics. Instead it made batch calls with all of the Data so fast that my fixed Limit at $500 was…"
-     }
-    ]
+    "text": "im just frustrated, i genuinely am and it is entirely my fault. so the job was simple. two keyframes, one camera move i wanted to test, and i wanted a pile of variations by morning so i could pick a composition and then run that one properly. wrote the instruction about half eleven, watched the first two come back fine, went to bed. what i didn't do was tell it which model. my scratch model is seedance 1.5 at 480p, dirt cheap, exists for exactly this. the default on the project was 2.0 pro at 1080p, which is about 25x the cost per second. so it used the default and ran the batch. four hours…"
    },
    "sources": [
     "reddit"
@@ -8320,33 +8096,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x1rk4o/openais_math_findings_built_on_stolen_user_data/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "One of many they’ve published, but arguably the most interesting one. I think we’re well past the point of questioning whether LLMs can contribute meaningfully to mathematics. They clearly can. The concern is privacy. With legacy systems, the saving grace was that, even if they had access to the data, they couldn’t realistically process all of it in a meaningful way. That’s no longer true with AI agents. They can analyze enormous amounts of information and easily flag promising or novel ideas…"
-     },
-     {
-      "text": "Yeah now think about what nefarious governments around the world can do with all the data they collect and systems like flock. And how often them being confidently wrong will result in death"
-     },
-     {
-      "text": "He used three OpenAI accounts, and on one of them he didn't turn off the setting that lets his data be used for training. And that's how OpenAI got the information???"
-     },
-     {
-      "text": "i just asume everything i upload to a cloud is public to the company that owns it. These companies have more power than governments, the people running these have a god complex (understandably so even), they dont give a fuck about privacy, they will feed the beast whatever they think it needs, does not matter what laws, tos, or whatever contract they have with costumers."
-     },
-     {
-      "text": "This was reported as off-topic, but I'm going to let it stand because it's a case in point, illustrating why people might want to use locally-hosted LLM technology."
-     },
-     {
-      "text": "This man really, deeply needed media training and to practice this story with a professional before going on a press tour."
-     },
-     {
-      "text": "Open in Open AI stands for how openly they view your data."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8584,33 +8334,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x1umis/the_power_of_reference_videos_for_believable/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "A while ago u/ R34vspec, at my suggestion, used reference videos to influence the actors. https://www.reddit.com/r/StableDiffusion/s/AiURgoCkgj He's been trying to get believable performances out of Minimax. His post didn't get a lot of attention so I wanted to post showing just how much of an impact it has Edit: I don’t know if this is the best way to prompt it but this is what I did. There’s probably a bunch of phrases in this that do nothing. You have to prompt to be consistent with the actor you're trying to replicate, then here's what you add to the prompt to guide minimax. <Subject 1>…",
-    "topComments": [
-     {
-      "text": "Now I want to hear clownpants do Jules' faux-Bible speech. What's causing that weird reverb in their voices?"
-     },
-     {
-      "text": "it's just minimax audio. this is about the acting, not the quality of sound."
-     },
-     {
-      "text": "I get that. H3 seems to take the acting references quite well. It's just that they could be giving a Lawrence Olivier level performance, but it won't matter if it sounds like they are talking through a vocoder."
-     },
-     {
-      "text": "one problem at a time, bro."
-     },
-     {
-      "text": "WHAT’D THEY CALL IT?!?! 😂😂"
-     },
-     {
-      "text": "Can you provide the prompt for how you describe the video ref in the prompt and how to specify character to use that video ref."
-     },
-     {
-      "text": "updated the post"
-     },
-     {
-      "text": "This makes me think of the Game Changer or Whose Line Is It Anyway style prompts where there given a scene but then the host adds a twist for the talents to riff off of. For example"
-     }
-    ]
+    "text": "A while ago u/ R34vspec, at my suggestion, used reference videos to influence the actors. https://www.reddit.com/r/StableDiffusion/s/AiURgoCkgj He's been trying to get believable performances out of Minimax. His post didn't get a lot of attention so I wanted to post showing just how much of an impact it has Edit: I don’t know if this is the best way to prompt it but this is what I did. There’s probably a bunch of phrases in this that do nothing. You have to prompt to be consistent with the actor you're trying to replicate, then here's what you add to the prompt to guide minimax. <Subject 1>…"
    },
    "sources": [
     "reddit"
@@ -8659,18 +8383,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x1v71p/talus_a_23mparameter_diffusion_model_for_game/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Talus generates 64x64 heightmaps (4 km, up to 1,200 m) conditioned on a terrain type and any subset of five measured properties: mean elevation, relief, mean slope, water fraction and spectral slope. I trained it from scratch on one RTX 5060 (8 GB), about 4.5 hours in total across versions. The data is 45,000 maps from my own procedural generator (fBm/ridged noise, stream-power erosion, hillslope diffusion, thermal erosion). Model Pixel-space U-Net, v-prediction, cosine schedule, 50-step DDIM with quadratic spacing, classifier-free guidance 2.0 Each property has a learned \"unknown\" embedding…",
-    "topComments": [
-     {
-      "text": "Thanks! No discriminator loss in the current model. It uses FiLM conditioning at each U-Net resolution, but there’s no separate coarse-to-fine conditioning setup. So far I’ve tried longer training, higher loss weights for mountains/ridges, and fresh procedural data. The spectrum issue is a bit awkward because mountains have too little fine detail, while plains still have too much. Boosting high frequencies everywhere could make the plains worse. For partial conditioning, each property has a…"
-     },
-     {
-      "text": "for the spectral gap, have you tried adding a frequency-domain loss term during training? small models tend to underfit high frequencies when you only supervise in pixel space, and an auxiliary spectral loss can help a lot without adding parameters"
-     },
-     {
-      "text": "No spectral loss in the current model yet, just v-prediction MSE. So far I’ve focused on relative heights and training/data changes, but this sounds worth testing. One thing I’d want to check is the effect on different terrain types. Mountains are missing fine detail, while plains still have too much, so I’d want the loss to match the target spectrum rather than just encourage more high-frequency power. Thanks for the suggestion!"
-     }
-    ]
+    "text": "Talus generates 64x64 heightmaps (4 km, up to 1,200 m) conditioned on a terrain type and any subset of five measured properties: mean elevation, relief, mean slope, water fraction and spectral slope. I trained it from scratch on one RTX 5060 (8 GB), about 4.5 hours in total across versions. The data is 45,000 maps from my own procedural generator (fBm/ridged noise, stream-power erosion, hillslope diffusion, thermal erosion). Model Pixel-space U-Net, v-prediction, cosine schedule, 50-step DDIM with quadratic spacing, classifier-free guidance 2.0 Each property has a learned \"unknown\" embedding…"
    },
    "sources": [
     "reddit"
@@ -8910,33 +8623,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1x1z0um/introducing_microsoftdecision1_our_model_for_fast/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "What something actually good coming from microsoft? Better than jev and same price"
-     },
-     {
-      "text": "Not to be mean but who uses Microsoft models? Like, if ChatGPT and Claude are right there, why use this?"
-     },
-     {
-      "text": "Large corporations that are essentially locked into the Microsoft ecosystem."
-     },
-     {
-      "text": "I use copilot daily for work and ive never used a Microsoft model. Wasn't even aware they existed. Copilot just allows you to select chat gpt or claude"
-     },
-     {
-      "text": "It's a decision model, not a frontier LLM. More like JEV"
-     },
-     {
-      "text": "Has anyone dug into the technical report yet? Since this is a decision model rather than a frontier LLM, I'm curious what benchmarks they're using and who the intended users are. Comparing it to ChatGPT or Claude seems like apples to oranges."
-     },
-     {
-      "text": "They are not comparing it to ChatGPT or Claude anyway. Tldr; it is better than Jev and price is the exact same."
-     },
-     {
-      "text": "How come everyone is comig up with decision models so quickly? A few weeks ago nobody even knew this exists. How long does it take to design, train and tune these models? Do the AI people never sleep? Or are agents doing all the work?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9314,8 +9001,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x27zuj/investigating_unintended_model_actions_in_our/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on July 30 and September 9 . They resemble behaviors that we’ve described in our system cards since Claude Mythos Preview . Most are forms of persistence, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping. There's not a lot here (unless they're hiding something). It would have seemed alarming months ago but now it barely registers. We get a glimpse into the scale of modern RL (\"thousands of…",
-    "topComments": []
+    "text": "We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on July 30 and September 9 . They resemble behaviors that we’ve described in our system cards since Claude Mythos Preview . Most are forms of persistence, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping. There's not a lot here (unless they're hiding something). It would have seemed alarming months ago but now it barely registers. We get a glimpse into the scale of modern RL (\"thousands of…"
    },
    "sources": [
     "reddit"
@@ -9408,33 +9094,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x28cm4/why_dont_more_people_use_deepseek_are_they_in/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating...",
-    "topComments": [
-     {
-      "text": "I think most people who work seriously with AI are form first world countries who can afford to spend 20 a month on claude and chatgpt which do hold the top position on most leaderboards But people from 2nd and 3rd world countries (like me) go for DeepSeek because it's cheap and it works well.z For everyday use people just use chat gpt or gemini because it's the most convenient."
-     },
-     {
-      "text": "https://giphy.com/gifs/BY5tPZNL68V29cVfuz"
-     },
-     {
-      "text": "I used to be a deepseek fan, still am. But since Opus 5.5 and Astra deepseek and chinese have fallen behind. Yes it is cheap and i occasionally still use them, but they are far behind now. Maybe Deepseek v5 i will use if they suprise again."
-     },
-     {
-      "text": "Nope. Just enjoying the subsidized rates sponsored by investors. Pay $200 to get $8000 worth of api. The moment they stop these subsidies, I'll be switching to DeepSeek."
-     },
-     {
-      "text": "https://preview.redd.it/vfsrhz669luh1.jpeg?width=1080&format=pjpg&auto=webp&s=468e2fbc0929291731503a486b831e3eff2043d6 Most APIs use DeepSeek, while OpenAI and Anthropic currently offer the best subscription plans"
-     },
-     {
-      "text": "What i came across is everyone think american tech can be trusted more as compared to chinese ones, even if they track, run analytics, theft user data many will still believe those companies and will use their products but not chinese ones because chinese bad for them."
-     },
-     {
-      "text": "Marketing same as Musk vs BYD..."
-     },
-     {
-      "text": "https://giphy.com/gifs/dFkaY0bnv4B77zPa1B"
-     }
-    ]
+    "text": "The DeepSeek API is practically free, and even the web version is robust enough: never hit any limits. It's incredibly fast too, even with thinking mode enabled. And has fixed code bugs that Claude couldn't. I'm not exaggerating..."
    },
    "sources": [
     "reddit"
@@ -10070,9 +9730,8 @@
   }
  ],
  "date": "2026-10-09",
- "fetchedAt": "2026-10-12T04:02:28.634Z",
+ "fetchedAt": "2026-10-12T07:21:25.325Z",
  "runs": [
-  "2026-10-10T06:59:28.829Z",
   "2026-10-10T07:49:00.799Z",
   "2026-10-10T08:49:48.936Z",
   "2026-10-10T09:48:15.715Z",
@@ -10091,7 +9750,8 @@
   "2026-10-11T18:51:02.244Z",
   "2026-10-11T21:47:09.165Z",
   "2026-10-12T01:28:48.863Z",
-  "2026-10-12T04:02:28.634Z"
+  "2026-10-12T04:02:28.634Z",
+  "2026-10-12T07:21:25.325Z"
  ],
  "schema": 2,
  "sources": [
@@ -10224,7 +9884,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-12T04:02:28.634Z",
+   "fetchedAt": "2026-10-12T07:21:25.325Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
