@@ -164,7 +164,7 @@
    "sourceKey": "gh:androoagi/starnet"
   },
   "discovery:gh:apify/apify-mcp-server": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:apify/apify-mcp-server",
@@ -260,7 +260,7 @@
    "sourceKey": "gh:arc53/docsgpt"
   },
   "discovery:gh:armur-ai/pentest-swarm-ai": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:armur-ai/pentest-swarm-ai",
@@ -420,7 +420,7 @@
    "sourceKey": "gh:bennettxai/founderos-demo"
   },
   "discovery:gh:calesthio/openmontage": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:calesthio/openmontage",
@@ -621,7 +621,7 @@
    "sourceKey": "gh:fareedkhan-dev/train-llm-from-scratch"
   },
   "discovery:gh:farion1231/cc-switch": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:farion1231/cc-switch",
@@ -863,7 +863,7 @@
    "sourceKey": "gh:graphify-labs/graphify"
   },
   "discovery:gh:headroomlabs-ai/headroom": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "repo-updated",
     "id": "discovery:gh:headroomlabs-ai/headroom",
@@ -945,7 +945,7 @@
    "sourceKey": "gh:hmbown/codewhale"
   },
   "discovery:gh:huggingface/transformers": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:huggingface/transformers",
@@ -1041,7 +1041,7 @@
    "sourceKey": "gh:krillinai/opencreator"
   },
   "discovery:gh:langgenius/dify": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:langgenius/dify",
@@ -1105,7 +1105,7 @@
    "sourceKey": "gh:lemonade-sdk/lemonade"
   },
   "discovery:gh:madslorentzen/ai-job-search": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "repo-updated",
     "id": "discovery:gh:madslorentzen/ai-job-search",
@@ -1676,7 +1676,7 @@
    "sourceKey": "gh:tencent/ncnn"
   },
   "discovery:gh:tencent/weknora": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:tencent/weknora",
@@ -1854,7 +1854,7 @@
    "sourceKey": "gh:tracel-ai/burn"
   },
   "discovery:gh:unslothai/unsloth": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "first-observed",
     "id": "discovery:gh:unslothai/unsloth",
@@ -2255,7 +2255,7 @@
    "sourceKey": "hn:49877515"
   },
   "discovery:hn:50049588": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:hn:50049588",
@@ -2290,7 +2290,7 @@
    "sourceKey": "hn:50049588"
   },
   "discovery:hn:50070688": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:hn:50070688",
@@ -2323,6 +2323,41 @@
     }
    },
    "sourceKey": "hn:50070688"
+  },
+  "discovery:hn:50077619": {
+   "observedAt": "2026-10-13T21:44:37.946Z",
+   "resource": {
+    "freshnessBasis": "published",
+    "id": "discovery:hn:50077619",
+    "level": "starter",
+    "publishedAt": "2026-10-13T19:50:31.000Z",
+    "scores": {
+     "authority": 3,
+     "clarity": 3,
+     "foundation": 3,
+     "practice": 4
+    },
+    "sourceName": "parsimony.lasu.dev",
+    "sourceUpdatedAt": "2026-10-13T19:50:31.000Z",
+    "summary": {
+     "en": "Existing benchmarks measure solve rate and token output/cost, but don't punish excess code, which makes a codebase harder to work with in the long term. I wanted to measure this since it matters most for long-term projects. Method: it takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't use lines of code, so cramming code isn't rewarded. Deleted code is subtracted, so it measures net units. GPT-6 and Claude 5.5 have no public patches yet, so I ran them…",
+     "zh": ""
+    },
+    "title": {
+     "en": "Show HN: Parsimony – an open-source benchmark for how much code AI models add",
+     "zh": ""
+    },
+    "topics": [
+     "show_hn"
+    ],
+    "type": "article",
+    "url": "https://parsimony.lasu.dev/",
+    "why": {
+     "en": "Automatic selection: A concrete AI use case with an accessible tool. Check the original source for access requirements.",
+     "zh": "自动候选：提供明确的 AI 使用场景与可运行工具。请打开原文确认使用条件。"
+    }
+   },
+   "sourceKey": "hn:50077619"
   },
   "discovery:rd:1ws6e9p": {
    "observedAt": "2026-09-29T08:53:34.734Z",
@@ -2465,7 +2500,7 @@
    "sourceKey": "rd:1x34nyx"
   },
   "discovery:rd:1x4qcxw": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:rd:1x4qcxw",
@@ -2533,7 +2568,7 @@
    "sourceKey": "url:ai.google.dev/gemini-api/docs/changelog#2861c4e5"
   },
   "discovery:url:ai.google.dev/gemini-api/docs/changelog#4d52ce1d": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:ai.google.dev/gemini-api/docs/changelog#4d52ce1d",
@@ -2632,7 +2667,7 @@
    "sourceKey": "url:ai.google.dev/gemini-api/docs/changelog#ad1fc171"
   },
   "discovery:url:ai.google.dev/gemini-api/docs/changelog#d04781a0": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:ai.google.dev/gemini-api/docs/changelog#d04781a0",
@@ -2764,7 +2799,7 @@
    "sourceKey": "url:developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge"
   },
   "discovery:url:developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem",
@@ -3028,7 +3063,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#0616d673"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#40e64c0d": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#40e64c0d",
@@ -3391,7 +3426,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#a1d0ea25"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#beeede58": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#beeede58",
@@ -3490,7 +3525,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#d5ec65bd"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#e603e56a": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#e603e56a",
@@ -3556,7 +3591,7 @@
    "sourceKey": "url:platform.claude.com/docs/en/release-notes/overview#eada5055"
   },
   "discovery:url:platform.claude.com/docs/en/release-notes/overview#ed413057": {
-   "observedAt": "2026-10-13T18:53:19.859Z",
+   "observedAt": "2026-10-13T21:44:37.946Z",
    "resource": {
     "freshnessBasis": "published",
     "id": "discovery:url:platform.claude.com/docs/en/release-notes/overview#ed413057",
@@ -8614,6 +8649,7 @@
   "https://openappa.com/": "2026-09-28T15:49:02.811Z",
   "https://openrouter.ai/docs/quickstart": "2026-09-21T09:17:19.299Z",
   "https://pandas.pydata.org/docs/getting_started/intro_tutorials": "2026-09-21T09:17:19.299Z",
+  "https://parsimony.lasu.dev/": "2026-10-13T21:44:37.946Z",
   "https://perplexity.ai/": "2026-09-21T09:17:19.299Z",
   "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview": "2026-09-21T09:17:19.299Z",
   "https://platform.claude.com/docs/en/release-notes/overview": "2026-09-19T15:43:50.333Z",

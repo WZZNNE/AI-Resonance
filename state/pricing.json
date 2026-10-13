@@ -2772,6 +2772,26 @@
    "upd": "2026-09-09"
   },
   {
+   "ctx": 1000000,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "anthropic/claude-fable-5",
+   "in": 10,
+   "k": "claude-fable-5",
+   "maxOut": 128000,
+   "name": "Claude Fable 5",
+   "out": 50,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-06-09"
+  },
+  {
    "cr": 0.1,
    "ctx": 256000,
    "efforts": [
@@ -7228,7 +7248,7 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.63,
+   "out": 0.765,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7316,7 +7336,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.55,
+   "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7324,11 +7344,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.73,
+   "in": 0.72,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 10,
+   "out": 24,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8009,20 +8029,6 @@
    "upd": "2026-09-28"
   },
   {
-   "ctx": 262144,
-   "id": "apodex/apodex-1.1-mini:free",
-   "in": 0,
-   "k": "apodex-1-1-mini",
-   "maxOut": 235929,
-   "name": "Apodex 1.1 Mini (free)",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-10-01"
-  },
-  {
    "alwaysOn": true,
    "cr": 0.06,
    "ctx": 262144,
@@ -8420,18 +8426,18 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.035902,
+   "cr": 0.033655,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.430824,
+   "in": 0.403854,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.861648,
+   "out": 0.807708,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8471,7 +8477,7 @@
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.63,
+   "out": 0.765,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8984,14 +8990,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9168,14 +9174,14 @@
    "upd": "2026-07-23"
   },
   {
-   "cr": 0.0042,
-   "ctx": 262144,
+   "cr": 0.012,
+   "ctx": 131072,
    "id": "inclusionai/ling-3.0-flash-vl",
-   "in": 0.021,
+   "in": 0.06,
    "k": "ling-3-0-flash-vl",
    "maxOut": 32768,
    "name": "Ling 3.0 Flash VL",
-   "out": 0.0616,
+   "out": 0.18,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9241,14 +9247,14 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.05,
+   "cr": 0.025,
    "ctx": 128000,
    "id": "liquid/lfm-2.5-24b-a2b",
-   "in": 0.1,
+   "in": 0.05,
    "k": "lfm-2-5-24b-a2b",
    "maxOut": 8192,
    "name": "LFM2.5-24B-A2B",
-   "out": 1,
+   "out": 0.7,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16893,5 +16899,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-13T18:53:19.859Z"
+ "updatedAt": "2026-10-13T21:44:37.946Z"
 }
