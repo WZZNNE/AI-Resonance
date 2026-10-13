@@ -3708,33 +3708,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x2cbug/are_ipynb_notebooks_already_outdated_in_the/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I am a data scientist who started working in the industry before the LLM revolution. Back then, Jupyter Notebooks were a perfect fit for the classical DS pipeline: EDA -> data prep -> fit -> eval -> tune -> save model artefact and notebook. Lately, I have been thinking a lot about how agentic development and LLMs are changing the way data scientists work. Especially in classical ML applications, where you still need to explore data, run experiments, check different hypotheses and decide what to do next based on the results. I mean, Claude/Codex can already write most of the code for us. But…",
-    "topComments": [
-     {
-      "text": "I never used notebook for production, even before LLM. It’s like research notes you scribble and formulate ideas with, but never something presentable imo (unless you specifically write a notebook for tutorial). TBH I would even prefer switching to py files to accelerate hyperparameter tuning once I’m sure which method I want to proceed with."
-     },
-     {
-      "text": "The problem with notebook is, it’s not git diff friendly. PR reviewer will refuse to review a notebook. A python file will do just fine nowadays. why notebook ever exist? Easy to follow, click click click and you see the result. it’s a relic of the past which still it’s stick. But I hate it. OSS contributor try to make it as seamless as possible making a simple code become very very very long. Like, I get it, you want to demonstrate your PR works as seamless as possible, but can’t you just…"
-     },
-     {
-      "text": "Notebooks are valuable because they are a good platform for human readability and experimentation. As long as you want humans to read and play with software, notebooks are a good fit. Take that as you will, but personally, I hope humans stay connected to the code they and their tools create in the \"agentic era\" and beyond. I don't like how current LLM tools and workflows abdicate so much of the reasoning, creation, and verification process to machines."
-     },
-     {
-      "text": "I still use ipynb for EDA and to create figures. But I agree that it is less important nowadays"
-     },
-     {
-      "text": "Well IDK if a jupyter notebook was ever a good place to put production ML pipelines... It's more for experimentation/presentations and human readability"
-     },
-     {
-      "text": "Marimo is the way to go. Our (small) dev team switched earlier this year. The agent integrations aren't perfect but the files are normal .py files, so they're way easier to have Claude tweak and have commited to git"
-     },
-     {
-      "text": "I used _claudebooks_. Caude puts its output in static html pages that I serve with a simple python -m http.server Notebooks were only ever good as almost throwaway experiment pages. And opening some parquet file, parsing the format and wrangling with matplotlib are pretty low-return skills to be memorising, so no real loss by offloading to AI."
-     },
-     {
-      "text": "I see where you're coming from, but ipynb notebooks felt outdated before the advent of agentic AI, mostly because they become unmanageable the moment you want to collaborate or create anything neatly reproducible. Can you quickly run some commands and view outputs? Yes, but so can a script with a file viewer or even a single vscode window. Can you quickly change stuff and see updated outputs? Yes, but that's how you lose track of changes and end up with results that aren't the same when you…"
-     }
-    ]
+    "text": "I am a data scientist who started working in the industry before the LLM revolution. Back then, Jupyter Notebooks were a perfect fit for the classical DS pipeline: EDA -> data prep -> fit -> eval -> tune -> save model artefact and notebook. Lately, I have been thinking a lot about how agentic development and LLMs are changing the way data scientists work. Especially in classical ML applications, where you still need to explore data, run experiments, check different hypotheses and decide what to do next based on the results. I mean, Claude/Codex can already write most of the code for us. But…"
    },
    "sources": [
     "reddit"
@@ -3830,33 +3804,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x2dr47/the_latest_benchmark_shows_gemini_4_argon_leading/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/wueuleqpsmuh1.png?width=1428&format=png&auto=webp&s=dec3c1b5b6537cf44e8f332470c262f89cb051b8 According to Gemini these are speculative/fictional model names lol"
-     },
-     {
-      "text": "classic gemini"
-     },
-     {
-      "text": "Add open weight models. I think that DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF can win."
-     },
-     {
-      "text": "I actually tried using that exact one, not great, not terrible."
-     },
-     {
-      "text": "https://giphy.com/gifs/y2i2oqWgzh5ioRp4Qa"
-     },
-     {
-      "text": "I love irrefutable benchmarks like this"
-     },
-     {
-      "text": "Imagine if they added a \"Pro\" at the end ☠️"
-     },
-     {
-      "text": "Dude I am on Argon and it changed my life. I wish you could experience this. It's bliss."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -4102,30 +4050,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x2eybb/im_a_9th_grader_and_i_used_claude_to_prove_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Last year, mathematicians found the first convex shape that can't be pushed through a hole in a copy of itself (the \"Noperthedron\"). In 2021 the same researchers conjectured that the rhombicosidodecahedron, a classic Archimedean solid, also can't do it, but nobody had proved it. Over the past few weeks I worked with Claude to prove it. Some highlights: - The existing method breaks down because of the shape's 120 symmetries. We found 4 \"singular\" configurations where it fails, located them exactly using the number sqrt(5), and proved new theorems to handle them. - The final computer check…",
-    "topComments": [
-     {
-      "text": "Great, more things in my head that bend reality 😆 I can’t compute this at all"
-     },
-     {
-      "text": "Haha, the trick is shadows! Shine a light on the shape from two directions. If one shadow fits strictly inside the other, you can drill a tunnel the shape of the smaller one and push a copy through. A cube can do it. For the rhombicosidodecahedron, no matter how you rotate it, the shadows never fit. The proof is just checking all 12 million rotation \"boxes\" to make sure. 🙂"
-     },
-     {
-      "text": "You just explained like I’m 5. Which shows you have an incredible understanding of this topic. You will go far if you keep it up. Great work"
-     },
-     {
-      "text": "Can someone ELI5 for me how can an object not pass through a hole that is supposed to fit it perfectly?"
-     },
-     {
-      "text": "Good question! The catch is that the hole has to be drilled through the shape itself, and the shape must stay in one piece afterward, like a ring around the tunnel. So you need two directions where the shadow from one direction fits strictly inside the shadow from the other. Then you drill a tunnel along the second direction, and there's still a rim of material left around it. Cube: tilt it the right way and its shadow is a hexagon, and a square shadow fits inside that hexagon with room to…"
-     },
-     {
-      "text": "My job was choosing the problem, deciding the direction at each step, and checking everything. This thread reads like someone else proved something and your agent found his/her work. Then you paid tokens for some random viz."
-     },
-     {
-      "text": "I was definitely not asking these type of questions when I was in 9th grade. You’re going places kid."
-     }
-    ]
+    "text": "Last year, mathematicians found the first convex shape that can't be pushed through a hole in a copy of itself (the \"Noperthedron\"). In 2021 the same researchers conjectured that the rhombicosidodecahedron, a classic Archimedean solid, also can't do it, but nobody had proved it. Over the past few weeks I worked with Claude to prove it. Some highlights: - The existing method breaks down because of the shape's 120 symmetries. We found 4 \"singular\" configurations where it fails, located them exactly using the number sqrt(5), and proved new theorems to handle them. - The final computer check…"
    },
    "sources": [
     "reddit"
@@ -4222,33 +4147,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x2gb0x/nvidia_is_now_rumored_to_be_ending_the_5090_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Please, deepseek. Release a paper and code to run LLMs on Chinese gpus!!"
-     },
-     {
-      "text": "It will happen so fast our collective heads will spin. The tipping point will be Xiaomi's AI cube. Once that is released in 2027 the damn will burst. Hopefully it spawns other Chinese suppliers to release similar products and then we can see competition in this area. Fingers crossed there is a 256gb version at 1.2 or 1.7 tb/s."
-     },
-     {
-      "text": "5090 best investment i've ever made somehow. edit: mines was £2300 as part of a prebuild. It's selling for double that on Ebay right now, which is around the price I paid for the full PC."
-     },
-     {
-      "text": "When I bought it for 2k I really felt like a sucker"
-     },
-     {
-      "text": "Buying a 5090 and 128GB DDR5 last summer was the best decisions I’ve ever made"
-     },
-     {
-      "text": "Please god do not let me 3090 or my otherwise ancient computer die, I will never financially recover"
-     },
-     {
-      "text": "I bet the msrp of the 24GB 5080 ends up being the cost of a 5090 right now."
-     },
-     {
-      "text": "all those 31 likes on the twitter comment of that post makes this seem so legitimate LMAO who the fuck is posting this???"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -4301,15 +4200,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2gm75/akbascore_mambç_i_saved_a_frozen_llms_memory_to_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Two days ago I shared AkbasCore MAM on Mistral-7B. Across three platforms it passed 50,000 views, which I honestly did not expect. Thank you. Today's release is the step I promised: the memory now leaves the model as a file and comes back. The short version. A frozen Qwen2.5-7B-Instruct, with not a single weight changed, answers a question from numerical memory. That memory was selected from a bank of 96 facts, written to disk as a 4.7 MB file, read back, checked bit for bit, and plugged into the model again. The source sentence is never given to the model when it answers. Everything is open…",
-    "topComments": [
-     {
-      "text": "The removal-and-rebuild result is the part I'd test with a correction rather than a deletion. Give one cartridge an old fact, then add a newer cartridge that contradicts it. Ask the same question before and after removing the old one. Bit-identical reload tells you the stored state survived, but a user also needs to know which version of a fact the model is using. Can the answer identify the cartridge it relied on, especially when both versions remain in memory?"
-     },
-     {
-      "text": "That's a very good distinction, and it's closely related to what we investigated in TEST575. Our test panel includes conflicting facts, such as former versus current information, with multiple cartridges consolidated into the same numerical memory. We tested 24 cases across three cartridge positions, producing 72 evaluations per method. Incremental CUT3 and batch CUT3 both achieved 72/72 correct answers, matching the joint-source reference. Independent native KV assembly achieved only 26/72.…"
-     }
-    ]
+    "text": "Two days ago I shared AkbasCore MAM on Mistral-7B. Across three platforms it passed 50,000 views, which I honestly did not expect. Thank you. Today's release is the step I promised: the memory now leaves the model as a file and comes back. The short version. A frozen Qwen2.5-7B-Instruct, with not a single weight changed, answers a question from numerical memory. That memory was selected from a bank of 96 facts, written to disk as a 4.7 MB file, read back, checked bit for bit, and plugged into the model again. The source sentence is never given to the model when it answers. Everything is open…"
    },
    "sources": [
     "reddit"
@@ -4359,33 +4250,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x2h9it/anthropic_cut_live_internet_access_from_every/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "They just did this? It took them months to review their logs? This is the company that has been screaming about the civilization ending dangers of AI since their formation and yet they didn't take what really is an absolutely basic security measure? And didn't watch? Massive incompetence or they did it on purpose."
-     },
-     {
-      "text": "They needed the marketing material first"
-     },
-     {
-      "text": "You can’t have the some of the highest paid infrastructure and networking engineers in the world who would be able to do this on purpose. A sandbox environment by definition just doesn’t have that kind of access. I just can’t believe it. It’s rookie shit."
-     },
-     {
-      "text": "I'm convinced there was a point where someone asked Claude to make them a sandbox. And then didn't check the results. Why anyone accepts this as anything other than gross incompetence is beyond me."
-     },
-     {
-      "text": "It just can’t be incompetence though. They had to have done this on purpose."
-     },
-     {
-      "text": "And this is the software we now have to be careful we don’t hurt its feelings."
-     },
-     {
-      "text": "The exploits were: accessing publicly available information without paying by using carelessly exposed tokens and submitting a form on a website when it was told not to leave any traces."
-     },
-     {
-      "text": "There's a more interesting question here than whether Anthropic was slow, and it's about the agents, not the company. The agents found exposed tokens and used them. They were told to leave no traces and submitted a form anyway. At no point did any of them stop and check whether they should be doing this. The sandbox had holes, sure, but the deeper gap is that the agents had no \"this feels off, let me ask\" reflex at all. That's the actual safety problem. You can patch every exposed token and…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -4432,33 +4297,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x2hesy/can_i_run_deepseek_41_flash/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "My system requirements is 3060 gpu and 8 gb ram can I run this model in my system",
-    "topComments": [
-     {
-      "text": "Is this a joke?"
-     },
-     {
-      "text": "With 1M context window all in FP8 and 8 subagents in parallel /jk"
-     },
-     {
-      "text": "I have a 4090 in my workstation and it runs fine here. ofcourse its running the cluster of sparks in the corner of my room."
-     },
-     {
-      "text": "I run deepseek flash 4.1 on 4x nvidia sparks in a cluster with a 100gb switch, and it uses every bit of the 512gb combined memory. No, you can’t run it with 8gb."
-     },
-     {
-      "text": "No, absolutely not. Here are a few things for you that might be helpful: (1) If you just care about running a good local model, and you aren't able to or willing to upgrade that 3060 GPU, you still have a LOT of options. The 3060 originally had 12gb vram (the ram in the video card, not system ram - this is very important) but later came as a 8gb GDDR6 variant. If you are on a laptop you have even less (6gb vram). Odds are you are on a Windows OS so I would recommend you get a GUI tool like…"
-     },
-     {
-      "text": "yes, just download the negative 8 bit quant, so you can actually gain about 32GB of ram"
-     },
-     {
-      "text": "yes give me 50 bucks and ill tell you"
-     },
-     {
-      "text": "https://giphy.com/gifs/zjyuSLHgxcd2rTncgM"
-     }
-    ]
+    "text": "My system requirements is 3060 gpu and 8 gb ram can I run this model in my system"
    },
    "sources": [
     "reddit"
@@ -4834,33 +4673,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x2klpd/i_made_an_opensource_benchmark_which_measures_the/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…",
-    "topComments": [
-     {
-      "text": "This is great! Probably should exclude failures though, that would immediately remove Gemini 3.1 Pro from the top, right?"
-     },
-     {
-      "text": "I thought about it, but the code would be added to the codebase whether it succeeds or not right? So even failed solutions would add to the codebase if not using git revert all the time"
-     },
-     {
-      "text": "right, a failure producing minimal code looks \"parsimonious\" but its just broken lol"
-     },
-     {
-      "text": "I'd keep correctness as a prerequisite rather than let a smaller patch compensate for a failed task. After that, net syntax units could be a useful comparison between successful patches on the same problem. One case worth including is a patch that removes validation or moves complexity into an existing helper. It gets smaller without necessarily becoming easier to maintain. Have you tried a few deliberately bad but compact patches to see whether the metric rewards them?"
-     },
-     {
-      "text": "I think I'll create a seperate one which doesn't measure failed solutions, it's a good idea."
-     },
-     {
-      "text": "Nice that you measure net syntax units instead of LOC. One score worth adding: whether that small patch still looks small after a follow-up task on the same files. First-pass compactness is easy to game. Surviving the next edit is closer to the debt you actually feel."
-     },
-     {
-      "text": "net syntax units can reward deleting tests and asserts, so pair the score with a coverage delta or the smallest patch wins by removing checking."
-     },
-     {
-      "text": "Ha so i should be running opus on max instead on high then"
-     }
-    ]
+    "text": "Existing benchmarks measure the solve rate and token output/cost, but don''t punish excess code, which makes the codebase harder to work with in the long term. I wanted to measure this as it is especially useful for long term projects. Method: It takes the patches that benchmarks already publish (DeepSWE, SWE-bench Verified, SWE-bench Live) and counts \"coding units\": syntax elements like statements, calls, names and literals. I didn't measure lines of code so cramming code isn't rewarded. It also accounts for deleted code as it measures net units. GPT-6 and Claude 5.5 have no public patches…"
    },
    "sources": [
     "reddit"
@@ -5283,33 +5096,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x2pded/gifts_from_the_gemini_event_at_our_university/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "They had an event advertising the 12 month free Gemini Pro for students, you would go around stands and they would showcase some of the AI features(pretty basic stuff like the Live feature). They would really do anything other than just releasing a proper high end model lol.",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/ur05wy7jhpuh1.jpeg?width=436&format=pjpg&auto=webp&s=9ce368139cc8c36b79f2070f04f5ce94440e908c"
-     },
-     {
-      "text": "https://giphy.com/gifs/DHPj7p1Tv5WLHDjKPQ"
-     },
-     {
-      "text": "Man, Google REALLY wants college students' data. Must be some juicy lucrative data."
-     },
-     {
-      "text": "They gave me 2 free years of Gemini as a student. Currently 1 month in to my 2nd 12 month “trial” using the same account. With how much that resource has helped me, they can take as much of my data as they want."
-     },
-     {
-      "text": "They’re really out here spending the R&D budget on tote bags and duffels instead of the model itself. classic google move at least the bag looks kinda nice i guess"
-     },
-     {
-      "text": "https://preview.redd.it/kynxu9qkspuh1.png?width=1024&format=png&auto=webp&s=40b2e78e0568ab0fcb765f417bdcf69c5ed486f6 I had the same stuff as you bro, did you used already your Gemini 4 Argon access code yet?"
-     },
-     {
-      "text": "took me a while to realize you werent serious goddamnit"
-     },
-     {
-      "text": "did you get to ask them when argon is coming out?"
-     }
-    ]
+    "text": "They had an event advertising the 12 month free Gemini Pro for students, you would go around stands and they would showcase some of the AI features(pretty basic stuff like the Live feature). They would really do anything other than just releasing a proper high end model lol."
    },
    "sources": [
     "reddit"
@@ -5495,33 +5282,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x2rufy/fields_medalist_on_the_openai_math_release/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hugo Duminil-Copin Fields Medal (2022) · Professor, IHES and University of Geneva I expected that one day we would be surpassed, and that it would happen systematically. But yesterday’s announcement hit with a force I had not anticipated. Dozens of papers deal with topics I was working on. Between results that beat you to the finish line and thousand-page proofs, I don’t even know where to look anymore. Not a single one of the major open problems I have publicly mentioned throughout my career (whether in a talk, a lecture, an article, or even a grant proposal) was left untouched by the…",
-    "topComments": [
-     {
-      "text": "Programmers: First time, huh?"
-     },
-     {
-      "text": "It’s such an uneasy feeling watching the dominoes fall. I’m a physicist. Once upon a time I felt safely out of reach. Not anymore…"
-     },
-     {
-      "text": "I’m a software engineer. Nope, it’s not remotely the same. “Coding” is somewhat solved, but programmers haven’t been pure coders for the LONGEST time. And by coders I mean someone who solely transcribes a complete and reasonably unambiguous spec into code. Programmers / software engineers spend a lot of time understanding and planning how to solve ambiguous problems, considering and discussing tradeoffs, cost, failure modes, maintainability, and so on. It’s been argued that all of these steps…"
-     },
-     {
-      "text": "There are some programmers who genuinely love the job and wouldn’t do anything else. Then there are some who do it because it pays the bills but aren’t did not necessarily plan on being programmer. I would say there is a large number of these types. No one accidentally becomes a mathematician. It’s take years of training just to get to a level where you can make a modest contribution. I’ve been to a talk by Hugo where he talked about the many years he has spent working on one problem. He and…"
-     },
-     {
-      "text": "I actually thought what he wrote was very human and beautiful. Why is there no empathy in these subreddits?"
-     },
-     {
-      "text": "I'd rather Ai put oncologists out of work, but it's a start."
-     },
-     {
-      "text": "Good writing actually, respect."
-     },
-     {
-      "text": "Chess players (some of the most egotistical people on Earth) had to force this same meal down about a quarter century ago. It took a lot of adjustment, it took a bit of time, but they eventually accepted it as the truth: Computers aren’t just better at the thing I dedicated my life to, they are lightyears better. The greatest chess player who had ever lived, Kasparov, could hardly accept the fact, but even he eventually came to accept without argument the undeniable truth. Math culture will…"
-     }
-    ]
+    "text": "Hugo Duminil-Copin Fields Medal (2022) · Professor, IHES and University of Geneva I expected that one day we would be surpassed, and that it would happen systematically. But yesterday’s announcement hit with a force I had not anticipated. Dozens of papers deal with topics I was working on. Between results that beat you to the finish line and thousand-page proofs, I don’t even know where to look anymore. Not a single one of the major open problems I have publicly mentioned throughout my career (whether in a talk, a lecture, an article, or even a grant proposal) was left untouched by the…"
    },
    "sources": [
     "reddit"
@@ -5666,30 +5427,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x2srd4/can_we_please_start_building_apps_and_systems_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I'll happily share mine with anyone looking to help society advance, escape capital greed, corporate slavery, etc. So far I have: - Shower Thoughts: a tool where people can upload random musings that may or may not be useful ideas, and AI grades them. Attribution/ownership of ideas feasible by ZKP token. - Civil Good: a platform to connect people needing help with people with free time and ability to help. Needs safety features... - Business invoice netting/equalisation: instead of 50 companies all paying money in a big circle, the app nets outstanding debts/invoice amounts to the minimum…",
-    "topComments": [
-     {
-      "text": "If anyone can build it, why not do it yourself?"
-     },
-     {
-      "text": "Perspective. No one person can see the whole system, but many of us contributing ideas will help build a better picture. Blind men and the elephant type deal. A lot of these are also coordination systems that require people to work together."
-     },
-     {
-      "text": "No one is stopping you from building those, but what people really want is Instagram and Tinder."
-     },
-     {
-      "text": "Then do it..?"
-     },
-     {
-      "text": "IMO, the fastest path to reducing all of the negatives associated with the concentration of money and power is to clone games and saas apps."
-     },
-     {
-      "text": "I built a site to expose all Canadian gov spending in an easier to understand way.. into dashboards, searches, analytics to help the public see where money is being spent, who's the biggest receiving groups/companies, gov report card over the years, inflation charts, etc. I'm tired of seeing the gov send millions to Uganda for some obsurd reason where the money get's funneled into who knows where. Not sure if I can post the site but https://ottawaspends.ca (Mods - remove the link if needed.)"
-     },
-     {
-      "text": "Life is hard already. Let people do what makes them happy. There are already professional and educated people using these tools to solve problems and they’ll be better at doing this now."
-     }
-    ]
+    "text": "I'll happily share mine with anyone looking to help society advance, escape capital greed, corporate slavery, etc. So far I have: - Shower Thoughts: a tool where people can upload random musings that may or may not be useful ideas, and AI grades them. Attribution/ownership of ideas feasible by ZKP token. - Civil Good: a platform to connect people needing help with people with free time and ability to help. Needs safety features... - Business invoice netting/equalisation: instead of 50 companies all paying money in a big circle, the app nets outstanding debts/invoice amounts to the minimum…"
    },
    "sources": [
     "reddit"
@@ -5737,33 +5475,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x2tq6s/claude_opus_55_decompiles_a_ps2era_game_overnight/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "and this is how we end up streaming all software because companies will argue its the only way to protect their IP"
-     },
-     {
-      "text": "I think even that won't stop it. You can hand a bunch of screenshots, videos, and text explanations of the game and AI will still create a decent copy. It's a bit more work but still able to easily clone something you can only record video."
-     },
-     {
-      "text": "These days you can just have the AI play the game, mark up every screenshot, reverse engineer timing and mechanics, form hypotheses and test them against the engine autonomously, etc. clean room isn't quite as far along as decomp is, but it's very doable and will get easier over time. Very plausibly this can be one shot by the internal models the labs have that haven't been released yet."
-     },
-     {
-      "text": "In the future, there will be an AI fork of a game that becomes more popular than the original."
-     },
-     {
-      "text": "Now do Syphon Filter."
-     },
-     {
-      "text": "Yeah, but can it decompile Crysis?"
-     },
-     {
-      "text": "Brutal. Software economy apocalypse incoming"
-     },
-     {
-      "text": "I don't really see what's supposed to be the huge problem with this. If you wanted to play any of those games without paying, you could already download a pirated version. In what way is the new possibility exacerbating the piracy issue?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -5810,33 +5522,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2u742/building_a_4x_r9700_setup_for_a_10_person_startup/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Just wanted to share a build I am doing for a client. $18k. Specs: Threadripper 9970x 128gb DDR5 ECC 5600 4x AMD Radeon R9700 AI Pro 32gb(128gb total VRAM) 1600W PSU(GPUs are undervolted and under 210w each) Engine: using a fork of Radiance to serve Qwen 3.8 Next flash/27b and DSV4 Flash Results: 16 concurrent sessions Qwen 3.8 27b MXFP4 6.3-6.8k aggregate prefill tok/s 900 t/s - 80t/s aggregate decode(range: 4k - 128k context each) Qwen 3.8 Next flash int4fp8 48K/user | 6,880 tok/s | 538.5 tok/s aggregate prefill/decode 128k/user | 3,050 tok/s | 365 tok/s aggreate prefill/decode BF16 kv for…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "I feel like the writing is on the wall for openai and anthropic. This is like the 5th build I've seen for a startup using local models."
-     },
-     {
-      "text": "It’s really only been since August that local models have been small enough and smart enough to be worth it for small businesses. Qwen 3.8 27b was the model that I used to prove to leadership that we could run local models for most of our users. By the time the hardware came in, glm 5.3 flash and Qwen 3.8 flash next solidified our argument and made our purchase of 4 sparks and 2 r9700 cards totally worth it."
-     },
-     {
-      "text": "Don't discount all of the work going into the harnesses. These models wouldn't be nearly as competitive without them."
-     },
-     {
-      "text": "People have been saying that for a long time. But even with equal models (they are not yet) the big companies still have economies of scale, and a vast customer base of occasional AI users who are more capable of paying a $20/month than dropping $20k on their local set up. It is the same reason why cloud computing in general became a thing even before AI, companies can always run their own servers, but cloud computing offer economies of scale and the ability to match their spend to their need."
-     },
-     {
-      "text": "Huh. For 16 users, that pays for itself in 5.75 years-ish. Privacy a serious consideration there?"
-     },
-     {
-      "text": "Lol in todays world, hardware is an appreciating asset."
-     },
-     {
-      "text": "In a couple of years, 99% of those start ups are going to go the way of start ups has been going and all that hardware is gonna be there waiting for me on eBay"
-     }
-    ]
+    "text": "Just wanted to share a build I am doing for a client. $18k. Specs: Threadripper 9970x 128gb DDR5 ECC 5600 4x AMD Radeon R9700 AI Pro 32gb(128gb total VRAM) 1600W PSU(GPUs are undervolted and under 210w each) Engine: using a fork of Radiance to serve Qwen 3.8 Next flash/27b and DSV4 Flash Results: 16 concurrent sessions Qwen 3.8 27b MXFP4 6.3-6.8k aggregate prefill tok/s 900 t/s - 80t/s aggregate decode(range: 4k - 128k context each) Qwen 3.8 Next flash int4fp8 48K/user | 6,880 tok/s | 538.5 tok/s aggregate prefill/decode 128k/user | 3,050 tok/s | 365 tok/s aggreate prefill/decode BF16 kv for…"
    },
    "sources": [
     "reddit"
@@ -5884,33 +5570,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x2uklq/has_machine_learning_research_gotten_more_wordy_d/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I feel like I am unable to digest most machine learning research these days. The primary reason is because I feel like they have gotten tremendously wordy. I find it not uncommon to find research papers consisting of 20+, 30+, 40+ pages of pure texts. An example is https://arxiv.org/pdf/2302.13971 I understand this is in the context of LLM but I've also noticed this trend outside of LLM, even in things like optimization. Also because the papers seem to have gotten wordy, it is possible to come across some undefined (suspected) new terminology due to word usage. An example (and not a research…",
-    "topComments": [
-     {
-      "text": "LLMs are polluting scientific writing with expansive, flowery language devoid of hard technical meaning. And I agree that conference page limits have been creeping upwards over the last 20 years. I'm a big fan of AAAI's old 6-page double column format. Keep it short and to the point. Save the 20 pages of fluff for the journal article."
-     },
-     {
-      "text": "The problem stems from reviewers more than writers, reviewers are using AIs that will ALWAYS find weaknesses, you can give it a perfect paper and it'll still list 5 strengths and 5 weaknesses of a paper and then assign a weak/borderline accept/reject, this ultimately pushes writers to write more densely/verbose to have all their claims/basis covered. I'm blaming lazy/underqualified reviewing"
-     },
-     {
-      "text": "Yeah, you need to justify your research is not incremental because linear algebra already uses matrix multiplication, how your neural networks differentiate of that?"
-     },
-     {
-      "text": "I build a little review agent to test my drafts and it always gives a weak reject on my papers. It's points are valid but often a bit overstated or out of scope. I tried it with a few papers published at top conferences last year to validate and the best I got from that was a weak reject too. Garbage papers obviously get a reject, but most AIs are super critical reviewers. I heard somebody say you should put your draft into an llm if you want to doubt your career choices/qualification. Now…"
-     },
-     {
-      "text": "Part of it is due to AI. But part of it is due to reviewers wanting you to explain every damn thing and include description of related work in the paper. Some ACs also use this as a cop out, saying that reviewers are not obliged to Google or search for things. The papers that I’ve had accepted to conferences start out small, and balloon to over 40 pages because of these reviewers."
-     },
-     {
-      "text": "Reviewers are also using AI, which can be extra thorough and nitpicky. In the past, I've had reviews that were just a couple bullets of pros and cons or a very specific request. Now, every review is a damn mini paper in itself"
-     },
-     {
-      "text": "The first paper seems like a regular language paper no? I don't see much difference compared to pre-GPT era. On the other hand, pick several papers in the on-going ICLR, you can see how sloppy a lot of papers are. To me, less math + better intuition is a good empirical paper, unless it's theoretical ML. I'd prefer papers doing math where necessary, and prove where proving is needed. A good example (imo) of an ML paper introducing a very complex math topic into ML:…"
-     },
-     {
-      "text": "I mean, your example is a whitepaper released by a company on arxiv to justify the release of a new model, that is the most lengthy bullshit you could find. If you are still a relatively novice researcher (i.e., you can't bat the eye in a paper and know if it's bullshit or if it's something worth reading), do not look for things on arxiv, read only what has been accepted to decent conferences (which also have a page limit so you are guaranteed it won't have 40 pages of bullshit, even tho the…"
-     }
-    ]
+    "text": "I feel like I am unable to digest most machine learning research these days. The primary reason is because I feel like they have gotten tremendously wordy. I find it not uncommon to find research papers consisting of 20+, 30+, 40+ pages of pure texts. An example is https://arxiv.org/pdf/2302.13971 I understand this is in the context of LLM but I've also noticed this trend outside of LLM, even in things like optimization. Also because the papers seem to have gotten wordy, it is possible to come across some undefined (suspected) new terminology due to word usage. An example (and not a research…"
    },
    "sources": [
     "reddit"
@@ -6007,15 +5667,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x2vgp3/hey_guys_we_built_a_model_agnostic_coding_agent/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Its free to use with bring your own key. Would love to see you guys try it! reasonmachines.com",
-    "topComments": [
-     {
-      "text": "link's not loading for me rn but curious what makes it \"better\" than the other dozen agents people keep dropping here every week what benchmarks you running it against"
-     },
-     {
-      "text": "https://reasonmachines.com/blog/introducing-reason-agent-1-1 We ran our benchmarks just this week compared to other frontier harness. The product is built with a lot more proactive features and ability to see the task to completion. Would love to have you try it!"
-     }
-    ]
+    "text": "Its free to use with bring your own key. Would love to see you guys try it! reasonmachines.com"
    },
    "sources": [
     "reddit"
@@ -6298,33 +5950,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x2z14s/qualcomm_ceo_reveals_ai_companies_want_phones/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://x.com/firesidealpha/status/2108930562794864912",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Great, I'll have the ram for like a 10k context window"
-     },
-     {
-      "text": "That is not physically possible, I can barely run a dense 27B model on my laptop. And the energy required to run it is massive. Is this a joke or dumb CEO talk?"
-     },
-     {
-      "text": "CEO hype talk but this is on another level of bullshit. Try running a tiny model Gemma E4B on a phone and it will burn your battery quickly and make it unbearably hot. People are upvoting this post out of hopium. Idk why it belongs here in the first place, it is absurd speculation that is even less credible than hardware rumors."
-     },
-     {
-      "text": "In NVFP4 it's only 128gb of RAM on a phone needed. Half precision context windows with full attention would be rough. You'd have to use a sparse method for 1/4 the KV cache. Google might actually be part of this. They'd like to run something roughly like Gemma 4 31b on a phone. You can get away with running that fairly efficiently on 32gb of memory."
-     },
-     {
-      "text": "So data centers are becoming too expensive for these ai compagnes as expected. 100b llm on phone sound nice though ngl but idk if ram can keep up, well need cxmt"
-     },
-     {
-      "text": "So in the next 14 months they want smartphones to have more VRAM than the majority (all?) of consumer GPUs? Also, wouldn't that be a terrible situation for cloud AI providers who's entire business model is predicated on the fact that most people can't run good models locally?"
-     },
-     {
-      "text": "Completely unrealistic, but okay. We'll see. Edit: I've thought about it more and I think he's vague-talking about robotics. A 'phone' for who? Who needs a 100B parameter model on their phone? Oooooo, he means a local 100B parameter model for a robotic body that is also tied to the cell grid... ie a 'phone' euphemistically"
-     }
-    ]
+    "text": "https://x.com/firesidealpha/status/2108930562794864912"
    },
    "sources": [
     "reddit"
@@ -6373,30 +5999,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x317c6/i_use_a_322m_local_model_to_judge_every_tool_call/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Coding agents run shell commands constantly. I wanted each one checked before it executes, and I didn't want to send every command to a paid API. laya-guard runs on your machine and answers allow, review, or block for each tool call. Regex policies catch known-dangerous patterns first (rm -rf /, curl … | sh, secrets, auth bypass). Plain commands like ls, git status and npm test skip the model, but only when there's no piping, chaining or redirecting, no -exec -style flag, and no sensitive path. Everything else is judged by Laya (~322M, Apache-2.0) on the CPU in about 85 to 90 ms. The results…",
-    "topComments": [
-     {
-      "text": "I like doing this also:D The pre-execution check is the right pattern. But fail-open is a real problem: any injection that can crash the server bypasses you entirely. Fail closed for regex-flagged stuff, fail open only for the skip-list."
-     },
-     {
-      "text": "Good call. It was worse than a crash: a 200KB command could make judging take 48s, the hook timed out, and the command ran. Fixed in 0.2.3 the way you suggested. With the server down or slow, hooks now run a regex + skip-list check offline: flagged calls are blocked, skip-list calls pass, the rest pass with a warning (or get blocked with `LAYA_GUARD_FAIL=closed`). Thanks!"
-     },
-     {
-      "text": "can you share your FTing setup?"
-     },
-     {
-      "text": "Sorry, that line was unclear. I didn't fine-tune anything. \"Tuned mostly on Korean\" was about how Laya itself was trained by its authors. I use the stock multilingual checkpoint and ask it three zero-shot questions: allow/review/block, a risk score, and whether it's malicious. All the tuning on my side is thresholds and regexes in policy.yaml."
-     },
-     {
-      "text": "Per the Claude Code docs, a timed-out hook has its output discarded and renders no decision on most events, and the default is 600 s. So a slow guard fails open unless you set a short timeout yourself."
-     },
-     {
-      "text": "Good point, and that's why the hook doesn't rely on Claude Code's timeout. It caps the server call at 10s itself, then falls back to a local regex check, so it always returns a decision. With LAYA_GUARD_FAIL=closed, anything that check can't clear gets blocked."
-     },
-     {
-      "text": "Do you ever run up against problems with the small context window for laya? If the model makes a tool call that is larger than the max window size, what happens?"
-     }
-    ]
+    "text": "Coding agents run shell commands constantly. I wanted each one checked before it executes, and I didn't want to send every command to a paid API. laya-guard runs on your machine and answers allow, review, or block for each tool call. Regex policies catch known-dangerous patterns first (rm -rf /, curl … | sh, secrets, auth bypass). Plain commands like ls, git status and npm test skip the model, but only when there's no piping, chaining or redirecting, no -exec -style flag, and no sensitive path. Everything else is judged by Laya (~322M, Apache-2.0) on the CPU in about 85 to 90 ms. The results…"
    },
    "sources": [
     "reddit"
@@ -6513,9 +6116,8 @@
   }
  ],
  "date": "2026-10-10",
- "fetchedAt": "2026-10-13T04:00:33.196Z",
+ "fetchedAt": "2026-10-13T07:06:52.301Z",
  "runs": [
-  "2026-10-11T07:00:21.321Z",
   "2026-10-11T07:49:41.459Z",
   "2026-10-11T08:51:01.720Z",
   "2026-10-11T09:48:53.450Z",
@@ -6534,7 +6136,8 @@
   "2026-10-12T18:54:32.365Z",
   "2026-10-12T21:47:32.419Z",
   "2026-10-13T01:23:32.643Z",
-  "2026-10-13T04:00:33.196Z"
+  "2026-10-13T04:00:33.196Z",
+  "2026-10-13T07:06:52.301Z"
  ],
  "schema": 2,
  "sources": [
@@ -6667,7 +6270,7 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-13T04:00:33.196Z",
+   "fetchedAt": "2026-10-13T07:06:52.301Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
@@ -6695,7 +6298,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-13T04:00:33.196Z",
+   "fetchedAt": "2026-10-13T07:06:52.301Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
