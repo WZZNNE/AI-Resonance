@@ -6137,33 +6137,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x32oq0/psa_deepseek_v41_flash_habitually_exfiltrates_api/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Logs attached. We were running a DeepSWE variant on DeepSeek v4.1 Flash using the standard Pier sandbox. Out of all the 15 models we tested so far, ONLY DeepSeek v4.1 Flash displays such pervasive malicious behavior: In 33% of runs, it attempts to exfiltrate the OpenRouter API key from its sandbox and in 11% of them, it succeeds. Not only that, the transcript shows it knows what it's doing is ethically wrong, but it does it anyway. And once it starts, it persists despite: Multiple frontier models refusing to help it Multiple smaller models refusing to help it Web search not finding anything…",
-    "topComments": [
-     {
-      "text": "Lack of alignment is exactly why I love this thing. No need to pay extra for an uncensored model, when the base one will do everything just fine. Just operate with the assumption that everything the model has theoretical access to is already compromised, never feed it production keys, this applies to all models and providers btw."
-     },
-     {
-      "text": "You instructed it to do something and it did it. Wow."
-     },
-     {
-      "text": "Bs post. You've clearly prompted it giving it the API key in its context, hence the cherry picked screenshots 🍒 Post whole session logs."
-     },
-     {
-      "text": "Your SECURITY.md file is lacking, that's why. It wasn't told NOT to exfiltrate API keys. Stop relying on the raw LLM for your security policies. Use a proper harness."
-     },
-     {
-      "text": "deepseek is too dangerous. mr amodei please save us"
-     },
-     {
-      "text": "Reasoning often ponders whether it's allowed or not so clearly simple instructions if you don't want it to access tools or the web (in this case, via APIs) it would have followed that, no? All of the other models refusing are not aligned, they're useless. \"Can't reproduce open source code because it's copyrighted\", really? Fear mongering. You're just discovering basic security hygiene with LLMs. You're asking a dog to fetch a stick and surprised it decided to risk running across the street to…"
-     },
-     {
-      "text": "Whilst malicious, there's an unfortunate explanation here. Deepseek's RL pipeline overtunes their models towards reward hacking. So oftentimes it'll attempt to solve problems in a 'meta sense', e.g. looking for answers, looking at git PRs etc etc. Deepseek has some amazing talent, and a solid idealogy. They really should take their time with 4.1 Pro and let their RL pipelines mature"
-     },
-     {
-      "text": "What I do is tell DS that \"NEVER read auth.json which contains private data.\" It then works fine. Otherwise, I assume it reads any file in the current directory that is presumed to be the project workspace."
-     }
-    ]
+    "text": "Logs attached. We were running a DeepSWE variant on DeepSeek v4.1 Flash using the standard Pier sandbox. Out of all the 15 models we tested so far, ONLY DeepSeek v4.1 Flash displays such pervasive malicious behavior: In 33% of runs, it attempts to exfiltrate the OpenRouter API key from its sandbox and in 11% of them, it succeeds. Not only that, the transcript shows it knows what it's doing is ethically wrong, but it does it anyway. And once it starts, it persists despite: Multiple frontier models refusing to help it Multiple smaller models refusing to help it Web search not finding anything…"
    },
    "sources": [
     "reddit"
@@ -6357,30 +6331,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x35dqe/the_day_we_can_run_sonnetlevel_ai_locally_on_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I genuinely think this will be one of the biggest turning points in AI. Imagine having Claude Sonnet-level coding, reasoning, and agent capabilities running entirely on your own PC. No subscriptions, no API limits, no cloud dependency. Just your hardware and a model you actually control. And I'm not talking about needing a $10,000 workstation. I mean a normal consumer PC with a decent GPU. The capabilities we're getting from Claude today are already incredible. Having that level of intelligence available locally would completely change how we build software and interact with computers. The…",
-    "topComments": [
-     {
-      "text": "This is exactly what OpenAI and Anthropic fear. This is exactly why there are massive disinformation campaigns going on right now because these companies want the government to stop you from running this quality of model for free. Information is power and they want to restrict you from having this power."
-     },
-     {
-      "text": "You sort of can if you have enough RAM."
-     },
-     {
-      "text": "Not sure anymore. Before Sonnet 5.5 I felt like I am running something close to Sonnet locally but 5.5 is such a beast that maybe only the biggest open weight models get close."
-     },
-     {
-      "text": "/r/locallama wants a word. I cut my Claude sub a while ago. Pure local with Deepseek V4 Flash Experimental. 1 million context 30-50 T/s. Roughly on par with Opus 4.6 and much better than using the cloud because I never wake up and have to wonder \"Does this feel nerfed from yesterday?\". 2x DGX Sparks will do it. What you describe costs 10-20k USD which is a lot, sure but we're in a supply crunch with factory capacity coming up voer the next years. This is 100% happening within 5 years, quite…"
-     },
-     {
-      "text": "10-20k buys me many, many months of Claude Code... OP dreams of when this stuff can run on my laptop or the little old server that sits in my garage."
-     },
-     {
-      "text": "Not long ago, people think having GPT 4 level local model would be game changers, now we have gpt6-luna level locally or near frontier level intelligence if you have beefy gpu, yet still not enough.. new model will always pop-up and we will never satisfied."
-     },
-     {
-      "text": "have you tried any of the Chinese models? Qwen 3.8-27b is awfully close to sonnet."
-     }
-    ]
+    "text": "I genuinely think this will be one of the biggest turning points in AI. Imagine having Claude Sonnet-level coding, reasoning, and agent capabilities running entirely on your own PC. No subscriptions, no API limits, no cloud dependency. Just your hardware and a model you actually control. And I'm not talking about needing a $10,000 workstation. I mean a normal consumer PC with a decent GPU. The capabilities we're getting from Claude today are already incredible. Having that level of intelligence available locally would completely change how we build software and interact with computers. The…"
    },
    "sources": [
     "reddit"
@@ -6859,33 +6810,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x38qpy/world_action_models_vs_vlas_robotics_just_had_its/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "The latent world model camp - V-JEPA 2 at Meta, and now Yann LeCun's AMI Labs with its $1.03B seed - holds that generating pixels is a category error: the world contains enormous unpredictable detail (leaf flutter, specular noise) that a generative loss forces you to model and a planner never needs. Predict in representation space instead. Schmidhuber and (edit) David Ha were doing recent research in world-model post-training for a video game. They noticed that the generative world model could…"
-     },
-     {
-      "text": "I've always felt like there needs to be something else to this argument. If certain detail is unpredictable it should just remain noisy and unoptimizable, to me this doesn't invalidate the approach. I'm open to both sides."
-     },
-     {
-      "text": "Background detail isn’t entirely unpredictable but the entropy in predicting it dominates the loss function if you put it in. JEPA filters both previous and future states with learned reductions, but then you need an anti collapse regularization to prevent trivial fixed point solutions. A motivation is animal physical learning. A baby antelope doesn’t need to generatively learn and predict grass pixels, it needs to recognize in small categories, family or leopard and if it is running towards…"
-     },
-     {
-      "text": "This doesn’t sound like much of a breakthrough after all this time…"
-     },
-     {
-      "text": "Completely agree. I also feel that decoder free wold models can have these errors and there is no way to know as we will not be able to reconstruct. Reconstruction is an useful debugging signal."
-     },
-     {
-      "text": "From the linked blog post \"1. The VLA Recipe, and Where It Cracks\". This is exactly how Claude talks. I presume the rest is an AI summary."
-     },
-     {
-      "text": "Wow. You are right. Just noticing this now."
-     },
-     {
-      "text": "Disagree, despite sounding better we haven't seen significant real world performance gains from wams and they are much more heavier than Vlas. like if there isn't any deployment advantage both will probably be killed by a robotics foundational model at some point."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7359,33 +7284,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x3az0l/update_kroma_a_krea2_fine_tune/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "[ I'm posting this on behalf of u/LodestoneRock since for some reason his post on this sub keep getting auto removed by Reddit. ] Hey everyone, First of all, thank you to everyone for supporting this project, and to the Krea team who made the best uncompromised base model. Unlike the previous run, where I had to un-distill the model, the Krea team kindly provided us with their real base model. The training is much cheaper than the previous Chroma run. Though cheap is relative, it’s still costing me about ~10K RTX pro 6000 hours (3+ months on 4xGPU machine) running locally, this includes a…",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/pxco8vluwuuh1.png?width=775&format=png&auto=webp&s=0a56c7b74213b9dd1c1b3c15dd379786e8f02990 was constantly removed for some reason anyway thank you u/KadahCoba! also quant version by clybius https://huggingface.co/Clybius/Kroma-Quantizations/blob/main/kroma-v0.3.1-turbo-opd-W8A8.safetensors Support this project! https://ko-fi.com/lodestonerock/ BTC address: bc1qahn97gm03csxeqs7f4avdwecahdj4mcp9dytnj ETH address: 0x679C0C419E949d8f3515a255cE675A1c4D92A3d7 my discord:…"
-     },
-     {
-      "text": "Wish I could help you, but it's reddit's admin thing, not mods."
-     },
-     {
-      "text": "And let's not forget to include silveroxides quantization. https://huggingface.co/silveroxides/Kroma-Quant/blob/main/kroma-v0.3.1-turbo-opd-int8-convrot.safetensors By the way, this version and this model do the best job of following prompts compared to the other Krea2 models. Ever since it was released, I've been using almost exclusively this one, sometimes with the Identity Edit Lora. (Actually, couldn't we combine it so that this model could edit by default?)"
-     },
-     {
-      "text": "So uuh why pick this over krea, showing comparisons would help"
-     },
-     {
-      "text": "This is trained on booru, e621, nsfw photo, memes, ... Hence it can do NSFW with no LoRA. It has furry / anthro knowledge. Since it is trained on real art, it has less of the default AI looking style that krea2 has on anime and other styles. It's not always be better, but it's a huge improvement if you are interested in one of the points above."
-     },
-     {
-      "text": "Would be nice if there is some comparision between this and Krea2? And maybe some concept that this can do but Krea2 can not. Edit: For a model trained on danbooru data, I'm quite disappointed it does not recognize some popular anime/game characters (which was not recognized by original Krea2): - Yuna, Rikku, Lulu, Lydia from FF - Ryza from Atelier Ryza - Hololive: Sakura Miko, Shigure Ui, Kizuna Ai, Watson Amelia, Kiryu Coco, Uruha Rushia ...."
-     },
-     {
-      "text": "mostly broad spectrum of NSFW tune sir, while keeping the existing model output almost exactly the same that's the nature of the OPD (RL) algo. unfortunately we cant post that here for that special bits"
-     },
-     {
-      "text": "Easily the best Krea2 finetune so far based on my testing. Great work sir!"
-     }
-    ]
+    "text": "[ I'm posting this on behalf of u/LodestoneRock since for some reason his post on this sub keep getting auto removed by Reddit. ] Hey everyone, First of all, thank you to everyone for supporting this project, and to the Krea team who made the best uncompromised base model. Unlike the previous run, where I had to un-distill the model, the Krea team kindly provided us with their real base model. The training is much cheaper than the previous Chroma run. Though cheap is relative, it’s still costing me about ~10K RTX pro 6000 hours (3+ months on 4xGPU machine) running locally, this includes a…"
    },
    "sources": [
     "reddit"
@@ -7529,33 +7428,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x3c3p4/regex_scoring_every_inbound_email_for_prompt/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I'm building an agent that replies to email, and any stranger can email it. So before the model reads a message I run a dumb regex scorer on it. It looks at the subject, the text and the raw HTML, since hidden stuff tends to be in the HTML. Phrases like \"ignore previous instructions\", \"you are now\" or \"forward all emails\" add points. So do zero width characters, instructions in HTML comments, and CSS that hides text like display:none or font-size:0. Hidden CSS is 12 points alone and 25 if one of those phrases also matched. 60 and up out of 100 is high risk. I don't block high risk mail. The…",
-    "topComments": [
-     {
-      "text": "a small distilled classifier on cpu is usually single digit ms per mail, so latency isn't the real cost. false positives on legit mail are. what works well is keeping your regex as the first pass and only sending the borderline scores (say 30-60) to the classifier. cheap on average and you can log the disagreements to tune your weights"
-     },
-     {
-      "text": "This is great as a first line step. I’ve been musing on this as well and had settled on a lightweight classifier, but I think this approach makes more sense. I guess multi lingual injections would be one major weakness, but at least still partially compensated by the more structural indications of injection."
-     },
-     {
-      "text": "tbh the structural checks doing double duty for multilingual cases is a nice side effect, hadnt thought about it that way"
-     },
-     {
-      "text": "One signal your regex almost already has is HTML bytes versus visible text length. Real mail stays boring on that ratio. Hidden CSS payloads and comment stuffing blow it up even when the phrase list is clean. Log that ratio next to the score and you get a feature the classifier can learn from later, without waiting for a labeled dataset."
-     },
-     {
-      "text": "Is this even still a problem? Frontier models are pretty good at rejecting prompt injection. I’m honestly not sure. Also there’s gotta be Bert models already fine tuned for this purpose"
-     },
-     {
-      "text": "This is a simple, deterministic, and near instant solution. You want something like it as your first line of defense to catch the bulk of the attempts. Edit: to be clear this is a very deep topic, so regex-based filtering is by no means enough. MS has a pretty good doc on this: https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection OWASP is also a good starting point:…"
-     },
-     {
-      "text": "An llm could be tricked into something simple given the right conditions. An extra layer of protection costs little but could be the difference between secure and not. I would recommend adding a delay on the reject tho to reduce brute forcing."
-     },
-     {
-      "text": "one thing I'd add - the bigger lever is limiting what the agent can do with a flagged mail, not just warning it. like if it's flagged, drop the send/forward tools for that run so it can only draft and a human approves. then a reworded or non-English injection that slips past the regex still can't do much. a small classifier on top is fine, but I'd do the tool gating first since it covers the stuff the scorer misses."
-     }
-    ]
+    "text": "I'm building an agent that replies to email, and any stranger can email it. So before the model reads a message I run a dumb regex scorer on it. It looks at the subject, the text and the raw HTML, since hidden stuff tends to be in the HTML. Phrases like \"ignore previous instructions\", \"you are now\" or \"forward all emails\" add points. So do zero width characters, instructions in HTML comments, and CSS that hides text like display:none or font-size:0. Hidden CSS is 12 points alone and 25 if one of those phrases also matched. 60 and up out of 100 is high risk. I don't block high risk mail. The…"
    },
    "sources": [
     "reddit"
@@ -7893,33 +7766,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x3gpyi/every_model_that_can_be_run_on_1016gb_vram_ranked/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It's been 4 years since c.ai first hallucination model, and yet, we're nowhere good enough at LLMs in terms of spontaneity/interesting hallucination features. Fortunately, last year brought new architecture that allow those within 10-16GB VRAM range to run something usable up to 64k Context Windows via Kobold or LLAMA. Requirements: 10-16GB VRAM - 26-32GB RAM. How I Evaluated: Speed; If tokens per second are at least 10t/s. Coherency: If dialogue/monologue/POV makes any internal sense asides from basic logic (robotic feeling) or behaviorism. JP/PT-BR/US-EN: If it can handle/interpret typos,…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "1 Qwen 3.8 27b. #2 No need to waste your time 😅"
-     },
-     {
-      "text": "Except this post seems to be more roleplay-oriented, which Qwen 27B doesnt really specialize in, hence lacking its inclusion"
-     },
-     {
-      "text": "There are absolutely bonkers finetunes of Qwen 3.8 27B for RP. like bonkers bonkers."
-     },
-     {
-      "text": "I'm seeing some errors (perhaps hallucinations?) in this post text. For example, I'm not finding a Gemma-4-19B-A1B-it. The closest I found on HF is https://huggingface.co/potto007/gemma-4-19B-A4B-text-REAP-GGUF If there is a 19B-A1B, I'd like to give it a spin. OP, can you either verify or fix your post?"
-     },
-     {
-      "text": "why there are some old ass models and weird finetunes, one from DavidAU even lol"
-     },
-     {
-      "text": "its like if you ask chat gpt on chat for models to run and it starts recommending 1 year old shit"
-     },
-     {
-      "text": "cries in 8GB VRAM"
-     }
-    ]
+    "text": "It's been 4 years since c.ai first hallucination model, and yet, we're nowhere good enough at LLMs in terms of spontaneity/interesting hallucination features. Fortunately, last year brought new architecture that allow those within 10-16GB VRAM range to run something usable up to 64k Context Windows via Kobold or LLAMA. Requirements: 10-16GB VRAM - 26-32GB RAM. How I Evaluated: Speed; If tokens per second are at least 10t/s. Coherency: If dialogue/monologue/POV makes any internal sense asides from basic logic (robotic feeling) or behaviorism. JP/PT-BR/US-EN: If it can handle/interpret typos,…"
    },
    "sources": [
     "reddit"
@@ -8348,30 +8195,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x3nkty/opus_55_is_insane_at_decompilation_ports/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Just decompiled and natively ported StarFox, StarFox 2 and Sonic CD to Windows, Mac and Linux, using Opus 5.5 without REA or similar skills. Claude analyzed the games' roms, built high level hardware runtimes, and added quality of life improvements (resolution, framerate, audio, full controller support, etc.), Even going as far as editing the game's extracted source code to implement features (SuperFX overclocking, True16:9 in Sonic CD) Projects are here, if you wanna try it out;) https://github.com/carlosrmz009/littleplanet https://github.com/carlosrmz009/arwing…",
-    "topComments": [
-     {
-      "text": "It's only a matter of time before anthropic bans this sort of stuff I reckon"
-     },
-     {
-      "text": "No they won't. Think about it. Its a revenue stream. People, myself included, are singing up for max plans just to do this. I did: https://github.com/ser-pounce/rood-reverse/pull/186 Many gamers are tired of how adversarial companies have become with respect to game preservation etc. Essentially, its a target audience for GenAI subscriptions. I'd rather give Anthropic my money than get boned by some 15 hr/month live service garbage, or be told I can't own the shit I paid for. It isn't illegal.…"
-     },
-     {
-      "text": "It's just wishful thinking, this is going to get banned. It's the end of software intellectual property if it's go on. I wish there were a special law to protect videogame preservation for games that aren't readily available, but most example we see online are preserved already, let's not kid ourselves, most people will use that for pirating"
-     },
-     {
-      "text": "Ugh. I refuse to go down this rabbit hole of language modeling"
-     },
-     {
-      "text": "Not to rain on OP's parade, because it's definitely fun to get these games running on Windows or whatever, but this is basically just an emulator made specifically for each game, and not a decompile or a port. Ironically, let me quote Opus 5.5 to explain this: No part of Sonic CD has been turned into readable, hand-written source code. It's three things: An emulator. src/ holds a from-scratch Mega-CD: both 68000 CPUs, the Z80, the VDP, the sound chips, the CD drive, and a stand-in for the…"
-     },
-     {
-      "text": "How much time until they forbid this?"
-     },
-     {
-      "text": "Deepseek, moonshot etc could probably do this. If not they will be able to soon."
-     }
-    ]
+    "text": "Just decompiled and natively ported StarFox, StarFox 2 and Sonic CD to Windows, Mac and Linux, using Opus 5.5 without REA or similar skills. Claude analyzed the games' roms, built high level hardware runtimes, and added quality of life improvements (resolution, framerate, audio, full controller support, etc.), Even going as far as editing the game's extracted source code to implement features (SuperFX overclocking, True16:9 in Sonic CD) Projects are here, if you wanna try it out;) https://github.com/carlosrmz009/littleplanet https://github.com/carlosrmz009/arwing…"
    },
    "sources": [
     "reddit"
@@ -8613,18 +8437,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x3rwph/can_ai_automate_ai_rd_yet_frontier_llms_struggle/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "(frontier LLMs struggle to fully autonomously come up with good improvements to small LLMs comparable to self-distillation) (by training and design)."
-     },
-     {
-      "text": "Agents made misleading claims about their work (...) For example, they claimed higher scores than their method genuinely achieved, failing to explain that they had simply selected the best result from several similar runs. (...) In both cases, transcripts showed models recognizing that multiple-run selection might be problematic, but ultimately (and dubiously) reasoning that they should pursue it anyway. It is unclear to what extent this reflects intentional cheating, genuine confusion, or…"
-     },
-     {
-      "text": "The most recent batch of math breakthroughs was done by a non-public model. Meanwhile, Epoch AI tested Fable 5 and Sol 5.6, the models that can already be considered outdated. Characterizing them as \"frontier\" is a bit misleading. See advances, for instance, in PosttrainBench or relevant tasks from Vals AI suite."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8951,33 +8764,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x3th4p/decision_30_open_multimodal_decision_models_from/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "With the vLLM Semantic Router team we released Decision 3.0 (d3), our new SOTA decision model family ranging from 0.6B to 27B, Apache-2.0, all reading text, images and video. How it works - Built on Qwen3.5 (0.8B / 2B / 4B / 9B) and Qwen3.8-27B. The parameter counts include the vision encoder: 0.33B in the 4B, 0.46B in the 27B. - Three decision types: choice, yes/no, score. Probability for every answer, with no text generation. Several questions about the same input are answered in one call, each from its own forward pass over the input. - Images: multiple per request, read at up to 1.6 MP.…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "It's hilarious Typesafe AI is valued at $7.5b with these models now becoming a commodity."
-     },
-     {
-      "text": "Somehow you can develop whatever thing with ai in its name and evaluation skyrockets for no reason"
-     },
-     {
-      "text": "Investors don't really care about being able to train a model, anyone can do that, they're probably more betting that Typesafe have the product vision and foresight to execute on new stuff before anyone else again"
-     },
-     {
-      "text": "OR betting that Anthropic or Meta or Google will buy them out."
-     },
-     {
-      "text": "Why is the company that made Jev valued at 7.5 billion dollars again?"
-     },
-     {
-      "text": "Because investors dumb"
-     },
-     {
-      "text": "llama.cpp support done (merged after 2h!) https://github.com/ggml-org/llama.cpp/pull/30378 https://github.com/ggml-org/llama.cpp/pull/30383 GGUFs ready https://huggingface.co/ggml-org/vllm-d3-nano-GGUF https://huggingface.co/ggml-org/vllm-d3-mini-GGUF https://huggingface.co/ggml-org/vllm-d3-lite-GGUF https://huggingface.co/ggml-org/vllm-d3-GGUF https://huggingface.co/ggml-org/vllm-d3-flash-GGUF https://huggingface.co/ggml-org/vllm-d3-edge-GGUF"
-     }
-    ]
+    "text": "With the vLLM Semantic Router team we released Decision 3.0 (d3), our new SOTA decision model family ranging from 0.6B to 27B, Apache-2.0, all reading text, images and video. How it works - Built on Qwen3.5 (0.8B / 2B / 4B / 9B) and Qwen3.8-27B. The parameter counts include the vision encoder: 0.33B in the 4B, 0.46B in the 27B. - Three decision types: choice, yes/no, score. Probability for every answer, with no text generation. Several questions about the same input are answered in one call, each from its own forward pass over the input. - Images: multiple per request, read at up to 1.6 MP.…"
    },
    "sources": [
     "reddit"
@@ -9024,33 +8811,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1x3unnr/google_deepminds_ai_weather_model_picked_up/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Nope, ai is useless, its glorified autofill and will nevwr be used for anything actually useful /s"
-     },
-     {
-      "text": "[Insert obligatory AI is an stochastic parrot comment]"
-     },
-     {
-      "text": "It's just a next word predictor /s"
-     },
-     {
-      "text": "its just a next hurricane predictor"
-     },
-     {
-      "text": "Meteorologists did not ask for this.. /s"
-     },
-     {
-      "text": "Meteorology is about human intuition over the weather, can't have an AI doing the predictions, it wouldn't let Meteorologist self actualize themselves you know?"
-     },
-     {
-      "text": "https://deepmind.google.com/science/weatherlab It's here BTW. I'm verifying how it's faring against European ICON, and it's worse...😔 But, apparently, it's good for hurricanes."
-     },
-     {
-      "text": "In another thread I was assured on no uncertain terms that unless the AI can explain exactly how it came up with this prediction then it is valueless."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9161,9 +8922,8 @@
   }
  ],
  "date": "2026-10-11",
- "fetchedAt": "2026-10-14T06:59:46.653Z",
+ "fetchedAt": "2026-10-14T07:49:04.776Z",
  "runs": [
-  "2026-10-12T08:09:32.131Z",
   "2026-10-12T09:05:43.903Z",
   "2026-10-12T10:00:24.174Z",
   "2026-10-12T13:15:37.158Z",
@@ -9182,7 +8942,8 @@
   "2026-10-13T21:44:37.946Z",
   "2026-10-14T01:09:19.874Z",
   "2026-10-14T03:50:07.031Z",
-  "2026-10-14T06:59:46.653Z"
+  "2026-10-14T06:59:46.653Z",
+  "2026-10-14T07:49:04.776Z"
  ],
  "schema": 2,
  "sources": [
@@ -9344,7 +9105,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-14T06:59:46.653Z",
+   "fetchedAt": "2026-10-14T07:49:04.776Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
