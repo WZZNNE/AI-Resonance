@@ -6116,9 +6116,8 @@
   }
  ],
  "date": "2026-10-10",
- "fetchedAt": "2026-10-15T07:00:03.549Z",
+ "fetchedAt": "2026-10-15T07:48:54.905Z",
  "runs": [
-  "2026-10-13T07:56:37.414Z",
   "2026-10-13T08:56:14.951Z",
   "2026-10-13T09:53:00.552Z",
   "2026-10-13T13:01:19.897Z",
@@ -6137,7 +6136,8 @@
   "2026-10-14T21:45:03.475Z",
   "2026-10-15T01:07:27.843Z",
   "2026-10-15T03:50:09.666Z",
-  "2026-10-15T07:00:03.549Z"
+  "2026-10-15T07:00:03.549Z",
+  "2026-10-15T07:48:54.905Z"
  ],
  "schema": 2,
  "sources": [
@@ -6269,10 +6269,11 @@
   },
   {
    "board": "labs",
-   "count": 2,
-   "fetchedAt": "2026-10-15T07:00:03.549Z",
+   "count": 3,
+   "fetchedAt": "2026-10-15T07:48:54.905Z",
    "id": "labs-xai",
-   "message": "xai-news: sitemap: HTTP 403 for GET https://x.ai/sitemap.xml; html: HTTP 403 for GET https://x.ai/news; jina: no entries",
+   "message": "read through r.jina.ai (site blocks bots)",
+   "mode": "jina",
    "state": "degraded"
   },
   {
@@ -6296,12 +6297,12 @@
   {
    "board": "social",
    "costUsd": 0,
-   "count": 0,
-   "fetchedAt": "2026-10-15T07:00:03.549Z",
+   "count": 5,
+   "fetchedAt": "2026-10-15T07:48:54.905Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 7 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
-   "state": "degraded"
+   "state": "ok"
   },
   {
    "board": "social",
