@@ -7244,7 +7244,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.01584,
+   "in": 0.01368,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7264,7 +7264,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.225,
+   "in": 0.234,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7316,9 +7316,9 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.2,
+   "cr": 0.1,
    "ctx": 1048576,
-   "cw": 0.375,
+   "cw": 0.1875,
    "efforts": [
     "low",
     "medium",
@@ -7329,7 +7329,7 @@
    "k": "gemini-pro-latest",
    "maxOut": 65536,
    "name": "Gemini Pro Latest",
-   "out": 12,
+   "out": 10,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7344,7 +7344,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.43,
+   "in": 0.32,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7520,7 +7520,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.0565,
+   "cr": 0.0558,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7528,7 +7528,7 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.0608,
+   "in": 0.06,
    "k": "glm-latest",
    "maxOut": 131072,
    "name": "GLM Latest",
@@ -8459,7 +8459,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8467,11 +8467,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8487,7 +8487,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.01584,
+   "in": 0.01368,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
@@ -9345,11 +9345,11 @@
   {
    "ctx": 131072,
    "id": "meta-llama/llama-3.2-3b-instruct",
-   "in": 0.05,
+   "in": 0.0509,
    "k": "llama-3-2-3b-instruct",
-   "maxOut": 117964,
+   "maxOut": 72000,
    "name": "Llama 3.2 3B Instruct",
-   "out": 0.33,
+   "out": 0.335,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10080,7 +10080,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.48,
+   "in": 0.45,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -11340,6 +11340,7 @@
    "upd": "2026-05-05"
   },
   {
+   "cr": 0.075,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -11347,11 +11348,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-120b",
-   "in": 0.037,
+   "in": 0.15,
    "k": "gpt-oss-120b",
-   "maxOut": 117964,
+   "maxOut": 65536,
    "name": "GPT OSS 120B",
-   "out": 0.17,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -13288,18 +13289,18 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.039,
+   "cr": 0.036,
    "ctx": 1048576,
    "efforts": [
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.04,
+   "in": 0.037,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
-   "out": 4.4,
+   "out": 7,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16911,5 +16912,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-15T01:07:27.843Z"
+ "updatedAt": "2026-10-15T03:50:09.666Z"
 }
