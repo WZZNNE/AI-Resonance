@@ -3450,6 +3450,25 @@
    "upd": "2026-08-03"
   },
   {
+   "cr": 0.05,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high"
+   ],
+   "id": "stepfun-ai/Step-5-Preview",
+   "in": 1,
+   "k": "step-5-preview",
+   "maxOut": 1000000,
+   "name": "Step 5 Preview",
+   "out": 2.7,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-20"
+  },
+  {
    "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
@@ -3814,6 +3833,26 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-06-12"
+  },
+  {
+   "cr": 0.15,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh"
+   ],
+   "id": "accounts/fireworks/models/muse-spark-open",
+   "in": 1.25,
+   "k": "muse-spark-open",
+   "maxOut": 131072,
+   "name": "Muse Spark Open",
+   "out": 4.25,
+   "p": "fireworks-ai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-15"
   },
   {
    "cr": 0.12,
@@ -6422,6 +6461,26 @@
    "upd": "2026-10-06"
   },
   {
+   "cr": 0.15,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh"
+   ],
+   "id": "muse-spark-open",
+   "in": 1.25,
+   "k": "muse-spark-open",
+   "maxOut": 131072,
+   "name": "Muse Spark Open",
+   "out": 4.25,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-15"
+  },
+  {
    "ctx": 1048576,
    "id": "nemotron-3-nano:30b",
    "in": 0.06,
@@ -7173,6 +7232,7 @@
    "ctx": 1000000,
    "cw": 0.125,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7188,7 +7248,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-27"
   },
   {
@@ -7236,29 +7295,30 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.01,
+   "cr": 0.0054,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0089,
+   "in": 0.01116,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.8,
+   "out": 0.72,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-14"
   },
   {
    "cr": 0.13,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
@@ -7272,27 +7332,26 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0108,
+   "cr": 0.0085,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0144,
+   "in": 0.0085,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.576,
+   "out": 0.64,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-08-01"
   },
   {
@@ -7336,23 +7395,23 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.3,
+   "cr": 0.18,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.4,
+   "in": 0.29,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 14,
+   "out": 12,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-27"
   },
   {
@@ -7509,7 +7568,7 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.036,
+   "in": 0.0225,
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
@@ -7779,6 +7838,7 @@
    "ctx": 1000000,
    "cw": 0.125,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7794,7 +7854,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-10-07"
   },
   {
@@ -7835,6 +7894,7 @@
    "ctx": 1000000,
    "cw": 6.25,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7849,7 +7909,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-03-13"
   },
   {
@@ -7857,6 +7916,7 @@
    "ctx": 1000000,
    "cw": 6.25,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7872,7 +7932,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-16"
   },
   {
@@ -7880,6 +7939,7 @@
    "ctx": 1000000,
    "cw": 6.25,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7895,7 +7955,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-05-28"
   },
   {
@@ -7903,6 +7962,7 @@
    "ctx": 1000000,
    "cw": 6.25,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7918,7 +7978,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-07-24"
   },
   {
@@ -7964,6 +8023,7 @@
    "ctx": 1000000,
    "cw": 3.75,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -7978,7 +8038,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-03-13"
   },
   {
@@ -7986,6 +8045,7 @@
    "ctx": 1000000,
    "cw": 2.5,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high",
@@ -8001,7 +8061,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-30"
   },
   {
@@ -8086,6 +8145,7 @@
   {
    "ctx": 262144,
    "efforts": [
+    "none",
     "low",
     "medium",
     "high"
@@ -8099,12 +8159,12 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-02-14"
   },
   {
    "ctx": 262144,
    "efforts": [
+    "none",
     "minimal",
     "low",
     "medium",
@@ -8119,12 +8179,12 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-02-14"
   },
   {
    "ctx": 262144,
    "efforts": [
+    "none",
     "minimal",
     "low",
     "medium",
@@ -8139,7 +8199,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-02-14"
   },
   {
@@ -8368,6 +8427,7 @@
    "cr": 0.0182,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "high",
     "xhigh"
    ],
@@ -8380,19 +8440,19 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.016,
+   "cr": 0.0085,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.016,
+   "in": 0.0085,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -8400,13 +8460,13 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-07-31"
   },
   {
    "cr": 0.00686,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
@@ -8420,32 +8480,32 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.033234,
+   "cr": 0.030697,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "high",
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.398808,
+   "in": 0.368358,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.797616,
+   "out": 0.736716,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-04-24"
   },
   {
    "cr": 0.022,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
@@ -8459,27 +8519,26 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.01,
+   "cr": 0.003,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0089,
+   "in": 0.15,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.8,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-10"
   },
   {
@@ -8500,6 +8559,7 @@
    "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
@@ -8513,7 +8573,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-24"
   },
   {
@@ -8606,6 +8665,7 @@
    "ctx": 1048576,
    "cw": 0.083333,
    "efforts": [
+    "none",
     "minimal",
     "low",
     "medium",
@@ -8620,7 +8680,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2025-12-17"
   },
   {
@@ -8658,6 +8717,7 @@
   {
    "ctx": 131072,
    "efforts": [
+    "none",
     "minimal",
     "high"
    ],
@@ -8670,12 +8730,12 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-05-28"
   },
   {
    "ctx": 65536,
    "efforts": [
+    "none",
     "minimal",
     "high"
    ],
@@ -8688,7 +8748,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-02-26"
   },
   {
@@ -8696,6 +8755,7 @@
    "ctx": 1048576,
    "cw": 0.083333,
    "efforts": [
+    "none",
     "minimal",
     "low",
     "medium",
@@ -8710,12 +8770,12 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-05-07"
   },
   {
    "ctx": 65536,
    "efforts": [
+    "none",
     "minimal",
     "high"
    ],
@@ -8728,7 +8788,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-30"
   },
   {
@@ -8736,6 +8795,7 @@
    "ctx": 1048576,
    "cw": 0.083333,
    "efforts": [
+    "none",
     "minimal",
     "low",
     "medium",
@@ -8750,7 +8810,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-03-03"
   },
   {
@@ -8877,7 +8936,7 @@
    "upd": "2026-08-13"
   },
   {
-   "cr": 0.075,
+   "cr": 0.0825,
    "ctx": 1048576,
    "cw": 0.041667,
    "efforts": [
@@ -8886,11 +8945,11 @@
     "high"
    ],
    "id": "google/gemini-3.8-flash",
-   "in": 0.75,
+   "in": 0.825,
    "k": "gemini-3-8-flash",
    "maxOut": 65536,
    "name": "Gemini 3.8 Flash",
-   "out": 3.75,
+   "out": 4.125,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8919,6 +8978,7 @@
   {
    "ctx": 65536,
    "efforts": [
+    "none",
     "minimal",
     "high"
    ],
@@ -8931,7 +8991,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-10-06"
   },
   {
@@ -8988,14 +9047,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10076,23 +10135,23 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.28,
+   "cr": 0.18,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "low",
     "high",
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.45,
+   "in": 0.29,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 15,
+   "out": 12,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-07-16"
   },
   {
@@ -10232,6 +10291,7 @@
    "budget": {},
    "ctx": 262144,
    "efforts": [
+    "none",
     "low",
     "medium"
    ],
@@ -10244,13 +10304,13 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-03-11"
   },
   {
    "budget": {},
    "ctx": 262144,
    "efforts": [
+    "none",
     "low",
     "medium"
    ],
@@ -10263,7 +10323,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-03-11"
   },
   {
@@ -10271,6 +10330,7 @@
    "cr": 0.12,
    "ctx": 262144,
    "efforts": [
+    "none",
     "medium",
     "high"
    ],
@@ -10283,13 +10343,13 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-04"
   },
   {
    "budget": {},
    "ctx": 1000000,
    "efforts": [
+    "none",
     "medium",
     "high"
    ],
@@ -10302,7 +10362,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-04"
   },
   {
@@ -10776,7 +10835,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2025-11-13"
   },
   {
@@ -11729,6 +11787,7 @@
    "cr": 0.0375,
    "ctx": 262144,
    "efforts": [
+    "none",
     "medium",
     "xhigh"
    ],
@@ -11741,7 +11800,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-09-18"
   },
   {
@@ -12276,6 +12334,7 @@
    "cr": 0.05,
    "ctx": 1000000,
    "efforts": [
+    "none",
     "low",
     "medium",
     "xhigh"
@@ -12289,7 +12348,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-08-14"
   },
   {
@@ -13309,14 +13367,15 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.199,
+   "cr": 0.649,
    "ctx": 1048576,
    "efforts": [
+    "none",
     "high",
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.2,
+   "in": 0.65,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -13324,7 +13383,6 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-13"
   },
   {
@@ -15963,51 +16021,6 @@
   {
    "cr": 0.0028,
    "ctx": 1048576,
-   "id": "mimo-v2.5",
-   "in": 0.14,
-   "k": "mimo-v2-5",
-   "maxOut": 131072,
-   "name": "MiMo-V2.5",
-   "out": 0.28,
-   "p": "xiaomi",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-24"
-  },
-  {
-   "cr": 0.0036,
-   "ctx": 1048576,
-   "id": "mimo-v2.5-pro",
-   "in": 0.435,
-   "k": "mimo-v2-5-pro",
-   "maxOut": 131072,
-   "name": "MiMo-V2.5-Pro",
-   "out": 0.87,
-   "p": "xiaomi",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-24"
-  },
-  {
-   "cr": 0.0108,
-   "ctx": 1048576,
-   "id": "mimo-v2.5-pro-ultraspeed",
-   "in": 1.305,
-   "k": "mimo-v2-5-pro-ultraspeed",
-   "maxOut": 131072,
-   "name": "MiMo-V2.5-Pro-UltraSpeed",
-   "out": 2.61,
-   "p": "xiaomi",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-09"
-  },
-  {
-   "cr": 0.0028,
-   "ctx": 1048576,
    "id": "mimo-v2.6-flash",
    "in": 0.14,
    "k": "mimo-v2-6-flash",
@@ -16932,5 +16945,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-15T18:51:40.282Z"
+ "updatedAt": "2026-10-15T21:44:51.754Z"
 }
