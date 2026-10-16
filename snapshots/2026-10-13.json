@@ -6980,30 +6980,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x4s9hp/someone_used_claude_to_get_a_yearsold_pothole/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "My favorite Claude story this week is about a pothole. Years of complaints by a Dutch office, zero action. Then a person gave Claude 6 photos. It rebuilt the hole in 3D and simulated a 30 km/h hit. Video went to city hall. Fixed in 2 days. Petitions are for people without Claude. What would you fix this way? Here is the original: https://x.com/yelkhayami/status/2108227066621465007?s=20",
-    "topComments": [
-     {
-      "text": "So city hall had no idea a pothole could cause damage until they saw the video?"
-     },
-     {
-      "text": "apparently \"there's a pothole\" isn't evidence until you attach a physics demo"
-     },
-     {
-      "text": "Nah. Simplest explanation is that the title (and the X post) is clickbait"
-     },
-     {
-      "text": "430€ the pizza?"
-     },
-     {
-      "text": "Teslas are not built for pizza impacts"
-     },
-     {
-      "text": "That absolutely did not happen"
-     },
-     {
-      "text": "Reminds me of Burnout crash mode"
-     }
-    ]
+    "text": "My favorite Claude story this week is about a pothole. Years of complaints by a Dutch office, zero action. Then a person gave Claude 6 photos. It rebuilt the hole in 3D and simulated a 30 km/h hit. Video went to city hall. Fixed in 2 days. Petitions are for people without Claude. What would you fix this way? Here is the original: https://x.com/yelkhayami/status/2108227066621465007?s=20"
    },
    "sources": [
     "reddit"
@@ -7102,18 +7079,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x4tlov/strengthening_our_defenses_against_distillation/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "They reveal many things they didn't have to. For example...how valuable, exactly, is the raw (encoded) reasoning, vs the summarized reasoning the user sees? Our early work to combat distillation started with simple measures designed to block passive distillation, in which attackers send requests to the model as a normal user would, and then train on those responses. As one of our initial anti-distillation measures, we had Claude summarize its reasoning before we showed it to users. Our evaluations showed that this made Claude’s transcripts much less informative for distillers. We tested how…",
-    "topComments": [
-     {
-      "text": "Yawn Poor writers: all exposition"
-     },
-     {
-      "text": "Damn, what they're doing is justified imo but a 0.1% false positive rate is still incredibly high. They're blocking way more benign requests than malicious ones."
-     },
-     {
-      "text": "If ultimately the AI gives you the answer you want, then you have a signal for RL"
-     }
-    ]
+    "text": "They reveal many things they didn't have to. For example...how valuable, exactly, is the raw (encoded) reasoning, vs the summarized reasoning the user sees? Our early work to combat distillation started with simple measures designed to block passive distillation, in which attackers send requests to the model as a normal user would, and then train on those responses. As one of our initial anti-distillation measures, we had Claude summarize its reasoning before we showed it to users. Our evaluations showed that this made Claude’s transcripts much less informative for distillers. We tested how…"
    },
    "sources": [
     "reddit"
@@ -7256,27 +7222,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x4vaog/how_to_let_a_coding_agent_port_your_code_and_know/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "When you migrate code to another language or port it to another platform, you need to be sure the code actually moved and didn't just stay a copy of the source. We're used to fighting duplicates, but here they're useful: they show what has moved and what hasn't. I built tools into jscpd that find semantic duplicates across languages and show a migration map. How it works: https://jscpd.dev/blog/when-code-clones-matter",
-    "topComments": [
-     {
-      "text": "Interesting approach, using duplicates as a migration signal instead of a code smell. The 98% vs 40% gap tells a good story about how much of the original actually made it over, and the Sankey view looks handy for spotting the stragglers at a glance"
-     },
-     {
-      "text": "thank you for the feedback, these are not regular code duplicates; they are semantic cross-language duplicates identified using cosine similarity between vector embeddings"
-     },
-     {
-      "text": "what are you talking about? migration signal? code smell? tells a story? are you AI slop?"
-     },
-     {
-      "text": "bro are you good?"
-     },
-     {
-      "text": "nah man it's been real rough lately"
-     },
-     {
-      "text": "The failure mode with agent ports is often idiom rewrite, not missing files. The agent turns a Python loop into idiomatic Rust and the semantic clone score tanks even though the behavior moved. A migration map that separates rewritten-but-equivalent blocks from unmoved ones would cut a lot of false panic."
-     }
-    ]
+    "text": "When you migrate code to another language or port it to another platform, you need to be sure the code actually moved and didn't just stay a copy of the source. We're used to fighting duplicates, but here they're useful: they show what has moved and what hasn't. I built tools into jscpd that find semantic duplicates across languages and show a migration map. How it works: https://jscpd.dev/blog/when-code-clones-matter"
    },
    "sources": [
     "reddit"
@@ -7321,33 +7267,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x4vzuj/its_about_time_they_released_41_pro/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It's been a while since we've released a model, especially considering Flash 4.1 is installed on the main router. I'd love to see a new Pro model that brings back its literary prowess and deep knowledge. Are we waiting?",
-    "topComments": [
-     {
-      "text": "I thought we were waiting for v 5 pro"
-     },
-     {
-      "text": "yeah a pro with better literary depth would be perfect for roleplay, the flash version just doesnt cut it for longer stories."
-     },
-     {
-      "text": "They are waiting for Argon https://giphy.com/gifs/tXL4FHPSnVJ0A"
-     },
-     {
-      "text": "Deepseek has lost the track"
-     },
-     {
-      "text": "Their timeline is one item per 90 days"
-     },
-     {
-      "text": "I'm really curious to see how their asymmetric architecture performs when scaled up to a ~2T-parameter model."
-     },
-     {
-      "text": "Waiting for 4.2 flash terminus"
-     },
-     {
-      "text": "heard the 4.1 pro is already live on some forks, check the deepseek discord if you're on a tight leash"
-     }
-    ]
+    "text": "It's been a while since we've released a model, especially considering Flash 4.1 is installed on the main router. I'd love to see a new Pro model that brings back its literary prowess and deep knowledge. Are we waiting?"
    },
    "sources": [
     "reddit"
@@ -7539,30 +7459,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x4zm61/were_cooked/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I haven't coded in a year, AI is geting better and better.. I log in to work, do 30 mins of work aka prompting claude & reviewing it's code + meetings.. and I'm off to work on personal projects, wtf am I supposed to do? I've sacrified everything to become a good dev, should I go for a plumber license? electrician? How much time do we think we have? I finish 2x as many story points as the next guy, and my manager thinks I'm a 10x engineer... WTF is going on:D companies catched-on, but I guess it takes time to reflect on us, what will we do? edit: some people are asking for examples of…",
-    "topComments": [
-     {
-      "text": "You can outperform all the devs with AI tools and you want to give up? Take your newly learned skills and use AI to execute them, find new ways to earn money in your freetime"
-     },
-     {
-      "text": "But the thing is, my technical knowledge is becoming less and less valuable.. A PM is like 99% the way there to what I do"
-     },
-     {
-      "text": "I feel like you must be dealing with really competent PMs"
-     },
-     {
-      "text": "This kind of question is really, really contingent on what product is being produced. An small internal tool only available to select set of users? Sure, PM can do this. A public facing app to cope with millions of users? No... not without risk."
-     },
-     {
-      "text": "Bro is like \"halp! I am too good at my job! Should i become a plumber instead\" lol"
-     },
-     {
-      "text": "Why do people miss the point that if you can code faster you can build more complex things. It’s just a progression of tech. Instead of worrying about boilerplate you can think larger initiatives more frequently"
-     },
-     {
-      "text": "I'm going to say something very very unpopular. All of the people whining about AI taking programming and revolutionizing it, are so off base here. Do you still wish that we were doing math on graph paper? Do you still wish we were building houses by hand? No machinery, no tools, just bringing all the lumber in and climbing, assembling scaffolds, no power tools or no equipment. A world without innovation is miserable. There are so many better things humanity can do, and programming is not akin…"
-     }
-    ]
+    "text": "I haven't coded in a year, AI is geting better and better.. I log in to work, do 30 mins of work aka prompting claude & reviewing it's code + meetings.. and I'm off to work on personal projects, wtf am I supposed to do? I've sacrified everything to become a good dev, should I go for a plumber license? electrician? How much time do we think we have? I finish 2x as many story points as the next guy, and my manager thinks I'm a 10x engineer... WTF is going on:D companies catched-on, but I guess it takes time to reflect on us, what will we do? edit: some people are asking for examples of…"
    },
    "sources": [
     "reddit"
@@ -7663,33 +7560,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x5080s/any_advice_for_what_industry_is_looking_for_in_ml/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I'm a first year ML PhD at a T5 ML program in the US. I managed to get a first author paper accepted to NeurIPS Main Track last month and thought I'd start applying for PhD research internships since I saw a lot of them required a \"top\" venue publication. But I've just been getting rejections (Nvidia, Waymo etc) and I also even got rejected from the Citadel NeurIPS travel grant. Now, I'd say my area of research isn't super \"hype\", it's still a well known area but not within the LLM / Agentic / VLA / Multimodal / Robotics / Foundation model kind of work that a lot of Industry is in right now.…",
-    "topComments": [
-     {
-      "text": "Each company is different, each team is different. I recommend finding people at the companies you're interested in, read their papers, and trying to connect with them. It's a lot easier to get in once you know someone. These days unfortunately a lot of the application is filtered automatically by ATS systems, so it often might be the case that you'd get rejected without anyone even looking at your application"
-     },
-     {
-      "text": "Okay thanks! Yeah there are people who's research I've built on, but their companies / teams don't seem to have internship postings just yet or is Meta / FAIR, where it seems to be very messy over there internally from what I've been hearing in the grapevine from SWE friends there"
-     },
-     {
-      "text": "Yeah, I’ve heard the same from friends at Meta. Since you’re a first-year, my advice is: don’t stress about it. Interning somewhere does make it easier to get hired there later, but it’s far from the only path to a job after your PhD, and the PhD itself is just the start of your research career. Focus on your topic, find people whose work genuinely excites you, and reach out to them. You don’t need an internship every single year."
-     },
-     {
-      "text": "It’s often quite opportunistic. They need someone who can do X. If there’s evidence that you can, great. If not, a NeurIPS paper doesn’t help much."
-     },
-     {
-      "text": "In general they want to see you have some high-impact research done, great grasp of the fundamentals, and that you have soft skills (i.e., can explain well your thought process, what you do and why, etc. \"Cold applying\" to positions has always been the worst strategy even before AI. It's much easier if you use your connections (normally people you meet at conferences) to get a headstart in the interview process."
-     },
-     {
-      "text": "Just my two cents but when I was hiring interns we almost always prioritized research fit as much as possible. Just having top tier publications is not a guarantee that you'll be a good fit research wise."
-     },
-     {
-      "text": "Okay got it, this is kind of what I was suspecting since when I read my resume, for most positions I'm a \"okay/kinda\" fit I'd say, but I could easily imagine candidates who are working in that exact area. But I'm kind of stuck because I obviously want to continue my research direction for PhD because I think it's an important subfield/interesting questions even if it's not a priority for many industry teams (there are industry teams that work on it, they just don't seem to be hiring)"
-     },
-     {
-      "text": "As a first year PhD student, you'll likely not get any interviews. Most companies are looking for interns they can convert to full time within an year. You're likely to be an at-flight resource because you'll find other opportunities. Amazon might hire you because they take junior PhDs as interns but I wouldn't join that company due to its volatility. Keep up the good work, a NeurIPS paper in the first year is amazing. As you enter your 3rd year, you'll see recruiters reach out a lot more…"
-     }
-    ]
+    "text": "I'm a first year ML PhD at a T5 ML program in the US. I managed to get a first author paper accepted to NeurIPS Main Track last month and thought I'd start applying for PhD research internships since I saw a lot of them required a \"top\" venue publication. But I've just been getting rejections (Nvidia, Waymo etc) and I also even got rejected from the Citadel NeurIPS travel grant. Now, I'd say my area of research isn't super \"hype\", it's still a well known area but not within the LLM / Agentic / VLA / Multimodal / Robotics / Foundation model kind of work that a lot of Industry is in right now.…"
    },
    "sources": [
     "reddit"
@@ -7839,30 +7710,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x530mt/openais_blockbuster_navierstokes_proof_isnt_what/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Mathematicians are finally making sense of the biggest event in decades for their field—and it’s stranger than anyone thought. In early September, OpenAI posted an inscrutable 166-page solution of the Navier-Stokes problem, one math’s famed “ million-dollar problems .” Initial accounts—including from the company itself—suggested that the proof, produced by an internal large language model, followed an approach devised by two Spanish mathematicians, Diego Córdoba and Luis Martínez-Zoroa. The…"
-     },
-     {
-      "text": "So the narrative that it copied off someone else's work is falling apart... Is that what we're getting from this?"
-     },
-     {
-      "text": "It was painfully obvious that people just jumped on that because they wanted it to be true."
-     },
-     {
-      "text": "Because it's the same story that we have already seen in other areas such as photography, graphic design, screen writing or programming. It's the same cycle of denial, rejection, mockery, claims of unworthiness, attaching a sense of valor and merit to working without AI, etc. Everything is basically a fog of war now because people just want to maintain their established hierarchies in their fields. Nothing is different now except the fact that we're talking about math."
-     },
-     {
-      "text": "I don't understand how the headline communicates the summary you've attached."
-     },
-     {
-      "text": "You are correct. They don't match."
-     },
-     {
-      "text": "The distinction between forced and unforced navier stokes problems matters enormously here, a result can be valid for one formulation without settling the broader question mathematicians care about"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7959,33 +7807,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1x53gba/googles_gemini_4_argon_autonomously_built_an/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "What's even more impressive is using Antigravity to make it."
-     },
-     {
-      "text": "lol absolutely vicious. You aren't wrong, the rest of us were just too polite to say it."
-     },
-     {
-      "text": "“Argon? In this browser, on this computer on this Gemini subscription!?” “…yes” “…May I see it?” “N… No.”"
-     },
-     {
-      "text": "SEYMOUR, THE DATACENTER IS ON FIRE!"
-     },
-     {
-      "text": "Do they tell people how much api $ was spent? Cause give todays models time and infinite $, and they pretty much iterate untill doing whatever you want. If somebody could enlighten me, or tell me if I am wrong or right, and in what, I would honestly be really thankfull."
-     },
-     {
-      "text": "That would be the last thing they would tell you. It's expensive as fuck and currently big tech is heavily subsidizing inference."
-     },
-     {
-      "text": "Big tech is not subsidizing inference. I'm tired of hearing this. Inference is the cheapest part of everything in an AI company. Subscriptions are designed to figure out what you'll pay monthly at the best cost vs profit. They make money on subscriptions, API's are for business who can afford to not fuck around with multiple subscriptions to do work. Subscriptions get the left over compute at any given point in time."
-     },
-     {
-      "text": "holy fuck... it does get exponentially more crazy with every release, it's becoming like russian roulette for jobs..."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8080,33 +7902,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x55z7z/my_first_image_i_created_using_ai_4_years_ago/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I present to you, Brad Pitt as Geralt of Rivia, using Stable Diffusion 2, i think.",
-    "topComments": [
-     {
-      "text": "we've come a long way."
-     },
-     {
-      "text": "And yet even those images blew my mind. We so quickly got used to the idea of a computer generating images based on only a text prompt, yet it was an insane idea when it came out."
-     },
-     {
-      "text": "But that is two images?"
-     },
-     {
-      "text": "AI cannot count. %"
-     },
-     {
-      "text": "1guy"
-     },
-     {
-      "text": "Looks like you got in a couple of months later because the first generations didn't look as good as this"
-     },
-     {
-      "text": "https://preview.redd.it/pg6rcq7wuavh1.jpeg?width=1038&format=pjpg&auto=webp&s=dcaf9a7ee1de0ad88588ea62ce1f120d340c7191 One of my oldest when I dabbled with Dall-E. It was in June 2022."
-     },
-     {
-      "text": "Wombo AI, around that time. And I remember being mind blown lmao. https://preview.redd.it/0bvbuha0zavh1.png?width=1080&format=png&auto=webp&s=91f1a4be91dbec41cecb44064401234ddd09da01"
-     }
-    ]
+    "text": "I present to you, Brad Pitt as Geralt of Rivia, using Stable Diffusion 2, i think."
    },
    "sources": [
     "reddit"
@@ -8200,33 +7996,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x56xc0/the_ai_race_with_china_the_us_is_losing/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Of course the U.S. is losing on this; they sell expensive stuff and their strategy so far is to try to cry to the U.S. government to ban competition."
-     },
-     {
-      "text": "yeah the protectionist approach rarely works long term in tech"
-     },
-     {
-      "text": "China has over half the world AI engineers. The race was long over."
-     },
-     {
-      "text": "At this point I am rooting for Anthropic and OpenAI to go bankrupt. At least we get good open weight models from china."
-     },
-     {
-      "text": "They lost before the race even started"
-     },
-     {
-      "text": "I’m a big fan of Deepseek and use it myself. But it has a long way to go to catch up. But when it does I’ll be sure to sing its praise. We should be more realistic about things."
-     },
-     {
-      "text": "The fact is China has never released a frontier model ahead of the US and yet news like this are always on. The only reason for this is 1. Purely clickbait, folks like news like this. 2. Folks don't really need frontier models for everything anything that is workable is more than enough cost performance wise for most. 3. Fear mongering for something else. And for the distillation s*it...I don't get why people still believe in it. Yes distillation is a common practice, I am not denying it…"
-     },
-     {
-      "text": "This is a US political POV on emerging Chinese open weights models, and their impact on US soft power. Although slanted in the US vs Them direction and ignoring the benefits affordable AI provides, it's interesting in a number of dimensions and of course talks about DeepSeek."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8366,33 +8136,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x57ghe/openai_employee_terminated_after_planting_bug_in/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "why would they need to use their model to find the person lol"
-     },
-     {
-      "text": "its so extra very like oh no our model hacking stuff again it's so good"
-     },
-     {
-      "text": "It could have been truly as simple as a model auto-scanning every frame of a security footage to find the exact time, over weeks, all pixels in one particular spot, across multiple feeds, were XYZ. So, that's why? And a good use of them."
-     },
-     {
-      "text": "\"The employee was terminated\" sounds so much more ominous from an AI company"
-     },
-     {
-      "text": "Unbelievably, incredibly, stupid. I'm assuming they were going the whistleblower/leak route? What's weird is they found nothing on it. I wonder how much not having anything on it (yet?) might save the dude, but I have to imagine he's fucked regardless right?"
-     },
-     {
-      "text": "I wonder how they found it."
-     },
-     {
-      "text": "\"Who planted this device? make no mistakes\""
-     },
-     {
-      "text": "What a stupid attempt at impressing people who don't know any better. No recording device is sophisticated enough that couldn't easily be understood by a electrical engineering student, let alone a security expert working at a billion dollar company. Saying you used your models to identify who planted the device is also extremely performative, because all the digital datasets you could've used to interface with your models would all be extremely primitive and easily be analyzed through…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8440,24 +8184,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x57nfy/openai_discovers_a_spy_device_planted_by_an/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "A Saudi bugging conference rooms, possibly since September: https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/ OA announcement because prosecution unsealed. (I was expecting Chinese, of course, but it's worth remembering that the Saudis invest extensively into hacking capabilities and have been linked to many past incursions at eg Twitter, and AI is a big deal among the Gulf states, although this remains deeply underreported in the West.) The…"
-     },
-     {
-      "text": "https://x.com/ScottMStedman/status/2110098631290499366#m"
-     },
-     {
-      "text": "Already reported in the SF Standard link."
-     },
-     {
-      "text": "There was also this in the replies: Alfozan is a Venture Partner at RAED Ventures, which has received funding from Saudi government-backed entities. It also has a Saudi royal family member, Prince Khalid bin Bader Al Saud, as a venture partner. (...) Prince Khalid bin Bader Al Saud appears to be the son of Brigadier General Prince Bader bin Saud bin Mohammed Al Saud, who previously served in the special operations section of Saudi Arabia's General Intelligence Agency. I haven't verified it,…"
-     },
-     {
-      "text": "If Saudi intelligence was involved, surely Alfozan wouldn't have been discussing all the technical details with a chatbot from his wife's account? He would either get the instructions from his curator outright or the curator would direct him to more secure ways P. S. Also, your last link doesn't work, and the original post is hidden"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8555,30 +8282,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x58qog/i_made_a_pixelart_dungeon_to_keep_an_eye_on_all/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I usually have several coding agents running at once, and not all of them are the same tool. Some are Claude Code, some Codex, sometimes Kiro or Gemini CLI. I kept losing track of which one was waiting for me, so I built Agents Pixel Dungeon: a small native app (macOS and Linux) where each agent is a hero in its project's room. What you get: One room per project: The hero reacts to what the agent is really doing. One hero per harness: Claude Code, Codex, Kiro and Gemini CLI each get their own character. Anything else gets a generic adventurer. Click a room to see that agent's live console…",
-    "topComments": [
-     {
-      "text": "So great. The \"waiting on you vs still writing\" distinction is key, and I'm glad you added a dedicated state for it. One thing I've run into with multi-agent setups: budget/rate-limit visibility . If I'm running Claude Code, Codex, and Gemini CLI at the same time, it's easy to lose track of which agent is burning through tokens or hitting a rate limit. A per-agent \"cost meter\" or \"quota remaining\" indicator in the dungeon view would be a killer feature. Curious if you've thought about…"
-     },
-     {
-      "text": "The \"quota remaining\" is displayed as hp! Mana represents the session quota, and hp the weekly quota. https://preview.redd.it/t7xqo43bffvh1.png?width=468&format=png&auto=webp&s=b40cce917eba312b407badf9c6bf56402ae9a50a A \"cost meter\" per agent hasn't been implemented yet, but it could be like damage per second hahah"
-     },
-     {
-      "text": "Looks cool. What do you pay on average for your agents?"
-     },
-     {
-      "text": "I have different budgets depending on whether it's for work, hobby, or personal use. For work around 200 USD, for hobby 60 USD; for personal use 20 USD."
-     },
-     {
-      "text": "Está increíble"
-     },
-     {
-      "text": "Rule worth stealing from a multi-agent setup like this: treat \"waiting on you\" and \"still writing\" as different states, and only blink hard on permission prompts. A false idle is worse than a missing room, because you alt-tab away while the agent sits on an approve dialog for twenty minutes."
-     },
-     {
-      "text": "Yeah, totally agree. That’s exactly why I added sounds and notifications, plus a dedicated state for when an agent is waiting for your input or approval. I wanted that “needs you now” state to be clearly different from just working or being idle"
-     }
-    ]
+    "text": "I usually have several coding agents running at once, and not all of them are the same tool. Some are Claude Code, some Codex, sometimes Kiro or Gemini CLI. I kept losing track of which one was waiting for me, so I built Agents Pixel Dungeon: a small native app (macOS and Linux) where each agent is a hero in its project's room. What you get: One room per project: The hero reacts to what the agent is really doing. One hero per harness: Claude Code, Codex, Kiro and Gemini CLI each get their own character. Anything else gets a generic adventurer. Click a room to see that agent's live console…"
    },
    "sources": [
     "reddit"
@@ -8673,33 +8377,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x5ak2n/someone_is_running_qwen_27b_at_20_toks_on_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "we're gonna see someone daisy chaining PS5s now aren't we"
-     },
-     {
-      "text": "It’s like the PS3 SETI project all over again. I’m in for it!"
-     },
-     {
-      "text": "I remember the 4,000 PlayStations of Saddam Hussein."
-     },
-     {
-      "text": "Anthropic is going to post next about sharding 15 PS5 together self replicating themselves as the next cyber attack."
-     },
-     {
-      "text": "With 16 GB of GDDR6 and 2 GB of DDR5 on the PS5 Pro? That's going to be a low quant."
-     },
-     {
-      "text": "IQ2_XXS"
-     },
-     {
-      "text": "It should be illegal to post stuff like this without the quant. You can make Qwen 27b run at a million t/s on a toaster if you quant it hard enough."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8887,33 +8565,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x5dc8f/weird_pattern_in_the_iclr_papers_i_was_assigned/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I was assigned 3 ICLR papers to review. I generally consider myself a pretty nice reviewer but...all 3 of them are slop. Unfiltered Claude slop. The language is so awful it is almost impossible to read. Unfortunately, I imagine this is common among \"top\" conference submissions now. The reason I am posting here is because I noticed a strange similarity between all three papers. They all use very similar methods. They all start with the premise of deciding which of two predictors is better, and say that estimating predictor errors or scores individually can be difficult. So instead, they all…",
-    "topComments": [
-     {
-      "text": "I've noticed something similar too in my review stack. Additionally, I have noticed single runs on small models under 1B being used for their claims. I'm not saying small models like that aren't useful, they are, but so many problems that face small models get fixed in larger models. The single runs are egregious though. In a majority of experiments, multiple runs at different seeds are needed to verify claims. That being said, justifying my scores has been made much easier."
-     },
-     {
-      "text": "Small models are underrated. 1. Not everyone has access to the right hardware to train multiple billion parameter models and perform ablations. 2. This is a cheap way of providing low quality reviews by always asking to train larger models instead of providing constructive feedback on the theory."
-     },
-     {
-      "text": "I fully agree with you. Part of the reason I was given these papers to review is because I also work with small models. I love them. I also fully agree that training larger models is something not everyone can do. For example, showing a new training method that does better than current accepted standards by training a small model and showing the comparison against standard? Great, love that. Claiming a method can \"revolutionize\" current models because it worked on a 350M model even though…"
-     },
-     {
-      "text": "The single runs are egregious though. That's basically malfeasant. A single run is not a paper, and I doubt they actually did a single run, they did a dozen and stopped when they got the answer they wanted. Also, anything claiming less than a 1% improvement on literally any metric needs dozens of runs, because that's \"seed noise\" territory. I need to start trying to get published, because if the competition is \"single run of a model\", I can certainly beat that. I've got several weird little…"
-     },
-     {
-      "text": "OP you are right. No bias or hate against anyone, but entire Rednote is filled with people gloating how they effectively used auto research to submit n number of papers to AAAI, ICLR. And worse, no one calls it out in comments. Infact there are more stories. This is highly unsustainable now. Organizers definetely need to find some solution to this crap"
-     },
-     {
-      "text": "This is highly unsustainable now. Organizers definetely need to find some solution to this crap Two year bans for exceptionally low quality work. Come back when you can write a paper that isn't an embarrassment, or, at least the LLMs will be significantly better by then."
-     },
-     {
-      "text": "\"Given y1=W1x+b1+e and y2=W2x+b2+e, we cancel out the unexplained error by subtracting y1-y2\""
-     },
-     {
-      "text": "I reviewed a NeurIPS paper that was just like what you described"
-     }
-    ]
+    "text": "I was assigned 3 ICLR papers to review. I generally consider myself a pretty nice reviewer but...all 3 of them are slop. Unfiltered Claude slop. The language is so awful it is almost impossible to read. Unfortunately, I imagine this is common among \"top\" conference submissions now. The reason I am posting here is because I noticed a strange similarity between all three papers. They all use very similar methods. They all start with the premise of deciding which of two predictors is better, and say that estimating predictor errors or scores individually can be difficult. So instead, they all…"
    },
    "sources": [
     "reddit"
@@ -8960,33 +8612,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x5fv1a/phd_students_how_ya_feeling_d/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "All seems a bit pointless now. Either pump out AI papers and neglect your own development, or take it slow and fall behind in the publishing race. I already have two papers made largely without LLMs (still seeking publication), but it's hard to resist just vibing the third from start to finish with Claude.",
-    "topComments": [
-     {
-      "text": "Quality > quantity I know at this point in your career and maybe even historically it hasn't felt this way. But I promise this will be the way forward."
-     },
-     {
-      "text": "This. If most of research being output is slop then how do I find what is of some worth? I think quality will matter a lot more, it did before as well it is just sad it took AI supercharging submission abuse for it to be seen. I do think there should and will be some consequences for people who engage in overhyping their slop research. I would not want to hire or do work with someone like this, I have an agent myself already, why do I need someone who will be pressing the enter button?"
-     },
-     {
-      "text": "it depends; you can't determine what the environment rewards, and the environment rewards quantity. a small number of high quality papers gets ignored by recruiters because nobody can possibly judge the quality of work when spending 4 seconds reviewing a CV; all they see is metrics so while this would be nice, its simply not true in a competitive job market"
-     },
-     {
-      "text": "I mean even with claude max and hundred of millions of tokens, I spent 3 months on a paper lol It is a tool, but it will help a ton with research code just make sure you audit it, and then have other LLMs audit it too"
-     },
-     {
-      "text": "3 months is pretty fast imo."
-     },
-     {
-      "text": "Idk I graduated last year and took a role where publishing isn’t a priority, and boy am I glad that I did now"
-     },
-     {
-      "text": "The key is to use AI to augment your development, not replace it. For me, that means the LLM does lots of things but I take an active role: - Finding papers, which I then read myself and check my understanding with questions to the LLM - Feedback on ideas that I come up with - Routine code, eg loading data, visualization scripts, distributed scripting, metric logging. However, I still write 1) the overall foundation of the project, particularly running and analyzing experiments, which I reuse…"
-     },
-     {
-      "text": "You hit the nail on the neglecting your own development part . Getting to spend time on papers and exploring your own ideas is where your learning truly comes from. Being in a publication pressured environment can definitely hinder the development / learning aspect of a PhD imo."
-     }
-    ]
+    "text": "All seems a bit pointless now. Either pump out AI papers and neglect your own development, or take it slow and fall behind in the publishing race. I already have two papers made largely without LLMs (still seeking publication), but it's hard to resist just vibing the third from start to finish with Claude."
    },
    "sources": [
     "reddit"
@@ -9032,33 +8658,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x5glxv/abdulrahman_alfozan_a_saudi_national_employed_as/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "So our military is using OpenAI to make military decisions and they are employing foreign nationals that are planting bugs in offices. Excellent."
-     },
-     {
-      "text": "But why is there a camera BEHIND the TV at openai offices?"
-     },
-     {
-      "text": "It was installed after finding the device to catch him when he retrieves it."
-     },
-     {
-      "text": "I gathered that but that title is shit, thank you for confirming my assumption."
-     },
-     {
-      "text": "https://preview.redd.it/cthbua36xdvh1.jpeg?width=1454&format=pjpg&auto=webp&s=41073f807b766e1ea34f7985cfda078924fe7b0d"
-     },
-     {
-      "text": "Wtf is this headline?"
-     },
-     {
-      "text": "Guy looks behind tv. Guy gets arrested."
-     },
-     {
-      "text": "Oh so that's why I haven't heard Trump comment on this, it's his buddies the Saudis"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9104,12 +8704,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x5hn80/treat_your_harness_like_code_a_ci_step_that_runs/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "If you built your own harness around a local model, three things go wrong over time: the rules file rots, the log stops being the source of truth because the agent wrote it, and a regression test on sentences breaks the day the wording changes. The best advice I have picked up on each: regenerate the rules file in CI so it can't rot, the log only counts if the runtime writes it, and freeze scenarios, not sentences. Put together, that's a CI step for the harness: Freeze the tasks. Ten to twenty scenarios from your own work, the recent failures plus things that pass today, asserting on the…",
-    "topComments": [
-     {
-      "text": "our workflow rules separate communicationLanguage from contentStyle so the writer doesn't inherit a customer's email language. i'd freeze a case where 'email me in Chinese' must change the reply language but leave an English article unchanged. assert which role receives the preference, not just the final wording. AI-assisted, based on our workflow notes."
-     }
-    ]
+    "text": "If you built your own harness around a local model, three things go wrong over time: the rules file rots, the log stops being the source of truth because the agent wrote it, and a regression test on sentences breaks the day the wording changes. The best advice I have picked up on each: regenerate the rules file in CI so it can't rot, the log only counts if the runtime writes it, and freeze scenarios, not sentences. Put together, that's a CI step for the harness: Freeze the tasks. Ten to twenty scenarios from your own work, the recent failures plus things that pass today, asserting on the…"
    },
    "sources": [
     "reddit"
@@ -9246,30 +8841,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x5kb71/the_future_is_bleak/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Yeah, I'm just going to ramble here for a bit. My company job now is just pressing enter endlessly, prompting, and 0.1% of it is probably something manually done by me. Everyone is using Claude. It's soulless. There is no point.Someone can probably reverse engineer our company products in one day. Layoffs are inevitable at some point. I have no other non-tech skills that can help me pivot to another career, and even if I do, that career is not going to pay the same. I can't believe in any project idea that I think of because I use Claude, and the thought of \"You used Claude, anyone could…",
-    "topComments": [
-     {
-      "text": "I feel this in my bones and I think a lot of us are sitting with that same hollow pit in our stomach right now the \"anyone could have done this\" thought is the killer, it poisons the whole process, I've been trying to reframe it as \"I'm the one who knew what to ask and how to stitch it together\" but that feels like copium half the time, the other half I actually believe it my bullet journal has a whole spread from March where I tried to map out careers that can't be automated and it's a…"
-     },
-     {
-      "text": "Therapist is the one that’ll go soon. Lots of people are ashamed of talking to a person, many therapists are rude, have personal biases and charge exorbitant prices."
-     },
-     {
-      "text": "I don't think therapists will be going away soon, I just think there always was a giant demand for free or low cost therapy which has now been somewhat met. I am a psychologist. I don't know if others of my ilk would agree with me, but I actually think chatbots have the potential to be a huge net-good in terms of access to therapy. As long as chatbots don't feed delusions, stay mostly factual while showing basic empathy, and contribute to healthy habits while letting people vent frustration…"
-     },
-     {
-      "text": "Think about this: anyone could learn to code for free five or ten years ago. Why didn't random people on the street build what you were building back then? Because the code itself wasn't actually the hard part. Figuring out what actually needs to exist, how it should work, and doing the damn work and having the tenacity to finish it when it gets to the final--boring, and most time consuming--10-20% is what makes something valuable. If \"anyone could do this with Claude,\" they'd already be doing…"
-     },
-     {
-      "text": "They weren't learning how to code because, even if they could learn it for free, it took years and many efforts to get to a decent level of knowledge to do any decent work. The whole problem is that now the barrier to entry is ridiculously low, at least in web development, most business don't need a highly engineered solution for their websites. We will see first the entrepreneurs and hands on people start making their own digital solutions, but at some point everyone will be doing it, because…"
-     },
-     {
-      "text": "I mean, there's plenty of hope. The issue is the environment, not the tool. There's still a big difference in making a thing, and making something with intent that lasts contact with reality. But big Corpo places are gutting all their experience, so they will be left with the low intent and expertise output. You + Ai beats what Grandma can make. But you probably don't need the big corporate overhead to reach the grandma's today, and you won't need to charge as much to help them. You are still…"
-     },
-     {
-      "text": "I don’t hope for anyone losing their job but, man, software ate a lot of the world and now those that help these companies build that software are getting theirs. When I used to comment in some forums that New York taxi drivers were committing sucides because suddenly their millions of dollars worth of taxi medallions, which were their retirement savings and kids’ college tuition, were now worthless because Uber steamrolled them, everyone was like “free market, free market, free market.” I…"
-     }
-    ]
+    "text": "Yeah, I'm just going to ramble here for a bit. My company job now is just pressing enter endlessly, prompting, and 0.1% of it is probably something manually done by me. Everyone is using Claude. It's soulless. There is no point.Someone can probably reverse engineer our company products in one day. Layoffs are inevitable at some point. I have no other non-tech skills that can help me pivot to another career, and even if I do, that career is not going to pay the same. I can't believe in any project idea that I think of because I use Claude, and the thought of \"You used Claude, anyone could…"
    },
    "sources": [
     "reddit"
