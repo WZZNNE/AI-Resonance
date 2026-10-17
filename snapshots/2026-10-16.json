@@ -8376,57 +8376,6 @@
   },
   {
    "board": "social",
-   "category": "tool",
-   "key": "rd:1x7io8v",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 30,
-    "communityRank": 7,
-    "feedN": 40,
-    "feedRank": 13
-   },
-   "observedAt": "2026-10-17T12:49:23.868Z",
-   "publishedAt": "2026-10-16T15:05:55.000Z",
-   "refs": [
-    "gh:aparajith24/nano-vllm"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:llm",
-     "kw:inference engine",
-     "kw:vllm",
-     "kw:hugging face",
-     "weak:inference",
-     "cat:i built"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Broad-Mirror3873",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-10-16T15:05:55.000Z",
-    "handle": "Broad-Mirror3873",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x7io8v/i_built_a_tiny_llm_inference_engine_to_learn_how/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I've been learning how LLM inference engines work, so I built a small one from scratch rather than just reading about the internals. GitHub: https://github.com/Aparajith24/nano-vLLM The main things I've implemented so far: Continuous batching Paged KV cache with a shared memory pool Prefix caching with block sharing Streaming inference API Correctness tests against Hugging Face and a separate baseline for benchmarking This is very much a learning project, not an attempt to compete with production inference engines. There are still plenty of limitations, including the current KV gather path…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I've been learning how LLM inference engines work, so I built a small one from scratch rather than just reading about the internals. GitHub: https://github.com/Aparajith24/nano-vLLM The main things I've implemented so far: Continuous batching Paged KV cache with a shared memory pool Prefix caching with block sharing Streaming inference API Correctness tests against Hugging Face and a separate baseline for benchmarking This is very much a learning project, not an attempt to compete with production inference engines. There are still plenty of limitations, including the current KV gather path…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "I built a tiny LLM inference engine to learn how vLLM works - looking for feedback",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1x7io8v/i_built_a_tiny_llm_inference_engine_to_learn_how/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
    "key": "rd:1x7ira1",
    "metrics": {
@@ -9492,12 +9441,12 @@
    "metrics": {
     "authority": 0.8,
     "communityN": 37,
-    "communityRank": 4,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 13,
+    "feedRank": 11,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T21:54:14.000Z",
    "refs": [],
    "relevance": {
@@ -9537,12 +9486,12 @@
    "key": "rd:1x7td7n",
    "metrics": {
     "authority": 1.1,
-    "communityN": 30,
-    "communityRank": 4,
-    "feedN": 40,
-    "feedRank": 8
+    "communityN": 23,
+    "communityRank": 1,
+    "feedN": 32,
+    "feedRank": 4
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:02:02.000Z",
    "refs": [],
    "relevance": {
@@ -9567,7 +9516,24 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x7td7n/writer_agent_separate_checker_agent_for_factual/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I'm building Noema. It turns any topic into a short interactive lesson using a team of agents. Right now one lesson costs about $0.13 and takes ~2 min. The weak spot is facts. The writer sounds confident even when it's wrong, and asking the same model to review itself mostly gets \"looks good\". People on Reddit gave me a really concrete plan, and I want to sanity-check it before building: Writer and checker are different calls with different prompts. The checker never sees the writer's reasoning. The checker extracts every factual claim, one per line. Each claim is either sourced or cut. No…"
+    "text": "I'm building Noema. It turns any topic into a short interactive lesson using a team of agents. Right now one lesson costs about $0.13 and takes ~2 min. The weak spot is facts. The writer sounds confident even when it's wrong, and asking the same model to review itself mostly gets \"looks good\". People on Reddit gave me a really concrete plan, and I want to sanity-check it before building: Writer and checker are different calls with different prompts. The checker never sees the writer's reasoning. The checker extracts every factual claim, one per line. Each claim is either sourced or cut. No…",
+    "topComments": [
+     {
+      "text": "whoa you got a whole squad of agents just to teach me something and you're stressing about a $0.13 lesson doubling in cost, my landlord charges me more to breathe near the laundry room For the source thing I'd just use Wikipedia dumps locally, they're free and for most general topics it's already got the citations you'd need anyway"
+     },
+     {
+      "text": "Yeah the doubling number sounds scary but I think it's misleading in practice. The biggest thing I learned is that extraction >> strictness. When you tell a model 'be a strict reviewer' it still reads the whole thing as one piece and glosses over wrong claims buried in confident-sounding sentences. But when you make it pull out every single factual claim one per line and give a binary sourced-or-cut answer on each, it catches a totally different class of mistakes. I didn't expect that to…"
+     },
+     {
+      "text": "On the cheaper model question, I'd worry less about price and more about whether the checker is the same model family as the writer. Same family tends to share the same blind spots, so it waves through the same confident wrong stuff. I run reviews with two different families that never see each other's output, and when both flag the same fact I fix it even if one called it minor. Also watch reasoning effort, Codex on its default low effort was too shallow for review so I keep it at high or…"
+     },
+     {
+      "text": "I haven't measured it head to head, so take this as experience, not data. The cheapest way to find out is your own test: take 30 lessons, plant a few known wrong facts in some of them, and run both the strict reviewer pass and the extract and source pass. Count what each one catches. For sources on general topics, a cached reference set covers most claims: an encyclopedia dump or a few textbooks per subject, searched locally, and pay for live search only when that finds nothing. A cheaper…"
+     },
+     {
+      "text": "id test claim extraction with seprate checker before doubling budget. Every claim should be backed by source but id still manualy spot chck sample. Evidence Lens is also worth looking at since it checks claims against peer reviewed research..."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9585,12 +9551,12 @@
    "key": "rd:1x7tgqb",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 2,
+    "communityN": 13,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 3
+    "feedRank": 4
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:06:17.000Z",
    "refs": [],
    "relevance": {
@@ -9617,12 +9583,38 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x7tgqb/gemini_4_argon_usage_on_pro_plan_compared_to_opus/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I just completed my first round of testing with Gemini 4 Argon in Antigravity. The amount of usage one gets Gemini 4 Argon on the Gemini AI PRO plan is very limited. Here is how it compares to Claude and ChatGPT plans on similar level. Preliminary number show you get about 17x the usage with Opus 5.5 and about 7x the usage with GPT-6 Astra if you have Claude Pro plan or ChatGPT Plus plan. This was tested with coding tasks. I really hope Google increases this soon. It seems to be a great model."
+    "text": "I just completed my first round of testing with Gemini 4 Argon in Antigravity. The amount of usage one gets Gemini 4 Argon on the Gemini AI PRO plan is very limited. Here is how it compares to Claude and ChatGPT plans on similar level. Preliminary number show you get about 17x the usage with Opus 5.5 and about 7x the usage with GPT-6 Astra if you have Claude Pro plan or ChatGPT Plus plan. This was tested with coding tasks. I really hope Google increases this soon. It seems to be a great model. Update October 17, 2026: Happy to share that Google gave us a reset today and after the reset…",
+    "topComments": [
+     {
+      "text": "Google decided to compete by releasing a worse model at way lower usage. Whoever that is in charge of AI at Google needs to step down. They have huge amounts of compute - they literally have a program where they let you use 128GB Tensor chips or RTX 6000 Pro 96GB VRAM cards FOR FREE for 40 hours a week because they have so much spare compute and you're telling me that you can't provide useful limits or train the SOTA model? you have the compute, you have the training data, why are you…"
+     },
+     {
+      "text": "How can i have access to that program, dear?"
+     },
+     {
+      "text": "I think it's google Collab"
+     },
+     {
+      "text": "Methodology?"
+     },
+     {
+      "text": "that watermark is doing some heavy lifting for credibility huh"
+     },
+     {
+      "text": "this chart is worthless. this has no data on thinking levels, agentic usage, context, amount of tools, sub-agents, or length of tasks. plus it biases anthropic by listing opus instead of fable. plus no chart can account for the unpredictability of codex resets."
+     },
+     {
+      "text": "Opus 5.5 is the current Anthropic flagship with regards to capability. Seems fair."
+     },
+     {
+      "text": "a simple prompt eat 25% in one message"
+     }
+    ]
    },
    "sources": [
     "reddit"
    ],
-   "summary": "I just completed my first round of testing with Gemini 4 Argon in Antigravity. The amount of usage one gets Gemini 4 Argon on the Gemini AI PRO plan is very limited. Here is how it compares to Claude and ChatGPT plans on similar level. Preliminary number show you get about 17x the usage with Opus 5.5 and about 7x the usage with GPT-6 Astra if you have Claude Pro plan or ChatGPT Plus plan. This was tested with coding tasks. I really hope Google increases this soon. It seems to be a great model.",
+   "summary": "I just completed my first round of testing with Gemini 4 Argon in Antigravity. The amount of usage one gets Gemini 4 Argon on the Gemini AI PRO plan is very limited. Here is how it compares to Claude and ChatGPT plans on similar level. Preliminary number show you get about 17x the usage with Opus 5.5 and about 7x the usage with GPT-6 Astra if you have Claude Pro plan or ChatGPT Plus plan. This was tested with coding tasks. I really hope Google increases this soon. It seems to be a great model. Update October 17, 2026: Happy to share that Google gave us a reset today and after the reset…",
    "tags": [
     "r/GeminiAI"
    ],
@@ -9635,12 +9627,12 @@
    "key": "rd:1x7tj60",
    "metrics": {
     "authority": 1.4,
-    "communityN": 7,
-    "communityRank": 5,
-    "feedN": 40,
-    "feedRank": 11
+    "communityN": 8,
+    "communityRank": 4,
+    "feedN": 32,
+    "feedRank": 8
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:09:10.000Z",
    "refs": [
     "gh:boeing240/flypilot%5c",
@@ -9685,13 +9677,13 @@
    "key": "rd:1x7u298",
    "metrics": {
     "authority": 0.9,
-    "communityN": 20,
-    "communityRank": 4,
+    "communityN": 13,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 14,
+    "feedRank": 9,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:32:21.000Z",
    "refs": [],
    "relevance": {
@@ -9731,12 +9723,12 @@
    "key": "rd:1x7ucce",
    "metrics": {
     "authority": 0.9,
-    "communityN": 23,
-    "communityRank": 8,
+    "communityN": 21,
+    "communityRank": 6,
     "feedN": 100,
-    "feedRank": 19
+    "feedRank": 13
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:44:59.000Z",
    "refs": [
     "url:anthropic.com/research/ai-expectations-gap"
@@ -9780,12 +9772,12 @@
    "key": "rd:1x7udbi",
    "metrics": {
     "authority": 0.9,
-    "communityN": 23,
+    "communityN": 21,
     "communityRank": 4,
     "feedN": 100,
-    "feedRank": 10
+    "feedRank": 8
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:46:15.000Z",
    "refs": [
     "url:anthropic.com/research/ecdsa-curve-origins"
@@ -9829,12 +9821,12 @@
    "key": "rd:1x7ueof",
    "metrics": {
     "authority": 1.1,
-    "communityN": 30,
-    "communityRank": 3,
-    "feedN": 40,
-    "feedRank": 7
+    "communityN": 23,
+    "communityRank": 2,
+    "feedN": 32,
+    "feedRank": 5
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T22:48:02.000Z",
    "refs": [],
    "relevance": {
@@ -9875,69 +9867,16 @@
   },
   {
    "board": "social",
-   "category": "research",
-   "key": "rd:1x7uk7y",
-   "metrics": {
-    "authority": 1,
-    "communityN": 10,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 58
-   },
-   "observedAt": "2026-10-17T12:49:23.868Z",
-   "publishedAt": "2026-10-16T22:55:08.000Z",
-   "refs": [
-    "gh:samuelfaj/distill"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:DeepSeek",
-     "kw:deepseek",
-     "kw:codex",
-     "weak:agent",
-     "weak:model",
-     "weak:models",
-     "weak:benchmark",
-     "weak:tokens",
-     "cat:benchmark"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "TomatilloPutrid3939",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "DeepSeek",
-    "createdAt": "2026-10-16T22:55:08.000Z",
-    "handle": "TomatilloPutrid3939",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/DeepSeek/comments/1x7uk7y/deepseek_v41_went_from_59_to_99_successful_runs/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "I'm the author of Distill, an open-source coding agent harness (Apache-2.0): https://github.com/samuelfaj/distill Use case: running DeepSeek as a coding agent without it timing out or burning tokens on every small step. What I tested: DeepSeek V4.1 Flash at max effort in native Codex (through OpenRouter) against Distill with DeepSeek as the main model and free models from the OpenRouter free router as the worker. Three frozen coding tasks, three runs each, same 300s deadline. Results: Successful runs: 5/9 native vs 9/9 Distill Time: 1974s vs 490s Cost: at least $0.098 vs $0.012 Chart with…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "I'm the author of Distill, an open-source coding agent harness (Apache-2.0): https://github.com/samuelfaj/distill Use case: running DeepSeek as a coding agent without it timing out or burning tokens on every small step. What I tested: DeepSeek V4.1 Flash at max effort in native Codex (through OpenRouter) against Distill with DeepSeek as the main model and free models from the OpenRouter free router as the worker. Three frozen coding tasks, three runs each, same 300s deadline. Results: Successful runs: 5/9 native vs 9/9 Distill Time: 1974s vs 490s Cost: at least $0.098 vs $0.012 Chart with…",
-   "tags": [
-    "r/DeepSeek"
-   ],
-   "title": "DeepSeek V4.1 went from 5/9 to 9/9 successful runs on my coding benchmark when paired with a worker model",
-   "url": "https://www.reddit.com/r/DeepSeek/comments/1x7uk7y/deepseek_v41_went_from_59_to_99_successful_runs/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
    "key": "rd:1x7uxic",
    "metrics": {
     "authority": 1,
-    "communityN": 3,
-    "communityRank": 2,
-    "feedN": 40,
-    "feedRank": 32
+    "communityN": 1,
+    "communityRank": 1,
+    "feedN": 32,
+    "feedRank": 19
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T23:12:05.000Z",
    "refs": [
     "url:heretik.io/karpathy-capability-funnel-climb-by-building"
@@ -9962,7 +9901,12 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x7uxic/karpathys_capability_funnel_you_climb_it_by/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Karpathy's napkin math puts 6 billion people outside AI's door and 5,000 inside the lab. Where in the funnel are you?"
+    "text": "Karpathy's napkin math puts 6 billion people outside AI's door and 5,000 inside the lab. Where in the funnel are you?",
+    "topComments": [
+     {
+      "text": "may as well just link to the Karpathy post here. (I would prefer that this sub not become full of llm-generated blogspam.)"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9980,12 +9924,12 @@
    "key": "rd:1x7v7gj",
    "metrics": {
     "authority": 0.9,
-    "communityN": 53,
+    "communityN": 60,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T23:24:42.000Z",
    "refs": [
     "gh:noniv/web-ocean"
@@ -10027,10 +9971,10 @@
       "text": "Wow. What a time to be alive."
      },
      {
-      "text": "Served as Content-Type: text/plain. Fix your server..."
+      "text": "Look up the term \"demoscene\" and behold what people have been creating for decades in tiny files (without LLMs) EDIT: This is my favorite https://www.youtube.com/watch?v=VD8c8XagJms&t=1s SECOND EDIT: The video quality is terrible. Do yourself a favor and find a high quality version of it so you can see the details. Both i've found are a pixelated mess. I recall seeing a high quality one on YouTube when it first came out. THIRD EDIT: In these demos, the music is typically part of the code. They…"
      },
      {
-      "text": "Look up the term \"demoscene\" and behold what people have been creating for decades in tiny files (without LLMs) EDIT: This is my favorite https://www.youtube.com/watch?v=VD8c8XagJms&t=1s SECOND EDIT: The video quality is terrible. Do yourself a favor and find a high quality version of it so you can see the details. Both i've found are a pixelated mess. I recall seeing a high quality one on YouTube when it first came out. THIRD EDIT: In these demos, the music is typically part of the code. They…"
+      "text": "Served as Content-Type: text/plain. Fix your server..."
      }
     ]
    },
@@ -10050,12 +9994,12 @@
    "key": "rd:1x7vggz",
    "metrics": {
     "authority": 1.1,
-    "communityN": 30,
-    "communityRank": 5,
-    "feedN": 40,
-    "feedRank": 9
+    "communityN": 23,
+    "communityRank": 4,
+    "feedN": 32,
+    "feedRank": 7
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T23:36:31.000Z",
    "refs": [
     "gh:hitslop/hitslop"
@@ -10099,13 +10043,13 @@
    "key": "rd:1x7vivf",
    "metrics": {
     "authority": 0.9,
-    "communityN": 23,
-    "communityRank": 1,
+    "communityN": 21,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 2,
+    "feedRank": 4,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T23:39:41.000Z",
    "refs": [],
    "relevance": {
@@ -10172,12 +10116,12 @@
    "key": "rd:1x7vvbt",
    "metrics": {
     "authority": 1,
-    "communityN": 17,
-    "communityRank": 3,
+    "communityN": 13,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 18
+    "feedRank": 11
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-16T23:56:47.000Z",
    "refs": [
     "url:runtimewire.com/article/replit-anthropic-partnership-masad-claims"
@@ -10221,12 +10165,13 @@
    "key": "rd:1x7w7dp",
    "metrics": {
     "authority": 1.3,
-    "communityN": 33,
+    "communityN": 30,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 11
+    "feedRank": 10,
+    "merged": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-17T00:11:45.000Z",
    "refs": [
     "url:huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16"
@@ -10272,11 +10217,11 @@
    "metrics": {
     "authority": 0.8,
     "communityN": 37,
-    "communityRank": 2,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 8
+    "feedRank": 7
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-17T02:58:54.000Z",
    "refs": [
     "gh:openmoss/moss-image"
@@ -10302,7 +10247,33 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x7zf1r/hey_guys_im_one_of_the_core_developers_of/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey r/StableDiffusion! I'm one of the core developers of MOSS-Image, the 5B DiT image generation model we just open-sourced! I've noticed quite a few discussions about MOSS-Image here already. It's been really exciting to see the community experimenting with the model, and I really appreciate all the feedback so far! We've been working on MOSS-Image for the past six months, with a particular focus on text rendering, layout-controlled generation, and building a flexible foundation for community fine-tuning. I'll try to be as open and detailed as I can! GitHub:…"
+    "text": "Hey r/StableDiffusion! I'm one of the core developers of MOSS-Image, the 5B DiT image generation model we just open-sourced! I've noticed quite a few discussions about MOSS-Image here already. It's been really exciting to see the community experimenting with the model, and I really appreciate all the feedback so far! We've been working on MOSS-Image for the past six months, with a particular focus on text rendering, layout-controlled generation, and building a flexible foundation for community fine-tuning. I'll try to be as open and detailed as I can! GitHub:…",
+    "topComments": [
+     {
+      "text": "Is there any plans for edit model like qwen image 2.1"
+     },
+     {
+      "text": "We are considering it. However, training an I2I model requires building paired image datasets for various capabilities, which is quite challenging for our small team."
+     },
+     {
+      "text": "Give us (the crowd) tasks and we can help I am sure we will pull something together to lighten some of the load."
+     },
+     {
+      "text": "Any chances of you releasing an XL model? Like 10B or 12B?"
+     },
+     {
+      "text": "We are considering it. Thanks for the suggestion!"
+     },
+     {
+      "text": "Are you gonna make an edit model in the future? You really nailed MOSS-Image it's an incredible model!"
+     },
+     {
+      "text": "Uh, hope you get insightful questions for more knowledgeable people, I just want to thank you for your hard work and for making it accessible for the community. I've been running some clumsy tests today and it works great front and back. Considering that your release was a little overshadowed by Flux3, know that you are coming on top, at least on my little book of Things that work as promised and even better. Cheers."
+     },
+     {
+      "text": "I noticed that the documentation mentions artist styles, but they don't seem to do anything. is there a list of art styles/artists somewhere? Thanks"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -10317,16 +10288,109 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1x81wwg",
+   "metrics": {
+    "authority": 1,
+    "communityN": 13,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 21
+   },
+   "observedAt": "2026-10-17T21:43:18.944Z",
+   "publishedAt": "2026-10-17T05:19:38.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:OpenAI",
+     "kw:codex",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "Reaper_1492",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "OpenAI",
+    "createdAt": "2026-10-17T05:19:38.000Z",
+    "handle": "Reaper_1492",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/OpenAI/comments/1x81wwg/codex_overcomplicates_fing_everything/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "This crap hasn’t changed at all since Sol 5.6. Constant over-engineered garbage. Anything I let it touch is just this same type of trash over and over. It’s unbelievably bad. “The review has now confirmed duplication: the roughly 19-minute host preparation test mostly repeats the unchanged legacy preparation route and does not exercise the new resume route. Several other host checks also replay unchanged code. That is exactly the overlap I should have identified earlier. I'm keeping those runs held while checking how the existing gate can reuse their valid evidence and require the actual new…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "This crap hasn’t changed at all since Sol 5.6. Constant over-engineered garbage. Anything I let it touch is just this same type of trash over and over. It’s unbelievably bad. “The review has now confirmed duplication: the roughly 19-minute host preparation test mostly repeats the unchanged legacy preparation route and does not exercise the new resume route. Several other host checks also replay unchanged code. That is exactly the overlap I should have identified earlier. I'm keeping those runs held while checking how the existing gate can reuse their valid evidence and require the actual new…",
+   "tags": [
+    "r/OpenAI"
+   ],
+   "title": "Codex overcomplicates F’ing everything.",
+   "url": "https://www.reddit.com/r/OpenAI/comments/1x81wwg/codex_overcomplicates_fing_everything/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1x829kd",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 13,
+    "communityRank": 5,
+    "feedN": 100,
+    "feedRank": 49
+   },
+   "observedAt": "2026-10-17T21:43:18.944Z",
+   "publishedAt": "2026-10-17T05:40:39.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:GeminiAI",
+     "kw:llm",
+     "kw:chatgpt",
+     "kw:claude",
+     "kw:gemini",
+     "cat:thoughts"
+    ],
+    "score": 0.95
+   },
+   "social": {
+    "author": "Arthesia",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "GeminiAI",
+    "createdAt": "2026-10-17T05:40:39.000Z",
+    "handle": "Arthesia",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x829kd/argon_thoughts_subreddit_state/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "For context, I've been bouncing around to the best LLM for my use cases since 2023, I work as a software developer, solo game dev and writer. ChatGPT -> Gemini -> Claude, now back to Gemini. I've been on the Claude Max x20 subscription for the last few months and mainly use Fable 5.1 with Opus 5.5 as the workhorse. When Argon finally released I grabbed the ultra plan so I could do A/B comparisons between Argon and Fable for my use cases and compare the weekly usage drain per-prompt (my prompts are pretty consistently 100k - 200k token one-shots with follow-ups, either coding or writing…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "For context, I've been bouncing around to the best LLM for my use cases since 2023, I work as a software developer, solo game dev and writer. ChatGPT -> Gemini -> Claude, now back to Gemini. I've been on the Claude Max x20 subscription for the last few months and mainly use Fable 5.1 with Opus 5.5 as the workhorse. When Argon finally released I grabbed the ultra plan so I could do A/B comparisons between Argon and Fable for my use cases and compare the weekly usage drain per-prompt (my prompts are pretty consistently 100k - 200k token one-shots with follow-ups, either coding or writing…",
+   "tags": [
+    "r/GeminiAI"
+   ],
+   "title": "Argon Thoughts + Subreddit State",
+   "url": "https://www.reddit.com/r/GeminiAI/comments/1x829kd/argon_thoughts_subreddit_state/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1x83dxf",
    "metrics": {
     "authority": 0.9,
-    "communityN": 23,
-    "communityRank": 2,
+    "communityN": 21,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 5,
+    "feedRank": 6,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-17T12:49:23.868Z",
+   "observedAt": "2026-10-17T21:43:18.944Z",
    "publishedAt": "2026-10-17T06:49:23.000Z",
    "refs": [],
    "relevance": {
@@ -11051,7 +11115,7 @@
   }
  ],
  "date": "2026-10-16",
- "fetchedAt": "2026-10-17T18:45:51.909Z",
+ "fetchedAt": "2026-10-17T21:43:18.944Z",
  "runs": [
   "2026-10-16T07:48:15.618Z",
   "2026-10-16T08:50:08.156Z",
@@ -11068,7 +11132,8 @@
   "2026-10-17T09:44:14.104Z",
   "2026-10-17T12:49:23.868Z",
   "2026-10-17T15:43:38.352Z",
-  "2026-10-17T18:45:51.909Z"
+  "2026-10-17T18:45:51.909Z",
+  "2026-10-17T21:43:18.944Z"
  ],
  "schema": 2,
  "sources": [
@@ -11217,18 +11282,18 @@
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-10-17T18:45:51.909Z",
+   "count": 223,
+   "fetchedAt": "2026-10-17T21:43:18.944Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-10-17T12:49:23.868Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-10-17T21:43:18.944Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-17T18:45:51.909Z",
+   "fetchedAt": "2026-10-17T21:43:18.944Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",

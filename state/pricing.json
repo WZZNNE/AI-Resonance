@@ -7304,11 +7304,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.09,
+   "in": 0.08,
    "k": "deepseek-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek Flash Latest",
-   "out": 0.55,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7335,7 +7335,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0071,
+   "cr": 0.0162,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7344,7 +7344,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0071,
+   "in": 0.0162,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
@@ -7526,14 +7526,14 @@
    "upd": "2026-09-11"
   },
   {
-   "cr": 0.25,
-   "ctx": 262144,
+   "cr": 0.03,
+   "ctx": 1048576,
    "id": "~unbiased/pareto-latest",
-   "in": 2.5,
+   "in": 0.8,
    "k": "pareto-latest",
    "maxOut": 131072,
    "name": "Pareto Latest",
-   "out": 7.5,
+   "out": 3.2,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -8443,7 +8443,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0071,
+   "cr": 0.0162,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8452,7 +8452,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0071,
+   "in": 0.0162,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -10484,14 +10484,14 @@
    "upd": "2026-08-11"
   },
   {
-   "cr": 0.08,
+   "cr": 0.02,
    "ctx": 1048576,
    "id": "nvidia/nemotron-3.5-super-vl",
-   "in": 0.1,
+   "in": 0.15,
    "k": "nemotron-3-5-super-vl",
    "maxOut": 235929,
    "name": "Nemotron 3.5 Super VL",
-   "out": 0.4,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12989,6 +12989,20 @@
    "upd": "2026-07-15"
   },
   {
+   "cr": 0.03,
+   "ctx": 1048576,
+   "id": "unbiased/pareto-26.10",
+   "in": 0.8,
+   "k": "pareto-26-10",
+   "maxOut": 131072,
+   "name": "Pareto 26.10",
+   "out": 3.2,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2026-10-15"
+  },
+  {
    "cr": 0.25,
    "ctx": 262144,
    "id": "unbiased/pareto-26.9",
@@ -13389,14 +13403,14 @@
    "upd": "2025-12-08"
   },
   {
-   "cr": 0.11,
+   "cr": 0.099,
    "ctx": 204800,
    "id": "z-ai/glm-4.7",
-   "in": 0.6,
+   "in": 0.54,
    "k": "glm-4-7",
    "maxOut": 131072,
    "name": "GLM-4.7",
-   "out": 2.2,
+   "out": 1.98,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15419,6 +15433,26 @@
    "upd": "2026-07-02"
   },
   {
+   "cr": 0.15,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh"
+   ],
+   "id": "meta-models/Muse-Spark-Open-816B-A42B",
+   "in": 1.25,
+   "k": "muse-spark-open-816b-a42b",
+   "maxOut": 131072,
+   "name": "Muse Spark Open",
+   "out": 4.25,
+   "p": "togetherai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-15"
+  },
+  {
    "alwaysOn": true,
    "cr": 0.06,
    "ctx": 196608,
@@ -15481,6 +15515,21 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-06-04"
+  },
+  {
+   "cr": 0.02,
+   "ctx": 262144,
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+   "in": 0.15,
+   "k": "nvidia-nemotron-3-5-super-vl",
+   "maxOut": 262144,
+   "name": "Nemotron 3.5 Super VL 120B A12B",
+   "out": 0.5,
+   "p": "togetherai",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-15"
   },
   {
    "ctx": 131072,
@@ -15554,6 +15603,27 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-07-02"
+  },
+  {
+   "cr": 0.04,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "reflection/Beam-1.0-501B-A23B",
+   "in": 0.4,
+   "k": "beam-1-0-501b-a23b",
+   "maxOut": 131072,
+   "name": "Beam 1.0 501B A23B",
+   "out": 1.2,
+   "p": "togetherai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-16"
   },
   {
    "cr": 0.17,
@@ -17041,5 +17111,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-17T18:45:51.909Z"
+ "updatedAt": "2026-10-17T21:43:18.944Z"
 }
