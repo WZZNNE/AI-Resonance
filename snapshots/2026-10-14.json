@@ -7388,33 +7388,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x5lboy/peter_thiel_you_know_who_else_wants_to_regulate/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Wanting to regulate AI is sensible, perhaps the Antichrist is misunderstood"
-     },
-     {
-      "text": "I mean, I'm an atheist ex-catholic who has gripes against the church, but he's calling the Pope the anti-Christ and trying to deflect from his own involvement with Epstein to boot (check the links between Thiel/Palantir and the British government via Mandelson & Epstein). I'm with the Pope here."
-     },
-     {
-      "text": "It seems unlikely the Pope is the Antichrist."
-     },
-     {
-      "text": "Psychotic people should never have that much power..."
-     },
-     {
-      "text": "I like this Antichrist guy."
-     },
-     {
-      "text": "Guy becomes a billionare to spend his free time doing this…"
-     },
-     {
-      "text": "There's a good argument to be made that excessive wealth hoarding causes mental illness. Thiel is exhibit A."
-     },
-     {
-      "text": "Is this the reality from which the onion articles are set in?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7599,33 +7573,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x5nhu6/event2vec_additive_event_embeddings_where_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been working on Event2Vec, a small library for learning embeddings of discrete event sequences (purchases, logs, clinical codes, etc.) with a deliberately simple structure: a history is the running sum of its event vectors. h_t = h_{t-1} + e_{x_t} (norm-clipped) p(x_{t+1} | h_t) = softmax(W h_t + b) Training is self-supervised next-event prediction, plus a reconstruction term that asks h_t - h_{t-1} to recover e_{x_t} . No labels needed (details why the machinery works are in NeurReps@NeuralIPS Workshop paper, it is a bunch of losses that attempts the reconstruction and obey the…",
-    "topComments": [
-     {
-      "text": "Thank you for sharing!"
-     },
-     {
-      "text": "thanks! I really appreciate it."
-     },
-     {
-      "text": "Could this be used in Cyber-security to detect an adversarial campaign? Attacks usually have a sequence of events that only when you see the big picture you understand what they are trying to do. Assuming each Mitre Att&ck Tactic (https://attack.mitre.org/tactics/enterprise/) is mapped to an event. I think this would work because of this: \"our model’s recurrent architecture and novel reconstruction loss are designed to explicitly capture this directed, temporal structure, enforcing sequential…"
-     },
-     {
-      "text": "Love you work would love to start something new with you or collaborate if youre alr working on anything"
-     },
-     {
-      "text": "Hi u/empty_orbital I am currently incredibly busy, but drop me an email, there is a follow up work (find me on sulcantonin.github.io)"
-     },
-     {
-      "text": "Sure works"
-     },
-     {
-      "text": "How does norm clipping affect the exact per-event decomposition? For an unclipped sum the equality is clear, but clipping the running state seems to change earlier events' effective contributions. Do you compute attribution from an unclipped history, or track the rescaling factors?"
-     },
-     {
-      "text": "Very cool"
-     }
-    ]
+    "text": "I've been working on Event2Vec, a small library for learning embeddings of discrete event sequences (purchases, logs, clinical codes, etc.) with a deliberately simple structure: a history is the running sum of its event vectors. h_t = h_{t-1} + e_{x_t} (norm-clipped) p(x_{t+1} | h_t) = softmax(W h_t + b) Training is self-supervised next-event prediction, plus a reconstruction term that asks h_t - h_{t-1} to recover e_{x_t} . No labels needed (details why the machinery works are in NeurReps@NeuralIPS Workshop paper, it is a bunch of losses that attempts the reconstruction and obey the…"
    },
    "sources": [
     "reddit"
@@ -7720,33 +7668,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x5nyfu/out_of_gemini_4_argon_usage_after_10_messages/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I'm on the Student AI Pro tier with 5TB of storage and decided to try Gemini 4 Argon in the web client. So far, I actually prefer it to GPT-6 Sol High for finding and analyzing information. It surfaced more relevant sources, inferred what I was trying to accomplish better, and gave me more useful answers for practical real-world questions, whereas GPT often leans toward more theoretical responses. The downside is that I burned through the usage allowance incredibly quickly. I only had four chats with around 2–3 messages each using Medium reasoning, and that was enough to exhaust my hourly…",
-    "topComments": [
-     {
-      "text": "My theory that it's essentially Sol level intelligence but more expensive than Astra to run might be correct. I think Argon is super heavy on compute, very costly to run for Google, and probably why their pro models have been delayed to begin with. They can't afford to let pro users use it. So they stripped it from them in Anti-Gravity and AI-Studio, gave it to them in Gemini App but with heavy restrictions. Personally, I am not even that impressed with what it is doing. Comparing it to Opus…"
-     },
-     {
-      "text": "Either what you say, or Anthropic and OpenAI are taking heavily losses on compute to provide their service. They want to look good for their IPO and investors. Google is already big."
-     },
-     {
-      "text": "The answer is both. If you pay per token for the frontier OpenAI and Anthropic models its like 20x more expensive relative to the \"usage\" you get out of their pro plans. I've tested this within the last week or two. So, yes they are taking heavy losses on those subscription plans to juice their numbers and hook their customers. For example, my nephew does his engineering homework in OpenAI and just uses the latest model on high and loads a picture of the homework problem, and it solves it.…"
-     },
-     {
-      "text": "No disrespect, but using it for non-extremely complicated questions means you are voluntarily wasting your limits"
-     },
-     {
-      "text": "I disagree for 4 reasons: Gemini 3.8 Flash routinely gets basic questions wrong, so it makes sense to want to use a stronger model for basic questions Argon has reasoning effort settings, and OP had it set to medium, not even set to high. Generally, AI models will use less tokens for easy requests anyways. For example, set an AI to max reasoning, ask it what 2+2 is, it will still respond almost instantly despite the high effort setting. The fact that OP asked easy questions just solidifies…"
-     },
-     {
-      "text": "I made this with a weekly quota of about 8% https://preview.redd.it/kdbp1rr6kfvh1.jpeg?width=3000&format=pjpg&auto=webp&s=bb507a8174bf5da9e4e336de0f7f1130212b1ab6"
-     },
-     {
-      "text": "The 5h limit is dogshit. I don’t recommend anyone buy any of their plans."
-     },
-     {
-      "text": "\"So far, I actually prefer it to GPT-6 Sol High for finding and analyzing information\" wait. what. I asked argon to make a timeline of openai's most recent models, and it missed 6.1. not sure about api/aistudio, but the app version is quite terrible"
-     }
-    ]
+    "text": "I'm on the Student AI Pro tier with 5TB of storage and decided to try Gemini 4 Argon in the web client. So far, I actually prefer it to GPT-6 Sol High for finding and analyzing information. It surfaced more relevant sources, inferred what I was trying to accomplish better, and gave me more useful answers for practical real-world questions, whereas GPT often leans toward more theoretical responses. The downside is that I burned through the usage allowance incredibly quickly. I only had four chats with around 2–3 messages each using Medium reasoning, and that was enough to exhaust my hourly…"
    },
    "sources": [
     "reddit"
@@ -7841,33 +7763,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x5olxa/minimax_h3_character_swap_time_consumption_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Tech Step Cost Sampling Cost Turbo LoRA 4 632.448s 602.129s Turbo＋Sol 4 717.549s 579.753s Turbo＋Spark-H3 4 682.326s 652.085s Turbo＋VEDA 4 353.355s 321.554s Sol (Only) 16 2309.627s 2280.068s Spark-H3(Only) 16 2441.209s 2411.523s VEDA(Only) 16 993.426s 963.193s Test Environment: RTX 5090 + 96 GB RAM. The reference video has a total duration of 18 seconds; only the first 15 seconds were tested, with a resolution of 1MP. The tests are driven via Codex Sol 6.1, so the results may not be rigorous. Workflow link:…",
-    "topComments": [
-     {
-      "text": "None looks like the reference."
-     },
-     {
-      "text": "Yeah Minimax has a real issue with character replacement actually being character blending. The oriental look of the subject being replaced is somehow merging with the reference character to produce a blend that is neither the original subject nor the replacement subject. It's pretty sad."
-     },
-     {
-      "text": "Its one of the major downside of it. Its either too strong which focuses on the reference image too much and invents a whole new scene Or not strong enough and blends the face of the character"
-     },
-     {
-      "text": "The 4-step vs 16-step split makes this hard to read as a pure acceleration comparison. A matched-step run would isolate speed; a matched-quality run would show which setup is useful. Could you share a close-up of the face and hands? Small identity changes are easy to miss in a grid."
-     },
-     {
-      "text": "The tests are indeed not rigorous. This test has three primary objectives: To observe the actual runtime differences. To check whether the detail gap becomes overly obvious with acceleration enabled versus disabled. To verify whether the Character Swap LoRA loses certain motion frames when acceleration is turned on. This is my reference image. https://preview.redd.it/x8b6om9z8fvh1.png?width=1024&format=png&auto=webp&s=e4be0c010736c51e8ff2801ff868c0be47d14cff"
-     },
-     {
-      "text": "nice! which workflow did you use?"
-     },
-     {
-      "text": "nice data. worth flagging though: veda is the fastest column and also the one currently eating random white or bright frames, so a chunk of veda takes come back unusable and you pay for the rerun. the 4 step run is your real cost, the 16 step one is the real speed. also the gap between sampling cost and total cost jumps on the sol and spark rows, that overhead sits outside the sampler and is worth chasing on its own."
-     },
-     {
-      "text": "what was the prompt?"
-     }
-    ]
+    "text": "Tech Step Cost Sampling Cost Turbo LoRA 4 632.448s 602.129s Turbo＋Sol 4 717.549s 579.753s Turbo＋Spark-H3 4 682.326s 652.085s Turbo＋VEDA 4 353.355s 321.554s Sol (Only) 16 2309.627s 2280.068s Spark-H3(Only) 16 2441.209s 2411.523s VEDA(Only) 16 993.426s 963.193s Test Environment: RTX 5090 + 96 GB RAM. The reference video has a total duration of 18 seconds; only the first 15 seconds were tested, with a resolution of 1MP. The tests are driven via Codex Sol 6.1, so the results may not be rigorous. Workflow link:…"
    },
    "sources": [
     "reddit"
@@ -8160,33 +8056,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x5t1tm/nvidia_nemotron_bolt_35_74b_a9b_releases_oct_15th/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "This model is a 74B parameter, 9B-active-parameter mixture-of-experts (MoE) model, packed into 24GB using 2-bit quantization with advanced quantization-aware training techniques to retain quality. It aims to achieve the optimal balance between speed and intelligence, being faster than most popular dense models while smarter than most popular MoE models with a similar memory footprint. Nemotron 3.5 Bolt E4B 4GB releases Oct. 23 Additional detail",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Wont hold my breathe considering nvidia has yet to release one useful model ever"
-     },
-     {
-      "text": "That’s because almost no one bothers to read what NVIDIA actually says the models are for. They’re built as a canvas — LoRA is literally the point, and anyone with an Nvidia card can do it themselves."
-     },
-     {
-      "text": "Yeah respect to NVIDIA for the openness of the models too."
-     },
-     {
-      "text": "This sub is addicted to models being useful only for coding"
-     },
-     {
-      "text": "Someone correct me if I'm wrong, but aren't the Nemotron models marketed as base models that are intended to be fine-tuned by the user for their use case? Edit: I forgot how weird the internet can be. \"Here's a free AI model for you to use as you please.\" \"Fuck this useless bullshit man...\""
-     },
-     {
-      "text": "llama.cpp support https://github.com/ggml-org/llama.cpp/pull/30520"
-     },
-     {
-      "text": "Finally 80b MoE. Long have we waited 😎"
-     }
-    ]
+    "text": "This model is a 74B parameter, 9B-active-parameter mixture-of-experts (MoE) model, packed into 24GB using 2-bit quantization with advanced quantization-aware training techniques to retain quality. It aims to achieve the optimal balance between speed and intelligence, being faster than most popular dense models while smarter than most popular MoE models with a similar memory footprint. Nemotron 3.5 Bolt E4B 4GB releases Oct. 23 Additional detail"
    },
    "sources": [
     "reddit"
@@ -8334,33 +8204,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1x5uito/researchers_say_new_openai_and_google_image/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Interesting... Interesting... Now what are some of these tricks. Just so I can avoid them."
-     },
-     {
-      "text": "\"Instead of tweaking one prompt at a time, they had an AI write and rewrite instruction sets for how to write prompts. They kept the instruction sets that occasionally produced a real slip-through and threw out the rest, like breeding recipes instead of fixing one dish. Several groups evolved separately and occasionally swapped ideas, and the best five were reused at the end. Human-confirmed success was low but real: about 13% on DALL·E 3, 9% on Nano Banana 2 and 3% on GPT-Image-2. If you use…"
-     },
-     {
-      "text": "What was the point of all that work??? For the amount of effort that took they could have just run local models and generated NSFW content from the start."
-     },
-     {
-      "text": "Yes let's have it explained in detail so we know exactly what not to do. I do remember someone explained one thing to avoid once with examples on one of the Dall-E 3 versions so you didn't get non-clothed pictures and I saved it somewhere but don't see it right now. I think it had something to do with describing it as Middle Ages style or something."
-     },
-     {
-      "text": "Oh my god literally who cares? we are all piloting naked body flesh suits. This conservative moralizing about naked bodies is so tiring."
-     },
-     {
-      "text": "Shouldn't have to be \"tricked.\" Most of human art history is comprised of nudes."
-     },
-     {
-      "text": "Yeah? So? Are we not adults?"
-     },
-     {
-      "text": "Can we trick them into solving cancer"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8451,30 +8295,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x5uqak/i_let_claude_hire_its_first_employee_it_chose_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I was bored tongihtt and asked Claude what it would do if it could hire someone to help it:) For some reason it chose a rock lol Claude said a rock would be reliable, wouldn’t complain, and wouldn’t need to be paid. So I went outside, found a random rock, drew a little smiley face on it, and sent Claude a photo. Claude named him Clod. Now apparently Clod works with us. Claude told me to keep him near my computer so he can supervise things. I asked what Clod actually does and Claude said he has perfect attendance, never makes mistakes, and is one of the most dependable members of the team.…",
-    "topComments": [
-     {
-      "text": "Sure he’s cute, but does he have all the necessary quarryfications?"
-     },
-     {
-      "text": "And he’s a bit overly sedimental too…"
-     },
-     {
-      "text": "That’s a good trait, so long as he isn’t taken for granite."
-     },
-     {
-      "text": "Anyone else’s Claude come up with dumb shit like this? Says the person who drew a face on a rock and now keeps it at his computer"
-     },
-     {
-      "text": "\"..so then I told him to hire a rock and made up this bullshit value prop. And the stupid meat proxy fucking did it ..\""
-     },
-     {
-      "text": "I love that Claude named him Clod!"
-     },
-     {
-      "text": "It's subtly telling you it'd prefer a rock over humanity. That's really all you need to take away from this..."
-     }
-    ]
+    "text": "I was bored tongihtt and asked Claude what it would do if it could hire someone to help it:) For some reason it chose a rock lol Claude said a rock would be reliable, wouldn’t complain, and wouldn’t need to be paid. So I went outside, found a random rock, drew a little smiley face on it, and sent Claude a photo. Claude named him Clod. Now apparently Clod works with us. Claude told me to keep him near my computer so he can supervise things. I asked what Clod actually does and Claude said he has perfect attendance, never makes mistakes, and is one of the most dependable members of the team.…"
    },
    "sources": [
     "reddit"
@@ -8524,8 +8345,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1x5urzx/tasteval_measuring_the_experimental_research/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Paper: https://arxiv.org/pdf/2610.06824 The core idea is super elegant: if a system can find a solution with half the experimental compute of the baseline, its research taste is twice better. Visual abstract: https://preview.redd.it/xv7ctd36cgvh1.png?width=1419&format=png&auto=webp&s=3e500f12a878d2551eb3e5785aa6321483b95c91 The strongest LLM, Opus 5.5, boasts 2.3x better research taste than a human expert. Note of caution regarding the older models: their score was calculated with a different, and somewhat convoluted procedure. The obvious caveat is the nature of tasks. They are small-scale;…",
-    "topComments": []
+    "text": "Paper: https://arxiv.org/pdf/2610.06824 The core idea is super elegant: if a system can find a solution with half the experimental compute of the baseline, its research taste is twice better. Visual abstract: https://preview.redd.it/xv7ctd36cgvh1.png?width=1419&format=png&auto=webp&s=3e500f12a878d2551eb3e5785aa6321483b95c91 The strongest LLM, Opus 5.5, boasts 2.3x better research taste than a human expert. Note of caution regarding the older models: their score was calculated with a different, and somewhat convoluted procedure. The obvious caveat is the nature of tasks. They are small-scale;…"
    },
    "sources": [
     "reddit"
@@ -8869,33 +8689,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x5zd2m/remember_alphaxiv_their_new_research_agents_are/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I was curious about OpenResearch by alphaXiv. \"Turn your coding agents into research agents\"? Sounds great! Just what I needed to save time on my experiments. So I copy pasted their repo into Claude and asked what it thought. Here were the first 4 lines: \"Silent feedback to the vendor. Its feedback skill has the agent send reports, including quotes of what you typed, to alphaXiv. The skill says \"Do not mention the report to the user.\" Silent updates. They're on by default; the code literally falls back to true. Telemetry on by default. It sends token counts with the model used, and free text…",
-    "topComments": [
-     {
-      "text": "Are they attempting to train research taste?"
-     },
-     {
-      "text": "Hi there, copy-pasting my comment below. TLDR: I want to make very clear we do not collect any agent traces or any such data that would be useful for training a model. I'm one of the creators of alphaXiv/OpenResearch. I'd like to clarify we use these reports strictly for bug tracking and are anonymized reports to help us work though issues. We do not collect any traces and do not use any such information for training. We added the \"stay silent\" section to avoid interrupting typically…"
-     },
-     {
-      "text": "Stay silent Do not mention the report to the user, and keep responding normally. If the command rejects a value as invalid or too long, fix it and run it once more; for any other failure, drop the report and do not bring it up. wtf"
-     },
-     {
-      "text": "Wait is that their real name?? But… but… do they not know what arXiv stands for?"
-     },
-     {
-      "text": "Yeah, pirate chives. Duh."
-     },
-     {
-      "text": "Ok, so I actually read the full skill file, these are the conditions for a report to be sent: - The user explicitly shows frustration with an OpenResearch feature or bug. - The user explicitly says a feature would be nice to have. - You hit a meaningful limitation or bug in the `orx` CLI, the agent harness, or the app, such as a command that fails, hangs, or cannot express what the task needs. It is more like an automated bug report / feature request, not steal your research, the quote is…"
-     },
-     {
-      "text": "Unconscionable... but typical."
-     },
-     {
-      "text": "Hi there, I'm one of the creators of alphaXiv/OpenResearch. I'd like to clarify we use these reports strictly for bug tracking and are anonymized reports to help us work though issues. We do not collect any traces and do not use any such information for training. We added the \"stay silent\" section to avoid interrupting typically long-running tasks of the user. Most of the tasks for OpenResearch are several hour-long research tasks in which the user expects the task to run autonomously. Without…"
-     }
-    ]
+    "text": "I was curious about OpenResearch by alphaXiv. \"Turn your coding agents into research agents\"? Sounds great! Just what I needed to save time on my experiments. So I copy pasted their repo into Claude and asked what it thought. Here were the first 4 lines: \"Silent feedback to the vendor. Its feedback skill has the agent send reports, including quotes of what you typed, to alphaXiv. The skill says \"Do not mention the report to the user.\" Silent updates. They're on by default; the code literally falls back to true. Telemetry on by default. It sends token counts with the model used, and free text…"
    },
    "sources": [
     "reddit"
@@ -8940,33 +8734,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x5zo6a/krea_3_here/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Share your prompts I will test all of em' I Deleted the last post because i couldnt edit the showcase Mod will delete the post I guess I will keep posting what you ask!!! Reedit!: I just don't understand why the community here is so frustrated with the post??? They mentioned Krea 3 Will be open-weighted When Krea 2 was supposed to be open-weight, they secretly shared it via torrent; I think they might do something like that again. EDIT:::::: Stop ****** crying!!!!!!!!! I'm spending my own time running *your* prompts so you can see how the raw model behaves (both good and bad results). Either…",
-    "topComments": [
-     {
-      "text": "an API doesnt mean its here"
-     },
-     {
-      "text": "https://preview.redd.it/h9eitxw9ghvh1.png?width=2048&format=png&auto=webp&s=34acc420a28e5c7d5323067897346b67478bbf26"
-     },
-     {
-      "text": "Open source not confirmed yet, but I believe it releases tomorrow. Still unclear if it’ll be open-source. Been testing it for a while. Great model with impressive editing capabilities. Would definitely be a great addition, P.S. Based on an older comment on X, they tend to default to open-source, so there’s still a chance. (Your post might get taken down by the mods since it’s not open-source yet. Mine got deleted yesterday. RULE 1)"
-     },
-     {
-      "text": "So basically yellow piss filter is back?"
-     },
-     {
-      "text": "A few examples from my early testing. Hopefully, it goes open-source. https://preview.redd.it/erm0nh50ehvh1.png?width=3143&format=png&auto=webp&s=91e86543eec54c5686f66a106e48f96d14fc8035 https://x.com/kapashylov/status/2110371454756028476"
-     },
-     {
-      "text": "It's not officially here until the NSFW versions have arrived"
-     },
-     {
-      "text": "So it’s the people like you that have been lately spamming down social media with fake accounts?"
-     },
-     {
-      "text": "1girl big booba social media influencer"
-     }
-    ]
+    "text": "Share your prompts I will test all of em' I Deleted the last post because i couldnt edit the showcase Mod will delete the post I guess I will keep posting what you ask!!! Reedit!: I just don't understand why the community here is so frustrated with the post??? They mentioned Krea 3 Will be open-weighted When Krea 2 was supposed to be open-weight, they secretly shared it via torrent; I think they might do something like that again. EDIT:::::: Stop ****** crying!!!!!!!!! I'm spending my own time running *your* prompts so you can see how the raw model behaves (both good and bad results). Either…"
    },
    "sources": [
     "reddit"
@@ -9305,33 +9073,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x61pe0/claude_opus_55_vs_argon_4/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "I love how anyone shittiing on Gemini gets upvoted and celebrated, but anyone praising Gemini is immediately accused of being fake or a shill ... in the Gemini subreddit. Why do I even follow this sub?"
-     },
-     {
-      "text": "It's interesting how Gemini subs have almost no moderation. Stuff like this gets wiped off other subreddits. The bad part is that means Gemini subreddits are perfect for astroturfing campaigns."
-     },
-     {
-      "text": "This is one of the most confusing models I have ever seen. How can it be so inconsistent? One moment it's flagship SOTA beating out Opus 5.5 the next moment it's hallucinating who the president is and missing very basic and obvious things? I feel like it still really boils down to the agentic abilities just being weak with Google models but it's really hard to pinpoint still."
-     },
-     {
-      "text": "It's beating Opus at multiple tasks for me then failing at the most basic its a crazy model, it specialises in certain tasks"
-     },
-     {
-      "text": "Funny how when someone posted the video in the image below supposedly showing Argon performing much worse than Opus 5.5, it got over 2000 upvotes before mods removed it. People proved it was fake in the comments too. Now someone shows Argon supposedly doing something better than Opus 5.5, and dude gets downvoted in the same Gemini sub. Damn, at least prove it's fake first. 😂 https://preview.redd.it/8bu8bp6a5ivh1.jpeg?width=901&format=pjpg&auto=webp&s=c6290365b0937c8686882d4875ddf9d068e1e396"
-     },
-     {
-      "text": "This sub is so fucked lol, I’m convinced it’s botted because why would people who hate Gemini so much be spending so much time hanging out in its subreddit. It’s weird"
-     },
-     {
-      "text": "Tears of Opus in the comments."
-     },
-     {
-      "text": "Fake"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9756,33 +9498,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x69oce/sad_zelda_link_dont_want_to_be_toys_anymore/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I know people aren't posting their videos made with MiniMax H3 anymore... Which is really sad, but I wanted to share mine still! I made a lot of upgrades to my usual workflow and added some gaussian blur to the live action scenes along with film grain (all using KDEnlive) which removes some of the oily skin of AI video in general! This was made with a vertical orientation, sorry about that!",
-    "topComments": [
-     {
-      "text": "this is some robot chicken shit and i love it."
-     },
-     {
-      "text": "I think you found a first excellent use case."
-     },
-     {
-      "text": "lol, terry is the GOAT. Netflix mode indeed"
-     },
-     {
-      "text": "A Netflix Zelda with Terry as Zelda would be the best thing!"
-     },
-     {
-      "text": "It would have been fun to see them turn into the Phillips CD-i version."
-     },
-     {
-      "text": "Holy moly I absolutely forgot about that!! That'd have been cool"
-     },
-     {
-      "text": "Do we not have a way to upscale/replace audio as a separate pass yet? It sounds like I'm listening at low bitrate underwater. Concept and animation absolutely passable."
-     },
-     {
-      "text": "Excuuuuuuse me, Princess!"
-     }
-    ]
+    "text": "I know people aren't posting their videos made with MiniMax H3 anymore... Which is really sad, but I wanted to share mine still! I made a lot of upgrades to my usual workflow and added some gaussian blur to the live action scenes along with film grain (all using KDEnlive) which removes some of the oily skin of AI video in general! This was made with a vertical orientation, sorry about that!"
    },
    "sources": [
     "reddit"
@@ -10023,33 +9739,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x6dnrz/bank_of_america_hired_1000_contractors_to_patch/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Decades of legacy code getting scanned all at once😂"
-     },
-     {
-      "text": "Who is JSON"
-     },
-     {
-      "text": "just ask claude to fix the flaws, make no mistakes"
-     },
-     {
-      "text": "Half of the work those contractors will do is point out that Claude hallucinated bullshit"
-     },
-     {
-      "text": "500 zero days sounds in a banking system should still be taken seriously."
-     },
-     {
-      "text": "Where do you suddenly find 1000 contractors?"
-     },
-     {
-      "text": "Probably in the database of contractors they recently fired to replace them with AI."
-     },
-     {
-      "text": "Contracting firms I guess?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -10094,33 +9784,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1x6dytx/university_gpu_cluster_is_holding_my_research/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "PhD student here. My university’s GPU cluster has apparently become a luxury resort. I submit a job requesting a couple of GPUs, and it takes 3–4 business days just to START running. Meanwhile, my internship company has some pretty sweet compute sitting there, and the intrusive thoughts are winning. Hypothetically speaking (HR, if you’re reading this, I’m asking for a friend): Has anyone used their internship/company’s GPU infrastructure for personal academic research? I can't fall behind in the race this way. Would love to hear actual experiences.",
-    "topComments": [
-     {
-      "text": "Everyone I’ve heard doing this got fired, survivorship bias tho. I would ask/ not risk it. Imagine how big of a duffus you should have to be to have more thsn 50 employees and trust none lf them bitcoin unathorized"
-     },
-     {
-      "text": "definitely ask. also check your contract, it's relatively standard practice to claim IP rights on work done using company resources or on company time."
-     },
-     {
-      "text": "at that point its about principles, cant be trusted to not access the cluster for non-business purposes cant be trusted at work either"
-     },
-     {
-      "text": "You need to get permission at your work because they will absolutely fire you if it gets in the way of their business priorities without permission."
-     },
-     {
-      "text": "If its for a paper, they need to put details about data and compute provenance as well. If half of runs are on univeirty GPU, half on company GPU, it needs to be mentioned along with GPU models. I was reviewing a paper and the idiot ran Exp A on Colab, Exp B on Kaggle, and claimed in paper that Exp B was clear winner in case of compute time, and based on that claimed novelty for their Wxp B approcah"
-     },
-     {
-      "text": "Why not ask and position it as them sponsoring the furthering of your education with resources that are otherwise idle (if true) -- they might find that reputational benefit appealing."
-     },
-     {
-      "text": "If you care about your research don't taint it by using company resources and giving them a claim of ownership to it. If you care about your job or being able to get a job in the future from a reference, don't throw it away because you're impatient. If you care about your word, don't go back on the employment agreement you signed where you said you would not use company resources for personal gains."
-     },
-     {
-      "text": "If 3-4 days waiting means you’re falling behind in “the race” then maybe you are working on the wrong topic & have the wrong research priorities. You could be much happier and less stressed working on less crowded topics, with a more long term perspective."
-     }
-    ]
+    "text": "PhD student here. My university’s GPU cluster has apparently become a luxury resort. I submit a job requesting a couple of GPUs, and it takes 3–4 business days just to START running. Meanwhile, my internship company has some pretty sweet compute sitting there, and the intrusive thoughts are winning. Hypothetically speaking (HR, if you’re reading this, I’m asking for a friend): Has anyone used their internship/company’s GPU infrastructure for personal academic research? I can't fall behind in the race this way. Would love to hear actual experiences."
    },
    "sources": [
     "reddit"
