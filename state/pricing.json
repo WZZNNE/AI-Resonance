@@ -3017,6 +3017,26 @@
    "upd": "2026-09-10"
   },
   {
+   "cr": 0.006,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "in": 0.2,
+   "k": "deepseek-v4-1-flash-1017",
+   "maxOut": 384000,
+   "name": "DeepSeek V4.1 Flash 1017",
+   "out": 0.6,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-17"
+  },
+  {
    "ctx": 131072,
    "id": "google/gemma-3-12b-it",
    "in": 0.05,
@@ -3647,13 +3667,13 @@
    "in": 0.15,
    "k": "deepseek-flash",
    "maxOut": 393216,
-   "name": "DeepSeek V4.1 Flash",
+   "name": "DeepSeek V4.1 Flash 1017",
    "out": 0.6,
    "p": "deepseek",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-09-10"
+   "upd": "2026-10-17"
   },
   {
    "cr": 0.022,
@@ -6220,6 +6240,26 @@
    "upd": "2026-09-10"
   },
   {
+   "cr": 0.003,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "deepseek-v4.1-flash:1017",
+   "in": 0.15,
+   "k": "deepseek-v4-1-flash",
+   "maxOut": 384000,
+   "name": "DeepSeek V4.1 Flash 1017",
+   "out": 0.6,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-17"
+  },
+  {
    "cr": 0.05,
    "ctx": 262144,
    "id": "gemma4:31b",
@@ -7335,7 +7375,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.001523,
+   "cr": 0.0086,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7344,11 +7384,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.00392,
+   "in": 0.0086,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.143616,
+   "out": 1.28,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8531,7 +8571,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0536,
+   "in": 0.0648,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
@@ -13508,7 +13548,7 @@
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 3.2,
+   "out": 4.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16278,6 +16318,7 @@
    "upd": "2025-07-28"
   },
   {
+   "cr": 0.11,
    "ctx": 64000,
    "id": "glm-4.5v",
    "in": 0.6,
@@ -16308,6 +16349,7 @@
    "upd": "2025-09-30"
   },
   {
+   "cr": 0.05,
    "ctx": 128000,
    "id": "glm-4.6v",
    "in": 0.3,
@@ -16577,6 +16619,7 @@
    "upd": "2025-07-28"
   },
   {
+   "cr": 0.11,
    "ctx": 64000,
    "id": "glm-4.5v",
    "in": 0.6,
@@ -16607,6 +16650,7 @@
    "upd": "2025-09-30"
   },
   {
+   "cr": 0.05,
    "ctx": 128000,
    "id": "glm-4.6v",
    "in": 0.3,
@@ -17111,5 +17155,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-18T01:12:59.104Z"
+ "updatedAt": "2026-10-18T03:48:58.508Z"
 }
