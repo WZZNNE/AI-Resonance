@@ -6554,6 +6554,27 @@
    "upd": "2026-05-31"
   },
   {
+   "cr": 0.015,
+   "ctx": 1000000,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "minimax-m3.1-flash",
+   "in": 0.15,
+   "k": "minimax-m3-1-flash",
+   "maxOut": 512000,
+   "name": "MiniMax-M3.1-Flash",
+   "out": 0.6,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-19"
+  },
+  {
    "ctx": 262144,
    "id": "mistral-large-3:675b",
    "in": 0.5,
@@ -7419,7 +7440,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.006,
+   "cr": 0.005,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7428,7 +7449,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.047,
+   "in": 0.041,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -7439,7 +7460,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.00714,
+   "cr": 0.13,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7448,18 +7469,18 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2244,
+   "in": 0.1307,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 0.6732,
+   "out": 8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0114,
+   "cr": 0.003304,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7468,11 +7489,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0114,
+   "in": 0.00392,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.45,
+   "out": 0.12,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7703,7 +7724,7 @@
    "upd": "2026-08-27"
   },
   {
-   "cr": 0.028,
+   "cr": 0.033,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -7711,7 +7732,7 @@
     "max"
    ],
    "id": "~z-ai/glm-latest",
-   "in": 0.045,
+   "in": 0.053,
    "k": "glm-latest",
    "maxOut": 943718,
    "name": "GLM Latest",
@@ -8593,7 +8614,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.035902,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8601,11 +8622,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.430824,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 0.861648,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8641,7 +8662,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0376,
+   "in": 0.0328,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
@@ -17220,5 +17241,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-19T12:57:42.953Z"
+ "updatedAt": "2026-10-19T16:08:29.333Z"
 }

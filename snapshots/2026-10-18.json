@@ -5275,10 +5275,10 @@
    "category": "research",
    "key": "arxiv:2610.23297",
    "metrics": {
-    "codeStars": 10,
+    "codeStars": 11,
     "prior": 0.3
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "paper": {
     "abstract": "Single-image refocusing changes the focal plane and depth of field of a photograph after capture. It is inherently interactive: users try many focal points and blur strengths on one image, so each edit should be fast and change only the blur. Recent generative methods, however, rerun large diffusion models for every edit. We observe that the two sub-problems differ in kind: recovering the all-in-focus image is ill-posed and needs a generative prior, whereas rendering blur is largely determined by depth and the focal plane. We therefore propose FlashReFocus, which runs diffusion once per photograph and renders every edit with a lightweight network. To address the ill-posed restoration, a one-step diffusion deblurrer with a decoder refiner recovers fine detail efficiently while balancing fidelity and perceptual quality. For precise control, the renderer is conditioned on an explicit defocus map and uses defocus-bias attention, which lets pixels at similar defocus share information without interference from pixels at other depths; in-focus content stays unchanged, and editing the map yields tilt-shift and two focal planes. To further test generalization to unseen cameras, we collect 3CReal, a three-camera benchmark of 89 pairs. FlashReFocus achieves the best perceptual fidelity for zero-shot bokeh rendering on EBB! and 3CReal, refocuses 148.3x faster than GenRefocus, and takes about half a second per further edit, 462x faster.",
     "arxivAnnouncedAt": "2026-10-19T00:00:00.000Z",
@@ -5297,7 +5297,7 @@
      "cs.AI",
      "eess.IV"
     ],
-    "codeStars": 10,
+    "codeStars": 11,
     "codeUrl": "https://github.com/ming053l/FlashReFocus",
     "pdfUrl": "https://arxiv.org/pdf/2610.23297"
    },
@@ -5332,7 +5332,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "paper": {
     "abstract": "Self-supervised representation learning has advanced time series forecasting by capturing robust features from unlabeled data. However, existing contrastive and masking-based methods often struggle to explicitly model the underlying temporal flow, either by treating time lag as noise or by disrupting the inherent temporal dynamics essential for forecasting. To address these limitations, we propose OliO (**O**DE-based **Li**near Transition **O**perator), a plug-and-play self-supervised learning method that learns bidirectional temporal flows as a continuous and structurally consistent dynamical system. OliO introduces a transition operator derived from linear Ordinary Differential Equations (ODEs) to align latent representations across arbitrary time shifts. By imposing a strictly upper triangular constraint on the transition matrix, we mathematically ensure numerical stability and enforce a robust polynomial boundary that effectively captures long-term dependencies while preventing the exponential divergence typically found in unconstrained ODE-based models. This structural constraint induces a temporally coherent representation space that preserves the underlying flow essential for accurate forecasting. Extensive experiments across various backbone architectures and benchmarks demonstrate that OliO achieves significant performance gains, providing Mean Squared Error (MSE) reductions of up to 5.75% over the most competitive grid-searched SOTA baselines. The code is available at *https://github.com/eai-lab/OliO*",
     "arxivAnnouncedAt": "2026-10-19T00:00:00.000Z",
@@ -5423,7 +5423,7 @@
     "codeStars": 4,
     "prior": 0.3
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "paper": {
     "abstract": "Information-theoretic measures, such as Mutual Information (MI), play a crucial role in understanding non-linear relationships between random variables and are widely used across scientific disciplines. Yet, their use on real-world discrete data remains challenging. Existing methods typically rely on embedding discrete data into a continuous space and apply neural estimators originally designed for continuous distributions. This process requires careful engineering for both the embedding model and estimator architecture, but suffers from issues related to high data dimensionality. In this work, we introduce InfoSEDD, a discrete diffusion-based approach that bridges information-theoretic estimation and generative modeling such that they can be used to compute Kullback-Leibler divergences. Backed by Continuous Time Markov Chains theory principles, the design of InfoSEDD is lightweight and scalable and allows seamless integration with pretrained models. We showcase the versatility of our approach through applications on motif discovery in genetic promoter data, semantic-aware model selection in text summarization, and entropy estimation in Ising models. Finally, we construct consistency tests on real-world textual and genomics data. Our experiments demonstrate that InfoSEDD outperforms alternatives that rely on the \"embedding trick\". Our results position InfoSEDD as a robust and scalable tool for information-theoretic analysis of discrete data.",
     "arxivAnnouncedAt": "2026-10-19T00:00:00.000Z",
@@ -5473,7 +5473,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "paper": {
     "abstract": "Multimodal Large Language Models (MLLMs) have significantly advanced instruction-driven perception through the \"Embedding-as-Mask\" paradigm. However, extending this capability to Remote Sensing (RS) reasoning segmentation remains exceptionally challenging under cluttered geographical contexts and extreme scale variations, often leading to Spatial Fidelity Degradation and Target Misidentification. We identify a critical yet underexplored bottleneck: the sequential alienation of the segmentation token [SEG] from its initial visual grounding within the autoregressive generation paradigm. Produced only at the end of long reasoning chains, [SEG] relies on visual evidence that has been progressively diluted by linguistic abstraction and autoregressive noise. This information decay is particularly catastrophic for RS targets with minuscule pixel footprints, where even marginal fidelity loss leads to localization failure. To address these bottlenecks, we propose GeoReason, a novel framework designed to fortify logical deduction and preserve spatial integrity. First, we introduce an Anticipatory Prior mechanism that injects the [SEG] token directly into the initial user query, shifting it from a terminal output to a primary condition. This paradigm shift transforms the token into a persistent spatial anchor, preventing information decay during long-form linguistic inference. Second, we enhance visual reasoning via a Location-aware Chain-of-Thought (CoT) that enforces coarse-to-fine localization using bounding boxes, coupled with a Latent Patch-to-Token Alignment (PTA) Loss that explicitly aligns the latent segmentation token with physical RS textures. Extensive experiments demonstrate that GeoReason consistently outperforms state-of-the-art methods on the Earthreason and RRSIS-D benchmarks. Code is available at https://github.com/Fanc0126/GeoReason.",
     "arxivAnnouncedAt": "2026-10-19T00:00:00.000Z",
@@ -5520,20 +5520,20 @@
    "category": "discussion",
    "key": "hn:50139873",
    "metrics": {
-    "comments": 224,
+    "comments": 236,
     "frontPage": 0,
-    "points": 132
+    "points": 140
    },
    "news": {
     "author": "theanonymousone",
-    "comments": 224,
+    "comments": 236,
     "createdAt": "2026-10-18T10:49:26.000Z",
     "domain": "anthropic.com",
     "hnId": 50139873,
     "hnUrl": "https://news.ycombinator.com/item?id=50139873",
-    "points": 132
+    "points": 140
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T10:49:26.000Z",
    "refs": [
     "url:anthropic.com/research/employment-at-anthropic"
@@ -5572,7 +5572,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50139877",
     "points": 14
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T10:49:56.000Z",
    "refs": [
     "url:comptroller.nyc.gov/reports/letter-to-anthropic-re-planned-initial-public-offering"
@@ -5597,20 +5597,20 @@
    "category": "discussion",
    "key": "hn:50140462",
    "metrics": {
-    "comments": 111,
+    "comments": 116,
     "frontPage": 0,
-    "points": 89
+    "points": 95
    },
    "news": {
     "author": "DeepLogin",
-    "comments": 111,
+    "comments": 116,
     "createdAt": "2026-10-18T12:22:58.000Z",
     "domain": "vals.ai",
     "hnId": 50140462,
     "hnUrl": "https://news.ycombinator.com/item?id=50140462",
-    "points": 89
+    "points": 95
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T12:22:58.000Z",
    "refs": [
     "url:vals.ai/blogs/impossible-refund"
@@ -5649,7 +5649,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50140784",
     "points": 30
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T13:08:50.000Z",
    "refs": [
     "url:vllm.ai/blog/2026-10-16-kimi-k3-megakernel"
@@ -5677,7 +5677,7 @@
    "metrics": {
     "comments": 165,
     "frontPage": 0,
-    "points": 166
+    "points": 168
    },
    "news": {
     "author": "f-serif",
@@ -5686,9 +5686,9 @@
     "domain": "tomshardware.com",
     "hnId": 50141429,
     "hnUrl": "https://news.ycombinator.com/item?id=50141429",
-    "points": 166
+    "points": 168
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T14:30:27.000Z",
    "refs": [
     "url:tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model"
@@ -5714,20 +5714,20 @@
    "category": "discussion",
    "key": "hn:50141657",
    "metrics": {
-    "comments": 139,
+    "comments": 145,
     "frontPage": 0,
-    "points": 149
+    "points": 153
    },
    "news": {
     "author": "evolve2k",
-    "comments": 139,
+    "comments": 145,
     "createdAt": "2026-10-18T14:58:10.000Z",
     "domain": "theverge.com",
     "hnId": 50141657,
     "hnUrl": "https://news.ycombinator.com/item?id=50141657",
-    "points": 149
+    "points": 153
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T14:58:10.000Z",
    "refs": [
     "url:theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web"
@@ -5768,7 +5768,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50142323",
     "points": 16
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:08:48.000Z",
    "refs": [
     "url:thenewstack.io/torvalds-claude-code-kernel"
@@ -5806,7 +5806,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50143755",
     "points": 57
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:15:10.000Z",
    "refs": [
     "url:anthropic.com/news/public-benefit-fund"
@@ -5831,20 +5831,20 @@
    "category": "discussion",
    "key": "hn:50145337",
    "metrics": {
-    "comments": 216,
+    "comments": 226,
     "frontPage": 1,
-    "points": 441
+    "points": 479
    },
    "news": {
     "author": "allinonai",
-    "comments": 216,
+    "comments": 226,
     "createdAt": "2026-10-18T20:48:14.000Z",
     "domain": "arxiv.org",
     "hnId": 50145337,
     "hnUrl": "https://news.ycombinator.com/item?id=50145337",
-    "points": 441
+    "points": 479
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T20:48:14.000Z",
    "refs": [
     "arxiv:2610.18861",
@@ -5875,20 +5875,20 @@
    "category": "discussion",
    "key": "hn:50145507",
    "metrics": {
-    "comments": 152,
+    "comments": 181,
     "frontPage": 1,
-    "points": 211
+    "points": 266
    },
    "news": {
     "author": "amrrs",
-    "comments": 152,
+    "comments": 181,
     "createdAt": "2026-10-18T21:09:12.000Z",
     "domain": "jrdsgl.com",
     "hnId": 50145507,
     "hnUrl": "https://news.ycombinator.com/item?id=50145507",
-    "points": 211
+    "points": 266
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T21:09:12.000Z",
    "refs": [
     "url:jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on"
@@ -5913,20 +5913,20 @@
    "category": "tool",
    "key": "hn:50145715",
    "metrics": {
-    "comments": 68,
-    "frontPage": 1,
-    "points": 124
+    "comments": 73,
+    "frontPage": 0,
+    "points": 143
    },
    "news": {
     "author": "zoozla",
-    "comments": 68,
+    "comments": 73,
     "createdAt": "2026-10-18T21:36:10.000Z",
     "domain": "github.com",
     "hnId": 50145715,
     "hnUrl": "https://news.ycombinator.com/item?id=50145715",
-    "points": 124
+    "points": 143
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T21:36:10.000Z",
    "refs": [
     "gh:finereli/whatsapp-mcp"
@@ -5953,20 +5953,20 @@
    "category": "tool",
    "key": "hn:50148396",
    "metrics": {
-    "comments": 11,
+    "comments": 12,
     "frontPage": 0,
     "points": 23
    },
    "news": {
     "author": "solohunter001",
-    "comments": 11,
+    "comments": 12,
     "createdAt": "2026-10-19T04:32:07.000Z",
     "domain": "github.com",
     "hnId": 50148396,
     "hnUrl": "https://news.ycombinator.com/item?id=50148396",
     "points": 23
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T04:32:07.000Z",
    "refs": [
     "gh:strot-ai/project-strot"
@@ -5993,20 +5993,20 @@
    "category": "discussion",
    "key": "hn:50148452",
    "metrics": {
-    "comments": 62,
+    "comments": 75,
     "frontPage": 0,
-    "points": 165
+    "points": 176
    },
    "news": {
     "author": "theanonymousone",
-    "comments": 62,
+    "comments": 75,
     "createdAt": "2026-10-19T04:41:46.000Z",
     "domain": "artificialanalysis.ai",
     "hnId": 50148452,
     "hnUrl": "https://news.ycombinator.com/item?id=50148452",
-    "points": 165
+    "points": 176
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T04:41:46.000Z",
    "refs": [
     "url:artificialanalysis.ai/models/deepseek-v4-1-flash-1017"
@@ -6031,20 +6031,20 @@
    "category": "discussion",
    "key": "hn:50148855",
    "metrics": {
-    "comments": 46,
+    "comments": 79,
     "frontPage": 1,
-    "points": 74
+    "points": 116
    },
    "news": {
     "author": "ankitg12",
-    "comments": 46,
+    "comments": 79,
     "createdAt": "2026-10-19T05:55:31.000Z",
     "domain": "crystl.dev",
     "hnId": 50148855,
     "hnUrl": "https://news.ycombinator.com/item?id=50148855",
-    "points": 74
+    "points": 116
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T05:55:31.000Z",
    "refs": [
     "url:crystl.dev/guides/tmux-for-ai-agents"
@@ -7404,12 +7404,12 @@
    "key": "rd:1x97fve",
    "metrics": {
     "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 1,
-    "feedN": 35,
-    "feedRank": 8
+    "communityN": 24,
+    "communityRank": 3,
+    "feedN": 39,
+    "feedRank": 11
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:26:43.000Z",
    "refs": [],
    "relevance": {
@@ -7476,13 +7476,13 @@
    "key": "rd:1x97u7u",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
+    "communityN": 12,
     "communityRank": 2,
     "feedN": 100,
     "feedRank": 11,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:42:59.000Z",
    "refs": [],
    "relevance": {
@@ -7523,11 +7523,11 @@
    "metrics": {
     "authority": 1.4,
     "communityN": 13,
-    "communityRank": 4,
-    "feedN": 35,
-    "feedRank": 4
+    "communityRank": 5,
+    "feedN": 39,
+    "feedRank": 5
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:43:58.000Z",
    "refs": [
     "arxiv:2510.25502",
@@ -7574,12 +7574,12 @@
    "key": "rd:1x97vwv",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
-    "communityRank": 3,
+    "communityN": 12,
+    "communityRank": 5,
     "feedN": 100,
-    "feedRank": 27
+    "feedRank": 32
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:45:00.000Z",
    "refs": [],
    "relevance": {
@@ -7667,12 +7667,12 @@
    "key": "rd:1x980x4",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
+    "communityN": 12,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 8
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:50:45.000Z",
    "refs": [
     "rd:1ww5o7y",
@@ -7746,13 +7746,13 @@
    "key": "rd:1x981mq",
    "metrics": {
     "authority": 1,
-    "communityN": 1,
+    "communityN": 2,
     "communityRank": 1,
-    "feedN": 35,
-    "feedRank": 27,
+    "feedN": 39,
+    "feedRank": 29,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:51:36.000Z",
    "refs": [],
    "relevance": {
@@ -7794,12 +7794,12 @@
    "key": "rd:1x98bit",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
-    "communityRank": 1,
+    "communityN": 8,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 31
+    "feedRank": 38
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T17:02:46.000Z",
    "refs": [],
    "relevance": {
@@ -7865,15 +7865,65 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1x99j56",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 32,
+    "communityRank": 6,
+    "feedN": 100,
+    "feedRank": 24
+   },
+   "observedAt": "2026-10-19T16:08:29.333Z",
+   "publishedAt": "2026-10-18T17:50:58.000Z",
+   "refs": [
+    "gh:beckettharriman/gimp-openfill"
+   ],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "kw:text-to-image",
+     "weak:ai",
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Speedeee_",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-10-18T17:50:58.000Z",
+    "handle": "Speedeee_",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x99j56/generative_fill_remove_and_expand_now_native_in/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "The thing I missed most after switching from Photoshop to GIMP 3 was Generative Fill and Adobe's AI editing tools. So I wrote a free plugin that adds them, running on your own ComfyUI: Generative Fill: your selection is the inpainting mask, pick from up to 8 variations Remove object: LaMa or MAT, no prompt needed Generative Expand: outpaint any side or pick a ratio Text to Image: straight onto a new layer It uses the ComfyUI you already have (portable, Desktop, Stability Matrix or Pinokio), so nothing gets installed twice, and it works with any local image model. It ships with a download…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "The thing I missed most after switching from Photoshop to GIMP 3 was Generative Fill and Adobe's AI editing tools. So I wrote a free plugin that adds them, running on your own ComfyUI: Generative Fill: your selection is the inpainting mask, pick from up to 8 variations Remove object: LaMa or MAT, no prompt needed Generative Expand: outpaint any side or pick a ratio Text to Image: straight onto a new layer It uses the ComfyUI you already have (portable, Desktop, Stability Matrix or Pinokio), so nothing gets installed twice, and it works with any local image model. It ships with a download…",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "Generative Fill, Remove and Expand now native in GIMP 3, running on your own ComfyUI and local models",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1x99j56/generative_fill_remove_and_expand_now_native_in/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1x99sel",
    "metrics": {
     "authority": 0.9,
-    "communityN": 65,
-    "communityRank": 6,
+    "communityN": 58,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 7
+    "feedRank": 5
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:00:42.000Z",
    "refs": [
     "gh:kodoque1/sm64-gba"
@@ -7917,12 +7967,12 @@
    "key": "rd:1x9a50t",
    "metrics": {
     "authority": 0.9,
-    "communityN": 14,
+    "communityN": 26,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 2
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:14:32.000Z",
    "refs": [
     "url:anthropic.com/news/public-benefit-fund"
@@ -7992,12 +8042,12 @@
    "key": "rd:1x9acj4",
    "metrics": {
     "authority": 1.3,
-    "communityN": 24,
+    "communityN": 35,
     "communityRank": 5,
     "feedN": 100,
-    "feedRank": 15
+    "feedRank": 13
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:22:43.000Z",
    "refs": [],
    "relevance": {
@@ -8039,12 +8089,12 @@
    "key": "rd:1x9ain3",
    "metrics": {
     "authority": 0.9,
-    "communityN": 65,
+    "communityN": 58,
     "communityRank": 2,
     "feedN": 100,
     "feedRank": 3
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:29:34.000Z",
    "refs": [],
    "relevance": {
@@ -8085,12 +8135,12 @@
    "key": "rd:1x9ar5c",
    "metrics": {
     "authority": 1,
-    "communityN": 12,
-    "communityRank": 3,
+    "communityN": 8,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 26
+    "feedRank": 24
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:39:15.000Z",
    "refs": [],
    "relevance": {
@@ -8130,12 +8180,12 @@
    "key": "rd:1x9b73g",
    "metrics": {
     "authority": 1,
-    "communityN": 12,
+    "communityN": 8,
     "communityRank": 4,
     "feedN": 100,
     "feedRank": 36
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T18:56:45.000Z",
    "refs": [],
    "relevance": {
@@ -8175,12 +8225,12 @@
    "key": "rd:1x9bpur",
    "metrics": {
     "authority": 1,
-    "communityN": 12,
+    "communityN": 8,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 24
+    "feedRank": 19
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T19:17:09.000Z",
    "refs": [],
    "relevance": {
@@ -8213,13 +8263,10 @@
       "text": "i feel that. the constant \"we're working on it\" updates got old when the actual work kept getting worse. i was paying for two plans too and it felt like setting money on fire half the time swapping to claude was the same for me, code comes out cleaner and i'm not spending half my day fixing dumb mistakes. the allowance thing is the real kicker, like why am i paying the same for less"
      },
      {
-      "text": "20$ for codex just for generating images, rest goes to Claude"
-     },
-     {
-      "text": "At that point just buy the 20 in fal.ai usage and let Claude go wild with img gen."
-     },
-     {
       "text": "It's funny to me that OpenAI has decided that it doesn't want $200/mo anymore."
+     },
+     {
+      "text": "20$ for codex just for generating images, rest goes to Claude"
      },
      {
       "text": "same for me. Claude is MUCH better at managing and planning. Sol workers/reviewers are so good and cheap - the only problem is they burn usage on dumb detours and plans. I just use both together and tell claude to plan/manage workflows"
@@ -8229,6 +8276,9 @@
      },
      {
       "text": "claude was better since opus 5.5 release but just this last week a bit wonky it's always changing."
+     },
+     {
+      "text": "Stop bro. I’m already on the edge of leaving Codex for good, despite the multiple banked resets and credits I have. You’re about to push me over! 😫 I’ve been on the fence for 2 weeks now."
      }
     ]
    },
@@ -8250,10 +8300,10 @@
     "authority": 1.4,
     "communityN": 13,
     "communityRank": 1,
-    "feedN": 35,
+    "feedN": 39,
     "feedRank": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T19:34:36.000Z",
    "refs": [
     "url:warlock.ai/blog/warcraftsim-1"
@@ -8317,12 +8367,12 @@
    "key": "rd:1x9d23j",
    "metrics": {
     "authority": 1.3,
-    "communityN": 24,
-    "communityRank": 3,
+    "communityN": 35,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 4
+    "feedRank": 2
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T20:10:16.000Z",
    "refs": [],
    "relevance": {
@@ -8361,65 +8411,16 @@
   },
   {
    "board": "social",
-   "category": "research",
-   "key": "rd:1x9d9hk",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 14,
-    "communityRank": 6,
-    "feedN": 100,
-    "feedRank": 19
-   },
-   "observedAt": "2026-10-19T09:53:45.729Z",
-   "publishedAt": "2026-10-18T20:18:33.000Z",
-   "refs": [
-    "url:news.cgtn.com/news/2026-10-15/Chinese-researchers-solve-3D-Ghys-conjecture-with-homegrown-AI-model-1RgD8zQ3Z3a/p.html"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:singularity",
-     "weak:ai",
-     "weak:model",
-     "cat:researchers"
-    ],
-    "score": 0.55
-   },
-   "social": {
-    "author": "yogthos",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "singularity",
-    "createdAt": "2026-10-18T20:18:33.000Z",
-    "handle": "yogthos",
-    "likes": 0,
-    "linkUrl": "https://news.cgtn.com/news/2026-10-15/Chinese-researchers-solve-3D-Ghys-conjecture-with-homegrown-AI-model-1RgD8zQ3Z3a/p.html",
-    "permalink": "https://www.reddit.com/r/singularity/comments/1x9d9hk/chinese_researchers_solve_3d_ghys_conjecture_with/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/singularity"
-   ],
-   "title": "Chinese researchers solve 3D Ghys conjecture with homegrown AI model",
-   "url": "https://www.reddit.com/r/singularity/comments/1x9d9hk/chinese_researchers_solve_3d_ghys_conjecture_with/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
    "key": "rd:1x9dkj3",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
-    "communityRank": 4,
+    "communityN": 12,
+    "communityRank": 6,
     "feedN": 100,
-    "feedRank": 29
+    "feedRank": 33
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T20:31:08.000Z",
    "refs": [],
    "relevance": {
@@ -8460,12 +8461,12 @@
    "key": "rd:1x9dl1f",
    "metrics": {
     "authority": 0.9,
-    "communityN": 65,
+    "communityN": 58,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T20:31:44.000Z",
    "refs": [
     "gh:pierruno-labs/browsecraft",
@@ -8506,7 +8507,7 @@
       "text": "And sell them to who?"
      },
      {
-      "text": "Just because you can make a sandwich at home doesnt mean you will stop going to a sandwich shop."
+      "text": "While I don't disagree with the sentiment and while I'm confident this will probably get me downvoted here, but... these projects are technically impressive but are actually a bit of a buggy messy and only do fairly basic aspects of the functionality. In nearly all cases they are less capable than existing open source alternatives (which is likely where the agents drew much of their investigation from). I've only really played with some of the adobe ones, but from what I've seen the same is…"
      },
      {
       "text": "They tried to replace software engineers... so we're replacing their software."
@@ -8537,10 +8538,10 @@
     "authority": 1.4,
     "communityN": 13,
     "communityRank": 3,
-    "feedN": 35,
+    "feedN": 39,
     "feedRank": 3
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T20:52:02.000Z",
    "refs": [],
    "relevance": {
@@ -8578,15 +8579,60 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1x9ec6d",
+   "metrics": {
+    "authority": 0.8,
+    "communityN": 32,
+    "communityRank": 5,
+    "feedN": 100,
+    "feedRank": 22
+   },
+   "observedAt": "2026-10-19T16:08:29.333Z",
+   "publishedAt": "2026-10-18T21:02:59.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:StableDiffusion",
+     "weak:model",
+     "cat:board"
+    ],
+    "score": 0.35
+   },
+   "social": {
+    "author": "Pitiful_Archer_4381",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "StableDiffusion",
+    "createdAt": "2026-10-18T21:02:59.000Z",
+    "handle": "Pitiful_Archer_4381",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x9ec6d/update_me_on_minimax/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "Hey all back after long time can you guys please tell me what is best model right now Best - Fast best - Fast ok - Just Fast- Also what happened to minimax h3 max have they open sourced it no trace of it was found 99% tweets about opensourcing it are deleted"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "Hey all back after long time can you guys please tell me what is best model right now Best - Fast best - Fast ok - Just Fast- Also what happened to minimax h3 max have they open sourced it no trace of it was found 99% tweets about opensourcing it are deleted",
+   "tags": [
+    "r/StableDiffusion"
+   ],
+   "title": "UPDATE ME ON MINIMAX",
+   "url": "https://www.reddit.com/r/StableDiffusion/comments/1x9ec6d/update_me_on_minimax/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1x9eis6",
    "metrics": {
     "authority": 0.8,
-    "communityN": 38,
-    "communityRank": 11,
+    "communityN": 32,
+    "communityRank": 12,
     "feedN": 100,
     "feedRank": 35
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T21:10:51.000Z",
    "refs": [
     "gh:openmoss/moss-image",
@@ -8629,12 +8675,12 @@
    "key": "rd:1x9frha",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
-    "communityRank": 5,
+    "communityN": 12,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 32
+    "feedRank": 30
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T22:03:58.000Z",
    "refs": [],
    "relevance": {
@@ -8677,12 +8723,12 @@
    "key": "rd:1x9gfnb",
    "metrics": {
     "authority": 1.3,
-    "communityN": 24,
+    "communityN": 35,
     "communityRank": 1,
     "feedN": 100,
     "feedRank": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T22:33:51.000Z",
    "refs": [
     "gh:google-research/harness2"
@@ -8750,102 +8796,96 @@
   },
   {
    "board": "social",
-   "category": "tool",
-   "key": "rd:1x9h9un",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 5,
-    "feedN": 35,
-    "feedRank": 14
-   },
-   "observedAt": "2026-10-19T09:53:45.729Z",
-   "publishedAt": "2026-10-18T23:13:40.000Z",
-   "refs": [
-    "gh:flaviusburghila/claude-agent-kit"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:claude",
-     "weak:agent",
-     "weak:model",
-     "weak:models",
-     "cat:plugin"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "investigatormaker",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-10-18T23:13:40.000Z",
-    "handle": "investigatormaker",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x9h9un/mitlicensed_claude_code_plugin_cheaper_models/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "If you run Claude Code on Opus for a whole session, you've probably seen this happen. A large share of the main context goes to reading files, searching and writing routine code. Then, when you need careful judgment or a real review of the change, the context is already crowded. Subagents are the usual answer. But setting them up and deciding when the main session should hand work off takes some thought. Most people end up with a different ad hoc setup in every project. claude-agent-kit is an open-source Claude Code plugin that packages one way of doing this. The idea is simple: cheaper…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "If you run Claude Code on Opus for a whole session, you've probably seen this happen. A large share of the main context goes to reading files, searching and writing routine code. Then, when you need careful judgment or a real review of the change, the context is already crowded. Subagents are the usual answer. But setting them up and deciding when the main session should hand work off takes some thought. Most people end up with a different ad hoc setup in every project. claude-agent-kit is an open-source Claude Code plugin that packages one way of doing this. The idea is simple: cheaper…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "MIT-licensed Claude Code plugin: cheaper models handle I/O and implementation, Opus handles judgment and review",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1x9h9un/mitlicensed_claude_code_plugin_cheaper_models/"
-  },
-  {
-   "board": "social",
    "category": "discussion",
-   "key": "rd:1x9hhxw",
+   "key": "rd:1x9hbcm",
    "metrics": {
-    "authority": 0.9,
-    "communityN": 14,
-    "communityRank": 5,
+    "authority": 1,
+    "communityN": 8,
+    "communityRank": 6,
     "feedN": 100,
-    "feedRank": 13
+    "feedRank": 76
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
-   "publishedAt": "2026-10-18T23:24:50.000Z",
-   "refs": [
-    "url:the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs"
-   ],
+   "observedAt": "2026-10-19T16:08:29.333Z",
+   "publishedAt": "2026-10-18T23:15:42.000Z",
+   "refs": [],
    "relevance": {
     "reasons": [
-     "community:singularity",
-     "kw:agentic",
-     "kw:deepseek",
-     "cat:board"
+     "community:OpenAI",
+     "kw:chatgpt",
+     "kw:codex",
+     "cat:?"
     ],
     "score": 0.85
    },
    "social": {
-    "author": "yogthos",
+    "author": "matshala",
     "authorKind": "community",
     "comments": 0,
-    "community": "singularity",
-    "createdAt": "2026-10-18T23:24:50.000Z",
-    "handle": "yogthos",
+    "community": "OpenAI",
+    "createdAt": "2026-10-18T23:15:42.000Z",
+    "handle": "matshala",
     "likes": 0,
-    "linkUrl": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/",
-    "permalink": "https://www.reddit.com/r/singularity/comments/1x9hhxw/deepseek_v41_flash_1017_beats_larger_rivals_in/",
+    "permalink": "https://www.reddit.com/r/OpenAI/comments/1x9hbcm/how_do_you_go_from_brainstorming_on_your_phone_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": ""
+    "text": "I’m getting a bit lost in all the ChatGPT/Codex terminology. Chat, Work, Codex, Chat Cloud, Work Cloud… I keep finding myself unsure which environment I’m in, what it has access to, and how it connects to the others. There was a post some days ago on here, and you folks seemed to find it euqally frustrating. But this is a quastion, not a rant: I use Codex on my Mac for several projects, with access to local project folders. That part makes sense to me. What I haven’t figured out is how to carry those projects with me when I’m away from my computer. Ideally, I’d like to open my phone, talk…"
    },
    "sources": [
     "reddit"
    ],
-   "summary": "",
+   "summary": "I’m getting a bit lost in all the ChatGPT/Codex terminology. Chat, Work, Codex, Chat Cloud, Work Cloud… I keep finding myself unsure which environment I’m in, what it has access to, and how it connects to the others. There was a post some days ago on here, and you folks seemed to find it euqally frustrating. But this is a quastion, not a rant: I use Codex on my Mac for several projects, with access to local project folders. That part makes sense to me. What I haven’t figured out is how to carry those projects with me when I’m away from my computer. Ideally, I’d like to open my phone, talk…",
    "tags": [
-    "r/singularity"
+    "r/OpenAI"
    ],
-   "title": "Deepseek V4.1 Flash 1017 beats larger rivals in agentic tasks while once again massively cutting per-task costs",
-   "url": "https://www.reddit.com/r/singularity/comments/1x9hhxw/deepseek_v41_flash_1017_beats_larger_rivals_in/"
+   "title": "How do you go from brainstorming on your phone to working in local Codex?",
+   "url": "https://www.reddit.com/r/OpenAI/comments/1x9hbcm/how_do_you_go_from_brainstorming_on_your_phone_to/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
+   "key": "rd:1x9itd3",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 58,
+    "communityRank": 5,
+    "feedN": 100,
+    "feedRank": 11
+   },
+   "observedAt": "2026-10-19T16:08:29.333Z",
+   "publishedAt": "2026-10-19T00:28:22.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:ClaudeAI",
+     "kw:anthropic",
+     "kw:claude",
+     "weak:ai",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Panic_Lion",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "ClaudeAI",
+    "createdAt": "2026-10-19T00:28:22.000Z",
+    "handle": "Panic_Lion",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1x9itd3/accenture_just_capped_claude_spend_at_29person/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "This week Accenture told staff the company will only centrally fund about $29 a month per person for Claude. Some people had been running $500–$1,000 months. That is what a \"successful\" rollout looks like when nobody knows what Claude is for: seats get used for slides, emails, and summaries, the bill climbs, finance slams a cap, and the people who were actually doing real work get cut with everyone else. Anthropic already said why this happens. In their Economic Index last year they wrote that deploying AI for complex work \"might be constrained more by access to information than on…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "This week Accenture told staff the company will only centrally fund about $29 a month per person for Claude. Some people had been running $500–$1,000 months. That is what a \"successful\" rollout looks like when nobody knows what Claude is for: seats get used for slides, emails, and summaries, the bill climbs, finance slams a cap, and the people who were actually doing real work get cut with everyone else. Anthropic already said why this happens. In their Economic Index last year they wrote that deploying AI for complex work \"might be constrained more by access to information than on…",
+   "tags": [
+    "r/ClaudeAI"
+   ],
+   "title": "Accenture just capped Claude spend at $29/person after some staff hit $1,000 months. Most companies are wasting the same money.",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1x9itd3/accenture_just_capped_claude_spend_at_29person/"
   },
   {
    "board": "social",
@@ -8854,11 +8894,11 @@
    "metrics": {
     "authority": 1.4,
     "communityN": 13,
-    "communityRank": 5,
-    "feedN": 35,
-    "feedRank": 5
+    "communityRank": 4,
+    "feedN": 39,
+    "feedRank": 4
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T01:34:31.000Z",
    "refs": [],
    "relevance": {
@@ -8902,12 +8942,12 @@
    "key": "rd:1x9khtm",
    "metrics": {
     "authority": 0.8,
-    "communityN": 38,
-    "communityRank": 6,
+    "communityN": 32,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 20
+    "feedRank": 17
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T01:53:06.000Z",
    "refs": [
     "gh:shootthesound/fizgig"
@@ -8915,10 +8955,12 @@
    "relevance": {
     "reasons": [
      "community:StableDiffusion",
+     "kw:qwen",
+     "weak:model",
      "weak:training",
      "cat:board"
     ],
-    "score": 0.35
+    "score": 1
    },
    "social": {
     "author": "shootthesound",
@@ -8931,12 +8973,12 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x9khtm/a_potential_fix_for_moss_training_issues/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "So it's 2:43 in the morning here as I write this. I went to bed, then got up again, because something from my MiniMax H3 training wouldn't leave me alone - on H3 I had to shift the share of training steps at the clean end of the noise range (where faces and fine detail get refined) before likeness came good. So I compared MOSS's training sigmas with Krea 2's and it was like looking at MiniMax all over again. MOSS's own schedule puts only about 11% of steps at the clean end (sigma below 0.5), Krea 2 is 18-28%. The rest go to layout and composition, which explains the big jumps epoch to epoch…"
+    "text": "Update Monday Morning: TLDR: The 60 setting worked very well. Setting it at 30 which I've run since works even better, a good balance where it still learns composition but attends to finer detail at a similar level as Krea 2 and Qwen Image 2.1 training schedules. Detail of all of this can be found below. Monday Afternoon EDIT: 30 is the best setting so far for me. I've done trains today at 60 and 30, and 30 pulls ahead after about 300-400 steps and stays there, with some of the best likeness I've had from this dataset on any model and it translates to comfyui also. It also keeps a better…"
    },
    "sources": [
     "reddit"
    ],
-   "summary": "So it's 2:43 in the morning here as I write this. I went to bed, then got up again, because something from my MiniMax H3 training wouldn't leave me alone - on H3 I had to shift the share of training steps at the clean end of the noise range (where faces and fine detail get refined) before likeness came good. So I compared MOSS's training sigmas with Krea 2's and it was like looking at MiniMax all over again. MOSS's own schedule puts only about 11% of steps at the clean end (sigma below 0.5), Krea 2 is 18-28%. The rest go to layout and composition, which explains the big jumps epoch to epoch…",
+   "summary": "Update Monday Morning: TLDR: The 60 setting worked very well. Setting it at 30 which I've run since works even better, a good balance where it still learns composition but attends to finer detail at a similar level as Krea 2 and Qwen Image 2.1 training schedules. Detail of all of this can be found below. Monday Afternoon EDIT: 30 is the best setting so far for me. I've done trains today at 60 and 30, and 30 pulls ahead after about 300-400 steps and stays there, with some of the best likeness I've had from this dataset on any model and it translates to comfyui also. It also keeps a better…",
    "tags": [
     "r/StableDiffusion"
    ],
@@ -8949,13 +8991,13 @@
    "key": "rd:1x9m4gs",
    "metrics": {
     "authority": 0.9,
-    "communityN": 14,
+    "communityN": 26,
     "communityRank": 3,
     "feedN": 100,
-    "feedRank": 9,
+    "feedRank": 6,
     "mediaOnly": 1
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T03:17:48.000Z",
    "refs": [],
    "relevance": {
@@ -9000,12 +9042,12 @@
    "key": "rd:1x9mwmz",
    "metrics": {
     "authority": 1.3,
-    "communityN": 24,
-    "communityRank": 8,
+    "communityN": 35,
+    "communityRank": 9,
     "feedN": 100,
-    "feedRank": 26
+    "feedRank": 23
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T04:01:26.000Z",
    "refs": [
     "gh:ggml-org/llama.cpp"
@@ -9049,12 +9091,12 @@
    "key": "rd:1x9obdy",
    "metrics": {
     "authority": 0.9,
-    "communityN": 9,
-    "communityRank": 2,
+    "communityN": 8,
+    "communityRank": 4,
     "feedN": 100,
-    "feedRank": 40
+    "feedRank": 41
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T05:21:03.000Z",
    "refs": [],
    "relevance": {
@@ -9090,104 +9132,51 @@
   },
   {
    "board": "social",
-   "category": "tool",
-   "key": "rd:1x9opp0",
+   "category": "discussion",
+   "key": "rd:1x9plhu",
    "metrics": {
-    "authority": 1.1,
+    "authority": 0.9,
     "communityN": 21,
-    "communityRank": 6,
-    "feedN": 35,
-    "feedRank": 15
+    "communityRank": 3,
+    "feedN": 100,
+    "feedRank": 7
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
-   "publishedAt": "2026-10-19T05:44:46.000Z",
-   "refs": [
-    "gh:anil951/decisionact"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:llm",
-     "weak:agent",
-     "weak:agents",
-     "weak:model",
-     "weak:models",
-     "cat:framework"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "AgitatedReveal07",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-10-19T05:44:46.000Z",
-    "handle": "AgitatedReveal07",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x9opp0/decisionact_an_opensource_python_agent_framework/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Hi everyone! I'm building DecisionAct, an open-source Python framework for predefined agents. The idea is simple: not every agent needs an LLM to generate every response. For workflows with predefined actions and outcomes, decision models may offer a faster and cheaper alternative while still understanding natural-language requests. You define intents, tools, and outcomes. Decision models interpret requests, choose which tools to call, and select an allowed outcome. Python functions execute the actions, and predefined templates generate the final response. Currently, DecisionAct supports…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Hi everyone! I'm building DecisionAct, an open-source Python framework for predefined agents. The idea is simple: not every agent needs an LLM to generate every response. For workflows with predefined actions and outcomes, decision models may offer a faster and cheaper alternative while still understanding natural-language requests. You define intents, tools, and outcomes. Decision models interpret requests, choose which tools to call, and select an allowed outcome. Python functions execute the actions, and predefined templates generate the final response. Currently, DecisionAct supports…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "DecisionAct: An open-source Python agent framework using decision models instead of LLM-generated replies",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1x9opp0/decisionact_an_opensource_python_agent_framework/"
-  },
-  {
-   "board": "social",
-   "category": "product",
-   "key": "rd:1x9owab",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 21,
-    "communityRank": 4,
-    "feedN": 35,
-    "feedRank": 12
-   },
-   "observedAt": "2026-10-19T09:53:45.729Z",
-   "publishedAt": "2026-10-19T05:55:49.000Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
+   "publishedAt": "2026-10-19T06:39:45.000Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "community:LLMDevs",
-     "kw:openai",
-     "kw:anthropic",
-     "weak:model",
-     "weak:models",
-     "weak:inference",
-     "weak:gpu",
-     "cat:api"
+     "community:GeminiAI",
+     "kw:gpt",
+     "kw:claude",
+     "kw:gemini",
+     "weak:ai",
+     "cat:board"
     ],
     "score": 1
    },
    "social": {
-    "author": "Milan_Slov26",
+    "author": "ThePrimeNumbers",
     "authorKind": "community",
     "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-10-19T05:55:49.000Z",
-    "handle": "Milan_Slov26",
+    "community": "GeminiAI",
+    "createdAt": "2026-10-19T06:39:45.000Z",
+    "handle": "ThePrimeNumbers",
     "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x9owab/owning_vs_renting_vs_api_for_inference_all_comes/",
+    "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x9plhu/cancel_your_subscriptions/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "This is so basic but i'm writing this because it’s something I’ve been reading about a lot lately, on Reddit, on X, and in my Slack. More and more teams are running their own models now instead of just hitting an API, and the thing everyone gets stuck on is what to actually run them on. There are basically three ways to get the compute, and they only really separate once you work out your real cost per GPU-hour at the utilization you’ll actually hold. If you go the API route (OpenAI, Anthropic, Google), it’s the cheapest way to start, you pay per token and never touch infrastructure. That…"
+    "text": "This is unacceptable. Not only is Gemini 4 Argon slightly below the capabilities of Claude Opus 5.5 and GPT 6 Astra, it’s usage is downright horrendous. I have never seen my usage rates be completely eaten like a rabid dog. The only way Google feels the pain is if we vote with our wallets. Cancel our subscriptions, get refunds if you can, this is unacceptable behavior from a trillion dollar company. We were promised a good AI, and we got one that is slightly below SOTA, with negligible usage rates. Many users report 1 message can take up 100% of the usage. So the only way we get Google to…"
    },
    "sources": [
     "reddit"
    ],
-   "summary": "This is so basic but i'm writing this because it’s something I’ve been reading about a lot lately, on Reddit, on X, and in my Slack. More and more teams are running their own models now instead of just hitting an API, and the thing everyone gets stuck on is what to actually run them on. There are basically three ways to get the compute, and they only really separate once you work out your real cost per GPU-hour at the utilization you’ll actually hold. If you go the API route (OpenAI, Anthropic, Google), it’s the cheapest way to start, you pay per token and never touch infrastructure. That…",
+   "summary": "This is unacceptable. Not only is Gemini 4 Argon slightly below the capabilities of Claude Opus 5.5 and GPT 6 Astra, it’s usage is downright horrendous. I have never seen my usage rates be completely eaten like a rabid dog. The only way Google feels the pain is if we vote with our wallets. Cancel our subscriptions, get refunds if you can, this is unacceptable behavior from a trillion dollar company. We were promised a good AI, and we got one that is slightly below SOTA, with negligible usage rates. Many users report 1 message can take up 100% of the usage. So the only way we get Google to…",
    "tags": [
-    "r/LLMDevs"
+    "r/GeminiAI"
    ],
-   "title": "Owning vs renting vs API for inference all comes down to how busy the GPU actually stays",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1x9owab/owning_vs_renting_vs_api_for_inference_all_comes/"
+   "title": "Cancel your subscriptions",
+   "url": "https://www.reddit.com/r/GeminiAI/comments/1x9plhu/cancel_your_subscriptions/"
   },
   {
    "board": "social",
@@ -9195,12 +9184,12 @@
    "key": "rd:1x9plxo",
    "metrics": {
     "authority": 0.8,
-    "communityN": 38,
-    "communityRank": 4,
+    "communityN": 32,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 13
+    "feedRank": 5
    },
-   "observedAt": "2026-10-19T09:53:45.729Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T06:40:31.000Z",
    "refs": [],
    "relevance": {
@@ -9223,7 +9212,33 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1x9plxo/kromoss_is_out/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "When did they manage to do that? Its a huge improvement in quality. https://huggingface.co/lodestones/Kromoss"
+    "text": "When did they manage to do that? Its a huge improvement in quality. https://huggingface.co/lodestones/Kromoss",
+    "topComments": [
+     {
+      "text": "https://preview.redd.it/ajx5u20wjdwh1.png?width=846&format=png&auto=webp&s=13f6a483b359d5a08865740521cb10c10c608b4d Example I saw on the banodoco discord. Looks far less AI slopped already."
+     },
+     {
+      "text": "Crazy how fast releases"
+     },
+     {
+      "text": "I don't know about huge. The images have different aesthetic differences. The deer is technically worse. It has like... cat or dog ears."
+     },
+     {
+      "text": "That was lightning fast. I haven't even recovered from the MOSS shock yet, and here comes Kromoss... I'm going to lose my mind. Plus, Lode released a 4-step lora for Kroma as well. Thank you u/LodestoneRock!"
+     },
+     {
+      "text": "Yo Lodestone, give us a break, I just finished 3 Kroma 0.3.1 workflows, let me breath 😅! Speedy Gonzales."
+     },
+     {
+      "text": "Thanks. Why flux2-vae_small instead of flux2-vae?"
+     },
+     {
+      "text": "it's what the creators used. they said it fixes some visual bugs that appear otherwise."
+     },
+     {
+      "text": "Can someone please explain the whole hype around the moss image model? I installed it and tested it out and for the life of me cant figure out the whole praise. What can it do differently that the other models cannot (or does better than other models). Someone please educate us noobs - examples would be great."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9253,7 +9268,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-18T16:49:35.513Z",
    "refs": [
     "hn:50143755",
@@ -9294,7 +9309,7 @@
     "release": 0.5,
     "surface": 0.1
    },
-   "observedAt": "2026-10-19T12:57:42.953Z",
+   "observedAt": "2026-10-19T16:08:29.333Z",
    "publishedAt": "2026-10-19T04:00:00.000Z",
    "refs": [],
    "relevance": {
@@ -9314,7 +9329,7 @@
   }
  ],
  "date": "2026-10-18",
- "fetchedAt": "2026-10-19T12:57:42.953Z",
+ "fetchedAt": "2026-10-19T16:08:29.333Z",
  "runs": [
   "2026-10-18T07:44:47.181Z",
   "2026-10-18T08:46:41.098Z",
@@ -9329,150 +9344,168 @@
   "2026-10-19T07:57:34.538Z",
   "2026-10-19T08:55:20.616Z",
   "2026-10-19T09:53:45.729Z",
-  "2026-10-19T12:57:42.953Z"
+  "2026-10-19T12:57:42.953Z",
+  "2026-10-19T16:08:29.333Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "arxiv",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 316,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 319,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "github-search",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 80,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 79,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "github-trending",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 166,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 171,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "hacker-news",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 139,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 143,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "hf-papers",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 11,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "journals",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 15,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-anthropic",
    "message": "claude-blog: html: no entries",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-deepseek",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 10,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 11,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-google",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-kimi",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-meta",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 2,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 1,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-minimax",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 5,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-mistral",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 20,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-qwen",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 3,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "labs-zhipu",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "count": 237,
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-10-19T09:53:45.729Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -9481,9 +9514,10 @@
   {
    "board": "social",
    "count": 8,
-   "fetchedAt": "2026-10-19T12:57:42.953Z",
+   "fetchedAt": "2026-10-19T16:08:29.333Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-10-19T16:08:29.333Z",
    "state": "ok"
   }
  ],
