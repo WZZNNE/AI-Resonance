@@ -3716,6 +3716,26 @@
    "upd": "2026-09-10"
   },
   {
+   "cr": 0.006,
+   "ctx": 1000000,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "accounts/fireworks/models/deepseek-v4p1-flash-1017",
+   "in": 0.3,
+   "k": "deepseek-v4p1-flash-1017",
+   "maxOut": 384000,
+   "name": "DeepSeek V4.1 Flash 1017",
+   "out": 1.2,
+   "p": "fireworks-ai",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-17"
+  },
+  {
    "budget": {
     "min": 1024
    },
@@ -6108,6 +6128,28 @@
    "upd": "2026-07-02"
   },
   {
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "stepfun-ai/step-5-preview",
+   "in": 0,
+   "k": "step-5-preview",
+   "maxOut": 1048576,
+   "name": "Step 5 Preview",
+   "out": 0,
+   "p": "nvidia",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-20"
+  },
+  {
    "ctx": 1000000,
    "efforts": [
     "low",
@@ -7355,7 +7397,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.12,
+   "cr": 0.23,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7364,7 +7406,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.12,
+   "in": 0.225,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7375,7 +7417,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0114,
+   "cr": 0.00224,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7384,11 +7426,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0114,
+   "in": 0.0052,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.45,
+   "out": 0.12,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7426,7 +7468,7 @@
    "id": "~google/gemini-pro-latest",
    "in": 2,
    "k": "gemini-pro-latest",
-   "maxOut": 65536,
+   "maxOut": 943718,
    "name": "Gemini Pro Latest",
    "out": 10,
    "p": "openrouter",
@@ -8483,7 +8525,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0114,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8492,11 +8534,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0114,
+   "in": 0.15,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 0.45,
+   "out": 0.15,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8523,7 +8565,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.0174,
+   "cr": 0.079025,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8531,11 +8573,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.2088,
+   "in": 0.9483,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.4176,
+   "out": 1.8966,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8562,7 +8604,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.0016,
+   "cr": 0.007,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8571,11 +8613,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0608,
+   "in": 0.06,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.12,
+   "out": 0.55,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9042,7 +9084,7 @@
    "id": "google/gemini-4-argon",
    "in": 2,
    "k": "gemini-4-argon",
-   "maxOut": 65536,
+   "maxOut": 943718,
    "name": "Gemini 4 Argon",
    "out": 10,
    "p": "openrouter",
@@ -12205,11 +12247,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3.5-27b",
-   "in": 0.26,
+   "in": 0.195,
    "k": "qwen3-5-27b",
-   "maxOut": 81920,
+   "maxOut": 65536,
    "name": "Qwen3.5 27B",
-   "out": 2.6,
+   "out": 1.56,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12845,7 +12887,7 @@
    "upd": "2026-08-19"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -12853,11 +12895,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12883,7 +12925,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12891,11 +12933,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17155,5 +17197,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-18T21:43:45.263Z"
+ "updatedAt": "2026-10-19T01:14:59.126Z"
 }
