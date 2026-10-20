@@ -1595,6 +1595,19 @@
    "upd": "2026-09-03"
   },
   {
+   "ctx": 128000,
+   "id": "c4ai-aya-expanse-32b",
+   "in": 0.5,
+   "k": "c4ai-aya-expanse-32b",
+   "maxOut": 4000,
+   "name": "Aya Expanse 32B",
+   "out": 1.5,
+   "p": "cohere",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2024-10-24"
+  },
+  {
    "ctx": 256000,
    "id": "command-a-03-2025",
    "in": 2.5,
@@ -1704,7 +1717,7 @@
    "p": "cohere",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2024-12-02"
+   "upd": "2024-12-13"
   },
   {
    "ctx": 128000,
@@ -4773,7 +4786,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-06-04"
+   "upd": "2026-06-02"
   },
   {
    "ctx": 262144,
@@ -6253,7 +6266,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.2,
+   "cr": 0.23,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6262,7 +6275,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2016,
+   "in": 0.225,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -6282,7 +6295,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.00912,
+   "in": 0.0052,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
@@ -6506,7 +6519,7 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.059076,
+   "in": 0.048,
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
@@ -6548,7 +6561,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-02-23"
+   "upd": "2025-12-21"
   },
   {
    "alwaysOn": true,
@@ -6563,7 +6576,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-07-07"
+   "upd": "2026-05-05"
   },
   {
    "alwaysOn": true,
@@ -6578,7 +6591,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-07-07"
+   "upd": "2026-05-14"
   },
   {
    "cr": 0.75,
@@ -6670,20 +6683,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2024-12-05"
-  },
-  {
-   "cr": 0.625,
-   "ctx": 1000000,
-   "id": "amazon/nova-premier-v1",
-   "in": 2.5,
-   "k": "nova-premier-v1",
-   "maxOut": 32000,
-   "name": "Nova Premier 1.0",
-   "out": 12.5,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-10-31"
   },
   {
    "ctx": 300000,
@@ -7040,34 +7039,6 @@
   },
   {
    "ctx": 262144,
-   "id": "bytedance-seed/seed-1.6",
-   "in": 0.25,
-   "k": "seed-1-6",
-   "maxOut": 32768,
-   "name": "Seed 1.6",
-   "out": 2,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-12-23"
-  },
-  {
-   "ctx": 262144,
-   "id": "bytedance-seed/seed-1.6-flash",
-   "in": 0.075,
-   "k": "seed-1-6-flash",
-   "maxOut": 32768,
-   "name": "Seed 1.6 Flash",
-   "out": 0.3,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-12-23"
-  },
-  {
-   "ctx": 262144,
    "id": "bytedance-seed/seed-2-1-turbo",
    "in": 0.5,
    "k": "seed-2-1-turbo",
@@ -7078,26 +7049,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-08-12"
-  },
-  {
-   "ctx": 262144,
-   "efforts": [
-    "none",
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "bytedance-seed/seed-2.0-code",
-   "in": 0.5,
-   "k": "seed-2-0-code",
-   "maxOut": 131072,
-   "name": "Seed 2.0 Code",
-   "out": 3,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-14"
+   "upd": "2026-06-23"
   },
   {
    "ctx": 262144,
@@ -7192,7 +7144,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-09-22"
+   "upd": "2026-06-09"
   },
   {
    "ctx": 128000,
@@ -7231,7 +7183,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2024-12-02"
+   "upd": "2024-12-13"
   },
   {
    "ctx": 256000,
@@ -7245,7 +7197,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-06-17"
+   "upd": "2026-06-09"
   },
   {
    "ctx": 163840,
@@ -7486,20 +7438,6 @@
    "upd": "2026-10-17"
   },
   {
-   "ctx": 512000,
-   "id": "dots-studio/dots-3-note-preview:free",
-   "in": 0,
-   "k": "dots-3-note-preview",
-   "maxOut": 460800,
-   "name": "Dots3-Note Preview (free)",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-08-14"
-  },
-  {
    "cr": 0.06,
    "ctx": 262144,
    "id": "elorian/glimpse",
@@ -7532,23 +7470,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-09-24"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 1048576,
-   "cw": 0.083333,
-   "id": "google/gemini-2.5-flash",
-   "in": 0.3,
-   "k": "gemini-2-5-flash",
-   "maxOut": 65535,
-   "name": "Gemini 2.5 Flash",
-   "out": 2.5,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-06-17"
+   "upd": "2026-09-22"
   },
   {
    "cr": 0.03,
@@ -7564,41 +7486,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-08-26"
-  },
-  {
-   "cr": 0.01,
-   "ctx": 1048576,
-   "cw": 0.083333,
-   "id": "google/gemini-2.5-flash-lite",
-   "in": 0.1,
-   "k": "gemini-2-5-flash-lite",
-   "maxOut": 65535,
-   "name": "Gemini 2.5 Flash-Lite",
-   "out": 0.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-06-17"
-  },
-  {
-   "budget": {
-    "max": 32768,
-    "min": 128
-   },
-   "cr": 0.125,
-   "ctx": 1048576,
-   "cw": 0.375,
-   "id": "google/gemini-2.5-pro",
-   "in": 1.25,
-   "k": "gemini-2-5-pro",
-   "maxOut": 65536,
-   "name": "Gemini 2.5 Pro",
-   "out": 10,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-06-17"
   },
   {
    "budget": {
@@ -8007,14 +7894,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8095,12 +7982,12 @@
    "in": 0.08,
    "k": "mythomax-l2-13b",
    "maxOut": 3686,
-   "name": "MythoMax 13B",
+   "name": "MythoMax L2 13B",
    "out": 0.11,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2023-07-02"
+   "upd": "2023-08-10"
   },
   {
    "ctx": 131000,
@@ -8132,7 +8019,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-08-31"
+   "upd": "2026-08-25"
   },
   {
    "cr": 0.025,
@@ -8152,7 +8039,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-03-04"
+   "upd": "2026-02-24"
   },
   {
    "cr": 0.004,
@@ -8237,7 +8124,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-10-02"
+   "upd": "2026-09-29"
   },
   {
    "cr": 0.05,
@@ -8251,7 +8138,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-09-12"
+   "upd": "2026-04-16"
   },
   {
    "cr": 0.03,
@@ -8265,7 +8152,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-09-12"
+   "upd": "2026-04-16"
   },
   {
    "alwaysOn": true,
@@ -8317,13 +8204,13 @@
    "in": 0.3,
    "k": "longcat-2-0",
    "maxOut": 262144,
-   "name": "LongCat 2.0",
+   "name": "LongCat-2.0",
    "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-07-20"
+   "upd": "2026-06-30"
   },
   {
    "ctx": 131072,
@@ -9235,32 +9122,6 @@
   },
   {
    "ctx": 131072,
-   "id": "nousresearch/hermes-3-llama-3.1-405b",
-   "in": 1,
-   "k": "hermes-3-llama-3-1-405b",
-   "maxOut": 16384,
-   "name": "Hermes 3 405B Instruct",
-   "out": 1,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-08-16"
-  },
-  {
-   "ctx": 131072,
-   "id": "nousresearch/hermes-3-llama-3.1-70b",
-   "in": 0.7,
-   "k": "hermes-3-llama-3-1-70b",
-   "maxOut": 16384,
-   "name": "Hermes 3 70B Instruct",
-   "out": 0.7,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-08-18"
-  },
-  {
-   "ctx": 131072,
    "id": "nousresearch/hermes-4-405b",
    "in": 1,
    "k": "hermes-4-405b",
@@ -9391,7 +9252,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-06-04"
+   "upd": "2026-06-02"
   },
   {
    "ctx": 128000,
@@ -9405,7 +9266,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-06-04"
+   "upd": "2026-06-02"
   },
   {
    "cr": 0.04,
@@ -9885,7 +9746,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-12-10"
+   "upd": "2025-12-11"
   },
   {
    "cr": 0.175,
@@ -10741,64 +10602,6 @@
    "upd": "2025-03-07"
   },
   {
-   "cr": 0.009,
-   "ctx": 1048576,
-   "id": "poolside/laguna-s-2.1",
-   "in": 0.09,
-   "k": "laguna-s-2-1",
-   "maxOut": 131072,
-   "name": "Laguna S 2.1",
-   "out": 0.18,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-07-21"
-  },
-  {
-   "ctx": 262144,
-   "id": "poolside/laguna-s-2.1:free",
-   "in": 0,
-   "k": "laguna-s-2-1",
-   "maxOut": 32768,
-   "name": "Laguna S 2.1 (free)",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-07-21"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 262144,
-   "id": "poolside/laguna-xs-2.1",
-   "in": 0.06,
-   "k": "laguna-xs-2-1",
-   "maxOut": 32768,
-   "name": "Laguna XS 2.1",
-   "out": 0.12,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-07-02"
-  },
-  {
-   "ctx": 262144,
-   "id": "poolside/laguna-xs-2.1:free",
-   "in": 0,
-   "k": "laguna-xs-2-1",
-   "maxOut": 32768,
-   "name": "Laguna XS 2.1 (free)",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-07-02"
-  },
-  {
    "cr": 0.0375,
    "ctx": 262144,
    "efforts": [
@@ -10849,12 +10652,12 @@
    "in": 0.66,
    "k": "qwen-2-5-coder-32b-instruct",
    "maxOut": 29491,
-   "name": "Qwen2.5 Coder 32B Instruct",
+   "name": "Qwen2.5-Coder-32B-Instruct",
    "out": 1,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2024-11-11"
+   "upd": "2024-11-12"
   },
   {
    "cr": 0.052,
@@ -10878,12 +10681,12 @@
    "in": 0.8,
    "k": "qwen2-5-vl-72b-instruct",
    "maxOut": 115200,
-   "name": "Qwen2.5 VL 72B Instruct",
+   "name": "Qwen2.5-VL 72B Instruct",
    "out": 1,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-02-01"
+   "upd": "2025-01-26"
   },
   {
    "ctx": 40960,
@@ -10979,7 +10782,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-07-23"
+   "upd": "2025-07-22"
   },
   {
    "ctx": 262144,
@@ -11162,20 +10965,6 @@
    "upd": "2026-02-15"
   },
   {
-   "ctx": 262144,
-   "id": "qwen/qwen3.5-9b",
-   "in": 0.1,
-   "k": "qwen3-5-9b",
-   "maxOut": 32768,
-   "name": "Qwen3.5 9B",
-   "out": 0.15,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-02-23"
-  },
-  {
    "ctx": 1000000,
    "id": "qwen/qwen3.5-flash-02-23",
    "in": 0.065,
@@ -11347,7 +11136,7 @@
    "upd": "2026-08-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.018,
    "ctx": 1000000,
    "efforts": [
     "none",
@@ -11356,11 +11145,11 @@
     "xhigh"
    ],
    "id": "qwen/qwen3.8-27b",
-   "in": 0.24,
+   "in": 0.04,
    "k": "qwen3-8-27b",
-   "maxOut": 235929,
+   "maxOut": 65536,
    "name": "Qwen3.8 27B",
-   "out": 2.2,
+   "out": 1.35,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11472,7 +11261,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-03-20"
+   "upd": "2026-03-11"
   },
   {
    "alwaysOn": true,
@@ -11486,7 +11275,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2025-03-12"
+   "upd": "2025-03-10"
   },
   {
    "ctx": 256000,
@@ -11718,7 +11507,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-08-20"
+   "upd": "2026-05-21"
   },
   {
    "ctx": 8192,
@@ -11731,7 +11520,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-08-20"
+   "upd": "2026-05-21"
   },
   {
    "ctx": 8192,
@@ -11744,7 +11533,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-08-19"
+   "upd": "2026-05-21"
   },
   {
    "cr": 0.033,
@@ -11992,7 +11781,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-09-23"
+   "upd": "2026-09-22"
   },
   {
    "cr": 0.015,
@@ -12013,7 +11802,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-01-27"
+   "upd": "2026-03-23"
   },
   {
    "cr": 0.03,
@@ -12036,7 +11825,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-08-10"
+   "upd": "2026-08-06"
   },
   {
    "ctx": 1040000,
@@ -12049,7 +11838,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-01-21"
+   "upd": "2025-04-28"
   },
   {
    "cr": 0.2,
@@ -12183,36 +11972,6 @@
   {
    "cr": 0.0028,
    "ctx": 1050000,
-   "id": "xiaomi/mimo-v2.5",
-   "in": 0.14,
-   "k": "mimo-v2-5",
-   "maxOut": 131072,
-   "name": "MiMo-V2.5",
-   "out": 0.28,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-22"
-  },
-  {
-   "cr": 0.0036,
-   "ctx": 1050000,
-   "id": "xiaomi/mimo-v2.5-pro",
-   "in": 0.435,
-   "k": "mimo-v2-5-pro",
-   "maxOut": 131072,
-   "name": "MiMo-V2.5-Pro",
-   "out": 0.87,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-22"
-  },
-  {
-   "cr": 0.0028,
-   "ctx": 1050000,
    "id": "xiaomi/mimo-v2.6-flash",
    "in": 0.14,
    "k": "mimo-v2-6-flash",
@@ -12268,21 +12027,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-10-16"
-  },
-  {
-   "cr": 0.11,
-   "ctx": 131072,
-   "id": "z-ai/glm-4.5",
-   "in": 0.6,
-   "k": "glm-4-5",
-   "maxOut": 98304,
-   "name": "GLM-4.5",
-   "out": 2.2,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-07-28"
   },
   {
    "cr": 0.025,
@@ -12457,7 +12201,7 @@
    "upd": "2026-08-14"
   },
   {
-   "cr": 0.03,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -12465,11 +12209,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.15,
+   "in": 0.048,
    "k": "glm-5-3-flash",
-   "maxOut": 943717,
+   "maxOut": 943718,
    "name": "GLM-5.3-Flash",
-   "out": 0.5,
+   "out": 0.16,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16065,5 +15809,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-20T03:51:04.739Z"
+ "updatedAt": "2026-10-20T07:00:00.018Z"
 }
