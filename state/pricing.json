@@ -6130,7 +6130,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.00375,
+   "cr": 0.00315,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6138,11 +6138,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.051691,
+   "in": 0.00441,
    "k": "glm-flash-latest",
    "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 0.12,
+   "out": 0.134175,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6978,7 +6978,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.034641,
+   "cr": 0.033234,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6986,11 +6986,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.415686,
+   "in": 0.398808,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.831372,
+   "out": 0.797616,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7513,14 +7513,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10850,6 +10850,20 @@
    "upd": "2026-09-17"
   },
   {
+   "alwaysOn": true,
+   "ctx": 262144,
+   "id": "recursive/flint-v1.0:free",
+   "in": 0,
+   "k": "flint-v1-0",
+   "maxOut": 235929,
+   "name": "Flint (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-19"
+  },
+  {
    "cr": 0.04,
    "ctx": 1048576,
    "efforts": [
@@ -11821,7 +11835,7 @@
    "upd": "2026-08-14"
   },
   {
-   "cr": 0.03,
+   "cr": 0.00315,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -11829,11 +11843,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.15,
+   "in": 0.00441,
    "k": "glm-5-3-flash",
-   "maxOut": 943717,
+   "maxOut": 943718,
    "name": "GLM-5.3-Flash",
-   "out": 0.5,
+   "out": 0.134175,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15916,5 +15930,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-21T18:51:41.505Z"
+ "updatedAt": "2026-10-21T21:46:41.158Z"
 }
