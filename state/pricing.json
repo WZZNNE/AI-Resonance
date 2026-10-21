@@ -2100,6 +2100,19 @@
    "upd": "2025-04-05"
   },
   {
+   "ctx": 163840,
+   "id": "meta-llama/Llama-Guard-4-12B",
+   "in": 0.18,
+   "k": "llama-guard-4-12b",
+   "maxOut": 163840,
+   "name": "Llama Guard 4 12B",
+   "out": 0.18,
+   "p": "deepinfra",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-04-29"
+  },
+  {
    "alwaysOn": true,
    "cr": 0.056,
    "ctx": 524288,
@@ -5965,7 +5978,7 @@
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 24,
+   "out": 16,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6965,7 +6978,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.035902,
+   "cr": 0.034641,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6973,11 +6986,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.430824,
+   "in": 0.415686,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 0.861648,
+   "out": 0.831372,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7922,7 +7935,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-04-30"
+   "upd": "2025-04-29"
   },
   {
    "cr": 0.04,
@@ -8771,6 +8784,7 @@
   },
   {
    "budget": {},
+   "cr": 0.15,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -8778,11 +8792,11 @@
     "medium"
    ],
    "id": "nvidia/nemotron-3-super-120b-a12b",
-   "in": 0.08,
+   "in": 0.3,
    "k": "nemotron-3-super-120b-a12b",
    "maxOut": 235929,
    "name": "Nemotron 3 Super 120B A12B",
-   "out": 0.45,
+   "out": 2.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11142,7 +11156,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11150,11 +11164,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11180,7 +11194,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11188,11 +11202,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -14642,103 +14656,6 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.02375,
-   "ctx": 256000,
-   "efforts": [
-    "minimal",
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "doubao-seed-1-6-251015",
-   "in": 0.11875,
-   "k": "doubao-seed-1-6-251015",
-   "maxOut": 64000,
-   "name": "Seed 1.6",
-   "out": 1.18747,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-10-15"
-  },
-  {
-   "cr": 0.00445,
-   "ctx": 256000,
-   "id": "doubao-seed-1-6-flash-250828",
-   "in": 0.02227,
-   "k": "doubao-seed-1-6-flash-250828",
-   "maxOut": 32000,
-   "name": "Seed 1.6 Flash",
-   "out": 0.22265,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-08-28"
-  },
-  {
-   "cr": 0.02375,
-   "ctx": 256000,
-   "id": "doubao-seed-1-6-vision-250815",
-   "in": 0.11875,
-   "k": "doubao-seed-1-6-vision-250815",
-   "maxOut": 32000,
-   "name": "Seed 1.6 Vision",
-   "out": 1.18747,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-08-15"
-  },
-  {
-   "cr": 0.02375,
-   "ctx": 256000,
-   "efforts": [
-    "none",
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "xhigh",
-    "max"
-   ],
-   "id": "doubao-seed-1-8-251228",
-   "in": 0.11875,
-   "k": "doubao-seed-1-8-251228",
-   "maxOut": 64000,
-   "name": "Seed 1.8",
-   "out": 1.18747,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-12-28"
-  },
-  {
-   "cr": 0.095,
-   "ctx": 262144,
-   "efforts": [
-    "none",
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "xhigh",
-    "max"
-   ],
-   "id": "doubao-seed-2-0-code-preview-260215",
-   "in": 0.47499,
-   "k": "doubao-seed-2-0-code-preview-260215",
-   "maxOut": 131072,
-   "name": "Seed 2.0 Code",
-   "out": 2.37494,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-14"
-  },
-  {
    "cr": 0.01781,
    "ctx": 256000,
    "efforts": [
@@ -14779,29 +14696,6 @@
    "maxOut": 131072,
    "name": "Seed 2.0 Mini",
    "out": 0.29687,
-   "p": "volcengine",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-14"
-  },
-  {
-   "cr": 0.095,
-   "ctx": 256000,
-   "efforts": [
-    "none",
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "xhigh",
-    "max"
-   ],
-   "id": "doubao-seed-2-0-pro-260215",
-   "in": 0.47499,
-   "k": "doubao-seed-2-0-pro-260215",
-   "maxOut": 128000,
-   "name": "Seed 2.0 Pro",
-   "out": 2.37494,
    "p": "volcengine",
    "reasoning": true,
    "src": "models.dev",
@@ -16022,5 +15916,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-21T15:48:59.102Z"
+ "updatedAt": "2026-10-21T18:51:41.505Z"
 }
