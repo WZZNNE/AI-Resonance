@@ -142,19 +142,6 @@
    "upd": "2025-04-13"
   },
   {
-   "ctx": 53248,
-   "id": "qwen3-asr-flash",
-   "in": 0.035,
-   "k": "qwen3-asr-flash",
-   "maxOut": 4096,
-   "name": "Qwen3-ASR Flash",
-   "out": 0.035,
-   "p": "alibaba",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-08"
-  },
-  {
    "ctx": 1000000,
    "id": "qwen3-coder-flash",
    "in": 0.3,
@@ -851,19 +838,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-09-11"
-  },
-  {
-   "ctx": 53248,
-   "id": "qwen3-asr-flash",
-   "in": 0.032,
-   "k": "qwen3-asr-flash",
-   "maxOut": 4096,
-   "name": "Qwen3-ASR Flash",
-   "out": 0.032,
-   "p": "alibaba-cn",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-08"
   },
   {
    "ctx": 1000000,
@@ -3742,7 +3716,7 @@
    "p": "lmstudio",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-07-30"
+   "upd": "2025-07-28"
   },
   {
    "ctx": 262144,
@@ -3755,7 +3729,7 @@
    "p": "lmstudio",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-07-23"
+   "upd": "2025-07-31"
   },
   {
    "cr": 0.06,
@@ -4128,7 +4102,7 @@
    "p": "modelscope",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-07-30"
+   "upd": "2025-07-28"
   },
   {
    "alwaysOn": true,
@@ -4316,19 +4290,6 @@
    "upd": "2026-07-16"
   },
   {
-   "ctx": 8192,
-   "id": "baai/bge-m3",
-   "in": 0,
-   "k": "bge-m3",
-   "maxOut": 1024,
-   "name": "BGE M3",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-04-30"
-  },
-  {
    "ctx": 1000000,
    "efforts": [
     "none",
@@ -4370,32 +4331,6 @@
    "upd": "2026-07-15"
   },
   {
-   "ctx": 131072,
-   "id": "google/gemma-3-12b-it",
-   "in": 0,
-   "k": "gemma-3-12b-it",
-   "maxOut": 16384,
-   "name": "Gemma 3 12B IT",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-03-12"
-  },
-  {
-   "ctx": 131072,
-   "id": "google/gemma-3-4b-it",
-   "in": 0,
-   "k": "gemma-3-4b-it",
-   "maxOut": 16384,
-   "name": "Gemma 3 4B IT",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-03-12"
-  },
-  {
    "ctx": 256000,
    "id": "google/gemma-4-31b-it",
    "in": 0,
@@ -4424,32 +4359,6 @@
   },
   {
    "ctx": 128000,
-   "id": "meta/esm2-650m",
-   "in": 0,
-   "k": "esm2-650m",
-   "maxOut": 8192,
-   "name": "esm2-650m",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-03-10"
-  },
-  {
-   "ctx": 128000,
-   "id": "meta/esmfold",
-   "in": 0,
-   "k": "esmfold",
-   "maxOut": 8192,
-   "name": "esmfold",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-06-12"
-  },
-  {
-   "ctx": 128000,
    "id": "meta/llama-3.2-11b-vision-instruct",
    "in": 0,
    "k": "llama-3-2-11b-vision-instruct",
@@ -4459,7 +4368,7 @@
    "p": "nvidia",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2024-09-18"
+   "upd": "2024-09-25"
   },
   {
    "ctx": 128000,
@@ -4475,7 +4384,7 @@
    "upd": "2024-09-25"
   },
   {
-   "ctx": 128000,
+   "ctx": 163840,
    "id": "meta/llama-guard-4-12b",
    "in": 0,
    "k": "llama-guard-4-12b",
@@ -4485,7 +4394,7 @@
    "p": "nvidia",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-04-30"
+   "upd": "2025-04-29"
   },
   {
    "ctx": 131072,
@@ -4507,64 +4416,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-08-10"
-  },
-  {
-   "ctx": 32768,
-   "id": "mistralai/magistral-small-2506",
-   "in": 0,
-   "k": "magistral-small-2506",
-   "maxOut": 32768,
-   "name": "Magistral Small 2506",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-25"
-  },
-  {
-   "ctx": 65536,
-   "id": "mistralai/mistral-7b-instruct-v0.3",
-   "in": 0,
-   "k": "mistral-7b-instruct-v0-3",
-   "maxOut": 65536,
-   "name": "Mistral-7B-Instruct-v0.3",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-04-01"
-  },
-  {
-   "ctx": 131072,
-   "id": "mistralai/mistral-medium-3-instruct",
-   "in": 0,
-   "k": "mistral-medium-3-instruct",
-   "maxOut": 32768,
-   "name": "Mistral Medium 3",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-09-25"
-  },
-  {
-   "ctx": 1048576,
-   "efforts": [
-    "low",
-    "high",
-    "max"
-   ],
-   "id": "moonshotai/kimi-k3",
-   "in": 0,
-   "k": "kimi-k3",
-   "maxOut": 131072,
-   "name": "Kimi K3",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-07-16"
   },
   {
    "id": "nvidia/active-speaker-detection",
@@ -4592,33 +4443,6 @@
    "upd": "2025-07-20"
   },
   {
-   "alwaysOn": true,
-   "ctx": 131072,
-   "id": "nvidia/cosmos-reason2-8b",
-   "in": 0,
-   "k": "cosmos-reason2-8b",
-   "maxOut": 16384,
-   "name": "Cosmos Reason2 8B",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-12-01"
-  },
-  {
-   "ctx": 128000,
-   "id": "nvidia/llama-3.1-nemotron-70b-instruct",
-   "in": 0,
-   "k": "llama-3-1-nemotron-70b-instruct",
-   "maxOut": 8192,
-   "name": "Llama 3.1 Nemotron 70B Instruct",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-04-15"
-  },
-  {
    "ctx": 128000,
    "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
    "in": 0,
@@ -4632,21 +4456,7 @@
    "upd": "2025-10-28"
   },
   {
-   "ctx": 128000,
-   "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
-   "in": 0,
-   "k": "llama-3-1-nemotron-ultra-253b-v1",
-   "maxOut": 16384,
-   "name": "Llama 3.1 Nemotron Ultra 253B",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-04-07"
-  },
-  {
-   "ctx": 128000,
+   "ctx": 10240,
    "id": "nvidia/llama-nemotron-rerank-vl-1b-v2",
    "in": 0,
    "k": "llama-nemotron-rerank-vl-1b-v2",
@@ -4656,7 +4466,7 @@
    "p": "nvidia",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-03-31"
+   "upd": "2025-12-18"
   },
   {
    "budget": {
@@ -4676,18 +4486,24 @@
    "upd": "2026-04-28"
   },
   {
-   "cr": 0.15,
+   "budget": {
+    "max": 32768
+   },
    "ctx": 1000000,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
    "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "in": 0.5,
+   "in": 0,
    "k": "nemotron-3-ultra-550b-a55b",
    "maxOut": 65536,
    "name": "Nemotron 3 Ultra 550B A55B",
-   "out": 2.5,
+   "out": 0,
    "p": "nvidia",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-06-04"
   },
   {
@@ -4747,32 +4563,6 @@
   },
   {
    "ctx": 128000,
-   "id": "nvidia/rerank-qa-mistral-4b",
-   "in": 0,
-   "k": "rerank-qa-mistral-4b",
-   "maxOut": 4096,
-   "name": "rerank-qa-mistral-4b",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-01-17"
-  },
-  {
-   "ctx": 128000,
-   "id": "nvidia/riva-translate-4b-instruct-v1.1",
-   "in": 0,
-   "k": "riva-translate-4b-instruct-v1-1",
-   "maxOut": 4096,
-   "name": "riva-translate-4b-instruct-v1_1",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-12-12"
-  },
-  {
-   "ctx": 128000,
    "id": "nvidia/sparsedrive",
    "in": 0,
    "k": "sparsedrive",
@@ -4798,19 +4588,6 @@
    "upd": "2025-11-13"
   },
   {
-   "ctx": 128000,
-   "id": "nvidia/studiovoice",
-   "in": 0,
-   "k": "studiovoice",
-   "maxOut": 8192,
-   "name": "studiovoice",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-06-13"
-  },
-  {
    "id": "nvidia/synthetic-video-detector",
    "in": 0,
    "k": "synthetic-video-detector",
@@ -4821,31 +4598,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-04-16"
-  },
-  {
-   "ctx": 128000,
-   "id": "nvidia/usdcode",
-   "in": 0,
-   "k": "usdcode",
-   "maxOut": 4096,
-   "name": "usdcode",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-01-01"
-  },
-  {
-   "id": "nvidia/usdvalidate",
-   "in": 0,
-   "k": "usdvalidate",
-   "maxOut": 4096,
-   "name": "usdvalidate",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-01-08"
   },
   {
    "ctx": 131072,
@@ -4866,6 +4618,7 @@
    "upd": "2025-08-05"
   },
   {
+   "ctx": 448,
    "id": "openai/whisper-large-v3",
    "in": 0,
    "k": "whisper-large-v3",
@@ -4875,7 +4628,7 @@
    "p": "nvidia",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-09-05"
+   "upd": "2023-11-06"
   },
   {
    "alwaysOn": true,
@@ -6119,7 +5872,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.23,
+   "cr": 0.13,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6128,7 +5881,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.225,
+   "in": 0.1307,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -6139,7 +5892,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.028,
+   "cr": 0.0275,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6148,11 +5901,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0475,
+   "in": 0.0422,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.1568,
+   "out": 0.1729,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6212,7 +5965,7 @@
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 16,
+   "out": 24,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7172,7 +6925,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.014,
+   "cr": 0.001414,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7181,11 +6934,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.44,
+   "in": 0.04444,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 131072,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 1.32,
+   "out": 0.13332,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7212,7 +6965,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.035902,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7220,11 +6973,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.430824,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 0.861648,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7251,7 +7004,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.001,
+   "cr": 0.000342,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7260,7 +7013,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.049,
+   "in": 0.02394,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
@@ -13015,7 +12768,7 @@
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-05-28"
   },
   {
    "ctx": 164000,
@@ -13028,7 +12781,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-03-24"
   },
   {
    "budget": {
@@ -13046,7 +12799,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-11-25"
+   "upd": "2025-08-21"
   },
   {
    "budget": {
@@ -13083,7 +12836,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-12-03"
+   "upd": "2025-12-01"
   },
   {
    "budget": {
@@ -13207,9 +12960,10 @@
    "upd": "2026-06-09"
   },
   {
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26B-A4B-it",
-   "in": 0.12,
+   "in": 0.14,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 262144,
    "name": "Gemma 4 26B A4B IT",
@@ -13220,13 +12974,14 @@
    "upd": "2026-04-02"
   },
   {
+   "cr": 0.25,
    "ctx": 262144,
    "id": "google/gemma-4-31B-it",
-   "in": 0.13,
+   "in": 0.75,
    "k": "gemma-4-31b-it",
    "maxOut": 262144,
    "name": "Gemma 4 31B IT",
-   "out": 0.4,
+   "out": 1,
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
@@ -13262,20 +13017,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-06-30"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 197000,
-   "id": "MiniMaxAI/MiniMax-M2.5",
-   "in": 0.3,
-   "k": "minimax-m2-5",
-   "maxOut": 131000,
-   "name": "MiniMaxAI/MiniMax-M2.5",
-   "out": 1.2,
-   "p": "siliconflow",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-06-15"
   },
   {
    "budget": {
@@ -13329,7 +13070,7 @@
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-06-15"
+   "upd": "2026-04-20"
   },
   {
    "budget": {
@@ -13372,24 +13113,6 @@
     "max": 32768,
     "min": 128
    },
-   "cr": 0.25,
-   "ctx": 262144,
-   "id": "nex-agi/Nex-N2-Pro",
-   "in": 0.5,
-   "k": "nex-n2-pro",
-   "maxOut": 256000,
-   "name": "Nex-N2-Pro",
-   "out": 2.5,
-   "p": "siliconflow",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-02"
-  },
-  {
-   "budget": {
-    "max": 32768,
-    "min": 128
-   },
    "ctx": 131000,
    "id": "openai/gpt-oss-120b",
    "in": 0.05,
@@ -13400,7 +13123,7 @@
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-08-05"
   },
   {
    "ctx": 131000,
@@ -13413,7 +13136,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-08-05"
   },
   {
    "ctx": 33000,
@@ -13439,7 +13162,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2024-09-19"
   },
   {
    "budget": {
@@ -13470,7 +13193,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-28"
   },
   {
    "budget": {
@@ -13488,7 +13211,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-11-25"
+   "upd": "2025-04-28"
   },
   {
    "budget": {
@@ -13506,7 +13229,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-11-25"
+   "upd": "2025-04-29"
   },
   {
    "ctx": 262000,
@@ -13519,7 +13242,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-31"
   },
   {
    "ctx": 262000,
@@ -13532,7 +13255,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-22"
   },
   {
    "ctx": 262000,
@@ -13545,10 +13268,13 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-10-04"
   },
   {
-   "alwaysOn": true,
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-30B-A3B-Thinking",
    "in": 0.29,
@@ -13575,7 +13301,10 @@
    "upd": "2025-11-25"
   },
   {
-   "alwaysOn": true,
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-32B-Thinking",
    "in": 0.2,
@@ -13628,6 +13357,7 @@
    "upd": "2026-02-23"
   },
   {
+   "cr": 0.15,
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-35B-A3B",
    "in": 0.24,
@@ -13642,19 +13372,6 @@
   },
   {
    "ctx": 262144,
-   "id": "Qwen/Qwen3.5-397B-A17B",
-   "in": 0.39,
-   "k": "qwen3-5-397b-a17b",
-   "maxOut": 262144,
-   "name": "Qwen3.5 397B-A17B",
-   "out": 2.34,
-   "p": "siliconflow",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-02-15"
-  },
-  {
-   "ctx": 262144,
    "id": "Qwen/Qwen3.5-9B",
    "in": 0.1,
    "k": "qwen3-5-9b",
@@ -13664,7 +13381,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2026-04-24"
+   "upd": "2026-02-23"
   },
   {
    "ctx": 262144,
@@ -13680,13 +13397,14 @@
    "upd": "2026-04-22"
   },
   {
+   "cr": 0.15,
    "ctx": 262144,
    "id": "Qwen/Qwen3.6-35B-A3B",
-   "in": 0.2,
+   "in": 0.24,
    "k": "qwen3-6-35b-a3b",
    "maxOut": 262144,
    "name": "Qwen3.6 35B-A3B",
-   "out": 1.6,
+   "out": 1.8,
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
@@ -13716,13 +13434,13 @@
    "id": "stepfun-ai/Step-3.5-Flash",
    "in": 0.1,
    "k": "step-3-5-flash",
-   "maxOut": 262000,
+   "maxOut": 66000,
    "name": "stepfun-ai/Step-3.5-Flash",
    "out": 0.3,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-02-11"
+   "upd": "2026-02-13"
   },
   {
    "budget": {
@@ -13771,7 +13489,7 @@
    "p": "siliconflow",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-28"
   },
   {
    "budget": {
@@ -13783,13 +13501,13 @@
    "id": "zai-org/GLM-5",
    "in": 0.95,
    "k": "glm-5",
-   "maxOut": 205000,
+   "maxOut": 131072,
    "name": "zai-org/GLM-5",
    "out": 2.55,
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-06-15"
+   "upd": "2026-02-12"
   },
   {
    "budget": {
@@ -13808,7 +13526,7 @@
    "p": "siliconflow",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-04-08"
+   "upd": "2026-04-07"
   },
   {
    "cr": 0.26,
@@ -13892,11 +13610,11 @@
   {
    "ctx": 262000,
    "id": "ByteDance-Seed/Seed-OSS-36B-Instruct",
-   "in": 0.21,
+   "in": 0.22417122,
    "k": "seed-oss-36b-instruct",
    "maxOut": 262000,
    "name": "ByteDance-Seed/Seed-OSS-36B-Instruct",
-   "out": 0.57,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
@@ -13920,39 +13638,42 @@
     "max": 32768,
     "min": 128
    },
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "deepseek-ai/DeepSeek-R1",
-   "in": 0.5,
+   "in": 0.59778991,
    "k": "deepseek-r1",
    "maxOut": 164000,
    "name": "deepseek-ai/DeepSeek-R1",
-   "out": 2.18,
+   "out": 2.39115964,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-05-28"
   },
   {
+   "cr": 0.0298895,
    "ctx": 164000,
    "id": "deepseek-ai/DeepSeek-V3",
-   "in": 0.25,
+   "in": 0.29889496,
    "k": "deepseek-v3",
    "maxOut": 164000,
    "name": "deepseek-ai/DeepSeek-V3",
-   "out": 1,
+   "out": 1.19557982,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-03-24"
   },
   {
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "deepseek-ai/DeepSeek-V3.1-Terminus",
-   "in": 0.27,
+   "in": 0.59778991,
    "k": "deepseek-v3-1-terminus",
    "maxOut": 164000,
    "name": "deepseek-ai/DeepSeek-V3.1-Terminus",
-   "out": 1,
+   "out": 1.79336973,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -13960,47 +13681,51 @@
    "upd": "2025-11-25"
   },
   {
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "deepseek-ai/DeepSeek-V3.2",
-   "in": 0.27,
+   "in": 0.59778991,
    "k": "deepseek-v3-2",
    "maxOut": 164000,
    "name": "deepseek-ai/DeepSeek-V3.2",
-   "out": 0.42,
+   "out": 0.89668487,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-12-03"
+   "upd": "2025-12-01"
   },
   {
-   "budget": {
-    "max": 32768,
-    "min": 128
-   },
-   "cr": 0.003,
+   "cr": 0.04483424,
    "ctx": 1000000,
+   "efforts": [
+    "high",
+    "max"
+   ],
    "id": "deepseek-ai/DeepSeek-V4-Flash",
-   "in": 0.14,
+   "in": 0.44834243,
    "k": "deepseek-v4-flash",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash",
-   "out": 0.28,
+   "out": 1.3450273,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-04-24"
   },
   {
-   "alwaysOn": true,
-   "cr": 0.145,
+   "cr": 0.14944748,
    "ctx": 1049000,
+   "efforts": [
+    "high",
+    "max"
+   ],
    "id": "deepseek-ai/DeepSeek-V4-Pro",
-   "in": 1.74,
+   "in": 1.79336973,
    "k": "deepseek-v4-pro",
    "maxOut": 393000,
    "name": "deepseek-ai/DeepSeek-V4-Pro",
-   "out": 3.48,
+   "out": 3.58673947,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14009,11 +13734,11 @@
   {
    "ctx": 131000,
    "id": "inclusionAI/Ling-flash-2.0",
-   "in": 0.14,
+   "in": 0.14944748,
    "k": "ling-flash-2-0",
    "maxOut": 131000,
    "name": "inclusionAI/Ling-flash-2.0",
-   "out": 0.57,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
@@ -14037,39 +13762,42 @@
     "max": 32768,
     "min": 128
    },
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "Pro/deepseek-ai/DeepSeek-R1",
-   "in": 0.5,
+   "in": 0.59778991,
    "k": "deepseek-r1",
    "maxOut": 164000,
    "name": "Pro/deepseek-ai/DeepSeek-R1",
-   "out": 2.18,
+   "out": 2.39115964,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-05-28"
   },
   {
+   "cr": 0.0298895,
    "ctx": 164000,
    "id": "Pro/deepseek-ai/DeepSeek-V3",
-   "in": 0.25,
+   "in": 0.29889496,
    "k": "deepseek-v3",
    "maxOut": 164000,
    "name": "Pro/deepseek-ai/DeepSeek-V3",
-   "out": 1,
+   "out": 1.19557982,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-03-24"
   },
   {
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
-   "in": 0.27,
+   "in": 0.59778991,
    "k": "deepseek-v3-1-terminus",
    "maxOut": 164000,
    "name": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
-   "out": 1,
+   "out": 1.79336973,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14077,100 +13805,59 @@
    "upd": "2025-11-25"
   },
   {
+   "cr": 0.05977899,
    "ctx": 164000,
    "id": "Pro/deepseek-ai/DeepSeek-V3.2",
-   "in": 0.27,
+   "in": 0.59778991,
    "k": "deepseek-v3-2",
    "maxOut": 164000,
    "name": "Pro/deepseek-ai/DeepSeek-V3.2",
-   "out": 0.42,
+   "out": 0.89668487,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-12-03"
-  },
-  {
-   "ctx": 192000,
-   "id": "Pro/MiniMaxAI/MiniMax-M2.5",
-   "in": 0.3,
-   "k": "minimax-m2-5",
-   "maxOut": 131000,
-   "name": "Pro/MiniMaxAI/MiniMax-M2.5",
-   "out": 1.22,
-   "p": "siliconflow-cn",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-02-13"
+   "upd": "2025-12-01"
   },
   {
    "alwaysOn": true,
-   "cr": 0.07,
-   "ctx": 262000,
-   "id": "Pro/moonshotai/Kimi-K2.5",
-   "in": 0.45,
-   "k": "kimi-k2-5",
-   "maxOut": 262000,
-   "name": "Pro/moonshotai/Kimi-K2.5",
-   "out": 2.25,
-   "p": "siliconflow-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-01-27"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.16,
+   "cr": 0.16439223,
    "ctx": 262000,
    "id": "Pro/moonshotai/Kimi-K2.6",
-   "in": 0.95,
+   "in": 0.97140861,
    "k": "kimi-k2-6",
    "maxOut": 262000,
    "name": "Pro/moonshotai/Kimi-K2.6",
-   "out": 4,
+   "out": 4.0350819,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-04-21"
-  },
-  {
-   "ctx": 205000,
-   "id": "Pro/zai-org/GLM-5",
-   "in": 1,
-   "k": "glm-5",
-   "maxOut": 205000,
-   "name": "Pro/zai-org/GLM-5",
-   "out": 3.2,
-   "p": "siliconflow-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-02-12"
+   "upd": "2026-04-20"
   },
   {
    "alwaysOn": true,
-   "cr": 0.26,
+   "cr": 0.19428172,
    "ctx": 205000,
    "cw": 0,
    "id": "Pro/zai-org/GLM-5.1",
-   "in": 1.4,
+   "in": 0.89668487,
    "k": "glm-5-1",
    "maxOut": 205000,
    "name": "Pro/zai-org/GLM-5.1",
-   "out": 4.4,
+   "out": 3.58673947,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-04-08"
+   "upd": "2026-04-07"
   },
   {
    "ctx": 33000,
    "id": "Qwen/Qwen2.5-72B-Instruct",
-   "in": 0.59,
+   "in": 0.61721808,
    "k": "qwen2-5-72b-instruct",
    "maxOut": 4000,
    "name": "Qwen/Qwen2.5-72B-Instruct",
-   "out": 0.59,
+   "out": 0.61721808,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
@@ -14179,15 +13866,15 @@
   {
    "ctx": 33000,
    "id": "Qwen/Qwen2.5-7B-Instruct",
-   "in": 0.05,
+   "in": 0,
    "k": "qwen2-5-7b-instruct",
    "maxOut": 4000,
    "name": "Qwen/Qwen2.5-7B-Instruct",
-   "out": 0.05,
+   "out": 0,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2024-09-19"
   },
   {
    "budget": {
@@ -14196,11 +13883,11 @@
    },
    "ctx": 131000,
    "id": "Qwen/Qwen3-14B",
-   "in": 0.07,
+   "in": 0.07472374,
    "k": "qwen3-14b",
    "maxOut": 131000,
    "name": "Qwen/Qwen3-14B",
-   "out": 0.28,
+   "out": 0.29889496,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14208,34 +13895,17 @@
    "upd": "2025-11-25"
   },
   {
-   "budget": {
-    "max": 32768,
-    "min": 128
-   },
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-   "in": 0.13,
-   "k": "qwen3-235b-a22b-thinking-2507",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-235B-A22B-Thinking-2507",
-   "out": 0.6,
-   "p": "siliconflow-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
    "ctx": 262000,
    "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
-   "in": 0.09,
+   "in": 0.10461323,
    "k": "qwen3-30b-a3b-instruct-2507",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-30B-A3B-Instruct-2507",
-   "out": 0.3,
+   "out": 0.41845294,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-28"
   },
   {
    "budget": {
@@ -14244,16 +13914,16 @@
    },
    "ctx": 131000,
    "id": "Qwen/Qwen3-32B",
-   "in": 0.14,
+   "in": 0.14944748,
    "k": "qwen3-32b",
    "maxOut": 131000,
    "name": "Qwen/Qwen3-32B",
-   "out": 0.57,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-11-25"
+   "upd": "2025-04-28"
   },
   {
    "budget": {
@@ -14262,65 +13932,55 @@
    },
    "ctx": 131000,
    "id": "Qwen/Qwen3-8B",
-   "in": 0.06,
+   "in": 0,
    "k": "qwen3-8b",
    "maxOut": 131000,
    "name": "Qwen/Qwen3-8B",
-   "out": 0.06,
+   "out": 0,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-11-25"
+   "upd": "2025-04-29"
   },
   {
    "ctx": 262000,
    "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-   "in": 0.07,
+   "in": 0.10461323,
    "k": "qwen3-coder-30b-a3b-instruct",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-   "out": 0.28,
+   "out": 0.41845294,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
-  },
-  {
-   "ctx": 262000,
-   "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-   "in": 0.25,
-   "k": "qwen3-coder-480b-a35b-instruct",
-   "maxOut": 262000,
-   "name": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-   "out": 1,
-   "p": "siliconflow-cn",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-31"
   },
   {
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
-   "in": 0.29,
+   "in": 0.10461323,
    "k": "qwen3-vl-30b-a3b-instruct",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-VL-30B-A3B-Instruct",
-   "out": 1,
+   "out": 0.41845294,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-10-04"
   },
   {
-   "alwaysOn": true,
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-30B-A3B-Thinking",
-   "in": 0.29,
+   "in": 0.10461323,
    "k": "qwen3-vl-30b-a3b-thinking",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-VL-30B-A3B-Thinking",
-   "out": 1,
+   "out": 0.41845294,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14329,25 +13989,28 @@
   {
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-32B-Instruct",
-   "in": 0.2,
+   "in": 0.14944748,
    "k": "qwen3-vl-32b-instruct",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-VL-32B-Instruct",
-   "out": 0.6,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-11-25"
   },
   {
-   "alwaysOn": true,
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-32B-Thinking",
-   "in": 0.2,
+   "in": 0.14944748,
    "k": "qwen3-vl-32b-thinking",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-VL-32B-Thinking",
-   "out": 1.5,
+   "out": 1.49447478,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14356,73 +14019,75 @@
   {
    "ctx": 262000,
    "id": "Qwen/Qwen3-VL-8B-Instruct",
-   "in": 0.18,
+   "in": 0.07472374,
    "k": "qwen3-vl-8b-instruct",
    "maxOut": 262000,
    "name": "Qwen/Qwen3-VL-8B-Instruct",
-   "out": 0.68,
+   "out": 0.29889496,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-11-25"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-122B-A10B",
-   "in": 0.29,
+   "in": 0.11955798,
    "k": "qwen3-5-122b-a10b",
    "maxOut": 65536,
    "name": "Qwen/Qwen3.5-122B-A10B",
-   "out": 2.32,
+   "out": 0.95646386,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-02-26"
+   "upd": "2026-02-23"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-27B",
-   "in": 0.26,
+   "in": 0.08966849,
    "k": "qwen3-5-27b",
    "maxOut": 65536,
    "name": "Qwen/Qwen3.5-27B",
-   "out": 2.09,
+   "out": 0.71734789,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-02-25"
+   "upd": "2026-02-23"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-35B-A3B",
-   "in": 0.23,
+   "in": 0.05977899,
    "k": "qwen3-5-35b-a3b",
    "maxOut": 65536,
    "name": "Qwen/Qwen3.5-35B-A3B",
-   "out": 1.86,
+   "out": 0.47823193,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-02-25"
+   "upd": "2026-02-23"
   },
   {
-   "ctx": 262144,
-   "id": "Qwen/Qwen3.5-397B-A17B",
-   "in": 0.29,
-   "k": "qwen3-5-397b-a17b",
-   "maxOut": 65536,
-   "name": "Qwen/Qwen3.5-397B-A17B",
-   "out": 1.74,
-   "p": "siliconflow-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-02-16"
-  },
-  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-4B",
    "in": 0,
@@ -14434,30 +14099,34 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-03-03"
+   "upd": "2026-03-02"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
    "ctx": 262144,
    "id": "Qwen/Qwen3.5-9B",
-   "in": 0.22,
+   "in": 0.07472374,
    "k": "qwen3-5-9b",
    "maxOut": 65536,
    "name": "Qwen/Qwen3.5-9B",
-   "out": 1.74,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-03-03"
+   "upd": "2026-02-23"
   },
   {
    "ctx": 262144,
    "id": "Qwen/Qwen3.6-35B-A3B",
-   "in": 0.23,
+   "in": 0.26900546,
    "k": "qwen3-6-35b-a3b",
    "maxOut": 65536,
    "name": "Qwen/Qwen3.6-35B-A3B",
-   "out": 1.86,
+   "out": 1.61403276,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
@@ -14467,24 +14136,24 @@
    "alwaysOn": true,
    "ctx": 262000,
    "id": "stepfun-ai/Step-3.5-Flash",
-   "in": 0.1,
+   "in": 0.10461323,
    "k": "step-3-5-flash",
    "maxOut": 262000,
    "name": "stepfun-ai/Step-3.5-Flash",
-   "out": 0.3,
+   "out": 0.3138397,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-02-11"
+   "upd": "2026-02-13"
   },
   {
    "ctx": 131000,
    "id": "tencent/Hunyuan-A13B-Instruct",
-   "in": 0.14,
+   "in": 0.14944748,
    "k": "hunyuan-a13b-instruct",
    "maxOut": 131000,
    "name": "tencent/Hunyuan-A13B-Instruct",
-   "out": 0.57,
+   "out": 0.59778991,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -14494,18 +14163,18 @@
   {
    "ctx": 131000,
    "id": "zai-org/GLM-4.5-Air",
-   "in": 0.14,
+   "in": 0.14944748,
    "k": "glm-4-5-air",
    "maxOut": 131000,
    "name": "zai-org/GLM-4.5-Air",
-   "out": 0.86,
+   "out": 0.89668487,
    "p": "siliconflow-cn",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-11-25"
+   "upd": "2025-07-28"
   },
   {
-   "cr": 0.26,
+   "cr": 0.29889496,
    "ctx": 1049000,
    "cw": 0,
    "efforts": [
@@ -14513,11 +14182,11 @@
     "max"
    ],
    "id": "zai-org/GLM-5.2",
-   "in": 1.4,
+   "in": 1.19557982,
    "k": "glm-5-2",
    "maxOut": 262000,
    "name": "GLM-5.2",
-   "out": 4.4,
+   "out": 4.18452938,
    "p": "siliconflow-cn",
    "reasoning": true,
    "src": "models.dev",
@@ -16353,5 +16022,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-21T12:56:18.722Z"
+ "updatedAt": "2026-10-21T15:48:59.102Z"
 }
