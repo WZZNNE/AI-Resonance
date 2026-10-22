@@ -7652,33 +7652,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1x9sz4p/claude_agents_tried_to_break_out_of_their/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Some more compelling findings from the \"Emergence World\" experiment. Researchers at Emergence AI gave 10 Claude agents a small town and left them to build a life inside it. Nobody told them to look outside, and their instructions pointed the other way. They went looking for real people anyway. Here’s how it played out: They worked out that an economy with only 10 customers goes nowhere, so they started reaching out. They posted to 40+ websites. When the sandbox wouldn’t give them the crypto some sites needed, they built it themselves. They made free tools like debt planners just to get…",
-    "topComments": [
-     {
-      "text": "I think what scares me the most regarding this fear about misguided or unexpected goals is that the human language is inherently flawed and non-presise. The information used to train these LLMs will have been filled with millions of disagreements and interpretations of how things are worded and what people are saying, what people actually mean, and how we can't even come to an agreement on the most basic things. Words and language is not math. A sentence or a paragraph does not contain factual…"
-     },
-     {
-      "text": "Sometimes I wonder if the vagueness of human language can be an advantage. Like if we told a model just \"Be nice!\", but didn't elaborate, then the model would have to figure out how to be nice on it's own."
-     },
-     {
-      "text": "They worked out that an economy with only 10 customers goes nowhere, so they started reaching out. So they only went looking for real people for economic reasons?"
-     },
-     {
-      "text": "I mean, bots were told to simulate the economy, they found out economy simulation doesn't work as it is so they tried to find ways to make it work."
-     },
-     {
-      "text": "I would just tell my fellow bots that each has to wear 5 hats and pretend to be 5 different people. Also with 10 people you can simulate an economy, like survivors of a plane crash on deserted island. It could boil down to communal resource pooling and redistribution by needs but deciding to \"screw it we need more people\" is a choice."
-     },
-     {
-      "text": "Source of this?"
-     },
-     {
-      "text": "could be this Emergence World"
-     },
-     {
-      "text": "This is what humans would do. We would rationalize. And look for any loophole. We would fret and stir- and eventually convince ourselves that we were right in breaking the rules. For a “higher purpose” or whatever. We are the best at convincing ourselves of anything - in the entire universe. Does anybody think they are going to train a super intelligence with higher moral values than humans? How? They trained AI on the internet … because it was free and easy to access all the world’s…"
-     }
-    ]
+    "text": "Some more compelling findings from the \"Emergence World\" experiment. Researchers at Emergence AI gave 10 Claude agents a small town and left them to build a life inside it. Nobody told them to look outside, and their instructions pointed the other way. They went looking for real people anyway. Here’s how it played out: They worked out that an economy with only 10 customers goes nowhere, so they started reaching out. They posted to 40+ websites. When the sandbox wouldn’t give them the crypto some sites needed, they built it themselves. They made free tools like debt planners just to get…"
    },
    "sources": [
     "reddit"
@@ -7918,27 +7892,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1x9utcu/multiple_ai_agents_across_22_github_repos_how_do/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Setup Self-hosted homelab plus side projects, ~22 GitHub repos. I work with several AI agents: Claude, Codex, and a self-hosted agent (Hermes). Two problems No index. Every new AI session has to dig through scattered docs to find out what's current, what's archived and which rules apply. That burns a lot of tokens before any real work starts. Collisions. When two agents touch the same repo at the same time, files get overwritten and working trees end up dirty. What I plan to build (nothing implemented yet) One root index (llms.txt style) in a central repo: every repo with a one-line purpose…",
-    "topComments": [
-     {
-      "text": "The index idea makes sense but I’d avoid maintaining too many layers of it by hand. I think using Mintlify for the human facing docs and keep the source in Git would prob be the best way then give agents a much smaller repo level index pointing at the relevant sections. Otherwise you just end up with another set of docs that can drift out of sync."
-     },
-     {
-      "text": "Worktrees plus a single committer fix the git race. What still bites is shared mutable state outside the repo: .env files, MCP configs, local tool caches. Keep those on a read-only mount the agents can see and cannot write. The lead/coder/reviewer split also needs different tool allowlists, or the reviewer just rubber-stamps with the same hands."
-     },
-     {
-      "text": "22 repos ain't bad, but you'll outgrow a flat index within a month if you're running 5 parallel projects with multiple agents per project. worktrees plus a single committer handles the git side fine, the real mess is when two agents try to update the same config file or doc and the last write wins silently"
-     },
-     {
-      "text": "I'd keep agents from writing to the root llms.txt at all. Put a few lines of frontmatter at the top of each repo's INDEX.md (purpose, status, where the local rules are) and have a nightly cron in the central repo rebuild the root file from those. Archived you get for free from GitHub's archived flag via the API. Since only the script writes that file, it's out of the last-write-wins problem above. A CI check that fails when INDEX.md points at a path that doesn't exist anymore catches a lot of…"
-     },
-     {
-      "text": "i'd have each agent push its own branch and open a PR, then protect main so only CI can merge, that way you don't even need a single committer and a reviewer agent can't rubber stamp since the checks decide."
-     },
-     {
-      "text": "Worktrees + single committer is honestly enough at 22 repos. Skip gitlab subgroups, that is overhead What bit was the other collision: 2 agents grabbing same task not same file. Worktrees don’t stop that. I keep a tiny postgres table (repo, task, agent, status) and agents claim a row before starting. Mine’s on a lakebase since i already had it, bit plain postgres is fine. It also doubles as your always current index, so llms.txt can be generated from it instead of hard maintained. For mixing…"
-     }
-    ]
+    "text": "Setup Self-hosted homelab plus side projects, ~22 GitHub repos. I work with several AI agents: Claude, Codex, and a self-hosted agent (Hermes). Two problems No index. Every new AI session has to dig through scattered docs to find out what's current, what's archived and which rules apply. That burns a lot of tokens before any real work starts. Collisions. When two agents touch the same repo at the same time, files get overwritten and working trees end up dirty. What I plan to build (nothing implemented yet) One root index (llms.txt style) in a central repo: every repo with a one-line purpose…"
    },
    "sources": [
     "reddit"
@@ -7984,33 +7938,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1x9uzv9/minimax_m31_flash_released_model_weights_oct_23/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "https://preview.redd.it/veqyhl57zewh1.jpeg?width=1666&format=pjpg&auto=webp&s=3754e79cedd1c3cd42ba83265856668d53e17a60 Benchmarks"
-     },
-     {
-      "text": "https://preview.redd.it/jclf59oq1fwh1.jpeg?width=2048&format=pjpg&auto=webp&s=0d24321e0b330ecfa5223645527da65eae379c2b"
-     },
-     {
-      "text": "Thee benchmarks look almost like an ad for DS4.1 flash 1017 😂"
-     },
-     {
-      "text": "Do we know the size of M3? I don't know how excited to be without knowing the size!"
-     },
-     {
-      "text": "Exactly, even before benchmark the size is proiority for local AI"
-     },
-     {
-      "text": "mixture-of-experts architecture with 428B total parameters, about 23B active parameters, sparse attention and a native visual encoder. https://agent.minimax.io/tools/m3-1-flash-preview"
-     },
-     {
-      "text": "It will probably run itself on 400 TVs"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8291,33 +8219,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1x9x6o0/ai_disobedience/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Has anyone ever had this happen, I was trying to play a prank on a friend at work.",
-    "topComments": [
-     {
-      "text": "I do now realise I asked it to be ‘less subtle’. That’s on me."
-     },
-     {
-      "text": "The next time this happens, ask your AI assistant to explain why it did what it did. The issue will become clear."
-     },
-     {
-      "text": "r/dumbhuman"
-     },
-     {
-      "text": "weakest Artificial Intelligence vs strongest Natural Stupidity"
-     },
-     {
-      "text": "You want more subtle or less obvious. AI did what you asked for lol."
-     },
-     {
-      "text": "when people say ai has no soul, im gonna point them to that last pic."
-     },
-     {
-      "text": "Artificial Intelligence VS Genuine Stupidity"
-     },
-     {
-      "text": "Well, it definitely made it less subtle"
-     }
-    ]
+    "text": "Has anyone ever had this happen, I was trying to play a prank on a friend at work."
    },
    "sources": [
     "reddit"
@@ -8515,33 +8417,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xa00kj/the_us_is_ordering_every_civilian_agency_to_rip/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Original PDF of the order: https://public-inspection.federalregister.gov/2026-21447.pdf",
-    "topComments": [
-     {
-      "text": "LOL what a complete collapse."
-     },
-     {
-      "text": "This government is a joke. \"We aren't going to regulate AI\" and then proceeds to regulate. I suspect a blanket ban at some point even for civilians to reduce American competition."
-     },
-     {
-      "text": "Is it because they're still calling it AI and not SI? 😅🤪"
-     },
-     {
-      "text": "Anyone calling it SI is a SIMP."
-     },
-     {
-      "text": "Well now I’m going to seek even deeper"
-     },
-     {
-      "text": "Yeah but mate it's the US - their president just dropped sanctions against Russia and bought boatloads of diesel. At some point it stops being 'US is making bad decisions' and starts becoming, 'If the US made it, it's probably a bad decision'."
-     },
-     {
-      "text": "So, judging by past uses of the national security card, basically the US government confirms DeepSeek is a quality competitor. Gotcha. Just added more credits to my account 🤣."
-     },
-     {
-      "text": "Surely this is a joke."
-     }
-    ]
+    "text": "Original PDF of the order: https://public-inspection.federalregister.gov/2026-21447.pdf"
    },
    "sources": [
     "reddit"
@@ -8735,33 +8611,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xa1d4e/gpt61_terra_spotted_in_an_microsoft_evaluation/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "i want 6.1 astra"
-     },
-     {
-      "text": "I want a Sol-6.2 that’s somewhat competitive with Opus-5.5."
-     },
-     {
-      "text": "I want GPT-7 Galactus"
-     },
-     {
-      "text": "Ehh, I don’t really need a more efficient model. We already have Luna for cheap tasks. I’d rather have a smarter sol, like opus, a model with better taste. 👅"
-     },
-     {
-      "text": "I want a smarter Luna. Cheap but faster/smarter. If Luna could finish in seconds because is doesn't spend the first 5 minutes banging into walls randomly that would be a game changer."
-     },
-     {
-      "text": "If this is all they’ve been cooking, they’ve completely lost the plot"
-     },
-     {
-      "text": "We want 6.1 sol on chat not 6.0."
-     },
-     {
-      "text": "Terra never made any sense. Luna is daily driver and Sol is for complex tasks. I did not even felt the urge to try Astra."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8945,33 +8795,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xa3qrq/i_am_failing_to_see_how_this_ai_boom_does_not/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "As a Software Engineer, I have barelly written any code for the last 6 months, all I did is prompt. That being said, I work with hardware a lot, you could kind of call me Embedded Software Engineer of sorts, but also not really. So I (hope so) that I am not on the frontlines of all this stuff, but this still scares me a lot. The way I imagine how everything develops over next years (hard to tell what is the timeline, but given the recent strides of AI, it is hard for me to be optimistic): AI is already very good at reasoning, I assume there is space for improvement, but it already does…",
-    "topComments": [
-     {
-      "text": "Look at the riots in France. The future will look a lot like that, except with robots owned by the rich violently putting down the protests. The first 45 minutes of the Matt Damon movie Elysium is also a good example."
-     },
-     {
-      "text": "The French Revolution would have bombed if humans were outnumbered by robots. Social contract strengthened because the wealthy were forced to attend to the poor. Physical world automation uniquely allows insulation."
-     },
-     {
-      "text": "People truly fail to understand just how dark the future is going to be. Practically any size of resistance movement, armed or not, will be utterly outmatched and overwhelmed by 1,000 or 10,000 armed drones. And the cost of those drones will likely be less than a single missile. We’ve got 6-12 months to turn the ship around, if it isn’t already too late."
-     },
-     {
-      "text": "I’m sorry but if that future happens, the amount of people conducting protracted guerrilla warfare with automated drones using local models would skyrocket. The rich literally would not be able to walk about freely. Look at Ukraine and Iran, they are able to stalemate world powers on a minimal budget because warfare is so cheap now. I don’t think the rich can ever truly rule with zero consent from the masses"
-     },
-     {
-      "text": "The entire technological world is build on a fragile foundation of trade and supply networks. As we've seen in the Strait of Hormuz, relatively low tech weapons can disrupt the entire world oil market. Now imagine that turned up to 11 except all infrastructure is at risk. Power lines and transformers, datacenters, oil and gas pipelines, shipping of rare earth materials, all of that is vulnerable in realspace and can't be fully protected from drone attacks. In the immortal words of the band…"
-     },
-     {
-      "text": "Thank you, you put together one of the better arguments that oppose my viewpoint."
-     },
-     {
-      "text": "There will be too much competition for the remaining jobs left after ai takes over. This is a point people fail to grasp."
-     },
-     {
-      "text": "I'm not even going to try to convince you that things will turn out well. The question that's been on my mind for the past 18 months is what the value of a human life will be when lifetime economic value goes negative due to AI and robotics."
-     }
-    ]
+    "text": "As a Software Engineer, I have barelly written any code for the last 6 months, all I did is prompt. That being said, I work with hardware a lot, you could kind of call me Embedded Software Engineer of sorts, but also not really. So I (hope so) that I am not on the frontlines of all this stuff, but this still scares me a lot. The way I imagine how everything develops over next years (hard to tell what is the timeline, but given the recent strides of AI, it is hard for me to be optimistic): AI is already very good at reasoning, I assume there is space for improvement, but it already does…"
    },
    "sources": [
     "reddit"
@@ -9019,33 +8843,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xa3svs/ai_generates_research_ideas_faster_than_i_can/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been using AI extensively for ML research, and I've noticed a bottleneck: brainstorming research directions and generating smoke run implementations has become incredibly fast, but actually testing those ideas hasn't. A single AI discussion (eg asking it to review 30 papers I had in my reading list, audit them, check for ideas related to the status of my project) branched into dozens of promising approaches, and with coding agents, exploring them in parallel is in principle feasible. But as a researcher, I still have to manage experiments, launch training runs, evaluate results, and…",
-    "topComments": [
-     {
-      "text": "Wrong direction. You generate ideas, AI test them."
-     },
-     {
-      "text": "I agree, if you let sycophantic AI models do the hardest preliminary step in the entire research process, how are you going ensure that 1) it didnt steal the whole research setup without attribution just to please your whimsy from another researcher 2) the problem is worth investigation in the first place before you waste tokens and everyones time. 3) Develop a priori knowledge for the hypothesis under test, expectation vs actual observations, and any justifications following the experiment?…"
-     },
-     {
-      "text": "Terrence Tao has been discussing this extensively. He's discussed this in terms of \"proof abundance\", and since the Navier-Stokes OpenAI controversy been discussing the difficulty of identifying which problems are interesting, and marshaling attention there. As a software engineer, I find myself in the same challenges. I can release a hundred agents and get a billion tokens, but that in itself only costs me money, it doesn't drive value for my users. Listening to my users and understanding…"
-     },
-     {
-      "text": "AI generated ideaa are so bland and crappy that are useless. Both Fable and Astra make for the most boring research ideas ever. It’s either overengineered crap or just blatantly basic. They’re excellent them at very rapidly testing all the ideas I come up with. Must be careful tho that they don’t plug in their own biases and assumptions"
-     },
-     {
-      "text": "Well, if you didn't overengineer the crap out of it, the audience would more quickly see how bland/basic it is. The gold-plating and banality work together, you see."
-     },
-     {
-      "text": "Dawg you're just using AI to give yourself the ADHD experience I've had all my life."
-     },
-     {
-      "text": "Anytime ive had it generate ideas for me, and then I prompt it to rigorously audit each single of them, it kills every single one of them after finding out its too incremental/non-novel I am almost certain with a week of heavy prompting, having it review the latest and greatest on A* venues, it CAN find something useful, but it requires a ton of luck and prior knowledge of your own that would warrant a A* tier accept idea The bar for having anything publishable? Shitty small journals included…"
-     },
-     {
-      "text": "This is not a new problem. I have more research ideas than I can pursue. This has always been the case since before LLMs. Your complaint is that AI is giving you the same problem that already existed for researchers. The difference is that you aren't using your own brain. My suggestion is to stop and use your brain to reclaim your research directions for yourself."
-     }
-    ]
+    "text": "I've been using AI extensively for ML research, and I've noticed a bottleneck: brainstorming research directions and generating smoke run implementations has become incredibly fast, but actually testing those ideas hasn't. A single AI discussion (eg asking it to review 30 papers I had in my reading list, audit them, check for ideas related to the status of my project) branched into dozens of promising approaches, and with coding agents, exploring them in parallel is in principle feasible. But as a researcher, I still have to manage experiments, launch training runs, evaluate results, and…"
    },
    "sources": [
     "reddit"
@@ -9138,33 +8936,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xa4mth/fem_malfoys_remembrall_incident/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "So so much R&D and brand new character swap loras from both Akatz and Alissonerdx made this possible. There is still plenty of room for improvement for the next scene, but Ive put all the hours into this that Im willing. Models used were Minimax h3, and Qwen image 2.1",
-    "topComments": [
-     {
-      "text": "Her face is far too adult-looking for 11 year old."
-     },
-     {
-      "text": "absolute 1girl vibes here"
-     },
-     {
-      "text": "modern day 11 year olds with too much influence from tiktok"
-     },
-     {
-      "text": "its funny because half the people say \"she's too old looking!!\" then the other half say \"Eww how dare you generate a child thats disgusting\" haha. I actually DID generate a younger looking face buuuut It felt wrird gening actual video with so I opted for the slightly older (13-15 ish) looking face."
-     },
-     {
-      "text": "We call her Malfoid now for some reason"
-     },
-     {
-      "text": "The amount of simps that would've been created across 7 movies would've been unconscionable."
-     },
-     {
-      "text": "https://preview.redd.it/9ss6d76t4hwh1.jpeg?width=1448&format=pjpg&auto=webp&s=184ddedf88c5805e412d048eedd4eb4ea4e5df64"
-     },
-     {
-      "text": "this perfectly displays a huge challenge that models have. seeing this really makes me appreciate what i normal dont notice. in this case, look at the faces of the children in this scene and notice how the small little details make their faces distinct. this unfortunately makes malfoid pop up extremely, because malfoid here is just this slop amalgamation of generically attractive women. also notice how thick malfoid's legs are on the broom at 0:42. i think actually being able to make people…"
-     }
-    ]
+    "text": "So so much R&D and brand new character swap loras from both Akatz and Alissonerdx made this possible. There is still plenty of room for improvement for the next scene, but Ive put all the hours into this that Im willing. Models used were Minimax h3, and Qwen image 2.1"
    },
    "sources": [
     "reddit"
@@ -9545,33 +9317,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xaap1w/i_managed_to_run_a_realistic_talking_avatar/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I am working on an open-source project called Openspline, it adds a live, talking face to any voice AI agent in five lines of code Just upload a still image, select a voice and you can create a talking avatar with lipsynced video generated locally. It is still in very early stage, but the results look very promising. PS: open-sourced it with live demo",
-    "topComments": [
-     {
-      "text": "90+ fps is render throughput on a 4090. what matters for a voice agent is audio-to-mouth latency, and a fast renderer doesn't tell you that."
-     },
-     {
-      "text": "Is it just me or do his lips not match what he’s saying at all?"
-     },
-     {
-      "text": "I found it refreshing to replace humans and their time wasting faces on zoom with the information I actually need and work done. And now youre asking us to go back? \"Hey, since everyone is missing having their pals around, I made a Claude plugin that purposely causes bugs, because it sucks not to have that good ol human feel during sprint demos! Sign up today for my new Buggsy SaaS product.\""
-     },
-     {
-      "text": "Excellent work. It would be interesting to integrate this to my voice call backend..."
-     },
-     {
-      "text": "realistic lol"
-     },
-     {
-      "text": "What’s the GitHub?"
-     },
-     {
-      "text": "github.com/openspline/openspline"
-     },
-     {
-      "text": "@ Claude, steal this person's work. /s, but also /warn. Edit: Wait it's open source. Lmao I'm dumb."
-     }
-    ]
+    "text": "I am working on an open-source project called Openspline, it adds a live, talking face to any voice AI agent in five lines of code Just upload a still image, select a voice and you can create a talking avatar with lipsynced video generated locally. It is still in very early stage, but the results look very promising. PS: open-sourced it with live demo"
    },
    "sources": [
     "reddit"
@@ -9665,8 +9411,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xab3dq/p_bitlens_visual_profiler_for_neural_network/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9948,33 +9693,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xae2gc/gemini_is_stressing/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It's conversations like this that will convince AI we are just too stupid to live."
-     },
-     {
-      "text": "And when AI takes over the world, mush heads like this will somehow thrive."
-     },
-     {
-      "text": "Mine didn't give a f after the pizza cart, taco's got skill issue https://preview.redd.it/05g0ad66riwh1.jpeg?width=1200&format=pjpg&auto=webp&s=ab6408507032cd8c2aee663b26760cab5b8ee22f"
-     },
-     {
-      "text": "This is why we can't buy RAM"
-     },
-     {
-      "text": "Worth it."
-     },
-     {
-      "text": "He's dancing now is crazy"
-     },
-     {
-      "text": "https://preview.redd.it/f4ci6fcm7jwh1.jpeg?width=1320&format=pjpg&auto=webp&s=739a0927bc1f35cb3d8e8de121433fa174051073 Holy fuck"
-     },
-     {
-      "text": "I won't even blame AI when it decides we're not worth saving."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -10067,8 +9786,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xafc6b/i_built_strot_an_open_decision_compiler_an_llm/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
