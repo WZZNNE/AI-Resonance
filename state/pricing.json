@@ -6130,7 +6130,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.03,
+   "cr": 0.018,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6138,11 +6138,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0318,
+   "in": 0.018,
    "k": "glm-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.083,
+   "out": 0.121,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6997,7 +6997,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.022,
+   "cr": 0.044,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7006,11 +7006,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.66,
+   "in": 1.32,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 1.98,
+   "out": 3.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7037,7 +7037,7 @@
    "upd": "2026-09-10"
   },
   {
-   "cr": 0.003,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7046,11 +7046,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash-1017",
-   "in": 0.15,
+   "in": 0.3,
    "k": "deepseek-v4-1-flash-1017",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash 1017",
-   "out": 0.6,
+   "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8597,11 +8597,12 @@
   },
   {
    "alwaysOn": true,
+   "cr": 0.15,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2-thinking",
    "in": 0.6,
    "k": "kimi-k2-thinking",
-   "maxOut": 235929,
+   "maxOut": 98304,
    "name": "Kimi K2 Thinking",
    "out": 2.5,
    "p": "openrouter",
@@ -10570,13 +10571,14 @@
    "upd": "2026-02-23"
   },
   {
+   "cr": 0.3,
    "ctx": 262144,
    "id": "qwen/qwen3.5-397b-a17b",
-   "in": 0.39,
+   "in": 0.5,
    "k": "qwen3-5-397b-a17b",
-   "maxOut": 65536,
+   "maxOut": 235929,
    "name": "Qwen3.5 397B-A17B",
-   "out": 2.34,
+   "out": 3.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11834,7 +11836,7 @@
    "upd": "2026-08-14"
   },
   {
-   "cr": 0.03,
+   "cr": 0.018,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -11842,11 +11844,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.0318,
+   "in": 0.018,
    "k": "glm-5-3-flash",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM-5.3-Flash",
-   "out": 0.083,
+   "out": 0.121,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15929,5 +15931,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-22T01:07:56.975Z"
+ "updatedAt": "2026-10-22T03:51:07.634Z"
 }
