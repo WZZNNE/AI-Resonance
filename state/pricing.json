@@ -3048,6 +3048,30 @@
    "budget": {
     "min": 1024
    },
+   "cr": 0.21,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "max"
+   ],
+   "id": "accounts/fireworks/routers/kimi-k3-spot",
+   "in": 2.1,
+   "k": "kimi-k3-spot",
+   "maxOut": 131072,
+   "name": "Kimi K3 Spot",
+   "out": 10.5,
+   "p": "fireworks-ai",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-07-16"
+  },
+  {
+   "budget": {
+    "min": 1024
+   },
    "cr": 0.3,
    "ctx": 1048576,
    "efforts": [
@@ -7536,14 +7560,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10553,11 +10577,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3.5-122b-a10b",
-   "in": 0.4,
+   "in": 0.26,
    "k": "qwen3-5-122b-a10b",
    "maxOut": 65536,
    "name": "Qwen3.5 122B-A10B",
-   "out": 3.2,
+   "out": 2.08,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15955,5 +15979,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-22T18:51:34.891Z"
+ "updatedAt": "2026-10-22T21:45:15.438Z"
 }
