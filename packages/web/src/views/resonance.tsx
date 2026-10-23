@@ -24,7 +24,6 @@ import { fmt, lang, type MessageKey, t, term } from '../i18n/index.ts'
 import { boardTitle, itemHref, itemTitle } from '../items/text.ts'
 import { IconButton } from '../ui/button.tsx'
 import { boardHue } from '../ui/chip.tsx'
-import { Icon } from '../ui/icons.tsx'
 import { ExtLink } from '../ui/link.tsx'
 import { EmptyState, ErrorState, Skeleton } from '../ui/state.tsx'
 import './more.css'
@@ -306,11 +305,6 @@ function ClusterCard({
   return (
     <li class={`rcluster${boards.length >= 3 ? ' is-full' : ''}`} data-part="cluster">
       <header class="rcluster__head">
-        <span class="rcluster__segs" aria-hidden="true">
-          {boards.map((b) => (
-            <span key={b} class="rcluster__seg" style={{ '--hue': boardHue(b) }} />
-          ))}
-        </span>
         <h2 class="rcluster__title">{c.headline}</h2>
         <span class="rcluster__strength num" title={t('res.strength')}>
           {fmt.number(c.strength)}
@@ -377,10 +371,7 @@ export default function Resonance({ params, query }: RouteProps) {
     <main class={`page resonance${res.loading ? ' is-refreshing' : ''}`} id="main" data-part="resonance">
       <header class="page__head weekly__head">
         <div>
-          <p class="kicker">
-            <Icon name="resonance" size={14} />
-            {live ? t('edition.liveKicker') : fmt.day(day.date, 'long')}
-          </p>
+          <p class="kicker">{live ? t('edition.liveKicker') : fmt.day(day.date, 'long')}</p>
           <h1 class="page__title">{t('views.resonance.title')}</h1>
           <p class="page__lead">{t('views.resonance.lead')}</p>
         </div>

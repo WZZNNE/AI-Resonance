@@ -74,9 +74,12 @@ describe('WCAG contrast', () => {
     const pale = accentReport(rgb('#8f9bff'), rgb('#090c12'), rgb('#10141d'))
     expect(pale.level).toBe('AAA')
     expect(pale.ink).toBe('#0b0e1a')
-    // titanium: the accent reads as text on the page and on plates in both modes
-    expect(accentReport(rgb('#ffa04a'), rgb('#04060a'), rgb('#0f131a')).level).toBe('AAA')
-    expect(accentReport(rgb('#8f4f00'), rgb('#e6e8eb'), rgb('#ffffff')).level).toBe('AA')
+    // paper (the default): the vermilion reads as text on the page and on fields in both modes
+    expect(accentReport(rgb('#b42318'), rgb('#f6f3ec'), rgb('#fbfaf6')).level).toBe('AA')
+    expect(accentReport(rgb('#ff8a6b'), rgb('#161513'), rgb('#1f1e1b')).level).toBe('AAA')
+    // titanium: amber on graphite, deep amber on steel
+    expect(accentReport(rgb('#ffa04a'), rgb('#131416'), rgb('#1c1d21')).level).toBe('AAA')
+    expect(accentReport(rgb('#9a5200'), rgb('#f3f4f6'), rgb('#ffffff')).level).toBe('AA')
     const paleOnLight = accentReport(rgb('#8f9bff'), rgb('#f4f6fa'), rgb('#ffffff'))
     expect(paleOnLight.level).toBe('fail')
   })
@@ -217,7 +220,7 @@ describe('startTheme on the document', () => {
   it('exposes window.ResonanceTheme', () => {
     const stop = startTheme(root)
     const api = window.ResonanceTheme
-    expect(api?.presets.map((p) => p.id)).toEqual(['titanium', 'paper', 'terminal'])
+    expect(api?.presets.map((p) => p.id)).toEqual(['paper', 'titanium', 'terminal'])
     const r = api?.apply({ '--radius-l': '0', '--accent': '#123456', '--font-scale': 1.1, color: 'red' })
     expect(r).toEqual({ applied: ['--radius-l', '--accent', '--font-scale'], rejected: ['color'] })
     expect(themeTokens.value.tokens).toEqual({ '--radius-l': '0' })

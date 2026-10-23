@@ -6,44 +6,41 @@
  *
  * TOKENS — theme/tokens.css defines them, presets.css only changes values. Override any of them in Settings ›
  * Appearance › Tokens, in public/custom.css, or with `ResonanceTheme.apply({ '--radius-m': '4px' })`.
- *   Surfaces  --bg --bg-2 (page) · --surface --surface-2 --surface-3 (plates, nested plates, chips) · --well (recessed
- *             fill) · --line --line-2 (hairlines) · --border (shorthand) · --scrim (behind modals)
+ *   Surfaces  --bg --bg-2 (page) · --surface --surface-2 --surface-3 (fields, floating layers, fills) · --well (track
+ *             fill) · --line --line-2 (hairlines) · --rule (heavy ink rules) · --border (shorthand) · --scrim
  *   Text      --text --text-2 --text-3 — each ≥ 4.5:1 on --bg and --surface in every preset
- *   Accent    --accent (links, selection) · --accent-fill (primary buttons) · --accent-2 (hover) · --accent-ink (text
+ *   Accent    --accent (links, kickers) · --accent-fill (primary buttons) · --accent-2 (hover) · --accent-ink (text
  *             on accent) · --focus
- *   Signal    --signal (the one cyber light: focus, active nav) · --signal-2 · --signal-line (signal → signal-2 hairline)
+ *   Signal    --signal (the selected mark: active tab, current edition) · --signal-2 · --signal-line · --signal-text
  *   Status    --ok --warn --danger --info · --live (live dot) · --up --down (rank moves) · --res (resonance)
  *   Meaning   --hue-repos --hue-papers --hue-news --hue-social --hue-labs (boards; a card sets --hue to its board's)
  *             · --cat-release --cat-product --cat-research --cat-tool --cat-engineering --cat-discussion --cat-industry
- *             --cat-policy · --sig-1 … --sig-8 (score-bar segments, by signal position)
- *   Material  --panel-bg --panel-tint --panel-edge --panel-drop --panel-drop-2 --panel-blur --rim (content glass) ·
- *             --tint-1 … --tint-3 (fills inside glass) · --plate-bg --plate-edge (small raised parts) · --well-bg
- *             --well-edge (recessed) · --glass-bg --glass-blur --glass-edge (chrome glass) · --elev-0 … --elev-3 ·
- *             --press · --thumb-bg · --knob --knob-shadow · --switch-off (off switch track) · --hl (top light)
- *   Glow      --glow · --ring --ring-inset (focus) · --bloom (40 % dark, 0 light)
- *   HUD       --hud --hud-hot (bracket and rail colour at rest / lit) · --hud-faint (ticks) · --hud-glow · --ticks ·
- *             --font-hud
- *   Type      --font-ui --font-text (titles, body copy) --font-display --font-num --font-serif --font-mono (all with CJK
- *             fallbacks) · --weight-title --weight-section --weight-display · --tracking-display --tracking-hero
- *             --tracking-section --tracking-title --tracking-eyebrow · --font-scale (0.85–1.3, set from Appearance) ·
- *             --fs-2xs … --fs-3xl --fs-rank · roles --fs-hero --fs-section --fs-board --fs-item --fs-body --fs-meta
- *             --fs-eyebrow · --lh --lh-tight --lh-title
- *   Shape     --radius-s --radius-m --radius-l --radius-xl --radius-2xl --radius-pill · --space-1 … --space-10 ·
- *             --density · --pad-card --gap-list · --target (44px minimum hit area)
- *   Page      --spill (scene light; `--aurora` is its legacy alias — `none` turns it off) · --grid --grid-dot
- *             --grid-major (tactical grid) · --scan (scanlines) · --grain (film grain) · --vignette
- *   Legacy    --shadow-1 --shadow-2 (= --elev-1 / --elev-2) · --inset (top highlight) · --header-bg (= --glass-bg)
+ *             --cat-policy · --sig-1 … --sig-8 (score breakdown segments, by signal position)
+ *   Material  --plate-bg --plate-edge (buttons, chips) · --well-bg --well-edge (fields, tracks) · --panel-bg
+ *             --panel-edge --panel-drop --panel-drop-2 (boxed blocks) · --tint-1 … --tint-3 (hover fills) ·
+ *             --glass-bg --glass-edge (floating layers) · --elev-0 … --elev-3 (only --elev-3 casts a shadow) · --press
+ *             · --thumb-bg · --knob --knob-shadow · --switch-off (off switch track) · --hl (top light on fills)
+ *   Focus     --ring --ring-inset · --glow (= --ring)
+ *   Type      --font-sans --font-serif --font-mono (all with CJK fallbacks) · roles --font-ui --font-text (running
+ *             text) --font-display (headlines) --font-num (rank numerals) · --weight-title --weight-section
+ *             --weight-display · --tracking-display --tracking-hero --tracking-section --tracking-title
+ *             --tracking-eyebrow · --font-scale (0.85–1.3, set from Appearance) · --fs-2xs … --fs-3xl --fs-rank ·
+ *             roles --fs-hero --fs-section --fs-board --fs-item --fs-body --fs-meta --fs-eyebrow · --lh --lh-tight
+ *             --lh-title
+ *   Shape     --radius-s --radius-m --radius-l --radius-xl --radius-2xl --radius-pill (capsule controls; 3px in
+ *             paper) · --space-1 … --space-10 · --density · --pad-card --gap-list · --target (44px minimum hit area)
+ *   Legacy    --shadow-1 --shadow-2 (= --elev-1 / --elev-2) · --inset · --header-bg (the header's paper)
  *   Motion    --ease (sheet curve) --ease-pop (knobs, thumbs) --ease-in · --dur-1 --dur-2 --dur-3 (0ms under reduced
  *             motion)
  *   Layout    --header-h --tabbar-h --tabbar-space --maxw --gutter --z-header --z-overlay --z-toast
  *
- * <html> ATTRIBUTES — data-preset (titanium | paper | terminal) · data-mode (light | dark) · data-density (compact |
+ * <html> ATTRIBUTES — data-preset (paper | titanium | terminal) · data-mode (light | dark) · data-density (compact |
  * comfortable | cozy) · data-motion (reduce | full; absent = follow the OS) · data-safe (safe mode is on).
  *
  * data-part HOOKS — stable names for custom CSS:
  *   frame     app header edition-picker edition-sheet live-toggle search-trigger lang-switch mode-switch tabbar
  *             offline-banner footer settings sheet dialog popover toaster toast
- *   today     today edition-head brief resonance-strip cluster category-bar board runners-up sources status-chip
+ *   today     today edition-head brief cluster category-bar board runners-up sources status-chip
  *   items     item-card item-meta item-actions rank trend-badge score-bar sparkline resonance-mark runner-row
  *             item-sheet item-detail summary-sheet chart
  *   states    empty-state error-state not-found
@@ -216,7 +213,7 @@ export function readableAccent(accent: Rgb, bg: Rgb, surface: Rgb, target = 4.5)
 export function accentTokens(accent: string, rgb: Rgb | null): Record<string, string> {
   if (!accent) return {}
   return {
-    // The preset's own fill (titanium light: safety yellow) would pair the new ink with the wrong colour.
+    // The preset's own fill (paper: vermilion with white ink) would pair the new ink with the wrong colour.
     '--accent-fill': accent,
     '--accent-2': `color-mix(in oklab, ${accent} 82%, var(--text))`,
     '--focus': accent,
@@ -228,35 +225,26 @@ export function accentTokens(accent: string, rgb: Rgb | null): Record<string, st
 
 /** Every documented token (see the header), for `ResonanceTheme.tokens()` and the editor's hints. */
 export const TOKENS: readonly string[] = [
-  ...'bg bg-2 surface surface-2 surface-3 well line line-2 border header-bg scrim text text-2 text-3'.split(' '),
-  ...'accent accent-fill accent-2 accent-ink focus signal signal-2 signal-line ok warn danger info live up down res'.split(
-    ' ',
-  ),
-  ...'plate-bg plate-edge well-bg well-edge glass-bg glass-blur glass-edge elev-0 elev-1 elev-2 elev-3 press'.split(
-    ' ',
-  ),
-  ...'thumb-bg knob knob-shadow switch-off hl glow ring ring-inset bloom spill grid grid-dot'.split(' '),
-  ...'panel-tint panel-bg panel-edge panel-drop panel-drop-2 panel-blur rim tint-1 tint-2 tint-3 signal-text'.split(
-    ' ',
-  ),
-  ...'hud hud-hot hud-faint hud-glow ticks font-hud grid-major scan grain vignette'.split(' '),
+  ...'bg bg-2 surface surface-2 surface-3 well line line-2 rule border header-bg scrim text text-2 text-3'.split(' '),
+  ...'accent accent-fill accent-2 accent-ink focus signal signal-2 signal-line signal-text'.split(' '),
+  ...'ok warn danger info live up down res'.split(' '),
+  ...'plate-bg plate-edge well-bg well-edge glass-bg glass-edge elev-0 elev-1 elev-2 elev-3 press'.split(' '),
+  ...'panel-bg panel-edge panel-drop panel-drop-2 tint-1 tint-2 tint-3'.split(' '),
+  ...'thumb-bg knob knob-shadow switch-off hl glow ring ring-inset'.split(' '),
   ...['repos', 'papers', 'news', 'social', 'labs'].map((b) => `hue-${b}`),
   ...['release', 'product', 'research', 'tool', 'engineering', 'discussion', 'industry', 'policy'].map(
     (c) => `cat-${c}`,
   ),
   ...[1, 2, 3, 4, 5, 6, 7, 8].map((i) => `sig-${i}`),
-  ...'font-ui font-text font-display font-num font-serif font-mono weight-title weight-section weight-display font-scale'.split(
-    ' ',
-  ),
+  ...'font-sans font-serif font-mono font-ui font-text font-display font-num font-scale'.split(' '),
+  ...'weight-title weight-section weight-display'.split(' '),
   ...'tracking-display tracking-hero tracking-section tracking-title tracking-eyebrow'.split(' '),
   ...'fs-2xs fs-xs fs-s fs-m fs-l fs-xl fs-2xl fs-3xl fs-rank lh lh-tight lh-title'.split(' '),
   ...'fs-hero fs-section fs-board fs-item fs-body fs-meta fs-eyebrow'.split(' '),
   ...'radius-s radius-m radius-l radius-xl radius-2xl radius-pill space-1 space-2 space-3 space-4 space-5 space-6 space-8 space-10'.split(
     ' ',
   ),
-  ...'density pad-card gap-list target shadow-1 shadow-2 inset aurora ease ease-pop ease-in dur-1 dur-2 dur-3'.split(
-    ' ',
-  ),
+  ...'density pad-card gap-list target shadow-1 shadow-2 inset ease ease-pop ease-in dur-1 dur-2 dur-3'.split(' '),
   ...'header-h tabbar-h tabbar-space maxw gutter z-header z-overlay z-toast'.split(' '),
 ].map((n) => `--${n}`)
 
@@ -400,14 +388,14 @@ export const PRESET_INFO: ReadonlyArray<{
   swatch: Record<'light' | 'dark', [string, string, string, string]>
 }> = [
   {
-    id: 'titanium',
-    mode: 'dark',
-    swatch: { dark: ['#04060a', '#0f131a', '#eef1f5', '#ff9a3c'], light: ['#e6e8eb', '#ffffff', '#111418', '#f2b400'] },
-  },
-  {
     id: 'paper',
     mode: 'light',
-    swatch: { light: ['#f3eee3', '#fbf8f1', '#1c1914', '#a3302a'], dark: ['#161411', '#1e1b17', '#efe8da', '#e2786c'] },
+    swatch: { light: ['#f6f3ec', '#fbfaf6', '#1d1a16', '#b42318'], dark: ['#161513', '#1f1e1b', '#ece7de', '#ff8a6b'] },
+  },
+  {
+    id: 'titanium',
+    mode: 'dark',
+    swatch: { dark: ['#131416', '#1c1d21', '#eceef1', '#ffa04a'], light: ['#f3f4f6', '#ffffff', '#15181d', '#9a5200'] },
   },
   {
     id: 'terminal',

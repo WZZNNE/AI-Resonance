@@ -27,7 +27,6 @@ import { boardTitle, itemHref, itemTitle } from '../items/text.ts'
 import { Button } from '../ui/button.tsx'
 import { Badge, boardHue, Chip } from '../ui/chip.tsx'
 import { Segmented } from '../ui/form.tsx'
-import { Icon } from '../ui/icons.tsx'
 import { EmptyState, ErrorState, Skeleton } from '../ui/state.tsx'
 import './more.css'
 
@@ -414,7 +413,6 @@ function Leaderboards() {
     <section class="leaders" aria-labelledby="leaders-title">
       <header class="section-head">
         <h2 class="section-head__title" id="leaders-title">
-          <Icon name="flame" size={16} />
           {t('views.archive.leaders')}
         </h2>
       </header>
@@ -558,10 +556,7 @@ export default function Archive() {
   return (
     <main class="page archive" id="main" data-part="archive">
       <header class="page__head">
-        <p class="kicker">
-          <Icon name="calendar" size={14} />
-          {t('views.archive.kicker', { n: m.dates.length, days: m.retentionDays })}
-        </p>
+        <p class="kicker">{t('views.archive.kicker', { n: m.dates.length, days: m.retentionDays })}</p>
         <h1 class="page__title">{t('views.archive.title')}</h1>
         <p class="page__lead">{t('views.archive.lead')}</p>
       </header>

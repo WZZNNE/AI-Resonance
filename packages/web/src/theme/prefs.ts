@@ -3,7 +3,7 @@
  * (`public/boot.js`, which must stay in step with `resolveAppearance` + `applyAppearance`), the header's mode button,
  * and the Appearance settings tab (src/theme/appearance.tsx), which only writes the slice.
  *
- *   <html data-preset="titanium" data-mode="dark" data-density="comfortable" [data-motion="reduce"]
+ *   <html data-preset="paper" data-mode="light" data-density="comfortable" [data-motion="reduce"]
  *         style="--font-scale: 1; --accent: …">  + <style id="user-css">…custom CSS…</style>
  */
 import { effect, signal } from '@preact/signals'
@@ -15,7 +15,7 @@ export type Density = 'compact' | 'comfortable' | 'cozy'
 export type MotionPref = 'system' | 'reduce' | 'full'
 
 /** Built-in presets (token maps in tokens.css / presets.css). The first one is the default. */
-export const PRESETS = ['titanium', 'paper', 'terminal'] as const
+export const PRESETS = ['paper', 'titanium', 'terminal'] as const
 
 /** Retired preset ids and what they became (stored settings, theme files and old manifests still carry them). */
 const RENAMED: Readonly<Record<string, string>> = { aurora: 'titanium' }
@@ -26,7 +26,7 @@ export function migratePreset(id: string): string {
 }
 
 export interface AppearanceSettings {
-  /** Preset id; `''` follows the site default (`manifest.site.theme.preset`), then `titanium`. */
+  /** Preset id; `''` follows the site default (`manifest.site.theme.preset`), then `paper`. */
   preset: string
   mode: ThemeMode
   /** Any CSS colour; `''` keeps the preset's accent (or the site's). */

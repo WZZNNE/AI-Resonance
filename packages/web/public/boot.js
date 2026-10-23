@@ -20,7 +20,7 @@
     dark = matchMedia('(prefers-color-scheme: dark)').matches
   } catch {}
 
-  const picked = (typeof a.preset === 'string' && a.preset) || site.preset || 'titanium'
+  const picked = (typeof a.preset === 'string' && a.preset) || site.preset || 'paper'
   const preset = picked === 'aurora' ? 'titanium' : picked // retired name (prefs.ts › migratePreset)
   const mode = a.mode === 'light' || a.mode === 'dark' ? a.mode : dark ? 'dark' : 'light'
   const density = ['compact', 'comfortable', 'cozy'].indexOf(a.density) >= 0 ? a.density : 'comfortable'

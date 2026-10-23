@@ -32,9 +32,9 @@ A feature is a folder with an `index.ts` that registers things when imported. `f
 import { lazy } from '../core/lazy.tsx'
 import { registerCommand, registerItemAction, registerSettingsTab } from '../core/registry.ts'
 
-registerSettingsTab({ id: 'models', title: 'ai.tab', icon: 'sparkle', order: 10, component: lazy(() => import('./tab.tsx')) })
+registerSettingsTab({ id: 'models', title: 'ai.tab', icon: 'chat', order: 10, component: lazy(() => import('./tab.tsx')) })
 registerItemAction({
-  id: 'ai.summarize', label: 'ai.summarize', icon: 'sparkle', order: 10,
+  id: 'ai.summarize', label: 'ai.summarize', icon: 'summary', order: 10,
   run: async (item, ctx) => (await import('./summary.ts')).openSummary(item, ctx),
 })
 ```
@@ -176,14 +176,15 @@ language switch loads the other one on demand. Code that renders text in a langu
 
 ## 9. Theme
 
-`<html data-preset="titanium|paper|terminal" data-mode="light|dark" data-density="compact|comfortable|cozy"
+`<html data-preset="paper|titanium|terminal" data-mode="light|dark" data-density="compact|comfortable|cozy"
 [data-motion="reduce|full"] style="--font-scale; --accent">`. Written pre-paint by `public/boot.js` and kept live by
-`startAppearance()` from the **`appearance` slice** (`theme/prefs.ts`). `titanium` is the default (`tokens.css`:
-dark on `:root`, light on `[data-mode="light"]`); `paper` and `terminal` (`presets.css`) override colours only. The
-retired id `aurora` is migrated to `titanium` everywhere it can come from (stored settings, manifest, theme files):
+`startAppearance()` from the **`appearance` slice** (`theme/prefs.ts`). `paper` ("Newsprint") is the default
+(`tokens.css`: light on `:root`, dark on `[data-mode="dark"]`); `titanium` and `terminal` (`presets.css`) override
+colours and type only. The retired id `aurora` is migrated to `titanium` everywhere it can come from (stored settings,
+manifest, theme files):
 
 ```ts
-appearance.set({ preset: 'paper', mode: 'auto', accent: '#e11d48', density: 'compact', fontScale: 1.1,
+appearance.set({ preset: 'titanium', mode: 'auto', accent: '#e11d48', density: 'compact', fontScale: 1.1,
                  motion: 'system' | 'reduce' | 'full', customCss: '…' })
 ```
 
@@ -195,127 +196,114 @@ Tokens (`theme/tokens.css`; presets override values only):
 
 | Group | Tokens |
 |---|---|
-| Surfaces | `--bg` `--bg-2` `--surface` `--surface-2` `--surface-3` `--well` `--line` `--line-2` `--scrim` |
+| Surfaces | `--bg` `--bg-2` `--surface` `--surface-2` `--surface-3` `--well` `--line` `--line-2` `--rule` (heavy rules) `--scrim` |
 | Text | `--text` `--text-2` `--text-3` (all ≥ 4.5:1 on `--bg`/`--surface`) |
 | Accent / status | `--accent` (text, links) `--accent-fill` (filled buttons) `--accent-2` `--accent-ink` `--focus` `--ok` `--warn` `--danger` `--info` `--live` `--up` `--down` `--res` |
-| Signal | `--signal` `--signal-2` `--signal-line` (gradient, hairlines only) `--signal-text` (signal as readable text/icon colour) |
+| Signal | `--signal` (the selected mark: active tab rule, current edition) `--signal-2` `--signal-line` `--signal-text` (signal as readable text: kickers, top ranks, "New") |
 | Meaning | `--hue-{repos,papers,news,social,labs}` · `--cat-{release,product,research,tool,engineering,discussion,industry,policy}` · `--sig-1`…`--sig-8` |
-| Materials | `--panel-bg` `--panel-tint` `--panel-edge` `--panel-drop` `--panel-drop-2` `--panel-blur` `--rim` (content glass) · `--tint-1`…`--tint-3` (fills inside glass) · `--plate-bg` `--plate-edge` · `--well-bg` `--well-edge` · `--glass-bg` `--glass-blur` `--glass-edge` · `--elev-0`…`--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` · `--spot` `--spot-max` (pointer light) (§10) |
-| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (40 % dark, 0 % light) |
-| HUD | `--hud` `--hud-hot` (HUD line colour at rest / lit: engaged panel edge, rim spot) `--hud-faint` (ticks) `--hud-glow` `--ticks` `--font-hud` |
-| Page | `--spill` (scene light) `--grid` `--grid-dot` `--grid-major` (tactical grid) `--scan` `--grain` `--vignette` |
-| Type | `--font-ui` `--font-text` (titles/body copy) `--font-display` `--font-num` `--font-serif` `--font-mono` (all with CJK fallbacks) · `--fs-2xs`…`--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--weight-title/section/display` `--tracking-hero/display/section/title/eyebrow` · `--lh` `--lh-title` `--lh-tight` |
-| Shape | `--radius-s` 8 `--radius-m` 12 `--radius-l` 18 `--radius-xl` 22 `--radius-2xl` 30 `--radius-pill` · `--space-1`…`--space-10` `--pad-card` `--gap-list` `--density` `--target` (44px) |
-| Motion | `--ease` (sheet curve) `--ease-pop` (knobs, thumbs) `--ease-in` · `--dur-1/2/3` 160/240/420 ms (0 under reduced motion) |
-| Layout | `--header-h` (60) `--tabbar-h` (62) `--tabbar-space` (what the floating tab bar covers) `--maxw` `--gutter` `--z-header` `--z-overlay` `--z-toast` |
-| Old names | `--shadow-1` `--shadow-2` (= `--elev-1/2`) `--inset` `--header-bg` (= `--glass-bg`) `--aurora` (= `--spill`) — still defined; don't use in new CSS |
+| Materials | `--plate-bg` `--plate-edge` (paper + hairline) · `--well-bg` `--well-edge` (white field + hairline) · `--panel-bg` `--panel-edge` `--panel-drop` `--panel-drop-2` (a boxed block: hairline, no fill) · `--tint-1`…`--tint-3` (hover fills) · `--glass-bg` `--glass-edge` (floating layers) · `--elev-0`…`--elev-3` (only `--elev-3` casts a shadow) · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` (§10) |
+| Focus | `--ring` `--ring-inset` · `--glow` (= `--ring`) |
+| Type | `--font-sans` `--font-serif` `--font-mono` (all with CJK fallbacks) · roles `--font-display` (headlines, serif) `--font-num` (rank figures, serif) `--font-text` (running text, sans) `--font-ui` · `--fs-2xs`…`--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--weight-title/section/display` `--tracking-hero/display/section/title/eyebrow` · `--lh` `--lh-title` `--lh-tight` |
+| Shape | `--radius-s` 2 `--radius-m` 3 `--radius-l` 4 `--radius-xl` 4 `--radius-2xl` 10 `--radius-pill` 3 · `--space-1`…`--space-10` `--pad-card` `--gap-list` `--density` `--target` (44px) |
+| Motion | `--ease` (sheet curve) `--ease-pop` (knobs, thumbs) `--ease-in` · `--dur-1/2/3` 140/220/380 ms (0 under reduced motion) |
+| Layout | `--header-h` (56) `--tabbar-h` (58) `--tabbar-space` (what the tab bar covers) `--maxw` `--gutter` `--z-header` `--z-overlay` `--z-toast` |
+| Old names | `--shadow-1` `--shadow-2` (= `--elev-1/2`) `--inset` `--header-bg` (the header's paper) — still defined; don't use in new CSS |
 
-Colour only where it means something: board hue (`--hue` is set on every card/board), category, signal, resonance.
-Helpers: `boardHue(board)`, `categoryHue(cat)` in `ui/chip.tsx`.
+Colour only where it means something: the signal (vermilion), status, resonance; board and category inks key charts
+and the resonance diagram (`--hue` is set on every card/board). Helpers: `boardHue(board)`, `categoryHue(cat)` in
+`ui/chip.tsx`.
 
 Stable `data-part` hooks (for custom CSS and `docs/CUSTOMIZE.md`): `app` `header` `edition-picker` `live-toggle`
 `search-trigger` `lang-switch` `mode-switch` `tabbar` `offline-banner` `footer` `today` `edition-head` `brief`
-`resonance-strip` `cluster` `category-bar` `board` `runners-up` `item-card` `item-meta` `item-actions` `rank`
+`cluster` `category-bar` `board` `runners-up` `item-card` `item-meta` `item-actions` `rank`
 `trend-badge` `score-bar` `sparkline` `resonance-mark` `runner-row` `status-chip` `sources` `item-sheet`
 `item-detail` `settings` `sheet` `dialog` `popover` `toaster` `toast` `chart` `empty-state` `error-state` `not-found`.
 
-## 10. Visual language ("Titanium × Signal")
+## 10. Visual language ("Newsprint")
 
-`docs/VISUAL.md` is the spec (values there are the values in code); this is how to apply it in a surface. The look:
-thick, lit glass over a tactical scene, and one amber (dark) / safety-yellow (light) line of HUD "signal" light. Build
-every surface from the materials and the tokens below — **no raw hex, no local colours, no `border` for depth**.
+`docs/VISUAL.md` is the spec (values there are the values in code); this is how to apply it in a surface. The look: a
+daily paper — ink on warm stock, serif headlines, rules instead of boxes, one vermilion. Build every surface from the
+materials and the tokens below — **no raw hex, no local colours, no shadows on content**.
 
-**Materials** (tokens derive from the colour tokens with `color-mix()`, so every preset and mode gets them for free):
+**Materials** (tokens are references to the colour tokens, so every preset and mode gets them for free):
 
 | Material | Utility | Tokens | Use for | Never for |
 |---|---|---|---|---|
-| **Panel** (content glass) | `.glass` | `background: var(--panel-bg); box-shadow: var(--panel-edge), var(--panel-drop)`; `ui/hud.css` adds the backdrop blur, the refracting rim and the inner tints | board panels, the brief, settings groups, scoring/archive/weekly panels, detail plates, library cards | small controls; anything inside a container that fades, filters or masks (§7a of VISUAL.md) |
-| **Plate** (raised) | `.mat-plate` | `background: var(--plate-bg); box-shadow: var(--plate-edge), var(--elev-1)` | secondary buttons, pills, chips, keycaps, knobs, the selected thumb | text inputs, tracks, content panels |
-| **Well** (recessed) | `.mat-well` | `background: var(--well-bg); box-shadow: var(--well-edge)` | inputs, search field, segmented/tab tracks, score-bar and progress tracks, count chips, source-status chips, empty-state icon discs | anything clickable that is not a field or a track |
-| **Glass** (chrome) | `.mat-glass` | `background: var(--glass-bg); backdrop-filter: var(--glass-blur); box-shadow: var(--glass-edge), var(--elev-3)` | header, tab bar, sheets, drawers, dialogs, popovers, toasts, the search palette | content (use a panel) |
-| **Press** | — | `box-shadow: var(--press); transform: scale(0.98)` | the `:active` state of any plate | — |
+| **Page** | — | `background: var(--bg)` | content: boards, the brief, lists, sections | — |
+| **Panel** (a boxed block) | `.glass` | `background: var(--panel-bg); box-shadow: var(--panel-edge), var(--panel-drop)` — a hairline frame | boxes on secondary pages (archive months, resonance clusters, scoring and status cards; add `inset 0 2px 0 var(--rule)` for a heavy top rule) | the front page's columns (they are ruled, not boxed) |
+| **Plate** | `.mat-plate` | `background: var(--plate-bg); box-shadow: var(--plate-edge)` | secondary buttons, keycaps, tiles | text inputs, content |
+| **Well** | `.mat-well` | `background: var(--well-bg); box-shadow: var(--well-edge)` | inputs, the search field | anything clickable that is not a field |
+| **Floating** | `.mat-glass` | `background: var(--glass-bg); box-shadow: var(--glass-edge), var(--elev-3)` | sheets, drawers, dialogs, popovers, toasts, the search palette, previews | anything that sits on the page |
+| **Press** | — | `box-shadow: var(--press)` (+ a darker fill) | the `:active` state of a plate | — |
 
-- A plate's edge lives inside its shadow, so plates never use `border` and never shift layout. A plate inside a plate
-  (a grouped list, the score table) is `background: var(--surface-2); box-shadow: var(--plate-edge)` — no elevation.
-- Elevation: `--elev-1` at rest, `--elev-2` on hover, `--elev-3` for floating chrome; panels use `--panel-drop` /
-  `--panel-drop-2`. **Panels lift, rows don't**: add `.mat-lift` to a panel (2 px up + `--panel-drop-2`, only under
-  `(hover: hover)`); rows inside it change to `--surface-2` on hover — which inside glass is the `--tint-2` wash.
-  Nothing lifts on touch.
-- A new content panel: give it the `glass` class (or add its selector to the lists at the top of `ui/hud.css`), and
-  to `LIT_PANELS` in `ui/glass.ts` if it should catch the pointer light. Never fade, filter or mask a wrapper of glass;
-  animate the panel itself.
+- **Rules organise the page** (VISUAL §4): a 2 px `--rule` under the masthead date, under every board title and along
+  the top of boxed blocks; a 3 px double rule between the lead and the boards; a 1 px `--text` rule on top of a ruled
+  list; `--line` hairlines between rows. Columns in a row are separated by a hairline down the middle of the gap.
+- Nothing on the page casts a shadow or lifts on hover. Rows take a `--tint-1` fill on hover; titles underline.
 - Shadow composition: primitives keep their resting shadow in `--sh` and state rules swap it
   (`--sh: var(--press)`), so focus can add to it: `box-shadow: var(--sh), var(--ring)`. Write "no shadow" as
   `0 0 #0000` (a list-able value), never `none`.
-- Rows, not cards: items inside a panel are rows with hairline separators (`var(--line)`) inset past the rank column
-  (iOS grouped list). One plate per panel; don't nest cards in cards.
-- Glass needs no fallback code: without `backdrop-filter`, `--glass-bg` and `--panel-tint` become near-opaque
-  surfaces; under `prefers-reduced-transparency` they turn solid.
+- Rows, not cards: items in a column are rows with hairline separators. Don't nest boxes in boxes.
 
-**Colour.** Neutral graphite / light grey everywhere; colour only where it means something: board hue (`--hue`,
-set on every card/board, `boardHue(b)`), category (`categoryHue(c)`), score signals (`--sig-N`), resonance
-(`--res`), state (`--ok` `--warn` `--danger` `--info` `--live`). Tints are `color-mix(in oklab, var(--x) 12%,
-transparent)`, tinted text is `color-mix(in oklab, var(--x) 80%, var(--text))`. `--accent` is for links and the
-primary button (`--accent-fill`); `--signal` is for focus and "you are here".
+**Colour.** Ink in three strengths everywhere (`--text`, `--text-2`, `--text-3`); the signal colour (vermilion) for
+kickers, the top three rank figures, "New", the selected tab's rule, links (`--accent`) and the one primary button
+(`--accent-fill`). Status (`--ok` `--warn` `--danger` `--info` `--live`) and the resonance ink (`--res`) mean
+something; board and category inks key charts and diagrams only. Selected chips and segmented choices are **inked**
+(ink fill, paper text), not coloured. Focus is an ink ring (`--focus` = `--text`).
 
-**Glow is a budget** (VISUAL §5). Allowed only on: focus (`--ring`, applied globally), the active navigation item
-(thumb underline, tab-bar dot, settings/edition marker), the live dot, score-bar segments and board-hue dots (dark
-only), full resonance, the "on" switch. Always scale a coloured bloom by `--bloom` —
-`0 0 6px color-mix(in srgb, var(--hue) var(--bloom), transparent)` — so light mode gets none automatically
-(`.hue-dot` does this for you). At rest a card shows at most one glowing thing (its score bar). Text never glows;
-hover never adds glow. The signature gradient `--signal-line` appears once per page, as a ≤ 2 px hairline
-(`.signal-edge` on the Brief).
+**Words, not ornaments.** Trend marks, resonance and categories are short words and figures ("New", "▲2", "On 3
+boards", "Research") — not icon discs, coloured dots or pills. No sparkle icons (the AI summary uses `summary`), no
+emoji, no uppercase-tracked eyebrows: `.kicker` is 0.8125 rem / 700 in `--signal-text`, sentence case.
 
-**Type.** System fonts only (`--font-ui`, `--font-display` for headings, `--font-mono` for every number that is a
-measurement: scores, counts, raw/norm/points). Use the role tokens: `--fs-hero` (display date, 700, `--tracking-hero`),
-`--fs-section` (650), `--fs-board`, `--fs-item` (600, 2-line clamp), `--fs-body` (`--text-2`), `--fs-meta`
-(`--text-3`), `.eyebrow` / `.kicker` (0.75 rem, 600, +0.06 em, uppercase). The rank numeral is thin and metallic
-(`<RankNumeral>`). CJK body line-height 1.65, titles 1.35. Hierarchy comes from size, weight and `--text`/`-2`/`-3`,
-not from colour.
+**Type.** System fonts only. Headlines in `--font-display` (serif): the masthead date (`--fs-hero`), page and section
+titles, board titles, item titles, the brief's headline; rank figures in `--font-num` (serif, bold, lining tabular
+figures). Running text and controls in the sans (`--font-text`, `--font-ui`); counts and scores in the sans with
+`tabular-nums`; `--font-mono` only for code. CJK body line-height 1.7, titles 1.32. Hierarchy comes from size, weight,
+serif vs sans and `--text`/`-2`/`-3`, not from colour.
 
-**Space, shape, motion.** 4 px grid (`--space-*`); board panels pad 20–24 px (16 on phones). Radii: controls
-`--radius-m`, cards `--radius-l`, board panels `--radius-xl`, sheets `--radius-2xl`, pills `--radius-pill`. Motion
-uses `--ease` / `--ease-pop` with `--dur-1/2/3` only — those become 0 under reduced motion, so any transition written
-with them is accessible for free. No looping animation except the live dot.
+**Space, shape, motion.** 4 px grid (`--space-*`); columns are separated by a 2.75 rem gap with a rule. Radii are small
+(2–4 px; phone sheets 10 px); `--radius-pill` is 3 px, so "pill" controls are rectangles. Motion uses `--ease` /
+`--ease-pop` with `--dur-1/2/3` only — those become 0 under reduced motion. No entrance animations; no looping
+animation except the live dot.
 
 **Controls — pick the primitive, don't restyle it:**
 
 | Need | Use |
 |---|---|
-| Switch between views of the same page (boards, sections) | `<Tabs variant="pills">` — well track + raised thumb + signal underline |
-| Pick one value in a form | `<Segmented>` — same track, no underline (it's a choice, not navigation) |
-| Filter toggles, tags, counts | `<Chip>` / `<CategoryChip>` (small plates; selected = raised thumb) |
-| Actions | `<Button>` primary (one per view) / secondary / ghost / danger; `<IconButton>` (ghost, plate on hover) |
-| On/off | `<Switch>` (iOS 51 × 31) |
-| Source state | `<SourceChip>` (small well with an icon) |
-| Nothing to show / failed | `<EmptyState>` / `<ErrorState>` (icon in a well disc) |
+| Switch between views of the same page (boards, sections) | `<Tabs variant="pills">` or `"line"` — words over a hairline, the chosen one underlined by a 2 px signal rule |
+| Pick one value in a form | `<Segmented>` — a hairline group, the chosen option boxed in ink |
+| Filter toggles, tags, counts | `<Chip>` / `<CategoryChip>` (hairline tags; selected = inked) |
+| Actions | `<Button>` primary (one per view) / secondary / ghost / danger; `<IconButton>` (ghost, a faint fill on hover) |
+| On/off | `<Switch>` (iOS 51 × 31; on = ink track) |
+| Source state | `<SourceChip>` (a hairline tag with an icon) |
+| Nothing to show / failed | `<EmptyState>` / `<ErrorState>` (a plain icon over a serif sentence) |
 
-Layout contracts of the tracks: `.tabs--pills` and `.segmented` *are* the well track, so don't give them padding,
+Layout contracts of the tracks: `.tabs--pills` and `.segmented` carry their own base/track, so don't give them padding,
 negative margins or a background — put spacing and full-bleed scrolling on a wrapper around them. Horizontal
 scrollers must be `position: relative` (§13) and get the edge fade from `useThumb` automatically.
 
 **Accessibility is built in — keep it.** `:root :focus-visible { box-shadow: var(--ring) }` gives every control the
-signal ring; if your component sets its own `box-shadow` on focus, compose it with `var(--ring)`. Small visuals keep
+ink ring; if your component sets its own `box-shadow` on focus, compose it with `var(--ring)`. Small visuals keep
 a 44 px hit area with an invisible `::before` halo (`inset: calc((var(--h) - var(--target)) / 2) 0`). Text is ≥ 4.5:1
 in both modes: use `--text-3` as the faintest text colour, never lower opacity on text.
 
 **Check it.** `node scripts/shots.mjs --views <view> --modes dark,light --sizes desktop,mobile --out <dir>` and look at
-every PNG. Ask: aligned to the gutter? one clear hierarchy? does anything glow that shouldn't? would it pass an Apple
-design review?
+every PNG. Ask: aligned to the gutter? one clear hierarchy? does it read like a page of a newspaper, or like a
+dashboard? anything boxed that could be ruled? anything coloured that could be ink?
 
 ## 11. UI primitives (`ui/`)
 
 All primitives: ≥ 44 px hit area (small visuals extend it with an invisible halo), visible `:focus-visible` ring, no
 hover-only information, motion disabled under reduced motion, text always rendered as text.
 
-**CSS helpers** (`ui.css`, no component needed): `.mat-plate` `.mat-well` `.mat-glass` (§10) · `.mat-lift` (panel
-hover lift) · `.hue-dot` (8 px dot + halo, set `--hue`) · `.eyebrow` · `.signal-edge` (the Brief's 2 px gradient edge)
-· `.tile` (a selectable plate: `aria-pressed`/`aria-checked`/`.is-on` gets the signal outline — preset and choice
-cards) · `.btn--pill` (toolbar buttons) · `.num` (tabular figures).
+**CSS helpers** (`ui.css`, no component needed): `.glass` `.mat-plate` `.mat-well` `.mat-glass` (§10) · `.hue-dot`
+(7 px dot, set `--hue`) · `.eyebrow` (a quiet label) · `.signal-edge` (a 3 px signal rule down the left edge: pull
+quotes) · `.tile` (a selectable block: `aria-pressed`/`aria-checked`/`.is-on` gets an ink frame — preset and choice
+cards) · `.btn--pill` (toolbar buttons) · `.num` (tabular lining figures).
 
-**Icons** — `<Icon name="sparkle" size={18} title?="…" />`. Names: see `ICON_NAMES` (search, settings, sun, moon,
-contrast, download, upload, external, link, copy, sparkle, chevron-*, x, check, info, warn, error, star, fork,
-arrow-up/down, flame, comment, heart, repost, eye, code, book, paper, hn, lab, chat, live, calendar, clock, filter,
+**Icons** — `<Icon name="summary" size={18} title?="…" />`. Names: see `ICON_NAMES` (search, settings, sun, moon,
+contrast, download, upload, external, link, copy, summary, chevron-*, x, check, info, warn, error, star, fork,
+arrow-up/down, comment, heart, repost, eye, code, book, paper, hn, lab, chat, live, calendar, clock, filter,
 more, wifi-off, refresh, trash, key, lock, mail, today, archive, resonance, sliders, bookmark, plus, minus, menu, grip,
 globe, scale, send, image, history, x_logo, reddit, dot). Add one = one entry in `PATHS`.
 
@@ -324,8 +312,8 @@ globe, scale, send, image, history, x_logo, reddit, dot). Add one = one entry in
 <Button variant="primary|secondary|ghost|danger" size="s|m|l" icon="download" iconEnd="external" loading={busy} href?>Export</Button>
 <IconButton icon="settings" label="Settings" size="s|m|l" variant="ghost" pressed={on} dot href? />   // label is required
 ```
-Primary = accent fill with a top highlight (one per view); secondary = plate; ghost = transparent → plate on hover;
-danger = danger text on a plate. Heights 30 / 36 / 44. All press into the surface (`--press`, 0.98).
+Primary = accent fill (one per view); secondary = paper with a hairline; ghost = text → a faint fill on hover;
+danger = danger text on paper. Heights 30 / 34 / 42. Pressing darkens the fill (`--press`); nothing scales or lifts.
 
 **Chip / Badge / CategoryChip** (`chip.tsx`)
 ```tsx

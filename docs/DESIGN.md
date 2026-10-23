@@ -222,7 +222,7 @@ board's primary metric (`stars` / `hfUpvotes` / `points`) and rank history. Full
 ## 7. Web app
 
 Stack: Vite + Preact + @preact/signals + TypeScript. No UI kit, no CSS framework, no chart lib (hand-rolled SVG).
-Hash router (works on any static host and sub-path). Budget: **≤ 95 KB gzip** for the initial JS+CSS (raised from 90 KB for the tactical-glass visual layer, docs/VISUAL.md §10).
+Hash router (works on any static host and sub-path). Budget: **≤ 95 KB gzip** for the initial JS+CSS (88 KB with the Newsprint visual layer, docs/VISUAL.md §10).
 
 ### 7.1 Information architecture
 
@@ -238,19 +238,19 @@ Hash router (works on any static host and sub-path). Budget: **≤ 95 KB gzip** 
 | `#/settings/<tab>` | General · Models · Credentials · Search · Appearance · **Delivery** (e-mail schedule) · Channels |
 | `#/export` | Export an interactive report: this edition · this week · custom range (≤ 31 days), language, boards, include my summaries |
 
-Layout: ≥ 1100 px a front-page grid — row 1 `repos · papers · news`, row 2 `social · labs` (each board a column card),
+Layout: ≥ 1100 px a front-page grid — row 1 `repos · papers · news`, row 2 `social · labs` (each board a column, ruled from its neighbour),
 sticky header, detail opens as a right-hand drawer. Board order and visibility are user settings (hide boards you do not read).
 < 1100 px: one board at a time behind a horizontally scrollable board switcher (swipeable), bottom tab bar (Today · Resonance · Archive · Search · Settings),
 detail and summary open as bottom sheets. Touch targets ≥ 44 px. No hover-only affordances.
 
 ### 7.2 The item card (the core unit)
 
-Rank numeral · trend badge (NEW / ▲3 / ▼1 / BACK, streak "🔥 4d") · title · one-line blurb (pipeline copy in UI language if
+Rank numeral · trend badge (New / ▲3 / ▼1 / Back, streak "4 days", all set as words and figures) · title · one-line blurb (pipeline copy in UI language if
 present, else source text) · meta row (board-specific: ★ total +today · language / ↑ upvotes · code / ▲ points · 💬 / platform icon · @author or r/community · ♥ · 💬 /
 company badge · kind · surface · date; plus a category chip) ·
-**score bar**: a segmented horizontal bar, one segment per signal, width ∝ points, colour per signal, total at the end —
-tap to expand the full breakdown table (raw → norm → points) · sparkline · resonance mark (linked dots coloured by board) ·
-actions: **Summarise ✦**, Search ⌕, Open ↗, Copy link.
+**score bar**: a segmented horizontal rule, one segment per signal, width ∝ points, total at the end (signal colours
+only in the full breakdown) — tap to expand the breakdown table (raw → norm → points) · sparkline · resonance mark
+("On 3 boards") · actions: **Summarise**, Search ⌕, Open ↗, Copy link.
 
 ### 7.3 Extension seams inside the web app (keep features decoupled)
 
@@ -306,7 +306,7 @@ rules (§13), shows $/1M in/out, and the summary sheet shows **estimated cost be
 
 ### 8.4 One-click summary ("is this worth my time?")
 
-Tap ✦ on any item → sheet opens and streams a **verdict card**:
+Tap Summarise on any item → sheet opens and streams a **verdict card**:
 `TL;DR` (1 sentence) · `Key points` (3) · `Who should care` · `Caveats / maturity` · `Verdict` (Dig in / Bookmark / Skip) + why.
 Personalised by an optional "About me / what I care about" note in settings.
 
@@ -365,9 +365,9 @@ Summary language = UI language unless overridden. Adding a language = one dictio
 ## 11. Appearance & customisation seam
 
 * Design tokens as CSS custom properties (`theme/tokens.css`): colour roles, board hues, signal hues, radius, density, font stacks, motion.
-* Presets (`titanium` default: tactical glass with an amber / safety-yellow HUD light, see `docs/VISUAL.md`; `paper` light
-  editorial; `terminal` mono) = token maps; light/dark/auto per preset. A stored or configured `aurora` (the retired
-  default) is read as `titanium`.
+* Presets (`paper` default: "Newsprint" — ink on warm stock, serif headlines, ruled columns, one vermilion, see
+  `docs/VISUAL.md`; `titanium` neutral sans-serif; `terminal` mono) = token maps; light/dark/auto per preset. A stored
+  or configured `aurora` (a retired default) is read as `titanium`.
 * Fork-level: `config.yaml › site.theme`, and an optional `web/public/custom.css` that is loaded last if present.
 * User-level (Settings › Appearance): preset, mode, accent, density, font size, reduce motion, **custom CSS** box, import/export theme JSON.
 * Programmatic: `window.ResonanceTheme = { apply(tokens), reset(), tokens() }` and stable `data-part="…"` attributes on major elements, documented in `docs/CUSTOMIZE.md`.

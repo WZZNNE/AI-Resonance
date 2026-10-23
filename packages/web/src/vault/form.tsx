@@ -19,7 +19,7 @@ export function kindLabel(kind: CredentialKind): string {
 
 /** The glyph shown in a credential's disc. */
 export const KIND_ICON: Record<CredentialKind, IconName> = {
-  llm: 'sparkle',
+  llm: 'chat',
   search: 'search',
   reader: 'book',
   github: 'code',
