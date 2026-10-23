@@ -19,6 +19,8 @@ export interface BoardColumnProps {
   category: Category | null
   /** Grid span on the front-page layout (set by Today). */
   span?: number
+  /** First board of a grid row: no column rule on its left. */
+  rowStart?: boolean
   /** Narrow layout: the board switcher labels the region instead of the heading. */
   panelProps?: Record<string, unknown>
   /**
@@ -89,7 +91,7 @@ function EmptyBoard({
 }
 
 /** A board's column (wide grid) or panel (narrow). */
-export function BoardColumn({ board, day, date, meta, category, span, panelProps, total }: BoardColumnProps) {
+export function BoardColumn({ board, day, date, meta, category, span, rowStart, panelProps, total }: BoardColumnProps) {
   const data = day.boards[board] ?? { top: [], runnersUp: [] }
   const top = data.top.filter(matches(category))
   const runners = data.runnersUp.filter(matches(category))
@@ -100,7 +102,7 @@ export function BoardColumn({ board, day, date, meta, category, span, panelProps
   const lookback = meta?.lookbackDays
   return (
     <section
-      class="board mat-lift"
+      class={`board${rowStart === false ? ' board--ruled' : ''}`}
       data-part="board"
       data-board={board}
       style={{ '--hue': boardHue(board), gridColumn: span ? `span ${span}` : undefined }}
@@ -110,7 +112,6 @@ export function BoardColumn({ board, day, date, meta, category, span, panelProps
       <header class="board__head">
         <div class="board__titles">
           <h2 class="board__title" id={titleId}>
-            <span class="board__dot" aria-hidden="true" />
             {boardTitle(board, meta)}
             <span class="board__count num">
               {category ? t('home.filteredCount', { shown: top.length, total: data.top.length }) : data.top.length}

@@ -25,7 +25,7 @@ import { boardTitle } from '../items/text.ts'
 import { cleanRules, filterReading, type ReadingFilter, reading } from '../reading/store.ts'
 import { SourcesTable, statusSummary } from '../shell/status.tsx'
 import { motionReduced } from '../theme/prefs.ts'
-import { Button, IconButton } from '../ui/button.tsx'
+import { Button } from '../ui/button.tsx'
 import { Badge, boardHue, Chip } from '../ui/chip.tsx'
 import { useSwipe } from '../ui/gestures.ts'
 import { Icon } from '../ui/icons.tsx'
@@ -43,6 +43,16 @@ const SPANS: Record<number, number[]> = { 0: [], 1: [6], 2: [3, 3], 3: [2, 2, 2]
 /** Pure: grid column spans (of 6) for n visible boards — 5 gives the front page: three columns, then two. */
 export function boardSpans(n: number): number[] {
   return SPANS[n] ?? Array.from({ length: n }, () => 2)
+}
+
+/** Pure: which of those boards open a grid row (the others get a column rule on their left). */
+export function rowStarts(spans: readonly number[]): boolean[] {
+  let used = 0
+  return spans.map((span) => {
+    const start = used % 6 === 0
+    used += span
+    return start
+  })
 }
 
 function EditionHead({
@@ -68,12 +78,33 @@ function EditionHead({
   }, [])
   const fresh = freshness(day, m?.site.cutoff, now)
   const pathOf = (date: DateStr) => (m && date === m.latest ? '#/' : `#/d/${date}`)
+  const step = (dir: 'older' | 'newer') => {
+    const date = near[dir]
+    const label = t(dir === 'older' ? 'edition.older' : 'edition.newer')
+    const inner = (
+      <>
+        {dir === 'older' && <Icon name="chevron-left" size={14} />}
+        <span>{label}</span>
+        {dir === 'newer' && <Icon name="chevron-right" size={14} />}
+      </>
+    )
+    return date ? (
+      <a class="edition__step" href={pathOf(date)}>
+        {inner}
+      </a>
+    ) : (
+      <span class="edition__step is-disabled" aria-disabled="true">
+        {inner}
+      </span>
+    )
+  }
   return (
+    // A newspaper masthead: the edition label, the date as the headline, then a dateline strip between two rules.
     <header class="edition" data-part="edition-head">
-      <div class="edition__main">
+      <div class="edition__top">
         <p class="kicker edition__kicker">
           {live ? (
-            // The window line below already names the timezone; the live pill stands alone.
+            // The window line below already names the timezone; the live label stands alone.
             <span class="edition__live">
               <span class="edition__dot" aria-hidden="true" />
               {t(fresh.closed ? 'home.closedLive' : 'home.rolling')}
@@ -94,111 +125,102 @@ function EditionHead({
             </>
           )}
         </p>
-        <h1 class="edition__date">{fmt.day(day.date, 'long')}</h1>
-        <p class="edition__note">
-          <Icon name="clock" size={14} />
-          {t('home.collected', { time: fmt.relative(fresh.collected, now) })}
-          {live && fresh.delayed && (
-            <Badge tone="warn" title={t('home.outdatedHint')}>
-              {t('home.outdated')}
-            </Badge>
-          )}
-        </p>
-        <EnrichmentNote status={day.enrichment} />
-        <details class="edition__details">
-          <summary>
-            {t('home.editionDetails')}
-            {sum.issues > 0 && (
-              <Badge tone="warn">{t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })}</Badge>
-            )}
-          </summary>
-          <div class="edition__when">
-            <p class="edition__window">
-              <Icon name="clock" size={14} />
-              <span class="edition__times">{w.edition}</span>
-            </p>
-            {!w.sameZone && (
-              <p class="edition__local">
-                {t('edition.yourTime')} <span class="edition__times">{w.local}</span>
-              </p>
-            )}
-          </div>
-          <div class="edition__flags">
-            {!day.window.settled && (
-              <Badge tone="warn" title={t('edition.preliminaryHelp')}>
-                {t('edition.preliminary')}
+        {!live && (near.older || near.newer) && (
+          <nav class="edition__nav" aria-label={t('edition.nav')}>
+            {step('older')}
+            {step('newer')}
+          </nav>
+        )}
+      </div>
+      <h1 class="edition__date">{fmt.day(day.date, 'long')}</h1>
+      <div class="edition__dateline">
+        <div class="edition__main">
+          <p class="edition__note">
+            {t('home.collected', { time: fmt.relative(fresh.collected, now) })}
+            {live && fresh.delayed && (
+              <Badge tone="warn" title={t('home.outdatedHint')}>
+                {t('home.outdated')}
               </Badge>
             )}
-            {!day.enriched && <Badge title={t('edition.noCopyHelp')}>{t('edition.noCopy')}</Badge>}
-            <button
-              type="button"
-              class={`edition__sources${sum.issues ? ' has-issues' : ''}`}
-              onClick={() => {
-                // An explicit behaviour overrides CSS reduced motion, so the preference is asked here.
-                document.getElementById('sources')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
-                document.getElementById('sources-title')?.focus({ preventScroll: true })
-              }}
+          </p>
+          <EnrichmentNote status={day.enrichment} />
+          <details class="edition__details">
+            <summary>
+              {t('home.editionDetails')}
+              {sum.issues > 0 && (
+                <Badge tone="warn">{t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })}</Badge>
+              )}
+            </summary>
+            <div class="edition__when">
+              <p class="edition__window">
+                <Icon name="clock" size={14} />
+                <span class="edition__times">{w.edition}</span>
+              </p>
+              {!w.sameZone && (
+                <p class="edition__local">
+                  {t('edition.yourTime')} <span class="edition__times">{w.local}</span>
+                </p>
+              )}
+            </div>
+            <div class="edition__flags">
+              {!day.window.settled && (
+                <Badge tone="warn" title={t('edition.preliminaryHelp')}>
+                  {t('edition.preliminary')}
+                </Badge>
+              )}
+              {!day.enriched && <Badge title={t('edition.noCopyHelp')}>{t('edition.noCopy')}</Badge>}
+              <button
+                type="button"
+                class={`edition__sources${sum.issues ? ' has-issues' : ''}`}
+                onClick={() => {
+                  // An explicit behaviour overrides CSS reduced motion, so the preference is asked here.
+                  document.getElementById('sources')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
+                  document.getElementById('sources-title')?.focus({ preventScroll: true })
+                }}
+              >
+                <Icon name={sum.issues ? 'warn' : 'check'} size={13} />
+                <span>
+                  {sum.issues
+                    ? t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })
+                    : t('edition.sourcesOk', { n: sum.total })}
+                  {sum.cost > 0 && ` · ${fmt.usd(sum.cost)}`}
+                </span>
+                <Icon name="chevron-down" size={12} />
+              </button>
+            </div>
+          </details>
+        </div>
+        <div class="edition__tools">
+          {m?.live && (
+            <Button
+              size="s"
+              variant="ghost"
+              href={live && m.latestKind !== 'live' ? '#/' : '#/live'}
+              disabled={live && m.latestKind === 'live'}
             >
-              <Icon name={sum.issues ? 'warn' : 'check'} size={13} />
-              <span>
-                {sum.issues
-                  ? t('edition.sourcesIssues', { n: sum.total, issues: sum.issues })
-                  : t('edition.sourcesOk', { n: sum.total })}
-                {sum.cost > 0 && ` · ${fmt.usd(sum.cost)}`}
-              </span>
-              <Icon name="chevron-down" size={12} />
-            </button>
-          </div>
-        </details>
-      </div>
-      <div class="edition__tools">
-        {m?.live && (
+              {t(live ? 'home.closedEdition' : 'home.openLive')}
+            </Button>
+          )}
+          {hasRoute('/subscribe') && (
+            <Button size="s" variant="ghost" href="#/subscribe">
+              {t('subscribe.title')}
+            </Button>
+          )}
           <Button
             size="s"
-            href={live && m.latestKind !== 'live' ? '#/' : '#/live'}
-            icon={live ? 'today' : 'live'}
-            disabled={live && m.latestKind === 'live'}
+            variant="ghost"
+            onClick={() => {
+              document.getElementById('news-boards')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
+              document.getElementById('news-boards')?.focus({ preventScroll: true })
+            }}
           >
-            {t(live ? 'home.closedEdition' : 'home.openLive')}
+            {t('home.browse')}
           </Button>
-        )}
-        {hasRoute('/subscribe') && (
-          <Button size="s" href="#/subscribe" icon="send">
-            {t('subscribe.title')}
+          <Button size="s" variant="ghost" icon="refresh" disabled={loading} onClick={reload}>
+            {t('home.refresh')}
           </Button>
-        )}
-        <Button
-          size="s"
-          icon="chevron-down"
-          onClick={() => {
-            document.getElementById('news-boards')?.scrollIntoView({ behavior: motionReduced() ? 'auto' : 'smooth' })
-            document.getElementById('news-boards')?.focus({ preventScroll: true })
-          }}
-        >
-          {t('home.browse')}
-        </Button>
-        <Button size="s" variant="ghost" icon="refresh" disabled={loading} onClick={reload}>
-          {t('home.refresh')}
-        </Button>
+        </div>
       </div>
-      {!live && (near.older || near.newer) && (
-        <nav class="edition__nav" aria-label={t('edition.nav')}>
-          <IconButton
-            icon="chevron-left"
-            label={t('edition.older')}
-            href={near.older ? pathOf(near.older) : undefined}
-            disabled={!near.older}
-            variant="secondary"
-          />
-          <IconButton
-            icon="chevron-right"
-            label={t('edition.newer')}
-            href={near.newer ? pathOf(near.newer) : undefined}
-            disabled={!near.newer}
-            variant="secondary"
-          />
-        </nav>
-      )}
     </header>
   )
 }
@@ -283,6 +305,7 @@ export default function Today({ path, query }: RouteProps) {
     navigate(editionPath(ref, manifest.data.value), { query: { ...query, cat: c ?? undefined }, replace: true })
   const metas = boardMetas.value
   const spans = boardSpans(visible.length)
+  const starts = rowStarts(spans)
   const readingFilter: ReadingFilter = query.read === 'unread' || query.read === 'following' ? query.read : 'all'
   const readingCounts = Object.fromEntries(
     (['all', 'unread', 'following'] as const).map((mode) => [mode, filterReading(allItems(day), mode).length]),
@@ -353,7 +376,7 @@ export default function Today({ path, query }: RouteProps) {
           {t('reading.manage')}
         </Button>
       </fieldset>
-      {/* Narrow: navigation first (the one segmented track), then the filter as a light chip row. */}
+      {/* Narrow: navigation first (the board tabs), then the filter as a row of words. */}
       {!wide && visible.length > 1 && (
         <div class="board-switch">
           <Tabs
@@ -393,6 +416,7 @@ export default function Today({ path, query }: RouteProps) {
               meta={metas.get(b)}
               category={category}
               span={spans[i]}
+              rowStart={starts[i]}
               total={boardTotal(day, b)}
             />
           ))}
@@ -413,7 +437,6 @@ export default function Today({ path, query }: RouteProps) {
       )}
       <section class="sources" id="sources" data-part="sources" aria-labelledby="sources-title">
         <h2 class="section-head__title" id="sources-title" tabIndex={-1}>
-          <Icon name="info" size={16} />
           {t('status.title')}
         </h2>
         <p class="sources__note">{t('status.note', { time: fmt.dateTime(day.generatedAt) })}</p>

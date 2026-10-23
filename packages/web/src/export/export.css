@@ -116,9 +116,9 @@
   width: 42px;
   height: 52px;
   padding-bottom: 7px;
-  border-radius: 7px;
-  background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  border-radius: 2px;
+  background: var(--surface);
+  box-shadow: var(--plate-edge);
 }
 
 .export__doc::after {
@@ -181,9 +181,7 @@
 
 .export__facts dt {
   color: var(--text-3);
-  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  font: 600 var(--fs-xs) / 1.2 var(--font-ui);
 }
 
 .export__facts dd {

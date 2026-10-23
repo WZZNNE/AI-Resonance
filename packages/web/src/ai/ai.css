@@ -22,15 +22,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  color: var(--signal-text);
+  font: 700 var(--fs-eyebrow) / 1.2 var(--font-ui);
   letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
 }
 
 .aisum__board .hue-dot {
-  width: 7px;
-  height: 7px;
+  display: none;
 }
 
 .aisum__item strong {
@@ -168,7 +166,6 @@
   height: 7px;
   border-radius: 50%;
   background: var(--badge-hue);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--badge-hue) var(--bloom), transparent);
 }
 
 .aisum__chip.is-bookmark {
@@ -260,10 +257,9 @@
   margin: 1.1rem 0 0.4rem;
   padding-top: 0.9rem;
   box-shadow: inset 0 1px 0 var(--line);
-  color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  color: var(--text);
+  font: var(--weight-section) var(--fs-m) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
 }
 
 .aisum__md > h4:first-child,
@@ -733,10 +729,8 @@
 }
 
 .aimodel.is-active .aimodel__dot {
-  background: radial-gradient(circle, var(--accent-ink) 0 3.5px, transparent 4.5px) var(--accent-fill);
-  box-shadow:
-    inset 0 1px 0 var(--hl),
-    0 1px 2px rgb(0 0 0 / 0.25);
+  background: radial-gradient(circle, var(--bg) 0 3.5px, transparent 4.5px) var(--text);
+  box-shadow: none;
 }
 
 .aimodel__text {

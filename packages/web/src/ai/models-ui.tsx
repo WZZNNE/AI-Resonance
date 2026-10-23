@@ -703,7 +703,7 @@ export default function ModelsTab() {
             ))}
           </div>
         ) : (
-          <EmptyState icon="sparkle" title={t('ai.firstRun.title')} compact>
+          <EmptyState icon="chat" title={t('ai.firstRun.title')} compact>
             <p>{t('ai.firstRun.body')}</p>
           </EmptyState>
         )}

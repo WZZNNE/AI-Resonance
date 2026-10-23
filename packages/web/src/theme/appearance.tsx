@@ -35,13 +35,13 @@ import {
 import { appearance, type Density, type MotionPref, resolveAppearance, siteTheme, type ThemeMode } from './prefs.ts'
 
 const PRESET_NAMES: Record<string, MessageKey> = {
-  titanium: 'theme.preset.titanium',
   paper: 'theme.preset.paper',
+  titanium: 'theme.preset.titanium',
   terminal: 'theme.preset.terminal',
 }
 const PRESET_NOTES: Record<string, MessageKey> = {
-  titanium: 'theme.presetNote.titanium',
   paper: 'theme.presetNote.paper',
+  titanium: 'theme.presetNote.titanium',
   terminal: 'theme.presetNote.terminal',
 }
 const presetName = (id: string) => (PRESET_NAMES[id] ? t(PRESET_NAMES[id]) : id)
@@ -99,7 +99,6 @@ function Swatch({ colors }: { colors: [string, string, string, string] }) {
             height: '10px',
             borderRadius: '50%',
             background: accent,
-            boxShadow: 'inset 0 1px 0 var(--hl)',
           }}
         />
       </span>
@@ -201,17 +200,11 @@ function Preview() {
         style={{
           padding: '1rem',
           borderRadius: 'var(--radius-l)',
-          background: 'var(--aurora), var(--grid), var(--bg)',
-          boxShadow: 'var(--well-edge)',
+          background: 'var(--bg)',
+          boxShadow: 'inset 0 0 0 1px var(--line)',
         }}
       >
-        <div
-          style={{
-            borderRadius: 'var(--radius-l)',
-            background: 'var(--plate-bg)',
-            boxShadow: 'var(--plate-edge), var(--elev-1)',
-          }}
-        >
+        <div style={{ boxShadow: 'inset 0 2px 0 var(--rule)', paddingTop: '0.25rem' }}>
           <article class="card" style={{ '--hue': 'var(--hue-repos)' }} aria-label={t('theme.preview')}>
             <div class="card__rank">
               <RankNumeral rank={1} />
@@ -233,7 +226,7 @@ function Preview() {
                   <a href={href('/settings/appearance')} style={{ color: 'var(--accent)', fontSize: 'var(--fs-s)' }}>
                     {t('theme.previewLink')}
                   </a>
-                  <Button size="s" variant="primary" icon="sparkle">
+                  <Button size="s" variant="primary">
                     {t('theme.previewButton')}
                   </Button>
                 </span>
@@ -356,11 +349,11 @@ function Accent() {
                     width: '26px',
                     height: '26px',
                     borderRadius: '50%',
-                    background: `linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent 60%) ${c}`,
+                    background: c,
                     boxShadow:
                       a.accent === c
-                        ? '0 0 0 2px var(--surface), 0 0 0 3.5px var(--signal)'
-                        : 'inset 0 0 0 1px rgb(0 0 0 / 0.15), 0 1px 2px rgb(0 0 0 / 0.25)',
+                        ? '0 0 0 2px var(--bg), 0 0 0 3.5px var(--text)'
+                        : 'inset 0 0 0 1px rgb(0 0 0 / 0.15)',
                   }}
                 />
               </button>

@@ -1,5 +1,5 @@
 /**
- * The action row of a card or detail: every `registerItemAction` entry that applies (Summarise ✦, Search ⌕ … from
+ * The action row of a card or detail: every `registerItemAction` entry that applies (Summarise, Search ⌕ … from
  * their features), then the built-ins Open ↗ and Copy link.
  */
 import type { DateStr, Item } from '@resonance/schema'

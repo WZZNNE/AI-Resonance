@@ -37,7 +37,7 @@ describe('renderEmail', () => {
     const { html } = renderEmail(daily, { lang: 'en', reportUrl: REPORT })
     expect(html).toContain('Planning agents everywhere')
     // Brief citations are named, not raw `board#rank` tokens.
-    expect(html).toContain('<b style="color:#1f7a37">Repos #1</b>')
+    expect(html).toContain('<b style="color:#2f6b3a">Repos #1</b>')
     expect(html).toContain('href="https://github.com/acme/agent-kit"')
     expect(html).toContain('>Agent Kit</a>')
     expect(html).toContain('Build planning agents on any LLM.')

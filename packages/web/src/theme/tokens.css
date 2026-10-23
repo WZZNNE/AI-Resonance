@@ -1,221 +1,155 @@
 /* biome-ignore-all lint/complexity/noImportantStyles: reduced-motion overrides must beat every component animation */
 /*
- * Design tokens — "Titanium × Signal", tactical-glass revision (docs/VISUAL.md). Everything visual reads these custom
- * properties; presets (presets.css) and user overrides (Settings › Appearance, window.ResonanceTheme, public/custom.css)
- * only change values, never selectors.
+ * Design tokens — "Newsprint" (docs/VISUAL.md). Everything visual reads these custom properties; presets (presets.css)
+ * and user overrides (Settings › Appearance, window.ResonanceTheme, public/custom.css) only change values, never
+ * selectors.
  *
- * <html> carries: data-preset (titanium | paper | terminal), data-mode (light | dark), data-density
+ * <html> carries: data-preset (paper | titanium | terminal), data-mode (light | dark), data-density
  * (compact | comfortable | cozy), optional data-motion (reduce | full), optional --font-scale / --accent.
- * The default below is titanium dark ("night ops": deep graphite, amber signal); titanium light is the
- * [data-mode="light"] block ("field day": industrial grey, safety yellow); presets.css overrides colours.
+ * The default below is paper light ("day edition": ink on warm newsprint, one vermilion); paper dark is the
+ * [data-mode="dark"] block ("night edition"); presets.css overrides colours and type.
  *
- * Materials (glass / plate / well / press / glow / HUD) are recipes DERIVED from the colour tokens with color-mix(),
- * so a preset that only sets colours gets the same depth system. Light comes from the top left.
+ * The page is printed, not lit: content sits on the paper and is organised by rules (hairlines and heavy ink rules),
+ * type and space. Materials are flat recipes that only reference colour tokens, so every preset gets them for free:
+ * a plate is paper with a hairline, a well is a white field with a hairline, only floating layers cast a shadow.
  */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* ── colour roles (titanium dark) ── */
-  --bg: #04060a;
-  --bg-2: #080b11;
-  --surface: #0f131a;
-  --surface-2: #151a23;
-  --surface-3: #1b212c;
-  --well: #03050a;
-  --line: rgb(255 255 255 / 0.075);
-  --line-2: rgb(255 255 255 / 0.13);
-  --text: #eef1f5;
-  --text-2: #adb5c1;
-  --text-3: #8a93a1;
-  /* Amber: links and filled buttons (dark ink on the fill, 9:1). */
-  --accent: #ffa04a;
-  --accent-fill: var(--accent);
-  --accent-2: color-mix(in oklab, var(--accent) 86%, white);
-  --accent-ink: #1a0d00;
-  --signal: #ff9a3c;
-  --signal-2: #ffd27a;
-  --signal-line: linear-gradient(90deg, var(--signal), var(--signal-2));
+  /* ── colour roles (paper light) ── */
+  --bg: #f6f3ec;
+  --bg-2: #efebe2;
+  --surface: #fbfaf6;
+  --surface-2: #f1ede4;
+  --surface-3: #e9e4d9;
+  --well: #e7e1d5;
+  --line: rgb(40 32 20 / 0.13);
+  --line-2: rgb(40 32 20 / 0.24);
+  /* Heavy rules: under the masthead, on top of every section. */
+  --rule: #1d1a16;
+  --text: #1d1a16;
+  --text-2: #4a443b;
+  --text-3: #6b6458;
+  /* Vermilion: links, kickers, the selected mark; filled buttons carry white ink (6.6:1). */
+  --accent: #b42318;
+  --accent-fill: #b42318;
+  --accent-2: #8f1b12;
+  --accent-ink: #ffffff;
+  --signal: var(--accent);
+  --signal-2: var(--accent);
+  --signal-line: linear-gradient(var(--signal), var(--signal));
   /* The signal as text or icon colour (≥ 4.5:1 in both modes). */
-  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
-  --focus: var(--signal);
-  --ok: #30d158;
-  --warn: #ffd60a;
-  --danger: #ff453a;
-  --info: #64d2ff;
-  --live: #ff453a;
-  --res: #ffd60a;
+  --signal-text: var(--accent);
+  /* Focus is ink, never the red: a red ring would read as an error. */
+  --focus: var(--text);
+  --ok: #2f6b3a;
+  --warn: #8a5a00;
+  --danger: #b42318;
+  --info: #2b5c8a;
+  --live: #c0331f;
+  --res: #8a6200;
   --up: var(--ok);
   --down: var(--danger);
   --knob: #ffffff;
-  --scrim: rgb(2 4 8 / 0.55);
+  --scrim: rgb(29 26 22 / 0.32);
 
-  /* ── meaning: boards, categories, signals ── */
-  --hue-repos: #30d158;
-  --hue-papers: #bf5af2;
-  --hue-news: #ff9f0a;
-  --hue-social: #0a84ff;
-  --hue-labs: #ff375f;
+  /* ── meaning: boards, categories, signals (muted print inks, not a rainbow) ── */
+  --hue-repos: #2f6b3a;
+  --hue-papers: #6a4c93;
+  --hue-news: #a64a14;
+  --hue-social: #2b5c8a;
+  --hue-labs: #a8324a;
 
-  --cat-release: #30d158;
-  --cat-product: #64d2ff;
-  --cat-research: #bf5af2;
-  --cat-tool: #ffd60a;
-  --cat-engineering: #0a84ff;
-  --cat-discussion: #98989d;
-  --cat-industry: #ff9f0a;
-  --cat-policy: #ff453a;
+  --cat-release: #2f6b3a;
+  --cat-product: #1f6f78;
+  --cat-research: #6a4c93;
+  --cat-tool: #8a6200;
+  --cat-engineering: #2b5c8a;
+  --cat-discussion: #6b6458;
+  --cat-industry: #a64a14;
+  --cat-policy: #b42318;
 
-  --sig-1: #5e5ce6;
-  --sig-2: #30d158;
-  --sig-3: #ffd60a;
-  --sig-4: #ff375f;
-  --sig-5: #64d2ff;
-  --sig-6: #bf5af2;
-  --sig-7: #ac8e68;
-  --sig-8: #8e8e93;
+  --sig-1: #2f4f7f;
+  --sig-2: #3d7a4a;
+  --sig-3: #b7861a;
+  --sig-4: #a8324a;
+  --sig-5: #2c7a86;
+  --sig-6: #6a4c93;
+  --sig-7: #7a7f2a;
+  --sig-8: #8a8276;
 
-  /* ── materials (VISUAL §3): derived, per mode ── */
-  /*
-   * Plate: small solid-glass parts (buttons, chips, keycaps, thumbs). Nearly opaque, lit from the top: a sheen that
-   * falls off by the middle, a bright top lip, a shaded bottom lip.
-   */
-  --plate-bg:
-    linear-gradient(180deg, rgb(255 255 255 / 0.09) 0%, rgb(255 255 255 / 0.025) 46%, rgb(0 0 0 / 0.08) 100%),
-    color-mix(in srgb, var(--surface-2) 86%, transparent);
-  --plate-edge:
-    inset 0 1px 0 rgb(255 255 255 / 0.13), inset 0 -1px 0 rgb(0 0 0 / 0.35), inset 0 0 0 1px rgb(255 255 255 / 0.06);
-  /* Tiny contact shadow for small plates (chips, keycaps). */
-  --elev-0: 0 1px 1px rgb(0 0 0 / 0.35);
-  --elev-1: 0 1px 1px rgb(0 0 0 / 0.4), 0 10px 26px -14px rgb(0 0 0 / 0.7);
-  --elev-2: 0 2px 4px rgb(0 0 0 / 0.42), 0 22px 44px -18px rgb(0 0 0 / 0.8);
-  --elev-3: 0 4px 12px rgb(0 0 0 / 0.45), 0 32px 80px -16px rgb(0 0 0 / 0.85);
-  /* Well: a channel cut into the glass, so it stays translucent and darkens what is behind it. */
-  --well-bg: color-mix(in srgb, var(--well) 62%, transparent);
-  --well-edge: inset 0 1px 2px rgb(0 0 0 / 0.6), inset 0 0 0 1px rgb(0 0 0 / 0.4), 0 1px 0 rgb(255 255 255 / 0.06);
-  /*
-   * Panel: thick frosted glass for content (board panels, the brief, resonance cards, settings groups). The backdrop
-   * is blurred and saturated; the slab is lit from the top (inner light under the top edge, shade above the bottom
-   * edge), carries a crisp specular lip and a 1 px edge, and stands off the page on a three-step drop shadow.
-   * `--rim` is the refracting edge drawn by `.glass-rim::before` (ui/hud.css): brightest where the light enters.
-   */
-  --panel-tint: color-mix(in srgb, var(--surface) 52%, transparent);
-  --panel-bg:
-    radial-gradient(120% 70% at 0% 0%, rgb(255 255 255 / 0.06), transparent 55%),
-    linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.075) 0,
-      rgb(255 255 255 / 0.018) 72px,
-      transparent 40%,
-      rgb(0 0 0 / 0.18) 100%
-    ),
-    var(--panel-tint);
-  /* Specular lip, a lit bottom edge, the glass edge, light caught inside the edges (thickness), shade at the foot. */
-  --panel-edge:
-    inset 0 1px 0 rgb(255 255 255 / 0.17), inset 0 -1px 0 rgb(255 255 255 / 0.05),
-    inset 0 0 0 1px rgb(255 255 255 / 0.05), inset 0 0 20px rgb(255 255 255 / 0.035),
-    inset 0 -16px 26px -20px rgb(0 0 0 / 0.55);
-  --panel-drop: 0 1px 1px rgb(0 0 0 / 0.45), 0 14px 28px -14px rgb(0 0 0 / 0.6), 0 42px 84px -38px rgb(0 0 0 / 0.85);
-  --panel-drop-2: 0 2px 4px rgb(0 0 0 / 0.45), 0 22px 40px -16px rgb(0 0 0 / 0.7), 0 60px 100px -40px rgb(0 0 0 / 0.9);
-  --panel-blur: blur(26px) saturate(1.6);
-  --rim: linear-gradient(
-    155deg,
-    rgb(255 255 255 / 0.42),
-    rgb(255 255 255 / 0.09) 18%,
-    rgb(255 255 255 / 0.02) 50%,
-    rgb(255 255 255 / 0.1) 82%,
-    rgb(255 255 255 / 0.24)
-  );
-  /* The pointer light inside glass (ui/glass.ts): colour channels and peak alpha. */
-  --spot: 255 255 255;
-  --spot-max: 0.035;
-  /* Translucent fills for things drawn inside glass (hovered rows, nested plates, chips): they tint, never paint over. */
-  --tint-1: rgb(255 255 255 / 0.035);
-  --tint-2: rgb(255 255 255 / 0.06);
-  --tint-3: rgb(255 255 255 / 0.09);
-  /* Chrome glass (header, tab bar, sheets, popovers, toasts): denser than panels, same lighting. */
-  --glass-bg:
-    linear-gradient(180deg, rgb(255 255 255 / 0.05), transparent 60%),
-    color-mix(in srgb, var(--surface) 68%, transparent);
-  --glass-blur: blur(28px) saturate(1.8);
-  --glass-edge:
-    inset 0 1px 0 rgb(255 255 255 / 0.12), inset 0 -1px 0 rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(255 255 255 / 0.06);
-  --press: inset 0 2px 5px rgb(0 0 0 / 0.55), inset 0 0 0 1px rgb(0 0 0 / 0.4);
-  /* The raised thumb of segmented controls / tabs / the tab bar: one step brighter than the plate it sits on. */
-  --thumb-bg:
-    linear-gradient(180deg, rgb(255 255 255 / 0.12), rgb(255 255 255 / 0.03) 60%),
-    color-mix(in oklab, var(--surface-3) 90%, white);
-  --knob-shadow: 0 2px 4px rgb(0 0 0 / 0.3), 0 0 0 0.5px rgb(0 0 0 / 0.08);
-  /* Off switch track: a well with a little light in it, so the channel reads next to the white knob (iOS fill). */
-  --switch-off: color-mix(in oklab, var(--text) 26%, var(--well));
-  /* Top-light on coloured fills (score segments, primary buttons). */
-  --hl: rgb(255 255 255 / 0.28);
+  /* ── materials (VISUAL §3): flat, per mode by reference ── */
+  /* Plate: buttons, chips, keycaps, tiles — paper with a hairline. */
+  --plate-bg: var(--surface);
+  --plate-edge: inset 0 0 0 1px var(--line-2);
+  /* Well: fields and tracks — a white box with a hairline. */
+  --well-bg: var(--surface);
+  --well-edge: inset 0 0 0 1px var(--line-2);
+  /* Panel: a boxed block on the page (settings groups, archive and weekly blocks) — a hairline frame, no fill. */
+  --panel-bg: transparent;
+  --panel-edge: inset 0 0 0 1px var(--line);
+  --panel-drop: 0 0 #0000;
+  --panel-drop-2: 0 0 #0000;
+  /* Fills for hovered rows and nested blocks. */
+  --tint-1: rgb(40 32 20 / 0.03);
+  --tint-2: rgb(40 32 20 / 0.05);
+  --tint-3: rgb(40 32 20 / 0.08);
+  /* Floating layers (sheets, popovers, toasts, the search palette): opaque paper with a hairline and a real shadow. */
+  --glass-bg: var(--surface);
+  --glass-edge: inset 0 0 0 1px var(--line-2);
+  /* Nothing on the page casts a shadow; only what floats over it does (--elev-3). */
+  --elev-0: 0 0 #0000;
+  --elev-1: 0 0 #0000;
+  --elev-2: 0 0 #0000;
+  --elev-3: 0 2px 6px rgb(40 32 20 / 0.06), 0 22px 48px -20px rgb(40 32 20 / 0.34);
+  --press: inset 0 0 0 1px var(--text-3);
+  /* The selected segment of a segmented control: ink, with paper-coloured text. */
+  --thumb-bg: var(--text);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.22), 0 0 0 0.5px rgb(0 0 0 / 0.14);
+  --switch-off: color-mix(in oklab, var(--text) 16%, var(--bg));
+  /* Top light on coloured fills: none on paper. */
+  --hl: transparent;
 
-  /* ── glow budget (VISUAL §5): focus, active nav, live dot, HUD brackets and tab lights, marks, primary buttons ── */
-  --glow:
-    0 0 0 1px color-mix(in oklab, var(--signal) 60%, transparent),
-    0 0 18px -2px color-mix(in oklab, var(--signal) 55%, transparent);
-  /* Focus ring (every interactive element, via :focus-visible) and its inset twin for rows inside scrollers. */
-  --ring: var(--glow);
-  --ring-inset: inset 0 0 0 1.5px color-mix(in oklab, var(--signal) 75%, transparent);
-  /* Bloom strength for coloured marks: 55 % in dark, 0 in light (light gets halos, not bloom). */
-  --bloom: 40%;
-
-  /* ── HUD (VISUAL §5a): the tactical layer — brackets, tab lights, tick rails, index labels ── */
-  /* Line colour at rest, and when the thing it frames is hovered, focused or active. */
-  --hud: color-mix(in srgb, var(--signal) 28%, transparent);
-  --hud-hot: var(--signal);
-  --hud-faint: color-mix(in srgb, var(--text) 14%, transparent);
-  /* Bloom around lit HUD lines (none in light). */
-  --hud-glow: 0 0 8px color-mix(in srgb, var(--hud-hot) 45%, transparent);
-  /* A ruler: 1 px ticks every 8 px. */
-  --ticks: repeating-linear-gradient(90deg, var(--hud-faint) 0 1px, transparent 1px 8px);
-  /* The label face for HUD text (index numbers, coordinates). */
-  --font-hud: var(--font-mono);
-
-  /* ── page background (VISUAL §4): the lit scene the glass refracts ── */
-  /* Two low light sources: signal from the bottom left, a cool key from the top right. Dim on purpose. */
-  --spill:
-    radial-gradient(70vmax 55vmax at 6% 108%, color-mix(in srgb, var(--signal) 8%, transparent), transparent 62%),
-    radial-gradient(62vmax 50vmax at 98% -10%, color-mix(in srgb, var(--hue-social) 9%, transparent), transparent 60%);
-  /* Legacy name of the page light (theme files and forks set `--aurora: none`). */
-  --aurora: var(--spill);
-  /* No grid by default: the scene is light only. Forks can set `--grid` (e.g. two 128 px line gradients). */
-  --grid-dot: color-mix(in srgb, var(--text) 3%, transparent);
-  --grid-major: var(--grid-dot);
-  --grid: none;
-  /* Scanlines are available to forks (`--scan`); the default scene carries only film grain. */
-  --scan: none;
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --vignette: radial-gradient(130% 95% at 50% 35%, transparent 50%, rgb(0 0 0 / 0.55));
+  /* ── focus: a solid ring with a paper gap, so it reads on any fill ── */
+  --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--focus);
+  --ring-inset: inset 0 0 0 2px var(--focus);
+  --glow: var(--ring);
 
   /* ── legacy aliases (components written before the material system) ── */
-  --header-bg: var(--glass-bg);
+  --header-bg: var(--bg);
   --shadow-1: var(--elev-1);
   --shadow-2: var(--elev-2);
-  --inset: inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --inset: 0 0 #0000;
 
-  /* ── type (VISUAL §6) ── */
-  --font-ui:
-    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", "PingFang SC",
-    "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Noto Sans CJK SC", system-ui, sans-serif;
-  --font-display:
-    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", "PingFang SC",
-    "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei UI", "Noto Sans CJK SC", system-ui, sans-serif;
-  --font-mono: "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  /* ── type (VISUAL §6): serif headlines, sans for reading and controls, mono only for measurements ── */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", "PingFang SC", "HarmonyOS Sans SC",
+    "MiSans", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+  /*
+   * Latin serif first, then a CJK serif where the system has one (Songti on Apple, Noto/Source Han Serif elsewhere).
+   * Windows has no good CJK serif (SimSun's faux bold breaks headlines), so CJK falls back to YaHei there on purpose.
+   */
   --font-serif:
-    "Iowan Old Style", "Charter", "Georgia", "Cambria", "Songti SC", "STSong", "Noto Serif CJK SC",
-    "Source Han Serif SC", "SimSun", serif;
-  --font-text: var(--font-ui);
-  --font-num: var(--font-display);
-  --weight-title: 600;
-  --weight-section: 650;
+    "Iowan Old Style", "Charter", "Bitstream Charter", "Sitka Text", "Cambria", "Source Serif 4", "Source Serif Pro",
+    "Noto Serif", "Georgia", "Liberation Serif", "Times New Roman", "Songti SC", "Noto Serif CJK SC",
+    "Source Han Serif SC", "Noto Serif SC", "Source Han Serif CN", "Microsoft YaHei UI", "Microsoft YaHei", serif;
+  --font-mono: "SF Mono", ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-ui: var(--font-sans);
+  /* Running text (blurbs, briefs, markdown). */
+  --font-text: var(--font-sans);
+  /* Headlines: masthead, page and section titles, item titles. */
+  --font-display: var(--font-serif);
+  /* Rank numerals. */
+  --font-num: var(--font-serif);
+  --weight-title: 700;
+  --weight-section: 700;
   --weight-display: 700;
-  --tracking-display: -0.025em;
-  --tracking-hero: -0.035em;
-  --tracking-section: -0.02em;
-  --tracking-title: -0.01em;
-  --tracking-eyebrow: 0.06em;
+  --tracking-display: -0.01em;
+  --tracking-hero: -0.015em;
+  --tracking-section: 0;
+  --tracking-title: 0;
+  --tracking-eyebrow: 0.02em;
 
   --font-scale: 1;
   --fs-2xs: 0.6875rem;
@@ -226,20 +160,20 @@
   --fs-xl: 1.375rem;
   --fs-2xl: 1.75rem;
   --fs-3xl: 2.5rem;
-  --fs-rank: 2.125rem;
+  --fs-rank: 1.625rem;
   /* Roles */
-  --fs-hero: clamp(2.25rem, 1.3rem + 3.2vw, 3.75rem);
-  --fs-section: 1.375rem;
-  --fs-board: 1.0625rem;
-  --fs-item: 1rem;
+  --fs-hero: clamp(2rem, 1.35rem + 2.4vw, 3.5rem);
+  --fs-section: 1.5rem;
+  --fs-board: 1.25rem;
+  --fs-item: 1.0625rem;
   --fs-body: 0.9375rem;
   --fs-meta: 0.8125rem;
-  --fs-eyebrow: 0.75rem;
-  --lh-tight: 1.25;
-  --lh-title: 1.35;
-  --lh: 1.55;
+  --fs-eyebrow: 0.8125rem;
+  --lh-tight: 1.2;
+  --lh-title: 1.32;
+  --lh: 1.6;
 
-  /* ── space, shape (VISUAL §7) ── */
+  /* ── space, shape (VISUAL §7): small, square-ish corners ── */
   --density: 1;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -251,12 +185,13 @@
   --space-10: 2.5rem;
   --pad-card: calc(0.875rem * var(--density));
   --gap-list: calc(0.875rem * var(--density));
-  --radius-s: 8px;
-  --radius-m: 12px;
-  --radius-l: 18px;
-  --radius-xl: 22px;
-  --radius-2xl: 30px;
-  --radius-pill: 999px;
+  --radius-s: 2px;
+  --radius-m: 3px;
+  --radius-l: 4px;
+  --radius-xl: 4px;
+  --radius-2xl: 10px;
+  /* Capsule controls (chips, toolbar buttons, toggles): rectangles here; a fork can set 999px for pills. */
+  --radius-pill: 3px;
   --border: 1px solid var(--line);
   --target: 44px;
 
@@ -264,16 +199,16 @@
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-pop: cubic-bezier(0.34, 1.3, 0.64, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --dur-1: 160ms;
-  --dur-2: 240ms;
-  --dur-3: 420ms;
+  --dur-1: 140ms;
+  --dur-2: 220ms;
+  --dur-3: 380ms;
 
   /* ── layout ── */
-  --header-h: 60px;
-  --tabbar-h: 62px;
-  /* What the floating tab bar covers at the bottom of a phone screen (pages pad by this). */
-  --tabbar-space: calc(var(--tabbar-h) + 10px + env(safe-area-inset-bottom));
-  --maxw: 1520px;
+  --header-h: 56px;
+  --tabbar-h: 58px;
+  /* What the tab bar covers at the bottom of a phone screen (pages pad by this). */
+  --tabbar-space: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
+  --maxw: 1440px;
   --gutter: 16px;
   --z-header: 30;
   --z-overlay: 60;
@@ -288,169 +223,81 @@
 
 @media (min-width: 1100px) {
   :root {
-    --gutter: 32px;
-    --fs-item: 1.0625rem;
+    --gutter: 40px;
   }
 }
 
-/* titanium light — "field day": industrial grey stock, black ink, safety-yellow signal */
-:root[data-mode="light"] {
-  color-scheme: light;
-  --bg: #e6e8eb;
-  --bg-2: #dcdfe3;
-  --surface: #ffffff;
-  --surface-2: #f6f7f9;
-  --surface-3: #eceef1;
-  --well: #dde0e5;
-  --line: rgb(12 16 22 / 0.09);
-  --line-2: rgb(12 16 22 / 0.16);
-  --text: #111418;
-  --text-2: #3a4048;
-  --text-3: #5b626c;
-  /* Text accent: a deep amber (5.2:1 on the page, 6.3:1 on white). Filled buttons are safety yellow with black ink. */
-  --accent: #8f4f00;
-  --accent-fill: #ffc81f;
-  --accent-2: color-mix(in oklab, var(--accent) 88%, white);
-  --accent-ink: #111418;
-  --signal: #f2b400;
-  --signal-2: #ff7a1a;
-  /* Yellow never reads as text on white: the readable form of the signal is a dark amber. */
-  --signal-text: #7a4a00;
-  --ok: #248a3d;
-  --warn: #b25000;
-  --danger: #d70015;
-  --info: #0066cc;
-  --live: #d70015;
-  --res: #a05a00;
-  --scrim: rgb(20 24 30 / 0.24);
+/* paper dark — "night edition": warm charcoal stock, off-white ink, a lighter vermilion */
+:root[data-mode="dark"] {
+  color-scheme: dark;
+  --bg: #161513;
+  --bg-2: #1c1b18;
+  --surface: #1f1e1b;
+  --surface-2: #262420;
+  --surface-3: #2e2b27;
+  --well: #2a2824;
+  --line: rgb(240 232 218 / 0.11);
+  --line-2: rgb(240 232 218 / 0.2);
+  --rule: #e9e4da;
+  --text: #ece7de;
+  --text-2: #c4bdb0;
+  --text-3: #9b9486;
+  --accent: #ff8a6b;
+  --accent-fill: #ff8a6b;
+  --accent-2: #ffa58c;
+  --accent-ink: #1a0d08;
+  --ok: #86c08f;
+  --warn: #e0b55a;
+  --danger: #ff8a6b;
+  --info: #8fb5e0;
+  --live: #ff6f52;
+  --res: #e0b55a;
+  --scrim: rgb(0 0 0 / 0.55);
 
-  --hue-repos: #248a3d;
-  --hue-papers: #8944ab;
-  --hue-news: #c93400;
-  --hue-social: #0066cc;
-  --hue-labs: #d30f45;
+  --hue-repos: #8cc497;
+  --hue-papers: #b9a0e0;
+  --hue-news: #f0a070;
+  --hue-social: #8fb5e0;
+  --hue-labs: #ee93a8;
 
-  --cat-release: #248a3d;
-  --cat-product: #0071a4;
-  --cat-research: #8944ab;
-  --cat-tool: #a05a00;
-  --cat-engineering: #0066cc;
-  --cat-discussion: #6c6c70;
-  --cat-industry: #c93400;
-  --cat-policy: #d70015;
+  --cat-release: #8cc497;
+  --cat-product: #6fc0c8;
+  --cat-research: #b9a0e0;
+  --cat-tool: #e0b55a;
+  --cat-engineering: #8fb5e0;
+  --cat-discussion: #b3ab9d;
+  --cat-industry: #f0a070;
+  --cat-policy: #ff8a6b;
 
-  --sig-1: #5856d6;
-  --sig-2: #34c759;
-  --sig-3: #ffcc00;
-  --sig-4: #ff2d55;
-  --sig-5: #32ade6;
-  --sig-6: #af52de;
-  --sig-7: #a2845e;
-  --sig-8: #8e8e93;
+  --sig-1: #8fb0e0;
+  --sig-2: #86c08f;
+  --sig-3: #e0b55a;
+  --sig-4: #e88aa0;
+  --sig-5: #6fc0c8;
+  --sig-6: #b9a0e0;
+  --sig-7: #b8c06a;
+  --sig-8: #a39b8e;
 
-  --plate-bg:
-    linear-gradient(180deg, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0.6) 55%, rgb(236 238 242 / 0.7) 100%),
-    color-mix(in srgb, var(--surface) 78%, transparent);
-  --plate-edge: inset 0 1px 0 #ffffff, inset 0 -1px 0 rgb(12 16 22 / 0.06), inset 0 0 0 1px rgb(12 16 22 / 0.08);
-  --elev-0: 0 1px 1px rgb(12 16 22 / 0.06);
-  --elev-1: 0 1px 2px rgb(12 16 22 / 0.06), 0 8px 22px -10px rgb(12 16 22 / 0.16);
-  --elev-2: 0 2px 6px rgb(12 16 22 / 0.08), 0 18px 40px -16px rgb(12 16 22 / 0.22);
-  --elev-3: 0 4px 12px rgb(12 16 22 / 0.1), 0 32px 80px -24px rgb(12 16 22 / 0.32);
-  --well-bg: color-mix(in srgb, var(--well) 70%, transparent);
-  --well-edge:
-    inset 0 1px 2px rgb(12 16 22 / 0.1), inset 0 0 0 1px rgb(12 16 22 / 0.07), 0 1px 0 rgb(255 255 255 / 0.9);
-  --panel-tint: color-mix(in srgb, var(--surface) 46%, transparent);
-  --panel-bg:
-    radial-gradient(120% 70% at 0% 0%, rgb(255 255 255 / 0.7), transparent 55%),
-    linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.55) 0,
-      rgb(255 255 255 / 0.12) 72px,
-      transparent 40%,
-      rgb(200 206 214 / 0.18) 100%
-    ),
-    var(--panel-tint);
-  --panel-edge:
-    inset 0 1px 0 #ffffff, inset 0 -1px 0 rgb(12 16 22 / 0.06), inset 0 0 0 1px rgb(255 255 255 / 0.55),
-    inset 0 0 22px rgb(255 255 255 / 0.6), inset 0 -16px 26px -20px rgb(12 16 22 / 0.09);
-  --panel-drop:
-    0 0 0 1px rgb(12 16 22 / 0.07), 0 1px 2px rgb(12 16 22 / 0.06), 0 14px 30px -14px rgb(12 16 22 / 0.2),
-    0 40px 80px -40px rgb(12 16 22 / 0.28);
-  --panel-drop-2:
-    0 0 0 1px rgb(12 16 22 / 0.09), 0 2px 6px rgb(12 16 22 / 0.08), 0 22px 44px -18px rgb(12 16 22 / 0.26),
-    0 56px 100px -44px rgb(12 16 22 / 0.34);
-  --panel-blur: blur(24px) saturate(1.8);
-  --rim: linear-gradient(
-    155deg,
-    rgb(255 255 255 / 1),
-    rgb(255 255 255 / 0.35) 20%,
-    rgb(255 255 255 / 0.1) 55%,
-    rgb(255 255 255 / 0.4) 85%,
-    rgb(255 255 255 / 0.9)
-  );
-  --spot-max: 0.3;
-  --tint-1: rgb(12 16 22 / 0.028);
-  --tint-2: rgb(12 16 22 / 0.045);
-  --tint-3: rgb(12 16 22 / 0.07);
-  --glass-bg:
-    linear-gradient(180deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.1) 70%),
-    color-mix(in srgb, var(--surface) 66%, transparent);
-  --glass-edge:
-    inset 0 1px 0 rgb(255 255 255 / 0.95), inset 0 -1px 0 rgb(12 16 22 / 0.05), 0 0 0 1px rgb(12 16 22 / 0.08);
-  --press: inset 0 2px 5px rgb(12 16 22 / 0.14), inset 0 0 0 1px rgb(12 16 22 / 0.1);
-  --thumb-bg: linear-gradient(180deg, #ffffff, #f7f8fa);
-  --knob-shadow: 0 2px 4px rgb(0 0 0 / 0.2), 0 0 0 0.5px rgb(0 0 0 / 0.06);
-  --switch-off: color-mix(in oklab, var(--text) 8%, var(--well));
-  --hl: rgb(255 255 255 / 0.5);
-
-  --glow: 0 0 0 3px color-mix(in oklab, var(--signal) 35%, transparent);
-  /* A halo alone is ~1.3:1 on white; the 1 px ink core keeps the focus indicator visible (≥ 3:1). */
-  --ring: 0 0 0 1px var(--text), 0 0 0 4px color-mix(in oklab, var(--signal) 55%, transparent);
-  --ring-inset: inset 0 0 0 1.5px var(--text);
-  --bloom: 0%;
-
-  /* Field HUD: black linework, the yellow is reserved for what is lit. */
-  --hud: color-mix(in srgb, var(--text) 30%, transparent);
-  --hud-hot: var(--text);
-  --hud-faint: color-mix(in srgb, var(--text) 16%, transparent);
-  --hud-glow: 0 0 0 transparent;
-
-  --spill:
-    radial-gradient(64vmax 46vmax at -4% -8%, color-mix(in srgb, var(--signal) 16%, transparent), transparent 62%),
-    radial-gradient(62vmax 52vmax at 106% 106%, rgb(84 120 170 / 0.16), transparent 62%),
-    radial-gradient(46vmax 34vmax at 72% 22%, rgb(255 255 255 / 0.6), transparent 70%);
-  --grid-dot: color-mix(in srgb, var(--text) 4.5%, transparent);
-  --scan: none;
-  /* Grain reads only on a dark scene. */
-  --grain: none;
-  --vignette: radial-gradient(130% 95% at 50% 35%, transparent 60%, rgb(12 16 22 / 0.07));
-  --inset: inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --tint-1: rgb(240 232 218 / 0.03);
+  --tint-2: rgb(240 232 218 / 0.055);
+  --tint-3: rgb(240 232 218 / 0.085);
+  --elev-3: 0 2px 6px rgb(0 0 0 / 0.3), 0 24px 56px -18px rgb(0 0 0 / 0.75);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.45), 0 0 0 0.5px rgb(0 0 0 / 0.3);
+  --switch-off: color-mix(in oklab, var(--text) 22%, var(--bg));
 }
 
-/* No backdrop-filter: glass becomes a near-opaque surface (never unreadable). After the mode blocks so it wins. */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+/* The OS asks for more contrast: hairlines darken into real rules. */
+@media (prefers-contrast: more) {
   :root,
   :root[data-mode] {
-    --glass-bg: color-mix(in srgb, var(--surface) 96%, transparent);
-    --panel-tint: color-mix(in srgb, var(--surface) 94%, transparent);
-  }
-}
-
-/* The OS asks for less transparency: glass keeps its lighting but turns solid. */
-@media (prefers-reduced-transparency: reduce) {
-  :root,
-  :root[data-mode] {
-    --glass-bg: var(--surface);
-    --panel-tint: var(--surface);
-    --panel-blur: none;
-    --glass-blur: none;
-    --scan: none;
+    --line: color-mix(in srgb, var(--text) 30%, transparent);
+    --line-2: color-mix(in srgb, var(--text) 55%, transparent);
   }
 }
 
 [data-density="compact"] {
   --density: 0.78;
-  --fs-rank: 1.75rem;
+  --fs-rank: 1.375rem;
 }
 
 [data-density="cozy"] {
@@ -507,13 +354,14 @@ body {
 
 :lang(zh) body,
 body:lang(zh) {
-  --lh: 1.65;
+  --lh: 1.7;
 }
 
 a {
   color: inherit;
   text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 button,
@@ -525,8 +373,8 @@ textarea {
 }
 
 /*
- * Focus = the signal ring (VISUAL §5.1), drawn as a shadow so it follows every radius. `:root` lifts it above
- * single-class component shadows; primitives that have their own shadow add the ring to it in ui.css. The
+ * Focus = a solid ring with a paper gap (VISUAL §5), drawn as a shadow so it follows every radius. `:root` lifts it
+ * above single-class component shadows; primitives that have their own shadow add the ring to it in ui.css. The
  * transparent outline is what forced-colors mode shows.
  */
 :focus-visible {
@@ -539,7 +387,7 @@ textarea {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--signal) 32%, transparent);
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
 }
 
 .sr-only {
@@ -555,7 +403,7 @@ textarea {
 }
 
 .num {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {

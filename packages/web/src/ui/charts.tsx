@@ -1,21 +1,12 @@
 /**
  * Hand-rolled SVG charts: `Sparkline` (card-sized, no axes) and `LineChart` (detail-sized, labelled ends, optional
- * inverted axis for ranks). Colour is `currentColor`, so the caller decides meaning (usually the board hue).
+ * inverted axis for ranks). Colour is `currentColor`, so the caller decides meaning (ink, or a board hue). Areas are a
+ * flat tint of the line's colour, as in a printed chart (VISUAL §8 sparkline).
  */
 import type { Series } from '@resonance/schema'
-import { useId } from 'preact/hooks'
 
-/** Area fill: the line's colour at 18 % fading to nothing (VISUAL §8 sparkline). */
-function AreaFade({ id }: { id: string }) {
-  return (
-    <defs>
-      <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="currentColor" stop-opacity="0.18" />
-        <stop offset="1" stop-color="currentColor" stop-opacity="0" />
-      </linearGradient>
-    </defs>
-  )
-}
+/** Opacity of the flat area under a line. */
+const AREA = 0.1
 
 /** Pure: map values to SVG coordinates inside `w × h` with `pad`, flat series centred. */
 export function scalePoints(
@@ -54,7 +45,6 @@ export interface SparklineProps {
 
 /** Tiny trend line; a single point renders as a dot, nothing renders for no data. */
 export function Sparkline({ data, width = 72, height = 22, label, area = true, class: cls }: SparklineProps) {
-  const gid = `spk${useId().replace(/[^\w-]/g, '')}`
   const values = (data as ReadonlyArray<number | [string, number]>).map((d) => (Array.isArray(d) ? d[1] : d))
   if (!values.length) return null
   const pts = scalePoints(values, width, height, 2.5)
@@ -71,12 +61,15 @@ export function Sparkline({ data, width = 72, height = 22, label, area = true, c
       aria-hidden={label ? undefined : 'true'}
       data-part="sparkline"
     >
-      {area && pts.length > 1 && <AreaFade id={gid} />}
       {area && pts.length > 1 && (
-        <path class="spark__area" fill={`url(#${gid})`} d={`${line}L${last[0]} ${height}L${pts[0][0]} ${height}Z`} />
+        <path
+          class="spark__area"
+          fill="currentColor"
+          fill-opacity={AREA}
+          d={`${line}L${last[0]} ${height}L${pts[0][0]} ${height}Z`}
+        />
       )}
       {pts.length > 1 && <path class="spark__line" d={line} />}
-      <circle class="spark__halo" cx={last[0]} cy={last[1]} r={3.5} />
       <circle class="spark__dot" cx={last[0]} cy={last[1]} r={1.75} />
     </svg>
   )
@@ -96,7 +89,6 @@ export interface LineChartProps {
 
 /** Responsive line chart with first/last labels and a min/max guide; width follows the container. */
 export function LineChart({ data, height = 120, invert, label, format = String, formatX = (d) => d }: LineChartProps) {
-  const gid = `lc${useId().replace(/[^\w-]/g, '')}`
   if (!data.length) return null
   const w = 600
   const values = data.map((d) => d[1])
@@ -112,11 +104,11 @@ export function LineChart({ data, height = 120, invert, label, format = String, 
       <svg viewBox={`0 0 ${w} ${height}`} preserveAspectRatio="none" role="img" aria-label={label} class="chart__svg">
         <line class="chart__guide" x1="0" x2={w} y1="10" y2="10" />
         <line class="chart__guide" x1="0" x2={w} y1={height - 10} y2={height - 10} />
-        {pts.length > 1 && <AreaFade id={gid} />}
         {pts.length > 1 && (
           <path
             class="chart__area"
-            fill={`url(#${gid})`}
+            fill="currentColor"
+            fill-opacity={AREA}
             d={`${toPath(pts)}L${pts[pts.length - 1][0]} ${height}L${pts[0][0]} ${height}Z`}
           />
         )}

@@ -24,7 +24,6 @@ import { parseBullet } from '../items/cite.ts'
 import { boardTitle, categoryLabel, itemHref } from '../items/text.ts'
 import { Button, IconButton } from '../ui/button.tsx'
 import { boardHue, CategoryChip } from '../ui/chip.tsx'
-import { Icon } from '../ui/icons.tsx'
 import { copyText, ExtLink } from '../ui/link.tsx'
 import { RankNumeral } from '../ui/marks.tsx'
 import { EmptyState, ErrorState, Skeleton } from '../ui/state.tsx'
@@ -175,16 +174,7 @@ function Entry({
       <div class="wentry__body">
         <p class="wentry__title">
           <a href={itemHref(e, lastDay)}>{e.title}</a>
-          {e.isNew && (
-            <span
-              class="trend trend--new trend--icon wentry__new"
-              role="img"
-              aria-label={t('views.weekly.new')}
-              title={t('views.weekly.new')}
-            >
-              <Icon name="sparkle" size={11} />
-            </span>
-          )}
+          {e.isNew && <span class="trend trend--new wentry__new">{t('views.weekly.new')}</span>}
         </p>
         {blurb && <p class="wentry__blurb">{blurb}</p>}
         <p class="wentry__meta">
@@ -206,11 +196,8 @@ function WeekBrief({ w, lastDay }: { w: WeeklyFile; lastDay?: DateStr }) {
   const brief = w.brief?.[l] ?? w.brief?.[l === 'en' ? 'zh' : 'en']
   if (!brief?.bullets.length) return null
   return (
-    <section class="brief signal-edge" data-part="brief" aria-labelledby="wbrief">
-      <p class="kicker brief__kicker">
-        <Icon name="sparkle" size={14} />
-        {t('views.weekly.brief')}
-      </p>
+    <section class="brief" data-part="brief" aria-labelledby="wbrief">
+      <p class="kicker brief__kicker">{t('views.weekly.brief')}</p>
       <h2 class="brief__headline" id="wbrief">
         {brief.headline}
       </h2>
@@ -306,10 +293,7 @@ export default function Weekly({ params }: RouteProps) {
   return (
     <main class={`page weekly${res.loading ? ' is-refreshing' : ''}`} id="main" data-part="weekly">
       <header class="page__head weekly__head">
-        <p class="kicker">
-          <Icon name="calendar" size={14} />
-          {t('views.weekly.kicker', { week: w.week })}
-        </p>
+        <p class="kicker">{t('views.weekly.kicker', { week: w.week })}</p>
         <h1 class="page__title">
           {fmt.day(w.from)} – {fmt.day(w.to)}
         </h1>
@@ -392,7 +376,6 @@ export default function Weekly({ params }: RouteProps) {
         {w.longestStreaks.length > 0 && (
           <section class="streaks" aria-labelledby="wstreaks">
             <h2 class="section-head__title" id="wstreaks">
-              <Icon name="flame" size={16} />
               {t('views.weekly.streaks')}
             </h2>
             <ol class="streaks__list">
@@ -411,7 +394,6 @@ export default function Weekly({ params }: RouteProps) {
         {w.resonance.length > 0 && (
           <section class="wclusters" aria-labelledby="wclusters">
             <h2 class="section-head__title" id="wclusters">
-              <Icon name="resonance" size={16} />
               {t('views.weekly.clusters')}
             </h2>
             <ul class="wclusters__list">

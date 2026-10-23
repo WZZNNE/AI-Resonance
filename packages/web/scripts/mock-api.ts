@@ -1767,7 +1767,7 @@ async function main(): Promise<void> {
       timezone: TZ,
       cutoff: '00:00',
       defaultLang: 'zh',
-      theme: { preset: 'titanium' },
+      theme: { preset: 'paper' },
     },
     latest: latest.date,
     live: dateOf(LIVE),

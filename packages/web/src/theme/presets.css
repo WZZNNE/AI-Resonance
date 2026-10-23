@@ -1,138 +1,137 @@
 /*
- * Presets beyond titanium: COLOUR maps (plus the type and corner shape that are each preset's identity). Materials —
- * plate, well, glass, press, glow, HUD — are never set here: tokens.css derives them from these colours per mode, so
- * every preset gets the same depth system. A preset may only switch the tactical dressing off (paper does). Loaded after tokens.css, so `:root[data-preset=…]` (same specificity as
- * titanium's light block) wins; each preset defines its primary mode first and the other mode as an override.
+ * Presets beyond paper (the default, in tokens.css): COLOUR maps plus the type and corner shape that are each preset's
+ * identity. Materials are never set here: tokens.css builds them from these colours by reference, so every preset gets
+ * the same flat, ruled page. Loaded after tokens.css, so `:root[data-preset=…]` (same specificity as paper's dark block)
+ * wins; each preset defines its primary mode first and the other mode as an override with the same properties.
  */
 
-/* ───────────── paper: light editorial, serif headlines, ink on warm stock ───────────── */
+/* ───────────── titanium: neutral graphite and steel, sans-serif headlines, an amber accent ───────────── */
 
-:root[data-preset="paper"] {
-  color-scheme: light;
-  --bg: #f3eee3;
-  --bg-2: #ebe4d6;
-  --surface: #fbf8f1;
-  --surface-2: #f5f0e5;
-  --surface-3: #ebe4d5;
-  --well: #e8e0cf;
-  --line: rgb(60 45 20 / 0.12);
-  --line-2: rgb(60 45 20 / 0.22);
-  --text: #1c1914;
-  --text-2: #463f35;
-  --text-3: #605a4e;
-  --accent: #a3302a;
-  --accent-fill: var(--accent);
-  --accent-2: #86241f;
-  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
-  --accent-ink: #fffaf2;
-  --signal: #25609e;
-  --signal-2: #a3302a;
-  --ok: #256b41;
-  --warn: #865606;
-  --danger: #b3261e;
-  --info: #25609e;
-  --live: #b3261e;
-  --res: #8f6a00;
-  --scrim: rgb(28 25 20 / 0.28);
-  --spill: none;
-  --grid: none;
-  /* Editorial, not tactical: no brackets at rest, no scanlines; a hovered panel only earns a quiet ink frame. */
-  --hud: transparent;
-  --hud-hot: color-mix(in srgb, var(--text) 28%, transparent);
-  --hud-glow: 0 0 0 transparent;
-  --scan: none;
+:root[data-preset="titanium"] {
+  color-scheme: dark;
+  --bg: #131416;
+  --bg-2: #18191c;
+  --surface: #1c1d21;
+  --surface-2: #222429;
+  --surface-3: #2a2c31;
+  --well: #26282d;
+  --line: rgb(255 255 255 / 0.09);
+  --line-2: rgb(255 255 255 / 0.17);
+  --rule: #e8eaee;
+  --text: #eceef1;
+  --text-2: #b4b8bf;
+  --text-3: #8f949c;
+  --accent: #ffa04a;
+  --accent-fill: #ffa04a;
+  --accent-2: #ffb36e;
+  --accent-ink: #1a0d00;
+  --ok: #5cc285;
+  --warn: #f2c14e;
+  --danger: #ff6b5e;
+  --info: #6cb0f5;
+  --live: #ff5a4a;
+  --res: #f2c14e;
+  --scrim: rgb(0 0 0 / 0.55);
 
-  --hue-repos: #2b7552;
-  --hue-papers: #6445a3;
-  --hue-news: #b95515;
-  --hue-social: #25629f;
-  --hue-labs: #a3325f;
+  --hue-repos: #5cc285;
+  --hue-papers: #b58ef0;
+  --hue-news: #ffa04a;
+  --hue-social: #6cb0f5;
+  --hue-labs: #ff7a93;
 
-  --cat-release: #2f7a3f;
-  --cat-product: #1d7680;
-  --cat-research: #6445a3;
-  --cat-tool: #93620f;
-  --cat-engineering: #2b5f9e;
-  --cat-discussion: #5d564a;
-  --cat-industry: #b0531c;
-  --cat-policy: #a3302a;
+  --cat-release: #5cc285;
+  --cat-product: #5fc4d6;
+  --cat-research: #b58ef0;
+  --cat-tool: #f2c14e;
+  --cat-engineering: #6cb0f5;
+  --cat-discussion: #a3a7ae;
+  --cat-industry: #ffa04a;
+  --cat-policy: #ff6b5e;
 
-  --sig-1: #2d4f7c;
-  --sig-2: #2b7552;
-  --sig-3: #b77b12;
-  --sig-4: #a3325f;
-  --sig-5: #3f7fb8;
-  --sig-6: #6d5296;
-  --sig-7: #6f8a2d;
-  --sig-8: #8b8373;
+  --sig-1: #7f8cf0;
+  --sig-2: #5cc285;
+  --sig-3: #f2c14e;
+  --sig-4: #ff7a93;
+  --sig-5: #5fc4d6;
+  --sig-6: #b58ef0;
+  --sig-7: #c2a57a;
+  --sig-8: #9a9ea6;
 
-  --font-text: var(--font-serif);
-  --font-display: var(--font-serif);
-  --font-num: var(--font-serif);
-  --weight-title: 600;
-  --weight-section: 600;
-  --weight-display: 600;
-  --tracking-display: -0.01em;
-  --tracking-hero: -0.015em;
-  --tracking-section: -0.01em;
-  --tracking-title: 0;
-  --radius-s: 3px;
-  --radius-m: 4px;
-  --radius-l: 6px;
-  --radius-xl: 8px;
-  --radius-2xl: 10px;
+  --tint-1: rgb(255 255 255 / 0.03);
+  --tint-2: rgb(255 255 255 / 0.055);
+  --tint-3: rgb(255 255 255 / 0.085);
+  --elev-3: 0 2px 6px rgb(0 0 0 / 0.3), 0 24px 56px -18px rgb(0 0 0 / 0.75);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.45), 0 0 0 0.5px rgb(0 0 0 / 0.3);
+  --switch-off: color-mix(in oklab, var(--text) 22%, var(--bg));
+
+  --font-display: var(--font-sans);
+  --font-num: var(--font-sans);
+  --weight-title: 650;
+  --weight-section: 700;
+  --weight-display: 700;
+  --tracking-display: -0.02em;
+  --tracking-hero: -0.03em;
+  --tracking-section: -0.015em;
+  --tracking-title: -0.01em;
 }
 
-:root[data-preset="paper"][data-mode="dark"] {
-  color-scheme: dark;
-  --bg: #161411;
-  --bg-2: #1b1915;
-  --surface: #1e1b17;
-  --surface-2: #25221d;
-  --surface-3: #2c2823;
-  --well: #12100d;
-  --line: rgb(255 240 210 / 0.08);
-  --line-2: rgb(255 240 210 / 0.14);
-  --text: #efe8da;
-  --text-2: #c8bfae;
-  --text-3: #9d9483;
-  --accent: #e2786c;
-  --accent-2: #ec8f84;
-  --accent-ink: #1b0f0d;
-  --accent-fill: var(--accent);
-  --signal: #7fb2e8;
-  --signal-2: #e2786c;
-  --ok: #6cc28f;
-  --warn: #e2b04f;
-  --danger: #f07a70;
-  --info: #7fb2e8;
-  --live: #f07a70;
-  --res: #e8c55a;
-  --scrim: rgb(0 0 0 / 0.5);
+:root[data-preset="titanium"][data-mode="light"] {
+  color-scheme: light;
+  --bg: #f3f4f6;
+  --bg-2: #eaecef;
+  --surface: #ffffff;
+  --surface-2: #f5f6f8;
+  --surface-3: #eceef1;
+  --well: #e4e7eb;
+  --line: rgb(16 20 26 / 0.1);
+  --line-2: rgb(16 20 26 / 0.19);
+  --rule: #15181d;
+  --text: #15181d;
+  --text-2: #3c424b;
+  --text-3: #5d636d;
+  /* Amber as text is a deep brown-orange (5.3:1); the filled button carries white ink (5.9:1). */
+  --accent: #9a5200;
+  --accent-fill: #9a5200;
+  --accent-2: #7a4100;
+  --accent-ink: #ffffff;
+  --ok: #1f7a3e;
+  --warn: #8a5f00;
+  --danger: #c42b1c;
+  --info: #1f62b0;
+  --live: #d0311f;
+  --res: #8a5f00;
+  --scrim: rgb(16 20 26 / 0.3);
 
-  --hue-repos: #62c093;
-  --hue-papers: #a98ee2;
-  --hue-news: #eb9454;
-  --hue-social: #6fa9e8;
-  --hue-labs: #e27fa7;
+  --hue-repos: #1f7a3e;
+  --hue-papers: #7a45b0;
+  --hue-news: #a84a00;
+  --hue-social: #1f62b0;
+  --hue-labs: #c42b5a;
 
-  --cat-release: #7fcf8d;
-  --cat-product: #62c4cc;
-  --cat-research: #a98ee2;
-  --cat-tool: #e2b04f;
-  --cat-engineering: #7fb2e8;
-  --cat-discussion: #b3aa98;
-  --cat-industry: #eb9454;
-  --cat-policy: #f07a70;
+  --cat-release: #1f7a3e;
+  --cat-product: #0f6f86;
+  --cat-research: #7a45b0;
+  --cat-tool: #8a5f00;
+  --cat-engineering: #1f62b0;
+  --cat-discussion: #5d636d;
+  --cat-industry: #a84a00;
+  --cat-policy: #c42b1c;
 
-  --sig-1: #7fb2e8;
-  --sig-2: #62c093;
-  --sig-3: #e2b04f;
-  --sig-4: #e27fa7;
-  --sig-5: #5fb8d8;
-  --sig-6: #a98ee2;
-  --sig-7: #a9c96a;
-  --sig-8: #8f8777;
+  --sig-1: #4f5bd5;
+  --sig-2: #2f9a55;
+  --sig-3: #d9a300;
+  --sig-4: #e0446a;
+  --sig-5: #2a9fc0;
+  --sig-6: #9a5ad6;
+  --sig-7: #a2845e;
+  --sig-8: #8e9299;
+
+  --tint-1: rgb(16 20 26 / 0.03);
+  --tint-2: rgb(16 20 26 / 0.05);
+  --tint-3: rgb(16 20 26 / 0.08);
+  --elev-3: 0 2px 6px rgb(16 20 26 / 0.06), 0 22px 48px -20px rgb(16 20 26 / 0.3);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.22), 0 0 0 0.5px rgb(0 0 0 / 0.14);
+  --switch-off: color-mix(in oklab, var(--text) 16%, var(--bg));
 }
 
 /* ───────────── terminal: phosphor mono, square corners ───────────── */
@@ -144,9 +143,10 @@
   --surface: #06100a;
   --surface-2: #0a170e;
   --surface-3: #0f2014;
-  --well: #020403;
-  --line: rgb(77 255 154 / 0.1);
-  --line-2: rgb(77 255 154 / 0.18);
+  --well: #0a170e;
+  --line: rgb(77 255 154 / 0.12);
+  --line-2: rgb(77 255 154 / 0.22);
+  --rule: #74ad82;
   --text: #d4f7dc;
   --text-2: #a2dcb0;
   --text-3: #74ad82;
@@ -154,8 +154,6 @@
   --accent-fill: var(--accent);
   --accent-2: #ffd978;
   --accent-ink: #0b0800;
-  --signal: #4dff9a;
-  --signal-2: #59c8ff;
   --ok: #4dff9a;
   --warn: #ffcc4d;
   --danger: #ff6b6b;
@@ -188,6 +186,13 @@
   --sig-7: #c6f56a;
   --sig-8: #74ad82;
 
+  --tint-1: rgb(77 255 154 / 0.03);
+  --tint-2: rgb(77 255 154 / 0.055);
+  --tint-3: rgb(77 255 154 / 0.085);
+  --elev-3: 0 0 0 1px rgb(77 255 154 / 0.18), 0 24px 56px -18px rgb(0 0 0 / 0.8);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+  --switch-off: color-mix(in oklab, var(--text) 22%, var(--bg));
+
   --font-ui: var(--font-mono);
   --font-text: var(--font-mono);
   --font-display: var(--font-mono);
@@ -201,10 +206,11 @@
   --tracking-title: 0;
   --fs-m: 0.875rem;
   --radius-s: 0;
-  --radius-m: 2px;
-  --radius-l: 2px;
-  --radius-xl: 2px;
-  --radius-2xl: 2px;
+  --radius-m: 0;
+  --radius-l: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-pill: 0;
 }
 
 :root[data-preset="terminal"][data-mode="light"] {
@@ -215,18 +221,16 @@
   --surface-2: #f2f6ef;
   --surface-3: #e7ede3;
   --well: #e4eadf;
-  --line: rgb(12 31 17 / 0.1);
-  --line-2: rgb(12 31 17 / 0.18);
+  --line: rgb(12 31 17 / 0.12);
+  --line-2: rgb(12 31 17 / 0.22);
+  --rule: #0c1f11;
   --text: #0c1f11;
   --text-2: #2f4c37;
   --text-3: #4b6953;
   --accent: #946200;
+  --accent-fill: var(--accent);
   --accent-2: #7a5100;
   --accent-ink: #fffbe8;
-  --accent-fill: var(--accent);
-  --signal-text: color-mix(in oklab, var(--signal) 80%, var(--text));
-  --signal: #0c7a3c;
-  --signal-2: #146aa6;
   --ok: #0c7a3c;
   --warn: #8a5a00;
   --danger: #c02f2f;
@@ -258,4 +262,11 @@
   --sig-6: #0f7580;
   --sig-7: #5d7d10;
   --sig-8: #6d8574;
+
+  --tint-1: rgb(12 31 17 / 0.03);
+  --tint-2: rgb(12 31 17 / 0.05);
+  --tint-3: rgb(12 31 17 / 0.08);
+  --elev-3: 0 0 0 1px rgb(12 31 17 / 0.16), 0 22px 48px -20px rgb(12 31 17 / 0.3);
+  --knob-shadow: 0 1px 2px rgb(0 0 0 / 0.22);
+  --switch-off: color-mix(in oklab, var(--text) 16%, var(--bg));
 }

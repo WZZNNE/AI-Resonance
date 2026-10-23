@@ -1,7 +1,7 @@
 /* biome-ignore-all lint/complexity/noImportantStyles: responsive helpers must beat component display rules */
 /*
- * The frame (docs/VISUAL.md §4, §8): page light, glass header, floating glass tab bar, calm banners, footer, page
- * scaffolding, settings chrome and responsive helpers.
+ * The frame (docs/VISUAL.md §4, §8): the paper header, the bottom tab bar, calm notices, footer, page scaffolding,
+ * settings chrome and responsive helpers. Nothing here floats over the page except the tab bar on phones.
  */
 
 .app {
@@ -12,26 +12,10 @@
   isolation: isolate;
 }
 
-/*
- * The scene the glass refracts: the light sources (--spill) over the tactical grid, fixed to the viewport so panels
- * slide over it (one composited layer; no background-attachment). Scanlines, grain and vignette sit on .app::after
- * (ui/hud.css). Fading the grid towards the edges keeps the middle calm and the corners technical.
- */
-.app::before {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  inset: 0;
-  background: var(--aurora), var(--grid);
-  -webkit-mask-image: radial-gradient(140% 110% at 50% 20%, black 45%, rgb(0 0 0 / 0.55));
-  mask-image: radial-gradient(140% 110% at 50% 20%, black 45%, rgb(0 0 0 / 0.55));
-  pointer-events: none;
-}
-
 /* The footer below carries the tab bar's clearance, so the page only needs breathing room. */
 .app__page {
   flex: 1;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 /* responsive helpers */
@@ -65,8 +49,7 @@
   padding: 0.6rem 0.9rem;
   border: 0;
   border-radius: var(--radius-m);
-  background: var(--plate-bg);
-  /* No shadow while parked above the viewport: its 40 px blur would smudge the header's corner. */
+  background: var(--surface);
   box-shadow: 0 0 #0000;
   color: var(--text);
   transform: translateY(calc(-100% - 24px));
@@ -74,23 +57,19 @@
 }
 
 .skiplink:focus-visible {
-  box-shadow: var(--plate-edge), var(--elev-2), var(--ring);
+  box-shadow: var(--plate-edge), var(--elev-3), var(--ring);
   transform: none;
 }
 
-/* ── header (glass, 60 px, hairline bottom) ── */
+/* ── header: the paper continues under it; one hairline below ── */
 
 .appbar {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
   padding-top: env(safe-area-inset-top);
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  box-shadow:
-    inset 0 -1px 0 var(--line),
-    0 10px 30px -18px rgb(0 0 0 / 0.6);
+  background: var(--header-bg);
+  box-shadow: inset 0 -1px 0 var(--line-2);
 }
 
 .appbar__inner {
@@ -106,50 +85,50 @@
 .header-source {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.6rem;
-  color: var(--text-2);
-  text-decoration: none;
-  font-size: var(--fs-xs);
+  gap: 0.35rem;
+  min-height: 36px;
+  padding: 0 0.6rem;
   border-radius: var(--radius-m);
+  color: var(--text-2);
+  font-size: var(--fs-xs);
+  text-decoration: none;
 }
+
 .header-source:hover {
   background: var(--tint-2);
   color: var(--text);
 }
+
 @media (max-width: 767px) {
   .header-source span {
     display: none;
   }
+
   .header-source {
-    padding-inline: 0.4rem;
+    padding-inline: 0.45rem;
   }
+}
+
+.appbar__link {
+  color: var(--text-2);
 }
 
 .appbar__spacer {
   flex: 1;
 }
 
-/* The tool buttons sit in one glass capsule; its buttons are ghost icons that light up from inside it. */
+/* The tool buttons: plain icons in a row, separated from the links by a short rule. */
 .appbar__dock {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin-left: 0.25rem;
-  padding: 3px;
-  border-radius: var(--radius-pill);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  gap: 0;
+  margin-left: 0.35rem;
+  padding-left: 0.35rem;
+  box-shadow: inset 1px 0 0 var(--line);
 }
 
 .appbar__dock .iconbtn {
-  --ib: 34px;
-}
-
-@media (hover: hover) {
-  .appbar__dock .iconbtn:hover:not(:disabled) {
-    color: var(--text);
-  }
+  --ib: 36px;
 }
 
 .brand {
@@ -159,7 +138,7 @@
   gap: 0.5rem;
   min-width: var(--target);
   min-height: var(--target);
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
   border-radius: var(--radius-s);
   color: var(--text);
   text-decoration: none;
@@ -167,13 +146,14 @@
 
 .logo {
   flex: none;
-  color: var(--text-2);
+  color: var(--text);
 }
 
+/* The wordmark is set in the headline serif, like a nameplate. */
 .brand__name {
   display: none;
-  font: 600 0.9375rem / 1 var(--font-display);
-  letter-spacing: -0.012em;
+  font: 700 1.1875rem / 1 var(--font-display);
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
@@ -191,28 +171,25 @@
   }
 }
 
-/* Edition picker: a small raised pill with a chevron; recessed while its list is open. */
+/* Edition picker: the date as a quiet text button with a chevron; shaded while its list is open. */
 .edpick {
-  --sh: var(--plate-edge), var(--elev-1);
   position: relative;
   display: inline-flex;
   /* The one header control allowed to shrink (label ellipsis), so 360 px never overflows. */
   min-width: 0;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.35rem;
   height: 32px;
-  padding: 0 0.5rem 0 0.8rem;
+  padding: 0 0.4rem 0 0.55rem;
   border: 0;
-  border-radius: var(--radius-pill);
-  background: var(--plate-bg);
-  box-shadow: var(--sh);
+  border-radius: var(--radius-m);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-2);
   color: var(--text);
   font: 600 var(--fs-s) / 1 var(--font-ui);
-  letter-spacing: -0.005em;
   white-space: nowrap;
   cursor: pointer;
   transition:
-    transform var(--dur-1) var(--ease),
     box-shadow var(--dur-1) var(--ease),
     background-color var(--dur-1) var(--ease);
 }
@@ -225,25 +202,20 @@
 
 @media (hover: hover) {
   .edpick:hover {
-    transform: translateY(-1px);
-    --sh: var(--plate-edge), var(--elev-2);
+    box-shadow: inset 0 0 0 1px var(--text-3);
   }
 }
 
 .edpick[aria-expanded="true"],
-.edpick[aria-expanded="true"]:hover {
-  transform: none;
-  --sh: var(--well-edge);
-  background: var(--well-bg);
-}
-
+.edpick[aria-expanded="true"]:hover,
 .edpick:active {
-  transform: scale(0.98);
-  --sh: var(--press);
+  background: var(--tint-2);
 }
 
 .edpick:focus-visible {
-  box-shadow: var(--sh), var(--ring);
+  box-shadow:
+    inset 0 0 0 1px var(--line-2),
+    var(--ring);
 }
 
 .edpick .icon {
@@ -273,8 +245,8 @@
   display: inline-block;
   width: 5.5em;
   height: 0.8em;
-  border-radius: 3px;
-  background: var(--well-bg);
+  border-radius: 2px;
+  background: var(--tint-3);
 }
 
 /* The live dot: the only looping animation (a soft pulse ring, 1.8 s; still under reduced motion). */
@@ -286,7 +258,6 @@
   height: 7px;
   border-radius: 50%;
   background: var(--live);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--live) var(--bloom), transparent);
 }
 
 .edpick__pulse::after,
@@ -315,33 +286,28 @@
 
   to {
     opacity: 0;
-    transform: scale(2.8);
+    transform: scale(2.6);
   }
 }
 
-/* Live toggle: a hairline pill at rest, a raised pill with the pulsing live dot when on. */
+/* Live toggle: a small text button with the live dot; when on, the word is set in the live colour. */
 .livetoggle {
-  --sh: inset 0 0 0 1px var(--line-2);
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   height: 32px;
-  margin-left: 0.375rem;
-  padding: 0 0.75rem 0 0.7rem;
+  margin-left: 0.25rem;
+  padding: 0 0.6rem;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-m);
   background: transparent;
-  box-shadow: var(--sh);
   color: var(--text-2);
-  font: 650 var(--fs-2xs) / 1 var(--font-ui);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font: 600 var(--fs-xs) / 1 var(--font-ui);
   white-space: nowrap;
   cursor: pointer;
   transition:
-    transform var(--dur-1) var(--ease),
-    box-shadow var(--dur-1) var(--ease),
+    background-color var(--dur-1) var(--ease),
     color var(--dur-1) var(--ease);
 }
 
@@ -360,46 +326,37 @@
 
 @media (hover: hover) {
   .livetoggle:hover {
+    background: var(--tint-2);
     color: var(--text);
-    --sh: var(--plate-edge), var(--elev-1);
-    background: var(--plate-bg);
   }
 }
 
 .livetoggle:not(.is-on) .livetoggle__dot {
   background: var(--text-3);
-  box-shadow: none;
 }
 
 .livetoggle.is-on {
-  --sh: var(--plate-edge), var(--elev-1);
-  background: var(--plate-bg);
-  color: var(--text);
+  color: var(--live);
 }
 
 .livetoggle:active {
-  transform: scale(0.97);
-  --sh: var(--press);
+  background: var(--tint-3);
 }
 
-.livetoggle:focus-visible {
-  box-shadow: var(--sh), var(--ring);
-}
-
-/* Desktop search: a well field with a raised keycap. */
+/* Desktop search: a white field with a keycap. */
 .searchtrigger {
   position: relative;
   align-items: center;
   gap: 0.5rem;
-  width: min(250px, 20vw);
-  height: 36px;
-  margin-right: 0.5rem;
-  padding: 0 0.375rem 0 0.75rem;
+  width: min(240px, 18vw);
+  height: 34px;
+  margin: 0 0.25rem 0 0.5rem;
+  padding: 0 0.375rem 0 0.7rem;
   border: 0;
   border-radius: var(--radius-m);
   background: var(--well-bg);
   box-shadow: var(--well-edge);
-  color: color-mix(in oklab, var(--text-3) 85%, var(--text));
+  color: var(--text-3);
   font-size: var(--fs-s);
   cursor: pointer;
   transition:
@@ -410,11 +367,12 @@
 .searchtrigger::before {
   content: "";
   position: absolute;
-  inset: -4px 0;
+  inset: -5px 0;
 }
 
 @media (hover: hover) {
   .searchtrigger:hover {
+    box-shadow: inset 0 0 0 1px var(--text-3);
     color: var(--text-2);
   }
 }
@@ -428,34 +386,25 @@
   text-align: left;
 }
 
-/* Keycap: a tiny plate with a hard bottom edge. */
+/* Keycap: a tiny hairline box. */
 kbd {
   display: inline-grid;
   place-items: center;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 0.35rem;
-  border-radius: max(0px, calc(var(--radius-s) - 2px));
-  background: var(--plate-bg);
-  box-shadow:
-    var(--plate-edge),
-    0 1px 0 rgb(0 0 0 / 0.5);
-  color: var(--text-2);
+  min-width: 20px;
+  height: 20px;
+  padding: 0 0.3rem;
+  border-radius: var(--radius-s);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  color: var(--text-3);
   font: 500 11px / 1 var(--font-mono);
 }
 
-[data-mode="light"] kbd {
-  box-shadow:
-    var(--plate-edge),
-    0 1px 0 rgb(0 0 0 / 0.16);
-}
-
 .langswitch {
-  font: 650 var(--fs-xs) / 1 var(--font-ui);
-  letter-spacing: 0.02em;
+  font: 600 var(--fs-xs) / 1 var(--font-ui);
 }
 
-/* ── edition list (glass popover / sheet) ── */
+/* ── edition list (popover / sheet) ── */
 
 .edlist {
   display: grid;
@@ -463,7 +412,7 @@ kbd {
 
 .edlist__window {
   padding: 0.8rem 1.125rem;
-  background: color-mix(in srgb, var(--text) 4%, transparent);
+  background: var(--tint-2);
   box-shadow: inset 0 -1px 0 var(--line);
   color: var(--text-2);
   font-size: var(--fs-xs);
@@ -496,18 +445,16 @@ kbd {
 
 .edlist__weekname {
   margin: 0;
-  padding: 0.7rem 0.75rem 0.3rem;
+  padding: 0.75rem 0.75rem 0.3rem;
   color: var(--text-3);
-  font: 600 var(--fs-2xs) / 1 var(--font-ui);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  font: 600 var(--fs-xs) / 1 var(--font-ui);
 }
 
 .edlist__weekname a {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
-  border-radius: 4px;
+  border-radius: var(--radius-s);
   color: inherit;
   text-decoration: none;
 }
@@ -532,7 +479,7 @@ kbd {
 
 @media (hover: hover) {
   .edlist__item:hover {
-    background: color-mix(in srgb, var(--text) 6%, transparent);
+    background: var(--tint-2);
     color: var(--text);
   }
 }
@@ -541,9 +488,9 @@ kbd {
   box-shadow: var(--ring-inset);
 }
 
-/* Current edition: a lifted row with the 2 px signal marker (active navigation). */
+/* Current edition: bold, with the 2 px signal marker. */
 .edlist__item[aria-current="true"] {
-  background: color-mix(in srgb, var(--text) 8%, transparent);
+  background: var(--tint-2);
   color: var(--text);
   font-weight: 600;
 }
@@ -551,14 +498,11 @@ kbd {
 .edlist__item[aria-current="true"]::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 8px;
+  bottom: 8px;
   left: 0;
   width: 2px;
-  height: 16px;
-  margin-top: -8px;
-  border-radius: 0 2px 2px 0;
   background: var(--signal);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--signal) var(--bloom), transparent);
 }
 
 .edlist__item--live .icon {
@@ -578,7 +522,7 @@ kbd {
   display: flex;
   gap: 1rem;
   padding: 0.25rem 1.125rem;
-  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  background: var(--glass-bg);
   box-shadow: inset 0 1px 0 var(--line);
 }
 
@@ -596,7 +540,7 @@ kbd {
   color: var(--text);
 }
 
-/* Phones: the list sits in a sheet — the window becomes an inset rounded block, the links move to the sheet's footer. */
+/* Phones: the list sits in a sheet — the window becomes an inset block, the links move to the sheet's footer. */
 .sheet .edlist__window {
   border-radius: var(--radius-m);
   box-shadow: none;
@@ -619,25 +563,19 @@ kbd {
   width: 300px;
 }
 
-/* ── tab bar: a floating glass capsule on phones and tablets ── */
+/* ── tab bar: a paper strip along the bottom of phones and tablets ── */
 
 .tabbar {
   position: fixed;
   z-index: var(--z-header);
-  right: 12px;
-  bottom: calc(10px + env(safe-area-inset-bottom));
-  left: 12px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
-  gap: 2px;
-  max-width: 520px;
-  height: var(--tabbar-h);
-  margin-inline: auto;
-  padding: 5px;
-  border-radius: calc(var(--radius-xl) + 4px);
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-edge), var(--elev-3);
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
+  padding: 0 max(4px, env(safe-area-inset-right)) env(safe-area-inset-bottom) max(4px, env(safe-area-inset-left));
+  background: var(--header-bg);
+  box-shadow: inset 0 1px 0 var(--line-2);
 }
 
 @media (min-width: 1100px) {
@@ -655,17 +593,16 @@ kbd {
   justify-content: center;
   gap: 3px;
   min-width: 0;
-  padding: 0 0 5px;
+  max-width: 120px;
+  margin: 0 auto;
+  padding: 2px 0 0;
   border: 0;
-  border-radius: max(0px, calc(var(--radius-xl) - 1px));
   background: none;
   color: var(--text-3);
   font: 500 var(--fs-2xs) / 1.1 var(--font-ui);
   text-decoration: none;
   cursor: pointer;
-  transition:
-    transform var(--dur-1) var(--ease),
-    color var(--dur-1) var(--ease);
+  transition: color var(--dur-1) var(--ease);
 }
 
 .tabbar__label {
@@ -675,64 +612,40 @@ kbd {
   white-space: nowrap;
 }
 
-.tabbar__item:active {
-  transform: scale(0.95);
-}
-
-/* Active: a raised inner plate behind icon + label, and a 4 px signal dot under them. */
+/* Active: ink, with a short signal rule along the top edge of the bar. */
 .tabbar__item[aria-current="page"] {
-  background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
   color: var(--text);
+  font-weight: 600;
 }
 
-/* Light: a white plate on white glass needs a real contact shadow to read as raised. */
-[data-mode="light"] .tabbar__item[aria-current="page"] {
-  box-shadow:
-    var(--plate-edge),
-    0 1px 3px rgb(0 0 0 / 0.12),
-    0 4px 12px -4px rgb(0 0 0 / 0.16);
-}
-
-/* The active tab's signal: a short lit bar on the thumb's lower edge (HUD tab light). */
-.tabbar__item[aria-current="page"]::after {
+.tabbar__item[aria-current="page"]::before {
   content: "";
   position: absolute;
-  bottom: 3px;
+  top: 0;
   left: 50%;
-  width: 16px;
+  width: 24px;
   height: 2px;
-  margin-left: -8px;
-  border-radius: 1px;
+  margin-left: -12px;
   background: var(--signal);
-  box-shadow: 0 0 8px 1px color-mix(in srgb, var(--signal) var(--bloom), transparent);
 }
 
 .tabbar__item:focus-visible {
-  box-shadow: var(--ring);
+  box-shadow: var(--ring-inset);
 }
 
-.tabbar__item[aria-current="page"]:focus-visible {
-  box-shadow: var(--plate-edge), var(--elev-1), var(--ring);
-}
-
-/* ── banners: calm plates (offline under the header; `.banner` for page notes such as stale data) ── */
+/* ── notices: a line under the header when offline; `.banner` for page notes such as stale data ── */
 
 .offline {
   position: sticky;
-  top: calc(var(--header-h) + env(safe-area-inset-top) + 8px);
+  top: calc(var(--header-h) + env(safe-area-inset-top));
   z-index: calc(var(--z-header) - 1);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: fit-content;
-  max-width: calc(100% - 2 * var(--gutter));
-  margin: 8px auto 0;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill);
-  background: var(--plate-bg);
-  box-shadow: var(--plate-edge), var(--elev-2);
+  padding: 0.45rem var(--gutter);
+  background: var(--bg-2);
+  box-shadow: inset 0 -1px 0 var(--line);
   color: var(--text-2);
   font-size: var(--fs-xs);
 }
@@ -745,10 +658,12 @@ kbd {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-l);
-  background: var(--panel-bg);
-  box-shadow: var(--panel-edge), var(--panel-drop);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-s);
+  background: var(--tint-1);
+  box-shadow:
+    inset 3px 0 0 var(--tone, var(--info)),
+    inset 0 0 0 1px var(--line);
   color: var(--text-2);
   font-size: var(--fs-s);
   line-height: 1.45;
@@ -763,38 +678,39 @@ kbd {
 .page {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1.75rem var(--gutter) 0;
+  padding: 2rem var(--gutter) 0;
 }
 
 .page--narrow {
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .page__head {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  box-shadow: inset 0 -1px 0 var(--line-2);
 }
 
 .page__title {
   margin: 0;
-  font: var(--weight-display) clamp(1.75rem, 1.45rem + 1vw, 2.25rem) / 1.1 var(--font-display);
+  font: var(--weight-display) clamp(1.875rem, 1.45rem + 1.3vw, 2.625rem) / 1.12 var(--font-display);
   letter-spacing: var(--tracking-display);
 }
 
-/* Eyebrow. */
+/* Kicker: the section label above a headline, in the signal colour (a newspaper's red section line). */
 .kicker {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   margin: 0;
-  color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  color: var(--signal-text);
+  font: 700 var(--fs-eyebrow) / 1.25 var(--font-ui);
   letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
 }
 
-/* Page heads breathe like the Today hero: eyebrow → title → lead. */
+/* Page heads read like the Today masthead: kicker → title → lead. */
 .kicker + .page__title {
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .page__head .page__lead {
@@ -803,7 +719,7 @@ kbd {
 
 .section-head {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 0.875rem;
@@ -836,13 +752,13 @@ kbd {
 
 .section-head__more:hover {
   color: var(--text);
+  text-decoration: underline;
 }
 
-/* ── footer ── */
+/* ── footer: a heavy rule, then the small print ── */
 
 .footer {
-  padding: 2rem var(--gutter) calc(var(--tabbar-space) + 1.75rem);
-  box-shadow: inset 0 1px 0 var(--line);
+  padding: 0 var(--gutter) calc(var(--tabbar-space) + 1.75rem);
   color: var(--text-3);
   font-size: var(--fs-xs);
 }
@@ -858,13 +774,14 @@ kbd {
   gap: 0.6rem;
   max-width: var(--maxw);
   margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--rule);
 }
 
 .footer__tagline {
   margin: 0;
   color: var(--text-2);
-  font: 500 var(--fs-s) / 1.45 var(--font-display);
-  letter-spacing: -0.005em;
+  font: 400 var(--fs-m) / 1.45 var(--font-display);
 }
 
 .footer__links {
@@ -877,16 +794,17 @@ kbd {
   display: inline-flex;
   align-items: center;
   min-height: var(--target);
-  border-radius: 4px;
+  border-radius: var(--radius-s);
   color: var(--text-2);
   text-decoration: none;
 }
 
 .footer__links a:hover {
   color: var(--text);
+  text-decoration: underline;
 }
 
-/* ── settings: nav plate with a signal marker; forms grouped into plates (iOS Settings) ── */
+/* ── settings: a ruled list of sections on the left; forms are sections separated by rules ── */
 
 .settings__layout {
   display: grid;
@@ -895,22 +813,20 @@ kbd {
 
 @media (min-width: 900px) {
   .settings__layout {
-    grid-template-columns: 232px minmax(0, 760px);
-    gap: 2.5rem;
+    grid-template-columns: 220px minmax(0, 760px);
+    gap: 3rem;
     align-items: start;
   }
 
   .settings__nav {
     position: sticky;
     top: calc(var(--header-h) + 1.5rem);
-    padding: 6px;
-    border-radius: var(--radius-l);
-    background: var(--panel-bg);
-    box-shadow: var(--panel-edge), var(--panel-drop);
+    padding-top: 0.5rem;
+    border-top: 2px solid var(--rule);
   }
 }
 
-/* Phones and tablets: the sections become a scrolling segmented track. */
+/* Phones and tablets: the sections become a scrolling row of underlined tabs. */
 @media (max-width: 899px) {
   .settings__layout {
     grid-template-columns: minmax(0, 1fr);
@@ -918,39 +834,35 @@ kbd {
 
   .settings__nav.tabs--vertical {
     flex-direction: row;
-    width: fit-content;
+    gap: 0;
+    width: auto;
     max-width: 100%;
-    padding: 3px;
     overflow-x: auto;
-    border-radius: var(--radius-pill);
-    background: var(--well-bg);
-    box-shadow: var(--well-edge);
+    box-shadow: inset 0 -1px 0 var(--line-2);
   }
 
   .settings__nav.tabs--vertical .tab {
-    min-height: 34px;
-    padding: 0 0.85rem;
-    border-radius: var(--radius-pill);
-  }
-
-  .settings__nav.tabs--vertical .tab::before {
-    content: "";
-    position: absolute;
-    inset: calc((34px - var(--target)) / 2) 0;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    border-radius: 0;
   }
 
   .settings__nav.tabs--vertical > .thumb {
-    border-radius: var(--radius-pill);
+    background: none;
   }
 
   .settings__nav.tabs--vertical > .thumb::after {
     top: auto;
-    bottom: 3px;
-    left: 50%;
-    width: 14px;
+    right: 0.6rem;
+    bottom: 0;
+    left: 0.6rem;
+    width: auto;
     height: 2px;
-    margin: 0 0 0 -7px;
-    border-radius: 1px;
+  }
+
+  .settings__nav.tabs--vertical:not([data-thumb]) .tab.is-on {
+    background: none;
+    box-shadow: inset 0 -2px 0 var(--signal);
   }
 }
 
@@ -965,7 +877,7 @@ kbd {
   letter-spacing: var(--tracking-section);
 }
 
-/* Phones and tablets: the segmented track above already names the section; the heading stays for screen readers. */
+/* Phones and tablets: the tabs above already name the section; the heading stays for screen readers. */
 @media (max-width: 899px) {
   .settings__h {
     position: absolute;
@@ -980,17 +892,16 @@ kbd {
 
 .settings__stack {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .settings__group {
+  position: relative;
   display: grid;
   gap: 0.875rem;
-  padding: 1.25rem;
+  padding: 1rem 0 0;
   border: 0;
-  border-radius: var(--radius-l);
-  background: var(--panel-bg);
-  box-shadow: var(--panel-edge), var(--panel-drop);
+  border-top: 1px solid var(--text);
 }
 
 /* Consecutive fields in one group are hairline-separated rows. */
@@ -1001,7 +912,7 @@ kbd {
 
 .settings__subh {
   margin: 0;
-  font: 650 var(--fs-l) / 1.3 var(--font-display);
+  font: var(--weight-section) var(--fs-l) / 1.3 var(--font-display);
   letter-spacing: var(--tracking-title);
 }
 
@@ -1018,15 +929,14 @@ kbd {
   gap: 0.5rem;
 }
 
-/* Board order: a grouped list on a nested plate, separators inset past the dot. */
+/* Board order: a ruled list, separators inset past the dot. */
 .boardprefs {
   display: grid;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border-radius: var(--radius-m);
-  background: var(--surface-2);
-  box-shadow: var(--plate-edge);
+  border-top: 1px solid var(--line-2);
+  border-bottom: 1px solid var(--line-2);
   list-style: none;
 }
 
@@ -1036,7 +946,7 @@ kbd {
   align-items: center;
   gap: 0.35rem;
   min-height: 56px;
-  padding: 0.35rem 0.6rem 0.35rem 0.9rem;
+  padding: 0.35rem 0;
 }
 
 .boardprefs__row + .boardprefs__row::before {
@@ -1044,7 +954,7 @@ kbd {
   position: absolute;
   top: 0;
   right: 0;
-  left: 2.3rem;
+  left: 1.4rem;
   height: 1px;
   background: var(--line);
 }
@@ -1055,8 +965,8 @@ kbd {
 
 .boardprefs__dot {
   flex: none;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   margin-right: 0.5rem;
   border-radius: 50%;
   background: var(--hue);

@@ -5,11 +5,12 @@
  * cannot go below 500 px). Every run uses a fresh browser profile, so no service worker or cache survives.
  *
  *   node scripts/shots.mjs [--views today,item,...] [--modes dark,light] [--sizes desktop,mobile]
- *                          [--out dir] [--no-build [--dist dir]] [--full]
+ *                          [--out dir] [--no-build [--dist dir]] [--full] [--lang en|zh] [--height px]
  *
  * Each run builds into its own temp folder, so several runs (local or CI) can happen at once.
  *
- * Views are named below; `--full` captures the whole page height instead of one viewport.
+ * Views are named below; `--full` captures the whole page height instead of one viewport, `--height` sets the
+ * viewport height of every size, and `--lang` pins the interface language (otherwise the browser's decides).
  * Prints one line per PNG. Needs data in public/api/v1 (run the pipeline or `pnpm mock` first).
  */
 import { spawn, spawnSync } from 'node:child_process'
@@ -30,6 +31,8 @@ const { values } = parseArgs({
     'no-build': { type: 'boolean', default: false },
     dist: { type: 'string' },
     full: { type: 'boolean', default: false },
+    lang: { type: 'string', default: '' },
+    height: { type: 'string', default: '' },
   },
 })
 
@@ -57,12 +60,25 @@ const VIEWS = {
   today: { hash: '#/live' },
   // A settled, dated edition: the Brief (the page's one signal-line hairline) and the edition arrows.
   daily: { hash: () => `#/d/${latestDate()}` },
+  // The filters and the first rows of the boards of the latest dated edition (the README's light front page).
+  front: {
+    hash: () => `#/d/${latestDate()}`,
+    script: `document.querySelector('.reading-tabs--home')?.scrollIntoView({block:'start'}); scrollBy(0,-72)`,
+  },
   board: {
     hash: '#/live',
     script: `document.querySelector('.boards')?.scrollIntoView({block:'start'}); scrollBy(0,-80)`,
   },
   social: { hash: '#/live', script: SOCIAL },
   item: { hash: () => `#/item/${slug(firstKey('repos'))}` },
+  // The detail with its score breakdown open, scrolled into view inside the sheet.
+  itemscore: {
+    hash: () => `#/item/${slug(firstKey('repos'))}`,
+    script: `(() => {
+      const d = document.querySelector('.detail__score-disclosure'); if (d) d.open = true
+      d?.scrollIntoView({ block: 'start' })
+    })()`,
+  },
   paper: { hash: () => `#/item/${slug(firstKey('papers'))}` },
   resonance: { hash: '#/resonance/live' },
   archive: { hash: '#/archive' },
@@ -75,6 +91,10 @@ const VIEWS = {
   search: { hash: '#/live', script: `document.dispatchEvent(new KeyboardEvent('keydown',{key:'/',bubbles:true}))` },
   appearance: { hash: '#/settings/appearance' },
   delivery: { hash: '#/settings/delivery' },
+  learn: { hash: '#/learn' },
+  library: { hash: '#/library' },
+  subscribe: { hash: '#/subscribe' },
+  status: { hash: '#/status' },
 }
 const SIZES = {
   desktop: { width: 1440, height: 900, mobile: false, dpr: 1 },
@@ -195,10 +215,19 @@ async function main() {
       (await send('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true })).result?.result?.value
     await send('Page.enable')
     await send('Runtime.enable')
+    if (values.lang) {
+      // Every document starts with the language pinned in the settings slice (the shots clear storage in between).
+      const lang = JSON.stringify(values.lang)
+      await send('Page.addScriptToEvaluateOnNewDocument', {
+        source: `try { const k = 'resonance.settings'; const d = JSON.parse(localStorage.getItem(k) || '{"v":2,"slices":{}}');
+          d.slices.general = { ...(d.slices.general || {}), lang: ${lang} }; localStorage.setItem(k, JSON.stringify(d)) } catch {}`,
+      })
+    }
 
     for (const sizeName of values.sizes.split(',')) {
-      const size = SIZES[sizeName]
+      const size = SIZES[sizeName] && { ...SIZES[sizeName] }
       if (!size) throw new Error(`unknown size ${sizeName}`)
+      if (values.height) size.height = Number(values.height)
       await send('Emulation.setDeviceMetricsOverride', {
         width: size.width,
         height: size.height,

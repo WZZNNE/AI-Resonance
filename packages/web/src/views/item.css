@@ -1,19 +1,8 @@
 /*
- * Item detail (loaded with the lazy item view), docs/VISUAL.md. A hero (thin metallic rank, eyebrow, title, chips),
- * the action pills, then iOS-style grouped sections: a small header over plates whose rows are hairline-separated.
- * Section headers and footnotes are inset to the plates' content edge (--dp).
+ * Item detail (loaded with the lazy item view), docs/VISUAL.md. A hero (the rank figure, kicker, headline, tags),
+ * the lede, "why it matters" as a pull quote, the action row, then ruled sections: a small serif heading over a block
+ * whose rows are hairline-separated. Nothing is boxed; rules organise the page.
  */
-
-/* Light: the sheet takes the grouped-list grey so the white plates on it read as raised (iOS grouped background). */
-[data-mode="light"] .sheet[data-part="item-sheet"] {
-  --glass-bg: color-mix(in srgb, var(--bg) 84%, transparent);
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  [data-mode="light"] .sheet[data-part="item-sheet"] {
-    --glass-bg: color-mix(in srgb, var(--bg) 97%, transparent);
-  }
-}
 
 .detail__sheettitle {
   color: var(--text-2);
@@ -21,19 +10,19 @@
 }
 
 .detail {
-  /* Inner padding of every plate; headers and footnotes align to it. */
-  --dp: 1rem;
+  /* Inner inset of rows inside a section; blocks sit flush with the column. */
+  --dp: 0px;
   padding-bottom: 0.5rem;
 }
 
-/* A plate on the sheet: raised, edge inside the shadow (no border). */
+/* A section block: an ink rule on top, rows separated by hairlines below it. */
 .detail__plate,
 .detail__source,
 .facts,
 .comments {
-  border-radius: var(--radius-l);
-  background: var(--panel-bg);
-  box-shadow: var(--panel-edge), var(--panel-drop);
+  border-radius: 0;
+  background: none;
+  box-shadow: inset 0 1px 0 var(--text);
 }
 
 /* ── hero ── */
@@ -48,19 +37,13 @@
 .detail__rankcol {
   display: grid;
   justify-items: start;
-  gap: 0.625rem;
-  padding-top: 0.125rem;
+  gap: 0.6rem;
+  padding-top: 0.2rem;
 }
 
 .detail__rankcol .rank {
-  font-size: 3.25rem;
-  line-height: 0.84;
-  letter-spacing: -0.05em;
-}
-
-/* The hero column is sized for one figure: no stencilled zero here. */
-.detail__rankcol .rank::before {
-  content: none;
+  font-size: 3rem;
+  line-height: 0.9;
 }
 
 .detail__titles {
@@ -76,10 +59,13 @@
   align-items: center;
   gap: 0.5rem;
   margin: 0;
-  color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.3 var(--font-ui);
+  color: var(--signal-text);
+  font: 700 var(--fs-eyebrow) / 1.3 var(--font-ui);
   letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+}
+
+.detail__kicker > .hue-dot {
+  display: none;
 }
 
 .detail__title {
@@ -112,7 +98,6 @@
   margin: 1.25rem 0 0;
   color: var(--text-2);
   font: 400 var(--fs-body) / 1.65 var(--font-text);
-  letter-spacing: -0.003em;
   overflow-wrap: anywhere;
   text-wrap: pretty;
 }
@@ -124,24 +109,25 @@
   }
 }
 
-/* Why it matters + essence points: one plate, the points numbered on small raised keycaps. */
-.detail__essence {
+/* Why it matters + essence points: a pull quote — a signal rule down its left edge, the points numbered in figures. */
+.detail__essence.detail__plate {
   display: grid;
   gap: 0.875rem;
-  margin-top: 1rem;
-  padding: 0.95rem var(--dp) 1rem;
+  margin-top: 1.25rem;
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  box-shadow: inset 3px 0 0 var(--signal);
 }
 
 .detail__why {
   margin: 0;
-  color: var(--text-2);
-  font: 400 var(--fs-m) / 1.6 var(--font-text);
+  color: var(--text);
+  font: 400 var(--fs-l) / 1.55 var(--font-display);
   overflow-wrap: anywhere;
 }
 
 .detail__why strong {
-  color: var(--text);
-  font-weight: 600;
+  color: var(--signal-text);
+  font-weight: 700;
 }
 
 .detail__why + .detail__points {
@@ -160,41 +146,31 @@
 
 .detail__points li {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.6rem;
   color: var(--text);
-  font: 400 var(--fs-m) / 1.55 var(--font-text);
+  font: 400 var(--fs-m) / 1.6 var(--font-text);
   overflow-wrap: anywhere;
   counter-increment: pt;
 }
 
 .detail__points li::before {
-  content: counter(pt);
+  content: counter(pt) ".";
   position: absolute;
-  top: 0.1em;
+  top: 0;
   left: 0;
-  display: grid;
-  place-items: center;
-  width: 1.3rem;
-  height: 1.3rem;
-  border-radius: 50%;
-  background: var(--surface-3);
-  box-shadow: var(--plate-edge), var(--elev-0);
-  color: var(--text-2);
-  font: 600 var(--fs-2xs) / 1 var(--font-mono);
+  color: var(--signal-text);
+  font: 700 var(--fs-m) / 1.6 var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .detail > .linkbtn {
   margin-top: 0.75rem;
 }
 
-/* Actions: toolbar pills; on phones an even two-column grid of taller keys. */
+/* Actions: a row of hairline buttons; on phones an even two-column grid of taller keys. */
 .detail .actions--detail {
   gap: 0.5rem;
-  margin: 1.25rem 0 0;
-}
-
-.detail .actions--detail .btn {
-  border-radius: var(--radius-pill);
+  margin: 1.5rem 0 0;
 }
 
 @media (max-width: 559px) {
@@ -206,7 +182,6 @@
   .detail .actions--detail .btn {
     --btn-h: 40px;
     min-width: 0;
-    border-radius: var(--radius-m);
     font-size: var(--fs-s);
   }
 }
@@ -214,7 +189,7 @@
 /* ── grouped sections ── */
 
 .detail__section {
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
 
 .detail__hrow {
@@ -229,10 +204,9 @@
 
 .detail__h {
   margin: 0;
-  color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.3 var(--font-ui);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  color: var(--text);
+  font: var(--weight-section) var(--fs-l) / 1.3 var(--font-display);
+  letter-spacing: var(--tracking-title);
 }
 
 .detail__section > :not(.detail__hrow) + :not(.detail__foot) {
@@ -254,8 +228,7 @@
 
 .detail__formula {
   color: var(--text-3);
-  font: 400 var(--fs-2xs) / 1.65 var(--font-mono);
-  letter-spacing: -0.01em;
+  font: 400 var(--fs-xs) / 1.65 var(--font-mono);
 }
 
 /* Score: the bar and its total head one plate; the breakdown rows sit flat inside it, separators inset past the dot. */
@@ -271,14 +244,11 @@
 
 .detail__score .scorebar__total {
   font-size: var(--fs-2xl);
-  letter-spacing: -0.04em;
 }
 
 .detail__score .scoretable {
   margin: 0;
-  border-radius: 0;
-  background: none;
-  box-shadow: inset 0 1px 0 var(--line);
+  border-top: 1px solid var(--line-2);
 }
 
 .detail__score .scoretable th:first-child {
@@ -290,18 +260,8 @@
   padding-right: var(--dp);
 }
 
-.detail__score .scoretable tbody > tr > :first-child {
-  border-bottom-color: transparent;
-  background:
-    linear-gradient(var(--line), var(--line)) no-repeat right bottom / calc(100% - var(--dp) - 8px - 0.5rem) 1px;
-}
-
-.detail__score .scoretable tbody > tr.has-help > :first-child {
-  background: none;
-}
-
 .detail__score .scoretable__helprow > td {
-  padding-left: calc(var(--dp) + 8px + 0.5rem);
+  padding-left: calc(var(--dp) + 9px + 0.5rem);
 }
 
 .detail__score .scoretable tfoot th,
@@ -311,7 +271,7 @@
 }
 
 .detail__score .scoretable tfoot td {
-  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── source text (abstract, post text): reading typography on a plate ── */
@@ -338,7 +298,7 @@
   gap: 1rem;
   min-height: 48px;
   padding: 0 var(--dp);
-  border-radius: var(--radius-l);
+  border-radius: 0;
   color: var(--text);
   font: 500 var(--fs-m) / 1.3 var(--font-ui);
   list-style: none;
@@ -371,7 +331,7 @@
 
 @media (hover: hover) {
   .detail__more summary:hover {
-    background: var(--surface-2);
+    background: var(--tint-1);
   }
 }
 
@@ -467,12 +427,12 @@
   align-items: center;
   height: 20px;
   margin-top: 0.5rem;
-  padding: 0 0.45rem;
-  border-radius: var(--radius-pill);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  padding: 0 0.4rem;
+  border-radius: var(--radius-s);
+  box-shadow: inset 0 0 0 1px var(--line-2);
   color: var(--text-2);
-  font: 500 var(--fs-2xs) / 1 var(--font-mono);
+  font: 500 var(--fs-2xs) / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── resonance links: rows with a hue dot; the whole row is the link ── */
@@ -509,17 +469,16 @@
   min-width: 0;
   overflow: hidden;
   color: var(--text-3);
-  font: 600 var(--fs-2xs) / 1.3 var(--font-ui);
+  font: 600 var(--fs-xs) / 1.3 var(--font-ui);
   letter-spacing: var(--tracking-eyebrow);
   text-overflow: ellipsis;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
 .reslinks__title {
   grid-area: title;
   color: var(--text);
-  font: 500 var(--fs-m) / 1.4 var(--font-text);
+  font: var(--weight-title) var(--fs-m) / 1.4 var(--font-display);
   text-decoration: none;
   overflow-wrap: anywhere;
 }
@@ -533,13 +492,14 @@
 .reslinks__meta {
   grid-area: meta;
   color: var(--text-3);
-  font: 500 var(--fs-2xs) / 1.3 var(--font-mono);
+  font: 500 var(--fs-xs) / 1.3 var(--font-ui);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 @media (hover: hover) {
   .reslinks__item:hover {
-    background: var(--surface-2);
+    background: var(--tint-1);
   }
 
   .reslinks__item:hover .reslinks__title {
@@ -559,10 +519,14 @@
 /* Cells grow to fill their row (no ragged last row); outward hairlines, clipped by the plate on its outer edges. */
 .stats > div {
   flex: 1 1 7rem;
-  padding: 0.8rem var(--dp) 0.85rem;
+  padding: 0.8rem 0.9rem 0.85rem;
   box-shadow:
     -1px 0 0 var(--line),
     0 -1px 0 var(--line);
+}
+
+.stats > div:first-child {
+  padding-left: 0;
 }
 
 .stats dt {
@@ -574,13 +538,8 @@
 .stats dd {
   margin: 0.4rem 0 0;
   color: var(--text);
-  font: 600 var(--fs-l) / 1.1 var(--font-display);
-  letter-spacing: -0.01em;
-}
-
-.stats dd.num {
-  font-family: var(--font-mono);
-  letter-spacing: -0.03em;
+  font: var(--weight-display) var(--fs-xl) / 1.1 var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .detail__charts {
@@ -591,7 +550,7 @@
 
 .detail__chart {
   min-width: 0;
-  padding: 0.85rem var(--dp) 0.8rem;
+  padding: 0.85rem 0 0.8rem;
 }
 
 .detail__charttitle {
@@ -621,7 +580,6 @@
 
 .history__plate {
   overflow: hidden;
-  background: var(--surface);
 }
 
 .history__scroll {
@@ -654,12 +612,10 @@
   padding-top: 0.7rem;
   padding-bottom: 0.55rem;
   border-bottom: 0;
-  background: var(--surface);
+  background: var(--glass-bg);
   box-shadow: inset 0 -1px 0 var(--line);
   color: var(--text-3);
-  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  font: 600 var(--fs-xs) / 1.2 var(--font-ui);
 }
 
 .history__table .num {
@@ -667,8 +623,7 @@
 }
 
 .history__table td.num {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .history__table a {

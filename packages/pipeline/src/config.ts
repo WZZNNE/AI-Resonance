@@ -60,8 +60,8 @@ export const configSchema = z.object({
     siteUrl: z.string().default(''),
     defaultLang: z.enum(['en', 'zh']).default('en'),
     theme: z
-      .object({ preset: z.string().default('titanium'), accent: z.string().default('') })
-      .default({ preset: 'titanium', accent: '' }),
+      .object({ preset: z.string().default('paper'), accent: z.string().default('') })
+      .default({ preset: 'paper', accent: '' }),
   }),
   /** What "a day" means. See DESIGN §6a. */
   edition: z.object({

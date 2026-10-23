@@ -1,7 +1,8 @@
 /*
- * UI primitives (docs/VISUAL.md §8). Tokens only (theme/tokens.css). Three materials lit from the top: plate (raised),
- * well (recessed), glass (chrome only). Every interactive element: ≥ 44 px hit area, the signal focus ring, a press
- * state (recess + 0.98), and a 1 px hover lift on hover-capable pointers only.
+ * UI primitives (docs/VISUAL.md §8). Tokens only (theme/tokens.css). The page is printed: controls are paper with a
+ * hairline (plate), fields are white boxes with a hairline (well), and only floating layers cast a shadow. Every
+ * interactive element: ≥ 44 px hit area, the focus ring, a pressed state that darkens the fill (nothing scales or
+ * lifts).
  *
  * Shadow composition: a primitive keeps its resting shadow in `--sh`, so hover/press/focus can swap or add to it
  * (`box-shadow: var(--sh), var(--ring)`). A "no shadow" value is `0 0 #0000` (never `none`: it cannot be listed).
@@ -25,56 +26,39 @@
   box-shadow: var(--well-edge);
 }
 
-/* Chrome only (header, bars, sheets, popovers). Falls back to a near-opaque surface without backdrop-filter. */
+/* Floating layers only (bars over content, sheets, popovers). */
 .mat-glass {
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-edge), var(--elev-3);
 }
 
-/* Panels lift on hover (rows don't). */
-.mat-lift {
-  transition:
-    transform var(--dur-2) var(--ease),
-    box-shadow var(--dur-2) var(--ease);
+/* A boxed block on the page: a hairline frame, no fill. */
+.glass {
+  position: relative;
+  border-radius: var(--radius-l);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-edge), var(--panel-drop);
 }
 
-@media (hover: hover) {
-  .mat-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--panel-edge), var(--panel-drop-2);
-  }
-}
-
-/* A board / category hue dot. Set `--hue`. Flat in rows and lists; it gets its halo only in a panel's header. */
+/* A board / category hue dot. Set `--hue`. */
 .hue-dot {
   flex: none;
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--hue, var(--text-3));
 }
 
-/* Panel headers (VISUAL §5.5): bloom in dark, a soft ring in light. */
-:is(.board__title, .leaders__name, .wboard__title, .detail__kicker) > .hue-dot {
-  box-shadow: 0 0 6px color-mix(in srgb, var(--hue, var(--text-3)) var(--bloom), transparent);
-}
-
-[data-mode="light"] :is(.board__title, .leaders__name, .wboard__title, .detail__kicker) > .hue-dot {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hue, var(--text-3)) 14%, transparent);
-}
-
+/* A quiet label above a block. */
 .eyebrow {
   margin: 0;
   color: var(--text-3);
-  font: 600 var(--fs-eyebrow) / 1.2 var(--font-ui);
+  font: 600 var(--fs-xs) / 1.3 var(--font-ui);
   letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
 }
 
-/* The one signature gradient, as a 2 px hairline on a plate's left edge (the Brief). */
+/* A 3 px rule in the signal colour down a block's left edge (the brief's pull-quote bar, summaries). */
 .signal-edge {
   position: relative;
 }
@@ -82,41 +66,38 @@
 .signal-edge::before {
   content: "";
   position: absolute;
-  top: 16px;
-  bottom: 16px;
+  top: 0;
+  bottom: 0;
   left: 0;
-  width: 2px;
-  border-radius: 0 2px 2px 0;
-  background: linear-gradient(180deg, var(--signal), var(--signal-2));
+  width: 3px;
+  background: var(--signal);
   pointer-events: none;
 }
 
 /* ── buttons ── */
 
 .btn {
-  --btn-h: 36px;
-  --sh: var(--plate-edge), var(--elev-1);
+  --btn-h: 34px;
+  --sh: var(--plate-edge);
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   min-height: var(--btn-h);
-  padding: 0 0.875rem;
+  padding: 0 0.85rem;
   border: 0;
   border-radius: var(--radius-m);
   background: var(--plate-bg);
   box-shadow: var(--sh);
   color: var(--text);
   font: 500 var(--fs-s) / 1 var(--font-ui);
-  letter-spacing: -0.003em;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
   transition:
-    transform var(--dur-1) var(--ease),
     box-shadow var(--dur-1) var(--ease),
     background-color var(--dur-1) var(--ease),
     color var(--dur-1) var(--ease);
@@ -130,15 +111,14 @@
 
 @media (hover: hover) {
   .btn:hover:not(:disabled, [aria-busy="true"]) {
-    transform: translateY(-1px);
-    --sh: var(--plate-edge), var(--elev-2);
+    --sh: inset 0 0 0 1px var(--text-3);
+    background: var(--surface-2);
   }
 }
 
 .btn:active:not(:disabled, [aria-busy="true"]) {
-  transform: scale(0.98);
   --sh: var(--press);
-  background: var(--surface);
+  background: var(--surface-3);
   transition-duration: 60ms;
 }
 
@@ -155,14 +135,13 @@
 .btn--s {
   --btn-h: 30px;
   gap: 0.35rem;
-  padding: 0 0.7rem;
-  border-radius: max(0px, calc(var(--radius-m) - 2px));
+  padding: 0 0.65rem;
   font-size: var(--fs-xs);
 }
 
 .btn--l {
-  --btn-h: 44px;
-  padding: 0 1.25rem;
+  --btn-h: 42px;
+  padding: 0 1.2rem;
   font-size: var(--fs-m);
 }
 
@@ -172,24 +151,22 @@
 }
 
 .btn--primary {
-  --sh: inset 0 1px 0 var(--hl), var(--elev-1);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--hl) 40%, transparent), transparent 60%)
-    var(--accent-fill);
+  --sh: 0 0 #0000;
+  background: var(--accent-fill);
   color: var(--accent-ink);
   font-weight: 600;
 }
 
 @media (hover: hover) {
   .btn--primary:hover:not(:disabled, [aria-busy="true"]) {
-    --sh:
-      inset 0 1px 0 var(--hl), var(--elev-2),
-      0 0 22px -4px color-mix(in srgb, var(--accent-fill) calc(var(--bloom) * 1.1), transparent);
+    --sh: 0 0 #0000;
+    background: var(--accent-2);
   }
 }
 
 .btn--primary:active:not(:disabled, [aria-busy="true"]) {
-  --sh: var(--press);
-  background: color-mix(in oklab, var(--accent-fill) 86%, black);
+  --sh: 0 0 #0000;
+  background: var(--accent-2);
 }
 
 .btn--ghost {
@@ -200,14 +177,18 @@
 
 @media (hover: hover) {
   .btn--ghost:hover:not(:disabled, [aria-busy="true"]) {
-    transform: none;
-    --sh: var(--plate-edge), var(--elev-1);
-    background: var(--plate-bg);
+    --sh: 0 0 #0000;
+    background: var(--tint-2);
     color: var(--text);
   }
 }
 
-/* Destructive: danger text on a plate. */
+.btn--ghost:active:not(:disabled, [aria-busy="true"]) {
+  --sh: 0 0 #0000;
+  background: var(--tint-3);
+}
+
+/* Destructive: danger text on paper. */
 .btn--danger {
   color: var(--danger);
 }
@@ -216,10 +197,10 @@
   opacity: 0.6;
 }
 
-/* ── icon buttons (ghost; hover → plate) ── */
+/* ── icon buttons (ghost; hover → a faint fill) ── */
 
 .iconbtn {
-  --ib: 40px;
+  --ib: 38px;
   --sh: 0 0 #0000;
   position: relative;
   display: inline-grid;
@@ -232,14 +213,13 @@
   height: var(--ib);
   padding: 0;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-m);
   background: transparent;
   box-shadow: var(--sh);
   color: var(--text-2);
   cursor: pointer;
   text-decoration: none;
   transition:
-    transform var(--dur-1) var(--ease),
     box-shadow var(--dur-1) var(--ease),
     background-color var(--dur-1) var(--ease),
     color var(--dur-1) var(--ease);
@@ -253,16 +233,13 @@
 
 @media (hover: hover) {
   .iconbtn:hover:not(:disabled) {
-    --sh: var(--plate-edge), var(--elev-1);
-    background: var(--plate-bg);
+    background: var(--tint-2);
     color: var(--text);
   }
 }
 
 .iconbtn:active:not(:disabled) {
-  transform: scale(0.94);
-  --sh: var(--press);
-  background: var(--surface);
+  background: var(--tint-3);
   transition-duration: 60ms;
 }
 
@@ -284,14 +261,20 @@
 }
 
 .iconbtn--secondary {
-  --sh: var(--plate-edge), var(--elev-1);
+  --sh: var(--plate-edge);
   background: var(--plate-bg);
   color: var(--text);
 }
 
+@media (hover: hover) {
+  .iconbtn--secondary:hover:not(:disabled) {
+    --sh: inset 0 0 0 1px var(--text-3);
+    background: var(--surface-2);
+  }
+}
+
 .iconbtn--primary,
 .iconbtn--primary:hover:not(:disabled) {
-  --sh: inset 0 1px 0 var(--hl), var(--elev-1);
   background: var(--accent-fill);
   color: var(--accent-ink);
 }
@@ -300,11 +283,10 @@
   color: var(--danger);
 }
 
-/* Toggled on: recessed, signal-coloured glyph. */
+/* Toggled on: the glyph takes the signal colour over a faint fill. */
 .iconbtn.is-pressed,
 .iconbtn.is-pressed:hover:not(:disabled) {
-  --sh: var(--well-edge);
-  background: var(--well-bg);
+  background: var(--tint-2);
   color: var(--signal-text);
 }
 
@@ -325,12 +307,11 @@ a.iconbtn:not([href]) {
   pointer-events: none;
 }
 
-/* A disabled secondary (e.g. "newer" on the newest edition) loses its material, not its outline: a hairline ring
-   with a dimmed glyph still reads as "there is nothing further this way". */
+/* A disabled secondary (e.g. "newer" on the newest edition) keeps a dimmed hairline: there is nothing further. */
 .iconbtn--secondary:disabled,
 a.iconbtn--secondary:not([href]),
 a.iconbtn--secondary[aria-disabled="true"] {
-  --sh: inset 0 0 0 1px var(--line-2);
+  --sh: inset 0 0 0 1px var(--line);
   background: transparent;
   color: var(--text-3);
   opacity: 0.7;
@@ -340,7 +321,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   position: relative;
   padding: 0.25rem 0;
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--radius-s);
   background: none;
   color: var(--accent);
   font-size: var(--fs-s);
@@ -350,22 +331,22 @@ a.iconbtn--secondary[aria-disabled="true"] {
   cursor: pointer;
 }
 
-/* ── chips (small plates) and badges ── */
+/* ── chips (hairline tags) and badges ── */
 
 .chip {
   --chip-hue: var(--text-3);
-  --chip-h: 30px;
-  --sh: var(--plate-edge), var(--elev-0);
+  --chip-h: 28px;
+  --sh: inset 0 0 0 1px var(--line-2);
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   min-height: var(--chip-h);
   max-width: 100%;
-  padding: 0 0.75rem;
+  padding: 0 0.7rem;
   border: 0;
   border-radius: var(--radius-pill);
-  background: var(--surface-3);
+  background: transparent;
   box-shadow: var(--sh);
   color: var(--text-2);
   font: 500 var(--fs-xs) / 1 var(--font-ui);
@@ -374,16 +355,15 @@ a.iconbtn--secondary[aria-disabled="true"] {
 }
 
 .chip--s {
-  --chip-h: 24px;
+  --chip-h: 22px;
   gap: 0.3rem;
-  padding: 0 0.55rem;
+  padding: 0 0.5rem;
   font-size: var(--fs-2xs);
 }
 
 .chip.is-interactive {
   cursor: pointer;
   transition:
-    transform var(--dur-1) var(--ease),
     box-shadow var(--dur-1) var(--ease),
     background-color var(--dur-1) var(--ease),
     color var(--dur-1) var(--ease);
@@ -397,14 +377,13 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 @media (hover: hover) {
   .chip.is-interactive:hover {
-    background: color-mix(in oklab, var(--surface-3) 94%, var(--text));
+    --sh: inset 0 0 0 1px var(--text-3);
     color: var(--text);
   }
 }
 
 .chip.is-interactive:active {
-  transform: scale(0.97);
-  --sh: var(--press);
+  background: var(--tint-2);
   transition-duration: 60ms;
 }
 
@@ -412,18 +391,20 @@ a.iconbtn--secondary[aria-disabled="true"] {
   box-shadow: var(--sh), var(--ring);
 }
 
-/* Selected = the raised thumb (a brighter plate); the hue stays on the dot. */
+/* Selected = inked: the tag is printed solid, its text in paper. */
 .chip.is-selected,
 .chip.is-selected:hover {
-  --sh: var(--plate-edge), var(--elev-1);
-  background: var(--thumb-bg);
-  color: var(--text);
+  --sh: inset 0 0 0 1px var(--text);
+  background: var(--text);
+  color: var(--bg);
 }
 
+/* Chips name their board or category in words; the hue dot stays in the markup for custom themes but is not shown. */
 .chip__dot {
+  display: none;
   flex: none;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--chip-hue);
 }
@@ -436,12 +417,12 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .chip__count {
   color: var(--text-3);
-  font: 500 0.95em / 1 var(--font-mono);
-  letter-spacing: -0.02em;
+  font: 500 0.95em / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
 }
 
 .chip.is-selected .chip__count {
-  color: var(--text-2);
+  color: color-mix(in oklab, var(--bg) 72%, var(--text));
 }
 
 .chip--ok {
@@ -469,23 +450,14 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .chip--danger,
 .chip--info,
 .chip--accent {
-  color: color-mix(in oklab, var(--tone) 80%, var(--text));
+  --sh: inset 0 0 0 1px color-mix(in oklab, var(--tone) 45%, transparent);
+  color: color-mix(in oklab, var(--tone) 85%, var(--text));
 }
 
-.chip--warn,
-.chip--danger {
-  background: color-mix(in oklab, var(--tone) 9%, var(--surface-3));
-}
-
-/* Source status: small wells with an icon (VISUAL §8 board panel). */
-.chip--status {
-  --sh: var(--well-edge);
-  background: var(--well-bg);
-}
-
+/* Source status: a hairline tag with an icon (VISUAL §8 board section). */
 .chip--status.chip--warn,
 .chip--status.chip--danger {
-  background: color-mix(in oklab, var(--tone) 8%, var(--well));
+  background: color-mix(in oklab, var(--tone) 7%, transparent);
 }
 
 .badge {
@@ -494,11 +466,10 @@ a.iconbtn--secondary[aria-disabled="true"] {
   align-items: center;
   gap: 0.25rem;
   height: 20px;
-  padding: 0 0.45rem;
-  border-radius: max(0px, calc(var(--radius-s) - 2px));
-  font: 650 var(--fs-2xs) / 1 var(--font-ui);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  padding: 0 0.4rem;
+  border-radius: var(--radius-s);
+  font: 600 var(--fs-2xs) / 1 var(--font-ui);
+  letter-spacing: 0.02em;
   white-space: nowrap;
   vertical-align: middle;
 }
@@ -524,18 +495,17 @@ a.iconbtn--secondary[aria-disabled="true"] {
 }
 
 .badge--soft {
-  background: color-mix(in oklab, var(--badge-hue) 14%, transparent);
-  color: color-mix(in oklab, var(--badge-hue) 78%, var(--text));
+  background: color-mix(in oklab, var(--badge-hue) 12%, transparent);
+  color: color-mix(in oklab, var(--badge-hue) 82%, var(--text));
 }
 
 .badge--neutral.badge--soft {
-  background: var(--surface-3);
+  background: var(--tint-3);
   color: var(--text-2);
 }
 
 .badge--solid {
   background: var(--badge-hue);
-  box-shadow: inset 0 1px 0 var(--hl);
   color: var(--bg);
 }
 
@@ -545,14 +515,14 @@ a.iconbtn--secondary[aria-disabled="true"] {
 }
 
 .badge--outline {
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--badge-hue) 45%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--badge-hue) 50%, transparent);
   color: var(--text-2);
 }
 
-/* ── tile: a selectable plate (preset cards, choice cards) — aria-pressed / aria-checked / .is-on ── */
+/* ── tile: a selectable block (preset cards, choice cards) — aria-pressed / aria-checked / .is-on ── */
 
 .tile {
-  --sh: var(--plate-edge), var(--elev-1);
+  --sh: var(--plate-edge);
   --sel: 0 0 #0000;
   position: relative;
   display: grid;
@@ -566,35 +536,32 @@ a.iconbtn--secondary[aria-disabled="true"] {
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  transition:
-    transform var(--dur-2) var(--ease),
-    box-shadow var(--dur-2) var(--ease);
+  transition: box-shadow var(--dur-1) var(--ease);
 }
 
 @media (hover: hover) {
   .tile:hover {
-    transform: translateY(-1px);
-    --sh: var(--plate-edge), var(--elev-2);
+    --sh: inset 0 0 0 1px var(--text-3);
   }
 }
 
 .tile:active {
-  transform: scale(0.985);
   --sh: var(--press);
   transition-duration: 60ms;
 }
 
+/* Chosen: an ink frame two hairlines thick. */
 .tile[aria-pressed="true"],
 .tile[aria-checked="true"],
 .tile.is-on {
-  --sel: 0 0 0 1.5px var(--signal);
+  --sh: inset 0 0 0 2px var(--text);
 }
 
 .tile:focus-visible {
   box-shadow: var(--sh), var(--sel), var(--ring);
 }
 
-/* ── fields (wells) ── */
+/* ── fields (white boxes with a hairline) ── */
 
 .field {
   display: grid;
@@ -617,7 +584,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   margin: 0.2rem 0 0;
   color: var(--text-3);
   font-size: var(--fs-xs);
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .field__error {
@@ -641,7 +608,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .select select,
 .textarea {
   width: 100%;
-  min-height: 40px;
+  min-height: 38px;
   padding: 0 0.75rem;
   border: 0;
   border-radius: var(--radius-m);
@@ -669,14 +636,24 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .input input::placeholder,
 .textarea::placeholder {
-  color: color-mix(in oklab, var(--text-3) 85%, var(--text));
+  color: var(--text-3);
   opacity: 1;
+}
+
+@media (hover: hover) {
+  .input input:hover:not(:disabled, :focus),
+  .select select:hover:not(:disabled, :focus),
+  .textarea:hover:not(:disabled, :focus) {
+    box-shadow: inset 0 0 0 1px var(--text-3);
+  }
 }
 
 .input input:focus,
 .select select:focus,
 .textarea:focus {
-  box-shadow: var(--well-edge), var(--ring);
+  box-shadow:
+    inset 0 0 0 1px var(--text),
+    var(--ring);
 }
 
 .input input:disabled,
@@ -700,9 +677,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .has-error .input input,
 .has-error .select select,
 .has-error .textarea {
-  box-shadow:
-    var(--well-edge),
-    inset 0 0 0 1px var(--danger);
+  box-shadow: inset 0 0 0 1px var(--danger);
 }
 
 .textarea {
@@ -728,7 +703,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   pointer-events: none;
 }
 
-/* ── switch (iOS geometry 51 × 31) ── */
+/* ── switch (iOS geometry 51 × 31, the one round control) ── */
 
 .switch {
   position: relative;
@@ -737,12 +712,9 @@ a.iconbtn--secondary[aria-disabled="true"] {
   height: 31px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: 999px;
   background: var(--switch-off);
-  /* The rim first, so the well's dark edge cannot swallow it: the channel reads next to the white knob. */
-  box-shadow:
-    inset 0 0 0 1px var(--line-2),
-    var(--well-edge);
+  box-shadow: inset 0 0 0 1px var(--line-2);
   cursor: pointer;
   transition:
     background-color var(--dur-2) var(--ease),
@@ -761,7 +733,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   left: 2px;
   width: 27px;
   height: 27px;
-  border-radius: var(--radius-pill);
+  border-radius: 999px;
   background: var(--knob);
   box-shadow: var(--knob-shadow);
   transition:
@@ -769,14 +741,14 @@ a.iconbtn--secondary[aria-disabled="true"] {
     width var(--dur-2) var(--ease-pop);
 }
 
+/* On: an ink track with a paper knob (inverted in dark mode), so a row of switches never reads as a row of alarms. */
 .switch.is-on {
-  background: var(--accent);
-  box-shadow:
-    inset 0 1px 0 var(--hl),
-    0 0 10px -4px color-mix(in srgb, var(--accent) var(--bloom), transparent);
+  background: var(--text);
+  box-shadow: 0 0 #0000;
 }
 
 .switch.is-on .switch__thumb {
+  background: var(--bg);
   transform: translateX(20px);
 }
 
@@ -792,14 +764,11 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .switch:focus-visible {
   box-shadow:
     inset 0 0 0 1px var(--line-2),
-    var(--well-edge),
     var(--ring);
 }
 
 .switch.is-on:focus-visible {
-  box-shadow:
-    inset 0 1px 0 var(--hl),
-    var(--ring);
+  box-shadow: var(--ring);
 }
 
 .switch:disabled {
@@ -807,7 +776,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   cursor: default;
 }
 
-/* ── slider: 4 px well track, accent fill, 22 px plate knob ── */
+/* ── slider: a 2 px rule, accent fill, a white knob ── */
 
 .slider {
   display: flex;
@@ -831,45 +800,37 @@ a.iconbtn--secondary[aria-disabled="true"] {
 }
 
 .slider input::-webkit-slider-runnable-track {
-  height: 4px;
-  border-radius: 4px;
-  background: linear-gradient(to right, var(--accent) var(--pct), var(--well) var(--pct));
-  box-shadow: var(--well-edge);
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--accent) var(--pct), var(--line-2) var(--pct));
 }
 
 .slider input::-moz-range-track {
-  height: 4px;
-  border-radius: 4px;
-  background: linear-gradient(to right, var(--accent) var(--pct), var(--well) var(--pct));
-  box-shadow: var(--well-edge);
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--accent) var(--pct), var(--line-2) var(--pct));
 }
 
 .slider input::-webkit-slider-thumb {
-  width: 22px;
-  height: 22px;
-  margin-top: -9px;
+  width: 20px;
+  height: 20px;
+  margin-top: -8.5px;
   border: 0;
   border-radius: 50%;
   background: var(--knob);
   box-shadow: var(--knob-shadow);
   -webkit-appearance: none;
   appearance: none;
-  transition:
-    transform var(--dur-1) var(--ease-pop),
-    box-shadow var(--dur-1) var(--ease);
+  transition: box-shadow var(--dur-1) var(--ease);
 }
 
 .slider input::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border: 0;
   border-radius: 50%;
   background: var(--knob);
   box-shadow: var(--knob-shadow);
-}
-
-.slider input:active::-webkit-slider-thumb {
-  transform: scale(1.08);
 }
 
 .slider input:focus-visible::-webkit-slider-thumb {
@@ -883,11 +844,12 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .slider__value {
   min-width: 3.5em;
   color: var(--text-2);
-  font: 500 var(--fs-s) / 1 var(--font-mono);
+  font: 500 var(--fs-s) / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
   text-align: right;
 }
 
-/* ── the raised thumb (segmented / tabs; positioned by ui/thumb.ts) ── */
+/* ── the selection thumb (segmented / tabs; positioned by ui/thumb.ts) ── */
 
 .thumb {
   position: absolute;
@@ -898,7 +860,6 @@ a.iconbtn--secondary[aria-disabled="true"] {
   height: var(--th, 0px);
   border-radius: inherit;
   background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
   opacity: 0;
   transform: translate(var(--tx, 0px), var(--ty, 0px));
   pointer-events: none;
@@ -913,20 +874,6 @@ a.iconbtn--secondary[aria-disabled="true"] {
     transform var(--dur-2) var(--ease-pop),
     width var(--dur-2) var(--ease-pop),
     height var(--dur-2) var(--ease-pop);
-}
-
-/* The active item's 2 px signal underline — navigation only (glow budget §5.2), not form choices. */
-.tabs--pills > .thumb::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 3px;
-  width: 14px;
-  height: 2px;
-  margin-left: -7px;
-  border-radius: 1px;
-  background: var(--signal);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--signal) var(--bloom), transparent);
 }
 
 /* Horizontal scrollers fade the edge that hides content (data-fade from ui/thumb.ts). */
@@ -945,7 +892,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   mask-image: linear-gradient(90deg, transparent, black 32px, black calc(100% - 32px), transparent);
 }
 
-/* ── segmented control: well track, text options, raised thumb ── */
+/* ── segmented control: a hairline group; the chosen option is boxed in ink ── */
 
 .segmented {
   position: relative;
@@ -954,14 +901,16 @@ a.iconbtn--secondary[aria-disabled="true"] {
   flex-wrap: wrap;
   gap: 2px;
   max-width: 100%;
-  padding: 3px;
+  padding: 2px;
   border-radius: var(--radius-m);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  background: var(--bg-2);
+  box-shadow: inset 0 0 0 1px var(--line-2);
 }
 
 .segmented > .thumb {
-  border-radius: max(0px, calc(var(--radius-m) - 3px));
+  border-radius: var(--radius-s);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--text);
 }
 
 .segmented__opt {
@@ -975,7 +924,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   min-height: 32px;
   padding: 0 0.85rem;
   border: 0;
-  border-radius: max(0px, calc(var(--radius-m) - 3px));
+  border-radius: var(--radius-s);
   background: transparent;
   color: var(--text-2);
   font: 500 var(--fs-s) / 1 var(--font-ui);
@@ -997,11 +946,12 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .segmented__opt.is-on {
   color: var(--text);
+  font-weight: 600;
 }
 
 .segmented:not([data-thumb]) .segmented__opt.is-on {
-  background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--text);
 }
 
 .segmented--s .segmented__opt {
@@ -1057,36 +1007,50 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .tab.is-on {
   color: var(--text);
+  font-weight: 600;
 }
 
 .tab__dot {
   flex: none;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--tab-hue);
 }
 
 .tab__count {
   color: var(--text-3);
-  font: 500 var(--fs-xs) / 1 var(--font-mono);
-  letter-spacing: -0.02em;
+  font: 500 var(--fs-xs) / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
 }
 
-/* line (horizontal): hairline base, a 2 px signal underline that slides */
+/*
+ * Section tabs (line, and pills — the board switcher): a hairline base, the chosen tab underlined by a 2 px signal
+ * rule. The thumb keeps the chosen tab's box (so ui/thumb.ts can slide and stretch it) and draws only the rule.
+ */
+.tabs--pills,
 .tabs--line.tabs--horizontal {
-  box-shadow: inset 0 -1px 0 var(--line);
+  box-shadow: inset 0 -1px 0 var(--line-2);
 }
 
+.tabs--pills > .thumb,
 .tabs--line.tabs--horizontal > .thumb {
-  width: calc(var(--tw, 0px) - 1.2rem);
-  height: 2px;
-  border-radius: 2px;
-  background: var(--signal);
-  box-shadow: 0 0 8px -1px color-mix(in srgb, var(--signal) var(--bloom), transparent);
-  transform: translate(calc(var(--tx, 0px) + 0.6rem), calc(var(--ty, 0px) + var(--th, 0px) - 2px));
+  border-radius: 0;
+  background: none;
 }
 
+.tabs--pills > .thumb::after,
+.tabs--line.tabs--horizontal > .thumb::after {
+  content: "";
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0;
+  left: 0.6rem;
+  height: 2px;
+  background: var(--signal);
+}
+
+.tabs--pills:not([data-thumb]) .tab.is-on::after,
 .tabs--line.tabs--horizontal:not([data-thumb]) .tab.is-on::after {
   content: "";
   position: absolute;
@@ -1094,48 +1058,24 @@ a.iconbtn--secondary[aria-disabled="true"] {
   bottom: 0;
   left: 0.6rem;
   height: 2px;
-  border-radius: 2px;
   background: var(--signal);
 }
 
-/* pills = segmented control: pill well track, raised thumb (board switcher) */
 /* fit-content (not max-content): a scroller must never widen an `auto` grid/flex track. */
 .tabs--pills {
-  gap: 2px;
+  gap: 0;
   width: fit-content;
   max-width: 100%;
-  padding: 3px;
-  border-radius: var(--radius-pill);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
-}
-
-.tabs--pills > .thumb {
-  border-radius: var(--radius-pill);
 }
 
 .tabs--pills .tab {
-  min-height: 34px;
-  padding: 0 0.95rem;
-  border-radius: var(--radius-pill);
+  padding: 0 0.75rem;
 }
 
-/* The pill looks 34 px tall; its hit area is the full 44 px touch target. */
-.tabs--pills .tab::before {
-  content: "";
-  position: absolute;
-  inset: calc((34px - var(--target)) / 2) 0;
-}
-
-.tabs--pills:not([data-thumb]) .tab.is-on {
-  background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
-}
-
-/* vertical: rows; the selected row is a raised inner plate with a 2 px signal marker */
+/* vertical: rows; the selected row carries a 2 px signal marker and a faint fill */
 .tabs--vertical {
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   overflow: visible;
 }
 
@@ -1143,32 +1083,30 @@ a.iconbtn--secondary[aria-disabled="true"] {
   justify-content: flex-start;
   min-height: 40px;
   padding: 0 0.75rem;
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-s);
 }
 
 .tabs--vertical > .thumb {
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-s);
+  background: var(--tint-2);
 }
 
 .tabs--vertical > .thumb::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 0;
+  bottom: 0;
   left: 0;
   width: 2px;
-  height: 16px;
-  margin-top: -8px;
-  border-radius: 0 2px 2px 0;
   background: var(--signal);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--signal) var(--bloom), transparent);
 }
 
 .tabs--vertical:not([data-thumb]) .tab.is-on {
-  background: var(--thumb-bg);
-  box-shadow: var(--plate-edge), var(--elev-1);
+  background: var(--tint-2);
+  box-shadow: inset 2px 0 0 var(--signal);
 }
 
-/* ── overlays (glass) ── */
+/* ── overlays (opaque paper, the only things with a shadow) ── */
 
 .overlay {
   position: fixed;
@@ -1183,8 +1121,6 @@ a.iconbtn--secondary[aria-disabled="true"] {
   position: absolute;
   inset: 0;
   background: var(--scrim);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   animation: fade-in var(--dur-2) var(--ease) both;
 }
 
@@ -1201,8 +1137,6 @@ a.iconbtn--secondary[aria-disabled="true"] {
   border: 0;
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-edge), var(--elev-3);
   outline: none;
   animation: sheet-up var(--dur-3) var(--ease) both;
@@ -1222,7 +1156,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 60px;
+  min-height: 56px;
   padding: 0.85rem 0.6rem 0.45rem 1.25rem;
   box-shadow: inset 0 -1px 0 var(--line);
   touch-action: none;
@@ -1235,9 +1169,9 @@ a.iconbtn--secondary[aria-disabled="true"] {
   top: 6px;
   left: 50%;
   width: 36px;
-  height: 5px;
+  height: 4px;
   margin-left: -18px;
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   background: color-mix(in srgb, var(--text) 22%, transparent);
 }
 
@@ -1245,8 +1179,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   flex: 1;
   min-width: 0;
   overflow: hidden;
-  font: 600 var(--fs-l) / 1.3 var(--font-display);
-  letter-spacing: var(--tracking-title);
+  font: 600 var(--fs-m) / 1.3 var(--font-ui);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1278,21 +1211,24 @@ a.iconbtn--secondary[aria-disabled="true"] {
     align-items: stretch;
   }
 
-  /* Drawer: flush right, the left edge rounded. */
+  /* Drawer: flush right, square, a rule down its left edge. */
   .sheet {
-    width: min(560px, 92vw);
+    width: min(600px, 92vw);
     max-height: none;
     height: 100%;
-    border-radius: calc(var(--radius-xl) + 2px) 0 0 calc(var(--radius-xl) + 2px);
+    border-radius: 0;
+    box-shadow:
+      inset 1px 0 0 var(--line-2),
+      var(--elev-3);
     animation-name: drawer-in;
   }
 
   .sheet--s {
-    width: min(420px, 92vw);
+    width: min(440px, 92vw);
   }
 
   .sheet--l {
-    width: min(720px, 92vw);
+    width: min(760px, 92vw);
   }
 
   .overlay[data-state="closing"] .sheet {
@@ -1309,7 +1245,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   }
 
   .sheet__body {
-    padding: 1.5rem 1.75rem 2.5rem;
+    padding: 1.75rem 2rem 2.5rem;
   }
 }
 
@@ -1325,10 +1261,8 @@ a.iconbtn--secondary[aria-disabled="true"] {
   overflow: auto;
   padding: 1.5rem 1.5rem 1.25rem;
   border: 0;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-l);
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-edge), var(--elev-3);
   outline: none;
   animation: pop-in var(--dur-2) var(--ease) both;
@@ -1340,7 +1274,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .dialog__title {
   margin: 0 0 0.5rem;
-  font: 650 var(--fs-l) / 1.3 var(--font-display);
+  font: var(--weight-section) var(--fs-l) / 1.3 var(--font-display);
   letter-spacing: var(--tracking-title);
 }
 
@@ -1367,10 +1301,8 @@ a.iconbtn--secondary[aria-disabled="true"] {
   width: min(320px, calc(100vw - 16px));
   overflow-y: auto;
   border: 0;
-  border-radius: var(--radius-m);
+  border-radius: var(--radius-l);
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-edge), var(--elev-3);
   animation: pop-in var(--dur-2) var(--ease) both;
 }
@@ -1414,11 +1346,11 @@ a.iconbtn--secondary[aria-disabled="true"] {
 @keyframes pop-in {
   from {
     opacity: 0;
-    transform: translateY(-4px) scale(0.98);
+    transform: translateY(-4px);
   }
 }
 
-/* ── toast (glass capsule) ── */
+/* ── toast ── */
 
 .toaster {
   position: fixed;
@@ -1442,13 +1374,11 @@ a.iconbtn--secondary[aria-disabled="true"] {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  min-height: 48px;
+  min-height: 46px;
   padding: 0.375rem 0.375rem 0.375rem 1rem;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-l);
   background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-edge), var(--elev-3);
   color: var(--text);
   font-size: var(--fs-s);
@@ -1480,14 +1410,14 @@ a.iconbtn--secondary[aria-disabled="true"] {
   min-height: 36px;
   padding: 0 0.75rem;
   border: 0;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-m);
   background: none;
   color: var(--accent);
   font-weight: 600;
   cursor: pointer;
 }
 
-/* ── tooltip (CSS only, glass; text also linked for assistive tech) ── */
+/* ── tooltip (CSS only, an ink label; text also linked for assistive tech) ── */
 
 .tip {
   position: relative;
@@ -1502,13 +1432,10 @@ a.iconbtn--secondary[aria-disabled="true"] {
   left: 50%;
   width: max-content;
   max-width: 260px;
-  padding: 0.4rem 0.65rem;
-  border-radius: calc(var(--radius-s) + 2px);
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-edge), var(--elev-3);
-  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-m);
+  background: var(--text);
+  color: var(--bg);
   font: 400 var(--fs-xs) / 1.4 var(--font-ui);
   white-space: normal;
   opacity: 0;
@@ -1543,7 +1470,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   }
 }
 
-/* Well-coloured blocks with a slow 8 % highlight sweep (still under reduced motion). */
+/* Faint blocks where text will be, with a slow sweep (still under reduced motion). */
 .skeleton {
   display: block;
   height: 0.9em;
@@ -1551,10 +1478,10 @@ a.iconbtn--secondary[aria-disabled="true"] {
   background: linear-gradient(
       100deg,
       transparent 35%,
-      color-mix(in srgb, var(--text) 8%, transparent) 50%,
+      color-mix(in srgb, var(--text) 6%, transparent) 50%,
       transparent 65%
     )
-    var(--well-bg);
+    var(--tint-3);
   background-size: 250% 100%;
   animation: shimmer 1.8s ease-in-out infinite;
 }
@@ -1589,22 +1516,19 @@ a.iconbtn--secondary[aria-disabled="true"] {
   padding: 1.5rem 1rem;
 }
 
-/* The icon sits in a recessed well disc. */
+/* The icon sits plain above the sentence, in the faintest ink. */
 .empty__icon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 0.25rem;
-  border-radius: 50%;
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.1rem;
   color: var(--text-3);
 }
 
 .empty--compact .empty__icon {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   margin-bottom: 0;
 }
 
@@ -1616,19 +1540,19 @@ a.iconbtn--secondary[aria-disabled="true"] {
   max-width: 36ch;
   margin: 0.25rem 0 0;
   color: var(--text);
-  font: 600 var(--fs-m) / 1.35 var(--font-ui);
+  font: var(--weight-title) var(--fs-l) / 1.35 var(--font-display);
   letter-spacing: var(--tracking-title);
   text-wrap: balance;
 }
 
 .empty--compact .empty__title {
-  font-size: var(--fs-s);
+  font-size: var(--fs-m);
 }
 
 .empty__body {
   max-width: 44ch;
   font-size: var(--fs-s);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .empty__body p {
@@ -1689,13 +1613,13 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .md h6 {
   margin: 1.35em 0 0.45em;
   font-family: var(--font-display);
-  font-weight: 650;
+  font-weight: var(--weight-section);
   line-height: var(--lh-title);
   letter-spacing: var(--tracking-title);
 }
 
 .md h2 {
-  font-size: 1.1875rem;
+  font-size: 1.25rem;
 }
 
 .md h3 {
@@ -1706,7 +1630,6 @@ a.iconbtn--secondary[aria-disabled="true"] {
 .md h5,
 .md h6 {
   font-size: var(--fs-m);
-  font-weight: 600;
 }
 
 .md ul,
@@ -1732,9 +1655,9 @@ a.iconbtn--secondary[aria-disabled="true"] {
 }
 
 .md code {
-  padding: 0.12em 0.38em;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--text) 7%, transparent);
+  padding: 0.12em 0.36em;
+  border-radius: var(--radius-s);
+  background: var(--tint-3);
   font: 0.86em var(--font-mono);
 }
 
@@ -1742,8 +1665,8 @@ a.iconbtn--secondary[aria-disabled="true"] {
   overflow-x: auto;
   padding: 0.85rem 1rem;
   border-radius: var(--radius-m);
-  background: var(--well-bg);
-  box-shadow: var(--well-edge);
+  background: var(--tint-2);
+  box-shadow: inset 0 0 0 1px var(--line);
   line-height: 1.5;
 }
 
@@ -1754,7 +1677,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
 
 .md blockquote {
   padding-left: 0.95em;
-  border-left: 2px solid var(--line-2);
+  border-left: 3px solid var(--line-2);
   color: var(--text-2);
 }
 
@@ -1786,7 +1709,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   font-size: var(--fs-xs);
 }
 
-/* ── score bar: well track, coloured segments (top light; bloom in dark), mono total ── */
+/* ── score bar: a thin rule, the total in figures ── */
 
 .scorebar {
   min-width: 0;
@@ -1798,7 +1721,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
   align-items: center;
   gap: 0.625rem;
   width: 100%;
-  min-height: 28px;
+  min-height: 24px;
   padding: 0;
   border: 0;
   border-radius: var(--radius-s);
@@ -1811,7 +1734,7 @@ a.iconbtn--secondary[aria-disabled="true"] {
 button.scorebar__bar::before {
   content: "";
   position: absolute;
-  inset: -8px -4px;
+  inset: -10px -4px;
 }
 
 .scorebar--full .scorebar__bar {
@@ -1819,111 +1742,93 @@ button.scorebar__bar::before {
   cursor: default;
 }
 
-/* A gauge: the well carries a tick every tenth, so the empty remainder reads as scale, not as nothing. */
+/* The track is the full 0‥100 scale, drawn as a faint rule so the filled part reads as a length. */
 .scorebar__track {
-  --r: 3px;
   position: relative;
   flex: 1;
-  height: 6px;
-  border-radius: var(--r);
-  background:
-    repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--hud-faint) calc(10% - 1px) 10%),
-    var(--well-bg);
-  box-shadow: var(--well-edge);
+  height: 3px;
+  background: var(--line);
   transition: background-color var(--dur-1) var(--ease);
 }
 
 .scorebar--full .scorebar__track {
-  --r: 5px;
   height: 10px;
+  background: var(--tint-3);
 }
 
 @media (hover: hover) {
   button.scorebar__bar:hover .scorebar__track {
-    background-color: color-mix(in oklab, var(--well) 88%, var(--text));
+    background: var(--line-2);
   }
 }
 
+/* Each signal is a segment; a 1 px paper gap separates them. */
 .scorebar__seg {
   position: absolute;
   top: 0;
   bottom: 0;
-  border-left: 1px solid var(--well);
-  background: linear-gradient(180deg, var(--hl), var(--hl) 1px, transparent 1px) var(--seg);
-  box-shadow: 0 0 6px -1px color-mix(in srgb, var(--seg) var(--bloom), transparent);
-}
-
-/*
- * Row bars (compact): thirty of them sit on one page, so their colours are tempered into the well and they never
- * bloom (VISUAL §5.4). The full breakdown in the detail keeps the pure signal colours and the glow.
- */
-.scorebar:not(.scorebar--full) .scorebar__seg {
-  background: linear-gradient(180deg, var(--hl), var(--hl) 1px, transparent 1px)
-    color-mix(in oklab, var(--seg) 78%, var(--well));
-  box-shadow: none;
+  border-left: 1px solid var(--bg);
+  background: var(--seg);
 }
 
 .scorebar__seg:first-child {
   border-left: 0;
-  border-top-left-radius: var(--r);
-  border-bottom-left-radius: var(--r);
 }
 
-.scorebar__seg:last-child {
-  border-top-right-radius: var(--r);
-  border-bottom-right-radius: var(--r);
+/*
+ * Row bars: thirty of them sit on one page, so they are printed in one ink (the segments still show how many signals
+ * add up); the full breakdown in the detail keeps a colour per signal, keyed to its table.
+ */
+.scorebar:not(.scorebar--full) .scorebar__seg {
+  background: var(--text-2);
 }
 
 .scorebar__total {
-  min-width: 2.8em;
+  min-width: 2.6em;
   color: var(--text);
-  font: 600 var(--fs-s) / 1 var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  font: 600 var(--fs-s) / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums lining-nums;
   text-align: right;
 }
 
 .scorebar--full .scorebar__total {
-  font-size: var(--fs-xl);
+  font: var(--weight-display) var(--fs-2xl) / 1 var(--font-display);
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-/* The breakdown: an iOS grouped list on a nested plate. */
+/* The breakdown: a ruled table. */
 .scoretable {
   width: 100%;
   margin-top: 0.625rem;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--radius-m);
-  background: var(--surface-2);
-  box-shadow: var(--plate-edge);
+  border-collapse: collapse;
+  border-top: 1px solid var(--text);
   font-size: var(--fs-xs);
 }
 
 .scoretable th,
 .scoretable td {
-  padding: 0.55rem 0.45rem;
+  padding: 0.5rem 0.45rem;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
 }
 
 .scoretable th:first-child {
-  padding-left: 0.8rem;
+  padding-left: 0;
 }
 
 .scoretable th:last-child,
 .scoretable td:last-child {
-  padding-right: 0.8rem;
+  padding-right: 0;
 }
 
 .scoretable thead th {
-  padding-top: 0.65rem;
-  padding-bottom: 0.45rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.4rem;
   color: var(--text-3);
   font-weight: 600;
   font-size: var(--fs-2xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .scoretable .num {
@@ -1932,8 +1837,7 @@ button.scorebar__bar::before {
 }
 
 .scoretable td.num {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .scoretable tbody th {
@@ -1949,6 +1853,7 @@ button.scorebar__bar::before {
 .scoretable tfoot th,
 .scoretable tfoot td {
   border-bottom: 0;
+  border-top: 1px solid var(--line-2);
   color: var(--text);
   font-weight: 600;
 }
@@ -1959,13 +1864,16 @@ button.scorebar__bar::before {
   gap: 0.5rem;
 }
 
+/* A square key, as in a printed chart legend; only the full breakdown has coloured segments to key. */
 .scoretable__swatch {
   flex: none;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 9px;
+  height: 9px;
   background: var(--seg);
-  box-shadow: 0 0 6px color-mix(in srgb, var(--seg) var(--bloom), transparent);
+}
+
+.scoretable:not(.scoretable--full) .scoretable__swatch {
+  display: none;
 }
 
 /* Full mode: the help text is its own full-width row, indented to the label (past the swatch). */
@@ -1975,7 +1883,7 @@ button.scorebar__bar::before {
 }
 
 .scoretable__helprow > td {
-  padding: 0 0.8rem 0.65rem calc(0.8rem + 8px + 0.5rem);
+  padding: 0 0 0.65rem calc(9px + 0.5rem);
 }
 
 .scoretable__helprow .scoretable__via {
@@ -1992,7 +1900,7 @@ button.scorebar__bar::before {
 
 .scoretable__via {
   display: block;
-  margin: 0.15rem 0 0 1rem;
+  margin: 0.15rem 0 0;
   color: var(--text-3);
   font-weight: 400;
   font-size: var(--fs-xs);
@@ -2009,88 +1917,60 @@ button.scorebar__bar::before {
 
 /* ── marks ── */
 
-/*
- * Thin metallic numeral, read like a HUD counter: single digits get a dim stencilled "0" (decoration, not text). The
- * podium is lit — metal fading into the signal at its foot, with a faint bloom in dark; flat --text-3 from rank 4.
- */
+/* The rank: a bold serif figure, as numbered in a printed list; the top three in the signal colour. */
 .rank {
   display: block;
-  color: var(--text-3);
-  font: 200 var(--fs-rank) / 0.9 var(--font-num);
+  color: var(--text-2);
+  font: var(--weight-display) var(--fs-rank) / 1 var(--font-num);
   font-variant-numeric: tabular-nums lining-nums;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.01em;
 }
 
-.rank--pad:not(.rank--s)::before {
-  content: "0" / "";
-  opacity: 0.32;
-}
-
-/* Solid, not clipped metal: a background-clip:text gradient would swallow the stencilled zero. */
 .rank--podium {
-  color: var(--text);
-  font-weight: 250;
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--signal) calc(var(--bloom) * 0.45), transparent));
+  color: var(--signal-text);
 }
 
 .rank--m {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
 }
 
 .rank--s {
-  font-size: var(--fs-s);
-  font-weight: 500;
+  font: 600 var(--fs-s) / 1 var(--font-ui);
+  font-variant-numeric: tabular-nums lining-nums;
   letter-spacing: 0;
 }
 
 .rank--muted {
   color: var(--text-3);
-  background: none;
-  -webkit-text-fill-color: currentColor;
 }
 
 .trendbadge {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.25rem;
+  gap: 0.3rem;
 }
 
-/* Tiny tinted pills: NEW signal · ▲ ok · ▼ danger · BACK resonance. */
+/* Words and arrows in small type: NEW in the signal colour · ▲ ok · ▼ danger · BACK resonance. */
 .trend {
   --tone: var(--text-3);
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
-  height: 16px;
-  padding: 0 0.32rem;
-  border-radius: var(--radius-pill);
-  background: color-mix(in srgb, var(--tone) 12%, transparent);
-  color: color-mix(in oklab, var(--tone) 80%, var(--text));
-  font: 650 var(--fs-2xs) / 1 var(--font-ui);
-  letter-spacing: 0.03em;
+  color: color-mix(in oklab, var(--tone) 85%, var(--text));
+  font: 600 var(--fs-2xs) / 1.1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 .trend--new {
   --tone: var(--signal);
-  /* The readable form of the signal (light: safety yellow never reads as text). */
   color: var(--signal-text);
-  text-transform: uppercase;
-}
-
-/* Icon-only trend marks (NEW, BACK): a small tinted disc. */
-.trend--icon {
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border-radius: 50%;
+  font-weight: 700;
 }
 
 .trend--back {
   --tone: var(--res);
-  text-transform: uppercase;
 }
 
 .trend--up {
@@ -2101,60 +1981,34 @@ button.scorebar__bar::before {
   --tone: var(--down);
 }
 
-.trend--same,
-.trend--streak {
-  height: auto;
-  padding: 0;
-  background: none;
-}
-
 .trend--same {
   color: var(--text-3);
 }
 
 .trend--streak {
-  --tone: var(--warn);
-  font-weight: 600;
+  color: var(--text-3);
+  font-weight: 500;
 }
 
+/* Resonance: "on 3 boards", in the resonance ink; full resonance (3+ boards) in bold. */
 .resmark {
   display: inline-flex;
   align-items: center;
   flex: none;
-  border-radius: var(--radius-pill);
+  color: color-mix(in oklab, var(--res) 85%, var(--text));
+  font: 600 var(--fs-2xs) / 1.2 var(--font-ui);
+  white-space: nowrap;
 }
 
-.resmark__line {
-  stroke: var(--text-3);
-  stroke-width: 1.25;
-  opacity: 0.6;
-}
-
-.resmark__dot {
-  stroke: var(--surface);
-  stroke-width: 1.5;
-}
-
-/* Full resonance (level 3): a gold hairline capsule with an 8 px halo (bloom in dark, a soft ring in light). */
 .resmark--full {
-  padding: 1px 3px;
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--res) 55%, transparent),
-    0 0 8px color-mix(in srgb, var(--res) var(--bloom), transparent);
+  font-weight: 700;
 }
 
-[data-mode="light"] .resmark--full {
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--res) 55%, transparent),
-    0 0 0 4px color-mix(in srgb, var(--res) 12%, transparent);
+.resmark--m {
+  font-size: var(--fs-xs);
 }
 
-.resmark--full .resmark__line {
-  stroke: var(--res);
-  opacity: 0.75;
-}
-
-/* ── charts (hue stroke, fading area fill, end dot with a halo in dark) ── */
+/* ── charts (one ink stroke, an end dot) ── */
 
 .spark {
   flex: none;
@@ -2165,22 +2019,13 @@ button.scorebar__bar::before {
 .spark__line {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.5;
+  stroke-width: 1.25;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 
 .spark__dot {
   fill: currentColor;
-}
-
-.spark__halo {
-  fill: currentColor;
-  opacity: 0.28;
-}
-
-[data-mode="light"] .spark__halo {
-  display: none;
 }
 
 .chart {
@@ -2199,14 +2044,14 @@ button.scorebar__bar::before {
 
 .chart__guide {
   stroke: var(--line);
-  stroke-dasharray: 3 4;
+  stroke-dasharray: 2 4;
   vector-effect: non-scaling-stroke;
 }
 
 .chart__line {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.75;
+  stroke-width: 1.5;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
@@ -2221,7 +2066,8 @@ button.scorebar__bar::before {
   justify-content: space-between;
   width: 2.7rem;
   color: var(--text-3);
-  font: 500 var(--fs-2xs) / 1.2 var(--font-mono);
+  font: 500 var(--fs-2xs) / 1.2 var(--font-ui);
+  font-variant-numeric: tabular-nums;
   text-align: right;
 }
 
@@ -2230,7 +2076,8 @@ button.scorebar__bar::before {
   justify-content: space-between;
   margin-top: 0.4rem;
   color: var(--text-3);
-  font: 500 var(--fs-2xs) / 1.2 var(--font-mono);
+  font: 500 var(--fs-2xs) / 1.2 var(--font-ui);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── links ── */
