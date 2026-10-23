@@ -6,7 +6,7 @@ import { ItemCard, RunnerRow } from '../../src/items/card.tsx'
 import { itemBlurb, itemTitle } from '../../src/items/text.ts'
 import { categoryCounts } from '../../src/views/catbar.tsx'
 import { moveBoard } from '../../src/views/general.tsx'
-import { boardSpans } from '../../src/views/today.tsx'
+import { boardSpans, rowStarts } from '../../src/views/today.tsx'
 
 const base = (over: Partial<ItemBase>): Omit<ItemBase, 'board'> => ({
   key: 'k',
@@ -201,6 +201,13 @@ describe('Today layout helpers', () => {
     expect(boardSpans(4)).toEqual([3, 3, 3, 3])
     expect(boardSpans(1)).toEqual([6])
     expect(boardSpans(0)).toEqual([])
+  })
+
+  it('rules every column except the first of each row', () => {
+    expect(rowStarts(boardSpans(5))).toEqual([true, false, false, true, false])
+    expect(rowStarts(boardSpans(4))).toEqual([true, false, true, false])
+    expect(rowStarts(boardSpans(1))).toEqual([true])
+    expect(rowStarts([])).toEqual([])
   })
 
   it('counts categories across boards', () => {

@@ -67,7 +67,7 @@ describe('public/boot.js', () => {
   it('survives unreadable storage', () => {
     localStorage.setItem('resonance.settings', '{not json')
     expect(() => new Function(BOOT)()).not.toThrow()
-    expect(document.documentElement.getAttribute('data-preset')).toBe('titanium')
+    expect(document.documentElement.getAttribute('data-preset')).toBe('paper')
   })
 })
 
@@ -79,9 +79,9 @@ describe('resolveAppearance', () => {
   })
 
   it('layers user over site over built-in defaults', () => {
-    expect(resolveAppearance({}, {}, true).preset).toBe('titanium')
-    expect(resolveAppearance({}, { preset: 'paper' }, true).preset).toBe('paper')
-    expect(resolveAppearance({ preset: 'terminal' }, { preset: 'paper' }, true).preset).toBe('terminal')
+    expect(resolveAppearance({}, {}, true).preset).toBe('paper')
+    expect(resolveAppearance({}, { preset: 'titanium' }, true).preset).toBe('titanium')
+    expect(resolveAppearance({ preset: 'terminal' }, { preset: 'titanium' }, true).preset).toBe('terminal')
   })
 
   it('maps the retired aurora preset to titanium', () => {

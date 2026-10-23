@@ -44,7 +44,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the hero date, today's brief and events at a glance on glass panels, the filters and the board grid (dark theme)" width="100%">
+  <img src="docs/screenshots/today-dark.png" alt="Today's edition on desktop: the masthead date, today's brief beside the events at a glance, the filters and the ruled board columns (dark theme)" width="100%">
 </p>
 
 ## Why AI Resonance?
@@ -143,12 +143,12 @@ Reading, Atom subscriptions, follow controls, bookmarks and reading-library back
 
 - **Read the event first.** A compact header distinguishes the latest complete edition from Live. Event cards show short summaries and group clear reports of the same event; casual conversation and promotions stay out of these picks without changing the five heat boards. Item details put the content before an expandable score breakdown.
 - **Pick up where you left off.** Follow a project or company from its details, save an item, queue it for later or mark it read/unread. Event updates distinguish added sources from changed content. The local reading library exports to JSON and previews imports before merging them with existing saves.
-- **Titanium × Signal UI, tactical glass.** Thick frosted-glass panels with real lighting (specular lip, refracting
-  rim, depth shadows) over a soft lit scene; panel edges that light up under the pointer, amber signal glow in the dark mode and an
-  industrial safety-yellow light mode; panels power on and a scan line passes on every page change (reduced motion
-  respected). Dark and light modes follow your system. Two alternate presets (`paper`, `terminal`), plus accent, density, font size,
-  reduced motion, custom CSS and theme import/export. The visual spec is in [docs/VISUAL.md](./docs/VISUAL.md).
-- **Phone and desktop.** A front-page grid on desktop, one swipeable board at a time on a phone, a floating tab bar,
+- **Reads like a newspaper.** "Newsprint": ink on warm paper, serif headlines, the boards set as ruled columns, one
+  vermilion for what matters; a warm charcoal night edition in dark mode. No glass, glow or gradients, no sparkle icons:
+  trends, resonance and categories are short words, and the score is a thin printed rule. Dark and light modes follow
+  your system. Two alternate presets (`titanium`, a neutral sans-serif look, and `terminal`), plus accent, density, font
+  size, reduced motion, custom CSS and theme import/export. The visual spec is in [docs/VISUAL.md](./docs/VISUAL.md).
+- **Phone and desktop.** A front-page grid on desktop, one swipeable board at a time on a phone, a bottom tab bar,
   keyboard shortcuts (`/` search, `[` `]` previous/next edition). Installable as a PWA.
 - **Bilingual, with visible coverage.** English and Chinese UI, plus operator-generated blurbs, "why it matters", essence points and daily briefs when configured. The page shows how many items have explanations and any known generation issue. Missing copy falls back to the original; readers need no key, and source links remain available.
 - **Archive and weekly.** A calendar heat-map of the retention window where any day opens again, ISO-week recaps,
@@ -405,6 +405,24 @@ normal search pages in a new tab.
 snapshots older than 183 days, so a few MB. Everything under `/api/v1` is rebuilt from it on every run.
 
 ## Recent updates
+
+<details>
+<summary>2026-10-23 · A new look, "Newsprint": a daily paper instead of a glass dashboard</summary>
+
+Readers kept saying the interface looked machine-made. The redesign trades the glass dashboard for a printed page:
+
+- Ink on warm paper with one vermilion, serif headlines over a sans for reading, and a warm charcoal night edition.
+- The front page is set like a newspaper: the date as a masthead over a dateline, the brief as the lead story beside
+  the events at a glance, the five boards as ruled columns.
+- No frosted glass, glows, gradients, pointer lights, scan lines or entrance animations, and no sparkle icons. Trends,
+  resonance and categories are short words; the score on each row is a thin printed rule (the coloured breakdown stays
+  in the item's details).
+- Plainer copy: footnotes say what they mean, and the Chinese UI calls the AI summary "AI 解读".
+- The exported report and the e-mail follow the same look. `paper` is the new default preset; `titanium` stays as a
+  neutral sans-serif alternate (now flat), `terminal` is unchanged.
+- The initial download got smaller (92.9 → 88.0 KB gzip).
+
+</details>
 
 <details>
 <summary>2026-09-21 · Beginner library: 100 resources (30 resident + 70 dynamic picks), clearer edition labels, subscription page</summary>

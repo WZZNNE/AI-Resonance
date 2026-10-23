@@ -1,6 +1,6 @@
 import './prefs.ts'
 /**
- * BYOK AI (DESIGN §8): Settings › Models, the ✦ Summarise action on every item, and `ai.cachedSummaries` for the Export
+ * BYOK AI (DESIGN §8): Settings › Models, the Summarise action on every item, and `ai.cachedSummaries` for the Export
  * view. Only these stubs load with the page; the model manager, the summary sheet, the adapters and the Anthropic SDK
  * are separate chunks.
  */
@@ -19,7 +19,7 @@ declare module '../core/registry.ts' {
 registerSettingsTab({
   id: 'models',
   title: 'ai.tab',
-  icon: 'sparkle',
+  icon: 'chat',
   order: 10,
   component: lazy(() => import('./models-ui.tsx')),
 })
@@ -27,7 +27,7 @@ registerSettingsTab({
 registerItemAction({
   id: 'ai.summarize',
   label: 'ai.summarize',
-  icon: 'sparkle',
+  icon: 'summary',
   order: 10,
   run: async (item) => (await import('./summary.tsx')).openSummary(item),
 })

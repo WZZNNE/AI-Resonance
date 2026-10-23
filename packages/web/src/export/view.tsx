@@ -351,10 +351,7 @@ export default function ExportView({ query }: RouteProps) {
   return (
     <main class="page export" id="main" data-part="export">
       <header class="page__head">
-        <p class="kicker">
-          <Icon name="download" size={14} />
-          {t('export.kicker')}
-        </p>
+        <p class="kicker">{t('export.kicker')}</p>
         <h1 class="page__title">{t('export.title')}</h1>
         <p class="export__lead">{t('export.lead')}</p>
       </header>

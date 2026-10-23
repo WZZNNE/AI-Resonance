@@ -1,11 +1,10 @@
 /**
- * Small typographic marks of the item card: the rank numeral, the trend badge (NEW / ▲3 / ▼1 / BACK + streak) and the
- * resonance mark (linked dots coloured by board; three boards = "full resonance").
+ * Small typographic marks of the item card: the rank numeral, the trend badge (New / ▲3 / ▼1 / Back + days on the
+ * board) and the resonance mark ("on 3 boards"; three boards = "full resonance"). All of them are words and figures in
+ * small type, never icons or coloured dots.
  */
 import type { Board, ResonanceLink, Trend } from '@resonance/schema'
 import { t } from '../i18n/index.ts'
-import { boardHue } from './chip.tsx'
-import { Icon } from './icons.tsx'
 
 export interface RankNumeralProps {
   rank: number
@@ -14,11 +13,11 @@ export interface RankNumeralProps {
   muted?: boolean
 }
 
-/** Big tabular rank figure. */
+/** Bold serif rank figure. */
 export function RankNumeral({ rank, size = 'l', muted }: RankNumeralProps) {
   return (
     <span
-      class={`rank rank--${size}${muted ? ' rank--muted' : ''}${rank <= 3 ? ' rank--podium' : ''}${rank < 10 ? ' rank--pad' : ''} num`}
+      class={`rank rank--${size}${muted ? ' rank--muted' : ''}${rank <= 3 ? ' rank--podium' : ''} num`}
       role="img"
       aria-label={t('card.rank', { rank })}
       data-part="rank"
@@ -48,24 +47,13 @@ export interface TrendBadgeProps {
   quiet?: boolean
 }
 
-/** NEW / ▲3 / ▼1 / BACK, plus a flame streak from 2 days on. */
+/** New / ▲3 / ▼1 / Back, plus the days on the board from 2 days on. */
 export function TrendBadge({ trend, rank, quiet }: TrendBadgeProps) {
   const { kind, delta } = trendBadgeKind(trend, rank)
   const streak = trend.streak >= 2 ? trend.streak : 0
   let main = null
-  // NEW and BACK are icons (the word is the accessible name and the tooltip): a column of words crowds the rank.
-  if (kind === 'new')
-    main = (
-      <span class="trend trend--new trend--icon" role="img" aria-label={t('trend.new')} title={t('trend.new')}>
-        <Icon name="sparkle" size={11} />
-      </span>
-    )
-  else if (kind === 'back')
-    main = (
-      <span class="trend trend--back trend--icon" role="img" aria-label={t('trend.back')} title={t('trend.back')}>
-        <Icon name="history" size={11} />
-      </span>
-    )
+  if (kind === 'new') main = <span class="trend trend--new">{t('trend.new')}</span>
+  else if (kind === 'back') main = <span class="trend trend--back">{t('trend.back')}</span>
   else if (kind === 'up') {
     main = (
       <span class="trend trend--up num" role="img" aria-label={t('trend.upBy', { n: delta })}>
@@ -96,7 +84,6 @@ export function TrendBadge({ trend, rank, quiet }: TrendBadgeProps) {
           role="img"
           aria-label={t('trend.streakLong', { n: streak })}
         >
-          <Icon name="flame" size={12} />
           {t('trend.streak', { n: streak })}
         </span>
       )}
@@ -120,14 +107,10 @@ export interface ResonanceMarkProps {
   size?: 's' | 'm'
 }
 
-/** Linked dots, one per board the item echoes on. Renders nothing without resonance (level 1). */
+/** "On 3 boards", named in full for assistive tech and the tooltip. Renders nothing without resonance (level 1). */
 export function ResonanceMark({ own, links, level, names, size = 's' }: ResonanceMarkProps) {
   if (level < 2) return null
   const boards = resonanceBoards(own, links)
-  const r = size === 's' ? 3.5 : 4.5
-  const gap = size === 's' ? 9 : 12
-  const w = r * 2 + gap * (boards.length - 1) + 4
-  const h = r * 2 + 4
   const label = t(level >= 3 ? 'res.full' : 'res.mark', { n: boards.length, boards: boards.map(names).join(' · ') })
   return (
     <span
@@ -137,12 +120,7 @@ export function ResonanceMark({ own, links, level, names, size = 's' }: Resonanc
       title={label}
       data-part="resonance-mark"
     >
-      <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} aria-hidden="true">
-        <line x1={r + 2} x2={w - r - 2} y1={h / 2} y2={h / 2} class="resmark__line" />
-        {boards.map((b, i) => (
-          <circle key={b} cx={r + 2 + i * gap} cy={h / 2} r={r} style={{ fill: boardHue(b) }} class="resmark__dot" />
-        ))}
-      </svg>
+      {t('res.short', { n: boards.length })}
     </span>
   )
 }

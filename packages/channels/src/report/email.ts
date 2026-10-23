@@ -29,33 +29,33 @@ export const EMAIL_BUDGET = 88_000
 const WIDTH = 640
 const SUBJECT_TAIL = 90
 
-// "Titanium × Signal" palette and type only (docs/VISUAL.md §9): fixed hex, because CSS variables do not work in
+// "Newsprint" palette and type only (docs/VISUAL.md §9): fixed hex, because CSS variables do not work in
 // Gmail/Outlook, and no shadows or gradients. Light values inline; Apple Mail's dark mode swaps them via the classes
-// below. Board hues are the light system colours (repos one step deeper so it reads ≥ 4.5:1 as citation text).
+// below. Board inks are the paper preset's (each ≥ 4.5:1 as citation text on the card).
 const C = {
-  bg: '#e6e8eb',
-  card: '#ffffff',
-  fg: '#111418',
-  fg2: '#3a4048',
-  mut: '#5b626c',
-  line: '#dfe2e6',
-  acc: '#8f4f00',
-  sig: '#f2b400',
+  bg: '#f6f3ec',
+  card: '#fbfaf6',
+  fg: '#1d1a16',
+  fg2: '#4a443b',
+  mut: '#6b6458',
+  line: '#e2ddd2',
+  acc: '#b42318',
 }
 const BOARD_HEX: Record<Board, string> = {
-  repos: '#1f7a37',
-  papers: '#8944ab',
-  news: '#c93400',
-  social: '#0066cc',
-  labs: '#d30f45',
+  repos: '#2f6b3a',
+  papers: '#6a4c93',
+  news: '#a64a14',
+  social: '#2b5c8a',
+  labs: '#a8324a',
 }
-// Short on purpose: it is repeated in every inline style, and the body has a byte budget.
+// Short on purpose: they are repeated in every inline style, and the body has a byte budget.
 const SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif"
+const SERIF = "'Iowan Old Style',Charter,Georgia,'Songti SC',serif"
 const HEAD_STYLE =
   '@media (max-width:660px){.w{width:100%!important}.p{padding-left:18px!important;padding-right:18px!important}}' +
-  `@media (prefers-color-scheme:dark){body,.bg{background:#04060a!important}.card{background:#0f131a!important}` +
-  `.fg{color:#eef1f5!important}.fg2{color:#adb5c1!important}.mut{color:#8a93a1!important}` +
-  `.acc{color:#ffa04a!important}.ln{border-color:#1f252e!important}}`
+  `@media (prefers-color-scheme:dark){body,.bg{background:#161513!important}.card{background:#1f1e1b!important}` +
+  `.fg{color:#ece7de!important}.fg2{color:#c4bdb0!important}.mut{color:#9b9486!important}` +
+  `.acc{color:#ff8a6b!important}.ln{border-color:#3a3732!important}.rule{border-color:#ece7de!important}}`
 
 interface Level {
   perBoard: number
@@ -121,9 +121,9 @@ function subject(ctx: EmailCtx): string {
 function button(url: string, label: string): string {
   return (
     `<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>` +
-    `<td bgcolor="${C.acc}" style="border-radius:999px;background:${C.acc}"><a href="${esc(url)}" ` +
+    `<td bgcolor="${C.acc}" style="border-radius:3px;background:${C.acc}"><a href="${esc(url)}" ` +
     `style="display:inline-block;padding:13px 26px;font:600 15px/1.2 ${SANS};color:#ffffff;text-decoration:none;` +
-    `border-radius:999px">${esc(label)}</a></td></tr></table>`
+    `border-radius:3px">${esc(label)}</a></td></tr></table>`
   )
 }
 
@@ -147,12 +147,12 @@ function briefHtml(ctx: EmailCtx): string {
     })
     .join('')
   const head = ctx.input.kind === 'daily' ? ctx.t.brief : ctx.t.briefWeek
-  // The report's signature signal hairline, as a plain 2 px left border.
+  // The lead: a kicker in the accent, the headline in the serif, the bullets in plain text.
   return row(
-    `<div style="border-left:2px solid ${C.sig};padding:2px 0 2px 16px">` +
-      `<div class="acc" style="font:600 12px/1.3 ${SANS};letter-spacing:.06em;text-transform:uppercase;color:${C.acc}">${esc(head)}</div>` +
+    '<div>' +
+      `<div class="acc" style="font:700 13px/1.3 ${SANS};color:${C.acc}">${esc(head)}</div>` +
       (b.headline
-        ? `<div class="fg" style="font:600 20px/1.35 ${SANS};letter-spacing:-.3px;color:${C.fg};margin:8px 0 10px">${esc(b.headline)}</div>`
+        ? `<div class="fg" style="font:700 22px/1.3 ${SERIF};color:${C.fg};margin:6px 0 10px">${esc(b.headline)}</div>`
         : '') +
       `<ul class="fg" style="margin:0;padding-left:18px;font:15px/1.6 ${SANS};color:${C.fg}">${bullets}</ul></div>`,
     'padding:4px 28px 20px',
@@ -169,7 +169,7 @@ function itemHtml(item: Item, section: ReportSection, ctx: EmailCtx, level: Leve
     .filter((b) => b.cls === 'new' || b.cls === 'back')
     .map(
       (b) =>
-        ` <span class="acc" style="font:700 10px/1 ${SANS};letter-spacing:.05em;color:${C.acc}">${esc(tokenText(b.tokens, ctx))}</span>`,
+        ` <span class="acc" style="font:700 11px/1 ${SANS};color:${C.acc}">${esc(tokenText(b.tokens, ctx))}</span>`,
     )
     .join('')
   const points = (text.points ?? []).slice(0, level.points)
@@ -177,13 +177,13 @@ function itemHtml(item: Item, section: ReportSection, ctx: EmailCtx, level: Leve
     ? `<ul class="fg2" style="margin:6px 0 0;padding-left:18px;font:14px/1.5 ${SANS};color:${C.fg2}">` +
       `${points.map((p) => `<li style="margin:0 0 3px">${esc(p)}</li>`).join('')}</ul>`
     : ''
-  // Thin rank numeral (the report's metallic podium becomes plain text colour here; ranks ≥ 4 are muted).
+  // A bold serif rank figure, the top three in the accent (as on the site); the title in the serif.
   const podium = item.rank <= 3
   return (
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>` +
-    `<td class="${podium ? 'fg' : 'mut'}" width="36" valign="top" style="font:300 24px/1.1 ${SANS};` +
-    `color:${podium ? C.fg : C.mut}">${item.rank}</td>` +
-    `<td valign="top"><div style="font:600 16px/1.4 ${SANS}">${title}${tags}</div>` +
+    `<td class="${podium ? 'acc' : 'mut'}" width="36" valign="top" style="font:700 22px/1.15 ${SERIF};` +
+    `color:${podium ? C.acc : C.mut}">${item.rank}</td>` +
+    `<td valign="top"><div style="font:700 16px/1.4 ${SERIF}">${title}${tags}</div>` +
     `<div class="fg2" style="font:14px/1.55 ${SANS};color:${C.fg2};margin-top:3px">${esc(clip(text.blurb, 260))}</div>` +
     `<div class="mut" style="font:12px/1.5 ${SANS};color:${C.mut};margin-top:5px">${esc(metaLine(item, section, ctx))}</div>` +
     `${list}</td></tr></table>`
@@ -194,13 +194,10 @@ function sectionHtml(section: ReportSection, ctx: EmailCtx, level: Level): strin
   const items = ranked(section).slice(0, level.perBoard)
   if (!items.length) return ''
   const title = boardTitle(ctx.input.boards, section.board, ctx.lang)
-  // A hairline, then the board's hue dot and its title (the report's panel header, in e-mail-safe cells).
+  // A section flag, as on the site: the board's title over a heavy ink rule.
   const head = row(
-    `<div class="ln" style="border-top:1px solid ${C.line};padding-top:20px">` +
-      `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>` +
-      `<td style="padding-right:8px;font:11px/1 ${SANS};color:${BOARD_HEX[section.board]}">&#9679;</td>` +
-      `<td><div class="fg" style="font:600 19px/1.3 ${SANS};letter-spacing:-.3px;color:${C.fg}">${esc(title)}</div></td>` +
-      '</tr></table></div>',
+    `<div class="fg rule" style="font:700 20px/1.3 ${SERIF};color:${C.fg};padding:14px 0 6px;` +
+      `border-bottom:2px solid ${C.fg}">${esc(title)}</div>`,
     'padding:14px 28px 6px',
   )
   return head + items.map((it) => row(itemHtml(it, section, ctx, level), 'padding:10px 28px 10px')).join('')
@@ -211,17 +208,18 @@ function html(ctx: EmailCtx, level: Level, subj: string): string {
   const w = input.window
   const site = safeUrl(input.site.url)
   const preheader = input.brief?.[ctx.lang]?.headline ?? ''
+  // The masthead: the site's name as a kicker, the edition in the serif, the window in a dateline under a heavy rule.
   const header = row(
-    `<div class="mut" style="font:600 12px/1.3 ${SANS};letter-spacing:.06em;text-transform:uppercase;color:${C.mut}">${esc(input.site.name)}</div>` +
-      `<div class="fg" style="font:700 30px/1.15 ${SANS};letter-spacing:-.8px;color:${C.fg};margin:10px 0 8px">${esc(kindLabel(ctx))} · ${esc(input.id)}</div>` +
-      `<div class="mut" style="font:13px/1.5 ${SANS};color:${C.mut}">${esc(t.window)}: ${esc(formatRange(w.from, w.to, w.timezone, ctx.lang))} (${esc(w.timezone)})</div>`,
+    `<div class="acc" style="font:700 13px/1.3 ${SANS};color:${C.acc}">${esc(input.site.name)}</div>` +
+      `<div class="fg" style="font:700 30px/1.15 ${SERIF};color:${C.fg};margin:8px 0 10px">${esc(kindLabel(ctx))} · ${esc(input.id)}</div>` +
+      `<div class="mut rule" style="font:13px/1.5 ${SANS};color:${C.mut};border-top:2px solid ${C.fg};padding-top:8px">${esc(t.window)}: ${esc(formatRange(w.from, w.to, w.timezone, ctx.lang))} (${esc(w.timezone)})</div>`,
     'padding:32px 28px 20px',
   )
-  // Amber dot + text on a quiet grey panel (a tinted background would not survive dark-mode clients).
+  // A square marker + text on a quiet panel (a tinted background would not survive dark-mode clients).
   const banner = ctx.preliminary
     ? row(
-        `<div class="bg fg2" style="background:${C.bg};border-radius:12px;padding:11px 14px;font:14px/1.5 ${SANS};color:${C.fg2}">` +
-          `<span style="color:#b25000">&#9679;</span>&nbsp; ${esc(t.preliminary)}</div>`,
+        `<div class="bg fg2" style="background:${C.bg};border-radius:3px;padding:11px 14px;font:14px/1.5 ${SANS};color:${C.fg2}">` +
+          `<span style="color:#8a5a00">&#9632;</span>&nbsp; ${esc(t.preliminary)}</div>`,
       )
     : ''
   const cta = ctx.reportUrl
@@ -246,7 +244,7 @@ function html(ctx: EmailCtx, level: Level, subj: string): string {
     `<table role="presentation" class="bg" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${C.bg}">` +
     `<tr><td align="center" style="padding:24px 8px">` +
     `<table role="presentation" class="w card" width="${WIDTH}" cellpadding="0" cellspacing="0" border="0" ` +
-    `style="width:${WIDTH}px;max-width:${WIDTH}px;background:${C.card};border-radius:18px">` +
+    `style="width:${WIDTH}px;max-width:${WIDTH}px;background:${C.card};border-radius:4px">` +
     header +
     banner +
     briefHtml(ctx) +

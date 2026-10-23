@@ -10,7 +10,7 @@
   margin-bottom: 1rem;
 }
 .learn__head .page__title {
-  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.375rem);
   margin: 0;
 }
 .learn__counts {
@@ -32,16 +32,21 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--line-2);
   border-radius: var(--radius-pill);
-  background: var(--surface);
+  background: transparent;
   color: var(--text-2);
   font: inherit;
   font-size: var(--fs-s);
   cursor: pointer;
 }
+.learn__scopes button:hover {
+  border-color: var(--text-3);
+  color: var(--text);
+}
+/* Chosen = inked, as on the filter chips. */
 .learn__scopes button[aria-pressed="true"] {
-  border-color: var(--signal-text);
-  color: var(--signal-text);
-  background: color-mix(in srgb, var(--signal) 9%, var(--surface));
+  border-color: var(--text);
+  color: var(--bg);
+  background: var(--text);
 }
 .learn__scopes button span {
   font-variant-numeric: tabular-nums;
@@ -113,10 +118,11 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  border: 1px solid var(--line-2);
-  border-radius: var(--radius-l);
-  padding: 1rem;
-  background: var(--surface);
+  border: 0;
+  border-top: 1px solid var(--text);
+  border-radius: 0;
+  padding: 0.85rem 0 0.5rem;
+  background: none;
   overflow-wrap: anywhere;
 }
 .learn-card__meta {
@@ -132,18 +138,21 @@
 }
 .learn-badge {
   border: 1px solid var(--signal-text);
-  border-radius: 4px;
+  border-radius: var(--radius-s);
   padding: 0.05rem 0.3rem;
   font-size: 0.65rem;
   color: var(--signal-text);
 }
 .learn-card__title {
-  font-size: 1rem;
-  line-height: 1.5;
+  font: var(--weight-title) var(--fs-l) / 1.4 var(--font-display);
   margin: 0.45rem 0 0.3rem;
 }
 .learn-card__title a {
   color: var(--text);
+  text-decoration: none;
+}
+.learn-card__title a:hover {
+  text-decoration: underline;
 }
 .learn-card__summary {
   display: -webkit-box;
@@ -203,6 +212,6 @@
     padding-inline: 0.5rem;
   }
   .learn-card {
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 0 0.5rem;
   }
 }

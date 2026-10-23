@@ -387,7 +387,6 @@ function EditionWindow({ tz, cutoff, latest }: { tz: string; cutoff: string; lat
   return (
     <section class="scoring__card" aria-labelledby="sc-window">
       <h2 class="scoring__h" id="sc-window">
-        <Icon name="clock" size={18} />
         {t('views.scoring.windowTitle')}
       </h2>
       <p>{t('views.scoring.window1', { tz: `${fmt.tzName(tz)} (${tz})`, cutoff })}</p>
@@ -433,17 +432,13 @@ export default function Scoring() {
   return (
     <main class="page scoring" id="main" data-part="scoring">
       <header class="page__head">
-        <p class="kicker">
-          <Icon name="scale" size={14} />
-          {t('views.scoring.kicker')}
-        </p>
+        <p class="kicker">{t('views.scoring.kicker')}</p>
         <h1 class="page__title">{t('views.scoring.title')}</h1>
         <p class="page__lead">{t('views.scoring.lead')}</p>
       </header>
 
       <section class="scoring__card" aria-labelledby="sc-formula">
         <h2 class="scoring__h" id="sc-formula">
-          <Icon name="code" size={18} />
           {t('views.scoring.formulaTitle')}
         </h2>
         <Formula />
@@ -457,7 +452,6 @@ export default function Scoring() {
 
       <section class="scoring__card" aria-labelledby="sc-weights">
         <h2 class="scoring__h" id="sc-weights">
-          <Icon name="sliders" size={18} />
           {t('views.scoring.weightsTitle')}
         </h2>
         <p class="scoring__hint">{t('views.scoring.weightsHint')}</p>
@@ -471,7 +465,6 @@ export default function Scoring() {
       {current && (
         <section class="scoring__card" aria-labelledby="sc-signals">
           <h2 class="scoring__h" id="sc-signals">
-            <Icon name="info" size={18} />
             {t('views.scoring.signalsTitle')}
           </h2>
           <Tabs
@@ -498,7 +491,6 @@ export default function Scoring() {
 
       <section class="scoring__card" aria-labelledby="sc-caps">
         <h2 class="scoring__h" id="sc-caps">
-          <Icon name="filter" size={18} />
           {t('views.scoring.capsTitle')}
         </h2>
         <p>{t('views.scoring.caps1')}</p>

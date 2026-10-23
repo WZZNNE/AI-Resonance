@@ -1,7 +1,8 @@
 /**
- * The one-click summary sheet (DESIGN §8.4): opens from ✦ on any item and streams a verdict card. Model switcher (sets
- * the active model), effort picker (clamped to the model), language (follows the UI, overridable per run), depth,
- * optional web grounding, estimated cost before and actual cost after, thinking indicator, stop / re-run / copy.
+ * The one-click summary sheet (DESIGN §8.4): opens from Summarise on any item and streams a verdict card. Model
+ * switcher (sets the active model), effort picker (clamped to the model), language (follows the UI, overridable per
+ * run), depth, optional web grounding, estimated cost before and actual cost after, thinking indicator, stop / re-run /
+ * copy.
  * Results are cached per (item, language, model, depth); a cache hit shows instantly and re-running is explicit.
  */
 import { signal } from '@preact/signals'
@@ -40,7 +41,7 @@ const open = signal(false)
 let host: HTMLElement | null = null
 let seq = 0
 
-/** Open the sheet for `item` (the ✦ item action). */
+/** Open the sheet for `item` (the Summarise item action). */
 export function openSummary(item: Item): void {
   if (!host) {
     host = document.createElement('div')
@@ -233,7 +234,7 @@ function SummarySheet({ item, open: isOpen, onClose }: { item: Item; open: boole
     return (
       <Sheet open={isOpen} onClose={onClose} title={t('ai.summaryTitle')} part="summary-sheet">
         <EmptyState
-          icon="sparkle"
+          icon="summary"
           title={t('ai.firstRun.title')}
           action={
             <Button
@@ -311,7 +312,7 @@ function SummarySheet({ item, open: isOpen, onClose }: { item: Item; open: boole
           {t('ai.stop')}
         </Button>
       ) : (
-        <Button variant="primary" icon={run.result || run.text ? 'refresh' : 'sparkle'} onClick={() => void start()}>
+        <Button variant="primary" icon={run.result || run.text ? 'refresh' : 'summary'} onClick={() => void start()}>
           {run.result || run.text ? t('ai.rerun') : t('ai.run')}
         </Button>
       )}

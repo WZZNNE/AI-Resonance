@@ -9,6 +9,13 @@
   align-items: start;
   justify-content: space-between;
   gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line-2);
+}
+.health__head h1 {
+  margin: 0;
+  font: var(--weight-display) clamp(1.875rem, 1.45rem + 1.3vw, 2.625rem) / 1.12 var(--font-display);
+  letter-spacing: var(--tracking-display);
 }
 .health__head p,
 .health__card p {
@@ -22,14 +29,15 @@
 }
 .health__card {
   min-width: 0;
-  padding: 1.25rem;
+  padding: 1rem 1.25rem 1.25rem;
   background: var(--panel-bg);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--panel-edge), var(--panel-drop);
+  box-shadow:
+    inset 0 2px 0 var(--rule),
+    var(--panel-edge);
 }
 .health__card h2 {
-  font-size: var(--fs-body);
-  margin: 0 0 1rem;
+  font: var(--weight-section) var(--fs-l) / 1.3 var(--font-display);
+  margin: 0 0 0.75rem;
 }
 .health__card time {
   font-variant-numeric: tabular-nums;
@@ -38,8 +46,7 @@
 .health__notice {
   padding: 1rem 1.25rem;
   border-inline-start: 3px solid var(--warn);
-  background: var(--panel-bg);
-  border-radius: var(--radius-l);
+  background: var(--tint-1);
 }
 .health__notice p {
   margin-bottom: 0;

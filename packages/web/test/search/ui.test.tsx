@@ -107,12 +107,12 @@ describe('settings tabs', () => {
     const host = document.createElement('div')
     document.body.appendChild(host)
     await act(async () => render(<AppearanceTab />, host))
-    const paper = [...host.querySelectorAll<HTMLButtonElement>('button[aria-pressed]')].find((b) =>
-      b.textContent?.includes('Paper'),
+    const titanium = [...host.querySelectorAll<HTMLButtonElement>('button[aria-pressed]')].find((b) =>
+      b.textContent?.includes('Titanium'),
     ) as HTMLButtonElement
-    await act(async () => paper.click())
-    expect(appearance.value.preset).toBe('paper')
-    expect(paper.getAttribute('aria-pressed')).toBe('true')
+    await act(async () => titanium.click())
+    expect(appearance.value.preset).toBe('titanium')
+    expect(titanium.getAttribute('aria-pressed')).toBe('true')
     await act(async () => render(null, host))
     host.remove()
   })

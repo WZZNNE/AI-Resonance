@@ -142,7 +142,7 @@ is shown in brackets.
 | `repoUrl` | `''` (the upstream repository) | your repository URL: footer, Settings › Delivery, contact URL in User-Agent strings. Change it in your copy |
 | `siteUrl` | `''` (the upstream site) | public URL; empty means the `SITE_URL` variable, else derived from `repoUrl` as a GitHub Pages URL. Empty it (or set your own) in your copy |
 | `defaultLang` | `en` (`zh`) | first-visit language when the browser prefers neither English nor Chinese |
-| `theme.preset` | `titanium` | `titanium` · `paper` · `terminal`: the default for visitors who have not chosen one. The retired name `aurora` still works and means `titanium` |
+| `theme.preset` | `paper` | `paper` · `titanium` · `terminal`: the default for visitors who have not chosen one. The retired name `aurora` still works and means `titanium` |
 | `theme.accent` | `''` | any CSS colour; empty means the preset's accent |
 
 ### `edition`
@@ -299,12 +299,13 @@ The repository variable `RESONANCE_MAIL` (JSON, same keys) overrides these. Sett
 
 Four layers. Each one only changes values, never structure:
 
-1. **Presets** (`packages/web/src/theme/tokens.css`, `presets.css`): `titanium` (the default: thick lit glass over a
-   tactical grid, amber HUD light in dark, industrial grey and safety yellow in light), `paper` (light editorial, serif headlines)
-   and `terminal` (mono, square corners), each with a light and a dark mode. Presets only set **colours** (plus
-   their type and corner shape); the materials (glass panels, raised plates, recessed wells, glass chrome, HUD lines) are derived from those
-   colours, so every preset, and every fork palette, gets the same depth. `docs/VISUAL.md` is the design spec.
-   Settings and theme files that still say `aurora` (the old default) load as `titanium`.
+1. **Presets** (`packages/web/src/theme/tokens.css`, `presets.css`): `paper` ("Newsprint", the default: ink on warm
+   stock, serif headlines, one vermilion; a warm charcoal night edition in dark), `titanium` (neutral graphite and
+   steel, sans-serif headlines, an amber accent) and `terminal` (mono, square corners), each with a light and a dark
+   mode. Presets only set **colours** (plus their type and corner shape); the materials (hairline plates, white
+   fields, ruled blocks, floating layers) are references to those colours, so every preset, and every fork palette,
+   gets the same ruled page. `docs/VISUAL.md` is the design spec. Settings and theme files that still say `aurora`
+   (an old default) load as `titanium`.
 2. **Fork defaults** in `config.yaml › site.theme` (`preset`, `accent`). Visitors who have not chosen get these.
 3. **Fork stylesheet** `packages/web/public/custom.css`, loaded after the bundled styles.
 4. **Visitor settings** (Settings › Appearance): preset, mode (auto/light/dark), accent, density
@@ -314,7 +315,7 @@ Four layers. Each one only changes values, never structure:
 The state is on `<html>`:
 
 ```html
-<html data-preset="titanium" data-mode="dark" data-density="comfortable" [data-motion="reduce"]
+<html data-preset="paper" data-mode="light" data-density="comfortable" [data-motion="reduce"]
       style="--font-scale: 1.1; --accent: #e11d48">
 ```
 
@@ -326,25 +327,23 @@ Everything visual reads CSS custom properties:
 
 | Group | Tokens |
 |---|---|
-| Surfaces | `--bg` `--bg-2` (page) `--surface` `--surface-2` `--surface-3` (plates, nested plates, chips) `--well` (recessed fill) `--line` `--line-2` `--scrim` |
+| Surfaces | `--bg` `--bg-2` (page) `--surface` `--surface-2` `--surface-3` (fields, floating layers, fills) `--well` (track fill) `--line` `--line-2` (hairlines) `--rule` (heavy ink rules) `--scrim` |
 | Text | `--text` `--text-2` `--text-3` (≥ 4.5:1 contrast on `--bg` and `--surface` in every preset) |
 | Accent and status | `--accent` `--accent-fill` (primary buttons) `--accent-2` `--accent-ink` `--focus` `--ok` `--warn` `--danger` `--info` `--live` `--up` `--down` `--res` |
-| Signal | `--signal` (the HUD light: focus ring, active navigation, lit panel edges) `--signal-2` `--signal-line` (signal → signal-2 hairline) `--signal-text` |
+| Signal | `--signal` (the selected mark: the active tab's rule, the current edition) `--signal-2` `--signal-line` `--signal-text` (kickers, top ranks, "New") |
 | Meaning | `--hue-repos` `--hue-papers` `--hue-news` `--hue-social` `--hue-labs` · `--cat-release` … `--cat-policy` · `--sig-1` … `--sig-8` |
-| Materials | `--panel-bg` `--panel-tint` `--panel-edge` `--panel-drop` `--panel-blur` `--rim` (content glass) · `--tint-1` … `--tint-3` · `--plate-bg` `--plate-edge` (raised) · `--well-bg` `--well-edge` (recessed) · `--glass-bg` `--glass-blur` `--glass-edge` (header, tab bar, sheets) · `--elev-0` … `--elev-3` · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` |
-| Glow | `--glow` · `--ring` `--ring-inset` (focus) · `--bloom` (40 % in dark, 0 in light: how much coloured marks glow) |
-| HUD | `--hud` `--hud-hot` (HUD line colour at rest / lit: the engaged panel edge, the rim spot) · `--hud-faint` · `--hud-glow` · `--ticks` · `--font-hud` |
-| Page | `--spill` (the scene light; `none` turns it off, `--aurora` is its old name) · `--grid` `--grid-dot` `--grid-major` (the tactical grid) · `--scan` `--grain` `--vignette` |
-| Type | `--font-ui` `--font-text` `--font-display` `--font-num` `--font-serif` `--font-mono` · `--fs-2xs` … `--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--lh` `--font-scale` |
+| Materials | `--plate-bg` `--plate-edge` (buttons, chips: paper + hairline) · `--well-bg` `--well-edge` (fields) · `--panel-bg` `--panel-edge` `--panel-drop` (boxed blocks) · `--tint-1` … `--tint-3` (hover fills) · `--glass-bg` `--glass-edge` (sheets, popovers, toasts) · `--elev-0` … `--elev-3` (only `--elev-3` casts a shadow) · `--press` · `--thumb-bg` · `--knob` `--knob-shadow` `--switch-off` · `--hl` |
+| Focus | `--ring` `--ring-inset` · `--glow` (= `--ring`) |
+| Type | `--font-sans` `--font-serif` `--font-mono` · roles `--font-display` (headlines) `--font-num` (rank figures) `--font-text` (running text) `--font-ui` · `--fs-2xs` … `--fs-3xl` `--fs-rank` · roles `--fs-hero` `--fs-section` `--fs-board` `--fs-item` `--fs-body` `--fs-meta` `--fs-eyebrow` · `--lh` `--font-scale` |
 | Shape | `--radius-s` `--radius-m` `--radius-l` `--radius-xl` `--radius-2xl` `--radius-pill` · `--space-1` … `--space-10` `--pad-card` `--density` `--target` |
 | Motion | `--ease` (sheet curve) `--ease-pop` (knobs, thumbs) `--ease-in` · `--dur-1` `--dur-2` `--dur-3` |
 | Layout | `--header-h` `--tabbar-h` `--tabbar-space` `--maxw` `--gutter` `--z-header` `--z-overlay` `--z-toast` |
-| Old names | `--shadow-1` `--shadow-2` (= `--elev-1` / `--elev-2`) `--inset` `--header-bg` (= `--glass-bg`) `--aurora` (= `--spill`): still honoured |
+| Old names | `--shadow-1` `--shadow-2` (= `--elev-1` / `--elev-2`) `--inset` `--header-bg` (the header's paper): still honoured |
 
-Glow is a budget, not a style: focus, the active navigation item, the live dot, lit HUD lines, score-bar segments and
-hue dots (dark mode), full resonance and the "on" switch light up. A fork that wants no glow at all sets `--bloom: 0%`
-(marks), `--hud-glow: 0 0 0 transparent` (HUD lines) and `--ring: 0 0 0 2px var(--signal)` (a crisp focus ring
-instead of the soft one); a calmer fork can drop the dressing with `--hud: transparent; --scan: none; --grid: none`.
+The page is printed, not lit: nothing glows and only floating layers cast a shadow. A fork that wants sans-serif
+headlines sets `--font-display: var(--font-sans); --font-num: var(--font-sans)`; one that wants pill-shaped chips and
+toolbar buttons sets `--radius-pill: 999px`; a different spot colour is one `--accent` (Settings › Appearance or
+`config.yaml › site.theme.accent`), which also drives the primary button, kickers and the selected marks.
 
 ### `custom.css`
 
@@ -387,7 +386,7 @@ ResonanceTheme.reset()                                    // back to the preset 
 Major elements carry a stable `data-part` attribute. Class names are internal and may change, but these do not:
 
 `app` · `header` · `edition-picker` · `edition-sheet` · `live-toggle` · `search-trigger` · `lang-switch` ·
-`mode-switch` · `tabbar` · `offline-banner` · `footer` · `today` · `edition-head` · `brief` · `resonance-strip` ·
+`mode-switch` · `tabbar` · `offline-banner` · `footer` · `today` · `edition-head` · `brief` ·
 `cluster` · `category-bar` · `board` · `runners-up` · `item-card` · `item-meta` · `item-actions` · `rank` ·
 `trend-badge` · `score-bar` · `sparkline` · `resonance-mark` · `runner-row` · `status-chip` · `sources` ·
 `item-detail` · `item-sheet` · `settings` · `delivery` · `sheet` · `dialog` · `popover` · `toaster` · `toast` ·

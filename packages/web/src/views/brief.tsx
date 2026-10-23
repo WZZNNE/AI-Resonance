@@ -1,4 +1,4 @@
-/** "Today in brief" (今日要点): the edition's LLM headline + bullets, each citation linked to its item. */
+/** "Today in brief" (今日要点), the front page's lead: the edition's LLM headline + bullets, each citation linked to its item. */
 import type { DailyFile, DateStr, Lang } from '@resonance/schema'
 import { useEffect, useId, useState } from 'preact/hooks'
 import { boardMetas, itemAtRank } from '../core/state.ts'
@@ -6,8 +6,6 @@ import { lang, t } from '../i18n/index.ts'
 import { parseBullet } from '../items/cite.ts'
 import { boardTitle, itemHref, itemTitle } from '../items/text.ts'
 import { Button } from '../ui/button.tsx'
-import { boardHue } from '../ui/chip.tsx'
-import { Icon } from '../ui/icons.tsx'
 
 /** Brief card; renders nothing when the edition has no brief (pipeline ran without an LLM key). */
 export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }) {
@@ -20,11 +18,8 @@ export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }
   if (!brief?.bullets.length) return null
   const fallback = !day.brief?.[l]
   return (
-    <section class="brief signal-edge" data-part="brief" aria-labelledby={id} lang={fallback ? other : undefined}>
-      <p class="kicker brief__kicker">
-        <Icon name="sparkle" size={14} />
-        {t('brief.title')}
-      </p>
+    <section class="brief" data-part="brief" aria-labelledby={id} lang={fallback ? other : undefined}>
+      <p class="kicker brief__kicker">{t('brief.title')}</p>
       <h2 class="brief__headline" id={id}>
         {brief.headline}
       </h2>
@@ -42,11 +37,9 @@ export function Brief({ day, date }: { day: DailyFile; date?: DateStr | 'live' }
                   key={i}
                   class="cite"
                   href={itemHref(item, date)}
-                  style={{ '--hue': boardHue(part.board) }}
                   aria-label={t('brief.cite', { board, rank: part.rank, title })}
                   title={`${board} #${part.rank} · ${title}`}
                 >
-                  <span class="cite__dot" aria-hidden="true" />
                   <span class="cite__text">{title}</span>
                 </a>
               )

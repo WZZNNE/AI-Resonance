@@ -13,7 +13,7 @@ import { Icon, type IconName } from '../ui/icons.tsx'
 import { ExtLink } from '../ui/link.tsx'
 import { EditionPicker } from './edition.tsx'
 
-/** The mark: three linked dots in the first three board hues. */
+/** The mark: three linked dots, printed in ink, the top one in the signal colour. */
 export function Logo({ size = 26 }: { size?: number }) {
   return (
     <svg class="logo" width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -21,14 +21,13 @@ export function Logo({ size = 26 }: { size?: number }) {
         d="M9 22 16 9l7 13M9 22h14"
         fill="none"
         stroke="currentColor"
-        stroke-opacity="0.35"
-        stroke-width="1.6"
+        stroke-width="1.75"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
-      <circle cx="16" cy="9" r="4" style={{ fill: 'var(--hue-papers)' }} />
-      <circle cx="9" cy="22" r="4" style={{ fill: 'var(--hue-repos)' }} />
-      <circle cx="23" cy="22" r="4" style={{ fill: 'var(--hue-news)' }} />
+      <circle cx="16" cy="9" r="4.25" style={{ fill: 'var(--signal)' }} />
+      <circle cx="9" cy="22" r="4.25" fill="currentColor" />
+      <circle cx="23" cy="22" r="4.25" fill="currentColor" />
     </svg>
   )
 }
@@ -90,7 +89,7 @@ export function Header() {
         {liveAvailable.value && <LiveToggle />}
         <span class="appbar__spacer" />
         {hasRoute('/learn') && (
-          <Button class="wide-only appbar__link" size="s" variant="ghost" href="#/learn" icon="book">
+          <Button class="wide-only appbar__link" size="s" variant="ghost" href="#/learn">
             {t('nav.learn')}
           </Button>
         )}
@@ -117,7 +116,7 @@ export function Header() {
             <kbd>/</kbd>
           </button>
         )}
-        {/* One glass capsule for the tool buttons, so the right side reads as a single control. */}
+        {/* The tool buttons sit together after a short rule, so the right side reads as one group. */}
         <div class="appbar__dock">
           {hasCommand('search.open') && (
             <IconButton
