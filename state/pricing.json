@@ -6011,7 +6011,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.003,
+   "cr": 0.008,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6020,11 +6020,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.022,
+   "in": 0.07,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.6,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6124,7 +6124,7 @@
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 16,
+   "out": 24,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7124,7 +7124,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.073776,
+   "cr": 0.06786,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7132,11 +7132,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.885312,
+   "in": 0.81432,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.770624,
+   "out": 1.62864,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8816,11 +8816,31 @@
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 11.936,
+   "out": 10.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-16"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "moonshotai/kimi-k3.1-pro",
+   "in": 2,
+   "k": "kimi-k3-1-pro",
+   "maxOut": 943718,
+   "name": "Kimi K3.1 Pro",
+   "out": 10,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
   },
   {
    "ctx": 262144,
@@ -11318,7 +11338,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11326,11 +11346,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11356,7 +11376,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11364,11 +11384,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16078,5 +16098,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-23T15:48:50.498Z"
+ "updatedAt": "2026-10-23T18:50:31.639Z"
 }
