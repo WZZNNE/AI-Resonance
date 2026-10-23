@@ -63,7 +63,9 @@
   },
   {
    "budget": {},
+   "cr": 0.01,
    "ctx": 1000000,
+   "cw": 0.0625,
    "id": "qwen-flash",
    "in": 0.05,
    "k": "qwen-flash",
@@ -103,7 +105,9 @@
   },
   {
    "budget": {},
+   "cr": 0.08,
    "ctx": 1000000,
+   "cw": 0.5,
    "id": "qwen-plus",
    "in": 0.4,
    "k": "qwen-plus",
@@ -142,7 +146,9 @@
    "upd": "2025-04-13"
   },
   {
+   "cr": 0.06,
    "ctx": 1000000,
+   "cw": 0.375,
    "id": "qwen3-coder-flash",
    "in": 0.3,
    "k": "qwen3-coder-flash",
@@ -184,7 +190,9 @@
   },
   {
    "budget": {},
+   "cr": 0.04,
    "ctx": 262144,
+   "cw": 0.25,
    "id": "qwen3-vl-plus",
    "in": 0.2,
    "k": "qwen3-vl-plus",
@@ -359,7 +367,7 @@
    "budget": {
     "max": 262144
    },
-   "cr": 0.003,
+   "cr": 0.006,
    "ctx": 1000000,
    "cw": 0.0375,
    "id": "qwen3.7-flash",
@@ -393,7 +401,7 @@
   },
   {
    "budget": {},
-   "cr": 0.04,
+   "cr": 0.08,
    "ctx": 1000000,
    "cw": 0.5,
    "id": "qwen3.7-plus",
@@ -563,8 +571,9 @@
    "budget": {
     "max": 131072
    },
-   "cr": 0.17,
+   "cr": 0.165,
    "ctx": 202752,
+   "cw": 1.03125,
    "id": "glm-5.1",
    "in": 0.825,
    "k": "glm-5-1",
@@ -621,7 +630,9 @@
    "budget": {
     "max": 81920
    },
+   "cr": 0.1148,
    "ctx": 262144,
+   "cw": 0.7175,
    "id": "kimi-k2.5",
    "in": 0.574,
    "k": "kimi-k2-5",
@@ -638,7 +649,9 @@
    "budget": {
     "max": 81920
    },
+   "cr": 0.1858,
    "ctx": 262144,
+   "cw": 1.16125,
    "id": "kimi-k2.6",
    "in": 0.929,
    "k": "kimi-k2-6",
@@ -744,7 +757,9 @@
    "budget": {
     "max": 81920
    },
+   "cr": 0.0044,
    "ctx": 1000000,
+   "cw": 0.0275,
    "id": "qwen-flash",
    "in": 0.022,
    "k": "qwen-flash",
@@ -799,7 +814,7 @@
    "budget": {
     "max": 81920
    },
-   "cr": 0.012,
+   "cr": 0.023,
    "ctx": 1000000,
    "cw": 0.144,
    "id": "qwen-plus",
@@ -840,7 +855,9 @@
    "upd": "2026-09-11"
   },
   {
+   "cr": 0.0288,
    "ctx": 1000000,
+   "cw": 0.18,
    "id": "qwen3-coder-flash",
    "in": 0.144,
    "k": "qwen3-coder-flash",
@@ -870,7 +887,9 @@
    "budget": {
     "max": 81920
    },
+   "cr": 0.028671,
    "ctx": 262144,
+   "cw": 0.179191,
    "id": "qwen3-vl-plus",
    "in": 0.143353,
    "k": "qwen3-vl-plus",
@@ -976,7 +995,7 @@
    "budget": {
     "max": 262144
    },
-   "cr": 0.002962,
+   "cr": 0.005924,
    "ctx": 1000000,
    "cw": 0.03703,
    "id": "qwen3.7-flash",
@@ -1014,7 +1033,7 @@
    "budget": {
     "max": 262144
    },
-   "cr": 0.0276,
+   "cr": 0.0552,
    "ctx": 1000000,
    "cw": 0.345,
    "id": "qwen3.7-plus",
@@ -1033,9 +1052,9 @@
    "budget": {
     "max": 262144
    },
-   "cr": 0.01187,
+   "cr": 0.014844,
    "ctx": 1000000,
-   "cw": 0.14844,
+   "cw": 0.185547,
    "efforts": [
     "low",
     "medium",
@@ -4538,6 +4557,26 @@
    "upd": "2026-08-10"
   },
   {
+   "ctx": 262144,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "minimaxai/minimax-m3.1-flash",
+   "in": 0,
+   "k": "minimax-m3-1-flash",
+   "maxOut": 262144,
+   "name": "MiniMax-M3.1-Flash",
+   "out": 0,
+   "p": "nvidia",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-19"
+  },
+  {
    "id": "nvidia/active-speaker-detection",
    "in": 0,
    "k": "active-speaker-detection",
@@ -5992,7 +6031,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.23,
+   "cr": 0.22,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6001,7 +6040,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.225,
+   "in": 0.2247,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -7620,14 +7659,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11925,7 +11964,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.13,
+   "cr": 0.078,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -11933,11 +11972,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.7,
+   "in": 0.079,
    "k": "glm-5-3",
-   "maxOut": 262144,
+   "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 2.2,
+   "out": 1.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16039,5 +16078,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-23T03:51:02.484Z"
+ "updatedAt": "2026-10-23T07:00:48.575Z"
 }

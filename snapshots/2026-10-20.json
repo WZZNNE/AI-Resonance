@@ -7495,33 +7495,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xanexq/deepseek_even_opensourced_their_revenue_per_gpu/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://preview.redd.it/sad17rtwalwh1.png?width=465&format=png&auto=webp&s=5dd32444f94db8f99efbb6be8c0d346201289116 link: DeepSeek V4.1 Flash 大规模推理部署实践 - 知乎",
-    "topComments": [
-     {
-      "text": "And that's with their crazy low prices. Imagine how much American labs are making. Those CAPEX investments ROI will be insane."
-     },
-     {
-      "text": "Imagine how much American labs are making. I can guarantee you that the American Labs are much more costly to run than Deepseek. Some of it is through no fault of the American Labs themselves though, electricity and miscellaneous operating costs are just more expensive in the United States when compared to China. The upside is that Deepseek open-sourcing DeepInfra allows their competitors to get closer to the same operating costs of Deepseek though. So perhaps this means less heavily quantized…"
-     },
-     {
-      "text": "I love how efficient DeepSeek is."
-     },
-     {
-      "text": "That's some nice revenue"
-     },
-     {
-      "text": "The Chinese are on a crusade to crash the US economy. They are open sourcing the scaled inference engine which means anyone can build this. Good stuff"
-     },
-     {
-      "text": "Yeah, it seems pretty clear that this is a kind of economical warfare. With the advent of AI it became the US declared goal to make this technology the new basis of their economy. China then started to make that an absolute impossibility, by massively outcompeting the US on efficiency/cost. And sharing its developments with all the world for free. Not good for the US. Good for the rest of the world though."
-     },
-     {
-      "text": "Literally deepseek is offering such great prices, I wonder how much of that is related to energy prices and how much is related to efficiency."
-     },
-     {
-      "text": "It's a revenue of 38 USD per GPU per hour. Even if they rent then at retail from countries with expensive electricity, it'd cost 14 USD max. That's ~2.5 USD per dollar spent. With their scale and small team, staff salaries are practically negligible. That's an amazing engineering company. Hope they never get enshitified."
-     }
-    ]
+    "text": "https://preview.redd.it/sad17rtwalwh1.png?width=465&format=png&auto=webp&s=5dd32444f94db8f99efbb6be8c0d346201289116 link: DeepSeek V4.1 Flash 大规模推理部署实践 - 知乎"
    },
    "sources": [
     "reddit"
@@ -7573,33 +7547,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xanm55/deepseek_released_deepinfer_open_source/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "This is crazy good for studying to improve existing custom engines by community like gufo, halogen, strixite, Strata... by learning their secret sauces.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Supported hardware: NVIDIA SM100 GPUs Huawei Ascend 950 NPUs"
-     },
-     {
-      "text": "# Use `ascend` instead for the Ascend platform # Keep it exported in the environment where you run DeepInfer export DEEPINFER_ACCELERATOR=nvidia ./build.sh Nvidia in shambles. Can't wait to see what the future brings."
-     },
-     {
-      "text": "Fingers crossed for cheaper GPUs, rams, and other PC parts. Best of luck to whoever is manufacturing competitions of Nvidia."
-     },
-     {
-      "text": "This release included two repos: https://github.com/deepseek-ai/DeepInfer: High-performance, large-scale inference framework for DeepSeek models. https://github.com/deepseek-ai/deepseek-recipe: Protocol conversion and model output parsing libraries (written in Rust with Python bindings) to connect an inference backend to various API formats (such as Chat Completions, Messages, and Responses)."
-     },
-     {
-      "text": "I notice that their post said they make 38$ per hour per GPU. Can we infer the revenue of OAI or Ant from this? https://preview.redd.it/6uyslxb0llwh1.png?width=622&format=png&auto=webp&s=94a3dfa866dca0493fb181cf7fc52f74e002b5b7 orginal post: https://zhuanlan.zhihu.com/p/2095560295930508953"
-     },
-     {
-      "text": "How would that number help us with OpenAI/Anthropic numbers whatsoever? All the numbers that would play into this are unknown and likely different: Model sizes and architectures Deployment architecture Distribution of GPU types Hardware utilization Energy cost (Overhead cost if those are counted in the above article) ... That's a bit like trying to infer McDonald's revenue based on what a Japenese sushi restaurant makes per table."
-     },
-     {
-      "text": "Once again Deepseek shows how good high-frequency traders are at optimizing performance... On Ascend NPUs nonetheless!!"
-     }
-    ]
+    "text": "This is crazy good for studying to improve existing custom engines by community like gufo, halogen, strixite, Strata... by learning their secret sauces."
    },
    "sources": [
     "reddit"
@@ -7694,24 +7642,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xao1wy/best_way_to_accurately_annotate_500_images_for/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hey everyone! I'm working on an object-detection project and fine-tuning Meta's DETR model on a custom dataset of around 500 images. The main challenge I'm facing right now is annotation. I need to label multiple object classes with bounding boxes, and manually annotating every image is becoming a time-consuming process. I want to speed things up without sacrificing accuracy, since poor annotations could affect the model's performance. I've been looking into tools and models such as CVAT, Roboflow, Grounding DINO, and OWLv2 for AI-assisted annotation. My current idea is to use a pretrained…",
-    "topComments": [
-     {
-      "text": "You can ask Claude to generate an annotations UI for this and ask it to sample the dataset and try various segmentation models to choose the best one or hybrid for your task. You have multiple needs for the UI: quick review, slight tweaks, approve. Depends on what you are annotating. Depending on size of images and objects, put multiple on screen at once to speed it up. You want to have gold data for fine-tuning and a permanently hidden hold out for evaluation. GL"
-     },
-     {
-      "text": "ok thanks for suggestion"
-     },
-     {
-      "text": "Try using SAM3 to click generate the segments."
-     },
-     {
-      "text": "Ok thanks for suggestion"
-     },
-     {
-      "text": "A year ago I would say mechanical turk if you can't wrangle research assistants. How long is an individual image taking to annotate?"
-     }
-    ]
+    "text": "Hey everyone! I'm working on an object-detection project and fine-tuning Meta's DETR model on a custom dataset of around 500 images. The main challenge I'm facing right now is annotation. I need to label multiple object classes with bounding boxes, and manually annotating every image is becoming a time-consuming process. I want to speed things up without sacrificing accuracy, since poor annotations could affect the model's performance. I've been looking into tools and models such as CVAT, Roboflow, Grounding DINO, and OWLv2 for AI-assisted annotation. My current idea is to use a pretrained…"
    },
    "sources": [
     "reddit"
@@ -7952,33 +7883,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xapayu/right_now_millions_of_metas_ais_are_living/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Source: https://ai.meta.com/research/publications/muse-glimmer-30b-an-on-device-agentic-model/",
-    "topComments": [
-     {
-      "text": "All this to create quality synthetic data huh..."
-     },
-     {
-      "text": "this is basically westworld but with less budget and more spreadsheets"
-     },
-     {
-      "text": "And way less sexy robot sex"
-     },
-     {
-      "text": "gulp am I a simul"
-     },
-     {
-      "text": "DO NOT WORRY, SIMNAME \"geeky-gymnast\". YOU ARE NOT A \"SIMUL\". RETURN TO YOUR TASKS."
-     },
-     {
-      "text": "Ah yes, human horrors beyond my imagination."
-     },
-     {
-      "text": "It has been known for a few years at least that Zuck wants to recreate real people as AIs by learning absolutely everything about them and simulating them. He's been doing that with his own employees - trying to recreate each worker. And of course all the Facebook people, he wants to own \"dead\" people so they can continue to \"live\" on Facebook as perfect copies of the real thing. And he even hinted that he wants to replicate himself. That's his idea of immortality"
-     },
-     {
-      "text": "\"When the AIs figure it out, Meta deletes it.\" so, what's the point of all this?"
-     }
-    ]
+    "text": "Source: https://ai.meta.com/research/publications/muse-glimmer-30b-an-on-device-agentic-model/"
    },
    "sources": [
     "reddit"
@@ -8171,33 +8076,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xaqlya/google_deepmind_says_four_ai_agents_beat/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Why are making bots play videogames,"
-     },
-     {
-      "text": "Videogames are a good objective benchmark that somebody else already made."
-     },
-     {
-      "text": "Bots should have fun too"
-     },
-     {
-      "text": "The number that actually matters in this story is $520. Writing 2,783 programs and dying 605 times to beat a game on Easy is a neat demo, but it is also a reminder that these agents still solve hard tasks by brute force: infinite retries, infinite budget, and a world where dying has no cost. The real world gives you none of those. The benchmark question is not whether an agent can eventually solve a task. It is how much compute and how many attempts it took to get there. $520 in tokens to beat…"
-     },
-     {
-      "text": "Solving a problem is the first step, optimizing and making it cheaper comes naturally over time. It cost IBM over $2m to develop Deep Blue (the first chess agent that beat a world champion). Now you can run a 3600+ elo agent on your cell phone."
-     },
-     {
-      "text": "Yeah I mean to me, 500 bucks for agents pulling off all that work is pretty incredible imho. When you consider just a decade ago Google probably spent upwards of a billion dollars just to get to alphago. I wonder how much it would cost today to do the same amount of training for alphago. Just the fact someone could probably do a comparable effort at home now is mind blowing."
-     },
-     {
-      "text": "I don't know much about the game but I didn't know you could beat it. I thought it was a sandbox for building."
-     },
-     {
-      "text": "Beating ender dragon is a very well known speedrunning thing on Minecraft"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8388,33 +8267,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xary5k/deepseek_is_opensourcing_everything_it_should_the/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Do you agree? One company is actually open-sourcing its knowledge to help the entire AI industry advance, while the other two close everything off under the guise of \"protecting people.\" What a joke.",
-    "topComments": [
-     {
-      "text": "Open weights genuinely help the whole community. More ppl can experiment, learn, and build on existing work instead of starting from scratch."
-     },
-     {
-      "text": "They open sourced their inference engine too"
-     },
-     {
-      "text": "Or rather, they open-sourced the money printing machine, including cost and profit calculations."
-     },
-     {
-      "text": "haha, don't forget Elon blame openai forget its original vision however he didn't opensource Grok either"
-     },
-     {
-      "text": "Elon is just another hypocrite."
-     },
-     {
-      "text": "deepseek's open weights are great, but I've seen more real-world impact from local llm communities using q4_k_m quantized models. the real progress isn't just in open weights, it's in what people are actually building with them on consumer hardware."
-     },
-     {
-      "text": "U are just blind or not well informed.... many companies now deploy deepseek and build real revenue that pays salaries."
-     },
-     {
-      "text": "the good guys are never named “the good guys”"
-     }
-    ]
+    "text": "Do you agree? One company is actually open-sourcing its knowledge to help the entire AI industry advance, while the other two close everything off under the guise of \"protecting people.\" What a joke."
    },
    "sources": [
     "reddit"
@@ -8461,33 +8314,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xas53n/gemini_is_the_funniest_model/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "well deserved 🙌 https://preview.redd.it/kk09js3kkmwh1.png?width=746&format=png&auto=webp&s=9aadf78a009f01f7990186c9e97f8e287683d376"
-     },
-     {
-      "text": "aaaand monthly limit is gone!"
-     },
-     {
-      "text": "it refused to explain to avoid follow up questions because ofc the limit was GONE!"
-     },
-     {
-      "text": "I consider this a win. Stop downvoting. also my lonely ass will love this info!"
-     },
-     {
-      "text": "https://giphy.com/gifs/fwhKMTnyILOxPZEc7k"
-     },
-     {
-      "text": "I asked ChatGPT, Claude, Gemini, and Deepseek \"What does Marsellus Wallace look like\" and they all gave me straightforward descriptions, but only Gemini said, \"he famously does NOT look like a bitch.\" I also asked Gemini if cosmic inflation and dark energy exist because we forgot to throw Kurt Angle into the mix, and it said \"the numbers don't lie, and they spell disaster for this particular theory.\" The sad part is that since models change all the time, your codebot/Jarvis/AI waifu can get a…"
-     },
-     {
-      "text": "I'm in college and had to do some dipshit discussion post thing where you reply to your classmates. I really didn't want to do it so I threw some of the posts into astra and it gave me two responses: one was a legit serious response that was thoughtful and well written....... And one that absolutely dragged the student over cliches they used and minor spelling/grammatical errors https://preview.redd.it/ne1wkyjlrmwh1.jpeg?width=1080&format=pjpg&auto=webp&s=02b83814966dc9178a755047bb55884dfa596ec6"
-     },
-     {
-      "text": "the only AI ranking I care about! but grok in its mega hitler era was top 1 lets be real"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8638,8 +8465,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xattho/we_tested_jev_as_a_reranker_against_voyage_cohere/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "We run millions of retrieval queries a month at kapa.ai (YC S23) - all of them go through a reranker in some way, so picking the right one matters a lot to us. Erik Kaunismäki from turbopuffer recently showed TypeSafe AI's Jev beating dedicated rerankers on their benchmark. Not everyone has found the same: DevX Labs found it the fastest and cheapest, but only twelfth on accuracy. So we wanted to see what held in our domain, which is complex real-world company knowledge. TL;DR: Jev is a good reranker, and it beat every Cohere and Qwen model we tried. The new Jev 1.14 came within 0.003 of the…",
-    "topComments": []
+    "text": "We run millions of retrieval queries a month at kapa.ai (YC S23) - all of them go through a reranker in some way, so picking the right one matters a lot to us. Erik Kaunismäki from turbopuffer recently showed TypeSafe AI's Jev beating dedicated rerankers on their benchmark. Not everyone has found the same: DevX Labs found it the fastest and cheapest, but only twelfth on accuracy. So we wanted to see what held in our domain, which is complex real-world company knowledge. TL;DR: Jev is a good reranker, and it beat every Cohere and Qwen model we tried. The new Jev 1.14 came within 0.003 of the…"
    },
    "sources": [
     "reddit"
@@ -8689,8 +8515,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xau11z/we_used_claude_to_invent_scorpion_antivenom/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "To separate hype from reality, we spent 3 months working firsthand with Anthropic's internal research model to see if it could create an experimental scorpion antivenom. Introducing Citrini Therapeutics.",
-    "topComments": []
+    "text": "To separate hype from reality, we spent 3 months working firsthand with Anthropic's internal research model to see if it could create an experimental scorpion antivenom. Introducing Citrini Therapeutics."
    },
    "sources": [
     "reddit"
@@ -8994,33 +8819,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xawud5/qwen38flashnext_vs_opus_55_sixway_benchmark_of_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "A few of you pointed out in my last post that comparing Flash-Next and Opus with different harnesses and effort levels wasn't fair. So here is a more controlled comparison. Same task for every run: a real feature from the LlamaStash roadmap (save llama-server's KV cache before an unload and restore it when the model comes back). Six combinations, each run twice, so 12 PRs. Flash-Next ran locally on my Strix Halo laptop (Flow Z13) via Halogen. Opus 5.5, Flash-Next, and Kimi K3 scored every PR on seven review questions plus CI. Combination Score (of 8) Time API cost Tokens (in / cached / out)…",
-    "topComments": [
-     {
-      "text": "nice benchmark opus still ahead but that price gap is wild 0.39 vs 17.78 for basically the same core feature working"
-     },
-     {
-      "text": "could you maybe test qwen3.8-2.4t-a95b (or Qwen3.8 Max) as well? that would give us better idea what to expect from Qwen 4's bigger models."
-     },
-     {
-      "text": "That requires subscribing to some service to get that model (I dont think it runs locally) so I don't think I'm interested in spending money testing that"
-     },
-     {
-      "text": "how do you calculate the api costs for halogen? is that electricity cost? The strix is 120W at full load, so $0.67 for an hour is like $5.60 per kWh. Curious where you're living b/c those electricity prices are 10x the price of peak hours in California."
-     },
-     {
-      "text": "I calculated using the in/cached out tokens and published API prices its not a cost I incurred, just what you might have paid if using a hosted version"
-     },
-     {
-      "text": "the xhigh effort finding for flash-next is worth sitting with. spending 2.7x more compute for roughly the same output means the model is hitting a ceiling that more thinking doesn’t clear, not a calibration problem you can tune away. opus benefits from it because it has more to work with at higher effort."
-     },
-     {
-      "text": "the edge cases, tests and docs framing is exactly where this kind of gap shows up in real codebases too. the core feature working is table stakes, what you’re actually paying the premium for with opus is the stuff that makes the PR reviewable and the code maintainable six months later."
-     },
-     {
-      "text": "The differences werent that huge to compromise reviewability or maintainability. It was all minor misses. My grading was a bit strict if anything."
-     }
-    ]
+    "text": "A few of you pointed out in my last post that comparing Flash-Next and Opus with different harnesses and effort levels wasn't fair. So here is a more controlled comparison. Same task for every run: a real feature from the LlamaStash roadmap (save llama-server's KV cache before an unload and restore it when the model comes back). Six combinations, each run twice, so 12 PRs. Flash-Next ran locally on my Strix Halo laptop (Flow Z13) via Halogen. Opus 5.5, Flash-Next, and Kimi K3 scored every PR on seven review questions plus CI. Combination Score (of 8) Time API cost Tokens (in / cached / out)…"
    },
    "sources": [
     "reddit"
@@ -9463,30 +9262,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xb4uak/you_thought_that_anthropic_was_the_only_frontier/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "$72 Billion of the $80.7B results from accounting changes tied to changes in the value of convertible notes and other instruments."
-     },
-     {
-      "text": "They don’t care. But that’s right. That’s why the leaks have been focusing on operating profits, which is turning out to be true already."
-     },
-     {
-      "text": "16B Revenue on 9B compute when the majority of compute is going to training is pretty good margin."
-     },
-     {
-      "text": "What does \"compute\" include here? Seems like that compute doesn't account for the cost to rent the hardware that does the compute"
-     },
-     {
-      "text": "Pretty sure no one here believed Anthropic was currently profitable. At least not anyone slightly informed"
-     },
-     {
-      "text": "mark to market \"losses\" are not real losses look up GAAP accounting rules for MTM gains/losses aka have opus 5.5 explain it to you"
-     },
-     {
-      "text": "200 billion over 5 years: https://archive.is/VuPhm Thats 50 billion a year, thats it more than doubling the size of its business. Im sorry but everyone who can is going local, and if they hike the prices a lot of Claude sessions are gonna start with \"how do I set up open router\""
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9535,33 +9311,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xb59yw/fibo_2_edit_is_what_klein_3_shouldve_been/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Very good so far. Must be the first time I actually believe the score. It's far from perfect, but it's extremely uncensored out of the box and fast. I haven't noticed any color drift or quality loss either. The Flux 2 VAE really helps this model. Really excited for proper ComfyUI support. And yes, it's uncensored out of the box. To clarify, I am not saying it's the best edit model. My prompts are pretty simple, it handles them well, doesn't break anatomy, and isn't censored. You'll have to test it yourself for more complex tasks. Links: Model: https://huggingface.co/Comfy-Org/Fibo-2.0…",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/fhxfphr92pwh1.png?width=2195&format=png&auto=webp&s=917b92d67b0d8bb4b2da05b1e4398c4f37ce4414"
-     },
-     {
-      "text": "nigel farage"
-     },
-     {
-      "text": "https://i.redd.it/xl5inmbm5pwh1.gif"
-     },
-     {
-      "text": "Best edit model so far and also uncensored. Strange how every uncensored model turns out to be best in class at the time huh BFL?"
-     },
-     {
-      "text": "It's almost like censoring models lobotomizes them."
-     },
-     {
-      "text": "https://preview.redd.it/syoutwgi5pwh1.png?width=498&format=png&auto=webp&s=23e3ab9414c738d2e19f8942f11ed0b982a68bc9"
-     },
-     {
-      "text": "Oh my god: Ideogram 4, Krea 2, Anima, Qwen 2.1, Moss Image, Ming Image, Minimax H3, LTX; all in 2026. Hunyuan Image 3 quantized, now being able to run in Comfy with consumer hardware. The Open weights community is getting spoiled!"
-     },
-     {
-      "text": "Fibo 2 is uncensored you say....?"
-     }
-    ]
+    "text": "Very good so far. Must be the first time I actually believe the score. It's far from perfect, but it's extremely uncensored out of the box and fast. I haven't noticed any color drift or quality loss either. The Flux 2 VAE really helps this model. Really excited for proper ComfyUI support. And yes, it's uncensored out of the box. To clarify, I am not saying it's the best edit model. My prompts are pretty simple, it handles them well, doesn't break anatomy, and isn't censored. You'll have to test it yourself for more complex tasks. Links: Model: https://huggingface.co/Comfy-Org/Fibo-2.0…"
    },
    "sources": [
     "reddit"
@@ -9709,33 +9459,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xb7a1x/new_york_city_wants_to_fine_companies_that_trap/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Seems like a good idea. Didn’t know it was called a ‘doom loop’ but hate calling customer services and being stuck with an AI agent.",
-    "topComments": [
-     {
-      "text": "The old AI IVR's were HELL. The new ones actually know what they are doing. Keep in mind that the longer you're on a call, the more the people you're calling have to pay for that. They want you to call, get your issue fixed and get off the phone. It's in their best interest NOT to trap you in a doom loop. Contact centers (especially those with toll free lines) are ridiculously expensive to keep people on hold or in a queue. Using proper AI agents to handle people's issues is like money in the…"
-     },
-     {
-      "text": "Yeah but my time costs more than their time. So its still crap, and doesn't make me feel better."
-     },
-     {
-      "text": "They can throw you to very low inference low token cost models if they want to"
-     },
-     {
-      "text": "Unless they've found some way to monetize keeping them on hold that I'm not aware of. \"We have introduced advertisements into our hold lines\" I've done my part. I'll see my way out."
-     },
-     {
-      "text": "They’re all doom loops. This is the MAIN ISSUE I have with the AI takeover being foisted upon us. AI is turning everything into Uber Tech Support, which is notorious for being unhelpful and even hindering ability to use the app. Almost never get a human on the phone"
-     },
-     {
-      "text": "Hell yes, do it for other customer service rings of hell too. Half my job now is just waiting on hold for bots to tell me they can’t help me."
-     },
-     {
-      "text": "A doom loop is just a phone tree with better grammar."
-     },
-     {
-      "text": "Honestly, thank goodness Nothing breaks my soul quite like explaining a billing issue to a chat interface five times, just for it to tell me \"I don't understand\" and completely restart the conversation tree. It's an absolute nightmare"
-     }
-    ]
+    "text": "Seems like a good idea. Didn’t know it was called a ‘doom loop’ but hate calling customer services and being stuck with an AI agent."
    },
    "sources": [
     "reddit"
@@ -9781,12 +9505,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xb8kor/mimos_toolcall_repetition_fix_why_specialist_rl/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Reading MiMo-V2.6's write-up on tool-call repetition: https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition Their fix is to collect repetition-prone contexts, train a specialist with single-turn RL + KL (positive reward only for no repetition AND no erroneous tool use), then integrate it into the main model through teacher-prefix MOPD. They report that the specialist already reaches zero replay repetition on their training and held-out sets after 12 steps (~7,000 examples). What motivates the extra distillation stage? Why not continue RL directly on the mixed-RL checkpoint using those…",
-    "topComments": [
-     {
-      "text": "The main concern was indeed regression if they just did RL to fix the issue. If they also included other data in the RL to prevent regression, it would have cost a lot of compute/$. I remember discussing this with Claude and between the paper and the blog post I think Xiaomi provides enough information to answer your question. I do not have personal experience with this sort of fix though."
-     }
-    ]
+    "text": "Reading MiMo-V2.6's write-up on tool-call repetition: https://mimo.xiaomi.com/blog/mimo-v2-6-tool-call-repetition Their fix is to collect repetition-prone contexts, train a specialist with single-turn RL + KL (positive reward only for no repetition AND no erroneous tool use), then integrate it into the main model through teacher-prefix MOPD. They report that the specialist already reaches zero replay repetition on their training and held-out sets after 12 steps (~7,000 examples). What motivates the extra distillation stage? Why not continue RL directly on the mixed-RL checkpoint using those…"
    },
    "sources": [
     "reddit"
@@ -9886,33 +9605,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xb9z8e/exclusive_bytedance_alibaba_tencent_place_over_35/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "China just ordered 3mil RTX 5500 Pro for $11.4k a pop. Probably for llm inference and AI video gen. I suppose this card is now out of reach for local llm.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "We are fast reaching the point where even the 16,000$ RTX 6000 pro no longer makes sense for Nvidia to produce (some say that we are already there) My hopium (read cope) is that when Nvidia releases the 8000 series, the 6000 series becomes cheap because all the datacenters want the new stuff."
-     },
-     {
-      "text": "H100s are 4 years old and still haven't showed up in the used market. Datacenters don't want the \"new stuff\", they want the most bang for their buck."
-     },
-     {
-      "text": "They want whatever the hell they can buy at this point"
-     },
-     {
-      "text": "Yup. The equation only flips when the single site power generation constraints become tighter than the GPU availability constraints, at which point they'll start selling off A100's to make room for Blackwell+"
-     },
-     {
-      "text": "One source said Nvidia told partners they might receive only 5% to 10% of the quantities requested. Another said the company had indicated it could produce no more than 3 million RTX PRO 5500 ⁠cards globally in 2027. Total orders from customers in China have exceeded 6 million, two of the sources said. So yes, but actually no"
-     },
-     {
-      "text": "$11,400 per. Not $11.40 lol"
-     },
-     {
-      "text": "For 11 dollars? For that price I could almost buy one."
-     }
-    ]
+    "text": "China just ordered 3mil RTX 5500 Pro for $11.4k a pop. Probably for llm inference and AI video gen. I suppose this card is now out of reach for local llm."
    },
    "sources": [
     "reddit"
@@ -12768,9 +12461,8 @@
   }
  ],
  "date": "2026-10-20",
- "fetchedAt": "2026-10-23T03:51:02.484Z",
+ "fetchedAt": "2026-10-23T07:00:48.575Z",
  "runs": [
-  "2026-10-21T07:01:17.056Z",
   "2026-10-21T07:50:57.366Z",
   "2026-10-21T08:52:11.974Z",
   "2026-10-21T09:49:29.413Z",
@@ -12789,7 +12481,8 @@
   "2026-10-22T18:51:34.891Z",
   "2026-10-22T21:45:15.438Z",
   "2026-10-23T01:11:58.377Z",
-  "2026-10-23T03:51:02.484Z"
+  "2026-10-23T03:51:02.484Z",
+  "2026-10-23T07:00:48.575Z"
  ],
  "schema": 2,
  "sources": [
@@ -12869,7 +12562,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-23T03:51:02.484Z",
+   "fetchedAt": "2026-10-23T07:00:48.575Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -12886,7 +12579,7 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-23T03:51:02.484Z",
+   "fetchedAt": "2026-10-23T07:00:48.575Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -12931,7 +12624,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-23T03:51:02.484Z",
+   "fetchedAt": "2026-10-23T07:00:48.575Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -12949,7 +12642,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-23T03:51:02.484Z",
+   "fetchedAt": "2026-10-23T07:00:48.575Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
