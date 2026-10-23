@@ -4364,6 +4364,46 @@
    "upd": "2026-07-16"
   },
   {
+   "cr": 0.2,
+   "ctx": 1048576,
+   "cw": 2,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "kimi-k3.1-pro",
+   "in": 2,
+   "k": "kimi-k3-1-pro",
+   "maxOut": 1048576,
+   "name": "Kimi K3.1 Pro",
+   "out": 10,
+   "p": "moonshotai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1048576,
+   "cw": 4,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "kimi-k3.1-pro-highspeed",
+   "in": 4,
+   "k": "kimi-k3-1-pro-highspeed",
+   "maxOut": 1048576,
+   "name": "Kimi K3.1 Pro Highspeed",
+   "out": 20,
+   "p": "moonshotai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
+  },
+  {
    "cr": 0.1643,
    "ctx": 262144,
    "id": "kimi-k2.6",
@@ -4427,6 +4467,46 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-16"
+  },
+  {
+   "cr": 0.1944,
+   "ctx": 1048576,
+   "cw": 1.9437,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "kimi-k3.1-pro",
+   "in": 1.9437,
+   "k": "kimi-k3-1-pro",
+   "maxOut": 1048576,
+   "name": "Kimi K3.1 Pro",
+   "out": 10.1671,
+   "p": "moonshotai-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
+  },
+  {
+   "cr": 0.1944,
+   "ctx": 1048576,
+   "cw": 3.8874,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "kimi-k3.1-pro-highspeed",
+   "in": 3.8874,
+   "k": "kimi-k3-1-pro-highspeed",
+   "maxOut": 1048576,
+   "name": "Kimi K3.1 Pro Highspeed",
+   "out": 20.3342,
+   "p": "moonshotai-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
   },
   {
    "ctx": 1000000,
@@ -6276,7 +6356,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0052,
+   "cr": 0.0285,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6284,11 +6364,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0052,
+   "in": 0.0285,
    "k": "glm-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.1985,
+   "out": 0.0923,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7124,7 +7204,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.06786,
+   "cr": 0.061103,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7132,11 +7212,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.81432,
+   "in": 0.733236,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.62864,
+   "out": 1.466472,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7659,14 +7739,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0375,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0675,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.225,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16098,5 +16178,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-23T18:50:31.639Z"
+ "updatedAt": "2026-10-23T21:44:43.938Z"
 }
