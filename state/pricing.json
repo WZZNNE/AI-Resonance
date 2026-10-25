@@ -6134,7 +6134,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.027,
+   "cr": 0.028,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6147,7 +6147,7 @@
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.1763,
+   "out": 0.1694,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6359,7 +6359,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.03,
+   "cr": 0.0191,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6367,11 +6367,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0501,
+   "in": 0.0191,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.0702,
+   "out": 0.1352,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7167,7 +7167,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.001414,
+   "cr": 0.028,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7176,11 +7176,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.04444,
+   "in": 0.0422,
    "k": "deepseek-v4-flash-0731",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 0.13332,
+   "out": 0.1694,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8004,6 +8004,21 @@
   },
   {
    "alwaysOn": true,
+   "cr": 0.04,
+   "ctx": 128000,
+   "id": "liquid/lfm-2.5-2.6b",
+   "in": 0.35,
+   "k": "lfm-2-5-2-6b",
+   "maxOut": 8192,
+   "name": "LFM2.5-2.6B",
+   "out": 0.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-11"
+  },
+  {
+   "alwaysOn": true,
    "ctx": 65536,
    "id": "liquid/lfm-2.5-2.6b:free",
    "in": 0,
@@ -8103,11 +8118,11 @@
   {
    "ctx": 131072,
    "id": "meta-llama/llama-3.2-3b-instruct",
-   "in": 0.0509,
+   "in": 0.05,
    "k": "llama-3-2-3b-instruct",
-   "maxOut": 72000,
+   "maxOut": 117964,
    "name": "Llama 3.2 3B Instruct",
-   "out": 0.335,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -11395,7 +11410,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11403,11 +11418,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11433,7 +11448,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11441,11 +11456,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11933,7 +11948,7 @@
    "upd": "2025-09-30"
   },
   {
-   "cr": 0.055,
+   "cr": 0.05,
    "ctx": 131072,
    "id": "z-ai/glm-4.6v",
    "in": 0.3,
@@ -12041,7 +12056,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.0897,
+   "cr": 0.078,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -12049,11 +12064,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.0908,
+   "in": 0.079,
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 1.61,
+   "out": 1.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16155,5 +16170,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-24T21:43:55.977Z"
+ "updatedAt": "2026-10-25T01:13:45.845Z"
 }
