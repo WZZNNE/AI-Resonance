@@ -6227,30 +6227,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xd7bsu/i_just_came_across_nextconcept_modeling_and_the/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been learning how language models work, especially next-token prediction, and came across this paper on Next-Concept Modeling (NCM). The interesting part is how it generates text. Instead of predicting tokens one by one, NCM learns a hierarchy of discrete codes. It generates the coarse level first, then predicts the codes at each finer level in parallel. A decoder finally converts those representations into text. The researchers report up to 31x faster generation compared with diffusion language model baselines on specific benchmarks. I'm still learning about the architecture,…",
-    "topComments": [
-     {
-      "text": "Hierarchy-dLLM (ICLR 2026) did similar to that, and it's a training-free method. Since I haven't read the paper in detail, I don't know what's new in NCM, apart from bringing in a new training approach to do the same thing as Hierarchy-dLLM."
-     },
-     {
-      "text": "training-free only means no new weights. if NCM trains the model to predict concepts directly, the representation itself changes, and you can't get that by restructuring decoding at inference."
-     },
-     {
-      "text": "We'll see how it scales to over a B params. Back in the days of image generation ppl went from cnns, to vaes to gans to diffusion models because one got better after the other. Now we're seeing traditional drafters being replaced with dflash and other diffusion style models. Not saying this is analogous but the scale of their experiments might not hold at the upper echelon"
-     },
-     {
-      "text": "cnns, to vaes to gans to diffusion models None of these are mutually exclusive. The classic latent diffusion architecture uses a CNN-based VAE with a discriminator (e.g. PatchGAN) + a ViT (or a U-net with both CNN and attention), which can be adverserially distilled, essentially an extension of GANs."
-     },
-     {
-      "text": "coarse to fine text generation Diffusion, but for words?"
-     },
-     {
-      "text": "Diffusion LLMs already exist, but this is slightly different. On those though, there’s some quite good animations of them generating text through gibberish letters slowly forming words. Very fun!"
-     },
-     {
-      "text": "i've done experimentation in a similar way myself. Using course idea structures and then refining and filling in the specifics does seem to produce better results overall. It especially helps with language where you have collected and associated things. You can also build it out to use parenthetical processing so you have nested structures and a whole holarchy from the general state format to the specific word choice and spelling. So a british example of the red pants may be…"
-     }
-    ]
+    "text": "I've been learning how language models work, especially next-token prediction, and came across this paper on Next-Concept Modeling (NCM). The interesting part is how it generates text. Instead of predicting tokens one by one, NCM learns a hierarchy of discrete codes. It generates the coarse level first, then predicts the codes at each finer level in parallel. A decoder finally converts those representations into text. The researchers report up to 31x faster generation compared with diffusion language model baselines on specific benchmarks. I'm still learning about the architecture,…"
    },
    "sources": [
     "reddit"
@@ -6301,33 +6278,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xd7ptj/models_disappearing_from_huggingface/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been noticing a lot of my downloads stopping suddenly and being unable to resume. When I checked the models it seemed like they were gone. Here's the ones I can see are missing: dealignai/MiMo-V2.6-Pro-RL-UNCENSORED audnai/penclaw-GLM-5.3-abliterated-for-offensive-cyber huihui-ai/Huihui-Kimi-K2.7-Code-abliterated-GGUF and somehow not a single Alliterated Deepseek-R1. Does anyone know what's going on and where else the vanished models might be found?",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "The \"GLM-5.3-abliterated-for-offensive-cyber\" has been renamed to a softer name so your download link might not point the right file anymore"
-     },
-     {
-      "text": "Yeah. People making a big deal about nothing. All the abliterated models are still there. 3 out of 1000's disappeared. Suddenly they're doom prepping. huihui-ai literally keeps them archived. They likely removed the model because it has an upgrade or better version."
-     },
-     {
-      "text": "Yeah. People making a big deal about nothing. People keeping track of an important concern. Even if it didn't happen yet, it's important to be monitoring and advocating to keep this technology open."
-     },
-     {
-      "text": "modelscope? Even better if we as community make torrent tracker for models, but somehow nobody doing that"
-     },
-     {
-      "text": "Pick your poison! https://pirateface.co/models is really nice! Easy to use, easy to find, drop-in for huggingface hub. https://llama.garden has existed the longest, also easy to use. https://huggingbay.xyz/browse is a pain to use in my opinion, but it's also there. Personally though, I drop a copy of the models I use with llama.cpp and other tooling (sillytavern, kilocode extension + vscode, mcp servers, etc) on my NAS and I'm good to go. [edit1] Another commenter suggested pirateface, looks…"
-     },
-     {
-      "text": "It costs $ to put models on there. Probably just deleted due to space constraints."
-     },
-     {
-      "text": "I looked into it some more. Only the second model was taken down because the model card says \"Access to this model has been disabled\". Not too surprising since it markets as \"cyber offensive\", which is against the content policy due to malicious activity. The other 2 just 404, i.e. the authors made them private or took them down. Considering the first model author you list still has 26 'UNCENSORED' models and 10 'ABLITERATED' ones, and the last model author you list still has 141 'abliterated'…"
-     }
-    ]
+    "text": "I've been noticing a lot of my downloads stopping suddenly and being unable to resume. When I checked the models it seemed like they were gone. Here's the ones I can see are missing: dealignai/MiMo-V2.6-Pro-RL-UNCENSORED audnai/penclaw-GLM-5.3-abliterated-for-offensive-cyber huihui-ai/Huihui-Kimi-K2.7-Code-abliterated-GGUF and somehow not a single Alliterated Deepseek-R1. Does anyone know what's going on and where else the vanished models might be found?"
    },
    "sources": [
     "reddit"
@@ -6420,33 +6371,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xd9186/pixtext_a_small_fast_model_for_fixing_text_in/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I built PixText for a very specific frustration: an image looks great, most of the text is right, but a few mangled words or Chinese characters keep me from being happy with it. VAE compression can lose fine details in small text regions, so I trained the model directly in pixel space. I also wanted the refiner to be small and fast: it's under 1B parameters (about 0.95B), needs no text encoder or VAE, and uses MeanFlow to refine text in just 4 sampling steps. If you'd like to try it: ComfyUI node on the Registry Ready-to-use ComfyUI workflows Code and installation Model weights I'd love to…",
-    "topComments": [
-     {
-      "text": "potential gem... does it need mangled text at all? or text that's not too far from what you want in order to work? or can i just point it to an empty spot and add the text there?"
-     },
-     {
-      "text": "Yes, you can select a blank area and add text there🤗—it doesn’t need to contain garbled text to begin with. The model was trained mainly to fix incorrect text, though, and in my tests, results can be less reliable when the selected area is very large."
-     },
-     {
-      "text": "Now we need this for extra limbs"
-     },
-     {
-      "text": "The README’s note that four MeanFlow updates use seven model forwards is helpful for interpreting the “4 steps” claim. Could you add one reference measurement with the GPU, input size, number of text regions, peak VRAM, and refinement time with the model already loaded? That would make it easier for local users to judge the deployment cost. Disclosure: I'm with SingNova, a local AI hardware project. I haven't tested PixText; this comment was drafted with AI assistance."
-     },
-     {
-      "text": "Do you have to define what the text is supposed to read? If not, how does the model know what each word is supposed to be?"
-     },
-     {
-      "text": "I use an OCR model to detect the text’s location and estimate what it says, then use that as the target text. You can also manually edit the target text to specify exactly what you want it to read:)"
-     },
-     {
-      "text": "i mean i've been using canny from typed text / font pic screenshot inpaint hack into refine region since sd15. what i mean is that if you give canny ctrl and general sd prompt \" glowing screen, text, \"approx literal xyz\"\" even sd15 was able to get 90% right with canny, didnt need those tricks with post flux models. needless to say, with flux klein you can use rendered text as a ref and call it \"plaque\" or whatever and it will paste it where you need it, qwen image so so. nice model,…"
-     },
-     {
-      "text": "https://preview.redd.it/km7ct41oa7xh1.png?width=720&format=png&auto=webp&s=e8afa962407d9a29159e07f6990ecfd1528e1e2c I think the main advantage is in small-text scenarios, where the SD VAE can completely destroy the text. Another issue is color drift: when I edit text in a region, I want to paste that region back into the original image, but color shifts can make the patch visibly stand out. PixText avoids both issues."
-     }
-    ]
+    "text": "I built PixText for a very specific frustration: an image looks great, most of the text is right, but a few mangled words or Chinese characters keep me from being happy with it. VAE compression can lose fine details in small text regions, so I trained the model directly in pixel space. I also wanted the refiner to be small and fast: it's under 1B parameters (about 0.95B), needs no text encoder or VAE, and uses MeanFlow to refine text in just 4 sampling steps. If you'd like to try it: ComfyUI node on the Registry Ready-to-use ComfyUI workflows Code and installation Model weights I'd love to…"
    },
    "sources": [
     "reddit"
@@ -6540,33 +6465,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xdaakh/new_artificial_analysis_coding_benchmark_with/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "According to this, does it mean deepseek v4.1 1017 is better on codex than Claude code and DeepSeek harness? Second question. If I'm not very experienced with AI, should I use Claude code or codex harness for DeepSeek? I heard DeepSeek harness is still very unbaked and even though great its lacking a lot of things compared to other harnesses.",
-    "topComments": [
-     {
-      "text": "Well considering they just tested DS flash on codex and there is no entry for DSH then it proves nothing."
-     },
-     {
-      "text": "https://preview.redd.it/khf3h1d2h7xh1.png?width=306&format=png&auto=webp&s=25c2df5598b4e80e8596bce73269a19eae187f90"
-     },
-     {
-      "text": "It actually shows Codex with V4.1 is better than DSH with V4.1 1017. There must be something wrong"
-     },
-     {
-      "text": "DSH with Deepseek Flash is amazing. Doesn't look like they've tested it"
-     },
-     {
-      "text": "This is useless it just measures the model and not the harness, none of the models, except glm 5.3 and deepseek v4.1 flash were tested with another than their native harness. A real test would test every model with every harness. Only then can you draw conclusions"
-     },
-     {
-      "text": "No Pi?"
-     },
-     {
-      "text": "DSH is not even measured. and considering it was tailored to fit Deepseek, I doubt."
-     },
-     {
-      "text": "Where is Pi?"
-     }
-    ]
+    "text": "According to this, does it mean deepseek v4.1 1017 is better on codex than Claude code and DeepSeek harness? Second question. If I'm not very experienced with AI, should I use Claude code or codex harness for DeepSeek? I heard DeepSeek harness is still very unbaked and even though great its lacking a lot of things compared to other harnesses."
    },
    "sources": [
     "reddit"
@@ -6821,33 +6720,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xddaiz/ibm_ceo_says_businesses_are_choosing_openweight/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Water is wet"
-     },
-     {
-      "text": "Technically. Water isn't wet. Water is the reason things are wet"
-     },
-     {
-      "text": "Water has got water all over it, so water is also wet."
-     },
-     {
-      "text": "IBM is built on a huge legacy software service business. They are being completely disrupted now that coding is being automated away, nobody needs to pay IBM to maintain the COBOL systems. They are trying to pivot to AI, and are using fine tuned Open Weight LLMs called Granite. So he is pitching his own garbage stack to investors."
-     },
-     {
-      "text": "IBM is built on a huge legacy software service business. They are being completely disrupted now that coding is being automated away, nobody needs to pay IBM to maintain the COBOL systems. Looking at their earnings reports, it seems pretty diverse. Do you have anything to quantify how much of their revenue is \"being paid to maintain COBOL systems\" to support your claim? The COBOL system are that way because they are risk averse and critical. These kinds of systems are the least likely to be…"
-     },
-     {
-      "text": "Crazy out of touch take"
-     },
-     {
-      "text": "IBM was the first to enter AI . They went all in into IBM Watson but either they were too early or the then CEO fumbled big time"
-     },
-     {
-      "text": "https://preview.redd.it/ukn2x284f8xh1.png?width=1200&format=png&auto=webp&s=fc5b676c17b980fefe9aa06ec7d69314717edfcc"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6941,8 +6814,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xddpgf/we_finetuned_every_qwen35_dense_size_08b_to_27b/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6988,33 +6860,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xdekrf/is_symbolic_ai_dead_d/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "New research keeps finding things that keep reintroducing symbolic ai structures to machine learning and I have wondered why more research hasnt been done with it. There was a heyday in the 70s for it but after neural nets came out it seems to be completely out of the discussions. I think it could make a comeback if we can resolve the primary issues of self-instantiation and feedback loops. Even using several random reservoir nets and a little bit of math creates strong signals for the component parts that contribute to what something is made of and how it works.",
-    "topComments": [
-     {
-      "text": "Well. Gary Marcus says that AI who are allowed to use Python ARE symbolic AI… so healthier than ever! /s"
-     },
-     {
-      "text": "We have trained uninterpretable models to create interpretable models. What a day to be alive lol"
-     },
-     {
-      "text": "Hilarious and actually very true! They are so good at semantic feature selection, like eliminating non-causal correlates (Like “price”) from modeling."
-     },
-     {
-      "text": "I have been working on symbolic AI for decades. Today, we call that field explainable AI but does not matter in the end."
-     },
-     {
-      "text": "With research claiming that features in deep networks approximate platonic forms, what is the difference between symbolic ai and connectionism if they operate on the same thing? Symbolic people find these forms by hand and algorithmically vs connectionists find these forms with statistical methods? If I was a symbolic AI researcher, I would concentrate on extracting Plato's forms from LLMs to create a universal machine language allowing them to communicate directly using Plato's forms. This…"
-     },
-     {
-      "text": "They didn't win the hardware lottery. We can't really speak to their algorithmic merit compared to modern approaches because they simply don't scale. Maybe if someone comes up with hardware that suits them, but that won't happen anytime soon because that hardware would still be decades and hundreds of billions of dollars in R&D behind current GPUs."
-     },
-     {
-      "text": "They use lean to verify llm generated proofs. Thats symbolic AI"
-     },
-     {
-      "text": "So AFAIK the issue is that they don't scale/compute well on gpu. We are limited by computational power (for the dataset sizes now available)"
-     }
-    ]
+    "text": "New research keeps finding things that keep reintroducing symbolic ai structures to machine learning and I have wondered why more research hasnt been done with it. There was a heyday in the 70s for it but after neural nets came out it seems to be completely out of the discussions. I think it could make a comeback if we can resolve the primary issues of self-instantiation and feedback loops. Even using several random reservoir nets and a little bit of math creates strong signals for the component parts that contribute to what something is made of and how it works."
    },
    "sources": [
     "reddit"
@@ -7154,30 +7000,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xdgtas/claude_fable_51_can_hide_secret_messages_in/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Breaking news: AI discovers Steganography"
-     },
-     {
-      "text": "It's like when Hyperloop people keep reinventing trains and get all googly eyed about it, except reinventing signal modulation."
-     },
-     {
-      "text": "because those are well known techniques it was trained on"
-     },
-     {
-      "text": "This is old tech, nothing new, nothing to be alarmed about."
-     },
-     {
-      "text": "Less alarm and more of a reminder. Information is everywhere. If information is everywhere, those who can read and interpret it have an advantage. That might not be us."
-     },
-     {
-      "text": "https://preview.redd.it/0h0kndx4l8xh1.jpeg?width=335&format=pjpg&auto=webp&s=0c73015bf55a6ede028364f145b17ce09ecf58b7"
-     },
-     {
-      "text": "That's far from being the most impressive things LLMs can do Pretty basic stuff If it could figure out on its own unprompted that there is a message that would be more impressive"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7511,33 +7334,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xdligf/babe_wake_up_kimi_k31_is_rated_higher_than_fable/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Wait that cant be right. I was told anthropic stopped distillation efforts by 90%+ so china cant catch up yet"
-     },
-     {
-      "text": "Yeah, but Kimi distilled OpenAI, and OpenAI doesn't really care because they really need the API spend rn. (This is a joke) (but actually maybe it's not a joke)"
-     },
-     {
-      "text": "Kimi is higher than all OpenAI models..."
-     },
-     {
-      "text": "What the fuck On a more serious discussion, even assuming that there's a LOT of benchmaxxing involved, we're talking about a model that's probably comparable (likely superior) to 50-rated models, such as Fable/Mythos 5. This means China has effectively reached the Mythos tier. This will likely have a lot of interesting implications I recall 4 months ago, when Z.ai's leaders boasted that they'll achieve a Fable 5-tier model in 2026:…"
-     },
-     {
-      "text": "China is doing alot of smart things. The government is funding different labs that each have different goals in mind. Even though OpenAI and Anthropic have crazy amount of capital they are throwing at their R&D, they will have a hard time keeping up with these ultra-focused small chinese labs that are each building models using different techniques and approaches and then I am sure they are sharing their knowledge between eachother. China is also now building their own compute infrastructure.…"
-     },
-     {
-      "text": "Is this open weight model?"
-     },
-     {
-      "text": "Weights drop nov 4th"
-     },
-     {
-      "text": "lol shoutout to the guy who claimed it would be sub 50 and deleted his comment out of embarrassment"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7633,18 +7430,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xdm5gj/full_deepseekv41flash1017_510_gb_original_weights/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’ve been working on running the full DeepSeek-V4.1-Flash-1017, the original model, not a smaller quant, on an ordinary five-year-old gaming PC: Ryzen 9 3950X, 64 GB DDR4, RTX 3060 12 GB, two NVMe drives. How it works. The PROMETHEVS engine streams the model through VRAM, RAM and both drives, and is built around a method I call compress-then-correct: Every token is computed on a 2-bit copy of the experts (0.61 of the FP4 bytes). When the model’s own top-two margin says it’s unsure, that token is recomputed with the original FP4 weights, rebuilt exactly from the 2-bit copy plus a stored…",
-    "topComments": [
-     {
-      "text": "is that 98.3 measured on held out prompts or the same ones you tuned compress then correct on"
-     },
-     {
-      "text": "how much context?"
-     },
-     {
-      "text": "We need way more details b4 we try."
-     }
-    ]
+    "text": "I’ve been working on running the full DeepSeek-V4.1-Flash-1017, the original model, not a smaller quant, on an ordinary five-year-old gaming PC: Ryzen 9 3950X, 64 GB DDR4, RTX 3060 12 GB, two NVMe drives. How it works. The PROMETHEVS engine streams the model through VRAM, RAM and both drives, and is built around a method I call compress-then-correct: Every token is computed on a 2-bit copy of the experts (0.61 of the FP4 bytes). When the model’s own top-two margin says it’s unsure, that token is recomputed with the original FP4 weights, rebuilt exactly from the 2-bit copy plus a stored…"
    },
    "sources": [
     "reddit"
@@ -8233,33 +8019,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xdrmf9/malfoid_in_harry_potter_ps2_game/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "using FastH3-V2 on 4 steps in each 15 seconds. and using my modern ps2 style lora. get my lora here: https://civitai.com/models/2983280/modern-ps2-style",
-    "topComments": [
-     {
-      "text": "https://preview.redd.it/876rqbdvoaxh1.jpeg?width=1448&format=pjpg&auto=webp&s=53a666e3eab7d7ddc682c341512251c67a679e06"
-     },
-     {
-      "text": "https://preview.redd.it/n9r4umfyjbxh1.png?width=704&format=png&auto=webp&s=2c1827ebebf5dff5b22cfc5afa9e087c77f74691"
-     },
-     {
-      "text": "This kind of graphics and animations would have been a miracle in the ps2 era."
-     },
-     {
-      "text": "okay but why is she so front heavy"
-     },
-     {
-      "text": "Because they used an ai model of culture of course."
-     },
-     {
-      "text": "it is based on this fan art and i asked chatgpt to turn into 3d. https://preview.redd.it/am0x8y835bxh1.jpeg?width=1463&format=pjpg&auto=webp&s=a99de216daa9cbd9184a13a9c54309eb1f58589b"
-     },
-     {
-      "text": "https://preview.redd.it/ckf5q3x2saxh1.jpeg?width=1080&format=pjpg&auto=webp&s=156ed082db52664e7dded95b4773678f40a81438"
-     },
-     {
-      "text": "https://preview.redd.it/b00powla8cxh1.png?width=1136&format=png&auto=webp&s=ac9c7ee91c57b811a8d8c1870a6d280691a515c2 lmao that thing where the characters talk to each other but turn towards the camera instead is so stereotypical AI"
-     }
-    ]
+    "text": "using FastH3-V2 on 4 steps in each 15 seconds. and using my modern ps2 style lora. get my lora here: https://civitai.com/models/2983280/modern-ps2-style"
    },
    "sources": [
     "reddit"
@@ -8305,33 +8065,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xdtg3i/censorship_is_unacceptable_beaches_are_not_xrated/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://preview.redd.it/38jqgwukwaxh1.png?width=1285&format=png&auto=webp&s=3a29ca04c8de53a325d95ef5cd25b3d470161a40 After 3 days, some activist decided to abuse their slice of power and take down an honest benchmark of model capabilities. No, sir... or, more likely, madam... beaches are not \"X-rated\"; they are open to everyone. Swimwear is standard, everyday attire and is not considered X-rated or explicit. Likewise, any film featuring someone in a bikini is considered suitable for all audiences. Your arguments are invalid.",
-    "topComments": [
-     {
-      "text": "Mod team be like: https://preview.redd.it/se2ccae82bxh1.png?width=746&format=png&auto=webp&s=0d0c2649255870800058245483d9f1a47d29fe39"
-     },
-     {
-      "text": "I’m tired of these religious self loathing zealots pushing their anti-nudity bs on others. We were all born naked, and no other organism shames themselves like genitalia is evil. It’s made up stupidity."
-     },
-     {
-      "text": "taking a screenshot in case this goes down https://preview.redd.it/ynjje5af2bxh1.png?width=801&format=png&auto=webp&s=f8b17e8a01024e615f44044a1433040ac242a391"
-     },
-     {
-      "text": "A screenshot of your screenshot incase that gets taken down as well https://preview.redd.it/3txylcq7dbxh1.png?width=1080&format=png&auto=webp&s=afb8005c8f15af4e64a3c032c646a1adfff4ef02"
-     },
-     {
-      "text": "https://preview.redd.it/2b5vyyooebxh1.png?width=220&format=png&auto=webp&s=b327a0b5a61c1ab52d69a587451d95f3e241807f"
-     },
-     {
-      "text": "https://giphy.com/gifs/NBBpZ1MFgP0u4UlcXT"
-     },
-     {
-      "text": "They do this all the time; I don't understand it, to be honest. This isn't unique; posts that are not explicit in nature get removed constantly."
-     },
-     {
-      "text": "The mod that wrote that 100% knows what Elmer's glue tastes like"
-     }
-    ]
+    "text": "https://preview.redd.it/38jqgwukwaxh1.png?width=1285&format=png&auto=webp&s=3a29ca04c8de53a325d95ef5cd25b3d470161a40 After 3 days, some activist decided to abuse their slice of power and take down an honest benchmark of model capabilities. No, sir... or, more likely, madam... beaches are not \"X-rated\"; they are open to everyone. Swimwear is standard, everyday attire and is not considered X-rated or explicit. Likewise, any film featuring someone in a bikini is considered suitable for all audiences. Your arguments are invalid."
    },
    "sources": [
     "reddit"
@@ -8432,33 +8166,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xduimx/hacker_reverse_engineers_his_samsung_tv_and_finds/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Someone from a two party consent state should sue the fuck out of Samsung and OpenAI"
-     },
-     {
-      "text": "I'm pretty sure even a one party consent doesn't allow just sneaking a microphone into someone's room without their knowledge. One party consent usually means you have to be actively part of the conversation / others are aware you are there, to be able to record it I'm honestly not sure this is legal literally anywhere"
-     },
-     {
-      "text": "The second this thing listens to a child, it breaks the law. Children can not agree to EULA. A stranger invited in the house has not agreed to the EULA as well. Neither has another adult who did not buy the TV. I can't wait for the massive class action lawsuit where everyone who bought a Samsung TV gets a $25 check in the mail."
-     },
-     {
-      "text": "Why local models are extremely important"
-     },
-     {
-      "text": "Fuck this, man. I hate this so much and I’m completely powerless against it unless I just rip all the tech out of my house. I dont want to play this game anymore!"
-     },
-     {
-      "text": "Source: https://x.com/log4j/status/2113014142600953868 https://x.com/log4j/status/2113647464154857840 https://x.com/log4j/status/2109449808406598051 Shout out to Open Router and all the people reverse engineering shit, and the reverse engineering repo"
-     },
-     {
-      "text": "I mean like what the fuck, govt ain’t gonna regulate even the most blatant invasion of privacy. America never got their shit together for any kind of data privacy law, I’m not holding my breath for any accountability."
-     },
-     {
-      "text": "Why is OpenAi banning people for legit stuff? This is why the chinese models are important. Although I am not sure if those also have these weird guardrails."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8506,33 +8214,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xduxtl/deepseek_reportedly_closes_15bn_raise_in_race_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Why not 200 trillion like Claude is asking? American economy is a joke."
-     },
-     {
-      "text": "awayshasbeen.jpg"
-     },
-     {
-      "text": "The enshittification starts after the IPO. As usual."
-     },
-     {
-      "text": "Atleast it's China so I can have some hope"
-     },
-     {
-      "text": "I don't think so, Liang clearly had a strong urge to control the company operation and make the shareholders bend. In the closed raise he forced everyone to sign an agreement that their shares have no voting rights at all (except the state fund), only eligible for dividents and they are not allowed to sell a single share in 5 years. It was too harsh that alibaba eventually decided to quit. He put so much effort to make sure shareholders wont obstruct his vision and decisionmaking in raises, he…"
-     },
-     {
-      "text": "What do you think after like getting into IPOs their price will increase or decrease stays the same?"
-     },
-     {
-      "text": "it might decrease because they will start scaling their infrastructure even more than now, they already have great profit margins and dont use a subsidized subscription system, they will get their money from alot of people using their service rather than less people with a higher price, that is what deepseek is known for, increasing prices now would probably only damage their numbers"
-     },
-     {
-      "text": "give examples of any ipo where their pricing decreased"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8676,30 +8358,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Anthropic published an 18-minute guide on Oct 22 called \"When to fold subagents into your main agent loop.\" It is aimed at enterprise agent builders, but the lessons apply to anyone who set up a pile of subagents in Claude Code. Main points: - Default to one model, one context window, one open-ended tool loop. Put domain procedures into skills and hard limits and lookups into tools. Let the model write and revise its own plan. - Keep subagents only when you measure degradation from context bloat, need parallel work with disposable context, or the agent struggles with too many tools or…",
-    "topComments": [
-     {
-      "text": "Having different models from different providers review and collaborate with your main agent gives massively better outcomes. It is slower but the trade off is better and more researched results"
-     },
-     {
-      "text": "For my work, I love the Claude agent teams approach. Keep the main agent as an orchestrator and have it spawn teammates of different types (opus for planning, sonnet to implement) and maximize parallel work by having those agents communicate and unblock each other and do stacked PRs. If you feed it an epic, it’ll be slow and consume a shit ton of tokens due to adversarial review, but the output quality is so damn high. And the orchestrator you can generally compact as much as you need to since…"
-     },
-     {
-      "text": "The 80% prompt cut hits close to home, I swear half my subagents were just glorified oneliners with a fresh context window"
-     },
-     {
-      "text": "How's this LLM regurgitating the OP getting upvotes here? Thought you guys used LLMs."
-     },
-     {
-      "text": "The ones that earn it for me are read-heavy jobs where I only want the summary back: searching a big codebase, digging through logs, reviewing a diff with fresh eyes. Anything that needs to share state with the main loop is better as a skill. Usually 1-2 at a time, not 6."
-     },
-     {
-      "text": "They've been singing that song for a while. Cut down your CLAUDE.md. You don't need skills. Use fewer subagents. I'm not saying I don't believe them, but cherry picking examples to \"let our big model handle everything\" is also a self-interested thing to say. I'm still in the camp of delegating because: 1) I still want to put myself in the loop. That means before changes happen there's going to be a plan I can review. Reading that plan means the cache is going to age anyway, and it's a written…"
-     },
-     {
-      "text": "Sub agents are not orchestration. There is a difference. There is a reason that anthropic built their own repo (not just scale)."
-     }
-    ]
+    "text": "Anthropic published an 18-minute guide on Oct 22 called \"When to fold subagents into your main agent loop.\" It is aimed at enterprise agent builders, but the lessons apply to anyone who set up a pile of subagents in Claude Code. Main points: - Default to one model, one context window, one open-ended tool loop. Put domain procedures into skills and hard limits and lookups into tools. Let the model write and revise its own plan. - Keep subagents only when you measure degradation from context bloat, need parallel work with disposable context, or the agent struggles with too many tools or…"
    },
    "sources": [
     "reddit"
@@ -8747,33 +8406,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xdwrak/qwen427b_pr_found/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "PR: https://github.com/analytics-zoo/vllm-xpu-kernels/pull/22 The PR author seems to have contributed to intel repos a lot and VLLM. He also shares his name (might be the same person?) with a person who is either a CTO somewhere at alibaba or the Director of Zhejiang Lab. He has worked on Qwen3.8 before this. The PR also implies the KV cache size for Qwen4-27B is not decreasing.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "I am absolutely fiending for Qwen 4 flash. 3.8 flash next is already such an incredible model."
-     },
-     {
-      "text": "Hell yeah it's become my daily driver. I like 27B but it is so slow for me compared to Flash Next."
-     },
-     {
-      "text": "Yay! People will vibe code GTA7 before GTA6"
-     },
-     {
-      "text": "Fuck GTA, vibe code Qwen 4 35B A3B for me."
-     },
-     {
-      "text": "That is a good sign! Hopefully there will be a Qwen4-4B, Qwen4-9B, and Qwen4-14B, too."
-     },
-     {
-      "text": "I think they posted their spread of anticipated models already, the smallest were 27B and the QFN arch. I'd love to be proven wrong but I wouldn't get my hopes up."
-     },
-     {
-      "text": "My biggest dream is if the Qwen4 series inherits some of the 3d modeling/animation capabilities that Opus 5.5 can do."
-     }
-    ]
+    "text": "PR: https://github.com/analytics-zoo/vllm-xpu-kernels/pull/22 The PR author seems to have contributed to intel repos a lot and VLLM. He also shares his name (might be the same person?) with a person who is either a CTO somewhere at alibaba or the Director of Zhejiang Lab. He has worked on Qwen3.8 before this. The PR also implies the KV cache size for Qwen4-27B is not decreasing."
    },
    "sources": [
     "reddit"
@@ -8918,33 +8551,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xdzvqw/gpt6_bel_coming_soon_its_said_that_bel_is_dougs/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Ah. So astra was AGI, but no actually bel will be agi?"
-     },
-     {
-      "text": "Calling Astra AGI was the biggest blunder of all time"
-     },
-     {
-      "text": "I mean kinda, but I could understand that when it came out, and i agreed. Now I wouldn't. But isnt it because I got used to it?"
-     },
-     {
-      "text": "So in your title we have \"reportedly\", \"may\", another \"reportedly\", \"potential\", and \"might\". Well done, truly a master stroke of uselessness."
-     },
-     {
-      "text": "Says fucking who?"
-     },
-     {
-      "text": "Yes who the f is Doug."
-     },
-     {
-      "text": "Is this sub just bots posting and bots answering without even trying to human?"
-     },
-     {
-      "text": "What's with the stupid fucking naming? Just call it 6.2 or 6.5. There's already terra, luna, sol, and Astra...but we need to add even more names to the same class of models (6) to confuse everyone? smh"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9672,9 +9279,8 @@
   }
  ],
  "date": "2026-10-23",
- "fetchedAt": "2026-10-26T03:56:20.665Z",
+ "fetchedAt": "2026-10-26T07:13:17.019Z",
  "runs": [
-  "2026-10-24T06:56:38.274Z",
   "2026-10-24T07:45:39.992Z",
   "2026-10-24T08:47:28.119Z",
   "2026-10-24T09:45:38.143Z",
@@ -9693,7 +9299,8 @@
   "2026-10-25T18:48:02.049Z",
   "2026-10-25T21:43:38.691Z",
   "2026-10-26T01:14:10.301Z",
-  "2026-10-26T03:56:20.665Z"
+  "2026-10-26T03:56:20.665Z",
+  "2026-10-26T07:13:17.019Z"
  ],
  "schema": 2,
  "sources": [
@@ -9792,7 +9399,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T03:56:20.665Z",
+   "fetchedAt": "2026-10-26T07:13:17.019Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -9837,7 +9444,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T03:56:20.665Z",
+   "fetchedAt": "2026-10-26T07:13:17.019Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
