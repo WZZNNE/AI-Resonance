@@ -5019,7 +5019,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Large language model (LLM) agents increasingly execute tasks asynchronously: a main agent continues working while its subagents run, and the task state may change before their results arrive. The main agent must decide which work to update or preserve and which checks to repeat, while avoiding prohibited changes. Final task success alone does not reveal whether these results were handled correctly, and natural asynchronous arrivals are hard to reproduce. We introduce Async-RBench, a benchmark for asynchronous task execution in LLM agents, with 200 executable tasks covering eight scenarios. A scenario controller regulates result delivery using predefined task-state conditions, while an Event Response Contract (ERC) specifies what each response must change, preserve, avoid, and re-verify. The Dynamic Replanning Score (DRS) weights the response process and outcome equally and is reported separately from task success. We evaluate nine agents and find DRS scores of 19.2 to 45.1, with the lowest scores on duplicate reports and subagent failures. Under our execution protocol, all nine agents obtain lower task success with asynchronous than with batched delivery (26.0% vs. 29.7% on average). For three agents, prompting the main agent to rebuild its plan after every result improves DRS by only 2.6 to 3.5 points. Together, these findings highlight the challenges of reliable asynchronous task execution and the need to evaluate how agents handle incoming results alongside end-to-end task success.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5070,7 +5070,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Vision-language models used for decisions in histopathology rarely return calibrated probabilities over the candidates a user cares about. Decision-native models write a question and a candidate set chosen at run time into the input and return a normalised distribution from a small decision head in one forward pass. We build PathJev-P, a decision-native model for histopathology: MedGemma-1.5-4B with LoRA adapters and a decision head, trained on 40,000 patch states from three public collections whose expert labels are turned into typed questions with organ-specific candidate sets and a \"none of these\" option. In a comparison over 3 seeds with an analysis plan fixed before testing, on test sets without documented overlap with the training data of the backbone, PathJev-P is more accurate than a generative model trained with the same backbone, data and selection rule, the zero-shot pathology model CONCH and a general medical decision model (balanced accuracy 0.541 against 0.492, 0.345 and 0.213); its advantage over the generative model comes from two organs absent from training. The calibration advantage depends on how the generative model's probabilities are read out. With the summed candidate log-likelihood used in previous work, PathJev-P has the lower calibration error (ECE 0.204 against 0.279); with a length-normalised read-out of the same generative model, examined post hoc, the two have similar mean calibration error (0.201) and the generative model is better calibrated on the unseen organs, where PathJev-P remains over-confident. A supervised linear probe on a pathology foundation model is better calibrated in every setting. In a qualitative whole-slide demonstration, PathJev-P labels unsupervised tissue clusters with abstention and separates carcinoma from other tissue while running the model on a fraction of the tiles.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5117,7 +5117,7 @@
     "codeStars": 6,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Recent advances in 3D semantic segmentation have significantly improved scene understanding in autonomous driving. However, existing methods are typically developed under a closed-set assumption and evaluated under standard driving conditions, where all categories are known in advance. In real-world driving, autonomous vehicles inevitably encounter previously unseen objects, making closed-set perception insufficient for safe deployment. To address this challenge, we introduce DriveOSS, which, to the best of our knowledge, is the first real-world multimodal dataset and benchmark specifically designed for 3D anomaly segmentation and open-set semantic segmentation. It contains 12,661 synchronized and annotated frames captured using six surround-view RGB cameras, a 128-beam LiDAR, and a GPS/IMU unit. The dataset comprises 52 real-world driving scenes collected under clear, nighttime, cloudy, rainy, and snowy conditions and is organized into ID (in-distribution) and OOD (out-of-distribution) subsets. The ID scenes contain only known classes and are used for training, whereas the OOD scenes additionally contain unknown objects annotated as the outlier class and are used for validation and testing. Extensive experiments show that unseen objects remain a major challenge for current 3D perception systems. The dataset, benchmark protocols, and code are available at https://github.com/chrisyan/DriveOSS.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5168,7 +5168,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "In this paper, we introduce WL-SeqVAE, a sequence-based variational autoencoder for generating graphs. The key observation behind WL-SeqVAE is that node colors induced by the Weisfeiler-Leman (WL) algorithm provide compact discrete summaries of local graph structure and can therefore serve as structural tokens for generation. Rather than learning a distribution over adjacency matrices directly, our method maps each graph to a sequence of WL colors and employs a variational autoencoder that encodes this sequence into a Gaussian latent distribution, from which an autoregressive decoder reconstructs the graph. During generation, compatibility constraints derived from the WL colors guide node and edge predictions, combining global information from the latent representation with local structural consistency. This formulation turns graph generation into a sequence generation problem and avoids directly parameterizing a quadratic adjacency matrix. We evaluate WL-SeqVAE on molecular and general graph generation tasks. Across the evaluated datasets, WL-SeqVAE is competitive with established baselines on several local structural and molecular quality metrics. Code is available at https://github.com/iakovosevdaimon/WL-SeqVAE",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5217,7 +5217,7 @@
     "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "This work introduces PoKER, a novel probabilistic model engineered to optimize missile launch effectiveness in air-to-air scenarios, specifically within Beyond Visual Range (BVR) air combat. Unlike conventional Weapon Engagement Zone (WEZ) models that delineate zones based on static distances such as maximum, minimum, and no-escape ranges, PoKER applies machine learning to predict kill probabilities more accurately by integrating the stochastic behaviors of targets and missile miss distances. This model dynamically evaluates target behavior, greatly expanding the predictive capabilities of engagement analysis. By factoring in elements such as warhead lethality, target and shooter orientations, and the specific conditions of engagement, PoKER provides important insights into engagement dynamics and quantifies success probabilities. Consequently, it can potentially be an important tool for BVR air combat pilots, improving operational decision-making within this specialized combat domain.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5270,7 +5270,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Fine-tuning on datasets of unknown origin can create a backdoor in the trained model when the data includes poisoned examples. Difficult to localise and remove, backdoors can persist through safety training. While parameter-efficient fine-tuning methods capture the full parameter changes introduced during training, they are not easily interpretable. We present the full method of TopKLoRA, extending the preliminary proposal of Masiak et al. (2025), an interpretable-by-design LoRA variant in which only the $k$ largest adapter latents are active at each token. Unlike SAEs, TopKLoRA is trained purely on downstream loss, where optimisation pressure incentivises learning functionally causal latents. We demonstrate this sparse LoRA adapter in a sleeper-agent backdoor case study where we create model organisms by fine-tuning gemma-2-2b, Qwen2.5-1.5B, and Qwen2.5-7B on a poisoned instruction-following dataset. For each organism, we identify and ablate a circuit that is both necessary and sufficient to implement the backdoor. Furthermore, our new fine-tuning method produces sparse circuits that are up to an order of magnitude smaller than a dense LoRA baseline, allowing surgical ablation of the malicious capability without sacrificing instruction-following performance. Finally, we propose a technique to construct model organisms with localised circuits using TopKLoRA latents and gradient-routing, which we use to validate the findings of our circuit search algorithm. We consider these findings as a step toward interpretable-by-design architectures that provide faithful units of analysis without compromising model performance. We share our code: https://github.com/interpretable-finetuning/TopKLoRA.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5322,7 +5322,7 @@
     "codeStars": 11,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Physics-constrained machine learning (PCML) integrates domain knowledge, first-principles, and physical constraints into AI/ML models. In this work, we present a step-by-step tutorial of a modular PCML framework, KKT-HardNet, and illustrate how it could be used for hybrid modeling, process simulation, optimization and model predictive control in a single platform. KKT-HardNet combines fast inference capabilities of neural networks with guaranteed satisfaction of algebraic constraints through differential projection. It can handle heterogeneous data and enforce both linear and nonlinear equality and inequality constraints. The modular design supports custom neural-network backbones and user-defined projection mechanisms for PCML. To enable efficient end-to-end training, KKT-HardNet exploits implicit function theorem to backpropagate through the projection layer. This avoids computationally expensive automatic differentiation. This work also introduces an exact reduced-order Fischer-Burmeister reformulation and a primal-dual interior-point method as an alternative projection solve strategy. We also provide a diverse set of benchmarking problems for PCML in engineering applications. KKT-HardNet achieves orders of magnitude better performance in terms of both constraint satisfaction and inference time. The KKT-HardNet code and the benchmark datasets are available at https://github.com/souls-tamu/kkt-hardnet .",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5371,7 +5371,7 @@
     "codeStars": 5,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Few-shot industrial anomaly detection requires modeling category-specific normality from only a handful of defect-free images. Common approaches tie inference to stored exemplars, impose rigid linear structure, or risk reproducing anomalous content. Flownomaly instead casts the problem as normal-counterpart recovery in frozen DINOv2 feature space. Given normal supports, a velocity field is learned through conditional flow matching over frozen patch tokens to transport Gaussian noise toward normal features. Along straight paths, a single recovery step using one evaluation of the optimal field yields the posterior mean of the clean normal token without trajectory integration. The operating time governs how strongly recovery modifies a query token. With no anomalous validation samples available for tuning, a normal-only Jacobian gain-to-noise criterion selects this time from the supports alone. Squared residuals between query tokens and their recovered counterparts yield anomaly signals for both dense localization and image-level detection. Across 1-, 2-, and 4-shot benchmarks on MVTec-AD and VisA, together with sample-shot evaluations on Real-IAD, Flownomaly achieves state-of-the-art performance against recent category-specific methods. In the 1-shot setting, image- and pixel-level AUROC reach 97.8% and 98.0% on MVTec-AD and 95.3% and 98.7% on VisA, with a 2.1-point image-level AUROC improvement over the strongest baseline on VisA. Code is available at https://github.com/b-rbmp/Flownomaly.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5417,10 +5417,10 @@
    "category": "research",
    "key": "arxiv:2610.32976",
    "metrics": {
-    "codeStars": 33,
+    "codeStars": 34,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "To estimate correspondences across images, existing approaches match either sparse interest points, which is highly efficient but limited by repeatability, or dense pixel grids, which is robust but expensive. Furthermore, these approaches are trained with only matching pairs and thus often fail to reject unrelated pairs that exhibit visual symmetries, which is equally important in applications like Structure-from-Motion (SfM). We bridge these gaps by introducing FlexGlue, a neural network for asymmetric sparse-to-dense matching and disambiguation. Given two images and coordinates of points in the first image, FlexGlue estimates the coordinates of the corresponding points in the second image while simultaneously rejecting the pair if non-matching. By searching for a limited set of correspondences among dense pixels, our approach is both fast and effective at both matching and disambiguation: it combines the sub-pixel accuracy of dense matching with the speed of sparse matching, while rejecting incorrect pairs with high precision. Experiments on multiple datasets show that FlexGlue pushes the Pareto frontier in relative pose estimation and significantly outperforms existing approaches for SfM and visual localization. FlexGlue is publicly available at https://github.com/cvg/flexglue .",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5435,7 +5435,7 @@
     "categories": [
      "cs.CV"
     ],
-    "codeStars": 33,
+    "codeStars": 34,
     "codeUrl": "https://github.com/cvg/flexglue",
     "pdfUrl": "https://arxiv.org/pdf/2610.32976"
    },
@@ -5468,7 +5468,7 @@
     "codeStars": 5,
     "prior": 0.3
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "paper": {
     "abstract": "Training generalizable embodied agents requires realistic, varied, and simulation-ready indoor environments. Language-guided methods support semantic planning and object-level reasoning, but precise spatial grounding remains difficult. Visual generative models offer rich priors over plausible arrangements, yet their outputs require geometric reasoning to become physically valid 3D scenes. We introduce SceneBloom, an agentic framework that combines visual layout sampling with contract-guided 3D compilation. A hierarchical sampler uses diffusion priors to generate furniture arrangements within functional zones. A compiler then uses relations extracted from each proposal to guide geometric fitting and local pose correction. Across five room types, SceneBloom attains the highest visual quality and physical stability among the compared methods and is the only method with no detected mesh collisions and out-of-bounds objects. Its layouts are also closer to the distribution of real rooms than those of all compared baselines. Object navigation policies trained in these realistic scenes achieve a higher success rate in held-out real scans than those trained on an equal number of real training scans. Code is available at https://github.com/Tinaliu0123/scenebloom.",
     "arxivAnnouncedAt": "2026-10-26T00:00:00.000Z",
@@ -5557,19 +5557,19 @@
    "category": "discussion",
    "key": "hn:50229834",
    "metrics": {
-    "comments": 15,
+    "comments": 16,
     "frontPage": 0,
     "points": 22
    },
    "news": {
     "author": "sandruso",
-    "comments": 15,
+    "comments": 16,
     "createdAt": "2026-10-25T09:52:27.000Z",
     "hnId": 50229834,
     "hnUrl": "https://news.ycombinator.com/item?id=50229834",
     "points": 22
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T09:52:27.000Z",
    "refs": [],
    "relevance": {
@@ -5608,7 +5608,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50231486",
     "points": 15
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T13:41:19.000Z",
    "refs": [
     "url:medium.com/@thomasunise/this-open-source-cybersecurity-platform-uses-ai-agents-to-detect-threats-and-protect-businesses-762e65392b42"
@@ -5638,20 +5638,20 @@
    "category": "policy",
    "key": "hn:50231722",
    "metrics": {
-    "comments": 111,
+    "comments": 114,
     "frontPage": 0,
-    "points": 88
+    "points": 90
    },
    "news": {
     "author": "schleck8",
-    "comments": 111,
+    "comments": 114,
     "createdAt": "2026-10-25T14:05:03.000Z",
     "domain": "reddit.com",
     "hnId": 50231722,
     "hnUrl": "https://news.ycombinator.com/item?id=50231722",
-    "points": 88
+    "points": 90
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T14:05:03.000Z",
    "refs": [
     "rd:1xelcuf"
@@ -5676,20 +5676,20 @@
    "category": "discussion",
    "key": "hn:50233779",
    "metrics": {
-    "comments": 259,
+    "comments": 263,
     "frontPage": 0,
-    "points": 623
+    "points": 634
    },
    "news": {
     "author": "sungam",
-    "comments": 259,
+    "comments": 263,
     "createdAt": "2026-10-25T17:15:38.000Z",
     "domain": "lynchlab.net",
     "hnId": 50233779,
     "hnUrl": "https://news.ycombinator.com/item?id=50233779",
-    "points": 623
+    "points": 634
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T17:15:38.000Z",
    "refs": [
     "url:lynchlab.net/llm-skin-cancer"
@@ -5727,7 +5727,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50235909",
     "points": 12
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T20:46:50.000Z",
    "refs": [
     "gh:srn0129/agenttrust"
@@ -5770,7 +5770,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50235915",
     "points": 14
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T20:47:26.000Z",
    "refs": [
     "gh:thomasunise/casecite"
@@ -5797,20 +5797,20 @@
    "category": "discussion",
    "key": "hn:50236102",
    "metrics": {
-    "comments": 384,
+    "comments": 394,
     "frontPage": 0,
-    "points": 381
+    "points": 390
    },
    "news": {
     "author": "minimaxir",
-    "comments": 384,
+    "comments": 394,
     "createdAt": "2026-10-25T21:11:31.000Z",
     "domain": "minimaxir.com",
     "hnId": 50236102,
     "hnUrl": "https://news.ycombinator.com/item?id=50236102",
-    "points": 381
+    "points": 390
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T21:11:31.000Z",
    "refs": [
     "url:minimaxir.com/2026/10/cheap-llms"
@@ -5837,20 +5837,20 @@
    "category": "discussion",
    "key": "hn:50237224",
    "metrics": {
-    "comments": 53,
+    "comments": 56,
     "frontPage": 1,
-    "points": 152
+    "points": 163
    },
    "news": {
     "author": "westurner",
-    "comments": 53,
+    "comments": 56,
     "createdAt": "2026-10-25T23:52:05.000Z",
     "domain": "arxiv.org",
     "hnId": 50237224,
     "hnUrl": "https://news.ycombinator.com/item?id=50237224",
-    "points": 152
+    "points": 163
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T23:52:05.000Z",
    "refs": [
     "arxiv:2512.19428"
@@ -5875,20 +5875,20 @@
    "category": "industry",
    "key": "hn:50238088",
    "metrics": {
-    "comments": 263,
-    "frontPage": 1,
-    "points": 365
+    "comments": 286,
+    "frontPage": 0,
+    "points": 381
    },
    "news": {
     "author": "Betelbuddy",
-    "comments": 263,
+    "comments": 286,
     "createdAt": "2026-10-26T01:47:46.000Z",
     "domain": "theregister.com",
     "hnId": 50238088,
     "hnUrl": "https://news.ycombinator.com/item?id=50238088",
-    "points": 365
+    "points": 381
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-26T01:47:46.000Z",
    "refs": [
     "url:theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640"
@@ -5927,7 +5927,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50238620",
     "points": 69
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-26T03:12:05.000Z",
    "refs": [
     "url:shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026"
@@ -5953,20 +5953,20 @@
    "category": "discussion",
    "key": "hn:50238739",
    "metrics": {
-    "comments": 70,
+    "comments": 74,
     "frontPage": 1,
-    "points": 192
+    "points": 202
    },
    "news": {
     "author": "vardhan1237",
-    "comments": 70,
+    "comments": 74,
     "createdAt": "2026-10-26T03:29:05.000Z",
     "domain": "github.com",
     "hnId": 50238739,
     "hnUrl": "https://news.ycombinator.com/item?id=50238739",
-    "points": 192
+    "points": 202
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-26T03:29:05.000Z",
    "refs": [
     "gh:krushnavardhanreddy/paperpilot"
@@ -9101,12 +9101,12 @@
    "key": "x:2114460558758236351",
    "metrics": {
     "authority": 0,
-    "likes": 342,
+    "likes": 350,
     "quotes": 0,
     "replies": 53,
     "reposts": 0
    },
-   "observedAt": "2026-10-26T14:28:08.373Z",
+   "observedAt": "2026-10-26T15:57:30.147Z",
    "publishedAt": "2026-10-25T20:54:16.000Z",
    "refs": [
     "gh:nazzysar/deepseek-benchmarks",
@@ -9126,7 +9126,7 @@
     "comments": 53,
     "createdAt": "2026-10-25T20:54:16.000Z",
     "handle": "nothingto12",
-    "likes": 342,
+    "likes": 350,
     "linkUrl": "https://nazzysar.github.io/deepseek-benchmarks/",
     "permalink": "https://x.com/nothingto12/status/2114460558758236351",
     "platform": "x",
@@ -9146,7 +9146,7 @@
   }
  ],
  "date": "2026-10-25",
- "fetchedAt": "2026-10-26T14:28:08.373Z",
+ "fetchedAt": "2026-10-26T15:57:30.147Z",
  "runs": [
   "2026-10-25T07:45:54.010Z",
   "2026-10-25T08:48:05.592Z",
@@ -9161,95 +9161,107 @@
   "2026-10-26T07:59:36.352Z",
   "2026-10-26T08:56:47.919Z",
   "2026-10-26T09:56:50.745Z",
-  "2026-10-26T14:28:08.373Z"
+  "2026-10-26T14:28:08.373Z",
+  "2026-10-26T15:57:30.147Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "arxiv",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 316,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "count": 317,
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "github-search",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 90,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "github-trending",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 161,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "count": 168,
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "hacker-news",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 79,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "count": 83,
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "hf-papers",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 12,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "journals",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 18,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-anthropic",
    "message": "anthropic-research: payload: no entries | anthropic-engineering: payload: no entries | claude-blog: html: no entries",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-deepseek",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 14,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-google",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-meta",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -9257,56 +9269,61 @@
   {
    "board": "labs",
    "count": 10,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-mistral",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 24,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-qwen",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
   },
   {
    "board": "social",
-   "count": 237,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "count": 60,
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "reddit",
-   "mode": "rss",
+   "message": "reusing the fetch of 2026-10-26T14:28:08.373Z (at most every 6 h)",
+   "mode": "cached",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -9314,10 +9331,11 @@
   },
   {
    "board": "social",
-   "count": 19,
-   "fetchedAt": "2026-10-26T14:28:08.373Z",
+   "count": 12,
+   "fetchedAt": "2026-10-26T15:57:30.147Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-10-26T15:57:30.147Z",
    "state": "ok"
   }
  ],
