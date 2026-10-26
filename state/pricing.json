@@ -5901,6 +5901,29 @@
    "upd": "2026-09-29"
   },
   {
+   "cr": 0.05,
+   "ctx": 1050000,
+   "cw": 1.25,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6.1-terra",
+   "in": 1,
+   "k": "gpt-6-1-terra",
+   "maxOut": 128000,
+   "name": "GPT-6.1 Terra",
+   "out": 5,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-26"
+  },
+  {
    "cr": 0.4,
    "ctx": 1050000,
    "cw": 5,
@@ -6094,7 +6117,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.015,
+   "cr": 0.03,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6103,11 +6126,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.02,
+   "in": 0.04,
    "k": "deepseek-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek Flash Latest",
-   "out": 1,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6194,7 +6217,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.142,
+   "cr": 0.149,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6203,7 +6226,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.152,
+   "in": 0.159,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7192,7 +7215,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.064641,
+   "cr": 0.062104,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7200,11 +7223,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.775692,
+   "in": 0.745242,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.551384,
+   "out": 1.490484,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7231,7 +7254,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.015,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7240,11 +7263,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.02,
+   "in": 0.3,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 1,
+   "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8886,7 +8909,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.142,
+   "cr": 0.149,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8895,7 +8918,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.152,
+   "in": 0.159,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -10109,6 +10132,28 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-29"
+  },
+  {
+   "cr": 0.05,
+   "ctx": 1050000,
+   "cw": 1.25,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6.1-terra",
+   "in": 1,
+   "k": "gpt-6-1-terra",
+   "maxOut": 128000,
+   "name": "GPT-6.1 Terra",
+   "out": 5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-26"
   },
   {
    "ctx": 128000,
@@ -11394,7 +11439,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.033,
+   "cr": 0.020625,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11402,11 +11447,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.132,
+   "in": 0.0825,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.528,
+   "out": 0.33,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11432,7 +11477,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.042,
+   "cr": 0.0378,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11440,11 +11485,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.834,
+   "in": 0.7506,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.501,
+   "out": 2.2509,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16154,5 +16199,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-26T15:57:30.147Z"
+ "updatedAt": "2026-10-26T18:58:53.140Z"
 }
