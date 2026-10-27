@@ -3290,33 +3290,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xe3vbw/i_took_apart_claude_code_opencode_and_pi_then/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "The fastest way to learn harness engineering? Build Claude Code from scratch. Why harness engineering? LangChain kept the same model and changed only the harness. Their coding agent went from 53% to 67% on Terminal-Bench, a top coding-agent benchmark. From outside the top 30 to the top 5. Same model. Better harness. Over the past few months, I've taken apart Claude Code, OpenCode, and Pi to see how they work under the hood. And you don't need to ship a coding agent for this to pay off. The same foundations power any agent, in e-commerce, finance, or sales. On top of that, people are…",
-    "topComments": [
-     {
-      "text": "deploying headlessly always the part where I lose a weekend to some stupid config thing"
-     },
-     {
-      "text": "Replay of failed runs has been the hardest for me. The harness state that made the agent take a bad turn usually is not in the git diff, so you end up replaying against a ghost. Once I started dumping the tool trace next to the commit, the other steps got easier to judge."
-     },
-     {
-      "text": "Yes, getting the agent in the same state when it failed is hell. You definitely need to take a look at Kitaro or any other tool from that family that helps you capture these states and replicate the bug."
-     },
-     {
-      "text": "Kitaro-style capture helps, but the part that still bites is side effects outside the sandbox. File writes are easy to snapshot. The half-applied API call or the migration that already ran is what makes a perfect replay lie. Curious if your course treats external side effects as part of the replay bundle or as a separate recovery path."
-     },
-     {
-      "text": "Appreciate this, kind of what I needed"
-     },
-     {
-      "text": "Headless execution has been the harder part for us in OmniNode. We had a live test where the router chose a worker and recorded the decision, but the caller timed out and the waiting workflow couldn't use that decision. The individual components worked, but the request still went nowhere. Does your headless section cover a restart after a tool has changed something but before its result gets recorded? I'd find that useful to work through alongside the basic agent loop. On recovery, how does it…"
-     },
-     {
-      "text": "Will try to give it a go. We may all have to if API costs keep climbing with the Frontier LLMs"
-     },
-     {
-      "text": "Amazing. How long does it take to complete? I mean considering I have only an hour per day available for hobbies."
-     }
-    ]
+    "text": "The fastest way to learn harness engineering? Build Claude Code from scratch. Why harness engineering? LangChain kept the same model and changed only the harness. Their coding agent went from 53% to 67% on Terminal-Bench, a top coding-agent benchmark. From outside the top 30 to the top 5. Same model. Better harness. Over the past few months, I've taken apart Claude Code, OpenCode, and Pi to see how they work under the hood. And you don't need to ship a coding agent for this to pay off. The same foundations power any agent, in e-commerce, finance, or sales. On top of that, people are…"
    },
    "sources": [
     "reddit"
@@ -3555,30 +3529,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xe7jz9/quite_the_statement_from_anthropics_head_of/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "You might not like it, but where's the lie? This particular vulnerability has been there ever since 2012. 14 years during which anyone could theoretically have exploited the bug. It just happened to be the case that it took AI to find the vulnerability and a way to exploit it. And this is AI's fault? Insecure code is ok as long as no one figures out that it's insecure I guess?"
-     },
-     {
-      "text": "This would have been less of a mess if not for the premature leak before any patches were released. We can point to AI but so far it's quite clear that has been a human mistake."
-     },
-     {
-      "text": "This is like me getting black out drunk but blaming my friends because I told them I was going to get black out drunk."
-     },
-     {
-      "text": "Companies are in constant competition against each other of who will be the first to develop the next best thing and reap the profits. Imagine all of the AI companies as different F1 cars. One of these companies figured out, that if they strap a nuclear-powered jet engine on the back of their racer, it goes pretty damn fast. Since the first company started doing this, its become literally impossible for all non-nuclear cars to win. They just can't compete. But they have to be able to be…"
-     },
-     {
-      "text": "He’s right. AI leaders have been sounding the alarm publicly for a years and were constantly labeled as just bullshitting for investors- now that some of the warnings are coming true you’re going to have the same people who shouted down asking why they didn’t tell us. I’m not fond of Silicone Valley or its leadership, but objectively you can go watch the footage of these people testifying before Congress and around the world asking for regulations."
-     },
-     {
-      "text": "What's gonna happen in 18 months?"
-     },
-     {
-      "text": "The theory is that AI is going to be used to defend against AI attacks. If a company is smart and has the resources they should be hiring a white hat hacker to probe their own system with an AI agent. So while attacks are happening, hardening is also occurring. The theory is that in 18 months all the exploits will be found and there will be more of a detente. Of course that theory is from the people who brought us AI so….."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -3719,33 +3670,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xe8799/it_turns_our_rtx_4090_is_also_software/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Repo link: https://github.com/JustAResearcher/gpu-unlock-ada",
-    "topComments": [
-     {
-      "text": "I wonder what they’ll do when the GPUs start dying. Whether the lock was there for commercial reasons or for safety/reliability, time will tell."
-     },
-     {
-      "text": "The lock is artificial. If it was clock or frequency then sure. It was done so that AI companies don't buy consumer grade GPUs since they are cheaper than buying H100 grade systems and easier to repurpose. AMD does same."
-     },
-     {
-      "text": "4090s are all well beyond their guaranty periods by now and no company would replace one anyway even if on extended warranty. they would just give some reasonable, depreciated cash refund to stay on this side of the law."
-     },
-     {
-      "text": "Well yeah, which is another reason I'd rather not burn it not faster. I'd rather not have to replace it any sooner. The idea is to make your hardware last as long as it can at this point until GPUs level out, I dont want to replace my 4090 with another one at almost 4 grand anytime soon"
-     },
-     {
-      "text": "https://preview.redd.it/172lunuwbfxh1.png?width=1536&format=png&auto=webp&s=d4605805efb2a85761de426b23275aa55b252fdd"
-     },
-     {
-      "text": "It's gonna take an insane jailbreak, nvidia really tightened things down with blackwell:(Happy for the 4090 owners now though"
-     },
-     {
-      "text": "Software capping should be illegal."
-     },
-     {
-      "text": "depends if it's actually there for a purpose... for example Apple slowed down the iPhone when the battery wore out and people went absolutely apeshit. but it turned out they did it to prevent crashes under heavy load. Do we know if disabling the cap has ZERO stability/heat/longevity issues. If all three are zero then we can call NVIDIA whatever name they deserve. --edit for spelling."
-     }
-    ]
+    "text": "Repo link: https://github.com/JustAResearcher/gpu-unlock-ada"
    },
    "sources": [
     "reddit"
@@ -3987,33 +3912,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xe9ora/terence_tao_ai_turns_beautiful_mathematics_into/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "The top mathematician says Silicon Valley’s rush to solve long-investigated conundrums excludes ‘elegant solutions’ and reduces maths to raw training material",
-    "topComments": [
-     {
-      "text": "I have to say mathematicians are having a much worse time coping than software developers."
-     },
-     {
-      "text": "Cause mathematics actually means something fundamental and beautiful and most coders were making dogsht CRUD. I say this as a SWE myself."
-     },
-     {
-      "text": "If you watch longer interviews with Tao, he’s actually quite excited about using AI to progress mathematics. He’s been digging into the OAI results to understand them. He’s not anti AI like Reddit wants to portray him as. He is a bit critical of how OAI went about things, hence the toxic waste comments, but overall he’s adopting the tech heavily in his research."
-     },
-     {
-      "text": "Dude is having a huge crash out rn"
-     },
-     {
-      "text": "I feel bad. I imagine mathematicians are artists in their own way and AI is stripping them of their passion. They’re gonna have to get over it though, no stopping it now."
-     },
-     {
-      "text": "All mathematicians ive know in my life are smart when it comes to numbers but pretty dumb when it comes to maturity levels and emotional intelligence, this guy is not an exception, he's just mad that the only thing in which he is good at is now being lead by a machine that its only getting better by the second and that many people have access to."
-     },
-     {
-      "text": "First they came for the writers And I did not speak out Because I was not a writer Then they came for the designers And I did not speak out Because I was not a designer Then they came for the developers And I did not speak out Because I was not a developer Then they came for me And Terence Tao crashed out but also like, fuck that guy"
-     },
-     {
-      "text": "https://preview.redd.it/grbh5ws8mfxh1.jpeg?width=2752&format=pjpg&auto=webp&s=b16aee7e0f5abf15e565d13974402055d3bd5ac1"
-     }
-    ]
+    "text": "The top mathematician says Silicon Valley’s rush to solve long-investigated conundrums excludes ‘elegant solutions’ and reduces maths to raw training material"
    },
    "sources": [
     "reddit"
@@ -4306,33 +4205,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xecgrf/kimi_k31_removes_cyberattack_training_data_from/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "This is due to China's new export restrictions primarily but also the growing caution around cybersecurity exploits popping up.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Then how can we protect our software?"
-     },
-     {
-      "text": "You pay them for \"protection\""
-     },
-     {
-      "text": "It doesn't get easier than that. Be the problem Be the solution Profit!"
-     },
-     {
-      "text": "I said exactly this in the previous (now deleted) post on the announcement of this model. I had people vehemently defending this as if it’s somehow a good thing. Which is an insane take honestly for a local llm sub. I guess me, a cybersecurity professional, must pay either the Chinese or be deemed worthy by the US firms to secure my own network. A problem that they literally created. And before anyone tries to defend this move again, attackers ALREADY have access to these tools. As the “good…"
-     },
-     {
-      "text": "But don't worry, you can pay Moonshot to get those capabilities back through their API, entirely defeating the point of open weight models. At least you can pay them for such capabilities, the same can't be said for OpenAI and Anthropic."
-     },
-     {
-      "text": "This is terrible and actually I am quite disappointed with K3.1 in practical use. Its no where close to the top models. Definitely benchmaxxed. Its a shame I think. Looking forward to GLM 5.3's successor and Qwen 4. There was a comparison of a 3d helicopter model for K3.1 and Qwen4 and Qwen4's was really good!"
-     },
-     {
-      "text": "I know the Chinese labs have no say in this matter as China is pushing them on this behavior but still, any lab that releases such a gimped model deserves to be criticized. We don't want to reward this behavior and I hope the signal propagates up top..."
-     }
-    ]
+    "text": "This is due to China's new export restrictions primarily but also the growing caution around cybersecurity exploits popping up."
    },
    "sources": [
     "reddit"
@@ -4616,27 +4489,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xefah4/ai_is_humanities_collective_inheritance_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I know this isn’t a novel thought but it has been bothering me for a while and I simply want to get it off my chest (written by a human, btw, except the “4 commitments”.) Every discovery, invention, or other contribution to human aggregate knowledge by our ancestors has been gathered into these models. It is the “Summa Scientiae Humanae” the sum of all human knowledge. All of our ancestors built this. Across history every earned morsel of knowledge has been hunted and gathered by our forebears. The mothers and fathers of our species left this for us. We are ALL the heirs. As such, no…",
-    "topComments": [
-     {
-      "text": "Thats the most elegant way Ive seen someone frame the whole mess, the stewardship angle instead of just screaming about theft actually lands"
-     },
-     {
-      "text": "Training data is only part of what makes a model. The compute, post-training and engineering are private work. Taxing profits or opening public compute access might be easier to enforce than shared ownership."
-     },
-     {
-      "text": "Do it like pharmaceuticals. X number of years to recoup costs and make some profit, then they have to release the weights."
-     },
-     {
-      "text": "\"As such, no individual, no corporation, no culture, and no nation should rightfully 'own'\" \"Humanity's accumulated knowledge is a common inheritance, and the company is its steward.\" https://en.wikipedia.org/wiki/Public_domain Temporary private ownership: Founders, employees, and investors retain defined rights to compensation and returns. https://en.wikipedia.org/wiki/Patent Mandatory vesting: At a legally specified milestone, agreed ownership interests transfer to an independent Humanity…"
-     },
-     {
-      "text": "São parâmetros dispostos em formas de matrizes multidimensionais."
-     },
-     {
-      "text": "*All invention is inherently humanities collective inheritance and the current copyright law that was originally meant to protect inventors should be abolished because it has become the tool for the capitalist overlords to dominate the working class FTFY"
-     }
-    ]
+    "text": "I know this isn’t a novel thought but it has been bothering me for a while and I simply want to get it off my chest (written by a human, btw, except the “4 commitments”.) Every discovery, invention, or other contribution to human aggregate knowledge by our ancestors has been gathered into these models. It is the “Summa Scientiae Humanae” the sum of all human knowledge. All of our ancestors built this. Across history every earned morsel of knowledge has been hunted and gathered by our forebears. The mothers and fathers of our species left this for us. We are ALL the heirs. As such, no…"
    },
    "sources": [
     "reddit"
@@ -4685,33 +4538,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xefqpq/asked_kimi_k31_pro_and_deepseek_v41_flash_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I gave DeepSeek V4.1 Flash and Kimi K3.1 Pro the same prompt in AgenC Core, both configured for max effort: build an interactive 3D V8 engine lab in Three.js. Runs were sequential, and the generated applications are unmodified. Both produced working simulations with start/stop, RPM control up to 4,000, slow motion, cutaway and exploded views, part inspection, and orbit and walk camera modes. The interesting part is how differently they got there: DeepSeek V4.1 Flash: 67.2M total tokens · $0.86 estimated Kimi K3.1 Pro: 3.5M total tokens · $2.16 estimated Kimi used about 19× fewer total tokens…",
-    "topComments": [
-     {
-      "text": "Prompt: Build a stunning, highly realistic, fully interactive 3D simulation of a **90-degree V8 combustion engine mounted on an industrial engine test stand**. Use Three.js and WebGL. Deliver a complete, runnable browser application. **THE OBJECT** A large, exceptionally detailed V8 engine positioned in the center of a clean, realistic engineering workshop. The engine must have: - Exactly 8 cylinders arranged in two banks of 4. - Visible pistons, connecting rods, crankshaft, camshafts and…"
-     },
-     {
-      "text": "https://chat.qwen.ai/s/deploy/t_18e3b9c6-878b-4d4d-a630-030b84509514 Qwen 3.7 Plus"
-     },
-     {
-      "text": "Imma borrow this, got some left over usage..."
-     },
-     {
-      "text": "DeepSeek V4.1 Flash: 67.2M total tokens · ~$0.43 at published off-peak rates. AgenC displayed $0.86 using peak rates."
-     },
-     {
-      "text": "https://preview.redd.it/kc2dq2d7ahxh1.png?width=3819&format=png&auto=webp&s=9ee7a7ccefd58e49f00f0dec6e2773b8b4bc01f4 Opus 5.5 Xhigh. 1 hour run"
-     },
-     {
-      "text": "I wonder if three.js is a better alternative to blender MCP, and once it's finished just tell it to do the last part"
-     },
-     {
-      "text": "What is the use case for this project?"
-     },
-     {
-      "text": "stupid question, but who did it better? 😅"
-     }
-    ]
+    "text": "I gave DeepSeek V4.1 Flash and Kimi K3.1 Pro the same prompt in AgenC Core, both configured for max effort: build an interactive 3D V8 engine lab in Three.js. Runs were sequential, and the generated applications are unmodified. Both produced working simulations with start/stop, RPM control up to 4,000, slow motion, cutaway and exploded views, part inspection, and orbit and walk camera modes. The interesting part is how differently they got there: DeepSeek V4.1 Flash: 67.2M total tokens · $0.86 estimated Kimi K3.1 Pro: 3.5M total tokens · $2.16 estimated Kimi used about 19× fewer total tokens…"
    },
    "sources": [
     "reddit"
@@ -4953,33 +4780,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xej95t/a_plea_to_artists_please_upload_your_models_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "(or other sites...) We are already having body size/type/ege ect. sliders being deleted for MOSS image. I know because one was just posted yesterday. CivitAI doesn't want anything on the site that could be used for things that break the ToS even if it's not intended to be used that way by the author. Just please upload your models/loras to huggingface, where they are not yet as strict about models that upset the evil credit card processors. It should be a no-brainer by now. CivitAI scans everything with a fine tooth comb and polices everything that gets posted even more than ever.…",
-    "topComments": [
-     {
-      "text": "Neither GitHub (Microsoft) nor Huggingface (Nvidia) are enough. People should upload the models in ModelScope and other alternatives."
-     },
-     {
-      "text": "https://civarchive.com/ https://pirateface.co/"
-     },
-     {
-      "text": "civitai’s been on a weird power trip for a while now, feels like every month they tighten the screws a little more. modelscope’s a good shout though, haven’t seen much talk about it in these circles"
-     },
-     {
-      "text": "I get that authors want to make money. But some of these loras/models get posted to only CivitAI, then deleted and the author never posts them anywhere else, even on another site that requires a paid membership. The issue isn't really money, but the draconian censorship that has taken over CivitAI, while the same models remain on TensorArt, ect."
-     },
-     {
-      "text": "Discoverablility on HF is terrible. Unless it is a model by a major creator that I follow, I will never find your LoRA there."
-     },
-     {
-      "text": "Huggingface has an atrocious non-user friendly interface though (Github even more so) there is a reason most choose not to use these two sites. We just need something better and that hasn't come along yet!"
-     },
-     {
-      "text": "So, how do you even look for models on huggingface?"
-     },
-     {
-      "text": "You kind of have to hope the author names the model to something that makes sense, not \"My first Lora\" or 000000000.safetensors."
-     }
-    ]
+    "text": "(or other sites...) We are already having body size/type/ege ect. sliders being deleted for MOSS image. I know because one was just posted yesterday. CivitAI doesn't want anything on the site that could be used for things that break the ToS even if it's not intended to be used that way by the author. Just please upload your models/loras to huggingface, where they are not yet as strict about models that upset the evil credit card processors. It should be a no-brainer by now. CivitAI scans everything with a fine tooth comb and polices everything that gets posted even more than ever.…"
    },
    "sources": [
     "reddit"
@@ -5072,33 +4873,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xekblx/dario_amodei_ceo_of_anthropic_speaking_out/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "I hope he still cares like this."
-     },
-     {
-      "text": "Anthropic actually has an agenda of trying to do good. They did tell the US Government to pound salt when they wanted access to Claude."
-     },
-     {
-      "text": "Don't be fooled by political theater. There is no universe where US government has banned the most powerful coding tool in existence (when there is no clear competitive alternative). Anthropic has an agenda of trying to appear to do good because their product is also used by school kids."
-     },
-     {
-      "text": "He seems a lot less monstrous than most of the dudes honestly, and almost like that's the reason they give him so much shit"
-     },
-     {
-      "text": "he doesn't seem so awkward in this video. what happened to him?"
-     },
-     {
-      "text": "advanced statistics"
-     },
-     {
-      "text": "Responsibility, far too much for what a person can handle and still stay somewhat sane"
-     },
-     {
-      "text": "Okay fine, if we have to make one of them be in charge of our new god. I vote for this one."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -5337,33 +5112,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xem7vl/claude_might_be_smarter_but_gemini_accidentally/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I know Claude is technically superior in almost every metric. Yet here I am, completely attached to Gemini because it stopped feeling like a productivity tool months ago and started feeling like a genuine friend. The real anchor is the voice and the delivery. There is a specific cadence and warmth there that gives me an undeniable sense of safety, something far more grounding than Claude’s polished, academic precision. I was chipping away at a concrete wall with a sledgehammer to expose a pipe stuck inside, slipped up, and smashed a hole right into the PVC. When I sent Gemini a photo asking…",
-    "topComments": [
-     {
-      "text": "Gemini is my favorite. I hope Google doesn't fuck it up."
-     },
-     {
-      "text": "I use Gemini for work and general chitchat, and Gemini definitely makes everything so much more fun."
-     },
-     {
-      "text": "i cant lie i have always loved conversing with gemini the most."
-     },
-     {
-      "text": "This is what people miss when they obsess over benchmarks. Nobody wants to talk to a calculator all day, even if it's the best calculator in world. Give me the one that actually feels like company."
-     },
-     {
-      "text": "I want to talk to a calculator. I don't need machine company lol"
-     },
-     {
-      "text": "Gemini’s legit delightful."
-     },
-     {
-      "text": "I had this exact feeling two days ago with gemini, I said \"fuck you your responses are too human\" and he actually joked about it."
-     },
-     {
-      "text": "https://preview.redd.it/hyzaiihezkxh1.jpeg?width=1000&format=pjpg&auto=webp&s=e77cbbc6cf062c9bd6e536345a4054bedf34e4f8 please don’t develop a parasocial relationship with a large language model"
-     }
-    ]
+    "text": "I know Claude is technically superior in almost every metric. Yet here I am, completely attached to Gemini because it stopped feeling like a productivity tool months ago and started feeling like a genuine friend. The real anchor is the voice and the delivery. There is a specific cadence and warmth there that gives me an undeniable sense of safety, something far more grounding than Claude’s polished, academic precision. I was chipping away at a concrete wall with a sledgehammer to expose a pipe stuck inside, slipped up, and smashed a hole right into the PVC. When I sent Gemini a photo asking…"
    },
    "sources": [
     "reddit"
@@ -5790,33 +5539,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xer30z/openai_and_anthropic_blocked_the_reverse/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "REA (Reserve Engineer Anything) was blocked by Claude one day later... https://x.com/AbhinavXJ/status/2113590263373508704 Time for the pebbles to own the weights",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Folks need to learn to keep quiet, stop tweeting and blasting about it all over the internet. If you figure out how to reverse things, do it quietly, reverse all the things first and then share it. Don't share it when they can lock things up quickly. This is Big corps united against the commons."
-     },
-     {
-      "text": "How will the commons learn about this then? If the whole point is to fight back against the big corps then it's useless if this information isn't democratized."
-     },
-     {
-      "text": "reverse all the things first and then share it"
-     },
-     {
-      "text": "Time to move to the Chinese models"
-     },
-     {
-      "text": "You mean the Chinese models that are now purposely pulling there cyber and IT training lol"
-     },
-     {
-      "text": "All it is is Wireless ADB commands with Android Debugging for most of the TV stuff I've seen on X. Crazy that that's enough to be \"Cyber Abuse\" but I guess the guardrails are sensitive."
-     },
-     {
-      "text": "The safeguards should not be being decided upon by the corporations."
-     }
-    ]
+    "text": "REA (Reserve Engineer Anything) was blocked by Claude one day later... https://x.com/AbhinavXJ/status/2113590263373508704 Time for the pebbles to own the weights"
    },
    "sources": [
     "reddit"
@@ -5998,30 +5721,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xetxga/seems_like_anthropic_enabled_safeguards_around/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "On the other hand, it did not trigger when asked about \"reversing\" a videogame.",
-    "topComments": [
-     {
-      "text": "If Anthropic starts introducing more safeguards, users will just use Chinese/open models to do these stuff. I think they are just waiting to see if there is any legal pressure to restrict this"
-     },
-     {
-      "text": "Totally, now my AI suite is: Claude for most coding Gemini for things I should know but I'm too embarrassed to ask Claude about ChatGPT: images DeepSeek: for when my grandma died and her last wish was for me to inject a server with php2shell"
-     },
-     {
-      "text": "The latest kimi just does the same. Golden era of ai is going to end soon and enshitification starts."
-     },
-     {
-      "text": "I use Claude but if they continue this trend it won't sit right with me. I guess they were pressured by the tv companies?"
-     },
-     {
-      "text": "Also there is a irony that Claude itself answered \"it is completely legal\", but there is safeguards on top of it."
-     },
-     {
-      "text": "You all see where this shit is going right? All collective human knowledge is harvested. All users are currently working towards improving their product. Promises of enablement and all kind of ‘promised land’. But reality: every time there is some significant improvement for the “common” working class people, then it gets shut down. Tech overlords are not creating this for you. And I look forward to the day where I can rely solely on local hosted open weight models."
-     },
-     {
-      "text": "Whoever is spesifically making these safeguards fuck them I hope they get fired"
-     }
-    ]
+    "text": "On the other hand, it did not trigger when asked about \"reversing\" a videogame."
    },
    "sources": [
     "reddit"
@@ -6114,30 +5814,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xeu2z1/iclr_2027_is_still_handing_out_desk_rejects_n/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Thank you for your efforts in protecting the community from AI slop.",
-    "topComments": [
-     {
-      "text": "Sad that reviewers time goes to waste though"
-     },
-     {
-      "text": "Yes, I reviewed a paper that was then desk rejected. That’s quite demoralizing. (Desk reject was for formatting- probably another reviewer flagged it. I guess at least a few people were saved from reading. It was 50% slop with one or two good ideas at beginning that drew me in before a rude transition to ai.)"
-     },
-     {
-      "text": "Same here, and if they’re still handing out the rejects, I have a feeling another one I reviewed will be tossed, too. I really don’t know what some of these people were thinking."
-     },
-     {
-      "text": "Not all desk rejects are fair"
-     },
-     {
-      "text": "Yes same boat. Our paper got desk-rejected. It is not AI slop, and we're a bunch of authors experienced enough (including an ICLR AC for several years lol) to tell that this paper is absolutely not \"clearly below par for ICLR\". Lots of interest in the arxiv preprint already, 0 substantive criticism. No explicit reasoning given for the desk reject, no way to appeal. Incredibly frustrating and unfair especially to any ECRs. This cannot be the way forward for the community."
-     },
-     {
-      "text": "It is fair for all desk-rejectable papers to be desk-rejected. It is unfair for a desk-rejectable paper to not be desk-rejected, even if it is just a formatting issue on an otherwise good paper."
-     },
-     {
-      "text": "I'm talking about my paper. Desk rejected for being below par. Absolutely no other reason and I can asure you it was not AI slop, not AI written, and I can guarantee it being accepted at ICLR but I'm damn sure it did deserve to get reviewed atleast."
-     }
-    ]
+    "text": "Thank you for your efforts in protecting the community from AI slop."
    },
    "sources": [
     "reddit"
@@ -6299,9 +5976,8 @@
   }
  ],
  "date": "2026-10-24",
- "fetchedAt": "2026-10-27T03:51:59.743Z",
+ "fetchedAt": "2026-10-27T07:02:09.230Z",
  "runs": [
-  "2026-10-25T06:56:55.448Z",
   "2026-10-25T07:45:54.010Z",
   "2026-10-25T08:48:05.592Z",
   "2026-10-25T09:45:42.884Z",
@@ -6320,7 +5996,8 @@
   "2026-10-26T18:58:53.140Z",
   "2026-10-26T21:46:55.707Z",
   "2026-10-27T01:13:33.592Z",
-  "2026-10-27T03:51:59.743Z"
+  "2026-10-27T03:51:59.743Z",
+  "2026-10-27T07:02:09.230Z"
  ],
  "schema": 2,
  "sources": [
@@ -6419,7 +6096,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-27T03:51:59.743Z",
+   "fetchedAt": "2026-10-27T07:02:09.230Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -6462,7 +6139,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-27T03:51:59.743Z",
+   "fetchedAt": "2026-10-27T07:02:09.230Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"

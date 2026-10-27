@@ -6117,7 +6117,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.011018,
+   "cr": 0.015,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6130,14 +6130,14 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.028561,
+   "out": 1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.24,
+   "cr": 0.23,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6146,7 +6146,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2381,
+   "in": 0.2266,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -6217,7 +6217,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.19,
+   "cr": 0.159,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6226,11 +6226,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.19,
+   "in": 0.169,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 8.94,
+   "out": 11.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6390,11 +6390,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0413,
+   "in": 0.0513,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.0758,
+   "out": 0.0701,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7736,28 +7736,27 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.02,
    "ctx": 131072,
    "id": "google/gemma-3-4b-it",
-   "in": 0.04,
+   "in": 0.05,
    "k": "gemma-3-4b-it",
-   "maxOut": 117964,
+   "maxOut": 16384,
    "name": "Gemma 3 4B IT",
-   "out": 0.05,
+   "out": 0.1,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8896,7 +8895,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.19,
+   "cr": 0.159,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8905,11 +8904,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.2,
+   "in": 0.169,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 20,
+   "out": 11.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16212,5 +16211,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-27T03:51:59.743Z"
+ "updatedAt": "2026-10-27T07:02:09.230Z"
 }
