@@ -2874,6 +2874,7 @@
    "cr": 0.25,
    "ctx": 262144,
    "efforts": [
+    "none",
     "low",
     "medium",
     "xhigh"
@@ -2892,6 +2893,12 @@
   {
    "cr": 0.25,
    "ctx": 262144,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "xhigh"
+   ],
    "id": "accounts/fireworks/models/qwen3p8-max",
    "in": 2,
    "k": "qwen3p8-max",
@@ -2901,7 +2908,6 @@
    "p": "fireworks-ai",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-08-03"
   },
   {
@@ -3177,6 +3183,12 @@
   {
    "cr": 0.25,
    "ctx": 262144,
+   "efforts": [
+    "none",
+    "low",
+    "medium",
+    "xhigh"
+   ],
    "id": "accounts/fireworks/routers/qwen-max-latest",
    "in": 2,
    "k": "qwen-max-latest",
@@ -3186,7 +3198,6 @@
    "p": "fireworks-ai",
    "reasoning": true,
    "src": "models.dev",
-   "toggle": true,
    "upd": "2026-08-03"
   },
   {
@@ -6117,7 +6128,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.012398,
+   "cr": 0.0165,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6126,11 +6137,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.022,
+   "in": 0.0182,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 1.21,
+   "out": 1.8,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6217,7 +6228,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.19,
+   "cr": 0.159,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6226,11 +6237,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.2,
+   "in": 0.169,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 20,
+   "out": 11.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6390,11 +6401,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0379,
+   "in": 0.0416,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.074,
+   "out": 0.0798,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7215,7 +7226,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.07337,
+   "cr": 0.07295,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7223,11 +7234,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.88044,
+   "in": 0.875394,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.76088,
+   "out": 1.750788,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7749,14 +7760,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8895,7 +8906,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.19,
+   "cr": 0.159,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8904,11 +8915,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.2,
+   "in": 0.169,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 20,
+   "out": 11.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10502,6 +10513,21 @@
    "upd": "2026-09-18"
   },
   {
+   "cr": 0.04,
+   "ctx": 262144,
+   "id": "prism-ml/ternary-bonsai-2-9b",
+   "in": 0.08,
+   "k": "ternary-bonsai-2-9b",
+   "maxOut": 65536,
+   "name": "Ternary Bonsai 2 9B",
+   "out": 0.13,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-16"
+  },
+  {
    "ctx": 32768,
    "id": "qwen/qwen-2.5-72b-instruct",
    "in": 0.36,
@@ -12058,7 +12084,7 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.033,
+   "cr": 0.0309,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12066,7 +12092,7 @@
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.0341,
+   "in": 0.0319,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -16195,5 +16221,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-27T18:44:04.164Z"
+ "updatedAt": "2026-10-27T21:44:08.645Z"
 }
