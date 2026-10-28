@@ -3263,20 +3263,6 @@
    "upd": "2025-06-17"
   },
   {
-   "cr": 0.075,
-   "ctx": 32768,
-   "id": "gemini-2.5-flash-image",
-   "in": 0.3,
-   "k": "gemini-2-5-flash-image",
-   "maxOut": 32768,
-   "name": "Nano Banana",
-   "out": 30,
-   "p": "google",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-08-26"
-  },
-  {
    "budget": {
     "max": 24576,
     "min": 512
@@ -3351,20 +3337,6 @@
    "upd": "2026-05-28"
   },
   {
-   "alwaysOn": true,
-   "ctx": 131072,
-   "id": "gemini-3-pro-image-preview",
-   "in": 2,
-   "k": "gemini-3-pro-image-preview",
-   "maxOut": 32768,
-   "name": "Nano Banana Pro",
-   "out": 120,
-   "p": "google",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-11-20"
-  },
-  {
    "ctx": 131072,
    "efforts": [
     "minimal",
@@ -3380,23 +3352,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-05-28"
-  },
-  {
-   "ctx": 65536,
-   "efforts": [
-    "minimal",
-    "high"
-   ],
-   "id": "gemini-3.1-flash-image-preview",
-   "in": 0.5,
-   "k": "gemini-3-1-flash-image-preview",
-   "maxOut": 65536,
-   "name": "Nano Banana 2",
-   "out": 60,
-   "p": "google",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-26"
   },
   {
    "cr": 0.025,
@@ -6137,7 +6092,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0126,
+   "in": 0.0115,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -6148,7 +6103,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.25,
+   "cr": 0.2,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6157,7 +6112,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.2542,
+   "in": 0.2043,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -6177,11 +6132,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0475,
+   "in": 0.0422,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.1568,
+   "out": 0.1637,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6228,7 +6183,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.169,
+   "cr": 0.19,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6237,11 +6192,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.179,
+   "in": 0.19,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 20,
+   "out": 10.5634,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6393,7 +6348,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.0216,
+   "cr": 0.0237,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6401,11 +6356,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0216,
+   "in": 0.0237,
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.1324,
+   "out": 0.1142,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7226,7 +7181,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.074081,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7234,11 +7189,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.888966,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 1.777932,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8905,7 +8860,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.169,
+   "cr": 0.181,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8914,7 +8869,7 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.179,
+   "in": 0.191,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
@@ -9232,19 +9187,6 @@
    "maxOut": 4096,
    "name": "GPT-4",
    "out": 60,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-04-09"
-  },
-  {
-   "ctx": 128000,
-   "id": "openai/gpt-4-turbo",
-   "in": 10,
-   "k": "gpt-4-turbo",
-   "maxOut": 4096,
-   "name": "GPT-4 Turbo",
-   "out": 30,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10255,35 +10197,6 @@
    "upd": "2025-10-29"
   },
   {
-   "cr": 7.5,
-   "ctx": 200000,
-   "id": "openai/o1",
-   "in": 15,
-   "k": "o1",
-   "maxOut": 100000,
-   "name": "o1",
-   "out": 60,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2024-12-05"
-  },
-  {
-   "ctx": 200000,
-   "id": "openai/o1-pro",
-   "in": 150,
-   "k": "o1-pro",
-   "maxOut": 100000,
-   "name": "o1-pro",
-   "out": 600,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-03-19"
-  },
-  {
    "cr": 0.5,
    "ctx": 200000,
    "id": "openai/o3",
@@ -10299,38 +10212,6 @@
    "upd": "2025-04-16"
   },
   {
-   "cr": 0.55,
-   "ctx": 200000,
-   "id": "openai/o3-mini",
-   "in": 1.1,
-   "k": "o3-mini",
-   "maxOut": 100000,
-   "name": "o3-mini",
-   "out": 4.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-01-29"
-  },
-  {
-   "cr": 0.55,
-   "ctx": 200000,
-   "efforts": [
-    "high"
-   ],
-   "id": "openai/o3-mini-high",
-   "in": 1.1,
-   "k": "o3-mini-high",
-   "maxOut": 100000,
-   "name": "o3 Mini High",
-   "out": 4.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-02-12"
-  },
-  {
    "ctx": 200000,
    "id": "openai/o3-pro",
    "in": 20,
@@ -10343,38 +10224,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2025-06-10"
-  },
-  {
-   "cr": 0.275,
-   "ctx": 200000,
-   "id": "openai/o4-mini",
-   "in": 1.1,
-   "k": "o4-mini",
-   "maxOut": 100000,
-   "name": "o4-mini",
-   "out": 4.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2025-04-16"
-  },
-  {
-   "cr": 0.275,
-   "ctx": 200000,
-   "efforts": [
-    "high"
-   ],
-   "id": "openai/o4-mini-high",
-   "in": 1.1,
-   "k": "o4-mini-high",
-   "maxOut": 100000,
-   "name": "o4 Mini High",
-   "out": 4.4,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-04-16"
   },
   {
    "alwaysOn": true,
@@ -10743,19 +10592,6 @@
    "out": 1.1,
    "p": "openrouter",
    "reasoning": false,
-   "src": "models.dev"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 262144,
-   "id": "qwen/qwen3-next-80b-a3b-thinking",
-   "in": 0.15,
-   "k": "qwen3-next-80b-a3b-thinking",
-   "maxOut": 235929,
-   "name": "Qwen3-Next 80B-A3B (Thinking)",
-   "out": 1.2,
-   "p": "openrouter",
-   "reasoning": true,
    "src": "models.dev"
   },
   {
@@ -16220,5 +16056,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-28T12:45:34.210Z"
+ "updatedAt": "2026-10-28T15:44:00.643Z"
 }
