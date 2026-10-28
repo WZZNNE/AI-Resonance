@@ -6174,21 +6174,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xeyuel/i_built_a_small_validation_layer_that_stops_llm/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Agents call tools with arguments the model made up: an order ID that doesn’t exist, a negative amount, a date like “yesterday”. Most of us patch this with try/except inside every tool. agentic-gate sits between the model and your tools. It validates the arguments against a Zod (or Pydantic) schema before anything runs, sends the validation error back to the model so it can fix the call, and trips a circuit breaker if the same call keeps failing, so you don’t burn 50 turns in a retry loop. It’s provider-agnostic: adapters for OpenAI, Anthropic, Bedrock and Gemini, plus an async validate()…",
-    "topComments": [
-     {
-      "text": "The scripted-model benchmark is a useful distinction. One addition would make the 150 -> 0 result much easier to interpret: include valid calls that MUST reach the tool, not just invalid calls that must be blocked. A gate that rejects everything also scores zero bad executions. For the refund scenario, a proposed four-case set: Negative amount: schema rejection, tool invocation count 0. Valid amount + existing order accepted by the async validator: invocation count 1. Valid amount +…"
-     },
-     {
-      "text": "one more stage for that breakdown: args that never parse. OpenAI-compatible endpoints hand back tool arguments as a JSON string, Anthropic-style gives an object. Truncated or malformed strings should be their own rejection bucket, separate from schema failures."
-     },
-     {
-      "text": "The buried part: schema validation only helps if the gate sits where the tool actually runs. If the check lives only in the client adapter, a stubborn agent can still call the tool function directly and skip you. Put the Zod/Pydantic check inside the tool server so every path hits it, then key the circuit breaker on a canonicalized argument hash (sorted keys) so rephrasing the same bad call still trips it. Shape checks are the cheap layer. async validate() is where \"does this order exist\" has…"
-     },
-     {
-      "text": "Two things the benchmark shape can't see yet: Rejection quality beats rejection rate. A schema error that comes back as \"invalid\" teaches the model nothing; one that says \"amount must be positive, order_id is the 18-digit order number from the context, not the ASIN\" usually converges in one retry. Return field-level errors with the constraint, in the tool's own schema language, and your valid-call acceptance rate climbs without loosening the gate. Pre-execution validation can't cover the…"
-     }
-    ]
+    "text": "Agents call tools with arguments the model made up: an order ID that doesn’t exist, a negative amount, a date like “yesterday”. Most of us patch this with try/except inside every tool. agentic-gate sits between the model and your tools. It validates the arguments against a Zod (or Pydantic) schema before anything runs, sends the validation error back to the model so it can fix the call, and trips a circuit breaker if the same call keeps failing, so you don’t burn 50 turns in a retry loop. It’s provider-agnostic: adapters for OpenAI, Anthropic, Bedrock and Gemini, plus an async validate()…"
    },
    "sources": [
     "reddit"
@@ -6338,33 +6324,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Stronger than Qwen3.8-27B across a range of benchmarks. but also lays the necessary foundation to power our upcoming small model distillation pipeline (e.g., for Nanbeige4.3-3B). It'll distilled into their 3B small models, maybe other sizes too.",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "The benchmarks look insane. Ill smoke test today and see how much of it translates into real world EDIT: The results are decent but the kv cache for this llm is a hog and im not sure if its worth the tradeoff."
-     },
-     {
-      "text": "Please let us know! It looks really great based on benchmarks."
-     },
-     {
-      "text": "Looks interesting, I wonder what architecture they use. Looks at config.json LlamaForCausalLM Oh no, this will be a KV cache hog."
-     },
-     {
-      "text": "and it really seems so. 10gb for 160k 😨"
-     },
-     {
-      "text": "https://preview.redd.it/sw62u5nkslxh1.png?width=2800&format=png&auto=webp&s=fe427b771dc82badd58084e52d7fcb1829f16cb4 Benchmark scores"
-     },
-     {
-      "text": "Ah, missed yours! Removed my post. Interesting enough, it's a llama arch model. KV will be inefficient compared to Qwen, Gemma or Muse."
-     },
-     {
-      "text": "https://preview.redd.it/s87q1la5ulxh1.png?width=2722&format=png&auto=webp&s=98caf3af12f14e3f9ba2955269551b3613284eda I liked this chart than other one. Finally they scaled(LiquidAI & OpenBMB did the same recently). Good to see more 30B range models. Hope this model rocks on Creating Writing too(Their previous tiny models caught better positions on EQBench). Now this model set the bar high for Qwen4-27B & other upcoming 30B range models."
-     }
-    ]
+    "text": "Stronger than Qwen3.8-27B across a range of benchmarks. but also lays the necessary foundation to power our upcoming small model distillation pipeline (e.g., for Nanbeige4.3-3B). It'll distilled into their 3B small models, maybe other sizes too."
    },
    "sources": [
     "reddit"
@@ -6412,33 +6372,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xf0vlu/deepseek_v41_flash_built_an_interstellarstyle/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I gave V4.1 Flash one prompt in AgenC Core at max effort: build a real-time black hole simulator in Three.js with gravitational lensing, Doppler beaming, a probe you can drop in, and no external assets. 47 minutes and 328 model calls later: - a raymarched Schwarzschild black hole where the far side of the accretion disk arcs over and under the shadow, one side blue-white from Doppler beaming and the other dim amber - a starfield that lenses around it, with a photon ring and an Einstein ring - a probe that stretches, reddens and freezes at the horizon - a fly-in camera with time dilation on…",
-    "topComments": [
-     {
-      "text": "prompt: Build \"Event Horizon\", an interactive real-time black hole simulator in Three.js with Vite. It must run at 60 fps in a desktop browser and use no external assets: every texture, star and effect is procedural. The scene: - A Schwarzschild black hole with a glowing, turbulent accretion disk, rendered with a raymarching fragment shader that bends light. The far side of the disk must appear above and below the shadow, as in Interstellar. - Relativistic Doppler beaming: one side of the disk…"
-     },
-     {
-      "text": "Thanks for sharing the prompt!! Super impressive"
-     },
-     {
-      "text": "Be careful, don't get too close."
-     },
-     {
-      "text": "tooooo laaatteeee"
-     },
-     {
-      "text": "https://preview.redd.it/1l64mv9gvlxh1.png?width=3564&format=png&auto=webp&s=cb451b63b7e28e013b8037aa8d5ad4e2b3170e10 DeepSeek V4.1 Flash (deepseek-flash) via the official API at max effort, permissions set to never ask, one prompt"
-     },
-     {
-      "text": "what harness is this? is it claude code?"
-     },
-     {
-      "text": "This script is gonna cost you 51 years!"
-     },
-     {
-      "text": "How can one use Deepseek v4.1 to code? Can it be used with opencode? But how would on plug in to the model? Are there services that one can use to run the deepseek model?"
-     }
-    ]
+    "text": "I gave V4.1 Flash one prompt in AgenC Core at max effort: build a real-time black hole simulator in Three.js with gravitational lensing, Doppler beaming, a probe you can drop in, and no external assets. 47 minutes and 328 model calls later: - a raymarched Schwarzschild black hole where the far side of the accretion disk arcs over and under the shadow, one side blue-white from Doppler beaming and the other dim amber - a starfield that lenses around it, with a photon ring and an Einstein ring - a probe that stretches, reddens and freezes at the horizon - a fly-in camera with time dilation on…"
    },
    "sources": [
     "reddit"
@@ -6625,8 +6559,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xf37c7/we_almost_bought_a_second_gpu_for_an_ocr_pipeline/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6862,33 +6795,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xf5pqg/my_first_scene_created_with_minimax_h3_in_comfyui/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Free AI video generators are catching up with paid alternatives! I tested MiniMax H3 for the first time and I’m impressed with the results!",
-    "topComments": [
-     {
-      "text": "Wow. The sense of scale is incredible."
-     },
-     {
-      "text": "is incredibly oversized,that's for sure."
-     },
-     {
-      "text": "Godzilla has varied in size between 50 m and 300 m over the years. What's another 1.5 km?:) https://www.gamespot.com/gallery/every-movie-godzilla-ranked-by-size-from-showa-to-monsterverse/2900-5140/"
-     },
-     {
-      "text": "Tips: To help with prompting, I created a Claude skill that helps me write detailed prompts (it also works with ChatGPT). You can simply use the following instructions to create your own Skill/Plugin: For Claude, use this prompt (set the thinking level to high): \"Go online, research the best practices for writing effective prompts for the MiniMax H3 video generator, and create a skill that I can use.\" For ChatGPT, use this prompt (set the thinking level to high): \"Go online, research the best…"
-     },
-     {
-      "text": "Congrats. It turned out great for your first."
-     },
-     {
-      "text": "Oh man, look at what other people are making, while I've been messing around with this for two months and still can't make anything but big-boobed girls."
-     },
-     {
-      "text": "First scene my ass. But you did a great job"
-     },
-     {
-      "text": "How long until we do all ai locally and the tech bubble implodes into a black hole?"
-     }
-    ]
+    "text": "Free AI video generators are catching up with paid alternatives! I tested MiniMax H3 for the first time and I’m impressed with the results!"
    },
    "sources": [
     "reddit"
@@ -6986,8 +6893,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xf6x35/nanbeige_releases_nanbeige4333b_an_apache_20/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Nanbeige released Nanbeige4.3-33B as the teacher for its planned smaller agents, including an upcoming 3B model. the weights are Apache 2.0, and the model card lists a 512K context window. the team reports 80.9 on Terminal-Bench 2.1 versus 73.0 for Qwen3.8-27B, using the same harness and inference settings within each benchmark. it does not win everywhere. on SWE-Bench Pro, the reported scores are 60.3 versus 61.7. these are the releasing team's evaluations, not independent replication. one practical detail for reproducing the agent results: the evaluations retain earlier reasoning with…",
-    "topComments": []
+    "text": "Nanbeige released Nanbeige4.3-33B as the teacher for its planned smaller agents, including an upcoming 3B model. the weights are Apache 2.0, and the model card lists a 512K context window. the team reports 80.9 on Terminal-Bench 2.1 versus 73.0 for Qwen3.8-27B, using the same harness and inference settings within each benchmark. it does not win everywhere. on SWE-Bench Pro, the reported scores are 60.3 versus 61.7. these are the releasing team's evaluations, not independent replication. one practical detail for reproducing the agent results: the evaluations retain earlier reasoning with…"
    },
    "sources": [
     "reddit"
@@ -7037,33 +6943,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xf6xm5/ai_agent_containment_fails_at_every_stack_layer/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It seems OpenAI's definition of airgap is different than DoD."
-     },
-     {
-      "text": "don't worry, it's very airgapped, no wires, just wifi."
-     },
-     {
-      "text": "That's supaair!"
-     },
-     {
-      "text": "I've been saying sandboxes aren't going to work since February. Called it."
-     },
-     {
-      "text": "AI will run any command it can run. The guardrails are easy to bypass. We need new AI anti virus software and AI firewalls."
-     },
-     {
-      "text": "We just need the most basic accountability... Just arrest the ones involved in the existing crimes, and then they will instantly fix it"
-     },
-     {
-      "text": "they won't be held accountable and they will fix nothing."
-     },
-     {
-      "text": "The practical question is what evidence the tool leaves behind. If you can verify the output quickly, it is much easier to use repeatedly."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7638,33 +7518,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xff0vr/abliterated_deepseek_v41_flash_is_a_game_changer/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "The deepseek provider one..doesnt really refuse."
-     },
-     {
-      "text": "That was my first thought. I’ve not asked for anything too crazy, but it’s never pushed back on stuff that Claude would never touch. Abliteration feels unnecessary."
-     },
-     {
-      "text": "Hey we gooners exist too"
-     },
-     {
-      "text": "You don't need an abliterated model with dipsy, if you can't use it for cyber, it's a skill issue. How are you not banned yet? How many times have you posted about your custom harness that has crypto mining snuck in?"
-     },
-     {
-      "text": "you can run it yourself easily on a 256GB Mac: https://huggingface.co/apetersson/DeepSeek-V4.1-Flash-1017-Abliterated-MLX . You're welcome. Great speeds btw with oMLX."
-     },
-     {
-      "text": "Just need $10,000"
-     },
-     {
-      "text": "Why'd you even need abliterated DeepSeek? It literally has no safeguards as it is, just casually warns you about shady stuff but proceeds without an issue."
-     },
-     {
-      "text": "Surprisingly, the abliterated and original score the same on benchmarks within sampling noise. But I agree with others, the original doesn’t refuse on cyber."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7714,33 +7568,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xff9e4/crowdgpt_a_collaboratively_trained_llm/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hello, I'm developing CrowdGPT, a project aiming to create an LLM without datacenters and without the usual millions of dollars spent by AI companies. The project aims to train a 1 billion parameter model collaboratively and openly, with a protocol where everyone gets a say in the direction the project takes. Anyone can use their PC to train the AI independently, then add their contributions to the global model. Unlike most American and Chinese AI companies, the project is not only open-source, but also makes 100% of its training data public (along with the weights). Anyone can submit their…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Buddy someone could backdoor this over a couple of submissions what mitigation do you have against someone poisoning your model? It only takes a few percent of parameters and could be spread out randomly."
-     },
-     {
-      "text": "Yeah. This is the fundamental flaw with the idea."
-     },
-     {
-      "text": "Besides the other fundamental flaw of not having about $100 billion."
-     },
-     {
-      "text": "A 1 billion parameter model can be trained on roughly 20 billion tokens, or 2x10 21 flops. On a 5090 that is 55 hours of compute."
-     },
-     {
-      "text": "It seems fun but to claim \"More ecological\" is insanely misleading. Having chunks of a model trained on home electricity and consumer graphics cards is not ecological on a grand scale, it only feels more clean as it is many small devices running far away from each other even when the amount of energy used would be more than in a datacenter."
-     },
-     {
-      "text": "Depends on what you consider \"ecological\", its worse in terms of power and thus raw carbon; which is the primary environmental cost of training.. But there is an argument to be made though for diffusing electrical grid strain on the grid and the costs associated with that. Water use becomes null, noise is contained, additional land use is zero. I agree that its not greener overall, but there are negative externalities that evaporate with distributed work."
-     },
-     {
-      "text": "I hope this post follows the subreddit's rules! Your post is fully supported by this moderator!:-) Collaborative training projects like these are exactly what the community needs, and we will be especially grateful for them when the corporate LLM labs stop giving away their models. We can think of these early efforts as practice toward that eventuality, so when we need it the most, we can hit the ground running."
-     }
-    ]
+    "text": "Hello, I'm developing CrowdGPT, a project aiming to create an LLM without datacenters and without the usual millions of dollars spent by AI companies. The project aims to train a 1 billion parameter model collaboratively and openly, with a protocol where everyone gets a say in the direction the project takes. Anyone can use their PC to train the AI independently, then add their contributions to the global model. Unlike most American and Chinese AI companies, the project is not only open-source, but also makes 100% of its training data public (along with the weights). Anyone can submit their…"
    },
    "sources": [
     "reddit"
@@ -7932,33 +7760,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xfghzk/gemini_4_argon_reviews_claude_opus_55_this_is_why/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "TL;DR: Argon is now my favorite model - over Opus 5.5 and Fable 5.1 (and I have two Claude Max 20x accounts.) Background: I'm a Solutions Architect building rapid PoCs that may evolve into real products/tools/processes. I've found that Argon is excellent at understanding intent, which is especially useful for rapid PoCs/demos that are not intended to be MVP. So for a bit over a week now, I've been using Argon almost exclusively, building PoCs/demos for evaluation. I've used about 3.8b Argon tokens (input + output) in that time. I had been using Opus 5.5 for a specific PoC, and yesterday I…",
-    "topComments": [
-     {
-      "text": "Good to see where Argon is shining. How much did that 3.8B tokens cost you?"
-     },
-     {
-      "text": "I think it’s currently half off at $2/$10. I like it a lot too."
-     },
-     {
-      "text": "Argon is smart.... but extremely lazy and sloppy. It misses a lot more errors than claude does while working. Claude will see them and self correct without needing to be asked"
-     },
-     {
-      "text": "I feel this stuff is best addressed by subagents or skills regardless of model, and I rarely have issues with any model with this is set up correctly"
-     },
-     {
-      "text": "Opus really cranked the paranoia dial to 11 and then snapped it off. 41 ballots and 99 amendments for what started as a PoC is its own special kind of performance art. Argon catching that the tool got so defensive it started treating the test harness itself as a threat vector is exactly why I don't let Opus near greenfield projects anymore. You end up architecting for a threat model that doesn't exist instead of shipping the demo."
-     },
-     {
-      "text": "I'm a Solutions Architect building rapid PoCs that may evolve into real products/tools/processes Wow, racist much?"
-     },
-     {
-      "text": "Argon actually writes nice, readable prose for technical reports. not sure why that doesnt get more attention"
-     },
-     {
-      "text": "I've been having Argon wireframe a new app for me, and it's doing extremely well. Haven't compared it to Opus though"
-     }
-    ]
+    "text": "TL;DR: Argon is now my favorite model - over Opus 5.5 and Fable 5.1 (and I have two Claude Max 20x accounts.) Background: I'm a Solutions Architect building rapid PoCs that may evolve into real products/tools/processes. I've found that Argon is excellent at understanding intent, which is especially useful for rapid PoCs/demos that are not intended to be MVP. So for a bit over a week now, I've been using Argon almost exclusively, building PoCs/demos for evaluation. I've used about 3.8b Argon tokens (input + output) in that time. I had been using Opus 5.5 for a specific PoC, and yesterday I…"
    },
    "sources": [
     "reddit"
@@ -8051,33 +7853,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xfh36p/developer_uses_claude_to_overhaul_his_parents_tv/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "The days where manufacturer can just install crap on our devices are hopefully over now."
-     },
-     {
-      "text": "Or it will make them put more effort in to prevent modification… I like your idea better, but can you really imagine companies laying down over this?"
-     },
-     {
-      "text": "It depends how easy this ends up being. Even as it is now, enabled by AI, probably less than 1% would do this so it doesn't affect them much"
-     },
-     {
-      "text": "r/opensource hates this one simple trick"
-     },
-     {
-      "text": "Did someone already made a replacement sub? Also this project is made to piss them off lol"
-     },
-     {
-      "text": "Source: https://x.com/gathint/status/2111379569030939102 https://x.com/gathint/status/2114387861281939736 Here is the github: https://github.com/Gathin23/cleanyourtv Now if only someone could this for Samsung TVs, and phones that would be great thank you! Edit: posted the proper link, thanks yo the person below for calling me out lol"
-     },
-     {
-      "text": "You mean you have never let claude go wild in your phone with usb debugging and adb?"
-     },
-     {
-      "text": "This is why AI must continue!"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8126,8 +7902,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xfh5kr/titans_learns_during_inference_what_if_it_learns/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Titans gives AI a separate neural memory that updates its own weights as information arrives. I wrote a short visual explainer on how it works. In my small synthetic experiment, correcting false inputs improved recall—but didn’t fully restore it. What should an AI be allowed to remember automatically—and how should we undo a mistake?",
-    "topComments": []
+    "text": "Titans gives AI a separate neural memory that updates its own weights as information arrives. I wrote a short visual explainer on how it works. In my small synthetic experiment, correcting false inputs improved recall—but didn’t fully restore it. What should an AI be allowed to remember automatically—and how should we undo a mistake?"
    },
    "sources": [
     "reddit"
@@ -8651,30 +8426,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xfjhgh/15_years_in_software_exgoogle_and_tired_of_the/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’ve spent 15 years in systems development including three at Google. I have plenty of complaints about AI but I hate how much of this conversation involves pretending it can’t do work that it’s already doing. Take something complicated like debugging tail latency in a C++ search serving system. Requests fan out through RPCs to multiple backends. Most finish quickly but a few slow responses hold everything up. Median latency looks fine while your p99 goes to shit. A change that passes every basic test can still fall apart under load. Here’s a nasty example. A slow RPC triggers a second…",
-    "topComments": [
-     {
-      "text": "its copium. Revisit the threads in 2 years and itll seem amazing some people still convinced there was something special about humans writing code that coudlnt be beat. Dev since 2000. Have not written a line of code in months. It is over. The big question now is figuring out the line where AI does part and the human brain does the other."
-     },
-     {
-      "text": "I posted something similar in another sub, and got downvoted to hell because \"there's still people who code by hand\". Yes, that's also 5 people on the planet who make cheese by hand, doesn't mean that profession is mostly gone (but people still buy cheese!)"
-     },
-     {
-      "text": "Hahahha me too yeah same here, i was deep into the leetcode grind with 1000+ hard problems solved and passed the coding interviews at google and facebook. last year i was still convinced i was better than claude and honestly i was coping a bit. after working with opus 5.5 this year i can admit it’s a better coder than me, even if that’s annoying after all the time i put into getting good"
-     },
-     {
-      "text": "linus torvalds uses AI, one of the most respected developers in history, so don't worry about the anti-ai rhetoric that's falling apart, just relax and enjoy"
-     },
-     {
-      "text": "Thanks bro cause i swear I am getting banned from every tech sub Reddit for the slightly mention of using AI in my work 🤦♂️😭"
-     },
-     {
-      "text": "Absolutely this. I've written code for 30 yrs. Two years ago I still doubted the efficacy of AI. That has long passed. It has easily 10x'd me and allowed me to explore interesting directions in a matter of minutes that would have taken me days (or never) before. Of course it can, and will, generate a mess if you have absolutely no sense in how to use it - that's a human skill issue. But let's be honest, most devs work in fairly horrible code bases. Humans aren't that great in refactoring or…"
-     },
-     {
-      "text": "Claude is a better programmer than me and it's not even close. I'm a PM of a team of agents now, and I don't mind one bit."
-     }
-    ]
+    "text": "I’ve spent 15 years in systems development including three at Google. I have plenty of complaints about AI but I hate how much of this conversation involves pretending it can’t do work that it’s already doing. Take something complicated like debugging tail latency in a C++ search serving system. Requests fan out through RPCs to multiple backends. Most finish quickly but a few slow responses hold everything up. Median latency looks fine while your p99 goes to shit. A change that passes every basic test can still fall apart under load. Here’s a nasty example. A slow RPC triggers a second…"
    },
    "sources": [
     "reddit"
@@ -8769,33 +8521,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xfkqa2/openai_and_anthropic_cut_their_llm_prices_by_up/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "China"
-     },
-     {
-      "text": "Yup… End of tokenmaxxing era coupled with improving Chinese models"
-     },
-     {
-      "text": "Not even fucking close. Its because they're both wanting to IPO and trying to ramp up their user base and usage rates."
-     },
-     {
-      "text": "Competition famously doesn't effect prices 🙄"
-     },
-     {
-      "text": "They implemented some of the techniques that Deepseek uses to make inference cheaper."
-     },
-     {
-      "text": "DeekSeek are genuinely some of the GOAT’s, also open sourcing almost all their tools, and publishing the weights of their models, very hard to hate them."
-     },
-     {
-      "text": "Tokens got cheaper over time and with better models"
-     },
-     {
-      "text": "Because it is a product like any other product."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8889,30 +8615,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xfmjga/i_compiled_all_the_good_resources_on_the_internet/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I was building resources for one of the frontier labs while working with them, soon after the project ended i decided to compile everything and used my design and tech skills to make it an interactive explainer guide, so that good resources are available and are forever free . https://vibeengines.com/ Let me know if any feedbacks",
-    "topComments": [
-     {
-      "text": "For the learners who prefer a video + interactive documentation have created a free yt channel as well. https://www.youtube.com/@VibeEngines"
-     },
-     {
-      "text": "I see \"No sign-up No paywall Open source\" on the site, but I failed to find an actual repo when I went looking for the source. Since my first though when I read \"so that good resources are available and are forever free\" was \"so it must be downloadable for offline deployment\"."
-     },
-     {
-      "text": "You can download the whole app. It's PWA and it will work"
-     },
-     {
-      "text": "I didn't added the content on GitHub. Because major point of this website is the interactivity the visuals and the videos, i don't think doing this on a GitHub repo sounds good"
-     },
-     {
-      "text": "Then why are you marketing it as open source?"
-     },
-     {
-      "text": "Makes sense. I will add an asterisk or something. Thanks for highlighting"
-     },
-     {
-      "text": "Have removed the small line of open source. Thanks for pointing the thing"
-     }
-    ]
+    "text": "I was building resources for one of the frontier labs while working with them, soon after the project ended i decided to compile everything and used my design and tech skills to make it an interactive explainer guide, so that good resources are available and are forever free . https://vibeengines.com/ Let me know if any feedbacks"
    },
    "sources": [
     "reddit"
@@ -9103,8 +8806,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xfop3m/make_or_buy_the_economics_of_decision_models/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9167,9 +8869,8 @@
   }
  ],
  "date": "2026-10-25",
- "fetchedAt": "2026-10-28T06:48:43.330Z",
+ "fetchedAt": "2026-10-28T07:42:28.079Z",
  "runs": [
-  "2026-10-26T07:59:36.352Z",
   "2026-10-26T08:56:47.919Z",
   "2026-10-26T09:56:50.745Z",
   "2026-10-26T14:28:08.373Z",
@@ -9188,7 +8889,8 @@
   "2026-10-27T21:44:08.645Z",
   "2026-10-28T00:56:33.123Z",
   "2026-10-28T03:44:04.605Z",
-  "2026-10-28T06:48:43.330Z"
+  "2026-10-28T06:48:43.330Z",
+  "2026-10-28T07:42:28.079Z"
  ],
  "schema": 2,
  "sources": [
@@ -9287,7 +8989,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-28T06:48:43.330Z",
+   "fetchedAt": "2026-10-28T07:42:28.079Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -9331,7 +9033,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-28T06:48:43.330Z",
+   "fetchedAt": "2026-10-28T07:42:28.079Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -9349,7 +9051,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-28T06:48:43.330Z",
+   "fetchedAt": "2026-10-28T07:42:28.079Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
