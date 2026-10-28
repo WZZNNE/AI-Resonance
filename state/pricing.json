@@ -6128,7 +6128,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.015,
+   "cr": 0.0137,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6137,7 +6137,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0151,
+   "in": 0.0138,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
@@ -6228,7 +6228,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.14,
+   "cr": 0.149,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6237,11 +6237,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.15,
+   "in": 0.159,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 11.5,
+   "out": 20,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6393,7 +6393,7 @@
    "upd": "2026-07-08"
   },
   {
-   "cr": 0.03,
+   "cr": 0.0399,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -6401,11 +6401,11 @@
     "max"
    ],
    "id": "~z-ai/glm-flash-latest",
-   "in": 0.0453,
+   "in": 0.0438,
    "k": "glm-flash-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "GLM Flash Latest",
-   "out": 0.0745,
+   "out": 0.11,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7760,14 +7760,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8905,7 +8905,7 @@
    "upd": "2026-06-12"
   },
   {
-   "cr": 0.14,
+   "cr": 0.149,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -8914,11 +8914,11 @@
     "max"
    ],
    "id": "moonshotai/kimi-k3",
-   "in": 0.15,
+   "in": 0.159,
    "k": "kimi-k3",
    "maxOut": 943718,
    "name": "Kimi K3",
-   "out": 11.5,
+   "out": 20,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9055,6 +9055,7 @@
   },
   {
    "budget": {},
+   "cr": 0.15,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -9062,11 +9063,11 @@
     "medium"
    ],
    "id": "nvidia/nemotron-3-super-120b-a12b",
-   "in": 0.08,
+   "in": 0.3,
    "k": "nemotron-3-super-120b-a12b",
    "maxOut": 235929,
    "name": "Nemotron 3 Super 120B A12B",
-   "out": 0.45,
+   "out": 2.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12082,7 +12083,7 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.0331,
+   "cr": 0.0288,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12090,7 +12091,7 @@
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.0341,
+   "in": 0.0298,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -12128,11 +12129,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.0453,
+   "in": 0.15,
    "k": "glm-5-3-flash",
-   "maxOut": 131072,
+   "maxOut": 943717,
    "name": "GLM-5.3-Flash",
-   "out": 0.0745,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16219,5 +16220,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-10-28T03:44:04.605Z"
+ "updatedAt": "2026-10-28T06:48:43.330Z"
 }
