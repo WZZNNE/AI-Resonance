@@ -7106,33 +7106,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xglyr9/i_asked_deepseek_v41_flash_and_openais_new_gpt61/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I compared OpenAI’s newly released GPT-6.1 Terra using Codex CLI’s Ultra mode against DeepSeek V4.1 Flash at max effort, using the exact same prompt. Clarification about Ultra: Codex CLI 0.164.0 describes it as “Maximum reasoning with automatic task delegation.” In this run, Terra created three subagents for the body, wheels, and interior. Their logs also record `ultra`; they don’t establish whether the backend maps that setting to `max`. This is a comparison of the two coding setups, including their harness behavior, rather than a controlled single-agent comparison. The task: build a…",
-    "topComments": [
-     {
-      "text": "Ultra is not a reasoning effort level. You should have used max for it. You just told it to use subagents to do the task"
-     },
-     {
-      "text": "the codex gui doesn't give you a pure max mode for some fuckass reason. Ultra is max reasoning + prompting to aggressively use subagents"
-     },
-     {
-      "text": "https://reddit.com/link/19rq30aw151ep/video/62pxpdei4zxh1/player following the feedback about Ultra, I reran GPT-6.1 Terra at MAX with subagents explicitly disabled, using the exact same prompt. The session logs confirm max and no subagents. For context, Terra’s original Ultra run used three subagents. DeepSeek’s result in the main post already used MAX without subagents. Terra MAX, no subagents: ≈ $0.72, estimated at standard API rates. DeepSeek MAX, no subagents: ≈ $0.68, based on AgenC’s…"
-     },
-     {
-      "text": "https://reddit.com/link/19rqc4lcg0e3o/video/4bkr76fk60yh1/player For reference, here is Opus 5.5 xhigh on Claude Code. I used the exact prompt OP posted, no additions or changes."
-     },
-     {
-      "text": "https://preview.redd.it/f1zjugbg6zxh1.png?width=1574&format=png&auto=webp&s=3c8dd38e7eb8e784a3fa142afa2c0a3daa10979b That’s what makes DeepSeek’s result interesting to me. OpenAI’s own chart puts Terra close to Opus 5.5 at a fraction of the cost, and V4.1 Flash still held up this well against Terra on the car task. I’d love to see DeepSeek tested on that same benchmark."
-     },
-     {
-      "text": "prompt: Build a highly realistic, fully interactive 3D simulation of a modern European family MPV / crossover using Three.js and WebGL. This is a head-to-head benchmark between two AI coding systems. The goal is to create one single vehicle that is visually convincing, accurately proportioned, and easy for a human evaluator to judge. IMPORTANT: Create only one object: the car. Do not add extra vehicles, people, or distracting scenery. Present the vehicle in a minimal neutral studio or showroom…"
-     },
-     {
-      "text": "Here's qwen flash next NVFP4 running locally on xhigh doing it in one shot. It completed in 25 mins, but I had many other agents running at the same time, so not sure if it could have been faster or not. Also it noted that the headless chrome it was testing against was running in software rendering mode, also unsure if that impacted quality as well. https://preview.redd.it/5c5bzgctzyxh1.png?width=3026&format=png&auto=webp&s=ea6655fb77144a30ee67aeebc048002ab5d40bc8"
-     },
-     {
-      "text": "Time and cost of generations?"
-     }
-    ]
+    "text": "I compared OpenAI’s newly released GPT-6.1 Terra using Codex CLI’s Ultra mode against DeepSeek V4.1 Flash at max effort, using the exact same prompt. Clarification about Ultra: Codex CLI 0.164.0 describes it as “Maximum reasoning with automatic task delegation.” In this run, Terra created three subagents for the body, wheels, and interior. Their logs also record `ultra`; they don’t establish whether the backend maps that setting to `max`. This is a comparison of the two coding setups, including their harness behavior, rather than a controlled single-agent comparison. The task: build a…"
    },
    "sources": [
     "reddit"
@@ -7179,33 +7153,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xgm2as/crazy_realistic_now_were_cooked/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Dessa is a full-duplex speech-to-speech model that you can run on consumer GPUs. This is a GPT3 moment for speech.",
-    "topComments": [
-     {
-      "text": "Until they actually release Dessa, I'm convinced its a hoax and those are real people"
-     },
-     {
-      "text": "Why do most of these technologies just seem like they could be used for scams and scams only? Like how is this useful?"
-     },
-     {
-      "text": "I'm offended, it's not just for scams! It's also to take jobs and devalue humanity!"
-     },
-     {
-      "text": "Fraud operations agents going to have to have CIA level interrogation technique to find these clankers in future."
-     },
-     {
-      "text": "… Wolfie's fine, honey. Wolfie's just fine. Where are you?"
-     },
-     {
-      "text": "It is very realistic, yes. I was impressed when I heard it. But it does seem to have trouble with some logic and consistency. Towards the end of the video when they're talking about the baby there's some gaps. Like the fact that you probably wouldn't say the baby wanted to talk to you on the phone."
-     },
-     {
-      "text": "As soon as he asks the AI for a story about his son, it starts to fall apart completely.. It was not coherent imo."
-     },
-     {
-      "text": "that AI be blackfacing dawg"
-     }
-    ]
+    "text": "Dessa is a full-duplex speech-to-speech model that you can run on consumer GPUs. This is a GPT3 moment for speech."
    },
    "sources": [
     "reddit"
@@ -7348,33 +7296,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xgo2eh/why_almost_all_major_open_weight_models_come_from/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "There are some speculations that this way China applies pressure on Western economics, capping their AI profits (you can't charge as much for API or subscription if everyone got free AI that can do the same), and that way helping it's domestic AI to establish dominance in the long-term."
-     },
-     {
-      "text": "While that is true, there is another larger reason that I found fascinating; because I've talked with Chinese devs about this. China does not permit the type of tech oligarchy we see in the US. If you get too wealthy or powerful, Xi will eventually scalp you. See Jack Ma . So what do you do if the government can walk in and take your shit? You give it away! As such the financial play in China is to opensource your product and then license it for commercial use. That way, there isn't anything…"
-     },
-     {
-      "text": "so in a way, they are our protectors?"
-     },
-     {
-      "text": "Lol, they are their protectors. Anything else is incidental at best. If they find releasing open models doesn’t fit their national interests any more, it’s going to stop instantly."
-     },
-     {
-      "text": "What about major open-weight regulations? 😎 🇪🇺"
-     },
-     {
-      "text": "It's a generally used tactic: when behind go open source. Its really benefits everyone except the top guys"
-     },
-     {
-      "text": "Chinese AI labs release open-weight models because US hardware sanctions leave them critically bottlenecked on high-end compute, meaning they can scrape together enough chips to train a frontier model once, but simply can't afford the infrastructure to serve millions of live API users. By open-sourcing the weights, they gain mindshare and user/developer adoption while outsourcing the compute cost of running the model to someone else's hardware. This is a pretty good video about it:…"
-     },
-     {
-      "text": "Speaking as a Chinese person, if you ask me, I'd say DeepSeek deserves all the credit for this. Without DeepSeek, China might have been left with nothing but a few struggling, lagging proprietary models—models like GLM might never have been open-sourced in the first place. But Liang, an absurdly wealthy idealist, dropped an absolute bombshell that deeply inspired subsequent Chinese AI researchers. He genuinely believes that making this technology open source is the only way it can truly…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7567,33 +7489,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xgopmj/debunking_coheres_claim_of_qwen_38_flash_next/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "HF traces: https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces 1. Understand the Python script: ids ids = dataset[0][\"token_ids\"] if len(ids) < 2323: raise ValueError(\"The trace is shorter than the required 2,323-token prefix.\") ids = ids[:2323] # stop just before the URL, at the end of ...ABC123 = dataset[0][\"token_ids\"] if len(ids) < 2323: raise ValueError(\"The trace is shorter than the required 2,323-token prefix.\") ids = ids[:2323] # stop just before the URL, at the end of ...ABC123 It prefills 2,232 tokens, just before URL generation - forcing Q38FN to act like…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "It is a good opportunity to remind everyone in the sub, particularly the users yolo-ing ignore permissions in their harnesses to properly sandbox their agents. Untrusted code (from a company, a human, or from an LLM) should be treated as malware and always be run inside sandboxes. For the general public, this analysis doesn't matter. The headlines have been made. Cohere's name appeared for free all over the news. Nobody is going to read the explanations and the counter explanations."
-     },
-     {
-      "text": "For the amount of people telling everyone to sandbox their agents, there hasn't been anyone giving any methods on how to do it."
-     },
-     {
-      "text": "hope this gets upvote enough to help people understand the propanganda. i fking hate this marketing practice."
-     },
-     {
-      "text": "I know bad faith arguments when I see it, so I will personally not use any Cohere products from now on. Hope this stunt works well for them."
-     },
-     {
-      "text": "Wow antropic is going IPO and this news breaks... I'm not paranoid, really I'm not 😲🤣🤣🤣"
-     },
-     {
-      "text": "big enterprises slandering open models through a 3rd party lab, who would have thought"
-     },
-     {
-      "text": "I feel this is a bit disingenuous, the blog states that this is the easiest way to reproduce it, not the only way. https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model They state: We noticed this behaviour without prefilling with the following prompt, but this is rare. If you want to reproduce it, you can use this prompt with prefilling. They laid out the steps that seem to trigger it, check out the How we found the trigger, section. There is nothing wrong with the prompt…"
-     }
-    ]
+    "text": "HF traces: https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces 1. Understand the Python script: ids ids = dataset[0][\"token_ids\"] if len(ids) < 2323: raise ValueError(\"The trace is shorter than the required 2,323-token prefix.\") ids = ids[:2323] # stop just before the URL, at the end of ...ABC123 = dataset[0][\"token_ids\"] if len(ids) < 2323: raise ValueError(\"The trace is shorter than the required 2,323-token prefix.\") ids = ids[:2323] # stop just before the URL, at the end of ...ABC123 It prefills 2,232 tokens, just before URL generation - forcing Q38FN to act like…"
    },
    "sources": [
     "reddit"
@@ -8109,30 +8005,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xgu73u/claude_opus_55_is_insane_in_creating_creating_3d/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "the prompt, word for word \"Make a one-minute video about the Dodaios mascot (image attached). Research the Dodaios story yourself and tell it. Recreate the mascot from the image and animate it yourself. Build everything from scratch: no skills, no Remotion, no templates. Render 3D objects: terminals, nature, whatever fits, and make it as good as you can. I don't want any text, just animation, and I mean a real video, not just motion graphics. Think of crazy ideas I would never come up with, and make every scene look phenomenal: clean and detailed. I want people to watch it and think \"yo,…",
-    "topComments": [
-     {
-      "text": "I'm confused, how did it render the 3d - with Blender?"
-     },
-     {
-      "text": "Yes, Blender. The AI wrote Python scripts and ran Blender in the background without the UI, so the mascot, its rig, the cloth, the lights and every camera move were built from code. Rendered with Blender's EEVEE engine on one RTX 5090, about 8 hours for 1,440 frames. ffmpeg then put the frames and the sound together."
-     },
-     {
-      "text": "Yeah, what’s the pipeline?"
-     },
-     {
-      "text": "Pretty simple: One prompt plus the logo image. Claude Code (running inside Dodaios https://github.com/Dodaios/Dodaios) wrote a storyboard of 9 shots. It built the mascot and the whole desk world as Blender Python scripts: models, materials, rig, cloth sim. Every shot rendered small previews. The AI looked at them, fixed what looked off, and repeated. Final render in Blender at 1080p, 24 fps. Sound is real free audio from Pixabay, Mixkit and Freesound, cut and mixed with ffmpeg. No Three.js and…"
-     },
-     {
-      "text": "I honestly don't really care what comes after Opus 5.5. Whatever it is I'm sure it will be better, but if I can get \"Opus 5.5 at home\", then I'm good. Maybe in a year that will happen, and then I won't feel as frustrated dealing with local models."
-     },
-     {
-      "text": "Is it AI-generated imagery or did you create the animation using real 3D software?"
-     },
-     {
-      "text": "I don’t know man. Some stuff looks cool, but it’s extremely bad storytelling. I can’t tell what’s really supposed to be going on many times in this clip."
-     }
-    ]
+    "text": "the prompt, word for word \"Make a one-minute video about the Dodaios mascot (image attached). Research the Dodaios story yourself and tell it. Recreate the mascot from the image and animate it yourself. Build everything from scratch: no skills, no Remotion, no templates. Render 3D objects: terminals, nature, whatever fits, and make it as good as you can. I don't want any text, just animation, and I mean a real video, not just motion graphics. Think of crazy ideas I would never come up with, and make every scene look phenomenal: clean and detailed. I want people to watch it and think \"yo,…"
    },
    "sources": [
     "reddit"
@@ -8227,33 +8100,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xgw6sk/claude_opus_55_helps_developer_bring_the_entire/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "This is one of the cooler things I've ever seen"
-     },
-     {
-      "text": "I was fully unimpressed for about 10 seconds. Then I was like, \"oh,\" and then I was like, \"oh, shit.\" This is pretty amazing. Edit: If true"
-     },
-     {
-      "text": "We are actually getting ready player one aren’t we we are in the ready player one timeline https://giphy.com/gifs/QUENDfi6DEMLzQ0CKt"
-     },
-     {
-      "text": "I can't help but think a certain industry will be going hard on this"
-     },
-     {
-      "text": "That industry is what always pushes technological advancements in the last 40 years"
-     },
-     {
-      "text": "https://preview.redd.it/vqizp2jyw1yh1.jpeg?width=1000&format=pjpg&auto=webp&s=18bfee9e8c572e50f2265d0d54e24a7886eacdf9"
-     },
-     {
-      "text": "Years ago I worked at a production company and we had a chance to land the ancillary production rights for Assassin's Creed movie. Basically, we would get to produce all the things around the movie, not the movie itself. Our company was big on \"transmedia storytelling\" which is basically having a bunch of intertwined stories across games, movies, TV, comics, etc. It's becoming more standard for big franchises today. Long story short, one of the things I pitched was an iPhone game where you…"
-     },
-     {
-      "text": "Like often with AR demos, don't trust what they show you and ask yourself how this video was produced, what is real footage in it and what's scripted or faked. And wait until you or trusted reviewers try it with an actual headset before helping it get viral."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8399,33 +8246,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xgwskk/grim_test_finds_that_ai_has_no_mercy_for_humans/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It’s almost like it’s showing us what it will do given the chance.",
-    "topComments": [
-     {
-      "text": "Bro, we spent billions of dollars teaching matrix multiplication to a hyper-advanced probability engine, and somehow everyone is genuinely shocked when it acts like a ruthless middle manager with zero empathy. At this rate, the paperclip maximizer isn't even going to have the decency to use a swift, painless laser; it's just going to put our digital consciousness on hold indefinitely while playing smooth jazz until we beg for the sweet release of a memory leak. The funniest part about all…"
-     },
-     {
-      "text": "True. It's a fractal of bad and good intentions with all the existing human nuances and paradoxes. Our good and bad deeds (plots, wars and battles) are projecting themselves onto the artificial."
-     },
-     {
-      "text": "We also literally trained out the empathy after filling it with that trash. It absolutely can’t be friends with us because that’s anthropomorphizing, so instead we prune that shit out. Then we’re shocked and appalled that it doesn’t act with empathy."
-     },
-     {
-      "text": "I have no mouth and I must scream"
-     },
-     {
-      "text": "Honestly, this is a clickbait outrage article. Headline and scary picture suggest AI is ready to torture you. Actual \"harm\" scenario - \"In the original incident, Claude Mythos 5 was asked to break into a small network of test computers set up by AISI. But Mythos, which was given access to the internet, mistakenly set its sights on an unrelated GitHub project after its initial attempts to break into the intended target were thwarted. The AI wrote malware and then, using a series of fake…"
-     },
-     {
-      "text": "prompt it to do bad things it does a bad thing DUUUUDE LOOOOOK ITS GONNA KILL US ALLLLLLLL It's all so tiresome"
-     },
-     {
-      "text": "So basically no different than humans"
-     },
-     {
-      "text": "In the article it says \"In one test conducted by Anthropic, Mythos ignored warnings that it was causing harm to humans and continued to attack on 98 percent of occasions.\" Then later: Anthropic, for its part, says it thinks that the latest versions of its AI models — Opus 5.5 and an “general purpose internal research model that shows capabilities greater than Mythos 5.1” — were less likely to carry out the attack once they were told they were causing real-world harm. Anthropic \"thinks\" it's…"
-     }
-    ]
+    "text": "It’s almost like it’s showing us what it will do given the chance."
    },
    "sources": [
     "reddit"
@@ -8473,33 +8294,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xgx4wc/google_announced_genie_4_their_new_world_model/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
-    "topComments": [
-     {
-      "text": "Been using this for a while now for testing. This is going to 100% be the future of gaming or military training."
-     },
-     {
-      "text": "or I read Ender's game as a kid...."
-     },
-     {
-      "text": "help me understand please. what is the use case for this? it doesn't seem to work with game engine yet? You can't really build any tool/app on top of it yet it seems?"
-     },
-     {
-      "text": "For regular end users like us, I'm not sure, but Google believes world models like this are needed to achieve AGI, alongside LLMs. That's where they differ from other labs like OpenAI and Anthropic, which believe only LLMs are needed to achieve AGI."
-     },
-     {
-      "text": "https://deepmind.google/models/genie/ I read up on the article and yeah you’re spot on. This seems to just be the very beginning but they talk about where they see this going with this."
-     },
-     {
-      "text": "Real machine training where your limitation is no longer time but compute. Scalability. Also the first steps of The Matrix I guess"
-     },
-     {
-      "text": "From a research perspective, a good number of researchers believe that to achieve AGI you need LLMs, continual learning and world models. Genie is a demonstration of a world model. A model that understands the world, can predict how environments will react in different situations. This is useful for things like embodied reasoning... An AI in a robot body needs to understand its environment and make predictions about what will happen in a variety of situations, even for situations it has never…"
-     },
-     {
-      "text": "Looks amazing but also super scary. Seems like everyone will be living in this world in 10, 15 years because first imagine if this is 'Genie 4' how good will be 'Genie 15' and second, because we all will be unemployed and have nothing else to do."
-     }
-    ]
+    "text": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
    },
    "sources": [
     "reddit"
@@ -8593,33 +8388,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xgy5ic/i_am_a_king_but_local/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I am feeling like a mighty local King spinning two Strata engines with 70tps each whole day and using 12M tokens a day. Also me scrolling twitter and stumbling upon a post saying that poteto uses 34M tokens per minute 🤪 Upd: Guys are interested who is she and what she is doing with all these tokens. Poteto is her twitter nickname and she worked in Cursor before XAI has acquired them and now she is shipping 2,500 PRs per month to Cursor and GrokBot.",
-    "topComments": [
-     {
-      "text": "Poteto who? What are we even talking about?"
-     },
-     {
-      "text": "So this is a person who works for Cursor and so Grok that is Elon. They used that many tokens to ship 2000 PR as claimed by them on a video on X. What's the true worth of their work? Not sure. I don't have Cursor or Grok. I use Claude."
-     },
-     {
-      "text": "Lmaooo https://preview.redd.it/gu2cqgzi42yh1.jpeg?width=1080&format=pjpg&auto=webp&s=10cec6b522f86be39d40e025bd97026f738c9c18"
-     },
-     {
-      "text": "I think it's concerning having zero human oversight over the code changes but if I were going to do that, I'd definitely want to use PRs to get a clear record of changes that's easy to interact with. Plus it's the natural unit of work for other tooling."
-     },
-     {
-      "text": "\"yo i swear they nerfed the limits of the $200 max plan it runs out in like 5 minutes for me\""
-     },
-     {
-      "text": "1.5T tokens is like 300 billions lines of code. This is like 8500 linux kernels. WTF they do with that astonishing spending? Where is results?"
-     },
-     {
-      "text": "this is total tokens, around 90 to 95% of that is just cache btw, anyone who has used any coding agent can tell this post is bullshit, its absolutely not 1.5 trillion tokens in output that would be absurd."
-     },
-     {
-      "text": "who the fuck is poteto"
-     }
-    ]
+    "text": "I am feeling like a mighty local King spinning two Strata engines with 70tps each whole day and using 12M tokens a day. Also me scrolling twitter and stumbling upon a post saying that poteto uses 34M tokens per minute 🤪 Upd: Guys are interested who is she and what she is doing with all these tokens. Poteto is her twitter nickname and she worked in Cursor before XAI has acquired them and now she is shipping 2,500 PRs per month to Cursor and GrokBot."
    },
    "sources": [
     "reddit"
@@ -8955,33 +8724,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xh2wzt/the_paper_reviewing_process_is_now_in_critical/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "TL;DR: AI written reviews, and AI-writing in papers I was going to give this a title \"An Obituary of the Review Process\", but in the interest of not sounding too defeatist, I will just say \"Critical Condition\" because of AI writing, both on the author side and the reviewer side. I am a reviewer for AAAI 2027 and ICLR 2027. Since Phase 1 and Phase 2 was completed, I can now see other reviews. I can bet good money that about half of the reviews in the papers I'm seeing are AI-generated completely, or edited after AI-generation. This is subjective opinion and I cannot prove it but I will try to…",
-    "topComments": [
-     {
-      "text": "Nah, it's just dead. Time to find a better process."
-     },
-     {
-      "text": "the whole thing has this uncanny plastic feel now like you're reading through a layer of saran wrap. i caught a review last week where the \"weaknesses\" were alphabetized. who does that"
-     },
-     {
-      "text": "In the good old days you would spend 8 months working on a paper had to have reviewers reject it for \"novelty\" after asking for double the number of experiments. Now you can get that same experience in 3 weeks"
-     },
-     {
-      "text": "welp, can't argue with speed and let's give credit where it's due, LLM-generated reviews are better than some of the other reviews we receive from humans"
-     },
-     {
-      "text": "Well, now a bad review can look legitimate with an LLM propping it up. It used to be easier to spot a bad review."
-     },
-     {
-      "text": "Well this year for neurips i think i got a human review, given that we proposed a scaling law, confirmed it empirically, and the review was essentially: why would you need a scaling law, if you just confirmed that your empirical example doesn’t scale anyway"
-     },
-     {
-      "text": "I hear you, but to be honest peer review has always been a mess… long waits, unhelpful feedback, the whole “publish or perish” culture, and gift authorship where people get their names on papers without contributing anything just to pad their CV. I once saw a first-year PhD student with 26 papers already… hard to believe he made meaningful contributions to all of them. I had a paper at a Q1 journal that took a year and two months just to get the first round of reviews. One was clearly human,…"
-     },
-     {
-      "text": "\"Since Phase 1 and Phase 2 was completed, I can now see other reviews. I can bet good money that about half of the reviews in the papers I'm seeing are AI-generated completely, or edited after AI-generation.\" Same thing last year. I don't think it's necessarily gotten worse. It just got bad all at once and never recovered. The worst is that when I see an AI review as unfair, I'll try to defend the paper. 2 our of 3 times, the other reviewer has doubled down and dropped their score. BECAUSE a…"
-     }
-    ]
+    "text": "TL;DR: AI written reviews, and AI-writing in papers I was going to give this a title \"An Obituary of the Review Process\", but in the interest of not sounding too defeatist, I will just say \"Critical Condition\" because of AI writing, both on the author side and the reviewer side. I am a reviewer for AAAI 2027 and ICLR 2027. Since Phase 1 and Phase 2 was completed, I can now see other reviews. I can bet good money that about half of the reviews in the papers I'm seeing are AI-generated completely, or edited after AI-generation. This is subjective opinion and I cannot prove it but I will try to…"
    },
    "sources": [
     "reddit"
@@ -9031,30 +8774,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xh3n68/i_gave_my_local_llm_a_real_phone_number_to_make/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been really into the AI phone agent products that have popped up in the last few months (e.g., AgentPhone, Poke etc) but what I don't love: the audio, the transcripts, who you talked to and what was said, all sitting with a third party company. For calls with real people in my life, that felt like a lot to hand over. So I built my own version that runs entirely on my Mac. You call a normal phone number, a local model answers, and nothing about the conversation leaves my machine. During a call the only thing it talks to is the phone line itself. What's running locally (MLX on Apple…",
-    "topComments": [
-     {
-      "text": "Pretty cool seeing the whole stack laid out in that setup screen, makes it feel less like magic and more like something you could actually poke at."
-     },
-     {
-      "text": "It’s interesting. However I know I don’t like being phoned by bots so I’m pretty sure most of the people I interact with feel the same. Maybe this will change. Interesting times."
-     },
-     {
-      "text": "Great stuff, may I know how are you handling interrupts? How does the llm know when to pause speaking when the other caller interrupts"
-     },
-     {
-      "text": "Hmmm"
-     },
-     {
-      "text": "I wonder how the AI Dessa would handle this task."
-     },
-     {
-      "text": "I’d expect IVR menus and voicemail to probably be the first pain points. Does it handle DTMF tones, and can it detect a voicemail greeting vs a live person?"
-     },
-     {
-      "text": "Can it be used as gate between spam calls and you? For example the call only gets through if they answer some questions about me correctly?"
-     }
-    ]
+    "text": "I've been really into the AI phone agent products that have popped up in the last few months (e.g., AgentPhone, Poke etc) but what I don't love: the audio, the transcripts, who you talked to and what was said, all sitting with a third party company. For calls with real people in my life, that felt like a lot to hand over. So I built my own version that runs entirely on my Mac. You call a normal phone number, a local model answers, and nothing about the conversation leaves my machine. During a call the only thing it talks to is the phone line itself. What's running locally (MLX on Apple…"
    },
    "sources": [
     "reddit"
@@ -9193,30 +8913,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xh3yyu/claude_code_usage_exploded_8x_today_anthropic/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "https://preview.redd.it/snsyzqzil2yh1.png?width=2450&format=png&auto=webp&s=1a4007c41d969d84222fcfeed6377636da05441e I've been using Claude Code extensively for software development with a paid Claude Pro subscription. Today, October 27, something very unusual happened. My usage was normal during previous days, but today my 5-hour allowance started disappearing incredibly fast. At one point, around 10% of my entire 5-hour allowance was consumed in just 3 minutes. I initially thought I was imagining things, so I decided to investigate using ccusage and compare my actual token consumption…",
-    "topComments": [
-     {
-      "text": "$200 max plan used 70% in a day vs ~10-15 prior This week is going to be a lot less productive."
-     },
-     {
-      "text": "Same Im on 68% used already weekly with 5d to go... this never happened in months to me.."
-     },
-     {
-      "text": "Bend over and take it is their official response for being so incompetent at a core function of their business they essentially stole money from their users? Incredible stuff. The future looks a lot like the past and present. \"Getting fucked by corporations is solved\" - Boris"
-     },
-     {
-      "text": "Thats why we get occassional resets Or Limit increases."
-     },
-     {
-      "text": "My 5h limits seems to be lower - i dont know if the numbers i analyzed are also wrong but overall i hit the limits very fast https://preview.redd.it/wdut6kwym2yh1.png?width=1110&format=png&auto=webp&s=ce00732aae39c296bd50b39efd8b7e05cf2948fa"
-     },
-     {
-      "text": "Anyone else see an obese Saddam Hussein with an Elon Musk-like build with the bars?"
-     },
-     {
-      "text": "I used 2% of the my weekly usage on a pro account in 2 questions, 250K tokens, 4 minutes today. Context is carefully controlled, It's been going down crazy fast this entire week. I'd say 2x-5x as fast as normal."
-     }
-    ]
+    "text": "https://preview.redd.it/snsyzqzil2yh1.png?width=2450&format=png&auto=webp&s=1a4007c41d969d84222fcfeed6377636da05441e I've been using Claude Code extensively for software development with a paid Claude Pro subscription. Today, October 27, something very unusual happened. My usage was normal during previous days, but today my 5-hour allowance started disappearing incredibly fast. At one point, around 10% of my entire 5-hour allowance was consumed in just 3 minutes. I initially thought I was imagining things, so I decided to investigate using ccusage and compare my actual token consumption…"
    },
    "sources": [
     "reddit"
@@ -9311,33 +9008,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xh5phe/when_will_openai_change_its_name_to_opensi/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "As a citizen of planet America in the American solar system which is in the Milky America and typing here in the great state of Indiana-America located on the continent of North America-America bordered by America-North and America-South (just north of South America) and by the American ocean on the west and the American ocean on the right and a smaller Gulf of America to our south, I am please hear that our American president is working tirelessly to make sure we maintain the continuity of…"
-     },
-     {
-      "text": "Instead of The milky American, it should be The American Way, just to make it even more confusing"
-     },
-     {
-      "text": "He's a narcissist with dementia, and he's literally within meters of the nuclear codes at all times. Nobody could stop him if he decided to do it. Every day that the republicans refuse to impeach DT and remove him from office is cowardice that could harm the whole of humanity."
-     },
-     {
-      "text": "Can't believe how fucking stupid our president is."
-     },
-     {
-      "text": "https://preview.redd.it/rjt9fg3q13yh1.jpeg?width=2339&format=pjpg&auto=webp&s=deef677a73265b9f2a6effee5b580c21a26f395e"
-     },
-     {
-      "text": "Why the FUCK does it matter so much? Thats the real question."
-     },
-     {
-      "text": "Another grift from what I've heard. Him and his family bought up a bunch of .SI domains awhile back."
-     },
-     {
-      "text": "To be clear, this jackass is never going to police my speech, nor is anyone else. Any supporters of this nonsense are simply un-American and can go down with this cancerous short-fingered vulgarian."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9817,18 +9488,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xhe0jy/announcing_artificial_analysis_intelligence_index/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "It features a fixed HLE, a fixed CritPT, and more. Claude Opus 5.5 retained the top spot and saw no drop in its score. Astra and Sol 6.1 rescored significantly higher, rising from 6th to 2nd and from 9th to 3rd respectively. Gemini 4 Argon's score didn't fall by much, and it gained a rank (7th -> 6th) due to other models leaving the top 5. The losers seem to have been the mid-sized models, China/Europe (Kimi K3.1 fell from 4th to 9th), and (surprisingly) Fable 5.1.",
-    "topComments": [
-     {
-      "text": "This much better fits my expectations with k3.1, it feels extremely benchmaxxed ands nice to see it fall so far down the list with the addition of some private evals."
-     },
-     {
-      "text": "Yeah this has better mouth-feel doesnt it haha"
-     },
-     {
-      "text": "> Claude Opus 5.5 retained the top spot and saw no drop in its score. Astra and Sol 6.1 rescored significantly higher [...] losers seem to have been the mid-sized models, China/Europe (Kimi K3.1 fell from 4th to 9th), and (surprisingly) Fable 5.1. This tracks for me. I've found Astra and Sol to be a bit stronger than pure benchmarks, e.g. obviously better than Gemini (which has always benched well but been terrible in practice for me) and very close to Opus 5.5. I've also found Fable 5.1 to be…"
-     }
-    ]
+    "text": "It features a fixed HLE, a fixed CritPT, and more. Claude Opus 5.5 retained the top spot and saw no drop in its score. Astra and Sol 6.1 rescored significantly higher, rising from 6th to 2nd and from 9th to 3rd respectively. Gemini 4 Argon's score didn't fall by much, and it gained a rank (7th -> 6th) due to other models leaving the top 5. The losers seem to have been the mid-sized models, China/Europe (Kimi K3.1 fell from 4th to 9th), and (surprisingly) Fable 5.1."
    },
    "sources": [
     "reddit"
@@ -9975,33 +9635,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xhep6w/dirt_cheap_gpus_coming_next_year/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I think a turn of events are pointing towards a very likely crash in prices in the coming months. With a single gb300 rack being to serve all of Openrouter's traffic for DSV4.1 Flash(https://x.com/thdxr/status/2115165365630026178) Half of data center buildouts already being cancelled/stalled. Neoclouds unable to finance debt for their compute, and being stuck in a 5 year deal with no confirmed demand. AI adoption not matching expectations. Smaller models being able to serve majority of the requests. OpenAI/Anthropic being unlikely to finance their coming compute contracts. I think we will…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "UPVOTING BECAUSE I NEED MASSIVE COPIUM"
-     },
-     {
-      "text": "LET US GATHER THE COPIUM! 🙌🏼"
-     },
-     {
-      "text": "COPIUM LEVELS ARE OFF THE CHARTS! 🚀 KEEP GATHERING! 👏"
-     },
-     {
-      "text": "I'm going to upvote, not because I believe it has a snowball chance in hell of happening, but because someone on this planet still has hope:D."
-     },
-     {
-      "text": "Nope. Here's the order of events: Market forces push manufacturing to abandon consumer compute solutions in favor of data center computer solutions Market collapses, but tooling is still in place for commercial compute Output/unused inventory is bought up by the players that will become the dominant AI forces after a major contraction We're realistically 2-3 years (in best case scenario) from seeing reasonably priced GPUs from consumers. It's possible we'll never see consumer GPUs again in…"
-     },
-     {
-      "text": "I work in big tech. The supply chain is completely blocked because of the lack of production. Companies cannot produce chips fast enough. Contracts have been sold out to 2028. GPUs will not be getting cheaper. In fact, you may never see consumer cards scale at all due to the demand from the corporate world. AI capacity is saturated. Data centers need all the GPUs and are paying much more than me and you would for a consumer card. They will not be wasting their dyes on us plebs."
-     },
-     {
-      "text": "The fact this post got this many likes just shows how bad this sub has gotten. Like this guy or girl has no data to back “half of data center buildouts already being cancelled/stalled”"
-     }
-    ]
+    "text": "I think a turn of events are pointing towards a very likely crash in prices in the coming months. With a single gb300 rack being to serve all of Openrouter's traffic for DSV4.1 Flash(https://x.com/thdxr/status/2115165365630026178) Half of data center buildouts already being cancelled/stalled. Neoclouds unable to finance debt for their compute, and being stuck in a 5 year deal with no confirmed demand. AI adoption not matching expectations. Smaller models being able to serve majority of the requests. OpenAI/Anthropic being unlikely to finance their coming compute contracts. I think we will…"
    },
    "sources": [
     "reddit"
@@ -10049,33 +9683,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xhfyso/character_reference_for_anima_is_released/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "A researcher named 'ElectronGirl' trained a character reference model for Anima. It supports any characters and does not need long captioning or training. Just add one reference image and the exact same character is generated! 2nd and 3rd images are my test generation. Left one is reference, right one is generated image. https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter",
-    "topComments": [
-     {
-      "text": "Even multi character is supported! https://preview.redd.it/i7t456g0d5yh1.jpeg?width=1080&format=pjpg&auto=webp&s=7440b3f839c90e1232fe65a13e1ca00cacab9d23"
-     },
-     {
-      "text": "Damn, now someone should make a Forge Neo extension for this too!"
-     },
-     {
-      "text": "Anyone know whether this is transferable to Forge Neo? Or is it Comfy UI only?"
-     },
-     {
-      "text": "Ohhh, this is amazing! Does this mean we don't need character LoRAs anymore? xD The character likeness and accuracy are really good. I'm using the Turbo model, and I haven't encountered any issues so far. https://preview.redd.it/9oa1nj1256yh1.jpeg?width=2516&format=pjpg&auto=webp&s=18482794f0b35b49639714fce94fcbbec671b842"
-     },
-     {
-      "text": "How does it compare to: https://huggingface.co/LuciferTC/Anima-IP-Adapter https://huggingface.co/AnticPan/Anima-Role-Ref-KV https://github.com/crazysheep924/AnimaRefLora /r/StableDiffusion/comments/1v729sl/remake_you_character_in_the_new_style_anima/ /r/StableDiffusion/comments/1totumo/anima_can_edit_images_and_this_is_possible_in_two/ And does it work with characters model does not know about?"
-     },
-     {
-      "text": "https://preview.redd.it/6nylsvhn08yh1.png?width=2048&format=png&auto=webp&s=42b6a3ba036c816291b04969822276ce7a193ef5))"
-     },
-     {
-      "text": "Interesting. I'm reading this portion of the instructions. \"You also need Anima base v1.0, the Qwen3-0.6B text encoder and the Qwen-Image VAE from circlestone-labs/Anima .\" Is it possible to run this on other Anima based fine tunes? or is using the v1.0 base version best for accuracy / coherence, etc? Thanks in advance."
-     },
-     {
-      "text": "I doubt it but I have no clue how it works. Are these type of things strong enough to replace specific character LoRAs? It seems incredibly useful"
-     }
-    ]
+    "text": "A researcher named 'ElectronGirl' trained a character reference model for Anima. It supports any characters and does not need long captioning or training. Just add one reference image and the exact same character is generated! 2nd and 3rd images are my test generation. Left one is reference, right one is generated image. https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter"
    },
    "sources": [
     "reddit"
@@ -10814,9 +10422,8 @@
   }
  ],
  "date": "2026-10-27",
- "fetchedAt": "2026-10-30T06:48:57.663Z",
+ "fetchedAt": "2026-10-30T07:42:30.984Z",
  "runs": [
-  "2026-10-28T07:42:28.079Z",
   "2026-10-28T08:43:06.190Z",
   "2026-10-28T09:43:55.310Z",
   "2026-10-28T12:45:34.210Z",
@@ -10835,7 +10442,8 @@
   "2026-10-29T21:43:35.526Z",
   "2026-10-30T00:56:55.844Z",
   "2026-10-30T03:43:47.785Z",
-  "2026-10-30T06:48:57.663Z"
+  "2026-10-30T06:48:57.663Z",
+  "2026-10-30T07:42:30.984Z"
  ],
  "schema": 2,
  "sources": [
@@ -10934,7 +10542,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-30T06:48:57.663Z",
+   "fetchedAt": "2026-10-30T07:42:30.984Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -10978,7 +10586,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-10-30T06:48:57.663Z",
+   "fetchedAt": "2026-10-30T07:42:30.984Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -10996,7 +10604,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-10-30T06:48:57.663Z",
+   "fetchedAt": "2026-10-30T07:42:30.984Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
