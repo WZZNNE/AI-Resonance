@@ -5154,6 +5154,36 @@
    "upd": "2026-07-16"
   },
   {
+   "cr": 0.0028,
+   "ctx": 1048576,
+   "id": "mimo-v2.6-flash",
+   "in": 0.14,
+   "k": "mimo-v2-6-flash",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Flash",
+   "out": 0.28,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.0036,
+   "ctx": 1048576,
+   "id": "mimo-v2.6-pro",
+   "in": 0.435,
+   "k": "mimo-v2-6-pro",
+   "maxOut": 131072,
+   "name": "MiMo-V2.6-Pro",
+   "out": 0.87,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-22"
+  },
+  {
    "alwaysOn": true,
    "cr": 0.06,
    "ctx": 196608,
@@ -6086,7 +6116,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.00901,
+   "cr": 0.013,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6095,11 +6125,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-flash-latest",
-   "in": 0.0108,
+   "in": 0.0141,
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.0828,
+   "out": 0.144,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6363,7 +6393,7 @@
    "k": "glm-flash-latest",
    "maxOut": 131072,
    "name": "GLM Flash Latest",
-   "out": 0.1543,
+   "out": 0.1794,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8442,7 +8472,7 @@
    "upd": "2026-06-01"
   },
   {
-   "cr": 0.0075,
+   "cr": 0.015,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8452,11 +8482,11 @@
     "max"
    ],
    "id": "minimax/minimax-m3.1-flash",
-   "in": 0.075,
+   "in": 0.15,
    "k": "minimax-m3-1-flash",
    "maxOut": 524288,
    "name": "MiniMax-M3.1-Flash",
-   "out": 0.3,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8578,7 +8608,8 @@
    "cr": 0.07,
    "ctx": 1048576,
    "efforts": [
-    "none",
+    "low",
+    "medium",
     "high"
    ],
    "id": "mistralai/mistral-large-4-0",
@@ -11961,7 +11992,7 @@
    "k": "glm-5-3-flash",
    "maxOut": 131072,
    "name": "GLM-5.3-Flash",
-   "out": 0.1543,
+   "out": 0.1794,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -14266,6 +14297,24 @@
    "upd": "2026-02-23"
   },
   {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "ctx": 262144,
+   "id": "Qwen/Qwen3.6-27B",
+   "in": 0.44980438,
+   "k": "qwen3-6-27b",
+   "maxOut": 65536,
+   "name": "Qwen3.6 27B",
+   "out": 2.69882628,
+   "p": "siliconflow-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-04-22"
+  },
+  {
    "ctx": 262144,
    "id": "Qwen/Qwen3.6-35B-A3B",
    "in": 0.26900546,
@@ -14277,6 +14326,29 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-04-17"
+  },
+  {
+   "budget": {
+    "max": 32768,
+    "min": 128
+   },
+   "ctx": 262144,
+   "efforts": [
+    "low",
+    "medium",
+    "xhigh"
+   ],
+   "id": "Qwen/Qwen3.8-27B",
+   "in": 0.44980438,
+   "k": "qwen3-8-27b",
+   "maxOut": 32768,
+   "name": "Qwen3.8 27B",
+   "out": 1.79921752,
+   "p": "siliconflow-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-08-14"
   },
   {
    "alwaysOn": true,
@@ -14320,6 +14392,20 @@
    "upd": "2025-07-28"
   },
   {
+   "ctx": 65536,
+   "id": "zai-org/GLM-4.5V",
+   "in": 0.14993479,
+   "k": "glm-4-5v",
+   "maxOut": 16384,
+   "name": "GLM-4.5V",
+   "out": 0.89960876,
+   "p": "siliconflow-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2025-08-11"
+  },
+  {
    "cr": 0.29889496,
    "ctx": 1049000,
    "cw": 0,
@@ -14337,6 +14423,44 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-06-13"
+  },
+  {
+   "cr": 0.29986959,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "zai-org/GLM-5.3",
+   "in": 1.19947835,
+   "k": "glm-5-3",
+   "maxOut": 131072,
+   "name": "GLM-5.3",
+   "out": 4.19817421,
+   "p": "siliconflow-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-14"
+  },
+  {
+   "cr": 0.034485,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "zai-org/GLM-5.3-Flash",
+   "in": 0.11994783,
+   "k": "glm-5-3-flash",
+   "maxOut": 131072,
+   "name": "GLM-5.3-Flash",
+   "out": 0.41981742,
+   "p": "siliconflow-cn",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-08-26"
   },
   {
    "cr": 0.02092,
@@ -16048,5 +16172,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-01T00:54:46.703Z"
+ "updatedAt": "2026-11-01T03:43:43.743Z"
 }
