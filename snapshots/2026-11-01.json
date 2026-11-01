@@ -3,65 +3,73 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:affaan-m/ecc",
+   "key": "gh:1jehuang/jcode",
    "metrics": {
-    "forks": 43578,
-    "stars": 294309
+    "forks": 2497,
+    "stars": 21383,
+    "starsToday": 29
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
      "kw:llm",
      "kw:ai agent",
+     "kw:multi-agent",
      "kw:mcp",
-     "kw:anthropic",
+     "kw:openai",
      "kw:claude",
-     "kw:codex",
-     "topic:ai-agents",
+     "topic:ai",
      "topic:llm",
      "cat:board"
     ],
     "score": 1
    },
    "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/124439313?v=4",
-    "createdAt": "2026-01-18T00:51:51Z",
-    "forks": 43578,
-    "language": "JavaScript",
+    "avatar": "https://avatars.githubusercontent.com/u/94247773?v=4",
+    "createdAt": "2026-01-05T09:43:36Z",
+    "forks": 2497,
+    "language": "Rust",
     "license": "MIT",
-    "name": "ECC",
-    "owner": "affaan-m",
-    "pushedAt": "2026-10-30T03:06:42Z",
-    "stars": 294309,
-    "starsToday": 0,
+    "name": "jcode",
+    "owner": "1jehuang",
+    "pushedAt": "2026-11-01T03:25:02Z",
+    "stars": 21383,
+    "starsToday": 29,
     "topics": [
-     "ai-agents",
-     "anthropic",
+     "ai",
+     "ai-agent",
+     "ai-coding-agent",
      "claude",
-     "claude-code",
-     "developer-tools",
+     "cli",
+     "coding-agent",
      "llm",
      "mcp",
-     "productivity"
+     "openai",
+     "rust",
+     "terminal",
+     "tui"
     ]
    },
    "sources": [
-    "github-search"
+    "github-search",
+    "github-trending"
    ],
-   "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+   "summary": "High performance coding agent harness written in Rust, built for heavy multi-agent dev workflows",
    "tags": [
-    "ai-agents",
-    "anthropic",
+    "ai",
+    "ai-agent",
+    "ai-coding-agent",
     "claude",
-    "claude-code",
-    "developer-tools",
+    "cli",
+    "coding-agent",
     "llm",
     "mcp",
-    "productivity"
+    "openai",
+    "rust"
    ],
-   "title": "affaan-m/ECC",
-   "url": "https://github.com/affaan-m/ECC"
+   "title": "1jehuang/jcode",
+   "url": "https://github.com/1jehuang/jcode"
   },
   {
    "board": "repos",
@@ -69,10 +77,10 @@
    "key": "gh:ai4finance-foundation/finrl",
    "metrics": {
     "forks": 3620,
-    "stars": 16941,
+    "stars": 16945,
     "starsToday": 28
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -88,7 +96,7 @@
     "language": "Jupyter Notebook",
     "name": "FinRL",
     "owner": "AI4Finance-Foundation",
-    "stars": 16941,
+    "stars": 16945,
     "starsToday": 28,
     "topics": []
    },
@@ -144,11 +152,11 @@
    "category": "tool",
    "key": "gh:anomalyco/hex",
    "metrics": {
-    "forks": 154,
-    "stars": 2386,
+    "forks": 160,
+    "stars": 2571,
     "starsToday": 172
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -159,11 +167,11 @@
    },
    "repo": {
     "avatar": "https://github.com/anomalyco.png?size=64",
-    "forks": 154,
+    "forks": 160,
     "language": "Rust",
     "name": "hex",
     "owner": "anomalyco",
-    "stars": 2386,
+    "stars": 2571,
     "starsToday": 172,
     "topics": []
    },
@@ -178,13 +186,53 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:anthropics/claude-code",
+   "metrics": {
+    "forks": 25509,
+    "stars": 154131,
+    "starsToday": 146
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [
+    "gh:anthropics/claude-plugins-official"
+   ],
+   "relevance": {
+    "reasons": [
+     "kw:agentic",
+     "kw:anthropic",
+     "kw:claude",
+     "cat:board"
+    ],
+    "score": 0.8
+   },
+   "repo": {
+    "avatar": "https://github.com/anthropics.png?size=64",
+    "forks": 25509,
+    "language": "TypeScript",
+    "name": "claude-code",
+    "owner": "anthropics",
+    "stars": 154131,
+    "starsToday": 146,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+   "tags": [],
+   "title": "anthropics/claude-code",
+   "url": "https://github.com/anthropics/claude-code"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:anthropics/skills",
    "metrics": {
-    "forks": 21967,
-    "stars": 186060,
+    "forks": 21975,
+    "stars": 186116,
     "starsToday": 754
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:pbakaus/impeccable",
     "gh:graphify-labs/graphify"
@@ -199,11 +247,11 @@
    },
    "repo": {
     "avatar": "https://github.com/anthropics.png?size=64",
-    "forks": 21967,
+    "forks": 21975,
     "language": "Python",
     "name": "skills",
     "owner": "anthropics",
-    "stars": 186060,
+    "stars": 186116,
     "starsToday": 754,
     "topics": []
    },
@@ -218,13 +266,53 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:beenuar/aisoc",
+   "metrics": {
+    "forks": 618,
+    "stars": 5876,
+    "starsToday": 436
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:llm",
+     "kw:mcp",
+     "kw:claude",
+     "weak:ai",
+     "weak:agent",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/beenuar.png?size=64",
+    "forks": 618,
+    "language": "Python",
+    "name": "AiSOC",
+    "owner": "beenuar",
+    "stars": 5876,
+    "starsToday": 436,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
+   "tags": [],
+   "title": "beenuar/AiSOC",
+   "url": "https://github.com/beenuar/AiSOC"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:calesthio/openmontage",
    "metrics": {
-    "forks": 9725,
-    "stars": 74140,
+    "forks": 9739,
+    "stars": 74186,
     "starsToday": 583
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -238,11 +326,11 @@
    },
    "repo": {
     "avatar": "https://github.com/calesthio.png?size=64",
-    "forks": 9725,
+    "forks": 9739,
     "language": "Python",
     "name": "OpenMontage",
     "owner": "calesthio",
-    "stars": 74140,
+    "stars": 74186,
     "starsToday": 583,
     "topics": []
    },
@@ -259,11 +347,11 @@
    "category": "tool",
    "key": "gh:copilotkit/openbot",
    "metrics": {
-    "forks": 1157,
-    "stars": 9195,
+    "forks": 1160,
+    "stars": 9241,
     "starsToday": 608
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -281,13 +369,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/131273140?v=4",
     "createdAt": "2026-08-17T00:44:59Z",
-    "forks": 1157,
+    "forks": 1160,
     "language": "TypeScript",
     "license": "MIT",
     "name": "OpenBot",
     "owner": "CopilotKit",
     "pushedAt": "2026-10-31T23:52:00Z",
-    "stars": 9195,
+    "stars": 9241,
     "starsToday": 608,
     "topics": [
      "ag-ui",
@@ -359,207 +447,13 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:datawhalechina/happy-llm",
-   "metrics": {
-    "forks": 3281,
-    "stars": 34681,
-    "starsToday": 14
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:llm",
-     "kw:大模型",
-     "cat:board"
-    ],
-    "score": 0.7
-   },
-   "repo": {
-    "avatar": "https://github.com/datawhalechina.png?size=64",
-    "forks": 3281,
-    "language": "Jupyter Notebook",
-    "name": "happy-llm",
-    "owner": "datawhalechina",
-    "stars": 34681,
-    "starsToday": 14,
-    "topics": []
-   },
-   "sources": [
-    "github-trending"
-   ],
-   "summary": "📚 从零开始构建大模型",
-   "tags": [],
-   "title": "datawhalechina/happy-llm",
-   "url": "https://github.com/datawhalechina/happy-llm"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:datawhalechina/self-llm",
-   "metrics": {
-    "forks": 3147,
-    "stars": 32664,
-    "starsToday": 9
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:llm",
-     "kw:大模型",
-     "cat:board"
-    ],
-    "score": 0.7
-   },
-   "repo": {
-    "avatar": "https://github.com/datawhalechina.png?size=64",
-    "forks": 3147,
-    "language": "Jupyter Notebook",
-    "name": "self-llm",
-    "owner": "datawhalechina",
-    "stars": 32664,
-    "starsToday": 9,
-    "topics": []
-   },
-   "sources": [
-    "github-trending"
-   ],
-   "summary": "《开源大模型食用指南》针对中国宝宝量身打造的基于Linux环境快速微调（全参数/Lora）、部署国内外开源大模型（LLM）/多模态大模型（MLLM）教程",
-   "tags": [],
-   "title": "datawhalechina/self-llm",
-   "url": "https://github.com/datawhalechina/self-llm"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:deepseek-ai/deepseek-harness",
-   "metrics": {
-    "forks": 32486,
-    "stars": 267829
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:ai agent",
-     "kw:deepseek",
-     "topic:ai-agents",
-     "weak:ai",
-     "weak:agent",
-     "weak:agents",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/148330874?v=4",
-    "createdAt": "2026-08-13T11:56:32Z",
-    "forks": 32486,
-    "language": "TypeScript",
-    "license": "MIT",
-    "name": "deepseek-harness",
-    "owner": "deepseek-ai",
-    "pushedAt": "2026-10-30T06:54:11Z",
-    "stars": 267829,
-    "starsToday": 0,
-    "topics": [
-     "ai-agents",
-     "cordis",
-     "dsh",
-     "dsh-plugin"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "DeepSeek Harness: Everything is a Plugin.",
-   "tags": [
-    "ai-agents",
-    "cordis",
-    "dsh",
-    "dsh-plugin"
-   ],
-   "title": "deepseek-ai/deepseek-harness",
-   "url": "https://github.com/deepseek-ai/deepseek-harness"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:dietrichgebert/ponytail",
-   "metrics": {
-    "forks": 10005,
-    "stars": 181734
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:llm",
-     "kw:ai agent",
-     "kw:prompt engineering",
-     "kw:claude",
-     "topic:ai-agents",
-     "topic:llm",
-     "weak:ai",
-     "weak:agent",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/137048761?v=4",
-    "createdAt": "2026-06-12T00:52:37Z",
-    "forks": 10005,
-    "language": "JavaScript",
-    "license": "MIT",
-    "name": "ponytail",
-    "owner": "DietrichGebert",
-    "pushedAt": "2026-10-29T11:59:31Z",
-    "stars": 181734,
-    "starsToday": 0,
-    "topics": [
-     "agent-skills",
-     "ai-agents",
-     "claude",
-     "claude-code",
-     "claude-code-plugin",
-     "cursor-rules",
-     "developer-tools",
-     "llm",
-     "prompt-engineering",
-     "yagni"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-   "tags": [
-    "agent-skills",
-    "ai-agents",
-    "claude",
-    "claude-code",
-    "claude-code-plugin",
-    "cursor-rules",
-    "developer-tools",
-    "llm",
-    "prompt-engineering",
-    "yagni"
-   ],
-   "title": "DietrichGebert/ponytail",
-   "url": "https://github.com/DietrichGebert/ponytail"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
    "key": "gh:donchitos/claude-code-game-studios",
    "metrics": {
-    "forks": 4312,
-    "stars": 31523,
-    "starsToday": 742
+    "forks": 4329,
+    "stars": 31666,
+    "starsToday": 970
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -574,12 +468,12 @@
    },
    "repo": {
     "avatar": "https://github.com/Donchitos.png?size=64",
-    "forks": 4312,
+    "forks": 4329,
     "language": "Shell",
     "name": "Claude-Code-Game-Studios",
     "owner": "Donchitos",
-    "stars": 31523,
-    "starsToday": 742,
+    "stars": 31666,
+    "starsToday": 970,
     "topics": []
    },
    "sources": [
@@ -593,49 +487,90 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:ed-donner/llm_engineering",
+   "key": "gh:eneskirca/nodeterm",
    "metrics": {
-    "forks": 7585,
-    "stars": 7850,
-    "starsToday": 14
+    "forks": 265,
+    "stars": 2291,
+    "starsToday": 49
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "kw:llm",
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
      "cat:board"
     ],
     "score": 0.6
    },
    "repo": {
-    "avatar": "https://github.com/ed-donner.png?size=64",
-    "forks": 7585,
-    "language": "Jupyter Notebook",
-    "name": "llm_engineering",
-    "owner": "ed-donner",
-    "stars": 7850,
-    "starsToday": 14,
+    "avatar": "https://github.com/eneskirca.png?size=64",
+    "forks": 265,
+    "language": "TypeScript",
+    "name": "nodeterm",
+    "owner": "eneskirca",
+    "stars": 2291,
+    "starsToday": 49,
     "topics": []
    },
    "sources": [
     "github-trending"
    ],
-   "summary": "Repo to accompany my mastering LLM engineering course",
+   "summary": "Node-based terminal manager for AI coding agents — tmux-backed terminals and parallel agent sessions as draggable nodes on an infinite pan/zoom canvas. macOS, Linux, and a browser Server Edition.",
    "tags": [],
-   "title": "ed-donner/llm_engineering",
-   "url": "https://github.com/ed-donner/llm_engineering"
+   "title": "eneskirca/nodeterm",
+   "url": "https://github.com/eneskirca/nodeterm"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:eriklindernoren/ml-from-scratch",
+   "metrics": {
+    "forks": 5529,
+    "stars": 33230,
+    "starsToday": 36
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:machine learning",
+     "kw:deep learning",
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/eriklindernoren.png?size=64",
+    "forks": 5529,
+    "language": "Python",
+    "name": "ML-From-Scratch",
+    "owner": "eriklindernoren",
+    "stars": 33230,
+    "starsToday": 36,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Machine Learning From Scratch. Bare bones NumPy implementations of machine learning models and algorithms with a focus on accessibility. Aims to cover everything from linear regression to deep learning.",
+   "tags": [],
+   "title": "eriklindernoren/ML-From-Scratch",
+   "url": "https://github.com/eriklindernoren/ML-From-Scratch"
   },
   {
    "board": "repos",
    "category": "tool",
    "key": "gh:ethanplusai/harvey",
    "metrics": {
-    "forks": 783,
-    "stars": 3796,
+    "forks": 791,
+    "stars": 3820,
     "starsToday": 218
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -650,11 +585,11 @@
    },
    "repo": {
     "avatar": "https://github.com/ethanplusai.png?size=64",
-    "forks": 783,
+    "forks": 791,
     "language": "Python",
     "name": "harvey",
     "owner": "ethanplusai",
-    "stars": 3796,
+    "stars": 3820,
     "starsToday": 218,
     "topics": []
    },
@@ -710,16 +645,56 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:flashml-org/freetoken",
+   "metrics": {
+    "forks": 1532,
+    "stars": 15107,
+    "starsToday": 232
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [
+    "gh:ggml-org/llama.cpp"
+   ],
+   "relevance": {
+    "reasons": [
+     "weak:model",
+     "weak:models",
+     "cat:board"
+    ],
+    "score": 0.4
+   },
+   "repo": {
+    "avatar": "https://github.com/FlashML-org.png?size=64",
+    "forks": 1532,
+    "language": "Python",
+    "name": "FreeToken",
+    "owner": "FlashML-org",
+    "stars": 15107,
+    "starsToday": 232,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+   "tags": [],
+   "title": "FlashML-org/FreeToken",
+   "url": "https://github.com/FlashML-org/FreeToken"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:ggml-org/llama.cpp",
    "metrics": {
-    "forks": 25019,
-    "stars": 133029,
+    "forks": 25026,
+    "stars": 133041,
     "starsToday": 124
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "rd:1xk8s6z",
-    "rd:1xkh2ns"
+    "rd:1xkh2ns",
+    "gh:flashml-org/freetoken"
    ],
    "relevance": {
     "reasons": [
@@ -732,11 +707,11 @@
    },
    "repo": {
     "avatar": "https://github.com/ggml-org.png?size=64",
-    "forks": 25019,
+    "forks": 25026,
     "language": "C++",
     "name": "llama.cpp",
     "owner": "ggml-org",
-    "stars": 133029,
+    "stars": 133041,
     "starsToday": 124,
     "topics": []
    },
@@ -753,11 +728,11 @@
    "category": "tool",
    "key": "gh:graphify-labs/graphify",
    "metrics": {
-    "forks": 13382,
-    "stars": 140205,
+    "forks": 13396,
+    "stars": 140287,
     "starsToday": 660
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:anthropics/skills",
     "gh:can1357/oh-my-pi"
@@ -779,13 +754,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/297659074?v=4",
     "createdAt": "2026-04-03T15:49:07Z",
-    "forks": 13382,
+    "forks": 13396,
     "language": "Python",
     "license": "Apache-2.0",
     "name": "graphify",
     "owner": "Graphify-Labs",
     "pushedAt": "2026-11-01T00:53:07Z",
-    "stars": 140205,
+    "stars": 140287,
     "starsToday": 660,
     "topics": [
      "ai-agents",
@@ -835,11 +810,11 @@
    "category": "tool",
    "key": "gh:herdrdev/herdr",
    "metrics": {
-    "forks": 3775,
-    "stars": 47211,
+    "forks": 3778,
+    "stars": 47235,
     "starsToday": 246
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -858,13 +833,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/309108654?v=4",
     "createdAt": "2026-03-27T17:54:33Z",
-    "forks": 3775,
+    "forks": 3778,
     "language": "Rust",
     "license": "Apache-2.0",
     "name": "herdr",
     "owner": "herdrdev",
     "pushedAt": "2026-11-01T09:25:31Z",
-    "stars": 47211,
+    "stars": 47235,
     "starsToday": 246,
     "topics": [
      "agent",
@@ -912,11 +887,11 @@
    "category": "tool",
    "key": "gh:hkuds/deeptutor",
    "metrics": {
-    "forks": 6510,
-    "stars": 53226,
+    "forks": 6522,
+    "stars": 53339,
     "starsToday": 1034
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "arxiv:2604.26962",
     "gh:hkuds/nanobot",
@@ -940,13 +915,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/118165258?v=4",
     "createdAt": "2025-12-28T15:35:54Z",
-    "forks": 6510,
+    "forks": 6522,
     "language": "Python",
     "license": "Apache-2.0",
     "name": "DeepTutor",
     "owner": "HKUDS",
     "pushedAt": "2026-10-31T16:51:35Z",
-    "stars": 53226,
+    "stars": 53339,
     "starsToday": 1034,
     "topics": [
      "ai-agents",
@@ -982,13 +957,89 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:jcodesmore/ai-website-cloner-template",
+   "metrics": {
+    "forks": 5681,
+    "stars": 38340,
+    "starsToday": 123
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [
+    "gh:openai/codex"
+   ],
+   "relevance": {
+    "reasons": [
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
+     "cat:board"
+    ],
+    "score": 0.6
+   },
+   "repo": {
+    "avatar": "https://github.com/JCodesMore.png?size=64",
+    "forks": 5681,
+    "language": "TypeScript",
+    "name": "ai-website-cloner-template",
+    "owner": "JCodesMore",
+    "stars": 38340,
+    "starsToday": 123,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Clone any website with one command using AI coding agents",
+   "tags": [],
+   "title": "JCodesMore/ai-website-cloner-template",
+   "url": "https://github.com/JCodesMore/ai-website-cloner-template"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:jub0t/concat",
+   "metrics": {
+    "forks": 1653,
+    "stars": 13405,
+    "starsToday": 429
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:mcp",
+     "cat:board"
+    ],
+    "score": 0.6
+   },
+   "repo": {
+    "avatar": "https://github.com/jub0t.png?size=64",
+    "forks": 1653,
+    "language": "Rust",
+    "name": "Concat",
+    "owner": "jub0t",
+    "stars": 13405,
+    "starsToday": 429,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
+   "tags": [],
+   "title": "jub0t/Concat",
+   "url": "https://github.com/jub0t/Concat"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:juliusbrussee/caveman",
    "metrics": {
-    "forks": 6764,
-    "stars": 116596,
+    "forks": 6765,
+    "stars": 116609,
     "starsToday": 215
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1007,13 +1058,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/104168679?v=4",
     "createdAt": "2026-04-04T10:03:00Z",
-    "forks": 6764,
+    "forks": 6765,
     "language": "Go",
     "license": "Apache-2.0",
     "name": "caveman",
     "owner": "JuliusBrussee",
     "pushedAt": "2026-11-01T07:22:28Z",
-    "stars": 116596,
+    "stars": 116609,
     "starsToday": 215,
     "topics": [
      "ai",
@@ -1089,11 +1140,11 @@
    "category": "tool",
    "key": "gh:karpathy/nn-zero-to-hero",
    "metrics": {
-    "forks": 3656,
-    "stars": 25155,
+    "forks": 3660,
+    "stars": 25163,
     "starsToday": 34
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1104,11 +1155,11 @@
    },
    "repo": {
     "avatar": "https://github.com/karpathy.png?size=64",
-    "forks": 3656,
+    "forks": 3660,
     "language": "Jupyter Notebook",
     "name": "nn-zero-to-hero",
     "owner": "karpathy",
-    "stars": 25155,
+    "stars": 25163,
     "starsToday": 34,
     "topics": []
    },
@@ -1123,173 +1174,163 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:koala73/worldmonitor",
+   "key": "gh:kornia/kornia",
    "metrics": {
-    "forks": 13872,
-    "stars": 89895
+    "forks": 1456,
+    "stars": 11586,
+    "starsToday": 88
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "kw:mcp",
-     "topic:ai",
-     "topic:mcp",
+     "kw:computer vision",
      "weak:ai",
-     "weak:agent",
      "cat:board"
     ],
-    "score": 1
+    "score": 0.8
    },
    "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/996596?v=4",
-    "createdAt": "2026-01-08T17:26:06Z",
-    "forks": 13872,
-    "language": "TypeScript",
-    "license": "AGPL-3.0",
-    "name": "worldmonitor",
-    "owner": "koala73",
-    "pushedAt": "2026-11-01T09:41:05Z",
-    "stars": 89895,
-    "starsToday": 0,
-    "topics": [
-     "agent",
-     "ai",
-     "dashboard",
-     "geopolitics",
-     "mcp",
-     "mcp-server",
-     "monitoring",
-     "news",
-     "opensource",
-     "osint",
-     "palantir",
-     "situation"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
-   "tags": [
-    "agent",
-    "ai",
-    "dashboard",
-    "geopolitics",
-    "mcp",
-    "mcp-server",
-    "monitoring",
-    "news",
-    "opensource",
-    "osint"
-   ],
-   "title": "koala73/worldmonitor",
-   "url": "https://github.com/koala73/worldmonitor"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:leonxlnx/taste-skill",
-   "metrics": {
-    "forks": 7253,
-    "stars": 107322
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:ai agent",
-     "kw:claude",
-     "kw:codex",
-     "topic:ai-agents",
-     "weak:ai",
-     "weak:agent",
-     "weak:agents",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/219127460?v=4",
-    "createdAt": "2026-02-19T21:44:05Z",
-    "forks": 7253,
-    "language": "JavaScript",
-    "license": "MIT",
-    "name": "taste-skill",
-    "owner": "Leonxlnx",
-    "pushedAt": "2026-10-31T07:59:58Z",
-    "stars": 107322,
-    "starsToday": 0,
-    "topics": [
-     "agent-skills",
-     "ai-agents",
-     "anti-slop",
-     "claude-code",
-     "codex",
-     "cursor",
-     "design-system",
-     "frontend",
-     "landing-page",
-     "ui-design",
-     "web-design"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
-   "tags": [
-    "agent-skills",
-    "ai-agents",
-    "anti-slop",
-    "claude-code",
-    "codex",
-    "cursor",
-    "design-system",
-    "frontend",
-    "landing-page",
-    "ui-design"
-   ],
-   "title": "Leonxlnx/taste-skill",
-   "url": "https://github.com/Leonxlnx/taste-skill"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:liquid4all/cookbook",
-   "metrics": {
-    "forks": 420,
-    "stars": 2733,
-    "starsToday": 17
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "weak:ai",
-     "weak:model",
-     "weak:models",
-     "cat:board"
-    ],
-    "score": 0.6
-   },
-   "repo": {
-    "avatar": "https://github.com/Liquid4All.png?size=64",
-    "forks": 420,
-    "language": "Jupyter Notebook",
-    "name": "cookbook",
-    "owner": "Liquid4All",
-    "stars": 2733,
-    "starsToday": 17,
+    "avatar": "https://github.com/kornia.png?size=64",
+    "forks": 1456,
+    "language": "Python",
+    "name": "kornia",
+    "owner": "kornia",
+    "stars": 11586,
+    "starsToday": 88,
     "topics": []
    },
    "sources": [
     "github-trending"
    ],
-   "summary": "Examples, end-2-end tutorials and apps built using Liquid AI Foundational Models (LFM) and the LEAP SDK",
+   "summary": "🐍 Geometric Computer Vision Library for Spatial AI",
    "tags": [],
-   "title": "Liquid4All/cookbook",
-   "url": "https://github.com/Liquid4All/cookbook"
+   "title": "kornia/kornia",
+   "url": "https://github.com/kornia/kornia"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:leepokai/codync",
+   "metrics": {
+    "forks": 140,
+    "stars": 1424,
+    "starsToday": 288
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:ai agent",
+     "kw:claude",
+     "kw:gemini",
+     "kw:grok",
+     "kw:codex",
+     "kw:copilot",
+     "weak:ai",
+     "weak:agent",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/leepokai.png?size=64",
+    "forks": 140,
+    "language": "Rust",
+    "name": "Codync",
+    "owner": "leepokai",
+    "stars": 1424,
+    "starsToday": 288,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
+   "tags": [],
+   "title": "leepokai/Codync",
+   "url": "https://github.com/leepokai/Codync"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:librechat-ai/librechat",
+   "metrics": {
+    "forks": 9584,
+    "stars": 46601,
+    "starsToday": 61
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:mcp",
+     "kw:gpt",
+     "kw:chatgpt",
+     "kw:openai",
+     "kw:anthropic",
+     "kw:gemini",
+     "kw:deepseek",
+     "kw:mistral",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/LibreChat-AI.png?size=64",
+    "forks": 9584,
+    "language": "TypeScript",
+    "name": "LibreChat",
+    "owner": "LibreChat-AI",
+    "stars": 46601,
+    "starsToday": 61,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+   "tags": [],
+   "title": "LibreChat-AI/LibreChat",
+   "url": "https://github.com/LibreChat-AI/LibreChat"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:macro-inc/macro",
+   "metrics": {
+    "forks": 557,
+    "stars": 6046,
+    "starsToday": 54
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
+     "cat:board"
+    ],
+    "score": 0.6
+   },
+   "repo": {
+    "avatar": "https://github.com/macro-inc.png?size=64",
+    "forks": 557,
+    "language": "Rust",
+    "name": "macro",
+    "owner": "macro-inc",
+    "stars": 6046,
+    "starsToday": 54,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+   "tags": [],
+   "title": "macro-inc/macro",
+   "url": "https://github.com/macro-inc/macro"
   },
   {
    "board": "repos",
@@ -1370,13 +1411,51 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:max-sixty/worktrunk",
+   "metrics": {
+    "forks": 347,
+    "stars": 9739,
+    "starsToday": 145
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:ai agent",
+     "weak:ai",
+     "weak:agent",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/max-sixty.png?size=64",
+    "forks": 347,
+    "language": "Rust",
+    "name": "worktrunk",
+    "owner": "max-sixty",
+    "stars": 9739,
+    "starsToday": 145,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+   "tags": [],
+   "title": "max-sixty/worktrunk",
+   "url": "https://github.com/max-sixty/worktrunk"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:melgarafael/deskcommcrm",
    "metrics": {
-    "forks": 1420,
-    "stars": 5013,
+    "forks": 1421,
+    "stars": 5017,
     "starsToday": 40
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1395,13 +1474,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/119944436?v=4",
     "createdAt": "2026-04-28T20:00:33Z",
-    "forks": 1420,
+    "forks": 1421,
     "language": "TypeScript",
     "license": "MIT",
     "name": "DeskcommCRM",
     "owner": "melgarafael",
-    "pushedAt": "2026-11-01T09:13:08Z",
-    "stars": 5013,
+    "pushedAt": "2026-11-01T12:12:38Z",
+    "stars": 5017,
     "starsToday": 40,
     "topics": [
      "ai",
@@ -1452,10 +1531,10 @@
    "key": "gh:mempalace/mempalace",
    "metrics": {
     "forks": 7628,
-    "stars": 60209,
+    "stars": 60213,
     "starsToday": 49
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1478,7 +1557,7 @@
     "name": "mempalace",
     "owner": "MemPalace",
     "pushedAt": "2026-10-31T05:41:28Z",
-    "stars": 60209,
+    "stars": 60213,
     "starsToday": 49,
     "topics": [
      "ai",
@@ -1508,13 +1587,93 @@
   {
    "board": "repos",
    "category": "tool",
+   "key": "gh:mesh-llm/mesh-llm",
+   "metrics": {
+    "forks": 481,
+    "stars": 3731,
+    "starsToday": 41
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "kw:llm",
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/Mesh-LLM.png?size=64",
+    "forks": 481,
+    "language": "Rust",
+    "name": "mesh-llm",
+    "owner": "Mesh-LLM",
+    "stars": 3731,
+    "starsToday": 41,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "Distributed AI/LLM for the people. Share compute privately or publicly to power your agents and chat.",
+   "tags": [],
+   "title": "Mesh-LLM/mesh-llm",
+   "url": "https://github.com/Mesh-LLM/mesh-llm"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
+   "key": "gh:microsoft/ai-agents-for-beginners",
+   "metrics": {
+    "forks": 25720,
+    "stars": 78570,
+    "starsToday": 136
+   },
+   "observedAt": "2026-11-01T12:43:58.816Z",
+   "refs": [
+    "gh:microsoft/mcp-for-beginners"
+   ],
+   "relevance": {
+    "reasons": [
+     "kw:ai agent",
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "repo": {
+    "avatar": "https://github.com/microsoft.png?size=64",
+    "forks": 25720,
+    "language": "Jupyter Notebook",
+    "name": "ai-agents-for-beginners",
+    "owner": "microsoft",
+    "stars": 78570,
+    "starsToday": 136,
+    "topics": []
+   },
+   "sources": [
+    "github-trending"
+   ],
+   "summary": "18 Lessons to Get Started Building AI Agents",
+   "tags": [],
+   "title": "microsoft/ai-agents-for-beginners",
+   "url": "https://github.com/microsoft/ai-agents-for-beginners"
+  },
+  {
+   "board": "repos",
+   "category": "tool",
    "key": "gh:microsoft/bitnet",
    "metrics": {
     "forks": 3863,
-    "stars": 41426,
+    "stars": 41427,
     "starsToday": 43
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1530,7 +1689,7 @@
     "language": "C++",
     "name": "BitNet",
     "owner": "microsoft",
-    "stars": 41426,
+    "stars": 41427,
     "starsToday": 43,
     "topics": []
    },
@@ -1547,11 +1706,11 @@
    "category": "tool",
    "key": "gh:milind-soni/openmausbot",
    "metrics": {
-    "forks": 1385,
-    "stars": 10013,
+    "forks": 1402,
+    "stars": 10127,
     "starsToday": 1303
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:openai/codex"
    ],
@@ -1572,13 +1731,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/46266943?v=4",
     "createdAt": "2026-08-11T18:58:55Z",
-    "forks": 1385,
+    "forks": 1402,
     "language": "TypeScript",
     "license": "Apache-2.0",
     "name": "OpenMausBot",
     "owner": "milind-soni",
-    "pushedAt": "2026-11-01T09:42:40Z",
-    "stars": 10013,
+    "pushedAt": "2026-11-01T12:20:36Z",
+    "stars": 10127,
     "starsToday": 1303,
     "topics": [
      "ai-agents",
@@ -1620,11 +1779,11 @@
    "category": "tool",
    "key": "gh:moonshine-ai/moonshine",
    "metrics": {
-    "forks": 635,
-    "stars": 11355,
+    "forks": 638,
+    "stars": 11359,
     "starsToday": 23
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1636,11 +1795,11 @@
    },
    "repo": {
     "avatar": "https://github.com/moonshine-ai.png?size=64",
-    "forks": 635,
+    "forks": 638,
     "language": "C++",
     "name": "moonshine",
     "owner": "moonshine-ai",
-    "stars": 11355,
+    "stars": 11359,
     "starsToday": 23,
     "topics": []
    },
@@ -1655,91 +1814,13 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:morluto/rea",
-   "metrics": {
-    "forks": 104166,
-    "stars": 416657
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [
-    "rd:1xkv2ga"
-   ],
-   "relevance": {
-    "reasons": [
-     "kw:mcp",
-     "kw:claude",
-     "topic:ai",
-     "topic:mcp",
-     "weak:ai",
-     "weak:agent",
-     "weak:agents",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/76467478?v=4",
-    "createdAt": "2026-04-14T00:51:32Z",
-    "forks": 104166,
-    "language": "TypeScript",
-    "license": "MIT",
-    "name": "rea",
-    "owner": "morluto",
-    "pushedAt": "2026-11-01T09:27:54Z",
-    "stars": 416657,
-    "starsToday": 0,
-    "topics": [
-     "agent-skills",
-     "ai",
-     "android",
-     "claude-code",
-     "cli",
-     "cpp",
-     "dsh-plugin",
-     "html",
-     "java",
-     "javascript",
-     "linux",
-     "mcp",
-     "nodejs",
-     "python",
-     "rea",
-     "react",
-     "rust",
-     "security",
-     "touhou",
-     "typescript"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-   "tags": [
-    "agent-skills",
-    "ai",
-    "android",
-    "claude-code",
-    "cli",
-    "cpp",
-    "dsh-plugin",
-    "html",
-    "java",
-    "javascript"
-   ],
-   "title": "morluto/rea",
-   "url": "https://github.com/morluto/rea"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
    "key": "gh:mrdbourke/zero-to-mastery-ml",
    "metrics": {
-    "forks": 4245,
-    "stars": 7461,
+    "forks": 4244,
+    "stars": 7462,
     "starsToday": 54
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -1750,11 +1831,11 @@
    },
    "repo": {
     "avatar": "https://github.com/mrdbourke.png?size=64",
-    "forks": 4245,
+    "forks": 4244,
     "language": "Jupyter Notebook",
     "name": "zero-to-mastery-ml",
     "owner": "mrdbourke",
-    "stars": 7461,
+    "stars": 7462,
     "starsToday": 54,
     "topics": []
    },
@@ -1847,76 +1928,41 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:nirdiamant/rag_techniques",
+   "key": "gh:netbirdio/netbird",
    "metrics": {
-    "forks": 3696,
-    "stars": 30166,
-    "starsToday": 17
+    "forks": 1808,
+    "stars": 30476,
+    "starsToday": 84
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "kw:rag",
-     "kw:retrieval-augmented",
+     "kw:ai agent",
+     "weak:ai",
+     "weak:agent",
+     "weak:agents",
      "cat:board"
     ],
-    "score": 0.7
+    "score": 1
    },
    "repo": {
-    "avatar": "https://github.com/NirDiamant.png?size=64",
-    "forks": 3696,
-    "language": "Jupyter Notebook",
-    "name": "RAG_Techniques",
-    "owner": "NirDiamant",
-    "stars": 30166,
-    "starsToday": 17,
+    "avatar": "https://github.com/netbirdio.png?size=64",
+    "forks": 1808,
+    "language": "Go",
+    "name": "netbird",
+    "owner": "netbirdio",
+    "stars": 30476,
+    "starsToday": 84,
     "topics": []
    },
    "sources": [
     "github-trending"
    ],
-   "summary": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial.",
+   "summary": "NetBird securely connects people, machines and AI agents across any network with one identity-based Zero Trust platform. Powered by peer-to-peer WireGuard®",
    "tags": [],
-   "title": "NirDiamant/RAG_Techniques",
-   "url": "https://github.com/NirDiamant/RAG_Techniques"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:nvidia/accelerated-computing-hub",
-   "metrics": {
-    "forks": 363,
-    "stars": 2150,
-    "starsToday": 4
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "weak:gpu",
-     "weak:nvidia",
-     "cat:board"
-    ],
-    "score": 0.4
-   },
-   "repo": {
-    "avatar": "https://github.com/NVIDIA.png?size=64",
-    "forks": 363,
-    "language": "Jupyter Notebook",
-    "name": "accelerated-computing-hub",
-    "owner": "NVIDIA",
-    "stars": 2150,
-    "starsToday": 4,
-    "topics": []
-   },
-   "sources": [
-    "github-trending"
-   ],
-   "summary": "NVIDIA curated collection of educational resources related to general purpose GPU programming.",
-   "tags": [],
-   "title": "NVIDIA/accelerated-computing-hub",
-   "url": "https://github.com/NVIDIA/accelerated-computing-hub"
+   "title": "netbirdio/netbird",
+   "url": "https://github.com/netbirdio/netbird"
   },
   {
    "board": "repos",
@@ -1959,17 +2005,18 @@
    "category": "tool",
    "key": "gh:openai/codex",
    "metrics": {
-    "forks": 20947,
-    "stars": 132624,
+    "forks": 20952,
+    "stars": 132661,
     "starsToday": 731
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:milind-soni/openmausbot",
     "gh:hkuds/deeptutor",
     "gh:stablyai/orca",
     "rd:1xk9z9t",
-    "url:github.com/openai/codex/releases/tag/rust-v0.166.0"
+    "url:github.com/openai/codex/releases/tag/rust-v0.166.0",
+    "gh:jcodesmore/ai-website-cloner-template"
    ],
    "relevance": {
     "reasons": [
@@ -1982,11 +2029,11 @@
    },
    "repo": {
     "avatar": "https://github.com/openai.png?size=64",
-    "forks": 20947,
+    "forks": 20952,
     "language": "Rust",
     "name": "codex",
     "owner": "openai",
-    "stars": 132624,
+    "stars": 132661,
     "starsToday": 731,
     "topics": []
    },
@@ -2001,75 +2048,39 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:openbmb/minicpm",
+   "key": "gh:oraios/serena",
    "metrics": {
-    "forks": 822,
-    "stars": 11774,
-    "starsToday": 8
+    "forks": 2118,
+    "stars": 30969,
+    "starsToday": 57
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "kw:llm",
-     "cat:board"
-    ],
-    "score": 0.6
-   },
-   "repo": {
-    "avatar": "https://github.com/OpenBMB.png?size=64",
-    "forks": 822,
-    "language": "Jupyter Notebook",
-    "name": "MiniCPM",
-    "owner": "OpenBMB",
-    "stars": 11774,
-    "starsToday": 8,
-    "topics": []
-   },
-   "sources": [
-    "github-trending"
-   ],
-   "summary": "MiniCPM5: SOTA on-device LLMs, small yet powerful.",
-   "tags": [],
-   "title": "OpenBMB/MiniCPM",
-   "url": "https://github.com/OpenBMB/MiniCPM"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
-   "key": "gh:openxla/xla",
-   "metrics": {
-    "forks": 995,
-    "stars": 4643,
-    "starsToday": 10
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:machine learning",
-     "weak:gpu",
+     "kw:mcp",
+     "weak:agent",
      "cat:board"
     ],
     "score": 0.8
    },
    "repo": {
-    "avatar": "https://github.com/openxla.png?size=64",
-    "forks": 995,
-    "language": "C++",
-    "name": "xla",
-    "owner": "openxla",
-    "stars": 4643,
-    "starsToday": 10,
+    "avatar": "https://github.com/oraios.png?size=64",
+    "forks": 2118,
+    "language": "Python",
+    "name": "serena",
+    "owner": "oraios",
+    "stars": 30969,
+    "starsToday": 57,
     "topics": []
    },
    "sources": [
     "github-trending"
    ],
-   "summary": "A machine learning compiler for GPUs, CPUs, and ML accelerators",
+   "summary": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities - the IDE for your agent",
    "tags": [],
-   "title": "openxla/xla",
-   "url": "https://github.com/openxla/xla"
+   "title": "oraios/serena",
+   "url": "https://github.com/oraios/serena"
   },
   {
    "board": "repos",
@@ -2116,86 +2127,13 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:panniantong/agent-reach",
-   "metrics": {
-    "forks": 9567,
-    "stars": 107373
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:llm",
-     "kw:ai agent",
-     "kw:mcp",
-     "kw:claude",
-     "topic:mcp",
-     "weak:ai",
-     "weak:agent",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/73925474?v=4",
-    "createdAt": "2026-02-24T02:10:24Z",
-    "forks": 9567,
-    "language": "Python",
-    "license": "MIT",
-    "name": "Agent-Reach",
-    "owner": "Panniantong",
-    "pushedAt": "2026-11-01T07:23:13Z",
-    "stars": 107373,
-    "starsToday": 0,
-    "topics": [
-     "agent-infrastructure",
-     "ai-agent",
-     "ai-search",
-     "automation",
-     "bilibili",
-     "claude-code",
-     "cli",
-     "cursor",
-     "free-api",
-     "llm-tools",
-     "mcp",
-     "python",
-     "reddit-scraper",
-     "twitter-scraper",
-     "web-scraper",
-     "xiaohongshu",
-     "youtube-transcript"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-   "tags": [
-    "agent-infrastructure",
-    "ai-agent",
-    "ai-search",
-    "automation",
-    "bilibili",
-    "claude-code",
-    "cli",
-    "cursor",
-    "free-api",
-    "llm-tools"
-   ],
-   "title": "Panniantong/Agent-Reach",
-   "url": "https://github.com/Panniantong/Agent-Reach"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
    "key": "gh:paperclipai/paperclip",
    "metrics": {
-    "forks": 18164,
-    "stars": 109650,
+    "forks": 18171,
+    "stars": 109701,
     "starsToday": 401
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2214,13 +2152,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/264498616?v=4",
     "createdAt": "2026-03-02T15:01:51Z",
-    "forks": 18164,
+    "forks": 18171,
     "language": "TypeScript",
     "license": "MIT",
     "name": "paperclip",
     "owner": "paperclipai",
-    "pushedAt": "2026-11-01T09:43:08Z",
-    "stars": 109650,
+    "pushedAt": "2026-11-01T12:39:55Z",
+    "stars": 109701,
     "starsToday": 401,
     "topics": [
      "acpx",
@@ -2270,11 +2208,11 @@
    "category": "tool",
    "key": "gh:patchy631/ai-engineering-hub",
    "metrics": {
-    "forks": 6435,
-    "stars": 39656,
+    "forks": 6447,
+    "stars": 39814,
     "starsToday": 573
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2289,11 +2227,11 @@
    },
    "repo": {
     "avatar": "https://github.com/patchy631.png?size=64",
-    "forks": 6435,
+    "forks": 6447,
     "language": "Jupyter Notebook",
     "name": "ai-engineering-hub",
     "owner": "patchy631",
-    "stars": 39656,
+    "stars": 39814,
     "starsToday": 573,
     "topics": []
    },
@@ -2310,11 +2248,11 @@
    "category": "tool",
    "key": "gh:pbakaus/impeccable",
    "metrics": {
-    "forks": 5818,
-    "stars": 98703,
+    "forks": 5831,
+    "stars": 98848,
     "starsToday": 1338
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:anthropics/skills"
    ],
@@ -2328,11 +2266,11 @@
    },
    "repo": {
     "avatar": "https://github.com/pbakaus.png?size=64",
-    "forks": 5818,
+    "forks": 5831,
     "language": "Rust",
     "name": "impeccable",
     "owner": "pbakaus",
-    "stars": 98703,
+    "stars": 98848,
     "starsToday": 1338,
     "topics": []
    },
@@ -2347,41 +2285,81 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:qwenlm/qwen3-vl",
+   "key": "gh:scenario-labs/skills",
    "metrics": {
-    "forks": 1881,
-    "stars": 20153,
-    "starsToday": 2
+    "forks": 172,
+    "stars": 1423,
+    "starsToday": 98
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
-     "kw:large language model",
-     "kw:language model",
-     "kw:qwen",
-     "weak:model",
+     "kw:generative ai",
+     "kw:ai agent",
+     "kw:mcp",
+     "kw:model context protocol",
+     "kw:claude",
+     "kw:codex",
+     "topic:ai-agents",
+     "topic:generative-ai",
      "cat:board"
     ],
     "score": 1
    },
    "repo": {
-    "avatar": "https://github.com/QwenLM.png?size=64",
-    "forks": 1881,
-    "language": "Jupyter Notebook",
-    "name": "Qwen3-VL",
-    "owner": "QwenLM",
-    "stars": 20153,
-    "starsToday": 2,
-    "topics": []
+    "avatar": "https://avatars.githubusercontent.com/u/71755875?v=4",
+    "createdAt": "2026-08-12T10:08:49Z",
+    "forks": 172,
+    "language": "Python",
+    "license": "MIT",
+    "name": "skills",
+    "owner": "scenario-labs",
+    "pushedAt": "2026-11-01T12:39:03Z",
+    "stars": 1423,
+    "starsToday": 98,
+    "topics": [
+     "3d-models",
+     "agent-skills",
+     "ai-agents",
+     "ai-art",
+     "blender",
+     "claude-code",
+     "claude-skills",
+     "codex",
+     "game-assets",
+     "game-development",
+     "generative-ai",
+     "image-generation",
+     "maya",
+     "mcp",
+     "model-context-protocol",
+     "skills-sh",
+     "unity",
+     "unreal-engine",
+     "video-generation",
+     "zbrush"
+    ]
    },
    "sources": [
+    "github-search",
     "github-trending"
    ],
-   "summary": "Qwen3-VL is the multimodal large language model series developed by Qwen team, Alibaba Cloud.",
-   "tags": [],
-   "title": "QwenLM/Qwen3-VL",
-   "url": "https://github.com/QwenLM/Qwen3-VL"
+   "summary": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+   "tags": [
+    "3d-models",
+    "agent-skills",
+    "ai-agents",
+    "ai-art",
+    "blender",
+    "claude-code",
+    "claude-skills",
+    "codex",
+    "game-assets",
+    "game-development"
+   ],
+   "title": "scenario-labs/skills",
+   "url": "https://github.com/scenario-labs/skills"
   },
   {
    "board": "repos",
@@ -2389,10 +2367,10 @@
    "key": "gh:sickn33/agentic-awesome-skills",
    "metrics": {
     "forks": 7105,
-    "stars": 48950,
+    "stars": 48952,
     "starsToday": 74
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2416,8 +2394,8 @@
     "license": "MIT",
     "name": "agentic-awesome-skills",
     "owner": "sickn33",
-    "pushedAt": "2026-11-01T09:42:45Z",
-    "stars": 48950,
+    "pushedAt": "2026-11-01T10:10:44Z",
+    "stars": 48952,
     "starsToday": 74,
     "topics": [
      "agent-skills",
@@ -2465,53 +2443,13 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:skyhook-io/radar",
-   "metrics": {
-    "forks": 265,
-    "stars": 4005,
-    "starsToday": 7
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:ai agent",
-     "kw:mcp",
-     "weak:ai",
-     "weak:agent",
-     "weak:agents",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://github.com/skyhook-io.png?size=64",
-    "forks": 265,
-    "language": "Go",
-    "name": "radar",
-    "owner": "skyhook-io",
-    "stars": 4005,
-    "starsToday": 7,
-    "topics": []
-   },
-   "sources": [
-    "github-trending"
-   ],
-   "summary": "The missing open-source Kubernetes UI with a built-in MCP server for AI agents. See what's broken, why, and what changed. Issues, Topology, event timeline, Helm, GitOps, live service traffic, and cluster audits - all in one Go binary.",
-   "tags": [],
-   "title": "skyhook-io/radar",
-   "url": "https://github.com/skyhook-io/radar"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
    "key": "gh:stablyai/orca",
    "metrics": {
-    "forks": 7086,
-    "stars": 112001,
+    "forks": 7088,
+    "stars": 112094,
     "starsToday": 728
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [
     "gh:openai/codex"
    ],
@@ -2532,13 +2470,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/127256420?v=4",
     "createdAt": "2026-03-17T03:28:57Z",
-    "forks": 7086,
+    "forks": 7088,
     "language": "TypeScript",
     "license": "MIT",
     "name": "orca",
     "owner": "stablyai",
-    "pushedAt": "2026-11-01T09:43:27Z",
-    "stars": 112001,
+    "pushedAt": "2026-11-01T12:40:17Z",
+    "stars": 112094,
     "starsToday": 728,
     "topics": [
      "ade",
@@ -2588,11 +2526,11 @@
    "category": "tool",
    "key": "gh:t8y2/dbx",
    "metrics": {
-    "forks": 2591,
-    "stars": 28417,
+    "forks": 2594,
+    "stars": 28431,
     "starsToday": 60
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2607,13 +2545,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/77960507?v=4",
     "createdAt": "2026-04-29T03:00:36Z",
-    "forks": 2591,
+    "forks": 2594,
     "language": "Rust",
     "license": "Apache-2.0",
     "name": "dbx",
     "owner": "t8y2",
     "pushedAt": "2026-11-01T09:33:00Z",
-    "stars": 28417,
+    "stars": 28431,
     "starsToday": 60,
     "topics": [
      "ai",
@@ -2740,11 +2678,11 @@
    "category": "tool",
    "key": "gh:thedotmack/claude-mem",
    "metrics": {
-    "forks": 9505,
-    "stars": 108328,
+    "forks": 9514,
+    "stars": 108524,
     "starsToday": 1723
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2760,11 +2698,11 @@
    },
    "repo": {
     "avatar": "https://github.com/thedotmack.png?size=64",
-    "forks": 9505,
+    "forks": 9514,
     "language": "TypeScript",
     "name": "claude-mem",
     "owner": "thedotmack",
-    "stars": 108328,
+    "stars": 108524,
     "starsToday": 1723,
     "topics": []
    },
@@ -2781,11 +2719,11 @@
    "category": "tool",
    "key": "gh:thu-maic/openmaic",
    "metrics": {
-    "forks": 6522,
-    "stars": 42327,
-    "starsToday": 116
+    "forks": 6524,
+    "stars": 42352,
+    "starsToday": 370
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2797,12 +2735,12 @@
    },
    "repo": {
     "avatar": "https://github.com/THU-MAIC.png?size=64",
-    "forks": 6522,
+    "forks": 6524,
     "language": "TypeScript",
     "name": "OpenMAIC",
     "owner": "THU-MAIC",
-    "stars": 42327,
-    "starsToday": 116,
+    "stars": 42352,
+    "starsToday": 370,
     "topics": []
    },
    "sources": [
@@ -2816,90 +2754,13 @@
   {
    "board": "repos",
    "category": "tool",
-   "key": "gh:tt-a1i/archify",
-   "metrics": {
-    "forks": 6292,
-    "stars": 92233
-   },
-   "observedAt": "2026-11-01T09:43:58.035Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "kw:llm",
-     "kw:ai agent",
-     "kw:claude",
-     "kw:deepseek",
-     "kw:codex",
-     "topic:ai-agents",
-     "topic:llm",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "repo": {
-    "avatar": "https://avatars.githubusercontent.com/u/53142663?v=4",
-    "createdAt": "2026-04-15T05:27:37Z",
-    "forks": 6292,
-    "language": "JavaScript",
-    "license": "Apache-2.0",
-    "name": "archify",
-    "owner": "tt-a1i",
-    "pushedAt": "2026-10-31T06:53:27Z",
-    "stars": 92233,
-    "starsToday": 0,
-    "topics": [
-     "agent-skills",
-     "ai-agents",
-     "architecture-diagram",
-     "claude-code",
-     "claude-skills",
-     "codex",
-     "coding-agents",
-     "deepseek-harness",
-     "developer-tools",
-     "diagrams",
-     "diagrams-as-code",
-     "dsh-plugin",
-     "flowchart",
-     "llm",
-     "mermaid",
-     "opencode",
-     "sequence-diagram",
-     "software-architecture",
-     "system-design",
-     "visualization"
-    ]
-   },
-   "sources": [
-    "github-search"
-   ],
-   "summary": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-   "tags": [
-    "agent-skills",
-    "ai-agents",
-    "architecture-diagram",
-    "claude-code",
-    "claude-skills",
-    "codex",
-    "coding-agents",
-    "deepseek-harness",
-    "developer-tools",
-    "diagrams"
-   ],
-   "title": "tt-a1i/archify",
-   "url": "https://github.com/tt-a1i/archify"
-  },
-  {
-   "board": "repos",
-   "category": "tool",
    "key": "gh:vercel-labs/agent-browser",
    "metrics": {
     "forks": 3085,
-    "stars": 45072,
+    "stars": 45086,
     "starsToday": 79
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2917,7 +2778,7 @@
     "language": "Rust",
     "name": "agent-browser",
     "owner": "vercel-labs",
-    "stars": 45072,
+    "stars": 45086,
     "starsToday": 79,
     "topics": []
    },
@@ -2934,11 +2795,11 @@
    "category": "tool",
    "key": "gh:yeachan-heo/oh-my-claudecode",
    "metrics": {
-    "forks": 3620,
-    "stars": 40475,
+    "forks": 3621,
+    "stars": 40478,
     "starsToday": 36
    },
-   "observedAt": "2026-11-01T09:43:58.035Z",
+   "observedAt": "2026-11-01T12:43:58.816Z",
    "refs": [],
    "relevance": {
     "reasons": [
@@ -2957,13 +2818,13 @@
    "repo": {
     "avatar": "https://avatars.githubusercontent.com/u/54757707?v=4",
     "createdAt": "2026-01-09T03:36:29Z",
-    "forks": 3620,
+    "forks": 3621,
     "language": "TypeScript",
     "license": "MIT",
     "name": "oh-my-claudecode",
     "owner": "Yeachan-Heo",
-    "pushedAt": "2026-11-01T09:43:40Z",
-    "stars": 40475,
+    "pushedAt": "2026-11-01T12:43:32Z",
+    "stars": 40478,
     "starsToday": 36,
     "topics": [
      "agentic-coding",
@@ -3000,60 +2861,61 @@
   }
  ],
  "date": "2026-11-01",
- "fetchedAt": "2026-11-01T09:43:58.035Z",
+ "fetchedAt": "2026-11-01T12:43:58.816Z",
  "runs": [
   "2026-11-01T07:43:08.898Z",
   "2026-11-01T08:42:43.147Z",
-  "2026-11-01T09:43:58.035Z"
+  "2026-11-01T09:43:58.035Z",
+  "2026-11-01T12:43:58.816Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "arxiv",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 314,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "github-search",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 103,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "count": 107,
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "github-trending",
    "state": "ok"
   },
   {
    "board": "news",
    "count": 210,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "hacker-news",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 56,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "hf-papers",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 10,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "journals",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 7,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-anthropic",
    "message": "anthropic-research: payload: no entries | anthropic-engineering: payload: no entries | claude-blog: html: no entries",
    "state": "degraded"
@@ -3061,21 +2923,21 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-deepseek",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 18,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-google",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -3083,14 +2945,14 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-meta",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -3098,14 +2960,14 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-mistral",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 27,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
@@ -3114,7 +2976,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-qwen",
    "message": "nothing in the last 7 days",
    "state": "ok"
@@ -3122,7 +2984,7 @@
   {
    "board": "labs",
    "count": 2,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
@@ -3131,7 +2993,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -3139,7 +3001,7 @@
   {
    "board": "social",
    "count": 60,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "reddit",
    "message": "reusing the fetch of 2026-11-01T07:43:08.898Z (at most every 6 h)",
    "mode": "cached",
@@ -3149,7 +3011,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -3158,7 +3020,7 @@
   {
    "board": "social",
    "count": 16,
-   "fetchedAt": "2026-11-01T09:43:58.035Z",
+   "fetchedAt": "2026-11-01T12:43:58.816Z",
    "id": "x-linked",
    "mode": "syndication",
    "state": "ok"
@@ -3168,6 +3030,6 @@
   "from": "2026-11-01T07:00:00.000Z",
   "settled": false,
   "timezone": "America/Los_Angeles",
-  "to": "2026-11-01T09:43:58.035Z"
+  "to": "2026-11-01T12:43:58.816Z"
  }
 }
