@@ -228,6 +228,10 @@ const en = {
   'edition.liveKicker': 'Live · open edition',
   'edition.live': 'Live',
   'edition.liveTitle': 'Live edition',
+  'edition.missing': 'This edition is not in the archive',
+  'edition.missingBody':
+    'The site keeps the last {n} days of editions. {date} is older than that, or was never published. Links in old feed entries end here.',
+  'edition.missingArchive': 'Browse the archive',
   'edition.liveHint': 'The open edition, ranked so far',
   'edition.liveNote':
     'This edition is still open: ranks move as the day goes on, and the numbers settle a few hours after the cutoff.',

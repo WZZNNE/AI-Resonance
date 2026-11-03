@@ -214,6 +214,10 @@ const zh: Record<keyof Messages, string> = {
   'edition.liveKicker': '实时 · 本期未收盘',
   'edition.live': '实时',
   'edition.liveTitle': '实时版',
+  'edition.missing': '这一期不在存档里',
+  'edition.missingBody':
+    '本站保留最近 {n} 天的日报。{date} 这一期已经超出保留期，或者从未发布；订阅源里较早条目的链接会来到这里。',
+  'edition.missingArchive': '浏览往期',
   'edition.liveHint': '尚未收盘的一期，按目前数据排名',
   'edition.liveNote': '本期仍在进行中：排名会随时间变化，截止数小时后数据才会稳定。',
   'edition.latest': '最新',

@@ -78,3 +78,22 @@ it('passes an explicit fresh read through the health refresh control', async () 
   await vi.waitFor(() => expect(latest).toHaveBeenCalledTimes(2))
   expect(latest.mock.calls[1][0]?.fresh).toBe(true)
 })
+
+it('turns an edition past retention (an old feed link) into a way on, not an endless retry', async () => {
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('Not found', { status: 404 })))
+  location.value = { path: '/d/2026-01-15', query: {} }
+  render(<Today path="/d/2026-01-15" params={{}} query={{}} />, host)
+  await vi.waitFor(() => expect(host.textContent).toContain('This edition is not in the archive'))
+  expect(host.textContent).toContain('183 days')
+  expect([...host.querySelectorAll('a')].map((a) => a.getAttribute('href'))).toEqual(['#/', '#/archive'])
+  expect(host.textContent).not.toContain('Try again')
+  expect(document.title).toContain('This edition is not in the archive')
+})
+
+it('still offers a retry when the network, not the archive, is the problem', async () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Failed to fetch')))
+  location.value = { path: '/d/2026-09-18', query: {} }
+  render(<Today path="/d/2026-09-18" params={{}} query={{}} />, host)
+  await vi.waitFor(() => expect(host.querySelector('[data-part="error-state"]')).not.toBeNull())
+  expect(host.textContent).not.toContain('This edition is not in the archive')
+})

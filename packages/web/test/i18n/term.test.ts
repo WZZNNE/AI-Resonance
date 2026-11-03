@@ -1,7 +1,7 @@
 /** Pipeline identifiers reach the UI through `term()`, so the zh interface never shows `hfUpvotes` or `release-notes`. */
 import { afterEach, describe, expect, it } from 'vitest'
-import { resetSettings } from '../../src/core/settings.ts'
-import { setLang, term } from '../../src/i18n/index.ts'
+import { general, resetSettings } from '../../src/core/settings.ts'
+import { lang, setLang, t, term } from '../../src/i18n/index.ts'
 
 afterEach(() => resetSettings())
 
@@ -22,5 +22,19 @@ describe('term', () => {
     setLang('zh')
     expect(term('metric', 'someNewMetric')).toBe('someNewMetric')
     expect(term('surface', 'podcast')).toBe('podcast')
+  })
+})
+
+describe('setLang', () => {
+  afterEach(() => resetSettings())
+  it('switches at once when the dictionary is in, and a later choice wins over a slower one', async () => {
+    general.set({ lang: 'zh' })
+    await setLang('en')
+    expect(lang.value).toBe('en')
+    expect(t('health.title')).not.toBe('health.title')
+    const first = setLang('zh')
+    const second = setLang(null)
+    await Promise.all([first, second])
+    expect(general.value.lang).toBeNull()
   })
 })

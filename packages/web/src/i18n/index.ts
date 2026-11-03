@@ -76,10 +76,25 @@ export function startLang(): Promise<void> {
   return loadLang(lang.value)
 }
 
-/** Choose a language; `null` returns to automatic detection. */
-export function setLang(next: Lang | null): void {
-  general.set({ lang: next })
+/**
+ * Choose a language; `null` returns to automatic detection. Its dictionary is fetched first, so nothing renders in the
+ * new language before its strings exist: page titles set once per language would otherwise keep raw keys
+ * (`health.title · AI Resonance`). Offline, the switch still happens and falls back to English, then the key.
+ */
+export function setLang(next: Lang | null): Promise<void> {
+  const seq = ++switches
+  const target = next ?? browserLang ?? siteLang.peek()
+  const apply = () => {
+    // A later choice made while this dictionary was loading wins.
+    if (seq === switches) general.set({ lang: next })
+  }
+  if (DICTS[target]) {
+    apply()
+    return Promise.resolve()
+  }
+  return loadLang(target).then(apply, apply)
 }
+let switches = 0
 
 /** Translate a key in the current UI language (English, then the key itself, as fallbacks). */
 export function t(key: MessageKey, params?: MessageParams): string {
