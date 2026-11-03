@@ -6116,7 +6116,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.005,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6129,7 +6129,7 @@
    "k": "deepseek-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek Flash Latest",
-   "out": 0.5,
+   "out": 0.315,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6216,7 +6216,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.16,
+   "cr": 0.18,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6225,11 +6225,11 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.1605,
+   "in": 0.1824,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 9.3388,
+   "out": 10.5539,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7749,14 +7749,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.017,
+   "cr": 0.03,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.035,
+   "in": 0.059,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.104,
+   "out": 0.178,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8123,14 +8123,13 @@
    "upd": "2024-09-25"
   },
   {
-   "cr": 0.1,
    "ctx": 131072,
    "id": "meta-llama/llama-3.3-70b-instruct",
-   "in": 0.2,
+   "in": 0.1,
    "k": "llama-3-3-70b-instruct",
-   "maxOut": 128000,
+   "maxOut": 16384,
    "name": "Llama-3.3-70B-Instruct",
-   "out": 0.52,
+   "out": 0.32,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10163,7 +10162,7 @@
    "upd": "2026-05-05"
   },
   {
-   "cr": 0.025,
+   "cr": 0.021,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10171,11 +10170,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-120b",
-   "in": 0.028,
+   "in": 0.024,
    "k": "gpt-oss-120b",
    "maxOut": 65536,
    "name": "GPT OSS 120B",
-   "out": 0.104,
+   "out": 0.087,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16194,5 +16193,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-03T03:43:36.652Z"
+ "updatedAt": "2026-11-03T06:44:07.417Z"
 }
