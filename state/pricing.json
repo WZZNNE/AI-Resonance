@@ -6156,7 +6156,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.001498,
+   "cr": 0.035,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6165,11 +6165,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.04708,
+   "in": 0.059,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.14124,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7175,7 +7175,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.0238,
+   "cr": 0.035,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7184,11 +7184,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.119,
+   "in": 0.059,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 0.238,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7749,14 +7749,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.041,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.083,
    "k": "gemma-4-26b-a4b-it",
-   "maxOut": 235929,
+   "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.249,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8123,13 +8123,14 @@
    "upd": "2024-09-25"
   },
   {
+   "cr": 0.1,
    "ctx": 131072,
    "id": "meta-llama/llama-3.3-70b-instruct",
-   "in": 0.1,
+   "in": 0.2,
    "k": "llama-3-3-70b-instruct",
-   "maxOut": 16384,
+   "maxOut": 128000,
    "name": "Llama-3.3-70B-Instruct",
-   "out": 0.32,
+   "out": 0.52,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10162,7 +10163,7 @@
    "upd": "2026-05-05"
   },
   {
-   "cr": 0.023,
+   "cr": 0.075,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10170,11 +10171,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-120b",
-   "in": 0.026,
+   "in": 0.15,
    "k": "gpt-oss-120b",
    "maxOut": 65536,
    "name": "GPT OSS 120B",
-   "out": 0.095,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10588,11 +10589,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3-coder-30b-a3b-instruct",
-   "in": 0.07,
+   "in": 0.15,
    "k": "qwen3-coder-30b-a3b-instruct",
    "maxOut": 235929,
    "name": "Qwen3-Coder 30B-A3B Instruct",
-   "out": 0.28,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10628,11 +10629,12 @@
    "upd": "2026-02-03"
   },
   {
+   "cr": 0.07,
    "ctx": 262144,
    "id": "qwen/qwen3-next-80b-a3b-instruct",
-   "in": 0.09,
+   "in": 0.1,
    "k": "qwen3-next-80b-a3b-instruct",
-   "maxOut": 16384,
+   "maxOut": 235929,
    "name": "Qwen3-Next 80B-A3B Instruct",
    "out": 1.1,
    "p": "openrouter",
@@ -11337,7 +11339,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11345,11 +11347,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11375,7 +11377,7 @@
    "upd": "2026-04-20"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11383,11 +11385,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16192,5 +16194,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-02T21:43:44.565Z"
+ "updatedAt": "2026-11-03T00:49:35.676Z"
 }
