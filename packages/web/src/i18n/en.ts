@@ -79,6 +79,12 @@ const en = {
   'share.send': 'Share',
   'share.download': 'Download image',
   'share.svgFallback': 'PNG is unavailable in this browser. A standalone SVG card was downloaded instead.',
+  'share.badge': 'README badge',
+  'share.badgeHelp':
+    'This repository made the top list. Its README can show the best settled rank; the badge updates itself and never expires.',
+  'share.badgeCopy': 'Copy Markdown',
+  'share.badgeCopied': 'Badge Markdown copied',
+  'share.badgePage': 'Badge page',
   'settings.readingHelp':
     'Start with language, appearance and interests. Reading, saving and site search work without a model API key.',
   'settings.advancedHelp': 'Optional: AI models, credentials and publishing',

@@ -72,7 +72,7 @@ Language: TypeScript everywhere, run natively by Node ≥ 22.18 (type stripping)
 | Trend | `trend.ts` | pure; builds `Trend` and `EntityHistory` from the snapshot window |
 | Enrich | `enrich.ts` | `enrich(day, ctx, store): Promise<number>` — OpenAI-compatible call, JSON output, cached by text hash; no key ⇒ no-op |
 | Pricing | `pricing.ts` | `fetchPricing(ctx): Promise<PricingFile \| null>` |
-| Publish | `publish/*.ts` | `publishAll({store, config, outDir, today, pricing}): Promise<PublishReport>` — manifest, daily, latest, weekly, entities, search index, feeds, digests, `llms.txt`; validates every file with zod before writing |
+| Publish | `publish/*.ts` | `publishAll({store, config, outDir, today, pricing}): Promise<PublishReport>` — manifest, daily, latest, weekly, entities, search index, feeds, digests, `llms.txt`, share pages, README badges; validates every file with zod before writing |
 | CLI | `cli.ts` | `run` · `publish` · `serve` · `backfill` · `doctor` |
 
 ## 3. Data contract
@@ -94,6 +94,8 @@ Entity identity is defined in `keys.ts` and is what makes resonance work: `gh:ow
 /api/v1/feed.xml · feed.zh.xml        Atom feeds
 /api/v1/report/<date|week>.<lang>.html   self-contained interactive report (§15)
 /api/v1/mail-status.json              last e-mail sent / last error (§15.2)
+/badge/<owner>/<repo>.svg · /badge/<owner>/<repo>/   README badge + landing page of a repository that reached a
+                                      settled Repos top list; best rank kept in data/state/featured.json beyond retention
 ```
 
 ### 3a. The five boards

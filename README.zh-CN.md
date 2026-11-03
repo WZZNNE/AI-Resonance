@@ -177,6 +177,12 @@
   本仓库的令牌就能配好，不用改任何工作流文件。
 - **免账号订阅**：独立订阅页提供中英 Atom 链接，可直接复制到阅读器，另有 Markdown 摘要。定时邮件是自己部署后可选的运营功能。
 - **分享事件**：调用设备分享菜单或复制链接；具体日期的事件与日报链接提供静态摘要页，包含预览信息和原始来源。图片卡片在浏览器本地生成，支持下载 PNG；浏览器无法导出 PNG 时回退为 SVG。
+- **上榜仓库的 README 徽章**：进过结算后开源项目榜前 10 的仓库，都会得到一枚标着最佳排名的徽章和一个小落地页。徽章只会
+  变好，并且超过 183 天保留期也不会失效，挂在 README 里不会变成坏图。在仓库条目的分享面板里可以一键复制 Markdown：
+
+  ```markdown
+  [![AI Resonance: #3 on Repos](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>.svg)](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>/)
+  ```
 
 ### 面向智能体与开发者
 

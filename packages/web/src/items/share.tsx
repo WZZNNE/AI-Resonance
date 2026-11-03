@@ -1,10 +1,10 @@
 import { type DateStr, type Item, type Lang, staticItemSharePath } from '@resonance/schema'
-import { useState } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import { toast } from '../core/events.ts'
 import { manifest } from '../core/state.ts'
 import { lang, t } from '../i18n/index.ts'
 import { Button } from '../ui/button.tsx'
-import { absoluteRoute, copyText } from '../ui/link.tsx'
+import { absoluteRoute, copyText, ExtLink } from '../ui/link.tsx'
 import { Sheet } from '../ui/sheet.tsx'
 import { boardTitle, itemBlurb, itemHref, itemTitle, itemWhy } from './text.ts'
 
@@ -14,6 +14,71 @@ export function shareUrl(item: Pick<Item, 'key'>, date?: DateStr | 'live'): stri
   if (!edition) return absoluteRoute(itemHref(item, date))
   const base = new URL(import.meta.env.BASE_URL, window.location.href)
   return new URL(staticItemSharePath(edition, item.key), base).href
+}
+
+/**
+ * A repository's README badge (written by the pipeline's publish/badge.ts for every repository that reached a settled
+ * Repos top list): the preview on this origin, and Markdown that points at the public site even from a local copy.
+ */
+export function badgeUrls(item: Pick<Item, 'key'>): { preview: string; image: string; page: string } | null {
+  const m = /^gh:([a-z0-9][a-z0-9-]{0,38})\/([a-z0-9._-]{1,100})$/.exec(item.key)
+  if (!m || m[2] === '.' || m[2] === '..') return null
+  const path = `badge/${m[1]}/${m[2]}`
+  const here = new URL(import.meta.env.BASE_URL, window.location.href)
+  let site = here
+  try {
+    if (manifest.data.value?.site.siteUrl) site = new URL(manifest.data.value.site.siteUrl)
+  } catch {
+    /* a malformed siteUrl falls back to this origin */
+  }
+  return {
+    preview: new URL(`${path}.svg`, here).href,
+    image: new URL(`${path}.svg`, site).href,
+    page: new URL(`${path}/`, site).href,
+  }
+}
+
+/** Pure: the Markdown a README pastes. */
+export function badgeMarkdown(urls: { image: string; page: string }, siteName: string): string {
+  return `[![${siteName.replace(/[[\]]/g, '')}](${urls.image})](${urls.page})`
+}
+
+/** Shown only once the badge image has loaded: a repository without a settled top-list rank has no badge yet. */
+function BadgeSnippet({ item }: { item: Item }) {
+  const urls = badgeUrls(item)
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    setReady(false)
+    if (!urls) return
+    const probe = new Image()
+    probe.onload = () => setReady(true)
+    probe.src = urls.preview
+    return () => {
+      probe.onload = null
+    }
+  }, [urls?.preview])
+  if (!urls || !ready) return null
+  const name = manifest.data.value?.site.name || 'AI Resonance'
+  const markdown = badgeMarkdown(urls, name)
+  return (
+    <section class="share-badge" aria-label={t('share.badge')}>
+      <h3 class="share-badge__title">{t('share.badge')}</h3>
+      <p class="settings__hint">{t('share.badgeHelp')}</p>
+      <img class="share-badge__preview" src={urls.preview} alt={name} />
+      <code class="share-badge__code">{markdown}</code>
+      <div class="settings__row">
+        <Button
+          icon="copy"
+          onClick={async () => toast(t((await copyText(markdown)) ? 'share.badgeCopied' : 'card.copyFailed'))}
+        >
+          {t('share.badgeCopy')}
+        </Button>
+        <ExtLink href={urls.page} arrow>
+          {t('share.badgePage')}
+        </ExtLink>
+      </div>
+    </section>
+  )
 }
 
 const xml = (value: string) =>
@@ -160,6 +225,7 @@ export function ShareAction({ item, date }: { item: Item; date?: DateStr | 'live
                 {t('share.download')}
               </Button>
             </div>
+            <BadgeSnippet item={item} />
           </div>
         </Sheet>
       )}

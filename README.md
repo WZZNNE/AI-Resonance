@@ -186,6 +186,13 @@ Reading, Atom subscriptions, follow controls, bookmarks and reading-library back
   attached. Set it up from **Settings › Delivery** with a token scoped to your repository. No workflow edits needed.
 - **Subscribe without an account.** The subscription page provides Chinese and English Atom links to copy into your feed reader, alongside the Markdown digests. Scheduled e-mail remains an optional setup for the owner of a deployed copy.
 - **Share an event.** Use your device's share menu or copy a link. Dated event and edition links have static summary pages with preview metadata and original sources. Download an image card generated in your browser as PNG, with SVG fallback when PNG export is unavailable.
+- **A README badge for featured repositories.** Every repository that reaches a settled Repos top 10 gets a badge with
+  its best rank and a small landing page. The badge only ever improves and outlives the 183-day window, so an embedded
+  badge never breaks. The share sheet of a repository copies the Markdown:
+
+  ```markdown
+  [![AI Resonance: #3 on Repos](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>.svg)](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>/)
+  ```
 
 ### For agents and developers
 
