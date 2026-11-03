@@ -12219,7 +12219,7 @@
    "src": "litellm"
   },
   {
-   "cr": 0.2,
+   "cr": 0.1,
    "id": "anthropic/claude-sonnet-5-5",
    "in": 2,
    "k": "claude-sonnet-5-5",
@@ -12337,6 +12337,17 @@
    "k": "gemini-3-8-flash",
    "name": "google/gemini-3.8-flash",
    "out": 3.75,
+   "p": "perplexity",
+   "reasoning": false,
+   "src": "litellm"
+  },
+  {
+   "cr": 0.1,
+   "id": "google/gemini-4-argon",
+   "in": 2,
+   "k": "gemini-4-argon",
+   "name": "google/gemini-4-argon",
+   "out": 10,
    "p": "perplexity",
    "reasoning": false,
    "src": "litellm"
@@ -12694,6 +12705,17 @@
    "out": 0.17,
    "p": "perplexity",
    "reasoning": true,
+   "src": "litellm"
+  },
+  {
+   "cr": 0.04,
+   "id": "perplexity/nemotron-3.5-super-120b-a12b",
+   "in": 0.2,
+   "k": "nemotron-3-5-super-120b-a12b",
+   "name": "perplexity/nemotron-3.5-super-120b-a12b",
+   "out": 0.5,
+   "p": "perplexity",
+   "reasoning": false,
    "src": "litellm"
   },
   {
@@ -16195,5 +16217,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-03T18:43:53.647Z"
+ "updatedAt": "2026-11-03T21:44:35.399Z"
 }

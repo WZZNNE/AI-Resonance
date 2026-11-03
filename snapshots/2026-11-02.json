@@ -8284,53 +8284,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1xm1rhy",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 53,
-    "communityRank": 5,
-    "feedN": 100,
-    "feedRank": 10,
-    "mediaOnly": 1
-   },
-   "observedAt": "2026-11-03T15:43:55.950Z",
-   "publishedAt": "2026-11-02T16:25:22.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:ClaudeAI",
-     "kw:anthropic",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 0.95
-   },
-   "social": {
-    "author": "Puzzleheaded-King584",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "ClaudeAI",
-    "createdAt": "2026-11-02T16:25:22.000Z",
-    "handle": "Puzzleheaded-King584",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xm1rhy/anthropic_is_now_spending_more_money_on_its_ai/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/ClaudeAI"
-   ],
-   "title": "Anthropic is now spending more money on its \"AI employees\" than its human employees",
-   "url": "https://www.reddit.com/r/ClaudeAI/comments/1xm1rhy/anthropic_is_now_spending_more_money_on_its_ai/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1xm1wor",
    "metrics": {
     "authority": 1,
@@ -8547,55 +8500,6 @@
    ],
    "title": "Insights from MediaTek's analyst dinner in NYC",
    "url": "https://www.reddit.com/r/mlscaling/comments/1xm2bvj/insights_from_mediateks_analyst_dinner_in_nyc/"
-  },
-  {
-   "board": "social",
-   "category": "research",
-   "key": "rd:1xm2ilx",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 12,
-    "communityRank": 5,
-    "feedN": 100,
-    "feedRank": 15,
-    "mediaOnly": 1
-   },
-   "observedAt": "2026-11-03T15:43:55.950Z",
-   "publishedAt": "2026-11-02T16:53:01.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:singularity",
-     "kw:anthropic",
-     "weak:ai",
-     "weak:model",
-     "weak:models",
-     "cat:research"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "141_1337",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "singularity",
-    "createdAt": "2026-11-02T16:53:01.000Z",
-    "handle": "141_1337",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/singularity/comments/1xm2ilx/anthropic_warns_in_new_sec_filing_that_its_future/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": ""
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "",
-   "tags": [
-    "r/singularity"
-   ],
-   "title": "Anthropic warns in new SEC filing that its future models may \"imminently\" reach the threshold for AI-driven research doubling the pace of AI progress—and admits it may not detect the acceleration until after it happens.",
-   "url": "https://www.reddit.com/r/singularity/comments/1xm2ilx/anthropic_warns_in_new_sec_filing_that_its_future/"
   },
   {
    "board": "social",
@@ -9659,12 +9563,12 @@
    "key": "rd:1xmal1l",
    "metrics": {
     "authority": 0.8,
-    "communityN": 23,
+    "communityN": 24,
     "communityRank": 4,
     "feedN": 100,
-    "feedRank": 19
+    "feedRank": 13
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-02T21:47:08.000Z",
    "refs": [],
    "relevance": {
@@ -9702,15 +9606,63 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1xmbym0",
+   "metrics": {
+    "authority": 1.3,
+    "communityN": 45,
+    "communityRank": 3,
+    "feedN": 100,
+    "feedRank": 4
+   },
+   "observedAt": "2026-11-03T21:44:35.399Z",
+   "publishedAt": "2026-11-02T22:42:11.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:LocalLLaMA",
+     "kw:mcp",
+     "kw:qwen",
+     "weak:model",
+     "weak:reasoning",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Balloon_Fan",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "LocalLLaMA",
+    "createdAt": "2026-11-02T22:42:11.000Z",
+    "handle": "Balloon_Fan",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xmbym0/qwen_38_27b_is_sometimes_so_smart_it_scares_me/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "For fun, I gave Qwen 3.8 27b a physics problem involving some heavy math. A little bit into its reasoning, Qwen took a look at its tools, found that it had access to Blender via blender mcp - and that it could write and execute arbitrary python code through that. So it engaged Blender's python support to write itself bits of python code to do its math faster. You really have to tell this model what NOT to do sometimes... I've never seen anything like this from a local model before."
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "For fun, I gave Qwen 3.8 27b a physics problem involving some heavy math. A little bit into its reasoning, Qwen took a look at its tools, found that it had access to Blender via blender mcp - and that it could write and execute arbitrary python code through that. So it engaged Blender's python support to write itself bits of python code to do its math faster. You really have to tell this model what NOT to do sometimes... I've never seen anything like this from a local model before.",
+   "tags": [
+    "r/LocalLLaMA"
+   ],
+   "title": "Qwen 3.8 27b is sometimes so smart it scares me...",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmbym0/qwen_38_27b_is_sometimes_so_smart_it_scares_me/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1xmbyyg",
    "metrics": {
     "authority": 0.8,
-    "communityN": 23,
+    "communityN": 24,
     "communityRank": 7,
     "feedN": 100,
-    "feedRank": 31
+    "feedRank": 24
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-02T22:42:32.000Z",
    "refs": [
     "gh:openmoss/moss-image",
@@ -9753,12 +9705,12 @@
    "key": "rd:1xmcwbt",
    "metrics": {
     "authority": 0.9,
-    "communityN": 53,
-    "communityRank": 3,
+    "communityN": 56,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 6
+    "feedRank": 2
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-02T23:21:35.000Z",
    "refs": [],
    "relevance": {
@@ -9782,7 +9734,30 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xmcwbt/opus_55_medium_with_blender_mcp_is_insane_with/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I've been experimenting with Opus 5.5 Medium and Blender for a medieval game dev project I'm working on, and the results have been fantastic. I tried using Blender with Claude in the past and wasn't super impressed, but I found the secret is breaking everything down into bite sized tasks with a solid list instead of giving it the whole project at once and having it 70% do things to where I have to have the agent tweak everything constantly. Keeping the agent focused on one task at a time has made a massive difference in output quality for me."
+    "text": "I've been experimenting with Opus 5.5 Medium and Blender for a medieval game dev project I'm working on, and the results have been fantastic. I tried using Blender with Claude in the past and wasn't super impressed, but I found the secret is breaking everything down into bite sized tasks with a solid list instead of giving it the whole project at once and having it 70% do things to where I have to have the agent tweak everything constantly. Keeping the agent focused on one task at a time has made a massive difference in output quality for me.",
+    "topComments": [
+     {
+      "text": "It looks great. Can you give some examples? Did you develop each object in the scene individually? Did you have to make manual modifications?"
+     },
+     {
+      "text": "thanks! no manual modeling, claude writes python scripts that build everything in blender. it’s a whole village, but i never told it “make me a village”. first just materials, then a small kit of parts (one wooden beam, one wall, roofs, doors, windows), then one house at a time, one room at a time. every house and every object is its own separate file, so the loom is its own little script made from the same beams as the walls. my job is mostly deciding the next small piece and saying when…"
+     },
+     {
+      "text": "Second this ☝️"
+     },
+     {
+      "text": "I get fantastic results, but holy hell does it take ages. This helm came out well, but it took almost 40 hours and 30% of my $200 plan usage. https://preview.redd.it/mnfxlbefpazh1.png?width=2200&format=png&auto=webp&s=d164030e97e27ca0403f13ac26e594733365a023"
+     },
+     {
+      "text": "I used to be a developer like you, until an AI committed in my tree"
+     },
+     {
+      "text": "Can you give us some info on how you broke down your tasks to make it look so believable? Was each one made individually? Did you make an asset list and then grouped them together?"
+     },
+     {
+      "text": "I find it works a lot better with photo reference and planning out orthographics in 2D first, much faster to iterate and correct before it commits to modeling. And using Blender's node modeling works quite well too especially if you can explain how something can be built procedurally. It's been great for making modular assets so you can focus on refining blockouts rather than hassling with how they all fit together properly, it's just generally tedious work that takes time and effort away from…"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9800,12 +9775,12 @@
    "key": "rd:1xmdih0",
    "metrics": {
     "authority": 0.9,
-    "communityN": 53,
-    "communityRank": 4,
+    "communityN": 56,
+    "communityRank": 3,
     "feedN": 100,
-    "feedRank": 8
+    "feedRank": 6
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-02T23:47:43.000Z",
    "refs": [],
    "relevance": {
@@ -9846,13 +9821,13 @@
    "key": "rd:1xmesfd",
    "metrics": {
     "authority": 0.9,
-    "communityN": 12,
-    "communityRank": 3,
+    "communityN": 17,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 5,
+    "feedRank": 3,
     "mediaOnly": 1
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T00:44:10.000Z",
    "refs": [],
    "relevance": {
@@ -9875,7 +9850,30 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xmesfd/seems_weight_space_programming_is_an_emergent/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": ""
+    "text": "",
+    "topComments": [
+     {
+      "text": "Isn't this a completely novel capability in general? No human in the world can directly edit weights to improve model capabilities, not even theoretically. This is a skill that has never existed before isn't it?"
+     },
+     {
+      "text": "Mostly, yes. While there are AI researchers that can obviously see and modify weights in a manual process, the scale and understanding of what they are changing is extremely constrained. To be able to transpose capability through bulk weight editing like this is novel."
+     },
+     {
+      "text": "Can someone ELI5 what “weight space programming” is?"
+     },
+     {
+      "text": "I believe it’s where a model can manually tweak the weights of another model to make it smarter without conventional training."
+     },
+     {
+      "text": "I was shocked at the beginning, too, but after reading Astra's explanation, it is more mundane that it seemed at first sight: ... The Qwen result is particularly interesting—but for a different reason The reported improvement from 7.9% to 48.1% on MATH-500 sounds like Astra somehow taught Qwen mathematics by modifying 0.016% of its parameters. That's not quite what happened. Qwen3.5-0.8B already possessed mathematical capabilities, but its reasoning frequently became trapped in repetitive…"
+     },
+     {
+      "text": "AI models have now reach the capability to start tweaking and improving smaller models. It's the first step to RSI. Soon it will tweak even bigger models in a couple of weeks."
+     },
+     {
+      "text": "Anthropic will ban this next, since it is a threat to them."
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -9893,12 +9891,12 @@
    "key": "rd:1xmg8au",
    "metrics": {
     "authority": 0.8,
-    "communityN": 23,
+    "communityN": 24,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 9
+    "feedRank": 6
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T01:51:29.000Z",
    "refs": [
     "gh:sakalond/stablegen"
@@ -9933,13 +9931,13 @@
       "text": "Maybe in the next update 😆"
      },
      {
+      "text": "Jeeeeez"
+     },
+     {
       "text": "Can this work with other models aswell? Like flux krea or moss"
      },
      {
       "text": "It has support for: SDXL, FLUX.1 (deprecated), FLUX.2 Klein (deprecated), Qwen Image Edit, Qwen 2.1, Qwen 2.1 Turbo (experimental), MOSS Image (experimental), Bria FIBO 2.0 Edit (experimental) Deprecated means I no longer support or develop for that architecture, Experimental means I just added it for fun but didn't test it too much so might not work as well. Generally the Qwen architectures work the best. It has to do with their ability to follow geometry using depth maps, which is more…"
-     },
-     {
-      "text": "Jeeeeez"
      },
      {
       "text": "Are these all pure rgb textures or does it have support for glossy, PBR, etc? I get the basic approach, I'm just curious if there's a second pass to improve textures with more detail/realism."
@@ -9971,10 +9969,10 @@
     "communityN": 16,
     "communityRank": 1,
     "feedN": 100,
-    "feedRank": 5,
+    "feedRank": 2,
     "mediaOnly": 1
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T02:22:42.000Z",
    "refs": [],
    "relevance": {
@@ -10014,13 +10012,13 @@
       "text": "Claude, because work is paying for the $100 a month plan, though, I haven't been able to hit even 50% of my weekly usage for a while now..."
      },
      {
+      "text": "DAILY use? Gemini because Google Workspace integration"
+     },
+     {
+      "text": "ChatGPT for non coding work. Claude for coding"
+     },
+     {
       "text": "Claude to write code, ChatGPT to audit Claude’s work. Back and forth until I get what I want. Tried Argon. I really wanted to like this model because I loved 2.5 Pro. Gave it a task, said the acceptance criteria was met but audit by ChatGPT and Claude said otherwise. Don’t have time to juggle 3 models so Argon is out of the picture."
-     },
-     {
-      "text": "Gemini. It’s just great for light work and personal use. I use it mostly for finance and tax stuff."
-     },
-     {
-      "text": "Claude is unquestionably the best. It has the best usage rates and opus 5.5 is the best model here. Chatgpt is decent particularly with all the resets recently. Sol is an awesome review model for opus. No clue why anyone would pay for a gemini sub. The models are fucking trash."
      }
     ]
    },
@@ -10089,12 +10087,12 @@
    "key": "rd:1xmitzx",
    "metrics": {
     "authority": 1.3,
-    "communityN": 47,
-    "communityRank": 3,
+    "communityN": 45,
+    "communityRank": 1,
     "feedN": 100,
-    "feedRank": 3
+    "feedRank": 1
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T03:55:43.000Z",
    "refs": [
     "gh:qwenlm/qwen-code"
@@ -10121,7 +10119,33 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xmitzx/alibabas_qwen_code_repo_just_leaked_qwen4max/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "PRs: https://github.com/QwenLM/qwen-code/pull/15762: \"Measured on main at 79a9b753c60, before this change: qwen4, qwen4-max, qwen4-plus, qwen4.5-max, qwen4-coder-plus, qwen4-max-2026-10-01, openai/qwen4-max and qwen4-omni-120b-think all resolved to 262,144. The last of those is already in use as the session model in the omni fixtures, so these ids are not hypothetical.\" https://github.com/QwenLM/qwen-code/pull/15987 Thank god, it looks like that we're getting successor of Q38FN!"
+    "text": "PRs: https://github.com/QwenLM/qwen-code/pull/15762: \"Measured on main at 79a9b753c60, before this change: qwen4, qwen4-max, qwen4-plus, qwen4.5-max, qwen4-coder-plus, qwen4-max-2026-10-01, openai/qwen4-max and qwen4-omni-120b-think all resolved to 262,144. The last of those is already in use as the session model in the omni fixtures, so these ids are not hypothetical.\" https://github.com/QwenLM/qwen-code/pull/15987 Thank god, it looks like that we're getting successor of Q38FN!",
+    "topComments": [
+     {
+      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
+     },
+     {
+      "text": "Two days later: new PR \"remove wrong model names\". I've seen this so many times."
+     },
+     {
+      "text": "then another pr with “troll redditors with fake model names”"
+     },
+     {
+      "text": "...please no..."
+     },
+     {
+      "text": "This PR has been sent a few times on Reddit - these model names are just examples for testing the parsing, absolutely not confirmed whatsoever. Misleading post."
+     },
+     {
+      "text": "I'm so hyped! I have to wonder if the 120b model is an a5b like FN or a10b like the 3.5 release..."
+     },
+     {
+      "text": "A Qwen 120B params MoE a10b would be the ultimate personal local model."
+     },
+     {
+      "text": "Buckle up everyone!"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -10139,12 +10163,12 @@
    "key": "rd:1xmk8rx",
    "metrics": {
     "authority": 1.4,
-    "communityN": 11,
-    "communityRank": 3,
-    "feedN": 37,
-    "feedRank": 3
+    "communityN": 6,
+    "communityRank": 1,
+    "feedN": 33,
+    "feedRank": 1
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T05:09:18.000Z",
    "refs": [],
    "relevance": {
@@ -10167,7 +10191,27 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xmk8rx/we_turned_10_years_of_ml_papers_into_one_page_per/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "We've been working on this for a while and shipped it today. We took every accepted paper from ICML, NeurIPS, ICLR, CVPR and AAAI since 2016 (about 109k), grouped them into ~1,260 topics, and pulled the results tables and ablations out of the full text of 79k of them. The research map just shows the grouping, but each topic page shows what the papers actually report. Here's the one for compact/efficient Gaussian splatting: https://atlas.scime.ai/research/3d-vision/gaussian-splatting/compact-and-efficient-gaussian-splatting A few things it shows: - the topic went from 29 papers in 2023-24 to…"
+    "text": "We've been working on this for a while and shipped it today. We took every accepted paper from ICML, NeurIPS, ICLR, CVPR and AAAI since 2016 (about 109k), grouped them into ~1,260 topics, and pulled the results tables and ablations out of the full text of 79k of them. The research map just shows the grouping, but each topic page shows what the papers actually report. Here's the one for compact/efficient Gaussian splatting: https://atlas.scime.ai/research/3d-vision/gaussian-splatting/compact-and-efficient-gaussian-splatting A few things it shows: - the topic went from 29 papers in 2023-24 to…",
+    "topComments": [
+     {
+      "text": "Very nice! My only nitpick is, in the \"map\" view when going to the homepage, there's no way to close or get a compressed version of that overlay (strictly for placing idea) to make use of the full screen, so you're always forced to use that view with the overlay on the left."
+     },
+     {
+      "text": "Thanks for your feedback"
+     },
+     {
+      "text": "Great work. I think for now, expanding the conference/journal coverage would be the most important addition. Would make the idea search and trends more reliable."
+     },
+     {
+      "text": "Good work 👏"
+     },
+     {
+      "text": "Great!"
+     },
+     {
+      "text": "I don't see a topic for typed decision models, such as Jev. Also, I don't see a conventient workflow for working backwards from a query such as \"Jev\" to figure out what topic(s) the papers about it are classified under your atlas?"
+     }
+    ]
    },
    "sources": [
     "reddit"
@@ -10185,12 +10229,12 @@
    "key": "rd:1xmkk63",
    "metrics": {
     "authority": 0.9,
-    "communityN": 17,
-    "communityRank": 4,
+    "communityN": 15,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 39
+    "feedRank": 33
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T05:26:41.000Z",
    "refs": [
     "url:linkedin.com/news/story/marvell-inks-record-breaking-115b-ai-deal-7753420"
@@ -10233,12 +10277,12 @@
    "key": "rd:1xmmbdr",
    "metrics": {
     "authority": 1.1,
-    "communityN": 22,
+    "communityN": 25,
     "communityRank": 4,
-    "feedN": 37,
-    "feedRank": 11
+    "feedN": 33,
+    "feedRank": 5
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T07:08:55.000Z",
    "refs": [],
    "relevance": {
@@ -10279,11 +10323,11 @@
    "metrics": {
     "authority": 0.9,
     "communityN": 16,
-    "communityRank": 3,
+    "communityRank": 2,
     "feedN": 100,
-    "feedRank": 12
+    "feedRank": 5
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T07:20:10.000Z",
    "refs": [],
    "relevance": {
@@ -10320,15 +10364,60 @@
   {
    "board": "social",
    "category": "discussion",
+   "key": "rd:1xmmmte",
+   "metrics": {
+    "authority": 0.9,
+    "communityN": 56,
+    "communityRank": 4,
+    "feedN": 100,
+    "feedRank": 9
+   },
+   "observedAt": "2026-11-03T21:44:35.399Z",
+   "publishedAt": "2026-11-03T07:28:34.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "community:ClaudeAI",
+     "kw:claude",
+     "cat:board"
+    ],
+    "score": 0.75
+   },
+   "social": {
+    "author": "sandy_ix",
+    "authorKind": "community",
+    "comments": 0,
+    "community": "ClaudeAI",
+    "createdAt": "2026-11-03T07:28:34.000Z",
+    "handle": "sandy_ix",
+    "likes": 0,
+    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xmmmte/what_the_hel_is_happening_with_limits/",
+    "platform": "reddit",
+    "rankBasis": "position",
+    "text": "This is the screenshot from tuesday 12:50pm so after the rest iy's just 12hrs passed, which is like 2.5 5hrs sessions and i used one session like 90% but the other was like 50% or so and this is the third session and my weekly limit is already 26% gone, bte in the last wek there are like multiple sessions i out of limits but never had this issue. Actually mine is the max account from the startup program and same issue with other accounts too. Can any one say whats happening any changes regarding these limits as far as i know claude removed 5hr limit for some users but that's not an issue…"
+   },
+   "sources": [
+    "reddit"
+   ],
+   "summary": "This is the screenshot from tuesday 12:50pm so after the rest iy's just 12hrs passed, which is like 2.5 5hrs sessions and i used one session like 90% but the other was like 50% or so and this is the third session and my weekly limit is already 26% gone, bte in the last wek there are like multiple sessions i out of limits but never had this issue. Actually mine is the max account from the startup program and same issue with other accounts too. Can any one say whats happening any changes regarding these limits as far as i know claude removed 5hr limit for some users but that's not an issue…",
+   "tags": [
+    "r/ClaudeAI"
+   ],
+   "title": "What the hel is happening with limits",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1xmmmte/what_the_hel_is_happening_with_limits/"
+  },
+  {
+   "board": "social",
+   "category": "discussion",
    "key": "rd:1xmmupz",
    "metrics": {
     "authority": 1,
-    "communityN": 14,
+    "communityN": 15,
     "communityRank": 4,
     "feedN": 100,
-    "feedRank": 47
+    "feedRank": 34
    },
-   "observedAt": "2026-11-03T15:43:55.950Z",
+   "observedAt": "2026-11-03T21:44:35.399Z",
    "publishedAt": "2026-11-03T07:42:45.000Z",
    "refs": [],
    "relevance": {
@@ -11030,7 +11119,7 @@
   }
  ],
  "date": "2026-11-02",
- "fetchedAt": "2026-11-03T18:43:53.647Z",
+ "fetchedAt": "2026-11-03T21:44:35.399Z",
  "runs": [
   "2026-11-02T08:43:04.283Z",
   "2026-11-02T09:43:58.628Z",
@@ -11046,7 +11135,8 @@
   "2026-11-03T09:44:05.928Z",
   "2026-11-03T12:43:27.060Z",
   "2026-11-03T15:43:55.950Z",
-  "2026-11-03T18:43:53.647Z"
+  "2026-11-03T18:43:53.647Z",
+  "2026-11-03T21:44:35.399Z"
  ],
  "schema": 2,
  "sources": [
@@ -11126,7 +11216,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T18:43:53.647Z",
+   "fetchedAt": "2026-11-03T21:44:35.399Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -11142,7 +11232,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T18:43:53.647Z",
+   "fetchedAt": "2026-11-03T21:44:35.399Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -11187,25 +11277,25 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T18:43:53.647Z",
+   "fetchedAt": "2026-11-03T21:44:35.399Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
   },
   {
    "board": "social",
-   "count": 60,
-   "fetchedAt": "2026-11-03T18:43:53.647Z",
+   "count": 231,
+   "fetchedAt": "2026-11-03T21:44:35.399Z",
    "id": "reddit",
-   "message": "reusing the fetch of 2026-11-03T15:43:55.950Z (at most every 6 h)",
-   "mode": "cached",
+   "mode": "rss",
+   "settledAt": "2026-11-03T21:44:35.399Z",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-03T18:43:53.647Z",
+   "fetchedAt": "2026-11-03T21:44:35.399Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
