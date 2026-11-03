@@ -103,6 +103,21 @@ describe('classify: repos and news (unchanged v1 rules)', () => {
     expect(await kept([story, noisy, topical, plainRepo])).toEqual(['hn:1', 'gh:acme/tool'])
   })
 
+  it('keeps everyday agents and models out of News (real HN titles that reached the data branch)', async () => {
+    const traps = [
+      news(49961890, 'Sales of sub-€25,000 electric car models set to rise sevenfold'),
+      news(49930001, 'Polyedergarten: Garden of Paper Polyhedron Models'),
+      news(49800001, 'Vacate a drone restriction that criminalized recording immigration agents'),
+    ]
+    expect(await kept(traps)).toEqual([])
+    // The same words about AI still count.
+    const real = [
+      news(1, 'A Million Agents Is a Distributed System Problem'),
+      news(2, 'The current balance of power in open models'),
+    ]
+    expect(await kept(real)).toEqual(['hn:1', 'hn:2'])
+  })
+
   it('lets config.topic.exclude veto on-topic-by-construction posts too', async () => {
     const config = await realConfig()
     const custom: Config = { ...config, topic: { ...config.topic, exclude: ['astra'] } }
