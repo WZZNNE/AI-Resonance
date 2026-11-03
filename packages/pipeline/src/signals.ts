@@ -352,8 +352,8 @@ export const CATEGORY_LABELS: Record<Category, Localized> = {
 export const CAP_KEYS: Record<Board, readonly string[]> = {
   repos: [],
   papers: [],
-  news: [],
-  social: ['perAuthor', 'perCommunity', 'perPlatform'],
+  news: ['perLink'],
+  social: ['perAuthor', 'perCommunity', 'perPlatform', 'perLink'],
   labs: ['perCompany'],
 }
 

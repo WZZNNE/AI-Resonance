@@ -312,6 +312,7 @@ boards:
       - { key: velocity,  weight: 20, cap: 60,  curve: sqrt }        # points per hour since posting
       - { key: echo,      weight: 15, cap: 2,   curve: linear }      # how many other boards it points into
       - { key: relevance, weight: 10, cap: 1,   curve: linear }
+    caps: { perLink: 1 }      # one place per linked page: a resubmitted URL goes to the runners-up
   social:
     size: 10
     runnersUp: 10
@@ -323,7 +324,7 @@ boards:
       - { key: authority,  weight: 15, cap: 1.5,  curve: linear }    # watch-list weight (lab account, person, subreddit)
       - { key: echo,       weight: 10, cap: 2,    curve: linear }    # other boards it links into / is linked from
       - { key: relevance,  weight: 5,  cap: 1,    curve: linear }
-    caps: { perAuthor: 2, perCommunity: 3, perPlatform: 7 }
+    caps: { perAuthor: 2, perCommunity: 3, perPlatform: 7, perLink: 1 }
   labs:
     size: 10
     runnersUp: 10

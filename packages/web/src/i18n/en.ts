@@ -617,8 +617,9 @@ const en = {
   'views.scoring.cap.perCommunity': 'at most {n} per community',
   'views.scoring.cap.perPlatform': 'at most {n} per platform',
   'views.scoring.cap.perCompany': 'at most {n} per company',
+  'views.scoring.cap.perLink': 'at most {n} per linked page',
   'views.scoring.caps2':
-    'An item pushed out by a cap is not re-scored; it moves to the runners-up and the next item takes its place. A cap never leaves a place empty: when too few other items exist, the best capped ones fill the list.',
+    'An item pushed out by a cap is not re-scored; it moves to the runners-up and the next item takes its place. A cap never leaves a place empty: when too few other items exist, the best capped ones fill the list. The per-page rule is the exception, since a second item on the same page is the same story.',
   'views.scoring.caps3':
     'The exact limits live in config.yaml next to the weights, so a fork can loosen or tighten them.',
   'views.pwa.install': 'Install the app',

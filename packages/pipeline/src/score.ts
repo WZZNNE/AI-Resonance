@@ -450,7 +450,15 @@ function capGroups(c: RawCandidate): Record<string, string> {
   if (c.board === 'social') {
     const groups: Record<string, string> = { perAuthor: authorOf(c.social), perPlatform: c.social.platform }
     if (c.social.community) groups.perCommunity = c.social.community.toLowerCase()
+    // The exact page a post shares (tracking parameters aside): two posts about one page are one story.
+    const link = c.social.linkUrl ? normalizeUrl(c.social.linkUrl) : null
+    if (link) groups.perLink = link
     return groups
+  }
+  if (c.board === 'news') {
+    // HN takes the same URL twice when it is written differently (a stray backslash, a slash): one story, one place.
+    const link = normalizeUrl(c.url)
+    return link ? { perLink: link } : {}
   }
   if (c.board === 'labs') return { perCompany: c.lab.company }
   return {}
@@ -460,7 +468,8 @@ function capGroups(c: RawCandidate): Record<string, string> {
  * Fill the top list in score order while honouring the board's caps. An item that would break a cap is not dropped:
  * it moves to the runners-up (in score order) and says why. Items after the top list is full carry no reason.
  * A cap makes room for other items and never leaves a place empty: when too few uncapped items exist (Social with
- * Reddit as its only platform), the best capped ones take the remaining places in score order.
+ * Reddit as its only platform), the best capped ones take the remaining places in score order. `perLink` is the
+ * exception: a second item on the same page is the same story told twice, so it never fills a place.
  */
 function selectTop(sorted: Scored[], size: number, caps: Record<string, number>): { top: Scored[]; rest: Scored[] } {
   let top: Scored[] = []
@@ -484,9 +493,9 @@ function selectTop(sorted: Scored[], size: number, caps: Record<string, number>)
   }
   // The top list never filled, so every runner-up here was capped: the best of them take the empty places.
   if (top.length < size && rest.length) {
-    const back = rest.slice(0, size - top.length).map(({ capped: _, ...s }) => s)
-    top = [...top, ...back].sort(byHeat)
-    rest = rest.slice(back.length)
+    const back = rest.filter((s) => s.capped !== 'perLink').slice(0, size - top.length)
+    top = [...top, ...back.map(({ capped: _, ...s }) => s)].sort(byHeat)
+    rest = rest.filter((s) => !back.includes(s))
   }
   return { top, rest }
 }

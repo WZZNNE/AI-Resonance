@@ -244,7 +244,7 @@ is shown in brackets.
 | `size` | `10` | top N (1–50) |
 | `runnersUp` | `10` | shown under the top N (0–50) |
 | `signals[]` | *(required)* | `{ key, weight ≥ 0, cap > 0, curve: log \| sqrt \| linear }` |
-| `caps` | `{}` | diversity rules applied after scoring. `social`: `perAuthor`, `perCommunity`, `perPlatform`; `labs`: `perCompany` |
+| `caps` | `{}` | diversity rules applied after scoring. `news`: `perLink`; `social`: `perAuthor`, `perCommunity`, `perPlatform`, `perLink`; `labs`: `perCompany` |
 
 Signal catalogue (exact formulas are in each signal's help text on the site's **Scoring** page):
 

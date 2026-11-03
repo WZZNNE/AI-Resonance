@@ -593,8 +593,9 @@ const zh: Record<keyof Messages, string> = {
   'views.scoring.cap.perCommunity': '每个社区最多 {n} 条',
   'views.scoring.cap.perPlatform': '每个平台最多 {n} 条',
   'views.scoring.cap.perCompany': '每家公司最多 {n} 条',
+  'views.scoring.cap.perLink': '同一链接页面最多 {n} 条',
   'views.scoring.caps2':
-    '被上限挤出的条目不会重新评分，只是移到候补，由下一条补上。上限不会让名额空着：其他条目不够时，由被挤出的条目按分数补足。',
+    '被上限挤出的条目不会重新评分，只是移到候补，由下一条补上。上限不会让名额空着：其他条目不够时，由被挤出的条目按分数补足。同一链接页面的规则例外，因为同一页面的第二条只是同一件事。',
   'views.scoring.caps3': '具体的上限值和权重一起写在 config.yaml 里，Fork 出来的站点可以自行放宽或收紧。',
   'views.pwa.install': '安装应用',
   'views.pwa.installed': '已安装',
