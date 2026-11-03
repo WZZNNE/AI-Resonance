@@ -1,7 +1,7 @@
 import type { DailyFile, Item } from '@resonance/schema'
 import { describe, expect, it } from 'vitest'
 import { CONTROLLER } from '../../src/report/app.ts'
-import { byteLength } from '../../src/report/fmt.ts'
+import { byteLength, itemText } from '../../src/report/fmt.ts'
 import { buildDailyInput, buildWeeklyInput } from '../../src/report/input.ts'
 import { renderReport, reportPayload } from '../../src/report/render.ts'
 import type { ReportInput } from '../../src/report/types.ts'
@@ -234,5 +234,20 @@ describe('renderReport', () => {
     expect(() => new Function(CONTROLLER)).not.toThrow()
     // It writes text only through textContent / attributes.
     expect(CONTROLLER).not.toMatch(/innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval\(/)
+  })
+})
+
+describe('itemText', () => {
+  it('drops a source blurb that only repeats the title, like the web app', () => {
+    const base = today.boards.repos.top[0]
+    const repeat = {
+      ...base,
+      title: 'Grok 4.7 is now live on Microsoft Foundry',
+      summary: 'Grok 4.7 is now live on Microsoft Foundry',
+      copy: undefined,
+    }
+    expect(itemText(repeat as Item, 'en').blurb).toBe('')
+    const own = { ...base, title: 'acme/alpha', summary: 'A toolkit for agents.', copy: undefined }
+    expect(itemText(own as Item, 'en').blurb).toBe('A toolkit for agents.')
   })
 })

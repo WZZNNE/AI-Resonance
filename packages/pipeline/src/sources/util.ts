@@ -53,7 +53,8 @@ export function stripMarkdown(text: string): string {
 /** The first sentence of `text`, cut at `max` characters — a title for posts that have none. */
 export function firstSentence(text: string, max = 120): string {
   const one = plain(text)
-  const end = one.search(/[.!?。！？](\s|$)/)
+  // A list number ("1. We will…") does not end a sentence; "in 2026." and "$2." still do.
+  const end = one.search(/(?:(?<!(?:^|\s)\d{1,3})\.|[!?。！？])(?=\s|$)/)
   return clip(end > 0 ? one.slice(0, end + 1) : one, max)
 }
 

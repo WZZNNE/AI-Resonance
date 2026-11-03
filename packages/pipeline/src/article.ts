@@ -3,7 +3,8 @@ import { keyFromUrl } from '@resonance/schema'
 import { parse } from 'node-html-parser'
 import { isFurniture, scrubSummary } from './boilerplate.ts'
 import { publicPageUrl } from './public-page.ts'
-import { clip, plain } from './sources/util.ts'
+import { clip, hostOf, plain } from './sources/util.ts'
+import { X_HOSTS } from './sources/x/common.ts'
 import type { RawCandidate, RunContext } from './types.ts'
 
 const ARTICLE_LIMIT = 12
@@ -129,8 +130,9 @@ export async function hydratePublicLinks(candidates: RawCandidate[], ctx: RunCon
       const page = await read(short)
       if (!page.url || new URL(page.url).hostname === 't.co') continue
       const key = keyFromUrl(page.url)
-      if (key && !item.refs.includes(key)) item.refs.push(key)
-      if (!item.social.linkUrl) item.social.linkUrl = page.url
+      if (key && key !== item.key && !item.refs.includes(key)) item.refs.push(key)
+      // Media links expand to the post's own x.com page: that is not a page the post shares.
+      if (!item.social.linkUrl && !X_HOSTS.test(hostOf(page.url) ?? '')) item.social.linkUrl = page.url
       expanded++
     }
   }

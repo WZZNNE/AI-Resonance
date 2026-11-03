@@ -143,6 +143,14 @@ describe('bounded public evidence', () => {
     expect(story.refs).toContain('arxiv:1706.03762')
     expect(calls).toHaveLength(0)
   })
+  it('never takes a media link, which expands to the post itself, as the shared link or a reference', async () => {
+    const { ctx } = await fixture()
+    ctx.http.page = async () => ({ url: 'https://x.com/someone/status/2110034327111131168/photo/1', body: '' })
+    const post = tweet('2110034327111131168', 'https://t.co/oADallGYuR', 'lab')
+    await hydratePublicLinks([post], ctx)
+    expect(post.social.linkUrl).toBeUndefined()
+    expect(post.refs).not.toContain(post.key)
+  })
   it('expands the observed Qwen t.co announcement into an explicit cross-source link', async () => {
     const { ctx } = await fixture()
     const post = tweet('42', 'Meet Qwen3.8-LiveTranslate', 'lab', {

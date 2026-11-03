@@ -11,7 +11,7 @@ import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promise
 import { dirname, join } from 'node:path'
 import type { Board, DateStr, SourceStatus } from '@resonance/schema'
 import { BOARDS, diffDays, isDateStr } from '@resonance/schema'
-import { scrubSummary } from './boilerplate.ts'
+import { tidySnapshot } from './tidy.ts'
 import type { BriefCache, CopyCache, CreateStore, DataStore, RawCandidate, Snapshot, StateStore } from './types.ts'
 
 /** Readings where a later run may see less than an earlier one (fell off trending, HN points dipped). */
@@ -206,21 +206,6 @@ export function withoutComments(snapshot: Snapshot): Snapshot | null {
   return changed ? { ...snapshot, candidates } : null
 }
 
-/**
- * The snapshot with page furniture scrubbed from its summaries (`scrubSummary`). Applied on every read, so excerpts
- * captured before the extractor learned to skip that furniture never reach the API: no data migration needed.
- */
-export function withoutFurniture(snapshot: Snapshot): Snapshot {
-  let changed = false
-  const candidates = snapshot.candidates.map((c) => {
-    const summary = scrubSummary(c.summary)
-    if (summary === c.summary) return c
-    changed = true
-    return { ...c, summary }
-  })
-  return changed ? { ...snapshot, candidates } : snapshot
-}
-
 /** Options of `createStore` beyond the `CreateStore` contract. */
 export interface StoreOptions {
   /** Per-board bound enforced on every merged snapshot (`retention.candidatesPerBoard`). */
@@ -260,9 +245,11 @@ export function createStore(dir: string, retentionDays: number, options: StoreOp
       .sort()
   }
 
+  // Display text is tidied on every read (tidy.ts), so already-settled editions publish clean and the next merge
+  // persists the clean text.
   const readSnapshot = async (date: DateStr) => {
     const snapshot = await readJson<Snapshot>(snapshotPath(date))
-    return snapshot && withoutFurniture(snapshot)
+    return snapshot && tidySnapshot(snapshot)
   }
 
   const state: StateStore = {

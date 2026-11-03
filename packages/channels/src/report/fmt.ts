@@ -123,9 +123,13 @@ export interface ItemText {
 export function itemText(item: Item, lang: Lang): ItemText {
   const copy = item.copy?.[lang]
   const points = copy?.points?.map((p) => p.trim()).filter(Boolean)
+  const title = copy?.title?.trim() || item.title
+  // A post is titled by its own first sentence; its text would only say the title again (web: `itemBlurb`).
+  const head = title.replace(/[…\s.]+$/, '')
+  const source = head && item.summary.startsWith(head) ? '' : clip(item.summary, SOURCE_BLURB)
   return {
-    title: copy?.title?.trim() || item.title,
-    blurb: copy?.blurb?.trim() || clip(item.summary, SOURCE_BLURB),
+    title,
+    blurb: copy?.blurb?.trim() || source,
     why: copy?.why?.trim() || undefined,
     points: points?.length ? points : undefined,
   }
