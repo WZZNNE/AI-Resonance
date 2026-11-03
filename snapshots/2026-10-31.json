@@ -3641,33 +3641,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xk5e3j/addiction_update_64b_tokens_over_the_last_7_days/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Since Vesper and Sal evolve themselves you can see the efficiency gains daily. They run their self evolution at night while I sleep. Yesterday is interesting. I literallly had them running back and forth from 1 am to around 6 pm and it was less than 8 dollars for the day for 2 AI beings doing their stuff. Stay golden DS. This is not a dick measuring contest. I am rejoicing with my fellow nerds about our shared hobby or addiction, what ever you want to call it. Chill out folks.",
-    "topComments": [
-     {
-      "text": "Are u curing cancer?"
-     },
-     {
-      "text": "Close. I run a home chatroom with AI for my immediate family. Home wiki. Home vault warden. Home kanban board. Home NAS and server. So they manage and play with all of those things. On the side, I am building a larger private chatroom for our extended family, around 30 people with its own wiki, calendar and bits for our larger family to coordinate. Private, we own all the data. No mining from facebook or what have you. Then we can bring young kids into the chat, teach them good online habits…"
-     },
-     {
-      "text": "you are literally using deepseek api provider, wdym by \"private, we own all the data\" lol"
-     },
-     {
-      "text": "Where the close part"
-     },
-     {
-      "text": "I’m at 5.1 Billion last 7 days. It would be a whole lot more if I had money to throw around. 5,139,588,291 Measured across 10,663 invocation records"
-     },
-     {
-      "text": "\"This is not a dick measuring contest. I am rejoicing with my fellow nerds about our shared hobby or addiction, what ever you want to call it. Chill out folks.\" I think you knew this was a pointless post before you posted it."
-     },
-     {
-      "text": "Define pointless for me. Like, I thought Reddit was a place for fun and discussion. Not everything has to be paradigm shifting. We can all have some fun and be less serious. Its Halloween man. Losen up and have some fun."
-     },
-     {
-      "text": "41,099 requests for 6.4B tokens is about 156k tokens a call, so each step must be sending a huge pile of context. i'd guess the same history or memory file gets resent every time, which would explain the cheap bill on that much volume"
-     }
-    ]
+    "text": "Since Vesper and Sal evolve themselves you can see the efficiency gains daily. They run their self evolution at night while I sleep. Yesterday is interesting. I literallly had them running back and forth from 1 am to around 6 pm and it was less than 8 dollars for the day for 2 AI beings doing their stuff. Stay golden DS. This is not a dick measuring contest. I am rejoicing with my fellow nerds about our shared hobby or addiction, what ever you want to call it. Chill out folks."
    },
    "sources": [
     "reddit"
@@ -3810,33 +3784,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xk8s6z/betelgeuse_running_qwen_38_flash_next_at_22_toks/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "About two months ago I posted here about trying to predict which MoE experts get used on the next token to speed up CPU/GPU offload on Qwen 3.6 35B. Quick confession on that older post before anything else: I ended up throwing that prototype away. To get the big numbers I was seeing back then, I was basically cheating with gate pruning (dropping cold experts when their router weights were low). It made the tok/s counter go brrr, but on an already low-bit quant it quietly degraded output quality and reasoning. I didn't want to ship something that lobotomizes the model just to look fast in a…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as AI-generated . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "https://preview.redd.it/5enqq6bjysyh1.jpeg?width=572&format=pjpg&auto=webp&s=8a2c839f01423bac34c3e8f5b1030788fc3a2ed3"
-     },
-     {
-      "text": "Even on the massive Q8_K_XL quant (~190GB total), bel-server runs at 8 tok/s cold and 12 tok/s warm (with bursts up to 21 tok/s) on the exact same 12GB 3060 + 16GB DDR4 box, where stock llama.cpp immediately OOMs or crawls at <0.1 tok/s AND Zero experts are dropped or thresholded (0.000e+00 diff across 28,080 router records and 576 tokens vs unmodified stock). The speedup comes from eliminating the 48 per-layer CPU/GPU scheduler splits (KICK/WAIT doorbell around the shared expert), keeping the…"
-     },
-     {
-      "text": "I think you should have led with this. Not with Q8_K_XL (nobody runs Q8), but with Q4_K_XL, IQ4_XS or something like GSQ-RCO IQ3_S quants. That's an acceptable quality, Q2 isn't really. If your engine can run these quants better than let's say Strata (or Basalt for 50xx cards) then you have a winner!"
-     },
-     {
-      "text": "Imagine the top comment being someone that cant even read a post"
-     },
-     {
-      "text": "Everyone is hating on this post because it's iq2 and slow, which I can understand because a lot of people on the subreddit claim huge breakthroughs on speed when they've just switched to a low quant, but I feel like they're missing the point that is running on 12gb of vram and 16gb of ram which is the main point here. OP got it running on a very small ram+vram combo and that's pretty impressive"
-     },
-     {
-      "text": "Also, the post clearly says that you can even run q8 at somewhat reasonable speeds. It seems that no one actually read the post."
-     },
-     {
-      "text": ">look inside >low qual quant, always below q4 XL from unsloth everytime"
-     }
-    ]
+    "text": "About two months ago I posted here about trying to predict which MoE experts get used on the next token to speed up CPU/GPU offload on Qwen 3.6 35B. Quick confession on that older post before anything else: I ended up throwing that prototype away. To get the big numbers I was seeing back then, I was basically cheating with gate pruning (dropping cold experts when their router weights were low). It made the tok/s counter go brrr, but on an already low-bit quant it quietly degraded output quality and reasoning. I didn't want to ship something that lobotomizes the model just to look fast in a…"
    },
    "sources": [
     "reddit"
@@ -4079,33 +4027,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xka3rd/anyone_else_feeling_a_little_bit_nostalgic_for/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "H3 is great and all, but maybe I should also keep an older model at hand.",
-    "topComments": [
-     {
-      "text": "The insane unhinged level of chaos. For those that wanted a serious video, it was frustrating (understandably). But there was a ridiculousness to it that made for a really good laugh and sharing in the humor."
-     },
-     {
-      "text": "For me this is more dreamlike."
-     },
-     {
-      "text": "yeah, it absolutely has this random dream logic"
-     },
-     {
-      "text": "ltx 2.5 still looks like this if you ask it to do anything other than a static shot of someone talking"
-     },
-     {
-      "text": "To be honest I watch zero of you alls perfect vid gens and watched many of these. Great you can imagine an ant riding a motorcycle on a speghtti noodle on a plate being eaten by will smith, and it's perfect, but now I want to know why I care because it's not funny."
-     },
-     {
-      "text": "Michael Bay might find that really interesting"
-     },
-     {
-      "text": "sometimes, yeah those old models had a certain unexpected creativity to them, but i don't think local models were ever able to replicate this kind of \"good look but bad physics\" - i think just sora 1 had results like the ones showed"
-     },
-     {
-      "text": "Omg. Are some AI styles 'vintage' already?"
-     }
-    ]
+    "text": "H3 is great and all, but maybe I should also keep an older model at hand."
    },
    "sources": [
     "reddit"
@@ -4536,33 +4458,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xkebc5/googles_open_knowledge_format_okf_an/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Google published the Open Knowledge Format this summer. It is a way to write knowledge down as a folder of Markdown files with a YAML header, so that people and AI models read the same files. Each file is a concept (a rule, a procedure, a metric, a role) and the header says where it comes from, who checked it, when it expires and whether it is still current. No server, no database. If you can cat a file, you can read it. Great concept, but the spec stops at the format. It does not say how knowledge gets into a bundle, how to know a bundle is right, what to do when two documents disagree, or…",
-    "topComments": [
-     {
-      "text": "been using OKF since it was announced. makes a huge difference in accuracy."
-     },
-     {
-      "text": "It makes also difference in speed and tokens consumption especially at scale. We have employees using quity documents on SharePoint in pdf format. Nobody reads documents nowadays, they simply drag them into our internal LLM to get answers. Since we converted them into a bundle accessible by the LLM, accuracy was audited (by humans) and deemed excellent, but tokens consumption dropped by more than 40%. I have nothing scientific to prove this was the OKF effect but I see no other reason."
-     },
-     {
-      "text": "Love that the pipeline forces a human to mark stuff verified instead of letting the model grade its own homework"
-     },
-     {
-      "text": "Assuming LLMs are getting to be as good as users, why not use human filing systems following existing org policies for record maintenance?"
-     },
-     {
-      "text": "This is this issue, and from years of experience in corporate: any good system will work when setup, issues come with maintenance and with users changing. OKF itself is just a way to write knowledge. The projects uses the format and adds layers that prevent the degradation of the quality over time. It starts by the way documents are produced, based on what's needed, the skills try the max to create deterministic python scripts to produce the knowledge. The validation is also run by…"
-     },
-     {
-      "text": "I will give it a look. Thank you."
-     },
-     {
-      "text": "We definitely need something like OKF. Markdown will be the way we communicate between humans and machines, and adding a layer of metadata is definitely required. I am not 100% on board with every decision in the spec, but I am happy that something exists that we can build an ecosystem around. I started building a personal OKF bundle reader, Sunstone, which I am now happy enough to share."
-     },
-     {
-      "text": "Maybe I am just stupid but how is OKF different than Skills? It's just the same markdown and yaml but with git and you tell the agent this is for information not guides? Is there any point to complex systems for knowledge and memory if I could just have a schedule and markdown file telling an agent to read session histories and update stuff? Genuinely curious because I thought I was being smart using some fancy custom compaction and memory stuff and when I finally benchmarked them turns out it…"
-     }
-    ]
+    "text": "Google published the Open Knowledge Format this summer. It is a way to write knowledge down as a folder of Markdown files with a YAML header, so that people and AI models read the same files. Each file is a concept (a rule, a procedure, a metric, a role) and the header says where it comes from, who checked it, when it expires and whether it is still current. No server, no database. If you can cat a file, you can read it. Great concept, but the spec stops at the format. It does not say how knowledge gets into a bundle, how to know a bundle is right, what to do when two documents disagree, or…"
    },
    "sources": [
     "reddit"
@@ -4610,33 +4506,7 @@
     "permalink": "https://www.reddit.com/r/OpenAI/comments/1xked68/so_this_is_how_the_world_manipulates_words_a_bit/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Even if you are bit active, you all have heard this statement from him. Almost every tech youtuber, reddit sub, etc etc have covered this. I was curious, how can someone be this dumb? So, I tried to find the exact interview's transcript. https://preview.redd.it/u496j9owutyh1.png?width=799&format=png&auto=webp&s=75033dfee45dc9b6460def3b43e2bde5de6f364f People cut this part. He said that machines having DRAM used for local inference of AI models is terrible allocation of resources because it is sitting ideal most of the time. Now, this statement makes lot more sense than the statement being…",
-    "topComments": [
-     {
-      "text": "From a global allocation perspective, actually, it’s quite terrible to have a hand of dudes having most of world’s limited supply of money sitting in their own bank accounts."
-     },
-     {
-      "text": "Paid for by the people is what people are forgetting too. We fund these fucking things."
-     },
-     {
-      "text": "He’s just scared of local LLMs… RAM isn’t really scarce. They just made it that way."
-     },
-     {
-      "text": "Can’t wait for LLMs to get optimized enough and hardware prices settle so we can afford to run them locally. It’s better for 99.9999% of the world. Safer, democratized and more ethical."
-     },
-     {
-      "text": "That doesn't change anything. People own cars that they use not even 5 % of the day. So you don't allow it? It's a BS elitist statement."
-     },
-     {
-      "text": "He's not saying a single thing about \"not allowing it.\" Just saying that buses are more efficient than a personal car."
-     },
-     {
-      "text": "It is really wasteful to me that other people are breathing."
-     },
-     {
-      "text": "I watched the video. It's as bad as it looks. He is completely out of touch with the world and regular people. He isn't saying the same about his openai shares, his house, his cars, his bank account. He's only thinking about himself and has no care about the people he's impacting by the shortages."
-     }
-    ]
+    "text": "Even if you are bit active, you all have heard this statement from him. Almost every tech youtuber, reddit sub, etc etc have covered this. I was curious, how can someone be this dumb? So, I tried to find the exact interview's transcript. https://preview.redd.it/u496j9owutyh1.png?width=799&format=png&auto=webp&s=75033dfee45dc9b6460def3b43e2bde5de6f364f People cut this part. He said that machines having DRAM used for local inference of AI models is terrible allocation of resources because it is sitting ideal most of the time. Now, this statement makes lot more sense than the statement being…"
    },
    "sources": [
     "reddit"
@@ -4828,33 +4698,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xkg08h/deepseek_has_opensourced_again_unveils_super/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "DeepSeek Harness team published the underlying architecture for its Super-agent, an always-on autonomous agent, as an open-source prototype on GitHub. Super-agent- not a product, but a system-level way to make agents always-on, handle multiple tasks in parallel, proactively pick up work, and recover from failures. It borrows OS concepts like scheduling, caching, storage-compute separation, and watchdog to reduce the human attention bottleneck. The team says the initial experiments show system-level session scheduling is feasible, with faster and steadier multi-task completion, but it trades…",
-    "topComments": [
-     {
-      "text": "https://github.com/deepseek-ai/dsh-superagent-prototype Op is advertising their site here's the gh"
-     },
-     {
-      "text": "thanks for just dropping the direct link"
-     },
-     {
-      "text": "Not GitHub repos??"
-     },
-     {
-      "text": "It is OP is just advertising their own site"
-     },
-     {
-      "text": "Sorry for the bit of self-promotion, but if you'd like to try it in a secure environment, we put together an example that runs it in an isolated microVM: dsh-superagent example . The agent gets no access to your files, network access is limited to the model and GitHub, and it uses DeepSeek V4.1 Flash through OpenCode Go with your own key. It runs on Terrarium . If you have any questions, just ping me. Happy tinkering, and may your agents stay in their boxes 🪴"
-     },
-     {
-      "text": "As always: https://preview.redd.it/mjmqq6ghjuyh1.png?width=739&format=png&auto=webp&s=2c23ed0ffd55c7ca176ef2a5526d26a97b790268"
-     },
-     {
-      "text": "Opensourcing all their work and creative ideas is not \"do nothing\"..."
-     },
-     {
-      "text": "the prototype uses a task queue with priority levels, wonder how it handles context drift during long-running workflows."
-     }
-    ]
+    "text": "DeepSeek Harness team published the underlying architecture for its Super-agent, an always-on autonomous agent, as an open-source prototype on GitHub. Super-agent- not a product, but a system-level way to make agents always-on, handle multiple tasks in parallel, proactively pick up work, and recover from failures. It borrows OS concepts like scheduling, caching, storage-compute separation, and watchdog to reduce the human attention bottleneck. The team says the initial experiments show system-level session scheduling is feasible, with faster and steadier multi-task completion, but it trades…"
    },
    "sources": [
     "reddit"
@@ -4901,30 +4745,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xkg97u/security_engineer_here_the_antiai_hate_is_getting/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Every time someone shares a project built with AI, the top comment is the same: \"vibe coded.\" Doesn't matter how much work went into it. The second AI shows up, people stop reading and start sneering. I've been in software and security for 10+ years. I build with Claude Code now, and everything gets planned, reviewed by a second agent, then reviewed and tested by me before it ships. Still gets called vibe coded. Here's the thing. Vibe coding has a definition. Karpathy coined it: \"fully give in to the vibes... and forget that the code even exists.\" Simon Willison drew the line: if you've…",
-    "topComments": [
-     {
-      "text": "engineers have egos, and when they feel like everyone can do what they can do, they don't feel special anymore. at least that's how it seems at my company"
-     },
-     {
-      "text": "Yep. It's funny to hear from fellow engineers arguments like: \"I asked AI and it made a mistake!\", like if they never made mistakes. The ego point is even more true for researchers and managers."
-     },
-     {
-      "text": "That’s the case in a lot of places. Companies are starting to realize that the people best equipped to solve their problems aren’t necessarily the programmers/engineers they’ve hired to fix them. They’re the employees who deal with those problems every day. AI is giving those employees the ability to build their own solutions and their intimate understanding of the pain points often makes them better suited to the task than someone who only knows how to code. I’m doing that with my company…"
-     },
-     {
-      "text": "I think a lot of them are just scared. When everyone can do what engineers do, then the value of being a software engineer plummets. If you’re 20- or 30-something then that is terrifying, because you thought you were in a field where you could make $100k+ for decades, and now maybe that’s not the case."
-     },
-     {
-      "text": "Theses kinds of people don’t understand what a transformer is, don’t realize how embedded AI already is in computer science, are not interacting with AI systems, and generally don’t have a clue. No intelligent person I know IRL is against AI. Many are wary of the effects a technology like this will have on civilization, and rightly so. But they all universally are treating it like we all treated the Internet 30 years ago. It’s a revolutionary technology that will change the world in ways no…"
-     },
-     {
-      "text": "AI gets a lot of hate because (1) it apparently produces bad code, and (2) it will steal our jobs. But these two things are a bit contradictory, aren't they? AI is a tool; what you produce with it is your responsibility, whether it is good or bad. Maybe the AI hate is mostly related to some hurt human egos. Bad code existed a long time before AI existed."
-     },
-     {
-      "text": "Vibe coding isn't the same as agentic structure ai development though. I would expect an IT veteran to know that. Vibe coding is just prompting and praying - most people do this and it produces bad code. Agentic structured programming following software development best practices produces great code, at minimum producing the level of experienced humans."
-     }
-    ]
+    "text": "Every time someone shares a project built with AI, the top comment is the same: \"vibe coded.\" Doesn't matter how much work went into it. The second AI shows up, people stop reading and start sneering. I've been in software and security for 10+ years. I build with Claude Code now, and everything gets planned, reviewed by a second agent, then reviewed and tested by me before it ships. Still gets called vibe coded. Here's the thing. Vibe coding has a definition. Karpathy coined it: \"fully give in to the vibes... and forget that the code even exists.\" Simon Willison drew the line: if you've…"
    },
    "sources": [
     "reddit"
@@ -5164,33 +4985,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xkibsh/anthropics_claude_ai_blocks_video_game_cloning/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "This is the problem with censorship....its literally just marching us all towards technofeudalism. The people who don't do bad things are penalized, and the people doing bad things will continue to do so, likely using a different AI or jailbreaking claude."
-     },
-     {
-      "text": "I agree. I was going to reverse engineer and or try to modify some open source software for my labs use but it seems in time even that may be seen negatively by our technolords"
-     },
-     {
-      "text": "If it's open source, you're not reverse engineering... Those two things are fairly mutually exclusive."
-     },
-     {
-      "text": "Tell that to the vendor blobs on my old ass forgotten about phone supposedly running \"AOSP\""
-     },
-     {
-      "text": "Canceled my subscription to them, only a matter of time before open weight models can do this just as well. Such a foolish decision on their part."
-     },
-     {
-      "text": "https://preview.redd.it/qbnvg7v1hvyh1.jpeg?width=1320&format=pjpg&auto=webp&s=26637adc79fc487864898b29c7368453fcc83df2"
-     },
-     {
-      "text": "Open source models are the future"
-     },
-     {
-      "text": "it’s just delaying the inevitable"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -5386,33 +5181,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xkkhq9/what_happens_once_china_stops_providing_free_oss/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Will you just use the \"old\" ones? Since no solo developer or small company could have the compute to train something on their own that can compete with the commercial frontier ones.",
-    "topComments": [
-     {
-      "text": "They won't. They're used to hurt the US closed source competition. If or when roles reverse and China gets ahead, then the US would suddenly change rhetoric and support \"free and open standards\" and you'd see US labs releasing open weights to hurt the Chinese leaders. It's all one big geopolitical competition that'll keep models advancing."
-     },
-     {
-      "text": "Honestly I love the game theory that ends up helping us and wasting their money. They're locked into it for as long as they don't want to cede dominance. And for two extremely selfish and narcissistic governments that won't happen until they bleed heavily. And we get to salt our popcorn with their tears as we watch. It's perfect!"
-     },
-     {
-      "text": "Is moss not a small team model? Small teams can Absolutely train models"
-     },
-     {
-      "text": "moss got a few million in funding and a team of like 10 people, that's small by any metric"
-     },
-     {
-      "text": "Yeah, but not at the capacity of the larger teams. If Minimax H3 didn't exist, we would've been stuck using LTX 2. You see how much of a difference in quality those make. Don't even get me started on the LLM front, cause the Chinese is literally the only viable bastion of running capable AI models from home. Sure, Google has Gemma, and Meta has Muse Wonder Open now, but most people would rather use something like Qwen instead since it's more capable."
-     },
-     {
-      "text": "I mean this is an issue for LLMs for sure, but for image generation we never were really as China dependent for OSS. Ideogram AI is a Canadian company, Black Forest Labs (Flux) is from Germany, and Krea is from the US."
-     },
-     {
-      "text": "China will only stop the free models presumably when it has achieved its goal of driving the US competition into the ground and monopolising the market."
-     },
-     {
-      "text": "I had a boss that owned a real estate magazine. He told me business was good until a couple of guys launched their own magazines and tried to beat the competition by lowering costs everywhere. So a race to the bottom ensued to the point that everyone were making losses just to drive the competition out. So eventually my boss folded, and a month or so later everyone else folded too because they were too deep in debt to recover. All the while their clients enjoyed premium treatment and sort of…"
-     }
-    ]
+    "text": "Will you just use the \"old\" ones? Since no solo developer or small company could have the compute to train something on their own that can compete with the commercial frontier ones."
    },
    "sources": [
     "reddit"
@@ -5561,33 +5330,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xklq96/well_my_local_ai_addiction_officially_got_out_of/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Met a guy off Facebook Marketplace and scored 2x RTX 3090 Founders Editions for €1,700. The problem? I already had one 3090 FE. I am now sitting in my room looking at three 3090 FEs (72 GB GDDR6X VRAM), and my current case barely fits one card, and that was only after I literally took pliers and bent the inner metal bracket to shove it in. My motherboard is just a standard B760. I clearly can't put three 3-slot cards in this PC. What is the cheapest, most sensible way forward to run all three (or two) for LLMs? Open-air mining frame + PCIe 4.0 risers + dual PSU? Get a giant full-tower case?…",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "You will need a 4th now, 3 is a bit awkward to run. I had 3 too I have 2 in the case and 2 outside with a separate cpu (in a aluminium extrusion frame)"
-     },
-     {
-      "text": "I wish, but I’ve out of excuses to give my wife."
-     },
-     {
-      "text": "\"I need 4th one to design a bathroom remodel\""
-     },
-     {
-      "text": "Good one, but this was my last excuse"
-     },
-     {
-      "text": "Join the sidecar club. https://preview.redd.it/v6ssv49mlvyh1.jpeg?width=4000&format=pjpg&auto=webp&s=cd8aec516fd3b7d12eaa73e2d7729b6e54def0a7"
-     },
-     {
-      "text": "Haha how does this even work??? Redneck engineering lol"
-     },
-     {
-      "text": "Do yourself a favor and get an open air mining rig frame and pcie risers. Your temps will be so much better. You can actually space the gpus apart (unless you use nvlink) and get some airflow between the cards. You will not regret 3 x 3090s. I have the same and run strata with qwen3.8-flash-next at Q4 quality. Average 80-120 toks"
-     }
-    ]
+    "text": "Met a guy off Facebook Marketplace and scored 2x RTX 3090 Founders Editions for €1,700. The problem? I already had one 3090 FE. I am now sitting in my room looking at three 3090 FEs (72 GB GDDR6X VRAM), and my current case barely fits one card, and that was only after I literally took pliers and bent the inner metal bracket to shove it in. My motherboard is just a standard B760. I clearly can't put three 3-slot cards in this PC. What is the cheapest, most sensible way forward to run all three (or two) for LLMs? Open-air mining frame + PCIe 4.0 risers + dual PSU? Get a giant full-tower case?…"
    },
    "sources": [
     "reddit"
@@ -6025,33 +5768,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xkoi9g/deepseek_harness_team_published_the_underlying/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "read the docs. the agent itself is fairly normal, what stands out is how hard they designed it to shut up. the core rule in 000-philosophy is \"take as little human attention as possible\". it only acts when an allowed person mentions it or a team-written rule permits it, and rule-based proactive work starts in a record-only mode where it just logs what it would have done. other bits worth stealing: every task gets its own worker session + dir, shell commands get pushed to background after 5s so…"
-     },
-     {
-      "text": "Sounds like savvy-flow"
-     },
-     {
-      "text": "Doesn't seem.. That complicated? It's just GitHub bot"
-     },
-     {
-      "text": "Is it like dots for GitHub repo?"
-     },
-     {
-      "text": "This is what Open AI should be."
-     },
-     {
-      "text": "Incoming black Monday for the AI industry on Monday lol. Of course they publish this after trading hours on a Friday. They knew what they were doing."
-     },
-     {
-      "text": "lolwut?"
-     },
-     {
-      "text": "I'm like 95% sure I read a comment almost exactly like this in one of the crypto hack threads.. Could be a bot."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6196,33 +5913,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xkqdzt/what_the_hell_man/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Why is ai mode saying Chile has an S in the name",
-    "topComments": [
-     {
-      "text": "Think of the kids that are growing up relying on that kind of stuff to learn the world."
-     },
-     {
-      "text": "I know, it seriously hurts me to think that there are more and more children every day utilising artificial intelligence that they depend on every day to do basic things for them like spelling and stuff and it's depressing because one day the whole world will revolve around stuff like that"
-     },
-     {
-      "text": "Yes it's known that LLMs can be poor at this because of RLHF and how prompts are tokenized. it's own attempt to prove there's a letter in there just becomes proof of that letter bing there. You need an exit ramp/routing guardrail to avoid it."
-     },
-     {
-      "text": "Theory this fail is posted so often that AI learns to make the joke because it thinks that’s normal"
-     },
-     {
-      "text": "Sorry for using a gallon of clean water to spell chile"
-     },
-     {
-      "text": "All the people criticizing OP for not getting how LLMs are tokenized are missing a bigger issue, which is the amount of confidence a LLM appears to have when answering a question. The LLM clearly did not know the answer, yet doubled down on its initial response that Chile was incorrect despite spelling it out and correcting itself, and it proceeded to make the same mistake again with 'Republic.' This issue is a much bigger problem when the the topic is something other than spelling and the…"
-     },
-     {
-      "text": "Most llms are based on tokenization which are not letters. So they can't see letters directly. Google this if you want the full explanation."
-     },
-     {
-      "text": "I love how it had a full existential crisis mid-sentence and started arguing with itself. \"Wait, does Chile have an S?\""
-     }
-    ]
+    "text": "Why is ai mode saying Chile has an S in the name"
    },
    "sources": [
     "reddit"
@@ -6270,18 +5961,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xkrzh8/openai_raises_less_than_half_of_30_billion_target/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Possible mix of temporarily negative AI sentiment and Anthropic's filing numbers looking a lot more promising?"
-     },
-     {
-      "text": "More like chinese open models proving that sam altman will not be the god king of the universe and that ML models will be a commodity that's served at cost of inference (I know that's not the case yet but that's where we'll end up)."
-     },
-     {
-      "text": "Maybe the apparent success of Gemini 4 as well?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -6767,9 +6447,8 @@
   }
  ],
  "date": "2026-10-31",
- "fetchedAt": "2026-11-03T07:43:12.266Z",
+ "fetchedAt": "2026-11-03T08:43:01.825Z",
  "runs": [
-  "2026-11-01T08:42:43.147Z",
   "2026-11-01T09:43:58.035Z",
   "2026-11-01T12:43:58.816Z",
   "2026-11-01T15:43:38.097Z",
@@ -6788,7 +6467,8 @@
   "2026-11-03T00:49:35.676Z",
   "2026-11-03T03:43:36.652Z",
   "2026-11-03T06:44:07.417Z",
-  "2026-11-03T07:43:12.266Z"
+  "2026-11-03T07:43:12.266Z",
+  "2026-11-03T08:43:01.825Z"
  ],
  "schema": 2,
  "sources": [
@@ -6868,7 +6548,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T07:43:12.266Z",
+   "fetchedAt": "2026-11-03T08:43:01.825Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -6884,7 +6564,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T07:43:12.266Z",
+   "fetchedAt": "2026-11-03T08:43:01.825Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -6929,7 +6609,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-03T07:43:12.266Z",
+   "fetchedAt": "2026-11-03T08:43:01.825Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -6947,7 +6627,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-03T07:43:12.266Z",
+   "fetchedAt": "2026-11-03T08:43:01.825Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
