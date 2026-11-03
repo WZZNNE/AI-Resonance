@@ -158,7 +158,7 @@ your own mailbox, with the interactive report linked and attached. No server.
 |---|---|---|
 | `enabled` | `false` | master switch |
 | `frequency` | `daily` | `daily` · `weekly` · `both` |
-| `weekday` | `1` | weekly mail day, ISO (1 = Monday) |
+| `weekday` | `2` | weekly mail day, ISO (1 = Monday; default Tuesday) |
 | `time` / `timezone` | `08:30` / `Asia/Shanghai` | your send time, in your timezone (DST handled) |
 | `lang` | `zh` | `en` · `zh` (the attached report can switch) |
 | `provider` | `smtp` | `smtp` · `resend` |

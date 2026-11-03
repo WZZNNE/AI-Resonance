@@ -220,19 +220,20 @@ total  = Σ points                               (packages/schema/src/score.ts)
 ```
 
 A real example from the published data: the Hacker News story *"An empirical study of harness design for coding
-agents"*, #2 on its board with **68.8**:
+agents"*, #2 on its board on 2026-09-18 with **74.6**:
 
 | Signal | Raw | Curve · cap | Norm | Points |
 |---|---:|---|---:|---:|
-| `points`: HN points at the latest reading | 205 | log · 800 | 0.797 | **31.9** / 40 |
-| `comments`: HN comments | 57 | log · 400 | 0.677 | **10.2** / 15 |
-| `velocity`: points per hour since posting | 12.6 | sqrt · 60 | 0.458 | **9.2** / 20 |
-| `echo`: other boards its resonance cluster reaches | 1 | linear · 2 | 0.5 | **7.5** / 15 |
+| `points`: HN points at the latest reading | 214 | log · 800 | 0.803 | **32.1** / 40 |
+| `comments`: HN comments | 58 | log · 400 | 0.680 | **10.2** / 15 |
+| `velocity`: points per hour since posting | 8.04 | sqrt · 60 | 0.366 | **7.3** / 20 |
+| `echo`: other boards its resonance cluster reaches | 2 | linear · 2 | 1 | **15.0** / 15 |
 | `relevance`: how squarely on-topic | 1 | linear · 1 | 1 | **10.0** / 10 |
-| **Total** | | | | **68.8** |
+| **Total** | | | | **74.6** |
 
-The `echo` points come from the paper behind the story, which is also on the Papers board that day. That link is what
-puts both items into one resonance cluster. Every board has its own signal set; see the **How scoring works** page or
+The `echo` points come from the paper behind the story, which is also on the Papers board that day, and from an
+r/LocalLLaMA thread about that day's papers on the Social board: two other boards, the cap. Those links are what put
+the items into one resonance cluster. Every board has its own signal set; see the **How scoring works** page or
 `boards:` in [`config.yaml`](./config.yaml).
 
 ## The five boards
@@ -286,7 +287,8 @@ Exact menu paths, custom domains, Cloudflare Pages, e-mail setup and backfilling
 
 The AI-specific parts are just data in [`config.yaml`](./config.yaml): keywords, GitHub topics, arXiv categories,
 journal feeds, subreddits, X accounts and companies. Swap them and you have a daily radar for anything with GitHub
-repos, papers and a community. A Rust radar, for example (edit these keys in place; keep every `sources.*` block):
+repos, papers and a community. A Rust radar, for example (edit these keys in place; keep every `sources.*` block, and switch off the AI-only
+ones):
 
 ```yaml
 site:
@@ -297,8 +299,14 @@ topic:
   githubTopics: [rust, rust-lang, tokio, wasm, webassembly]
   domains: [rust-lang.org, blog.rust-lang.org, this-week-in-rust.org]
 sources:
+  githubTrending: { enabled: true, since: daily, languages: [rust] }
+  githubSearch:
+    queries: ['created:>{{d-7}} stars:>50 language:rust', 'topic:rust pushed:>{{d-7}} created:>{{d-365}}']
   arxiv: { enabled: true, categories: [cs.PL, cs.SE] }
+  hfPapers: { enabled: false }   # Hugging Face's daily list is AI papers
+  journals: { enabled: false }   # or your field's journal feeds
   reddit: { subreddits: [{ name: rust }, { name: learnrust, weight: 0.6 }] }
+  x: { enabled: false }          # the watch list is AI labs and people; replace it to keep X
   labs: { enabled: false, companies: {} }
 ```
 
@@ -342,7 +350,7 @@ docs/                    DESIGN · VISUAL · ARCHITECTURE · SOURCES · CHANNELS
 
 | What | Cost | Limits you will notice |
 |---|---|---|
-| Site, pipeline, e-mail sending | free in a **public** repo | In a *private* repo on the Free plan (2 000 min/month), the half-hourly mail check alone bills about 1 440 minutes a month. Keep the repo public, or disable the Mail workflow if you don't use e-mail. |
+| Site, pipeline, e-mail sending | free in a **public** repo | In a *private* repo on the Free plan (2 000 min/month), Daily alone bills about 2 100 minutes a month (10 runs a day of 3–15 minutes) and the half-hourly mail check about 1 440 more. Keep the repo public, or run a private copy on a paid plan or a slower schedule. |
 | Pipeline LLM copy (optional) | your provider's price | Each item is written once (cached by text hash), at most `enrich.maxItemsPerRun` per run. Without a key, cards show source text and there is no brief. |
 | X | free for lab accounts; about **$20–30/month** for the full 32-account list on the official API | The free feed (`syndication`) is undocumented and only fresh for business-verified organisation accounts, so personal accounts need a key. twitterapi.io / SocialData cost about $3–10/month but are unofficial. `monthlyUsdCap` and `maxPostsPerRun` cap spending; also set a limit in console.x.com. X posts linked from HN, Reddit or lab pages are shown free. |
 | Reddit | free | Without OAuth, Reddit is read over RSS: about 1 request/minute, **no vote counts** (posts rank by position in each community's Top-Today list, and the card says so), fetched at most every 6 h. Reddit sometimes blocks GitHub's runner IPs; the board then keeps its last good picks, marked stale. |
@@ -379,7 +387,7 @@ yesterday. Newsletters are curated by a person or a model you can't audit. AI Re
 what they have in common, ranks with a formula you can inspect, and keeps six months of history.
 
 **Does an LLM pick the stories?** Daily heat ranks are calculated from published signals. With a key, an LLM writes
-blurbs and the brief. Brief bullets must cite `board#rank`, and invalid citations are dropped. Event picks apply additional relevance rules; the beginner library uses the separate learning scores described above.
+blurbs and the brief. Brief bullets must cite `board#rank`, and invalid citations are dropped. Event picks apply additional relevance rules; the beginner library uses separate learning scores (see [docs/LEARNING.md](./docs/LEARNING.md)).
 
 **Why does the Social board show mostly Reddit?** Without a key, X is read through a free feed that only covers the
 official lab accounts. Add `X_BEARER_TOKEN` and the next run switches to the official API for the whole watch list.
@@ -409,9 +417,32 @@ normal search pages in a new tab.
 `mail-failure` with the error. **Actions → Mail → Run workflow** with `test` ticked sends one immediately.
 
 **How big does the repository get?** The `data` branch keeps at most 60 raw candidates per board per edition and drops
-snapshots older than 183 days, so a few MB. Everything under `/api/v1` is rebuilt from it on every run.
+snapshots older than 183 days. An edition takes about 0.3–0.45 MB, so expect 60–80 MB once the window is full (the
+public instance's branch was 17 MB after 51 editions), plus git history. Everything under `/api/v1` is rebuilt from it
+on every run.
 
 ## Recent updates
+
+<details>
+<summary>2026-11-03 · Cleaner cards, one place per story, and README badges for featured repositories</summary>
+
+An audit of the first 47 published editions found text that should never have reached a card. Fixed, and already-
+published editions are cleaned when they are republished, without a data migration:
+
+- Hacker News stories about a paper no longer show arXiv's "arXivLabs is a framework…" panel or Hugging Face's site
+  tagline as their summary (25 stories); a paper link now gives its abstract.
+- X posts are titled by their first sentence without `t.co` links (16 titles were only a link), closing short links
+  are dropped from the text, and the "shared link" is never the post itself (100 posts).
+- HN text that is only links is left empty; the digest, feed, report and e-mail no longer repeat a post's title as
+  its blurb.
+- One place per linked page on News and Social: a resubmitted URL or a second post on the same page moves to the
+  runners-up ("Mistral Large 4" was #1 and #3 on 2026-10-06).
+- "Electric car models", "polyhedron models" and "immigration agents" no longer count as AI.
+- New: [README badges](#delivery) for every repository that reached a settled Repos top 10, with a landing page.
+- Web: the tab title follows a language switch, and an edition older than the retention window links on instead of
+  offering a retry that always fails.
+
+</details>
 
 <details>
 <summary>2026-10-23 · A new look, "Newsprint": a daily paper instead of a glass dashboard</summary>
@@ -457,7 +488,7 @@ The daily reader also gains clearer edition labels, content-first details, one-c
 - Ready-made topic presets (`config.yaml` variants for Rust, robotics, security …).
 - More lab sites and journal feeds, contributed as small recipes.
 - Reddit OAuth verified from GitHub's runners, for real vote counts.
-- More UI languages (a language is one dictionary file).
+- More UI languages (a UI dictionary plus a few strings for reports and the pipeline; see CONTRIBUTING).
 - A long-running public demo with months of history.
 
 Ideas and votes are welcome in [Issues](https://github.com/WZZNNE/AI-Resonance/issues).

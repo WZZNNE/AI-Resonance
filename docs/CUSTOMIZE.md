@@ -26,8 +26,8 @@ immediately with the exact path of the bad key, never halfway through. `pnpm pip
 ### Track another topic
 
 The AI-specific parts are the topic filter and the source lists. For a Rust radar, for example, change these keys in
-place. Every `sources.*` block must stay in the file, even when you disable it, and remember to replace the journal
-feeds too:
+place. Every `sources.*` block must stay in the file, even when you disable it. Papers, lab posts and X posts of
+watched lab accounts count as on topic by construction, so switch off (or replace) the AI-only sources:
 
 ```yaml
 topic:
@@ -43,7 +43,10 @@ sources:
     enabled: true
     queries: ['created:>{{d-7}} stars:>50 language:rust', 'topic:rust pushed:>{{d-7}} created:>{{d-365}}']
   arxiv: { enabled: true, categories: [cs.PL, cs.SE] }
+  hfPapers: { enabled: false }   # Hugging Face's daily list is AI papers
+  journals: { enabled: false }   # or your field's journal feeds
   reddit: { subreddits: [{ name: rust }, { name: learnrust, weight: 0.6 }] }
+  x: { enabled: false }          # the watch list is AI labs and people; replace it to keep X
   labs: { enabled: false, companies: {} }
 ```
 
@@ -284,7 +287,7 @@ The repository variable `RESONANCE_MAIL` (JSON, same keys) overrides these. Sett
 |---|---|---|
 | `enabled` | `false` | master switch |
 | `frequency` | `daily` | `daily` · `weekly` · `both` |
-| `weekday` | `1` | weekly mail day, ISO (1 = Monday … 7 = Sunday) |
+| `weekday` | `2` | weekly mail day, ISO (1 = Monday … 7 = Sunday); Tuesday, so the week's Sunday edition has settled |
 | `time` | `'08:30'` | local send time, `HH:MM` |
 | `timezone` | `Asia/Shanghai` | IANA timezone of `time` (DST handled) |
 | `lang` | `zh` | `en` · `zh`; the attached report contains both |

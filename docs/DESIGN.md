@@ -152,7 +152,6 @@ both are published in `manifest.boards[].signals` so the UI explains the formula
 | repos | `stars_today` (trending page, else Δ vs previous snapshot) · `momentum` (stars today as % of total) · `hn_echo` · `paper_echo` · `novelty` (1/(1+previous days on board)) · `relevance` |
 | papers | `hf_upvotes` · `hf_comments` · `code` (stars of released code, 1 if code exists) · `hn_echo` · `repo_echo` · `recency` · `source_prior` |
 | news | `points` · `comments` · `velocity` (points/hour, age floored at 2 h) · `echo` (number of other boards it points into) · `relevance` |
-
 | social | `lift` (engagement vs the author's / community's usual; Reddit RSS mode: position in the community's Top-Today list, `via: rss-position`) · `reach` (X: likes + 2·reposts + 3·quotes + replies · Reddit: score) · `discussion` (replies / comments) · `velocity` · `authority` (watch-list / subreddit weight) · `echo` · `relevance` |
 | labs | `kind` (model > product > research > engineering > company) · `release` (+.5 model release, +.2 flagship) · `freshness` (`0.5^(age hours / 24)`) · `echo` (HN points + Reddit score + X likes of items linking to it, HF likes) · `company` (config weight) · `surface` (blog/news .2 · changelog/docs .1 · GitHub/HF 0) |
 
@@ -230,19 +229,23 @@ Hash router (works on any static host and sub-path). Budget: **≤ 95 KB gzip** 
 
 | Route | View |
 |---|---|
-| `#/` · `#/d/<date>` | **Today**: brief ("今日要点"), resonance strip, category filter bar, then five boards; a `Live` toggle shows the open edition |
+| `#/` · `#/d/<date>` · `#/live` | **Today**: brief ("今日要点"), events at a glance, category filter bar, then five boards; `#/live` is the open edition. A dated edition outside the retention window explains that and links on |
 | `#/item/<slug>` | Item detail: score breakdown, resonance links, trend charts, history, one-click summary |
 | `#/resonance` | Clusters for the selected day |
 | `#/archive` | Calendar heat-map of the retention window → any day |
 | `#/weekly/<week>` | Weekly recap |
 | `#/search?q=` | Archive search + web search hand-off |
 | `#/scoring` | "How scoring works" — rendered from the manifest, with a live calculator |
-| `#/settings/<tab>` | General · Models · Credentials · Search · Appearance · **Delivery** (e-mail schedule) · Channels |
+| `#/learn` | Beginner library: 30 resident + 70 dynamic picks (docs/LEARNING.md) |
+| `#/library` | The reader's saved, read-later and read items, kept on the device |
+| `#/subscribe` | Atom feeds and Markdown digests to copy; e-mail is for people running their own copy |
+| `#/status` | Collection and delivery status: last runs, per-source settlement, coverage gaps, mail outcome |
+| `#/settings/<tab>` | General · Interests · Models · Credentials · Search · Appearance · **Delivery** (e-mail schedule) · Channels |
 | `#/export` | Export an interactive report: this edition · this week · custom range (≤ 31 days), language, boards, include my summaries |
 
 Layout: ≥ 1100 px a front-page grid — row 1 `repos · papers · news`, row 2 `social · labs` (each board a column, ruled from its neighbour),
 sticky header, detail opens as a right-hand drawer. Board order and visibility are user settings (hide boards you do not read).
-< 1100 px: one board at a time behind a horizontally scrollable board switcher (swipeable), bottom tab bar (Today · Resonance · Archive · Search · Settings),
+< 1100 px: one board at a time behind a horizontally scrollable board switcher (swipeable), bottom tab bar (Today · Learn · Library · Archive · Search · Settings),
 detail and summary open as bottom sheets. Touch targets ≥ 44 px. No hover-only affordances.
 
 ### 7.2 The item card (the core unit)
@@ -341,7 +344,7 @@ One search box (`/` or ⌘K), two scopes:
 * **Archive** (default) — client-side over `search/index.json`: tokenised, prefix + CJK substring match, filters (board, date range, min score, resonant only), ranked by match × heat.
 * **Web** — hand off the query, or an item's title, to a provider:
   * `redirect` engines (URL templates, no key): Google, Bing, Baidu, DuckDuckGo, GitHub, arXiv, Google Scholar, HN — user picks the default; custom templates allowed.
-  * `api` engines (results rendered in-app, reusable as extra context for summaries — "web-grounded summary"): presets verified in §13 plus **Custom JSON API** (URL/method/headers/body templates with `{{query}}`/`{{key}}`, dot-path result mapping) — this is how a local SearXNG or the user's own local API plugs in.
+  * `api` engines (results rendered in-app, reusable as extra context for summaries — "web-grounded summary"): presets verified in §13 plus **Custom JSON API** (URL/method/headers/body templates with `{{query}}`/`{{key}}`, dot-path result mapping) — this is how the user's own local API plugs in; SearXNG has its own preset (base URL only).
 * **Reader** provider for article extraction: default Jina Reader, custom template, or none.
 
 **Out-of-the-box defaults (zero configuration, no keys):**
@@ -460,7 +463,7 @@ interactive report" link (hosted file), and the same report attached as `.html`.
 ## 14. Quality bar
 
 * `pnpm check` = biome + `tsc` + vitest, green in CI on every push.
-* Pipeline: every pure stage unit-tested; one **offline end-to-end test** replays recorded HTTP fixtures through `run` and validates every emitted file.
+* Pipeline: every pure stage unit-tested, parsers on recorded real responses; `run` is exercised end to end with scripted sources and an in-memory store, and `publishAll` validates every emitted file.
 * Web: unit tests for effort mapping, pricing match, vault crypto round-trip, archive search, safe Markdown, i18n key parity (en ⇄ zh).
 * Accessibility: keyboard reachable, visible focus, `prefers-reduced-motion`, contrast ≥ 4.5:1 on text in every preset.
 * Failure is visible, not silent: source outages show as a status chip on the day they happened.

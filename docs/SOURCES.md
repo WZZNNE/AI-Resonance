@@ -240,9 +240,9 @@ BigModel, SiliconFlow, xAI, Mistral and Groq. No proxy is needed. Local servers:
 arXiv, Google Scholar and HN. API engines callable from the browser: **Tavily** (1 000 free credits/month), **Serper**,
 **Bocha** (博查), **Jina Search**, **Firecrawl**, and **Google Programmable Search** (legacy, existing keys only, ends
 2027-01-01). These need the local relay (`pnpm start`) because they send no CORS headers: **Brave**, **Exa**, **Baidu
-Qianfan**, **Kagi**. The **Bing Web Search API was retired on 2025-08-11**. **SearXNG** and any own JSON API plug in as
-a Custom JSON API engine. SearXNG needs `json` in `search.formats` and an `Access-Control-Allow-Origin` header in
-`server.default_http_headers`.
+Qianfan**, **Kagi**. The **Bing Web Search API was retired on 2025-08-11**. **SearXNG** is a built-in preset (enter
+its base URL), and any other JSON API plugs in as a Custom JSON API engine. SearXNG needs `json` in `search.formats`
+and an `Access-Control-Allow-Origin` header in `server.default_http_headers`.
 
 **Readers** (article text for summaries), in order: text already in our JSON → CORS-open direct fetches (GitHub
 README via `api.github.com`/`raw.githubusercontent.com`, `arxiv.org/html/<id>`) → **Jina Reader** `r.jina.ai`
