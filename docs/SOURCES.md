@@ -82,6 +82,13 @@ is done by our classifier, not Algolia's text query. A 200 response carrying an 
 treated as a failure, because Algolia reports bad filters that way. Stories keep being re-read until their edition
 settles, so late risers are judged on final points.
 
+**Link previews.** A story without text of its own that links to a trusted host (news sites listed in
+`packages/pipeline/src/article.ts` plus `topic.domains`) gets the linked page read once: bounded, credential-free and
+cached. A paper page gives its abstract (Highwire `citation_abstract`, else arXiv's abstract block); an article gives
+its first paragraphs, else its description. Site furniture never becomes the card text: arXiv's arXivLabs panel and
+Hugging Face's site tagline or model-card metadata warning are skipped (`packages/pipeline/src/boilerplate.ts`), and
+summaries stored before that rule existed are scrubbed when snapshots are read.
+
 **Browser.** The one-click summary reads the top comments through the Firebase API (`item/<id>.json` → the first
 `kids`, in HN's own rank order). Both APIs allow CORS for plain GETs.
 
