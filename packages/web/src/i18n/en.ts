@@ -79,6 +79,12 @@ const en = {
   'share.send': 'Share',
   'share.download': 'Download image',
   'share.svgFallback': 'PNG is unavailable in this browser. A standalone SVG card was downloaded instead.',
+  'share.badge': 'README badge',
+  'share.badgeHelp':
+    'This repository made the top list. Its README can show the best settled rank; the badge updates itself and never expires.',
+  'share.badgeCopy': 'Copy Markdown',
+  'share.badgeCopied': 'Badge Markdown copied',
+  'share.badgePage': 'Badge page',
   'settings.readingHelp':
     'Start with language, appearance and interests. Reading, saving and site search work without a model API key.',
   'settings.advancedHelp': 'Optional: AI models, credentials and publishing',
@@ -222,6 +228,10 @@ const en = {
   'edition.liveKicker': 'Live · open edition',
   'edition.live': 'Live',
   'edition.liveTitle': 'Live edition',
+  'edition.missing': 'This edition is not in the archive',
+  'edition.missingBody':
+    'The site keeps the last {n} days of editions. {date} is older than that, or was never published. Links in old feed entries end here.',
+  'edition.missingArchive': 'Browse the archive',
   'edition.liveHint': 'The open edition, ranked so far',
   'edition.liveNote':
     'This edition is still open: ranks move as the day goes on, and the numbers settle a few hours after the cutoff.',
@@ -611,8 +621,9 @@ const en = {
   'views.scoring.cap.perCommunity': 'at most {n} per community',
   'views.scoring.cap.perPlatform': 'at most {n} per platform',
   'views.scoring.cap.perCompany': 'at most {n} per company',
+  'views.scoring.cap.perLink': 'at most {n} per linked page',
   'views.scoring.caps2':
-    'An item pushed out by a cap is not re-scored; it moves to the runners-up and the next item takes its place. A cap never leaves a place empty: when too few other items exist, the best capped ones fill the list.',
+    'An item pushed out by a cap is not re-scored; it moves to the runners-up and the next item takes its place. A cap never leaves a place empty: when too few other items exist, the best capped ones fill the list. The per-page rule is the exception, since a second item on the same page is the same story.',
   'views.scoring.caps3':
     'The exact limits live in config.yaml next to the weights, so a fork can loosen or tighten them.',
   'views.pwa.install': 'Install the app',

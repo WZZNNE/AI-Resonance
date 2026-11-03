@@ -655,6 +655,29 @@ http:// 301-redirects to https://export.arxiv.org/api/query... ; https works. Qu
 
 **Gotchas:** Browser cannot call arXiv directly (no CORS) - pipeline only. One request in my run returned an empty body with no totalResults when fired <3 s after the previous one; honor the 3 s gap and retry on empty/short bodies. The API only exposes papers after announcement: at 2026-09-19T00:00Z (Fri 20:00 ET, a no-announcement night) the newest entry was 2026-09-17T17:59:58Z i.e. exactly Thursday's 14:00 ET cutoff. 'published' is v1 submission time, not announcement time; cross-lists make primary_category differ from the queried cats (cs.RO sample).
 
+### ✔ Page furniture in Hacker News link previews (observed on the `data` branch, 2026-11-03)
+
+`state/public-pages.json` and 25 Hacker News candidates in the snapshots of 2026-09-23 … 2026-11-02 carried site
+furniture as their summary instead of the linked page's content. Every arxiv.org/abs page gave the arXivLabs panel (20
+stories), and huggingface.co model pages gave the site description (4) or a card text glued behind the model-card
+metadata warning (1). The panel's paragraphs sit inside `<main>`, so "the first paragraphs of `<article>`/`<main>`"
+picked them up.
+
+<details><summary>evidence</summary>
+
+```
+hn:50341334 → https://arxiv.org/abs/2610.37741: "arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced …"
+hn:50259228 → https://huggingface.co/baidu/Unlimited-OCR-2: "We’re on a journey to advance and democratize artificial intelligence through open source and open science."
+hn:50327240 → https://huggingface.co/burner22/numbat: "YAML Metadata Warning:empty or missing yaml metadata in repo card ~14T param, 114 layers, …"
+```
+</details>
+
+**Gotchas:** On a paper page, read the abstract before guessing from paragraphs: `<meta name="citation_abstract">`
+(Highwire tags), else arXiv's `<blockquote class="abstract">` without its "Abstract:" descriptor; arxiv.org's
+`og:description` also carries the abstract, while its `meta description` only repeats the title. Those markup details
+are `?` here: they follow arXiv's public page template and were not re-probed from this environment (no egress to
+arxiv.org), which is why `articleExcerpt` tries all three and drops the furniture either way.
+
 ### ✔ arXiv schedule / weekend behaviour
 
 info.arxiv.org/help/availability.html: submission cutoff 14:00 ET Mon-Fri; announcements 20:00 ET Sunday through Thursday; no announcements Friday or Saturday nights. In UTC that means new listings appear ~00:00-01:00 UTC on Mon-Fri and nothing new on UTC Saturday/Sunday; Monday's (Sun 20:00 ET) batch covers Thu 14:00 ET - Fri 14:00 ET, and Tuesday's (Mon 20:00 ET) batch covers Fri 14:00 - Mon 14:00 ET (largest). People still submit on weekends (submittedDate window for Sat 2026-09-12 -> totalResults 197) but those are not visible until announced. RSS channel declares <skipDays> Sunday, Saturday. HF daily_papers likewise returns [] for weekend dates.

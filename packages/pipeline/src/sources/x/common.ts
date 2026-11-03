@@ -125,11 +125,26 @@ export function accountOf(
   })
 }
 
-const X_HOSTS = /^(x\.com|twitter\.com|mobile\.twitter\.com|t\.co|pic\.x\.com|pic\.twitter\.com)$/
+/** X's own hosts: a link there is the post itself, its media or another post, never the page a post shares. */
+export const X_HOSTS = /^(x\.com|twitter\.com|mobile\.twitter\.com|t\.co|pic\.x\.com|pic\.twitter\.com)$/
+const SHORT_LINK = /https?:\/\/t\.co\/[A-Za-z0-9]+/g
+/** Short links closing a post: its media or the shared page, which the card shows as its own link. */
+const TRAILING_SHORT_LINKS = /(?:\s*https?:\/\/t\.co\/[A-Za-z0-9]+…?)+\s*$/
+
+/** A post's title: its first sentence without t.co links (opaque to a reader), else `@handle`. */
+export function xTitle(text: string, handle: string): string {
+  return firstSentence(text.replace(SHORT_LINK, ' ')) || `@${handle}`
+}
+
+/** Post text without the t.co links that close it; links inside a sentence stay, since dropping them breaks it. */
+export function trimShortLinks(text: string): string {
+  return text.replace(TRAILING_SHORT_LINKS, '').trim()
+}
 
 /** One post → social candidate; `account` is its watch-list entry (absent for posts found through links). */
 export function toSocialX(post: XPost, account: XAccount | undefined, source: string): RawSocial {
   const key = xKey(post.id)
+  // Short links stay in the stored text for now: `hydratePublicLinks` expands them into references after this step.
   const text = clip(plain(post.text))
   const url = `https://x.com/${post.handle}/status/${post.id}`
   const metrics: Record<string, number> = {
@@ -146,7 +161,7 @@ export function toSocialX(post: XPost, account: XAccount | undefined, source: st
   return {
     key,
     board: 'social',
-    title: firstSentence(text) || `@${post.handle}`,
+    title: xTitle(text, post.handle),
     url,
     summary: text,
     tags,

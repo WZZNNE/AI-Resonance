@@ -29,7 +29,13 @@ describe('boardMeta', () => {
     const meta = boardMeta(config)
     expect(meta.find((b) => b.board === 'labs')!.lookbackDays).toBe(7)
     expect(meta.find((b) => b.board === 'news')!.lookbackDays).toBeUndefined()
-    expect(meta.find((b) => b.board === 'social')!.caps).toEqual({ perAuthor: 2, perCommunity: 3, perPlatform: 7 })
+    expect(meta.find((b) => b.board === 'social')!.caps).toEqual({
+      perAuthor: 2,
+      perCommunity: 3,
+      perPlatform: 7,
+      perLink: 1,
+    })
+    expect(meta.find((b) => b.board === 'news')!.caps).toEqual({ perLink: 1 })
     expect(meta.find((b) => b.board === 'labs')!.caps).toEqual({ perCompany: 3 })
     expect(meta.find((b) => b.board === 'repos')!.caps).toBeUndefined()
     expect(meta.find((b) => b.board === 'labs')!.subtitle.en).toContain('7 days')
@@ -57,7 +63,10 @@ describe('boardMeta', () => {
   it('fails loudly on a cap the board cannot enforce', () => {
     const bad = structuredClone(config)
     bad.boards.news.caps = { perDomain: 2 }
-    expect(() => boardMeta(bad)).toThrow(/boards\.news\.caps has unknown key "perDomain" \(known: none\)/)
+    expect(() => boardMeta(bad)).toThrow(/boards\.news\.caps has unknown key "perDomain" \(known: perLink\)/)
+    bad.boards.repos.caps = { perLink: 1 }
+    bad.boards.news.caps = {}
+    expect(() => boardMeta(bad)).toThrow(/boards\.repos\.caps has unknown key "perLink" \(known: none\)/)
   })
 
   it('knows every signal config.yaml uses', () => {

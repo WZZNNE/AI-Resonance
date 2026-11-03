@@ -30,12 +30,24 @@ export interface HnSearchResponse {
   message?: string
 }
 
+/** Text that is nothing but links says nothing a card can show. */
+export const ONLY_LINKS = /^(?:\s*https?:\/\/\S+)+\s*$/
+
+/**
+ * HN story text as plain text. HN turns every URL into a link whose label it shortens ("…/openai-sa..."), so a link
+ * reads as its full target; text that is only links becomes empty and the linked page may fill the card instead.
+ */
+export function storyText(html: string | null | undefined): string {
+  const text = plain((html ?? '').replace(/<a\s[^>]*?href="([^"]*)"[^>]*>[\s\S]*?<\/a>/gi, ' $1 '))
+  return ONLY_LINKS.test(text) ? '' : text
+}
+
 /** One Algolia story hit → candidate. */
 export function mapHnHit(hit: HnHit): RawNews {
   const key = hnKey(hit.objectID)
   const hnUrl = `https://news.ycombinator.com/item?id=${hit.objectID}`
   const url = hit.url || hnUrl
-  const text = plain(hit.story_text)
+  const text = storyText(hit.story_text)
   const createdAt = new Date(hit.created_at_i * 1000).toISOString()
   const points = hit.points ?? 0
   const comments = hit.num_comments ?? 0

@@ -104,6 +104,7 @@ const CAP_TEXT: Record<string, MessageKey> = {
   perCommunity: 'views.scoring.cap.perCommunity',
   perPlatform: 'views.scoring.cap.perPlatform',
   perCompany: 'views.scoring.cap.perCompany',
+  perLink: 'views.scoring.cap.perLink',
 }
 
 /** Pure: one readable line per cap, in config order; unknown keys are shown as they are. */

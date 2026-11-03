@@ -11,6 +11,7 @@ import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promise
 import { dirname, join } from 'node:path'
 import type { Board, DateStr, SourceStatus } from '@resonance/schema'
 import { BOARDS, diffDays, isDateStr } from '@resonance/schema'
+import { tidySnapshot } from './tidy.ts'
 import type { BriefCache, CopyCache, CreateStore, DataStore, RawCandidate, Snapshot, StateStore } from './types.ts'
 
 /** Readings where a later run may see less than an earlier one (fell off trending, HN points dipped). */
@@ -244,7 +245,12 @@ export function createStore(dir: string, retentionDays: number, options: StoreOp
       .sort()
   }
 
-  const readSnapshot = (date: DateStr) => readJson<Snapshot>(snapshotPath(date))
+  // Display text is tidied on every read (tidy.ts), so already-settled editions publish clean and the next merge
+  // persists the clean text.
+  const readSnapshot = async (date: DateStr) => {
+    const snapshot = await readJson<Snapshot>(snapshotPath(date))
+    return snapshot && tidySnapshot(snapshot)
+  }
 
   const state: StateStore = {
     async get<T>(name: string) {

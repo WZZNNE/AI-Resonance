@@ -67,9 +67,15 @@ export function titleOf(item: Item, lang: Lang): string {
   return item.copy?.[lang]?.title || item.title
 }
 
-/** The one-liner: LLM blurb in `lang` when present, else the source summary clipped. */
+/**
+ * The one-liner: LLM blurb in `lang` when present, else the source summary clipped; empty when the summary only opens
+ * with the title again (posts are titled by their own first sentence), as in the web app's `itemBlurb`.
+ */
 export function blurbOf(item: Item, lang: Lang, max = 160): string {
-  return clip(item.copy?.[lang]?.blurb || item.summary, max)
+  const blurb = item.copy?.[lang]?.blurb
+  if (blurb) return clip(blurb, max)
+  const head = titleOf(item, lang).replace(/[…\s.]+$/, '')
+  return head && item.summary.startsWith(head) ? '' : clip(item.summary, max)
 }
 
 /** Board title from the published metadata. */

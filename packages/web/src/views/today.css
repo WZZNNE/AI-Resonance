@@ -502,19 +502,22 @@
   vertical-align: bottom;
 }
 
+/* The opening bracket rides inside the clipped title; the closing one sits outside it, so an ellipsis never eats it. */
 .cite__text::before {
   content: "(";
 }
 
-.cite__text::after {
+.cite::after {
   content: ")";
+  line-height: 1.35;
+  vertical-align: bottom;
 }
 
 :lang(zh) .cite__text::before {
   content: "（";
 }
 
-:lang(zh) .cite__text::after {
+:lang(zh) .cite::after {
   content: "）";
 }
 

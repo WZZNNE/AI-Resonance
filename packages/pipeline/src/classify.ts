@@ -17,9 +17,13 @@ const MAX_REASONS = 8
 
 /** Words that switch a keyword to its everyday meaning — every trap here was seen in real HN titles. */
 const GUARDS: Record<string, { before?: RegExp; after?: RegExp }> = {
-  agent: { before: /(?:border|federal|ice|fbi|customs|secret|travel|estate|insurance|talent|user|free|patrol)\s*$/i },
+  agent: {
+    before:
+      /(?:border|federal|ice|fbi|customs|secret|travel|estate|insurance|talent|user|free|patrol|immigration)\s*$/i,
+  },
   model: {
-    before: /(?:3d|role|business|pricing|threat|data|mental|scale|fashion|tesla|climate|economic|financial)\s*$/i,
+    before:
+      /(?:3d|role|business|pricing|threat|data|mental|scale|fashion|tesla|climate|economic|financial|car|polyhedron)\s*$/i,
     after: /^\s*(?:citizens?|s|x|y|3|m|t)\b/i,
   },
   training: { before: /(?:resistance|strength|weight|dog|flight|military|employee|potty)\s*$/i },

@@ -1,8 +1,10 @@
 /** Small, retryable cache of public article excerpts and expanded short links; never sends API credentials. */
 import { keyFromUrl } from '@resonance/schema'
 import { parse } from 'node-html-parser'
+import { isFurniture, scrubSummary } from './boilerplate.ts'
 import { publicPageUrl } from './public-page.ts'
-import { plain } from './sources/util.ts'
+import { clip, hostOf, plain } from './sources/util.ts'
+import { X_HOSTS } from './sources/x/common.ts'
 import type { RawCandidate, RunContext } from './types.ts'
 
 const ARTICLE_LIMIT = 12
@@ -33,19 +35,33 @@ export function articleExcerpt(html: string, pageUrl: string): { summary: string
   root.querySelectorAll('script,style,nav,header,footer,aside,form,noscript').forEach((node) => {
     node.remove()
   })
+  // A paper page states its abstract outright: Highwire `citation_abstract` metadata (arXiv, journals), else arXiv's
+  // `blockquote.abstract`. Paragraph guessing there finds the site's panels instead (the arXivLabs blurb).
+  const abstract = plain(
+    root.querySelector('meta[name="citation_abstract"]')?.getAttribute('content') ||
+      root.querySelector('blockquote.abstract')?.textContent ||
+      '',
+  ).replace(/^Abstract:\s*/i, '')
   const main = root.querySelector('article') ?? root.querySelector('main')
   const paragraphs =
     main
       ?.querySelectorAll('p')
       .map((p) => plain(p.textContent))
       .filter(
-        (p) => p.length >= 60 && !/^(?:accept (?:all )?cookies|subscribe|sign (?:in|up)|all rights reserved)/i.test(p),
+        (p) =>
+          p.length >= 60 &&
+          !/^(?:accept (?:all )?cookies|subscribe|sign (?:in|up)|all rights reserved)/i.test(p) &&
+          !isFurniture(p),
       ) ?? []
   const description =
-    root.querySelector('meta[property="og:description"]')?.getAttribute('content') ??
-    root.querySelector('meta[name="description"]')?.getAttribute('content') ??
-    ''
-  const summary = plain(paragraphs.slice(0, 4).join(' ') || description).slice(0, 600)
+    [
+      root.querySelector('meta[property="og:description"]')?.getAttribute('content'),
+      root.querySelector('meta[name="description"]')?.getAttribute('content'),
+    ]
+      .map(plain)
+      .find((text) => text && !isFurniture(text)) ?? ''
+  const best = abstract.length >= 60 ? abstract : paragraphs.slice(0, 4).join(' ') || description
+  const summary = clip(plain(best), 600)
   const value = root.querySelector('link[rel="canonical"]')?.getAttribute('href')
   let canonical: string | undefined
   if (value) {
@@ -96,8 +112,10 @@ export async function hydratePublicLinks(candidates: RawCandidate[], ctx: RunCon
     .slice(0, ARTICLE_LIMIT)
   for (const item of news) {
     const page = await read(item.url)
-    if (page.summary && page.summary.length > item.summary.length) {
-      item.summary = page.summary
+    // Cached excerpts may predate furniture detection; they are scrubbed here instead of being refetched.
+    const summary = scrubSummary(page.summary ?? '')
+    if (summary && summary.length > item.summary.length) {
+      item.summary = summary
       summaries++
     }
     const key = page.url && keyFromUrl(page.url)
@@ -112,8 +130,9 @@ export async function hydratePublicLinks(candidates: RawCandidate[], ctx: RunCon
       const page = await read(short)
       if (!page.url || new URL(page.url).hostname === 't.co') continue
       const key = keyFromUrl(page.url)
-      if (key && !item.refs.includes(key)) item.refs.push(key)
-      if (!item.social.linkUrl) item.social.linkUrl = page.url
+      if (key && key !== item.key && !item.refs.includes(key)) item.refs.push(key)
+      // Media links expand to the post's own x.com page: that is not a page the post shares.
+      if (!item.social.linkUrl && !X_HOSTS.test(hostOf(page.url) ?? '')) item.social.linkUrl = page.url
       expanded++
     }
   }

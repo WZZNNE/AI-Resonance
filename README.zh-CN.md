@@ -34,7 +34,7 @@
   <a href="https://wzznne.github.io/AI-Resonance/">直接阅读</a> ·
   <a href="https://wzznne.github.io/AI-Resonance/#/learn">入门推荐</a> ·
   <a href="https://wzznne.github.io/AI-Resonance/#/subscribe">订阅</a> ·
-  <a href="#五分钟上手">快速上手</a> ·
+  <a href="#快速上手">快速上手</a> ·
   <a href="#功能一览">功能</a> ·
   <a href="#改成你自己的雷达任意主题">任意主题</a> ·
   <a href="./docs/DEPLOY.md">部署</a> ·
@@ -60,7 +60,7 @@
   标记和迷你走势图。一眼就能分清是昙花一现还是持续走热。
 
 整个项目只跑在 GitHub Actions 和 GitHub Pages 上，没有后端、没有数据库、不需要注册账号。日报双语解读可由流水线预生成；
-浏览器内的自由问答等个性化 AI 功能使用读者自己的 Key。改一个 YAML 文件可调整日报主题，AI 入门目录则独立维护。
+浏览器里的个性化 AI 功能（如一键“AI 解读”）使用读者自己的 Key。改一个 YAML 文件可调整日报主题，AI 入门目录则独立维护。
 
 ## 直接阅读，不需要部署
 
@@ -177,6 +177,12 @@
   本仓库的令牌就能配好，不用改任何工作流文件。
 - **免账号订阅**：独立订阅页提供中英 Atom 链接，可直接复制到阅读器，另有 Markdown 摘要。定时邮件是自己部署后可选的运营功能。
 - **分享事件**：调用设备分享菜单或复制链接；具体日期的事件与日报链接提供静态摘要页，包含预览信息和原始来源。图片卡片在浏览器本地生成，支持下载 PNG；浏览器无法导出 PNG 时回退为 SVG。
+- **上榜仓库的 README 徽章**：进过结算后开源项目榜前 10 的仓库，都会得到一枚标着最佳排名的徽章和一个小落地页。徽章只会
+  变好，并且超过 183 天保留期也不会失效，挂在 README 里不会变成坏图。在仓库条目的分享面板里可以一键复制 Markdown：
+
+  ```markdown
+  [![AI Resonance: #3 on Repos](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>.svg)](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>/)
+  ```
 
 ### 面向智能体与开发者
 
@@ -201,19 +207,20 @@ points = norm × weight / Σ weights × 100
 total  = Σ points                               （packages/schema/src/score.ts）
 ```
 
-来自已发布数据的真实例子：Hacker News 帖子 *“An empirical study of harness design for coding agents”*，本期该榜第 2 名，
-**68.8** 分：
+来自已发布数据的真实例子：Hacker News 帖子 *“An empirical study of harness design for coding agents”*，2026-09-18 这一期该榜第 2 名，
+**74.6** 分：
 
 | 信号 | 原始值 | 曲线 · 上限 | 归一化 | 得分 |
 |---|---:|---|---:|---:|
-| `points`：最近一次读取时的 HN 得分 | 205 | log · 800 | 0.797 | **31.9** / 40 |
-| `comments`：HN 评论数 | 57 | log · 400 | 0.677 | **10.2** / 15 |
-| `velocity`：发帖以来每小时得分 | 12.6 | sqrt · 60 | 0.458 | **9.2** / 20 |
-| `echo`：所在共振簇还覆盖了几个其他榜单 | 1 | linear · 2 | 0.5 | **7.5** / 15 |
+| `points`：最近一次读取时的 HN 得分 | 214 | log · 800 | 0.803 | **32.1** / 40 |
+| `comments`：HN 评论数 | 58 | log · 400 | 0.680 | **10.2** / 15 |
+| `velocity`：发帖以来每小时得分 | 8.04 | sqrt · 60 | 0.366 | **7.3** / 20 |
+| `echo`：所在共振簇还覆盖了几个其他榜单 | 2 | linear · 2 | 1 | **15.0** / 15 |
 | `relevance`：与主题的贴合程度 | 1 | linear · 1 | 1 | **10.0** / 10 |
-| **总分** | | | | **68.8** |
+| **总分** | | | | **74.6** |
 
-其中 `echo` 这一项，来自这篇帖子讨论的那篇论文：它当天也登上了论文榜。正是这条关联把两个条目串进了同一个共振簇。
+其中 `echo` 这一项有两处来源：这篇帖子讨论的那篇论文当天也登上了论文榜，r/LocalLLaMA 上一篇聊当天论文的帖子也在社区动态榜，
+一共触及两个其他榜单，正好到上限。正是这些关联把几个条目串进了同一个共振簇。
 每个榜单都有自己的一组信号，详见应用里的“评分方法”页面，或 [`config.yaml`](./config.yaml) 里的 `boards:`。
 
 ## 五个榜单
@@ -236,7 +243,7 @@ total  = Σ points                               （packages/schema/src/score.ts
 `settleHours`（默认 8 小时）会重读一遍互动数据，让晚发的帖子也能得到公平评价，随后这一期标记为“已定稿”。想按北京时间或
 纽约时间切日？改 `config.yaml` 里的 `edition.timezone`（需要的话再改 `cutoff`）即可。
 
-## 五分钟上手
+## 快速上手
 
 只需要一个 GitHub 账号。
 
@@ -264,7 +271,7 @@ total  = Σ points                               （packages/schema/src/score.ts
 ## 改成你自己的雷达（任意主题）
 
 和 AI 相关的部分只是 [`config.yaml`](./config.yaml) 里的数据：关键词、GitHub topic、arXiv 分类、期刊订阅源、subreddit、
-X 账号和公司列表。把它们换掉，就得到一份新主题的每日雷达，只要这个领域有 GitHub 项目、论文和社区讨论。比如 Rust 雷达（在原处修改这些键，每个 `sources.*` 块都要保留）：
+X 账号和公司列表。把它们换掉，就得到一份新主题的每日雷达，只要这个领域有 GitHub 项目、论文和社区讨论。比如 Rust 雷达（在原处修改这些键，每个 `sources.*` 块都要保留，只和 AI 有关的来源要关掉）：
 
 ```yaml
 site:
@@ -275,8 +282,14 @@ topic:
   githubTopics: [rust, rust-lang, tokio, wasm, webassembly]
   domains: [rust-lang.org, blog.rust-lang.org, this-week-in-rust.org]
 sources:
+  githubTrending: { enabled: true, since: daily, languages: [rust] }
+  githubSearch:
+    queries: ['created:>{{d-7}} stars:>50 language:rust', 'topic:rust pushed:>{{d-7}} created:>{{d-365}}']
   arxiv: { enabled: true, categories: [cs.PL, cs.SE] }
+  hfPapers: { enabled: false }   # Hugging Face 每日论文只有 AI 论文
+  journals: { enabled: false }   # 或换成你所在领域的期刊订阅源
   reddit: { subreddits: [{ name: rust }, { name: learnrust, weight: 0.6 }] }
+  x: { enabled: false }          # 关注列表是 AI 公司和人物；想保留 X 就换成你的列表
   labs: { enabled: false, companies: {} }
 ```
 
@@ -318,7 +331,7 @@ docs/                    DESIGN · VISUAL · ARCHITECTURE · SOURCES · CHANNELS
 
 | 项目 | 费用 | 你会遇到的限制 |
 |---|---|---|
-| 网站、流水线、发邮件 | **公开**仓库免费 | 如果是 Free 计划下的*私有*仓库（每月 2 000 分钟），光是每半小时一次的发信检查每月就要计费约 1 440 分钟。建议保持仓库公开；不用邮件的话，在 Actions 页面停用 Mail 工作流。 |
+| 网站、流水线、发邮件 | **公开**仓库免费 | 如果是 Free 计划下的*私有*仓库（每月 2 000 分钟），光是 Daily 每月就要计费约 2 100 分钟（每天 10 次，每次 3–15 分钟），每半小时一次的发信检查还要再计约 1 440 分钟。建议保持仓库公开；私有副本需要付费计划，或把运行频率调低。 |
 | 流水线 LLM 文案（可选） | 按你的服务商计价 | 每个条目只生成一次（按文本哈希缓存），每次运行最多 `enrich.maxItemsPerRun` 条。没有 Key 时卡片显示原文，也没有今日要点。 |
 | X | 官方实验室账号免费；用官方 API 读完整的 32 个账号每月约 **20–30 美元** | 免费通道（`syndication`）没有官方文档，只对企业认证的机构账号是新鲜的，所以个人账号需要 Key。twitterapi.io / SocialData 每月约 3–10 美元，但属于非官方渠道。`monthlyUsdCap` 和 `maxPostsPerRun` 会兜底控制花费，也记得在 console.x.com 设置消费上限。HN、Reddit 或官方页面里链接到的 X 帖子始终免费显示。 |
 | Reddit | 免费 | 没有 OAuth 时走 RSS：大约每分钟一次请求，**没有投票数**（帖子按它在所属社区“今日最热”列表里的位置排名，卡片上会注明），最多每 6 小时抓一次。Reddit 有时会封禁 GitHub 的机房 IP，这时榜单保留上一次成功的内容，并标为“过时”。 |
@@ -351,7 +364,7 @@ docs/                    DESIGN · VISUAL · ARCHITECTURE · SOURCES · CHANNELS
 AI 共振同时读很多来源，把它们的交集串起来，用一个你能检查的公式排名，并且记住半年的历史。
 
 **是 LLM 在挑内容吗？** 日报热榜按公开信号计算排名。配置了 Key 时，LLM 负责写简介和今日要点；要点里的每一条都必须
-注明出处 `榜单#名次`，无效出处会被丢弃。事件精选另做相关性筛选，入门推荐则使用上文说明的独立学习分。
+注明出处 `榜单#名次`，无效出处会被丢弃。事件精选另做相关性筛选，入门推荐则使用独立的学习分（见 [docs/LEARNING.md](./docs/LEARNING.md)）。
 
 **社区动态榜单里为什么大多是 Reddit？** 没有 Key 时，X 走一个免费通道，只覆盖官方实验室账号。加上 `X_BEARER_TOKEN`，
 下一次运行就会自动改用官方 API 读取完整的关注名单。HN、Reddit 或官方页面里链接到的 X 帖子，无论如何都会免费显示。
@@ -377,10 +390,28 @@ AI 共振同时读很多来源，把它们的交集串起来，用一个你能�
 **没收到邮件？** 先看垃圾邮件箱，再看仓库的 Issues：发送失败时会自动开一个带 `mail-failure` 标签的 issue，里面有错误信息。
 在 **Actions → Mail → Run workflow** 里勾选 `test`，可以立刻发一封测试邮件。
 
-**仓库会越来越大吗？** `data` 分支每期每个榜单最多保留 60 个原始候选，超过 183 天的快照会自动删除，总共也就几 MB。
+**仓库会越来越大吗？** `data` 分支每期每个榜单最多保留 60 个原始候选，超过 183 天的快照会自动删除。每期约 0.3–0.45 MB，保留期填满后大约 60–80 MB（公开实例在 51 期时是 17 MB），另加 git 历史。
 `/api/v1` 下的所有文件每次运行都会从这些快照重新生成。
 
 ## 近期更新
+
+<details>
+<summary>2026-11-03 · 卡片更干净、同一件事只占一席、上榜仓库可挂 README 徽章</summary>
+
+对已发布的前 47 期做了一次排查，修掉了不该出现在卡片上的文字。已发布的往期在重新发布时一并清理，不需要迁移数据：
+
+- 讨论论文的 Hacker News 帖子，不再把 arXiv 页脚的 “arXivLabs is a framework…” 或 Hugging Face 的站点标语当摘要（共
+  25 条）；论文链接现在取摘要原文。
+- X 帖子的标题取第一句话并去掉 `t.co` 短链（原有 16 条标题只是一条链接），正文末尾的短链也去掉，“分享链接”不再指回帖子
+  本身（共 100 条）。
+- 只有链接的 HN 正文留空；摘要、订阅源、报告和邮件不再把帖子标题重复一遍当简介。
+- 新闻榜和社区动态榜里，同一链接页面只占一个名额：重复提交的网址或同一页面的第二条帖子移到候补（2026-10-06 的
+  “Mistral Large 4” 曾同时占第 1 和第 3）。
+- “电动车车型”“多面体模型”“移民执法人员”这类说法不再被算作 AI。
+- 新增：进过结算后开源项目榜前 10 的仓库，可以在 README 里挂[徽章](#投递)，并附一个落地页。
+- 网页：切换语言后标签页标题跟着变；超出保留期的旧期不再只给一个永远失败的重试，而是说明原因并给出去处。
+
+</details>
 
 <details>
 <summary>2026-10-23 · 换了新面孔：“报纸”主题，从玻璃仪表盘变成一份日报</summary>
@@ -425,7 +456,7 @@ AI 共振同时读很多来源，把它们的交集串起来，用一个你能�
 - 现成的主题预设（Rust、机器人、安全等方向的 `config.yaml` 变体）。
 - 更多官方站点和期刊订阅源，以小的“配方”形式贡献进来。
 - 验证 Reddit OAuth 在 GitHub 运行器上的可用性，拿到真实投票数。
-- 更多界面语言（新增一种语言只需要一个词典文件）。
+- 更多界面语言（一个界面词典，外加报告和流水线里的少量文案，步骤见 CONTRIBUTING）。
 - 一个长期运行、积累了数月历史的公开演示站。
 
 欢迎在 [Issues](https://github.com/WZZNNE/AI-Resonance/issues) 里提想法、投票。

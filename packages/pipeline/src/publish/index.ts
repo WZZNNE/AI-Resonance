@@ -34,6 +34,7 @@ import {
   searchIndexSchema,
   weeklyFileSchema,
 } from '../validate.ts'
+import { FEATURED_STATE, featuredFrom, updateFeatured, writeBadges } from './badge.ts'
 import { buildDigest, buildLlmsTxt } from './digest.ts'
 import { buildShards } from './entities.ts'
 import { buildFeed } from './feed.ts'
@@ -212,7 +213,21 @@ export const publishAll: PublishAll = async ({ store, config, outDir, today, ope
     }
   }
 
-  const removed = await out.sweep(['daily', 'weekly', 'entities', 'report', '../../share'])
+  // README badges outlive the retention window: the best settled rank is remembered in the data store.
+  const featured = updateFeatured(featuredFrom(await store.state.get<unknown>(FEATURED_STATE)), closed)
+  await store.state.set(FEATURED_STATE, featured)
+  if (siteUrl) {
+    const title = meta.find((b) => b.board === 'repos')?.title
+    await writeBadges(out, featured, {
+      siteUrl,
+      siteName: config.site.name,
+      projectUrl: config.site.repoUrl || undefined,
+      boardTitle: { en: title?.en || 'Repos', zh: title?.zh || title?.en || '开源项目' },
+      windowFrom: closed[0]?.date,
+    })
+  }
+
+  const removed = await out.sweep(['daily', 'weekly', 'entities', 'report', '../../share', '../../badge'])
   if (removed) log.info(`publish: removed ${removed} stale file(s)`)
 
   // Anything rewritten or removed means readers must refetch, so the manifest gets a fresh stamp in that case.

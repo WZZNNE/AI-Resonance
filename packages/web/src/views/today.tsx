@@ -5,7 +5,7 @@
  */
 import { BOARDS, type Board, CATEGORIES, type Category, type DailyFile, type DateStr } from '@resonance/schema'
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { useReloadOn, useResource } from '../core/api.ts'
+import { ApiError, useReloadOn, useResource } from '../core/api.ts'
 import { isWide } from '../core/media.ts'
 import { hasRoute, type RouteProps } from '../core/registry.ts'
 import { location, navigate, setTitle } from '../core/router.ts'
@@ -29,7 +29,7 @@ import { Button } from '../ui/button.tsx'
 import { Badge, boardHue, Chip } from '../ui/chip.tsx'
 import { useSwipe } from '../ui/gestures.ts'
 import { Icon } from '../ui/icons.tsx'
-import { ErrorState, Skeleton } from '../ui/state.tsx'
+import { EmptyState, ErrorState, Skeleton } from '../ui/state.tsx'
 import { Tabs, tabPanelProps } from '../ui/tabs.tsx'
 import { BoardColumn } from './board.tsx'
 import { Brief } from './brief.tsx'
@@ -247,6 +247,27 @@ function TodaySkeleton() {
   )
 }
 
+/** An edition the site does not publish: what that means, and the two ways on. */
+function MissingEdition({ date, days }: { date: DateStr; days?: number }) {
+  useEffect(() => setTitle(t('edition.missing')), [lang.value])
+  return (
+    <EmptyState
+      icon="history"
+      title={t('edition.missing')}
+      action={
+        <>
+          <Button variant="primary" href="#/" icon="today">
+            {t('notFound.home')}
+          </Button>
+          <Button href="#/archive">{t('edition.missingArchive')}</Button>
+        </>
+      }
+    >
+      <p>{t('edition.missingBody', { n: days ?? 183, date: fmt.day(date, 'long') })}</p>
+    </EmptyState>
+  )
+}
+
 /** Pure: a board's items in an edition, before any reader filter. */
 const boardTotal = (day: DailyFile, b: Board) =>
   (day.boards[b]?.top.length ?? 0) + (day.boards[b]?.runnersUp.length ?? 0)
@@ -292,9 +313,15 @@ export default function Today({ path, query }: RouteProps) {
   }, [day?.date, covered, ref.kind, m])
 
   if (!day && res.error) {
+    // A dated edition that is not published (older than retention, or never was): a way on instead of a retry.
+    const gone = ref.kind === 'date' && res.error instanceof ApiError && res.error.status === 404
     return (
       <main class="today" id="main">
-        <ErrorState error={res.error} onRetry={res.reload} />
+        {gone ? (
+          <MissingEdition date={ref.date} days={m?.retentionDays} />
+        ) : (
+          <ErrorState error={res.error} onRetry={res.reload} />
+        )}
       </main>
     )
   }

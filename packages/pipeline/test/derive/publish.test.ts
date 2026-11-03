@@ -228,6 +228,18 @@ describe('publishAll', () => {
     expect(html).toContain('Claude Opus 5')
   })
 
+  it('writes README badges for repositories of settled top lists and remembers them in the data store', async () => {
+    const store = memoryStore([...closedWindow(), openSnapshot()])
+    await run(store)
+    const site = await list(dir)
+    expect(site).toContain('badge/acme/alpha.svg')
+    expect(site).toContain('badge/acme/alpha/index.html')
+    const featured = await store.state.get<Record<string, { best: number }>>('featured')
+    expect(featured?.[ALPHA]?.best).toBeGreaterThanOrEqual(1)
+    expect(Object.keys(featured ?? {}).every((key) => key.startsWith('gh:'))).toBe(true)
+    expect(await readFile(join(dir, 'badge/acme/alpha.svg'), 'utf8')).toContain(`#${featured?.[ALPHA]?.best} on Repos`)
+  })
+
   it('is idempotent: a second run writes nothing', async () => {
     const store = memoryStore([...closedWindow(), openSnapshot()], { ...caches(), mail: MAIL })
     const first = await run(store)

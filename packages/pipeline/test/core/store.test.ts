@@ -1,4 +1,4 @@
-import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import type { SourceStatus } from '@resonance/schema'
@@ -217,5 +217,24 @@ describe('createStore', () => {
     expect(await store.readCopyCache()).toEqual({})
     await store.writeCopyCache({ 'gh:a/b': { hash: 'x', copy: { en: { blurb: 'b' } } } })
     expect(await store.readCopyCache()).toEqual({ 'gh:a/b': { hash: 'x', copy: { en: { blurb: 'b' } } } })
+  })
+
+  it('reads stored snapshots without page furniture in summaries, so old editions publish clean', async () => {
+    const store = createStore(dir, 183)
+    const labs =
+      'arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values.'
+    const paper = news(50341334, 'Agentic backdoors via pretraining poisoning', {
+      url: 'https://arxiv.org/abs/2610.37741',
+      summary: labs,
+    })
+    const kept = news(2, 'A story with its own text', { summary: 'Short, but real.' })
+    // Written as the earlier extractor left it on the data branch, bypassing the store.
+    await mkdir(join(dir, 'snapshots'), { recursive: true })
+    await writeFile(join(dir, 'snapshots', '2026-11-02.json'), JSON.stringify(snap('2026-11-02', [paper, kept])))
+    const read = await store.readSnapshot('2026-11-02')
+    expect(read?.candidates.map((c) => c.summary)).toEqual(['', 'Short, but real.'])
+    // The next merge into that edition persists the clean text.
+    await store.writeSnapshot(snap('2026-11-02', [news(3, 'later story')]))
+    expect(await readFile(join(dir, 'snapshots', '2026-11-02.json'), 'utf8')).not.toContain('arXivLabs')
   })
 })

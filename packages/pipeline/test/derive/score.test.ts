@@ -16,6 +16,7 @@ import {
   redditPost,
   repo,
   snapshot,
+  story,
   testConfig,
   xPost,
 } from './fixture.ts'
@@ -334,6 +335,35 @@ describe('caps', () => {
     expect(top.map((i) => [i.key, i.rank])).toEqual(Array.from({ length: 8 }, (_, i) => [xKey(String(i + 1)), i + 1]))
     expect(runnersUp).toEqual([])
     expect(top[7].relevance.reasons.some((r) => r.startsWith('cap:'))).toBe(false)
+  })
+
+  it('gives one linked page one place: a resubmitted HN URL or a second post on the same page waits', () => {
+    // 2026-10-06: "Mistral Large 4" was submitted twice, once with a stray backslash; both reached the top 3.
+    const stories = [
+      story(49977979, t(1), { points: 400, comments: 300, url: 'https://mistral.ai/news/mistral-large-4/\\' }),
+      story(49978116, t(1), { points: 300, comments: 200, url: 'https://mistral.ai/news/mistral-large-4/' }),
+      ...Array.from({ length: 10 }, (_, i) =>
+        story(i + 1, t(2), { points: 50, comments: 5, url: `https://example.com/ai-${i}` }),
+      ),
+    ]
+    const { top, runnersUp } = rankWindow([snapshot('2026-09-10', stories)], config, {})[0].boards.news
+    expect(top.map((i) => i.key)).toContain('hn:49977979')
+    expect(top.map((i) => i.key)).not.toContain('hn:49978116')
+    expect(runnersUp[0]).toMatchObject({ key: 'hn:49978116', rank: 11 })
+    expect(runnersUp[0].relevance.reasons).toContain('cap:perLink')
+  })
+
+  it('never lets a second item on the same page fill an empty place', () => {
+    // 2026-10-23 had 9 News stories, two of them on the same Kimi post: the board shows 8.
+    const kimi = 'https://www.kimi.ai/blog/kimi-k3-1-pro'
+    const stories = [
+      story(50212065, t(1), { points: 500, comments: 300, url: kimi }),
+      story(50212246, t(1), { points: 200, comments: 100, url: kimi }),
+      story(3, t(2), { points: 50, comments: 5, url: 'https://example.com/other' }),
+    ]
+    const { top, runnersUp } = rankWindow([snapshot('2026-09-10', stories)], config, {})[0].boards.news
+    expect(top.map((i) => i.key)).toEqual(['hn:50212065', 'hn:3'])
+    expect(runnersUp.map((i) => [i.key, i.rank])).toEqual([['hn:50212246', 3]])
   })
 
   it('keeps at most perCompany lab posts of one company in the top list', () => {

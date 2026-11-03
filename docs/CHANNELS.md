@@ -158,7 +158,7 @@ your own mailbox, with the interactive report linked and attached. No server.
 |---|---|---|
 | `enabled` | `false` | master switch |
 | `frequency` | `daily` | `daily` · `weekly` · `both` |
-| `weekday` | `1` | weekly mail day, ISO (1 = Monday) |
+| `weekday` | `2` | weekly mail day, ISO (1 = Monday; default Tuesday) |
 | `time` / `timezone` | `08:30` / `Asia/Shanghai` | your send time, in your timezone (DST handled) |
 | `lang` | `zh` | `en` · `zh` (the attached report can switch) |
 | `provider` | `smtp` | `smtp` · `resend` |
@@ -220,3 +220,23 @@ node packages/channels/src/mail/cli.ts --help
 `pnpm mail <flags>` (no `--` separator) runs the same CLI from inside `packages/channels`, so relative paths start
 there. Without `--slot`, `--test` or `--dry-run` it decides like the gate and needs `GITHUB_TOKEN` +
 `GITHUB_REPOSITORY` to read the state.
+
+## 7. README badges
+
+Every repository that reaches the Repos top list of a **settled** edition gets two static files at the site root,
+written by `packages/pipeline/src/publish/badge.ts`:
+
+| Path | What |
+|---|---|
+| `badge/<owner>/<repo>.svg` | a 20 px flat badge, e.g. "AI Resonance │ #3 on Repos": text only, no scripts or external fonts |
+| `badge/<owner>/<repo>/` | a script-free, bilingual landing page: best rank and dates, links to the repository and the app, the snippet |
+
+`<owner>/<repo>` is lower-case, as in the entity key `gh:owner/repo`. The best rank, the edition that first reached it
+and the first/last dates live in `data/state/featured.json` on the `data` branch, so a badge never gets worse and
+never disappears when its editions leave the 183-day window (at most 5 000 repositories are remembered; the
+longest-unseen go first). A preliminary edition does not count until it settles. In the web app, a repository's
+**Share** sheet shows the badge and copies the Markdown once the badge exists:
+
+```markdown
+[![AI Resonance](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>.svg)](https://wzznne.github.io/AI-Resonance/badge/<owner>/<repo>/)
+```
