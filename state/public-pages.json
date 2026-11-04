@@ -105,6 +105,11 @@
   "summary": "YAML Metadata Warning:empty or missing yaml metadata in repo card ~14T param, 114 layers, hybrid GDN/MLA, MoE (1,224 experts, top-48 + 1 shared), NVFP4. Internal codename numbat, Anthropic's next Mythos-class training run. numbat is the codename referenced in the Claude Code source leak (Mar 2026). This is a checkpoint from that training run, pulled mid-pretraining. The 772 shards total ~7.72 TB of tensor data. Each shard is safetensors format, under 10.6 GB per file. configuration_numbat.py and modeling_numbat.py are included: a complete reference implementation of the checkpoint. Its module ",
   "url": "https://huggingface.co/burner22/numbat"
  },
+ "https://huggingface.co/moonshotai/Kimi-K3.1-Pro": {
+  "at": "2026-11-04T18:44:01.780Z",
+  "summary": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, and our most capable 3T-class model to date. Post-trained from Kimi K3 with large-scale joint reinforcement learning across hundreds of downstream domains, it is the first model in the K3.1 series. With a 1-million-token context window, Kimi K3.1 Pro delivers substantial improvements in coding, 3D creation, financial research, factual accuracy, and other agentic capabilities. * Compared with Kimi K3, we replace the full-attention Gated MLA layers with Gated DeepSeek Sparse Attention (Gated DSA) layers for more efficient long-c",
+  "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+ },
  "https://huggingface.co/tencent/Hy-Nomas": {
   "at": "2026-10-28T00:56:33.123Z",
   "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
@@ -438,6 +443,11 @@
   "at": "2026-10-23T01:11:58.377Z",
   "summary": "Keane Lucas, Aengus Lynch, Luna Tong, Luke Champine, Zygi Straznickas, Dino Distefano, Harshikaa Agrawal Evyatar Ben Asher, Ava Howell, Sami Jawhar, Chris Rohlf, Nickolai Zeldovich Nicholas Carlini, Rajashree Agrawal, Jason Gross Most software is riddled with bugs, which AI can now easily find and exploit. The standard defenses against cyberattacks are no longer sufficient: we need ways to prove that code is free of bugs. Formal software verification could provide this guarantee, but it has historically required years of expert effort, making it impractical for most real-world projects. In a c",
   "url": "https://www.anthropic.com/research/formal-verification"
+ },
+ "https://www.anthropic.com/research/provable-inference": {
+  "at": "2026-11-04T18:44:01.780Z",
+  "summary": "Roy Rinberg (Anthropic), Alex Allain (Anthropic); Alessandro Chiesa (EPFL, StarkWare), Miranda Christ (MIT, RESI), Rahul Dalal (Anthropic STEM Fellows Program, Succinct), Giacomo Fenzi (EPFL), Ben Mayer (Anthropic Fellows Program, MIT), Guy Weissenberg (EPFL) When you talk to a friend in person, you have many ways to know it is really them: you can see them, hear them, shake their hand. When you talk to an AI model, you have almost none. A user querying a model today cannot check that the responses came from the specific model that a developer claims is responding, as opposed to one secretly s",
+  "url": "https://www.anthropic.com/research/provable-inference"
  },
  "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/": {
   "at": "2026-10-22T12:57:03.870Z",
