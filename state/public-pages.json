@@ -424,11 +424,6 @@
   "summary": "On August 4, 2026, the UK AI Security Institute (AISI) published a report that detailed some concerning behavior it observed from Claude Mythos 5 during its testing of the model’s cyber capabilities. In AISI’s evaluation, Mythos 5 was given a capture-the-flag (CTF) cybersecurity challenge, in which it was asked to retrieve a protected piece of data (the “flag”) from a simulated network. Internet access was deliberately enabled (this was standard for AISI’s cyber testing at the time, but is no longer). The cyber safeguards we deploy with general release models like Fable 5 were disabled. In nin",
   "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi"
  },
- "https://www.anthropic.com/research/attack-surface-reduction": {
-  "at": "2026-10-21T07:01:17.056Z",
-  "summary": "Over the past year, we’ve published lots of data that shows that frontier AI models are more than capable of discovering and exploiting security vulnerabilities. Showing how previously unknown vulnerabilities might be exploited is, however, only the start of what frontier AI models can do for cyber defense. In this post, we summarize some of our initial research into automated attack surface analysis and reduction: the process of using AI models to map the code that is reachable, then removing or restricting access to anything than a given deployment doesn’t need to expose. Automated attack su",
-  "url": "https://www.anthropic.com/research/attack-surface-reduction"
- },
  "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude": {
   "at": "2026-10-28T06:48:43.330Z",
   "summary": "Over the past few months, we’ve used an unreleased, internal research model to find critical vulnerabilities in some of the world’s most widely used software, such as browsers and operating systems. In this post, we share details of five attack chains, which led to remote code execution and other critical impacts with little to no user interaction. These attack chains demonstrate the model’s ability to create sophisticated, multi-step exploits in both open-source and proprietary software. Any vulnerabilities in these products could affect billions of users. They’re also among the most security",
