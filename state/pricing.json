@@ -6165,7 +6165,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.059,
+   "in": 0.0514,
    "k": "deepseek-v4-flash-latest",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
@@ -6216,7 +6216,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.18,
+   "cr": 0.15,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6225,7 +6225,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.1824,
+   "in": 0.1586,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7184,7 +7184,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.059,
+   "in": 0.0514,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -7749,14 +7749,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.017,
+   "cr": 0.01,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.034,
+   "in": 0.02,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.103,
+   "out": 0.06,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8374,19 +8374,6 @@
    "upd": "2025-01-10"
   },
   {
-   "ctx": 1000192,
-   "id": "minimax/minimax-01",
-   "in": 0.2,
-   "k": "minimax-01",
-   "maxOut": 40000,
-   "name": "MiniMax-01",
-   "out": 1.1,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-01-15"
-  },
-  {
    "ctx": 1000000,
    "id": "minimax/minimax-m1",
    "in": 0.55,
@@ -8399,49 +8386,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2025-06-17"
-  },
-  {
-   "alwaysOn": true,
-   "ctx": 204800,
-   "id": "minimax/minimax-m2",
-   "in": 0.255,
-   "k": "minimax-m2",
-   "maxOut": 131072,
-   "name": "MiniMax-M2",
-   "out": 1.02,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-10-27"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 65536,
-   "id": "minimax/minimax-m2-her",
-   "in": 0.3,
-   "k": "minimax-m2-her",
-   "maxOut": 2048,
-   "name": "MiniMax-M2 Her",
-   "out": 1.2,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-01-23"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.03,
-   "ctx": 204800,
-   "id": "minimax/minimax-m2.1",
-   "in": 0.3,
-   "k": "minimax-m2-1",
-   "maxOut": 131072,
-   "name": "MiniMax-M2.1",
-   "out": 1.2,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-12-23"
   },
   {
    "alwaysOn": true,
@@ -8460,14 +8404,14 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.06,
+   "cr": 0.042,
    "ctx": 204800,
    "id": "minimax/minimax-m2.7",
-   "in": 0.3,
+   "in": 0.21,
    "k": "minimax-m2-7",
-   "maxOut": 131072,
+   "maxOut": 176947,
    "name": "MiniMax-M2.7",
-   "out": 1.2,
+   "out": 0.84,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8489,7 +8433,7 @@
    "upd": "2026-06-01"
   },
   {
-   "cr": 0.015,
+   "cr": 0.0075,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8499,11 +8443,11 @@
     "max"
    ],
    "id": "minimax/minimax-m3.1-flash",
-   "in": 0.15,
+   "in": 0.075,
    "k": "minimax-m3-1-flash",
    "maxOut": 524288,
    "name": "MiniMax-M3.1-Flash",
-   "out": 0.6,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8898,7 +8842,7 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.15,
+   "cr": 0.16,
    "ctx": 262144,
    "id": "moonshotai/kimi-k2.7-code",
    "in": 0.6,
@@ -16282,5 +16226,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-05T12:43:55.262Z"
+ "updatedAt": "2026-11-05T15:44:07.772Z"
 }
