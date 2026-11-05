@@ -6136,7 +6136,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.1,
+   "cr": 0.0963,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6145,7 +6145,7 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.1035,
+   "in": 0.0963,
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
@@ -6216,7 +6216,7 @@
    "upd": "2026-04-27"
   },
   {
-   "cr": 0.15,
+   "cr": 0.18,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6225,7 +6225,7 @@
     "max"
    ],
    "id": "~moonshotai/kimi-latest",
-   "in": 0.1539,
+   "in": 0.1824,
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
@@ -7234,7 +7234,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.11,
+   "cr": 0.1023,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7243,11 +7243,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.115,
+   "in": 0.107,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 943718,
    "name": "DeepSeek V4 Pro 0813",
-   "out": 4.6,
+   "out": 4.278,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7749,14 +7749,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.015,
+   "cr": 0.013,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.029,
+   "in": 0.026,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.088,
+   "out": 0.077,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7954,6 +7954,21 @@
    "upd": "2026-09-10"
   },
   {
+   "cr": 0.003,
+   "ctx": 262144,
+   "id": "inclusionai/ling-3.0-tiny",
+   "in": 0.015,
+   "k": "ling-3-0-tiny",
+   "maxOut": 250000,
+   "name": "Ling 3.0 Tiny",
+   "out": 0.045,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-11-05"
+  },
+  {
    "cr": 0.015,
    "ctx": 1000000,
    "id": "inclusionai/ling-3.1-flash",
@@ -7974,7 +7989,7 @@
    "id": "inference-net/schematron-v2-small",
    "in": 0.05,
    "k": "schematron-v2-small",
-   "maxOut": 4096,
+   "maxOut": 8192,
    "name": "Schematron V2 Small",
    "out": 0.23,
    "p": "openrouter",
@@ -10163,7 +10178,7 @@
    "upd": "2026-05-05"
   },
   {
-   "cr": 0.013,
+   "cr": 0.009,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10171,11 +10186,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-120b",
-   "in": 0.014,
+   "in": 0.01,
    "k": "gpt-oss-120b",
    "maxOut": 65536,
    "name": "GPT OSS 120B",
-   "out": 0.052,
+   "out": 0.038,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16268,5 +16283,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-05T03:43:17.166Z"
+ "updatedAt": "2026-11-05T06:44:34.794Z"
 }
