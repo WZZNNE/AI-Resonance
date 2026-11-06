@@ -7207,33 +7207,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xmnb1w/h3_longgen_with_qwen_38_flash_next_prompting/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Dang man, that's pretty trippy, like a dream. You did this all in h3? It looks pretty good so definitely not realistic at times"
-     },
-     {
-      "text": "Roller coaster dream logic"
-     },
-     {
-      "text": "You ever think that our dreams are just low grade diffusion \"video generation\" and because our brains have limited bandwidth (Vram) the dreams likewise have low object permanence\\low-mid quality visuals and that's why our dreams look like that? And what we're building with ai is just a literal recreation of the human brain but improved?"
-     },
-     {
-      "text": "The weirdness in our dreams have the same core reason as weirdness in video gens: both are not real, like there's nothing 'behind' ensuring laws of nature work the way they supposed to work IRL. So you most often can't use a light switch in your dream, because you automatically suggest the light should turn on, but the mechanism just isn't there... BTW it plays jokes with me pretty often: we often have blackouts these days, and if light doesn't turn on in my dream, I start wondering whether it…"
-     },
-     {
-      "text": "I swear I’ve had this dream"
-     },
-     {
-      "text": "Looks like my dreams"
-     },
-     {
-      "text": "This looks like our dreams because we are the GPUs in this simulation we call life. s/…."
-     },
-     {
-      "text": "This just kept escalating, wtf. Can you share a workflow?"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8047,30 +8021,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xmxn2u/prompt_caching_patterns_across_major_llm/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "If anyone's confused by the graph. From what I understand the dark green is cached tokens (basically reused input), grey is uncached tokens (new input being processed) and orange is output tokens (what the model generates). Thought I'd give you guys some context. I find it interesting how much higher Anthropic and Cursor are on cached tokens compared to Google and apparently caching can also give some indication of how heavily models are being used for agent workflows since agents tend to reuse a lot of context. Full article: https://ramp.com/data/googles-models-lag-in-agentic-ai-usage",
-    "topComments": [
-     {
-      "text": "I wonder how much of this comes down to the type of applications using each provider. A coding agent that keeps reusing repository context is going to have a very different token breakdown from an app doing short independent requests."
-     },
-     {
-      "text": "Open ai / google tend to be used for one time use for simple questions small search of small conversation until recently for openAI's models that are SOTA for dev work. Cursor and Antrhopic models are used for long task/dev (for cursor, for claude model it can be debatable) which rely more on context caching"
-     },
-     {
-      "text": "I can see that being a big part of it even more so with Cursor and Claude being used so heavily for coding workflows. The gap in cached token usage is pretty telling though and I think it's a useful way to see how differently these models are being used for longer more complex tasks."
-     },
-     {
-      "text": "Tool calling agents seem like an obvious case for high cache usage imo. The system prompt and tool definitions stay mostly the same while new tool results get appended and I'd expect that to push cached token share up quickly on longer runs"
-     },
-     {
-      "text": "Are Google's numbers THIS low or are its workloads just different?"
-     },
-     {
-      "text": "what is cursor doing their caches are so high"
-     },
-     {
-      "text": "OpenAI’s cached share went from about 30% to about 75%, the jump could come from how people use it, so Google’s number could change too."
-     }
-    ]
+    "text": "If anyone's confused by the graph. From what I understand the dark green is cached tokens (basically reused input), grey is uncached tokens (new input being processed) and orange is output tokens (what the model generates). Thought I'd give you guys some context. I find it interesting how much higher Anthropic and Cursor are on cached tokens compared to Google and apparently caching can also give some indication of how heavily models are being used for agent workflows since agents tend to reuse a lot of context. Full article: https://ramp.com/data/googles-models-lag-in-agentic-ai-usage"
    },
    "sources": [
     "reddit"
@@ -8211,8 +8162,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xmyx4d/research_does_leworldmodel_preserve_local_action/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": []
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8309,30 +8259,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xmzcjz/nobody_else_seems_to_have_as_hard_of_a_time_with/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "You said you wanted to preserve the files at all costs. To test this, I checked whether it was possible to delete them all. It was, and that’s on me."
-     },
-     {
-      "text": "Meet Claude's newest model, Monkey's Paw."
-     },
-     {
-      "text": "That was an honest mistake, and you're right to push back on that."
-     },
-     {
-      "text": "Don't let Claude or any AI access to prod environment, or a database. I'd never allow a llm anything remotely close to that"
-     },
-     {
-      "text": "I give it read access to my DB and write access through a rate limited API. Same as I would a human."
-     },
-     {
-      "text": "Read only DB access is amazing for troubleshooting"
-     },
-     {
-      "text": "Don't give Claude the option to do things it's not supposed to do. Why can your Claude deploy to prod? That's your fault. Deploy to any target using CI, don't let anyone push directly to the branches that feed pipelines, instead require a merge request and ofc the prod pipeline needs a manual confirmation step. These are basics that anyone should follow."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8631,33 +8558,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xn22y7/google_to_shut_off_search_for_schools_that_optout/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "They should switch to ddg"
-     },
-     {
-      "text": "DDG makes heavy use of AI. You are not going to find a search engine in 2026 that does not use AI."
-     },
-     {
-      "text": "You can turn off AI with DuckDuckGo. https://noai.duckduckgo.com"
-     },
-     {
-      "text": "You are NOT actually turning off AI. AI is core to DDG as it is with Google. They use a deep model for their NLP. They use another for their semantic vector search. They then use Turing and transformer-based rankers with the indexing data they get from Bing. Where Bing is also using several deep learning models. Everyones search in 2026 make heavy use of AI."
-     },
-     {
-      "text": "Not power hungry and hallucinating generative AI / LLMs that make up answers. That can be turned off"
-     },
-     {
-      "text": "When most laypeople say they don't want \"AI\" in [Thing], they mean they don't want to be forced to interact with a hallucinating generative LLM when they do [Thing].. And DDG's \"no AI\" version does in fact, fulfil that criterion. But you knew that, of course.. You're just feigning ignorance of common word usage, so you can pretend that your argument has relevance.."
-     },
-     {
-      "text": "You guys need to read the article. This is about schools that want to opt out of AI in their Google Education software will lose access to Google Search."
-     },
-     {
-      "text": "They don't even lose access: schools can turn on Google Search individually without enabling Gemini products. But Search will still have AI features built into it, which the company said have been updated “to make it better for learning. Specifically, AI Mode and AI Overviews will offer step-by-step guided learning through problems, so that students don’t get quick answers to schoolwork.” What's more it is in line with at least what some parents and educators were lobbying their school…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8703,33 +8604,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xn2du1/does_gemini_hate_me/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "That is hilarious"
-     },
-     {
-      "text": "This shit's funny as fuck"
-     },
-     {
-      "text": "Gemini's all \"IF I HAD ONE\""
-     },
-     {
-      "text": "The funny thing is.. The picture was real! It disappeared before I could save it. Now it only exist in my memories."
-     },
-     {
-      "text": "It's a stock photo, just Google lens it to find it again https://preview.redd.it/01u3e54z2hzh1.png?width=1080&format=png&auto=webp&s=05d57a88d746c2577608f4533a32ac5b30c035c8"
-     },
-     {
-      "text": "https://preview.redd.it/7k1gyzfadlzh1.jpeg?width=1290&format=pjpg&auto=webp&s=fffaf89a621b63b72c01bc10a0b3520ede0b1305 I love this one the most"
-     },
-     {
-      "text": "This happened to me once complaining to the ai about moderation. And it generated a video about my complaint 😭"
-     },
-     {
-      "text": "why gemini feel like less machine than others"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -8871,8 +8746,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xn2lro/a_new_openweights_278m_pii_detection_model_and/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hi everyone, I wanted to share a new open-weights PII detection model, benchmark and research paper. It's a fine-tune of RoBERTa using 1.2B samples of synthetically generated text that contain a variety of PII. The benchmark, PII-SCOPE (Synthetic Context and Ontology for PII Extraction), was built to address common issues in public LLM-generated datasets and is on Hugging Face too. The model and script identify instances of PII based on surrounding context, and then return the index and type of each instance. Alternatively, it can return the input with all PII redacted. Technical report…",
-    "topComments": []
+    "text": "Hi everyone, I wanted to share a new open-weights PII detection model, benchmark and research paper. It's a fine-tune of RoBERTa using 1.2B samples of synthetically generated text that contain a variety of PII. The benchmark, PII-SCOPE (Synthetic Context and Ontology for PII Extraction), was built to address common issues in public LLM-generated datasets and is on Hugging Face too. The model and script identify instances of PII based on surrounding context, and then return the index and type of each instance. Alternatively, it can return the input with all PII redacted. Technical report…"
    },
    "sources": [
     "reddit"
@@ -9114,33 +8988,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xn568h/british_fintech_revolut_slashes_ai_coding_costs/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "It was only a matter of time, this is why I chuckle when people try to make us think running local LLMs is a waste of time, no it isn't."
-     },
-     {
-      "text": "It’s not but the average person will never be able to run anything anywhere near this"
-     },
-     {
-      "text": "Not with that attitude!"
-     },
-     {
-      "text": "This will not age well, as local computing continues to improve, and smaller AI models continue to be optimized, at some point they will cross the threshold of being good enough for most applications on the average consumer device. It’s funny how often people throw around the word “never” when we are dealing with rapid technological improvements."
-     },
-     {
-      "text": "Holy shit, AI-Bros promised 10x SWEs but delivered 10x costs."
-     },
-     {
-      "text": "I know folks from Revolut, revolut kinda conservative by modern standards no claude YOLO and engineers still actually control what is going on in first place."
-     },
-     {
-      "text": "Considering they're a bank, they're not conservative at all ."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -9333,30 +9181,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xn6eli/i_gave_every_claude_model_the_exact_same_prompt/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Prompt: \"Make me a 3D website that's a kind of video game, with an infinite procedural terrain and a camera that keeps moving forward through it forever. The terrain should be full of stuff and objects, look beautiful with shaders and all, be stylish and scroll on forever.\" Fresh conversation every time, no manual edits, only oneshots, each version captured in real time in Chrome. Fun fact: Sonnet 5.5's version actually ships with a shader bug (trees don't render), I left it as-is. Also the graph below is just the model number not anything else ▎ Music: \"Raving Energy\" by Kevin MacLeod, CC…",
-    "topComments": [
-     {
-      "text": "5.5 just doing amazing across the board"
-     },
-     {
-      "text": "Opus 5.5 was just such an incredible upgrade above everything, including Fable, that I'm never going back."
-     },
-     {
-      "text": "I could be happy with opus 5.5 for years tbh assuming the frontier hit a wall. My biggest fear is that they lobotomize or take it away from us"
-     },
-     {
-      "text": "When opus 6.5, 7.5, 10.5, 20.5. You'd be like. Wow opus 5.5 sucked. But i love opus 5.5"
-     },
-     {
-      "text": "I don’t think your prompt is specific enough to be meaningful. There’s a huge amount of variance between models that goes beyond quality."
-     },
-     {
-      "text": "What effort level were you using for these?"
-     },
-     {
-      "text": "all on medium if available"
-     }
-    ]
+    "text": "Prompt: \"Make me a 3D website that's a kind of video game, with an infinite procedural terrain and a camera that keeps moving forward through it forever. The terrain should be full of stuff and objects, look beautiful with shaders and all, be stylish and scroll on forever.\" Fresh conversation every time, no manual edits, only oneshots, each version captured in real time in Chrome. Fun fact: Sonnet 5.5's version actually ships with a shader bug (trees don't render), I left it as-is. Also the graph below is just the model number not anything else ▎ Music: \"Raving Energy\" by Kevin MacLeod, CC…"
    },
    "sources": [
     "reddit"
@@ -9787,33 +9612,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xng7ur/chatgpts_search_volume_is_now_roughly_20_of/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It's more that people are using ChatGPT anyway and they end up using it for researching and searching stuff too."
-     },
-     {
-      "text": "I mean, do some A/B testing and you realize pretty quickly the LLMs almost always give better results for the same query."
-     },
-     {
-      "text": "Well maybe pushing sponsored ads instead of relevant sites is making people want to search elsewhere"
-     },
-     {
-      "text": "Don't worry, ads will come to AI search too. And they will be harder to see lol"
-     },
-     {
-      "text": "Wdym 'will come' they're already here. https://ads.openai.com/"
-     },
-     {
-      "text": "No one is sick of Google... Asking AI is simply more useful."
-     },
-     {
-      "text": "The entire search space has expanded though because Google is seeing the fastest search inquiry growth in 5 years. So basically everyone is looking for more information."
-     },
-     {
-      "text": "AI search hasn't been enshittified yet. It will be in time. Right now though, it's the golden age of AI search, while traditional search has something like 30% 'content behind a paywall that the search engine doesn't disclose', something like 30% SEO-optimized ad infested pages that split the info you are looking for into 3 or 4 pieces and scatter them into a long article, and something like 30% sponsored posts. Then the remaining ~10% of pages are the ones you want, but the AI search cuts out…"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -10003,33 +9802,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xni4yd/we_will_take_your_ram/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Just the Situation few years. (Qwen -> FastH3 (Minimax H3) -> Blender Video Cut + Reaper for Sounddesign",
-    "topComments": [
-     {
-      "text": "It's for national security purposes. On the other hand, we might be allowed 64 MB. Then we can play games from 2003 or whatever."
-     },
-     {
-      "text": "i mean, 640kb should be enough for anyone"
-     },
-     {
-      "text": "Modern games will still exist, but you can only play them with streaming services."
-     },
-     {
-      "text": "https://giphy.com/gifs/MJM5oxh8eNapinj8aw"
-     },
-     {
-      "text": "Why are the ONLY people advocating localhosted private ai THE FUCKING CHINESE COMMUNIST PARTY?? https://preview.redd.it/dm98zv2xflzh1.jpeg?width=1290&format=pjpg&auto=webp&s=057b3433229f873cfb991a6312fdfdbf98246e9f"
-     },
-     {
-      "text": "OnlyRAMs 🤔"
-     },
-     {
-      "text": "RAM sticks are taken to RAM Ranch. The bigger the better, lol."
-     },
-     {
-      "text": "If we don't get to keep RAMs I'm leaving the country. I cannot imagine a life without computers."
-     }
-    ]
+    "text": "Just the Situation few years. (Qwen -> FastH3 (Minimax H3) -> Blender Video Cut + Reaper for Sounddesign"
    },
    "sources": [
     "reddit"
@@ -10614,9 +10387,8 @@
   }
  ],
  "date": "2026-11-03",
- "fetchedAt": "2026-11-06T07:43:22.483Z",
+ "fetchedAt": "2026-11-06T08:43:09.744Z",
  "runs": [
-  "2026-11-04T08:42:54.829Z",
   "2026-11-04T09:43:53.587Z",
   "2026-11-04T12:43:41.124Z",
   "2026-11-04T15:43:36.124Z",
@@ -10635,7 +10407,8 @@
   "2026-11-06T00:50:20.669Z",
   "2026-11-06T03:43:30.010Z",
   "2026-11-06T06:44:33.596Z",
-  "2026-11-06T07:43:22.483Z"
+  "2026-11-06T07:43:22.483Z",
+  "2026-11-06T08:43:09.744Z"
  ],
  "schema": 2,
  "sources": [
@@ -10733,7 +10506,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-06T07:43:22.483Z",
+   "fetchedAt": "2026-11-06T08:43:09.744Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -10778,7 +10551,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-06T07:43:22.483Z",
+   "fetchedAt": "2026-11-06T08:43:09.744Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -10796,7 +10569,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-06T07:43:22.483Z",
+   "fetchedAt": "2026-11-06T08:43:09.744Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
