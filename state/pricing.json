@@ -1228,6 +1228,28 @@
    "upd": "2026-09-01"
   },
   {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 10,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "claude-fable-5-2",
+   "in": 8,
+   "k": "claude-fable-5-2",
+   "maxOut": 128000,
+   "name": "Claude Fable 5.2",
+   "out": 40,
+   "p": "anthropic",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-09"
+  },
+  {
    "budget": {
     "min": 1024
    },
@@ -3226,7 +3248,7 @@
   {
    "alwaysOn": true,
    "cr": 0.2,
-   "ctx": 131072,
+   "ctx": 1048576,
    "id": "deep-research-max-preview-04-2026",
    "in": 2,
    "k": "deep-research-max-preview-04-2026",
@@ -3241,7 +3263,7 @@
   {
    "alwaysOn": true,
    "cr": 0.2,
-   "ctx": 131072,
+   "ctx": 1048576,
    "id": "deep-research-preview-04-2026",
    "in": 2,
    "k": "deep-research-preview-04-2026",
@@ -6090,9 +6112,9 @@
    "upd": "2025-06-10"
   },
   {
-   "cr": 0.25,
+   "cr": 0.2,
    "ctx": 1000000,
-   "cw": 12.5,
+   "cw": 10,
    "efforts": [
     "low",
     "medium",
@@ -6101,11 +6123,11 @@
     "max"
    ],
    "id": "~anthropic/claude-fable-latest",
-   "in": 10,
+   "in": 8,
    "k": "claude-fable-latest",
    "maxOut": 128000,
    "name": "Claude Fable Latest",
-   "out": 50,
+   "out": 40,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6688,6 +6710,28 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-01"
+  },
+  {
+   "cr": 0.2,
+   "ctx": 1000000,
+   "cw": 10,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "anthropic/claude-fable-5.2",
+   "in": 8,
+   "k": "claude-fable-5-2",
+   "maxOut": 128000,
+   "name": "Claude Fable 5.2",
+   "out": 40,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-09"
   },
   {
    "cr": 0.1,
@@ -7279,7 +7323,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.074501,
+   "cr": 0.074081,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7287,11 +7331,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.894012,
+   "in": 0.888966,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.788024,
+   "out": 1.777932,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7847,14 +7891,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8257,6 +8301,29 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-04-29"
+  },
+  {
+   "cr": 0.004,
+   "ctx": 1048576,
+   "cw": 0.125,
+   "efforts": [
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "meta/muse-ember",
+   "in": 0.1,
+   "k": "muse-ember",
+   "maxOut": 943718,
+   "name": "Muse Ember",
+   "out": 0.5,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-09"
   },
   {
    "cr": 0.04,
@@ -9167,7 +9234,7 @@
    "k": "nemotron-3-5-super-vl",
    "maxOut": 943718,
    "name": "Nemotron 3.5 Super VL",
-   "out": 0.5,
+   "out": 0.47,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10180,7 +10247,7 @@
    "upd": "2025-08-05"
   },
   {
-   "cr": 0.03,
+   "cr": 0.009,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10188,11 +10255,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-20b",
-   "in": 0.03,
+   "in": 0.018,
    "k": "gpt-oss-20b",
-   "maxOut": 117964,
+   "maxOut": 32768,
    "name": "GPT OSS 20B",
-   "out": 0.13,
+   "out": 0.09,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12003,11 +12070,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3-flash",
-   "in": 0.0335,
+   "in": 0.15,
    "k": "glm-5-3-flash",
-   "maxOut": 131072,
+   "maxOut": 943717,
    "name": "GLM-5.3-Flash",
-   "out": 0.083,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16267,5 +16334,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-09T18:43:50.373Z"
+ "updatedAt": "2026-11-09T21:43:37.533Z"
 }
