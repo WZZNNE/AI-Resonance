@@ -6314,7 +6314,7 @@
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 9.3388,
+   "out": 10.5572,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7323,7 +7323,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.074081,
+   "cr": 0.079605,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7331,11 +7331,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.888966,
+   "in": 0.95526,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.777932,
+   "out": 1.91052,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7746,7 +7746,7 @@
    "upd": "2026-08-13"
   },
   {
-   "cr": 0.075,
+   "cr": 0.0825,
    "ctx": 1048576,
    "cw": 0.041667,
    "efforts": [
@@ -7755,11 +7755,11 @@
     "high"
    ],
    "id": "google/gemini-3.8-flash",
-   "in": 0.75,
+   "in": 0.825,
    "k": "gemini-3-8-flash",
    "maxOut": 65536,
    "name": "Gemini 3.8 Flash",
-   "out": 3.75,
+   "out": 4.125,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7891,14 +7891,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.046,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.08,
    "k": "gemma-4-26b-a4b-it",
-   "maxOut": 235929,
+   "maxOut": 128000,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8249,14 +8249,14 @@
    "upd": "2024-09-25"
   },
   {
-   "cr": 0.295,
+   "cr": 0.71,
    "ctx": 131072,
    "id": "meta-llama/llama-3.3-70b-instruct",
-   "in": 0.59,
+   "in": 0.71,
    "k": "llama-3-3-70b-instruct",
-   "maxOut": 32768,
+   "maxOut": 115200,
    "name": "Llama-3.3-70B-Instruct",
-   "out": 0.79,
+   "out": 0.71,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -8277,7 +8277,7 @@
    "upd": "2025-04-05"
   },
   {
-   "ctx": 327680,
+   "ctx": 1310720,
    "id": "meta-llama/llama-4-scout",
    "in": 0.1,
    "k": "llama-4-scout",
@@ -9626,6 +9626,20 @@
   },
   {
    "cr": 0.175,
+   "ctx": 128000,
+   "id": "openai/gpt-5.2-chat",
+   "in": 1.75,
+   "k": "gpt-5-2-chat",
+   "maxOut": 32000,
+   "name": "GPT-5.2 Chat",
+   "out": 14,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-12-10"
+  },
+  {
+   "cr": 0.175,
    "ctx": 400000,
    "efforts": [
     "low",
@@ -10247,7 +10261,7 @@
    "upd": "2025-08-05"
   },
   {
-   "cr": 0.009,
+   "cr": 0.03,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10255,11 +10269,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-20b",
-   "in": 0.018,
+   "in": 0.03,
    "k": "gpt-oss-20b",
-   "maxOut": 32768,
+   "maxOut": 117964,
    "name": "GPT OSS 20B",
-   "out": 0.09,
+   "out": 0.13,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10557,11 +10571,11 @@
   {
    "ctx": 40960,
    "id": "qwen/qwen3-14b",
-   "in": 0.12,
+   "in": 0.1,
    "k": "qwen3-14b",
-   "maxOut": 16384,
+   "maxOut": 36864,
    "name": "Qwen3 14B",
-   "out": 0.24,
+   "out": 0.22,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11314,27 +11328,6 @@
    "upd": "2026-10-13"
   },
   {
-   "ctx": 1048576,
-   "efforts": [
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "xhigh",
-    "max"
-   ],
-   "id": "stealth/crouton-alpha",
-   "in": 0,
-   "k": "crouton-alpha",
-   "maxOut": 943718,
-   "name": "Crouton Alpha",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-11-03"
-  },
-  {
    "alwaysOn": true,
    "ctx": 262144,
    "id": "stepfun/step-3.5-flash",
@@ -11440,7 +11433,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11448,11 +11441,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11497,7 +11490,7 @@
    "upd": "2026-11-04"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11505,11 +11498,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11577,6 +11570,26 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-15"
+  },
+  {
+   "ctx": 1048576,
+   "efforts": [
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "max"
+   ],
+   "id": "thinkingmachines/inkling-2-small:free",
+   "in": 0,
+   "k": "inkling-2-small",
+   "maxOut": 131072,
+   "name": "Inkling 2 Small (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-05"
   },
   {
    "cr": 0.1,
@@ -16334,5 +16347,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-09T21:43:37.533Z"
+ "updatedAt": "2026-11-10T00:49:32.714Z"
 }
