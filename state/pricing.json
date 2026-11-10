@@ -7021,6 +7021,43 @@
    "upd": "2026-09-28"
   },
   {
+   "cr": 0.028,
+   "ctx": 1024000,
+   "efforts": [
+    "high"
+   ],
+   "id": "baidu/ernie-5.5-flash-preview",
+   "in": 0.28,
+   "k": "ernie-5-5-flash-preview",
+   "maxOut": 921600,
+   "name": "ERNIE-5.5-Flash-Preview",
+   "out": 1.13,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-10"
+  },
+  {
+   "cr": 0.113,
+   "ctx": 1024000,
+   "efforts": [
+    "none",
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "baidu/ernie-light-dt-1.0-intl",
+   "in": 1.13,
+   "k": "ernie-light-dt-1-0-intl",
+   "maxOut": 131072,
+   "name": "ERNIE-Light-DT-1.0",
+   "out": 3.94,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-10"
+  },
+  {
    "ctx": 262144,
    "id": "bytedance-seed/seed-2-1-turbo",
    "in": 0.5,
@@ -7342,7 +7379,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.079605,
+   "cr": 0.074501,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7350,11 +7387,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.95526,
+   "in": 0.894012,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.91052,
+   "out": 1.788024,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8206,14 +8243,14 @@
    "upd": "2026-11-06"
   },
   {
-   "cr": 0.4,
+   "cr": 0.3,
    "ctx": 8000,
    "id": "mancer/weaver",
-   "in": 0.4,
+   "in": 0.3,
    "k": "weaver",
    "maxOut": 6000,
    "name": "Weaver (alpha)",
-   "out": 0.75,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -11685,14 +11722,14 @@
    "upd": "2026-10-13"
   },
   {
-   "cr": 0.35,
+   "cr": 0.2,
    "ctx": 6144,
    "id": "undi95/remm-slerp-l2-13b",
-   "in": 0.35,
+   "in": 0.3,
    "k": "remm-slerp-l2-13b",
    "maxOut": 5529,
    "name": "ReMM SLERP 13B",
-   "out": 0.65,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -12080,7 +12117,7 @@
    "upd": "2026-04-07"
   },
   {
-   "cr": 0.0051,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -12088,7 +12125,7 @@
     "xhigh"
    ],
    "id": "z-ai/glm-5.2",
-   "in": 0.0061,
+   "in": 0.007,
    "k": "glm-5-2",
    "maxOut": 943718,
    "name": "GLM-5.2",
@@ -16390,5 +16427,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-10T18:43:23.498Z"
+ "updatedAt": "2026-11-10T21:43:44.302Z"
 }
