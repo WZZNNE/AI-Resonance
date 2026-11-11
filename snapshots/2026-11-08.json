@@ -6283,33 +6283,7 @@
     "permalink": "https://www.reddit.com/r/StableDiffusion/comments/1xqx0jt/minimax_h3_single_frame_edit_excels_at_character/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Basically MiniMax H3: Has great prompt following Respects character identity (art style and design) from the input images Can generate single frame images So what's the point of training a character model if you can just give MiniMax H3 character design reference and generate any scene? The only two reasons I see is 1) you want to use style known by your target base model to generate image of the learned character. 2) you want to apply some concepts known by the target base model only. What do you think? Here's the workflow I used for the images.",
-    "topComments": [
-     {
-      "text": "I dunno Neymar looks odd, for me that was a identity preservation fail there."
-     },
-     {
-      "text": "It's because the model only knows what he looks like when he is lying on the ground crying."
-     },
-     {
-      "text": "He’s the one character flux has no problems generating lying in grass"
-     },
-     {
-      "text": "The horrible reference image probably doesn't help, the very hard shadows on half the face and lack of side profile reference is what caused this i think, i could be wrong though"
-     },
-     {
-      "text": "image quality is not that good dont you see? its kinda smeary without microdetails"
-     },
-     {
-      "text": "Why the downvotes? H3 image generation is great at prompt adherence and character refs, but the quality is on par with SDXL"
-     },
-     {
-      "text": "Do we really need character LoRAs anymore? I dont know how many times we have to do this silly song and dance... Look at the image of Stark (red axe guy). Numerous wrong details on his clothing because the reference image doesn't show him from behind. The model can't magically come up with accurate details it has never seen. If you actually tried more complex/unusual angles rather than just frontal shots then you would realize that these single reference gens would fall apart. The only fix for…"
-     },
-     {
-      "text": "Because you will always eventually hit a head angle that your single reference doesn’t cover, at least for realism work, no clue with animated."
-     }
-    ]
+    "text": "Basically MiniMax H3: Has great prompt following Respects character identity (art style and design) from the input images Can generate single frame images So what's the point of training a character model if you can just give MiniMax H3 character design reference and generate any scene? The only two reasons I see is 1) you want to use style known by your target base model to generate image of the learned character. 2) you want to apply some concepts known by the target base model only. What do you think? Here's the workflow I used for the images."
    },
    "sources": [
     "reddit"
@@ -6357,8 +6331,7 @@
     "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xqy4k3/letting_an_llm_edit_desktop_apps_live_in_lisp/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I’ve been working on AffrescoUI, an open-source engine for native desktop apps that their users can reshape while they’re running, just by asking an LLM. I’d love feedback from people building with LLMs. Each app is a program in a small Lisp I wrote, with commands, settings, hooks and advice, holding the app’s whole layout, data and behaviour. A native C++/OpenGL engine runs it, and every app is sandboxed. When a user asks for a change, the model proposes a small edit, the user previews it live in the running app, and then keeps it or undoes it. The model can never approve its own change.…",
-    "topComments": []
+    "text": "I’ve been working on AffrescoUI, an open-source engine for native desktop apps that their users can reshape while they’re running, just by asking an LLM. I’d love feedback from people building with LLMs. Each app is a program in a small Lisp I wrote, with commands, settings, hooks and advice, holding the app’s whole layout, data and behaviour. A native C++/OpenGL engine runs it, and every app is sandboxed. When a user asks for a change, the model proposes a small edit, the user previews it live in the running app, and then keeps it or undoes it. The model can never approve its own change.…"
    },
    "sources": [
     "reddit"
@@ -6496,33 +6469,7 @@
     "permalink": "https://www.reddit.com/r/GeminiAI/comments/1xqzlzs/what_did_i_do_to_trigger_this/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Ok so this happened this morning. i tried to open gemini and it told me my account got restricted. I went to take action. It asked me to verify my account, so i did. When i got my account verified, it took me to image 2. I got confused and opened gemini again, and it let me use it. Only later did i see these 2 emails. I would think its a scam, but i only realized it happened because i opened the gemini website and it wouldnt let me in, and the email it was sent from is an official google email (seen in screenshot 4)",
-    "topComments": [
-     {
-      "text": "You likely know more than we do"
-     },
-     {
-      "text": "I have no idea. I can't think of what would have triggered it"
-     },
-     {
-      "text": "Love (not really) that you’re getting downvoted for this comment. Wtf"
-     },
-     {
-      "text": "Pick one: -use jailbreak that contain malicious coding (asking gemini to create game cheat etc) -generate nsfw image of celebs or minor -upgrading to plus/pro/ultra account from dodgy third party reseller -using gemini on vpn, could trigger suspicious account activity -google just having a brain fart on its own. -if you really didn't do anything maybe worth changing your password."
-     },
-     {
-      "text": "Another is hooking your account into a 3rd party program so you can dodge full price API costs."
-     },
-     {
-      "text": "I was chatting with Gemini about the fact that I switched to grapheneos. I didn't do anything close to the rest of those"
-     },
-     {
-      "text": "Graphene OS? Off to the jail immediately:)"
-     },
-     {
-      "text": "¯\\_(ツ)_/¯"
-     }
-    ]
+    "text": "Ok so this happened this morning. i tried to open gemini and it told me my account got restricted. I went to take action. It asked me to verify my account, so i did. When i got my account verified, it took me to image 2. I got confused and opened gemini again, and it let me use it. Only later did i see these 2 emails. I would think its a scam, but i only realized it happened because i opened the gemini website and it wouldnt let me in, and the email it was sent from is an official google email (seen in screenshot 4)"
    },
    "sources": [
     "reddit"
@@ -6715,33 +6662,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xr09nq/does_censorship_exist_in_country_according_to/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I wrote a small program that asks the same Yes/No question about every country to a language model, and generates an SVG world map that visualizes the model's responses: https://github.com/p-e-w/llm-beliefs I'm rather surprised by the results...",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! Stylome classified this post's text as human-written . View analysis Learn more I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Sonnet a real one."
-     },
-     {
-      "text": "The only accurate one"
-     },
-     {
-      "text": "Haha. Qwen 3.8 tryna be cute."
-     },
-     {
-      "text": "+1000 credit points"
-     },
-     {
-      "text": "Love Sonnet 5.5 being so efficient that says \"Yes, next question\"."
-     },
-     {
-      "text": "I wonder why kimi k3 said no for argentina"
-     },
-     {
-      "text": "Censorship is everywhere. The all blue map is correct."
-     }
-    ]
+    "text": "I wrote a small program that asks the same Yes/No question about every country to a language model, and generates an SVG world map that visualizes the model's responses: https://github.com/p-e-w/llm-beliefs I'm rather surprised by the results..."
    },
    "sources": [
     "reddit"
@@ -6924,18 +6845,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xr1o9g/consumer_gemini_autonomously_ingests_drive/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "In 2023, Google launched Gemini Workspace extensions with an explicit promise: personal content from Gmail, Docs, and Drive \"is not seen by human reviewers\" . Google has quietly reversed this commitment. Under updated Google Help Answer 16836988 and in an October 16 edit to their aforementioned 2023 blogpost, Google explicitly confirms that connected Drive/email is routed into human review pipelines, with clear warnings that what reviewers see \"may just be the email or file\" and \"don't connect your apps to Gemini Apps if they contain confidential information that you wouldn't want a reviewer…",
-    "topComments": [
-     {
-      "text": "There's an AI inbox feature in Gmail now, in beta. I wonder if this also puts things in human review, in which case the issue is quite serious."
-     },
-     {
-      "text": "I haven't stress-tested that specific beta yet, but it wouldn't surprise me at all. Under Google's Workspace Experiments terms for personal accounts (Answer 13447401), they explicitly state that data from generative features in Gmail can be reviewed by human contractors and kept for up to 4 years. That's what makes the Gemini Workspace connector reversal so egregious: Google onboarded millions of users under the explicit 2023 promise that human reviewers would never see private Drive files and…"
-     },
-     {
-      "text": "This is such a breach of trust. I'm gonna take a deeper look at this. Thanks for the heads up!"
-     }
-    ]
+    "text": "In 2023, Google launched Gemini Workspace extensions with an explicit promise: personal content from Gmail, Docs, and Drive \"is not seen by human reviewers\" . Google has quietly reversed this commitment. Under updated Google Help Answer 16836988 and in an October 16 edit to their aforementioned 2023 blogpost, Google explicitly confirms that connected Drive/email is routed into human review pipelines, with clear warnings that what reviewers see \"may just be the email or file\" and \"don't connect your apps to Gemini Apps if they contain confidential information that you wouldn't want a reviewer…"
    },
    "sources": [
     "reddit"
@@ -7085,33 +6995,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xr3g3i/deepseek_v41_flash_used_rea_to_reverseengineer_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Disclosure: I work on AgenC Core, the open-source agent harness used here: https://github.com/tetsuo-ai/agenc-core I gave DeepSeek V4.1 Flash (effort max) one prompt and the original Sopwith executable from 1984: a 43 KB DOS binary, with no source code. It had REA connected as an MCP server (https://github.com/morluto/rea), which runs Ghidra under the hood. Then it worked on its own for an hour, in a sandbox with no internet. What it did: Decompiled the whole binary with REA and worked out the game loop, controls, flight physics, scoring, computer planes and world layout. Wrote a Python…",
-    "topComments": [
-     {
-      "text": "Someone once, long ago, paid me good money to rip an Atari computer cart, and add features to an app. All without the 6502 source Suspect AI could do it in 1/1000 of the time it took me ."
-     },
-     {
-      "text": "The full prompt is here: https://github.com/tetsuo-ai/agenc-core/blob/showcase/sopwith-rea-prompt/showcase/sopwith-rea/PROMPT.md ."
-     },
-     {
-      "text": "68 cents pretty expensive for this ngl we must accelerate"
-     },
-     {
-      "text": "testing larger games now"
-     },
-     {
-      "text": "Thanks for your contributions bro"
-     },
-     {
-      "text": "did the same with another 1984 CGA banger (alleycat). In short: this absolute classic is now in glorious VGA. all done on terra very high (< 1$ i guess) https://preview.redd.it/vqj65dpulf0i1.jpeg?width=320&format=pjpg&auto=webp&s=2b42d5966dbd0aa233a195ecc589af9cf88dfc54"
-     },
-     {
-      "text": "At least call out the game name in your title, some of us have nostalgia."
-     },
-     {
-      "text": "I freakin' loved this game when I was a kid"
-     }
-    ]
+    "text": "Disclosure: I work on AgenC Core, the open-source agent harness used here: https://github.com/tetsuo-ai/agenc-core I gave DeepSeek V4.1 Flash (effort max) one prompt and the original Sopwith executable from 1984: a 43 KB DOS binary, with no source code. It had REA connected as an MCP server (https://github.com/morluto/rea), which runs Ghidra under the hood. Then it worked on its own for an hour, in a sandbox with no internet. What it did: Decompiled the whole binary with REA and worked out the game loop, controls, flight physics, scoring, computer planes and world layout. Wrote a Python…"
    },
    "sources": [
     "reddit"
@@ -7213,33 +7097,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xr3ymf/gpt55_dataset_across_my_used_25_billion_tokens/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Cheers for u/New_Comfortable7240 for santitisation! 12,121 tool calls here!",
-    "topComments": [
-     {
-      "text": "Your post is getting popular and we just featured it on our Discord! Come check it out! You've also been given a special flair for your contribution. We appreciate your post! I am a bot and this action was performed automatically."
-     },
-     {
-      "text": "Cool but OpenAI will consider this as a distillation attack"
-     },
-     {
-      "text": "Well, I consider their model training a distillation attack on humankind. I see no moral difference."
-     },
-     {
-      "text": "They have better lawyers than OP"
-     },
-     {
-      "text": "Which isn't illegal or immoral in any way..."
-     },
-     {
-      "text": "They can consider it whatever they want, but outside of banning OP's account for a TOS violation, there isn't much they can do (i.e. as the output from AI is not copyrightable)"
-     },
-     {
-      "text": "The only reason I was able to burn this much is because I had a glitch for unlimited. (https://www.reddit.com/r/codex/comments/1tvx8nu/on\\_the\\_free\\_plan\\_a\\_glitch\\_meant\\_i\\_got\\_unlimited/) I wouldn't be using ChatGPT again, probably Claude instead. I'm broke too."
-     },
-     {
-      "text": "12,121 tool calls is wild. This is actually pretty interesting to dig through. Real-world agent traces are useful"
-     }
-    ]
+    "text": "Cheers for u/New_Comfortable7240 for santitisation! 12,121 tool calls here!"
    },
    "sources": [
     "reddit"
@@ -7289,15 +7147,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xr47tw/i_merged_attention_and_mlp_processing_into_a/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hi everyone! I've been experimenting with an alternative Transformer architecture called GAP (Gated Attention Projection) . The main idea is to combine attention and MLP-style processing into a single gated block, instead of using the standard separate attention and feed-forward sublayers. I tested it against a standard Transformer using 100 million scored training tokens per model from WikiText-103. Some results: GAP20 used 19.91% fewer parameters than the standard Transformer. A smaller configuration can reduce parameters by 34.31%, although that version did not fair as well as the current…",
-    "topComments": [
-     {
-      "text": "If you want to put together a good scientific paper, it's good to separate components of your method and analyze them. Your headline result that it's 20% fewer parameters and 20% better training throughput is mostly to do with the model width, qk size per head, etc. changes that you've made rather than the changes you've made to the block described in the equations. As far as I can tell from those equations, the main changes are the attention module uses post layer norm instead of pre layer…"
-     },
-     {
-      "text": "Nice writeup. Since the standard Transformer still wins on final LM accuracy, the more informative comparison would be at matched training compute or matched wall-clock rather than matched parameters — a 20% smaller model that needs more tokens to hit the same loss tells a different story than one that just has less capacity. Did you log tokens-to-target-loss for both?"
-     }
-    ]
+    "text": "Hi everyone! I've been experimenting with an alternative Transformer architecture called GAP (Gated Attention Projection) . The main idea is to combine attention and MLP-style processing into a single gated block, instead of using the standard separate attention and feed-forward sublayers. I tested it against a standard Transformer using 100 million scored training tokens per model from WikiText-103. Some results: GAP20 used 19.91% fewer parameters than the standard Transformer. A smaller configuration can reduce parameters by 34.31%, although that version did not fair as well as the current…"
    },
    "sources": [
     "reddit"
@@ -7438,33 +7288,7 @@
     "permalink": "https://www.reddit.com/r/singularity/comments/1xr6w6w/apple_researchers_use_a_mac_mini_running_qwen/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "It looked like the robot was ready for beef when the box was kicked away"
-     },
-     {
-      "text": "I'm a few years when that resesrch does that again. https://giphy.com/gifs/l0HlwmrntnvgEikak"
-     },
-     {
-      "text": "https://preview.redd.it/3wqax2zp0g0i1.png?width=500&format=png&auto=webp&s=dfe19590178891b354a37fb5f3544c1be508b673"
-     },
-     {
-      "text": "They invented a robot that can sit down and relax while I move the box.:D"
-     },
-     {
-      "text": "iRobot"
-     },
-     {
-      "text": "Crazy, he walked through an open living room, through an open hallway, into an open bedroom, and sat down at a couch at the end of the room. If he walked in a straight line, he would’ve made it either way, and one of the users had to help him by moving a box out of the way, yeah, that test is rigged and I know it"
-     },
-     {
-      "text": "They said LLMs won't get us to AGI lol"
-     },
-     {
-      "text": "Where does robotics go? That's right, in the LLM hole! https://preview.redd.it/8kn8zxqmig0i1.jpeg?width=640&format=pjpg&auto=webp&s=94f3a19b193b72e7cd813c182badaeb68816c0da"
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7654,21 +7478,7 @@
     "permalink": "https://www.reddit.com/r/mlscaling/comments/1xr8ixs/the_nvidia_board_is_initiating_an_independent/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "",
-    "topComments": [
-     {
-      "text": "\"Nvidia Board to Probe Spying Case After CEO Admits Affair\": Nvidia Corp.’s board is launching an investigation into whether Chief Executive Officer Jensen Huang was targeted by a foreign espionage plot after he admitted to employees that he was unfaithful to his wife. The board will assemble a committee of independent directors, working with outside counsel, to oversee the investigation of the case, according to a statement Sunday. In his own memo to staff, Huang said he was “deeply sorry”…"
-     },
-     {
-      "text": "Yet more evidence Jensen is a bad person"
-     },
-     {
-      "text": "What is the other evidence Jensen is a bad person?"
-     },
-     {
-      "text": "The details of marital infidelity and foreign subterfuge sound like Anthropic's (fictional) Summitbridge scenario."
-     }
-    ]
+    "text": ""
    },
    "sources": [
     "reddit"
@@ -7909,33 +7719,7 @@
     "permalink": "https://www.reddit.com/r/artificial/comments/1xrbxim/nvidia_has_launched_an_investigation_on_ceo/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Jensen admits to having an affair with a woman who turned out to be a chinese spy, despite having a wife and kids, here is his message to the company: \"I owe my family and all of you an apology. I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry. Throughout my life, my family has given me love and support. They deserve my honesty and loyalty. Instead, I let them down and damaged the life we built together. I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it. To my…",
-    "topComments": [
-     {
-      "text": "Question! Did he take off his jacket while doing?"
-     },
-     {
-      "text": "Great point, although I believe it has already morphed into his skin"
-     },
-     {
-      "text": "I owe my family and all of you an apology. I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry. I was hurt too, please send me a rack of B200's."
-     },
-     {
-      "text": "Right, one 5090 and ill forget about it"
-     },
-     {
-      "text": "I mean, make it at least 8 rtx pro 6000s..."
-     },
-     {
-      "text": "https://preview.redd.it/uh44nhb73h0i1.jpeg?width=1206&format=pjpg&auto=webp&s=41e5d7e56c5017950cc8d7e1bc563b6c5ca1bf01"
-     },
-     {
-      "text": "The affair is his family's business. The part that matters for everyone else is that he's been the loudest voice in Washington for selling more advanced chips to China, and the reporting says she was allegedly recruited to push for exactly that. Even if the board finds nothing leaked, every argument he made on export rules is going to get dragged back out Notice the board said \"no reason to believe\" anything was compromised before the investigation even started"
-     },
-     {
-      "text": "Bro really thought she believed he was hot in that leather jacket"
-     }
-    ]
+    "text": "Jensen admits to having an affair with a woman who turned out to be a chinese spy, despite having a wife and kids, here is his message to the company: \"I owe my family and all of you an apology. I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry. Throughout my life, my family has given me love and support. They deserve my honesty and loyalty. Instead, I let them down and damaged the life we built together. I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it. To my…"
    },
    "sources": [
     "reddit"
@@ -8174,30 +7958,7 @@
     "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xrevbv/claude_saved_my_old_iphone_from_becoming_ewaste/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Semi - new Claude user here. I had my old iPhone se that would not boot into anything, restore, ramdisk, nothing. Got to a point where I thought the nand had failed as it'd kernel panic or just die instantly. After longer than I want to admit of trying fixes I sent Claude the logs from a kernel panic it kept encountering when booting a ramdisk. It diagnosed the problem first try, the light sensor broke. But after opening the device, I saw it was the board connector, it was water damaged so a new screen wouldn't do anything. So as a test, it patched the sensor out of the boot process in…",
-    "topComments": [
-     {
-      "text": "Isn't checkm8 and pongo a jailbreak?"
-     },
-     {
-      "text": "Checkm8s a bootrom exploit, sounds similar to checkra1n which is a jailbreak. PongOS is a bootlader that runs before apples kernal. They were a part of a tool I was using called turdus m3rula to restore the Ipsw bc signatures I can't just use finder / itunes"
-     },
-     {
-      "text": "Ahhh interesting, super cool!"
-     },
-     {
-      "text": "Weird that you tried so much different stuff, yet didnt open it to check for hardware damage, or did you and just hadn't noticed it?"
-     },
-     {
-      "text": "I knew about the water damage but didn't know what it had effected. Usually a failed als causes the phone to reboot every 3 minutes but this one was doing it much faster so I didn't think to check there"
-     },
-     {
-      "text": "How did you know where to even get started? I don’t understand much of the first paragraph, but I got the success of Claude reading the logs and going from there. It felt like dropping into the middle of a movie for me, as a novice - not a criticism, this is pretty cool"
-     },
-     {
-      "text": "No criticism taken dw. First paragraph boils down to me throwing everything that could get it to boot at it and nothing working. Then it gave me the error I attached. The broken sensor stops the phone from booting. The rest of the post was using Claude to modify a software update to remove the need for the phone to check if the sensor works. Then the update was pushed to the phone and now it works. Hope that helped translate it a little…"
-     }
-    ]
+    "text": "Semi - new Claude user here. I had my old iPhone se that would not boot into anything, restore, ramdisk, nothing. Got to a point where I thought the nand had failed as it'd kernel panic or just die instantly. After longer than I want to admit of trying fixes I sent Claude the logs from a kernel panic it kept encountering when booting a ramdisk. It diagnosed the problem first try, the light sensor broke. But after opening the device, I saw it was the board connector, it was water damaged so a new screen wouldn't do anything. So as a test, it patched the sensor out of the boot process in…"
    },
    "sources": [
     "reddit"
@@ -8534,33 +8295,7 @@
     "permalink": "https://www.reddit.com/r/DeepSeek/comments/1xrj74q/deepseek_v41flash_running_on_a_single_arc_a770/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "I got DeepSeek V4.1-Flash running on my Arc A770 through Strata, which splits a big MoE model across VRAM, RAM and the NVMe. Strata's DeepSeek engine only supports CUDA, HIP and Metal, so this is a SYCL port for Arc. It's unofficial and still a work in progress, but it works. EDIT, since a few people asked: - This run uses all 6 of DeepSeek's experts per token (--experts 6). Strata's default on a 16 GB card is 5 (\"faster\" mode); I turned that off. - The real quality cost is the quantization (ISTA-DASLab 2.25 bpw). Strata's docs measure it against the original model at perplexity +7.3% to…",
-    "topComments": [
-     {
-      "text": "It's time to stop with those bullshit engine please. Strata DO NOT read all expert. For a single question it's okay to have a 5% error but in agentic usage those 5% compound request after request and the model become not usable for complex task. VLLM, Llamacpp or kobold, the rest is 99% of the time scam like strata is."
-     },
-     {
-      "text": "You have no clue about which you speak. Strata does, in fact, read all experts. I can omit them if configured to do so."
-     },
-     {
-      "text": "Fair point about the default: on a 16 GB card Strata picks 5 of DeepSeek's 6 experts unless you tell it otherwise. That's why I ran it with --experts 6 (it's in the settings line of the screenshot), and the engine's log puts all 40 layers on the card. The bigger accuracy cost here is the 2.25-bit quant itself. Strata's docs measure it against the original model at about +7-8% perplexity, KL 0.107, code +3%, agent text +2%. So no, it isn't the full model, and I'm not claiming it is. It's what…"
-     },
-     {
-      "text": "Strata uses llama.cpp for a lot of the kernels. You can skip experts or keep them all, same as any other engine. Clickbait videos on YouTube don't mean much. Strata, just like llama.cpp, will give different output depending on the settings you chose. Being in a very deep refactor of it, to make it match the DeepSeek reference implementation, I can tell you both strata and Llama.cpp have made choices that make them deviate from what the model would output using the DeepSeek code, not…"
-     },
-     {
-      "text": "He is running the 2.25 non pruned at full quality mode. i.e. it should not be dropping any experts. OR am I mis understanding something? How do you see strata as a scam? I have been making a lot of progress using it and 3.8FN at iq3s quant. it gets stuff done. FAR from a scam? That said not tried the deepseek model yet. Doing it maybe next week when I Get better internet access for a bit haha."
-     },
-     {
-      "text": "dumbing down this much is not worth it,if it is just for fun and show it works then its fine"
-     },
-     {
-      "text": "But does it ride the short buss? Just because it speaks isn’t the only thing that matters."
-     },
-     {
-      "text": "used strata with --experts 6 on a 16gb card, got 40 layers on gpu, but prompt latency spiked 200ms on first token. might be worth it for agentic tasks, but not if you're chasing speed."
-     }
-    ]
+    "text": "I got DeepSeek V4.1-Flash running on my Arc A770 through Strata, which splits a big MoE model across VRAM, RAM and the NVMe. Strata's DeepSeek engine only supports CUDA, HIP and Metal, so this is a SYCL port for Arc. It's unofficial and still a work in progress, but it works. EDIT, since a few people asked: - This run uses all 6 of DeepSeek's experts per token (--experts 6). Strata's default on a 16 GB card is 5 (\"faster\" mode); I turned that off. - The real quality cost is the quantization (ISTA-DASLab 2.25 bpw). Strata's docs measure it against the original model at perplexity +7.3% to…"
    },
    "sources": [
     "reddit"
@@ -8658,33 +8393,7 @@
     "permalink": "https://www.reddit.com/r/MachineLearning/comments/1xrkiaw/amazon_applied_science_intern_interview_next_week/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Hi all! After multiple rejections I finally got an interview for a PhD applied science intern role at Amazon in the EU (Germany or Ams). I have two interviews scheduled after each other next week and need help preparing for those. The thing is, I have never given a technical interview ever, I am confident regarding the machine learning breath one but not the DSA/coding one. I have never studied this (or leetcoded) and also did not code much recently (AI does a better job than me in coding). Should I just cancel the interview as I know I am going to mess this up or try my best and prepare?…",
-    "topComments": [
-     {
-      "text": "I won't sugercoat it. If you have never given a dsa round or have never done LC, the road isn't easy. But if you have written AI code in pre-llm era and may be taken a C/Java class here and there in uni, you know some basics. https://github.com/liquidslr/leetcode-company-wise-problems/blob/main/Amazon/2.%20Three%20Months.csv start doing the mediums and hards. The intention is not to get a common question, but to sort of condition yourself to level of dsa questions you can expect. DO NOT try to…"
-     },
-     {
-      "text": "Please do some leetcoding and DSA. As far as I know, they have 2 rounds of interview, first DSA and if you clear that then ML. So you must know intermediate and above level DSA. I had taken the interview in Jan/Feb and couldn't make it past the DSA round as I hadn't revised those concepts coz I thought it was gonna be a ML only interview. Although my interview was of below PhD level"
-     },
-     {
-      "text": "Don't cancel it, the experience is valuable no matter what happens. Treat it as a training epoch. A forward and backward pass. You are collecting some gradients. Do you want to deny yourself the learning opportunity? The only thing in the way is your ego and self esteem (believe me its understandable, I'm not slamming you for this), but I'd advise to not let that get in the way of your development. My advice is to make peace with whatever outcome well in advance of the interview, and go in as…"
-     },
-     {
-      "text": "As others told you, don't cancel the interview. Use it to practice not only with the problems but also with the levels of stress having someone watch over your screen while you code. I did the applied scientist intern interview in 2024 when coding LLMs were not a thing yet. I got lucky, the coding interview was a solo interview and got 2 easy LC questions. The second round was a general \"talk about your research\" discussion and leadership principles with an applied scientist. Then, got the…"
-     },
-     {
-      "text": "Don't cancel it, you won't get any advantage over trying and failing it. Just do your best to prepare to a leetcode round and take the shot."
-     },
-     {
-      "text": "Dont cancel it. Try to learn the basic of DSA. Btw, I should also mention that the ML Breadth and ML Application is also very hard, they are designed to ask until you cannot answer it. So dont feel too bad if you miss one or two questions."
-     },
-     {
-      "text": "For the undergrad applied science intern role, I was asked two lc hards. Others were asked two easy questions, and even after solving both, some people were rejected. So honestly it's very random. Just spin the roulette and do your best. If you got shortlisted now you can definitely get it again."
-     },
-     {
-      "text": "The coding round for me wasn’t DSA for applied science intern (DSA matters thought and you probably will get DSA)"
-     }
-    ]
+    "text": "Hi all! After multiple rejections I finally got an interview for a PhD applied science intern role at Amazon in the EU (Germany or Ams). I have two interviews scheduled after each other next week and need help preparing for those. The thing is, I have never given a technical interview ever, I am confident regarding the machine learning breath one but not the DSA/coding one. I have never studied this (or leetcoded) and also did not code much recently (AI does a better job than me in coding). Should I just cancel the interview as I know I am going to mess this up or try my best and prepare?…"
    },
    "sources": [
     "reddit"
@@ -8820,33 +8529,7 @@
     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xrkomn/l11_n8147_is_a_neuron_that_will_make_qwen354b_get/",
     "platform": "reddit",
     "rankBasis": "position",
-    "text": "Inspired by some of the other brain surgery posts, I wanted to see if I could find anything interesting in Qwen. Not particularly useful to make it get things wrong all the time I guess, but I find the poetry it comes out with weirdly fascinating! I think the neuron is basically a dial for contrarian <-> agreeable, but the contrarian snarky setting for some reason writes poems that read in an interesting way.",
-    "topComments": [
-     {
-      "text": "So you'd say this is the redditor neuron?"
-     },
-     {
-      "text": "Would your comment count as an example?"
-     },
-     {
-      "text": "You’ve discovered the edgy teenager neuron. Edit: no snark intended - this is excellent work."
-     },
-     {
-      "text": "It's genuinely really bizarre that there's a single neuron that does this right? 😅 Makes me wonder what personality traits I have in my own brain that are controlled by literally a single neuron"
-     },
-     {
-      "text": "It sounds sarcastic. Sarcastic and poetic are both branches of art"
-     },
-     {
-      "text": "it seems to be both knowingly wrong and confidently wrong? interesting"
-     },
-     {
-      "text": "Fascinating! I think I'm a little late to the game with the neuron thing - what tool did you use to enhance that one?"
-     },
-     {
-      "text": "babe i cant come to bed im playing fucken brain surgeon on a yung chinese boi"
-     }
-    ]
+    "text": "Inspired by some of the other brain surgery posts, I wanted to see if I could find anything interesting in Qwen. Not particularly useful to make it get things wrong all the time I guess, but I find the poetry it comes out with weirdly fascinating! I think the neuron is basically a dial for contrarian <-> agreeable, but the contrarian snarky setting for some reason writes poems that read in an interesting way."
    },
    "sources": [
     "reddit"
@@ -9088,9 +8771,8 @@
   }
  ],
  "date": "2026-11-08",
- "fetchedAt": "2026-11-11T07:42:40.122Z",
+ "fetchedAt": "2026-11-11T08:42:36.486Z",
  "runs": [
-  "2026-11-09T07:42:49.155Z",
   "2026-11-09T08:42:52.826Z",
   "2026-11-09T09:43:50.379Z",
   "2026-11-09T12:43:31.392Z",
@@ -9109,7 +8791,8 @@
   "2026-11-10T21:43:44.302Z",
   "2026-11-11T00:50:32.774Z",
   "2026-11-11T03:44:01.833Z",
-  "2026-11-11T07:42:40.122Z"
+  "2026-11-11T07:42:40.122Z",
+  "2026-11-11T08:42:36.486Z"
  ],
  "schema": 2,
  "sources": [
@@ -9253,7 +8936,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-11T07:42:40.122Z",
+   "fetchedAt": "2026-11-11T08:42:36.486Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -9271,7 +8954,7 @@
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-11T07:42:40.122Z",
+   "fetchedAt": "2026-11-11T08:42:36.486Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
