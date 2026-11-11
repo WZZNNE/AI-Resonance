@@ -6985,17 +6985,16 @@
    "upd": "2026-09-28"
   },
   {
-   "cr": 0.028,
    "ctx": 1024000,
    "efforts": [
     "high"
    ],
-   "id": "baidu/ernie-5.5-flash-preview",
-   "in": 0.28,
+   "id": "baidu/ernie-5.5-flash-preview:free",
+   "in": 0,
    "k": "ernie-5-5-flash-preview",
    "maxOut": 921600,
-   "name": "ERNIE-5.5-Flash-Preview",
-   "out": 1.13,
+   "name": "ERNIE-5.5-Flash-Preview (free)",
+   "out": 0,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8564,14 +8563,14 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.06,
+   "cr": 0.027,
    "ctx": 200000,
    "id": "minimax/minimax-m2.5",
-   "in": 0.3,
+   "in": 0.27,
    "k": "minimax-m2-5",
-   "maxOut": 58982,
+   "maxOut": 128000,
    "name": "MiniMax-M2.5",
-   "out": 1.2,
+   "out": 1.08,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9215,7 +9214,7 @@
   },
   {
    "budget": {},
-   "ctx": 1048576,
+   "ctx": 262144,
    "efforts": [
     "none",
     "low",
@@ -16394,5 +16393,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-11T09:43:44.246Z"
+ "updatedAt": "2026-11-11T12:43:33.290Z"
 }
