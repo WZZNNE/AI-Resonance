@@ -7034,6 +7034,20 @@
    "upd": "2026-09-28"
   },
   {
+   "ctx": 262144,
+   "id": "apodex/apodex-1.1-mini:free",
+   "in": 0,
+   "k": "apodex-1-1-mini",
+   "maxOut": 235929,
+   "name": "Apodex 1.1 Mini (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-10-01"
+  },
+  {
    "ctx": 1024000,
    "efforts": [
     "high"
@@ -7391,7 +7405,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.074081,
+   "cr": 0.079605,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7399,11 +7413,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.888966,
+   "in": 0.95526,
    "k": "deepseek-v4-pro",
    "maxOut": 384000,
    "name": "DeepSeek V4 Pro",
-   "out": 1.777932,
+   "out": 1.91052,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7430,7 +7444,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.006,
+   "cr": 0.004,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7439,11 +7453,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.3,
+   "in": 0.022,
    "k": "deepseek-v4-1-flash",
    "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash",
-   "out": 1.2,
+   "out": 0.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8000,14 +8014,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.049,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
-   "maxOut": 128000,
+   "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.28,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8128,6 +8142,36 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-07-23"
+  },
+  {
+   "cr": 0.0084,
+   "ctx": 262144,
+   "id": "inclusionai/ling-3.0-flash-fin",
+   "in": 0.042,
+   "k": "ling-3-0-flash-fin",
+   "maxOut": 32768,
+   "name": "Ling 3.0 Flash Fin",
+   "out": 0.1232,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-08-27"
+  },
+  {
+   "cr": 0.0084,
+   "ctx": 262144,
+   "id": "inclusionai/ling-3.0-flash-sante",
+   "in": 0.042,
+   "k": "ling-3-0-flash-sante",
+   "maxOut": 32768,
+   "name": "Ling 3.0 Flash Sante",
+   "out": 0.1232,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-09-04"
   },
   {
    "cr": 0.012,
@@ -9121,7 +9165,7 @@
    "upd": "2026-07-16"
   },
   {
-   "cr": 0.19,
+   "cr": 0.2,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -9134,7 +9178,7 @@
    "k": "kimi-k3-1-pro",
    "maxOut": 943718,
    "name": "Kimi K3.1 Pro",
-   "out": 8.7856,
+   "out": 8.4114,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -10508,6 +10552,28 @@
    "upd": "2026-10-28"
   },
   {
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "particle-ai/particle-1:free",
+   "in": 0,
+   "k": "particle-1",
+   "maxOut": 131072,
+   "name": "Particle-1 (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-28"
+  },
+  {
    "ctx": 32768,
    "id": "perceptron/perceptron-mk1",
    "in": 0.15,
@@ -11563,7 +11629,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11571,11 +11637,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.132,
    "k": "hy3",
    "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11620,7 +11686,7 @@
    "upd": "2026-11-04"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11628,11 +11694,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11700,6 +11766,27 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-15"
+  },
+  {
+   "cr": 0.03,
+   "ctx": 1048576,
+   "efforts": [
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "max"
+   ],
+   "id": "thinkingmachines/inkling-2-small",
+   "in": 0.3,
+   "k": "inkling-2-small",
+   "maxOut": 943718,
+   "name": "Inkling 2 Small",
+   "out": 1,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-05"
   },
   {
    "ctx": 1048576,
@@ -12186,7 +12273,7 @@
    "upd": "2026-06-13"
   },
   {
-   "cr": 0.0689,
+   "cr": 0.079,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -12194,11 +12281,11 @@
     "max"
    ],
    "id": "z-ai/glm-5.3",
-   "in": 0.0699,
+   "in": 0.084,
    "k": "glm-5-3",
    "maxOut": 943718,
    "name": "GLM-5.3",
-   "out": 1.4,
+   "out": 3.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12314,6 +12401,17 @@
    "k": "claude-fable-5-1",
    "name": "anthropic/claude-fable-5-1",
    "out": 50,
+   "p": "perplexity",
+   "reasoning": false,
+   "src": "litellm"
+  },
+  {
+   "cr": 0.2,
+   "id": "anthropic/claude-fable-5-2",
+   "in": 8,
+   "k": "claude-fable-5-2",
+   "name": "anthropic/claude-fable-5-2",
+   "out": 40,
    "p": "perplexity",
    "reasoning": false,
    "src": "litellm"
@@ -12568,6 +12666,17 @@
    "in": 2,
    "k": "gemini-4-argon",
    "name": "google/gemini-4-argon",
+   "out": 10,
+   "p": "perplexity",
+   "reasoning": false,
+   "src": "litellm"
+  },
+  {
+   "cr": 0.1,
+   "id": "google/gemini-4-carbon",
+   "in": 2,
+   "k": "gemini-4-carbon",
+   "name": "google/gemini-4-carbon",
    "out": 10,
    "p": "perplexity",
    "reasoning": false,
@@ -16477,5 +16586,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-12T21:44:12.636Z"
+ "updatedAt": "2026-11-13T00:51:43.968Z"
 }
