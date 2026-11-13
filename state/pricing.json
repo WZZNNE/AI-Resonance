@@ -7039,20 +7039,6 @@
    "upd": "2026-09-28"
   },
   {
-   "ctx": 262144,
-   "id": "apodex/apodex-1.1-mini:free",
-   "in": 0,
-   "k": "apodex-1-1-mini",
-   "maxOut": 235929,
-   "name": "Apodex 1.1 Mini (free)",
-   "out": 0,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-10-01"
-  },
-  {
    "ctx": 1024000,
    "efforts": [
     "high"
@@ -7469,7 +7455,7 @@
    "upd": "2026-09-10"
   },
   {
-   "cr": 0.006,
+   "cr": 0.01,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7478,11 +7464,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash-1017",
-   "in": 0.3,
+   "in": 0.038,
    "k": "deepseek-v4-1-flash-1017",
-   "maxOut": 393216,
+   "maxOut": 943718,
    "name": "DeepSeek V4.1 Flash 1017",
-   "out": 1.2,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8127,7 +8113,7 @@
    "k": "granite-4-2-8b",
    "maxOut": 117964,
    "name": "Granite 4.2 8B",
-   "out": 0.15,
+   "out": 0.25,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8147,36 +8133,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-07-23"
-  },
-  {
-   "cr": 0.0084,
-   "ctx": 262144,
-   "id": "inclusionai/ling-3.0-flash-fin",
-   "in": 0.042,
-   "k": "ling-3-0-flash-fin",
-   "maxOut": 32768,
-   "name": "Ling 3.0 Flash Fin",
-   "out": 0.1232,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-08-27"
-  },
-  {
-   "cr": 0.0084,
-   "ctx": 262144,
-   "id": "inclusionai/ling-3.0-flash-sante",
-   "in": 0.042,
-   "k": "ling-3-0-flash-sante",
-   "maxOut": 32768,
-   "name": "Ling 3.0 Flash Sante",
-   "out": 0.1232,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-09-04"
   },
   {
    "cr": 0.012,
@@ -8682,14 +8638,14 @@
   },
   {
    "alwaysOn": true,
-   "cr": 0.027,
-   "ctx": 200000,
+   "cr": 0.03,
+   "ctx": 198000,
    "id": "minimax/minimax-m2.5",
    "in": 0.27,
    "k": "minimax-m2-5",
-   "maxOut": 128000,
+   "maxOut": 32768,
    "name": "MiniMax-M2.5",
-   "out": 1.08,
+   "out": 0.95,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16591,5 +16547,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-13T09:43:25.159Z"
+ "updatedAt": "2026-11-13T12:44:08.205Z"
 }
