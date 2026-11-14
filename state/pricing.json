@@ -2517,7 +2517,7 @@
    "p": "deepinfra",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-11-05"
+   "upd": "2026-11-12"
   },
   {
    "alwaysOn": true,
@@ -5046,7 +5046,7 @@
    "id": "deepseek-v4-pro",
    "in": 0.66,
    "k": "deepseek-v4-pro",
-   "maxOut": 1048576,
+   "maxOut": 65536,
    "name": "deepseek-v4-pro",
    "out": 1.98,
    "p": "ollama-cloud",
@@ -5066,7 +5066,7 @@
    "id": "deepseek-v4-pro:0813",
    "in": 0.66,
    "k": "deepseek-v4-pro",
-   "maxOut": 1048576,
+   "maxOut": 65536,
    "name": "DeepSeek V4 Pro 0813",
    "out": 1.98,
    "p": "ollama-cloud",
@@ -5224,6 +5224,27 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2025-08-05"
+  },
+  {
+   "cr": 0.03,
+   "ctx": 1048576,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "max"
+   ],
+   "id": "inkling-2-small",
+   "in": 0.3,
+   "k": "inkling-2-small",
+   "maxOut": 131072,
+   "name": "Inkling 2 Small",
+   "out": 1,
+   "p": "ollama-cloud",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-11-12"
   },
   {
    "cr": 0.16,
@@ -11740,7 +11761,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-11-05"
+   "upd": "2026-11-12"
   },
   {
    "ctx": 1048576,
@@ -11760,7 +11781,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-11-05"
+   "upd": "2026-11-12"
   },
   {
    "cr": 0.1,
@@ -15338,7 +15359,7 @@
   },
   {
    "cr": 0.17812,
-   "ctx": 256000,
+   "ctx": 1024000,
    "efforts": [
     "none",
     "minimal",
@@ -15404,7 +15425,7 @@
   },
   {
    "cr": 0.17812,
-   "ctx": 256000,
+   "ctx": 1024000,
    "efforts": [
     "none",
     "minimal",
@@ -16551,5 +16572,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-14T18:44:03.037Z"
+ "updatedAt": "2026-11-14T21:44:02.035Z"
 }
