@@ -4120,7 +4120,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Multi-agent systems solve complex tasks by decomposing them into subtasks, delegating the subtasks to agents, and aggregating the agents' responses using an aggregation rule. Malicious agents can manipulate the final solution by providing malicious responses to their assigned subtasks. In this paper, we first propose response manipulation attacks (ReMA), which iteratively optimize malicious responses to maximize attack effectiveness. Specifically, we formulate untargeted and targeted attacks as optimization problems and develop an approach to approximately solve these problems by iteratively refining malicious responses based on feedback from a surrogate multi-agent system. To defend against such attacks, we further propose SecMAS, a secure aggregation rule that leverages the semantic similarities among agent responses to select the response that is most consistent with a sufficiently large subset of the other responses. We theoretically establish security guarantees for SecMAS against both untargeted and targeted attacks. Extensive evaluations demonstrate that existing aggregation rules are vulnerable to ReMA, whereas SecMAS effectively defends against all evaluated attacks, including adaptive variants of ReMA, while maintaining utility comparable to that of existing aggregation rules.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4166,7 +4166,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Quantum graph neural networks (QGNNs) apply parametrized quantum circuits to graph-structured data, with the aim of overcoming limits of classical graph neural networks in scalability, expressivity, and long-range information flow. Since the first Hamiltonian-based model in 2019, the field has produced many architectures, applications, and claims, but the evidence behind them has not been assessed systematically. This survey introduces a unified formalism that describes every QGNN as an encoder, a graph-conditioned circuit, observables, and an optional classical head, together with a circuit-level condition for permutation equivariance and a resource model for comparing costs. We organize the literature into five architecture families (convolutional, equivariant, message-passing and recurrent, Hamiltonian, and hybrid) and compare them by qubit cost, symmetry, scalability, and evidence. We then review symmetry and geometric inductive biases (permutation, rotation, and Lorentz), the results on expressivity, trainability, noise, and scalability, and applications in high-energy physics, chemistry, finance, healthcare, earth observation, and transportation. An audit of datasets and evaluation practices leads to a minimum reporting protocol. Our main finding is that the design space is rich and symmetry is the best-supported inductive bias, whereas the evidence remains thin: results are mostly simulated, on small graphs, at parity with classical models or with fewer parameters, and no advantage has yet been established on tasks over classical graph data. We identify five open challenges and a research agenda covering provable advantage, equivariant and geometric designs, fault-tolerant implementations, and shared benchmarks. The coverage extends through 2026 and emphasizes recent work.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4207,7 +4207,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "The hyperelastic law of a material such as soft tissue differs between specimens, and often only a few specimens can be tested. Physics-augmented neural networks (PANNs) learn such laws from data without a prescribed functional form while keeping them physically admissible, and Bayesian versions of related models quantify the uncertainty of the law of one specimen or of a pooled group of specimens. A pooled fit, however, attributes the differences between specimens to measurement noise or to uncertainty about a mean law, and neither describes a new specimen. We first develop a Bayesian PANN for one specimen, whose priors keep the learned law plausible for few, noisy data. We then extend it to a hierarchical Bayesian PANN, a nonlinear mixed-effects model in which all specimens share learned polyconvex features and each specimen is a draw from a population of laws. Features, specimens, and population are inferred jointly by variational inference, with a separate model of the measurement noise, so that the variability between specimens is not mistaken for noise, the population carries its own uncertainty, and every specimen drawn from it is polyconvex. The population predicts the response of new specimens with credible intervals, without data or from a partial test, and assigns them to cohorts with quantified uncertainty, all without a prescribed form of the law. On synthetic populations, it recovers the population from few specimens and predicts new specimens more reliably than three published methods. On Treloar's rubber and on healthy and aneurysmal aortas, it reaches the accuracy of a deterministic PANN and assigns no aorta specimen to the wrong cohort with confidence, although it underestimates the uncertainty of untested curves.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4252,7 +4252,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Recent open-vocabulary multi-view indoor 3D detection methods typically follow a point-cloud-driven pipeline, where pseudo 3D boxes are generated from reconstructed or estimated geometry and semantic labels are inferred from projected regions. However, such a design makes box generation dependent on the completeness of point clouds and restricts semantic learning to local appearance, causing inferior 3D object localization and open-vocabulary classification. In this paper, we present See and Detect, an image-driven framework that uses multi-view images as the primary evidence for 3D box and semantic label generation. For box generation, we first discover object candidates from individual images, enabling objects missing in point clouds to be recovered from visual evidence. However, single-view predictions are often noisy and redundant. To address this, we propose multi-view consensus box consolidation to fuse spatially consistent predictions across views, and box quality assessment to reduce the impact of boxes with partial object coverage. For semantic label generation, we introduce context-aware semantic learning, where semantic labels are queried from full image context, enabling more accurate semantic prediction. Extensive experiments on ScanNet and ARKitScenes demonstrate that our method achieves state-of-the-art open-vocabulary multi-view 3D detection performance while running over 500$\\times$ faster than the previous state-of-the-art method.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4297,7 +4297,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Spatial transcriptomics (ST) prediction from histology aims to infer spatially resolved gene expression profiles directly from tissue images. This is a challenging problem that is currently often addressed with complicated model architectures, additional inputs, and complicated training procedures, while remaining limited to fixed, small gene panels. This raises a natural question: Is there an efficient method for large-panel ST prediction? Here, we present GeneFlow, a simpler yet effective framework for large-scale spatial gene expression prediction that unifies flow-matching generative modeling with structured multimodal fusion. Specifically, GeneFlow first encodes both histological morphology and cross-gene interactions in spatial spots through histology and gene tokenizers. The model directly predicts spatial gene expression, rather than an intermediate velocity field, while being trained with a velocity-based flow-matching objective. We show that, even without relying on heavy generative pipelines, GeneFlow achieves state-of-the-art performance across multiple ST benchmarks, with up to 56.8% gains in 1,000-gene prediction. Extensive experiments further show that GeneFlow produces biologically meaningful spot profiles while reducing computational cost by orders of magnitude, thereby improving efficiency and scalability, particularly in clinical settings. We believe GeneFlow provides an opportunity for leveraging widely available histology images for downstream biological discovery. Code is available at: https://github.com/ZZhangsm/GeneFlow",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4349,7 +4349,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Vision-language models (VLMs) often exhibit overconfidence, providing firm answers even when visual evidence is insufficient. A prominent case is referential ambiguity in Visual Question Answering (VQA), where multiple entities in an image are plausible referents of a question. Addressing such cases requires recognizing when ambiguity is present: ambiguous questions can be handled by asking for clarification or enumerating plausible referents, while unambiguous questions should receive a direct answer. Current VLMs struggle with this distinction, often defaulting to a single interpretation. To investigate whether activation steering can serve as an inference-time mechanism to elicit such behaviors, we introduce AmbiSteer, a lightweight framework to selectively elicit ambiguity-aware behavior. Across three VLMs, we find that steering alone has limited and model-dependent effects, while prompting is generally more effective. Combining prompting and steering substantially increases clarification and enumeration behaviors, but also elicits them on unambiguous cases. AmbiSteer addresses this using a linear classifier to predict input ambiguity and condition the steering direction accordingly, increasing the proportion of inputs handled appropriately from 59.0% to 77.0% on average across models. Our work sets the ground for lightweight approaches to reduce model overconfidence in uncertain multimodal settings.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4394,7 +4394,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Many new AI models estimate how far away things are, in metres, from a single photo. To do this they must also work out what camera took the photo. We check whether they really do with a simple test: digital zoom, that is, cropping a photo and enlarging the crop back to full size. Zooming moves nothing in the scene, so a correct model should give the same distance for every point still in the picture. The test is free, exact and needs no labels. Two numbers describe a model's reaction: its depth changes like $s^{-α}$ (ideal $α=0$) and its focal-length estimate like $s^β$ (ideal $β=1$), for zoom factor $s$. On 800 images from KITTI, NYUv2 and DIODE, the widely used Depth Anything V2 has $α=0.95$: it treats a zoomed photo almost as if the camera had moved closer, because it judges distance mainly from how large things look. Models that also predict the camera remove only part of this error ($α\\approx0.31$-$0.36$), because their focal estimate grows too little. Given the true camera, Depth Pro and DA3-Nested keep their depth ($α\\approx0$), so the error lies in their camera estimate. The reason: a zoomed photo is, pixel for pixel, a normal photo of a scene squashed in depth, so size alone cannot tell the two apart, and a focal estimator trained by regression stays close to the cameras it saw in training. Undoing this needs no labels or training and makes Depth Pro pass the test ($α=0.04$) at almost no cost on normal photos. Controls, including a real optical zoom lens, rule out blur and resizing artefacts. Finally, label-free fine-tuning for self-consistency lowers $α$ to 0.05 on KITTI and 0.07 on NYUv2 once a \"blurry means zoomed\" shortcut is removed; we report what this costs on normal and unseen photos.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4438,7 +4438,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Self-supervised Joint Embedding Predictive Architecture (JEPA) models are increasingly used for medical imaging, however there is a limited understanding about robustness of these models toward real-world image changes. We test four JEPA-based chest X-ray encoders, trained on 78,468 NIH ChestX-ray14 images, under six tests: two black-box adversarial attacks (SPSA, Boundary Attack), three image corruptions (Gaussian noise, brightness shift, contrast shift), and a label-scarcity test, measuring embedding change and classification AUROC. These perturbations cause severe, model-dependent damage: encoder-level Cosine Similarity drops as low as 0.33, and AUROC falls by as much as 0.12 in the worst case (I-JEPA under the Boundary Test). We test two ways of training the small predictor on top of each frozen encoder to address this. Adversarial fine-tuning, trained on clean and perturbed images together, raises embedding consistency above 0.97 in nearly every case and improves AUROC, relative to the same perturbed baseline, for most models, with the largest gain of $+0.10$ on I-JEPA. A Vector-Quantized codebook method, trained only on clean images and evaluated on perturbed test images for the first time, instead degrades under distortion for all four models, most noticeably for I-JEPA ($-0.15$ AUROC on average), showing that its discrete bottleneck alone does not provide the robustness that comes from training on perturbed data directly.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4480,7 +4480,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Growing visual data overwhelms storage on resource-constrained edge devices, making compression essential. Traditional codecs offer inadequate rate-distortion performance, motivating the exploration of diffusion codecs. Diffusion codecs face two limitations: (1) At the algorithm level, diffusion decoders preserve perceptual quality under extreme compression, but require substantial computation. (2) At the architecture level, in NPU-centered devices, neural codecs occupy the NPU, interfering with other AI applications. Meanwhile, the complex codec pipeline incurs long I/O paths, leading to additional overhead and energy cost. To address these issues, we propose DiffusionSSD, a cross-level near-data processing framework for extreme visual data compression on edge devices, using an algorithm-architecture co-design method. Specifically, (1) at algorithm level, we present Dual-stage Diffusion, a lightweight solution tailored for diffusion codecs that employs patchification and single-step diffusion, reducing computation cost while preserving perceptual quality; (2) at architecture level, we introduce a Cross-level Near Data Processing architecture that integrates the proposed computational universal flash storage (cUFS) and LPDDR-PIM, enabling codecs to be entirely offloaded to data side while reducing visual-data movement and avoiding SoC redesign; (3) at system level, combining both the algorithm and the underlying architecture, we propose a Patch-Workload co-aware scheduling scheme to enable more efficient system-level execution. Experiments show that Dual-stage Diffusion maintains comparable perceptual quality while reducing computation cost by up to 92.7%. Compared with NPU+DRAM and near-data-processing design such as SmartSSD, cUFS+PIM improves coding throughput by 2.32 times and 2.91 times on average, respectively.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4532,7 +4532,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Cardiac cine MRI provides time-resolved visualization of cardiac motion and is essential for evaluating ventricular function and anatomy. In routine clinical acquisition, however, cine sequences are frequently temporally sparse or degraded by arrhythmia, motion, and scan-time constraints, which can hinder reliable quantification and downstream analysis. We present CardioTrace, a motion-aware cine synthesis framework that generates a full cardiac cine sequence from limited input while explicitly modeling and tracing cardiac motion. CardioTrace couples two complementary pathways: a pixel-translation branch that directly predicts cine frames in a residual formulation, and a flow-field branch that estimates time-resolved deformation fields from a reference phase to provide interpretable motion correspondences across frames. To further preserve anatomical plausibility, a segmentation branch supervises clinically meaningful cardiac structures at key phases, and a cross-branch consistency objective encourages the synthesized appearance dynamics to follow the explicit motion guidance, mitigating temporal drift and unrealistic shape transitions over long sequences. The framework also supports prompt-style conditioning to incorporate auxiliary patient or acquisition information, improving robustness across heterogeneous multi-center data. Experiments on public cardiac cine MRI datasets demonstrate that CardioTrace improves perceptual quality and temporal coherence over representative GAN- and diffusion-based baselines, while better preserving ventricular morphology throughout the cardiac cycle. \\textit{Our codes are available after review}.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4573,7 +4573,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "As large language models (LLMs) are increasingly deployed as autonomous agents, their abilities in navigating automated planning tasks have become essential. However, despite their strengths, LLMs' planning ability is not robust, particularly when they are not allowed to exploit commonsense cues in the symbolic vocabulary (e.g., names of actions, predicates, and objects) used to define planning tasks. This makes LLMs unreliable compared to symbolic planners. With recent reasoning models showing improved planning performance on tasks with obfuscated symbolic vocabularies, we utilize an adversarial attack framework to reveal to what extent the crucial weaknesses of LLM agents at joint symbolic interpretation and planning remain and whether they can reason properly when presented with severe cases. As such, our main contribution is devising an LLM-based attack model, which we call Symbolic Swapper, to automatically generate obfuscated planning domains with non-standard symbolic vocabularies that systematically break strong reasoning models' ability to plan. In doing so, we reveal how much LLMs' planning abilities can be further degraded under more advanced obfuscation schemes, allowing us to ascertain their success when having to rely on their pure planning ability. We find that attacks can decrease the planning performance of base models and even robust planning frameworks by over 70%. We further analyze the factors behind how LLM planning abilities break down and find that successful obfuscation causes models to appear to significantly degrade in reasoning quality despite them showing some inherent ability to understand the domain, revealing a gap in the perception of a task domain and being able to plan under it.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4614,7 +4614,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "While current few-shot adaptation strategies for time series forecasting foundation models are predominantly dataset-centric, the necessity of obtaining an additional dataset for the finetuning process poses a significant hurdle for adoption. To address this constraint, we propose Sample-Wise Instance Fine-Tuning (SWIFT), a novel forecasting adaptation framework that achieves fine-grained specialization by leveraging structural priors from the target instance's own history. This shift allows the fine-tuning process to be entirely transparent to the end-user, which significantly enhances the ease of adoption. To implement this framework, SWIFT synergizes Self-Retrieval for historical mining and Frequency-Aware Loss for spectral consistency, while employing Deviation-Aware Dynamic Fusion to balance adaptation with general knowledge preservation. Extensive experiments across four TSFM backbones and three long-history benchmark subsets validate SWIFT, yielding average MASE and WQL reductions of 6.41% and 4.83% across 24 combinations of four backbones and six Chronos Benchmark II datasets. To the best of our knowledge, SWIFT is the first framework to investigate sample-wise instance fine-tuning of time-series foundation models, specializing the model for an individual prediction window using only the corresponding forecasting sample's own observed history.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4659,7 +4659,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Cooperative multi-agent reinforcement learning (MARL) supports coordinated decision-making in distributed Web services, multi-robot control, and collaborative games through learned coordination conventions. When deployment requirements change, a previously useful convention may become obsolete or unsafe. For example, revised cache-sharing permissions in Web content delivery may require caches to abandon a learned division of storage and serving roles while maintaining efficient delivery. Teams must therefore remove the specified convention while preserving useful cooperation. This is challenging because the same relational pattern can be reproduced by different agents across different histories. Runtime shielding leaves the underlying coordination preference intact and can impair task progress, while existing reinforcement unlearning and trajectory-deletion methods do not directly target role-invariant conventions. This paper formalizes this problem as semantic coordination-strategy unlearning and proposes CARVE.CARVE uses causal coordination attribution to identify influential interactions and retain-aware subspace updates to limit interference with unrelated behaviors. Counterfactual re-coordination helps agents learn productive alternatives, while adversarial auditing tests whether the target convention can still be recovered. Accepted updates are merged into decentralized actors for direct deployment. Evaluation across five cooperative MARL benchmarks shows that CARVE reduces mean nominal convention-completion and worst-case elicitation rates by 91.4\\% and 83.3\\%, respectively.The median utility loss is 5.9\\%, and measured inference latency matches that of the original policies.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4706,7 +4706,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Scaling laws indicate that the generalization error of a large language model (LLM) decreases monotonically with model size once data is sufficient, and the corollary that larger models outperform smaller ones is now widely accepted. We argue that this corollary fails in security: decisions there hinge on anomalous inputs, which are long-tailed (e.g., zero-day attacks) and therefore poorly served by likelihood fitting. Worse still, the capability brought about by scale (e.g., inferring the intended whole from a corrupted part) leads a LLM silently \\emph{repair} the anomaly before any downstream security head ever sees it. We formalize this as a tradeoff between two quantities: the cognitive capability $K(W)=I(W;P)$ that a model holds about the world distribution, and the security-information retention $R(W)=\\frac{I(Z;S)}{I(A;S)}$ that survives in its intermediate representation. We derive three information-theoretic bounds to connect them: an upper bound on restoration accuracy in terms of $K(W)$, an upper bound on $R(W)$ in terms of the restoration error, and a Fano lower bound on security-task error in terms of $R(W)$. These theorems approximately imply that usable security information is a product of how much security information survives and how well it can be extracted, indicating that optimal usable security information can be achieved at a certain model size. We state this as the \\emph{condensing law of security information}: usable security information is unimodal in model size, so security generalization error is U-shaped and is minimized at a finite $N^{\\star}$ rather than decreasing without bound. The experiments on various real-world LLMs validate the condensing law, indicating that there is an optimal model size to solve security issues.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4753,7 +4753,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Generating realistic 3D brain MRI volumes from sparse anatomical priors is a highly ill-posed yet clinically valuable problem, with important applications in data augmentation, simulation, and downstream neuroimaging analysis. In this work, we investigate the challenging task of synthesising full 3D brain MRI volumes conditioned solely on vascular label maps. While vascular structures provide strong anatomical and topological cues, they occupy only a small fraction of the brain volume and offer no direct information about surrounding tissue appearance. To address this challenge, we propose Vessel2Brain, an edge-aware multi-scale conditional flow matching framework that explicitly incorporates vascular structure information into the generative process. Our approach formulates vessel-guided brain image synthesis as a conditional continuous flow, enabling stable training and flexible generation while preserving structural correspondence. A multi-scale flow matching strategy is introduced to jointly model global anatomical coherence and fine-grained local details, with auxiliary velocity predictions providing additional supervision across spatial resolutions. Furthermore, we design an edge-aware objective that emphasises vascular boundaries during training, encouraging anatomically faithful tissue synthesis around vessel structures. We evaluate Vessel2Brain on two public 3D brain MRI datasets with paired vascular annotations. Extensive quantitative and qualitative experiments demonstrate that our method consistently outperforms state-of-the-art generative models in terms of reconstruction accuracy, structural consistency, and distributional realism.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4796,7 +4796,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Generative recommendation benefits from long interaction histories, but the cost of processing them directly grows with history length. We propose RecMem, a recurrent memory compression framework guided by three desiderata: space invariance, semantic fidelity, and lifelong evolvability. RecMem compresses historical segments into a fixed set of memory slots using a bifurcated encoder-decoder with shared lower layers and slot-wise forget-gated updates. Recommendation supervision trains the memory to preserve predictive information, while stream-consistency training aligns predictions from sequential and packed processing. By construction, the memory state and decoder context are independent of history length; under contraction and approximate semigroup consistency, we further derive a horizon-independent bound on the state discrepancy between these two processing orders. On MerRec, RecMem uses 16 memory slots and a 216-token decoder context, compared with 1,200 tokens for HSTU-1200, while retaining 87.9% of HSTU-1200's Recall@10 and 97.0% of its Recall@200. It outperforms PHSTU and the evaluated recent-only and retrieval baselines, and analyses of distant history show that archived interactions contribute predictive signal.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4845,7 +4845,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Synchronous, colocated RL post-training of large language models (LLMs) today suffers from severe under-utilization due to long-tail rollouts. Inference engines fall idle waiting for long-tail rollouts or decode at low, inefficient batch sizes. To address this, we present TIDE, an RL training system that preserves on-policy training semantics while recovering resource utilization. TIDE does so by two complementary techniques: (1) dynamically repurposing rollout GPUs for training while long-tail rollouts complete and (2) dynamically migrating rollouts between inference engines to boost decoding throughput. TIDE automatically determines the right time to repurpose rollout resources through an adaptive migration policy, obtaining performance improvements that generalize across multiple applications and hardware configurations without requiring bespoke configuration. In our evaluation, TIDE provides end-to-end speedups of up to 1.36x over colocated systems, outperforming all evaluated on-policy baselines and achieving up to 97% of optimal throughput.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4901,7 +4901,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Adaptation for neural-signal classification is usually transductive: each batch is scored after updating on it, and the gain depends on the adapted model [4]. This paper asks what an aggregate change fails to characterise inside the cohort. Full test-time adaptation (full_ttt) was evaluated in 11 dataset-encoder cells (four each on Siena/EEG and PTB-XL/ECG, three on Sleep-EDF/EEG), with splits and source-model evaluation fixed; the subject was the unit, exact sign tests were Holm-corrected and conditional on the shared stream, and bootstrap intervals accompanied a dependence audit. Two results of different kinds follow. In the binary case balanced accuracy gives a one-class decoder the same value as one reporting both classes at 50%, so the aggregate cannot identify a class that stopped being reported; a class covering a tenth of a subject's samples went unpredicted in 26-47 of 112 subject-cells, against 7-9 for the controls, which is a descriptive count. With cohort, split and update rule fixed, the within-subject class contrast follows the encoder, tested directly rather than inferred from tests against zero: two of six Siena encoder pairs survive the dependence readings at their nominal reference and one at a fold-level reference, while two of ten Sleep-EDF stage pairs pass the run-clustered gate at its nominal reference; aggregate and contrast named different encoders in 10 of 11. The protocol bounds both results, since a stream-interleaving effect reverses sign with state sharing (+3.5 to -2.4 pp). An aggregate score can hide individual harm, as [1] showed, but it cannot distinguish a uniform loss from a deleted class; class-level change should therefore be reported alongside the aggregate and subject-level change alongside it, with both results conditional on the cell, the rule and the stream construction.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4942,7 +4942,7 @@
    "metrics": {
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Scientific literature search can benefit from locally deployed LLM assistants, which reduce reliance on hosted model providers while giving research teams greater control over their data and infrastructure. This work investigates whether open-weight models can support web-assisted paper retrieval under practical computing constraints. We first characterize inference latency as the input context grows from 512 to 128k tokens on a Mac Studio and a server equipped with two NVIDIA A100 GPUs. We then evaluate eight models on the retrieval of 70 papers from seven scientific repositories, using queries that represent three levels of domain knowledge. The results show that retrieval success depends strongly on the selected model and the specificity of the query. And that A100 GPUs are generally faster than the Mac Studio, but its unified memory allows larger models that could not be loaded in the tested GPU configuration.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -4980,56 +4980,12 @@
   {
    "board": "papers",
    "category": "research",
-   "key": "arxiv:2611.17930",
-   "metrics": {
-    "prior": 0.3
-   },
-   "observedAt": "2026-11-16T15:47:24.110Z",
-   "paper": {
-    "abstract": "Attention is essential for modeling spatio-temporal dependencies in video diffusion transformers, but its quadratic cost makes it a major inference bottleneck. Its high sparsity offers an opportunity to accelerate generation by focusing computation on important interactions. However, accuracy and execution favor different granularities: each query attends to its own key tokens, whereas GPU kernels work on tiles. We present Token2Tile, a training-free sparse attention operator that combines per-query scoring and a per-query residual with tile execution. An online low-rank space, computed directly from queries and keys to preserve attention logits, makes clustering, scoring, and residual approximation efficient. Token2Tile unites query-specific selections to allocate exact work across query clusters, then packs the selected keys into GPU tiles. On MiniMax-H3 and Wan2.1-14B, Token2Tile delivers 1.48-1.54x end-to-end speedup over dense FlashAttention-3 with VBench scores within 0.5 points of dense. At comparable speeds on H3, it improves PSNR over SOL and SubBlock by 5.5-6.8 dB; on Wan, it exceeds SOL by 4.6-4.8 dB while running faster.",
-    "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
-    "arxivId": "2611.17930",
-    "arxivPublishedAt": "2026-11-13T09:09:46Z",
-    "authors": [
-     "Xuecheng Wu",
-     "Aichen Feng",
-     "Jinyan Chen",
-     "Qingjie Zhao",
-     "Julien Lai"
-    ],
-    "categories": [
-     "cs.CV"
-    ],
-    "pdfUrl": "https://arxiv.org/pdf/2611.17930"
-   },
-   "publishedAt": "2026-11-16T01:00:00.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "category",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "sources": [
-    "arxiv"
-   ],
-   "summary": "Attention is essential for modeling spatio-temporal dependencies in video diffusion transformers, but its quadratic cost makes it a major inference bottleneck. Its high sparsity offers an opportunity to accelerate generation by focusing computation on important interactions. However, accuracy and execution favor different granularities: each query attends to its own key tokens, whereas GPU kernels work on tiles. We present Token2Tile, a training-free sparse attention operator that combines per-query scoring and a per-query residual with tile execution. An online low-rank space, computed…",
-   "tags": [
-    "cs.CV"
-   ],
-   "title": "Token2Tile: Token-Wise Sparse Attention with Tile Execution through a Low-Rank Space for Video DiTs",
-   "url": "https://arxiv.org/abs/2611.17930"
-  },
-  {
-   "board": "papers",
-   "category": "research",
    "key": "arxiv:2611.18008",
    "metrics": {
     "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Magnetohydrodynamic (MHD) fluid flows are central to demanding engineering applications, most prominently fusion blanket cooling, where flow control is a promising tool to optimize key properties such as heat transfer. While active flow control (AFC) has recently advanced through machine learning, its application to MHD flows remains largely unexplored. In this work, we present $φ$-PICT, a novel differentiable GPU-accelerated MHD solver targeted at AFC. We validate $φ$-PICT against MHD benchmarks and demonstrate its high computational efficiency. Integrated into FluidGym, $φ$-PICT enables sample-efficient gradient-based algorithms to improve heat transfer by $>25$% and allows optimizers to achieve $10^3\\times$ higher accuracy in inverse design than black-box methods. $φ$-PICT is publicly available at https://github.com/upb-sciml/phiPICT.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5079,7 +5035,7 @@
     "codeStars": 157,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Artificial intelligence has progressed from task-specific systems toward general models spanning perception, generation, reasoning, and autonomous interaction, making reliable evaluation essential for comparison, deployment, and post-training feedback. At scale, modern evaluation pipelines increasingly rely on LLM-as-a-Judge to produce scores, preferences, and critiques; in its fixed-context setting, the judge relies on the supplied evaluand and evaluation materials. Yet a reliable verdict may require evidence beyond the supplied evaluand and context---either because critical environmental states remain unrecorded in the static execution log, or because controversial factual claims require external verification. Passive judges cannot obtain that missing evidence before deciding, especially when evaluating agent trajectories, executable artifacts, or domain-specific reports. Recent work therefore develops active evaluators that seek missing evidence and update their grounds for judgment before deciding. We bring these advances together through Agent-as-a-Judge, focusing on how evaluators construct and control checking processes within the broader LLM-based judging landscape. We define the scope through evaluation-directed checks and the use of their results, covering both structured workflows and observation-driven control. We organize the design space by multi-agent collaboration, tool integration, memory, and planning, and show how these mechanisms supply the checks and evidence on which a verdict rests. We consolidate published scores and reproduce missing entries for key agentic judges; the comparison reveals uneven agentic gains and motivates dedicated agentic evaluation. We conclude by characterizing application demands and open challenges in cost, reliability, safety, and governance that condition trusted deployment of agentic judges at scale.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5130,7 +5086,7 @@
     "codeStars": 1,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Text-to-image (T2I) models have made substantial progress in visual realism, aesthetic quality, and instruction following. However, real-world prompts often go beyond explicit visual descriptions and require implicit facts, structured knowledge, and domain-specific commonsense. Existing evaluations mainly focus on explicit prompt-to-image semantic alignment or specific knowledge subdomains, lacking unified evaluation and diagnosis of world-knowledge grounding in T2I models. We introduce KnowVis for dual-view evaluation and diagnosis of world-knowledge grounding in T2I generation. Built on a hierarchical knowledge taxonomy with case-level annotations, KnowVis combines two complementary benchmark views with a structured MLLM-based VQA judge protocol. The Skill-Tree Benchmark supports fine-grained atomic knowledge evaluation, while the Generalized Benchmark examines open-ended knowledge composition and expression. The protocol uses Required VQAs to assess atomic knowledge correctness in the Skill-Tree Benchmark, and combines Required, Optional, and dynamically discovered knowledge expressions with human-judge collaborative evaluation in the Generalized Benchmark. We validate the protocol's reliability on the Skill-Tree validation split, enabling scalable evaluation and diagnostic error attribution. Experiments show that KnowVis reveals notable gaps in world-knowledge grounding across existing T2I models and provides structured diagnostic signals for knowledge-intensive image generation.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5179,7 +5135,7 @@
     "codeStars": 490,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Affine correspondences (ACs) enable robust and efficient solvers for multiple-view geometry by constraining the local geometry of point correspondences (PCs). Despite their utility in minimal solvers, AC estimation remains understudied. We revisit AC estimation beyond local image patches, extending it to the image and image-pair levels. Rather than estimating the components of the affine transformation separately, we learn the full 4-DoF matrix jointly. Building on this formulation, we introduce ALoMa, an AC estimator using LoMa keypoint descriptions, demonstrating consistent improvements across a wide range of downstream tasks. Code at https://github.com/davnords/loma.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5228,7 +5184,7 @@
     "codeStars": 4,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features. Lexical questions use zero-shot scoring of ASR transcripts; non-lexical questions use a question-conditioned head and a separate layer-18 turn-end readout. Language identification uses the ASR model's own language scores. On private conversational test sets, decoder AUROC is 0.80-0.92; on public read speech it is 0.92-0.97. Speech Commands four-way accuracy is 0.93; binary lexical ECE is at most 0.08. Personal-information detection, which passes the greedy transcript to a private, curated PII pipeline, reaches item-level F1 0.904 on synthetic Brazilian Portuguese speech (1.000 on reference transcripts). Layer-12 speaker readouts detect speaker change with AUROC 0.966-0.980 on AMI and VoxConverse, above an ECAPA baseline, and count speakers (0, 1, 2, or 3+) more accurately than pyannote 3.1. The turn-end readout reaches AUROC 0.930 versus Smart Turn v3.2 at 0.982 on Smart Turn's own test set. On a subset of ICSI meetings labeled by next speaker, AUROC is 0.716 versus 0.712; the paired confidence interval includes zero.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5274,10 +5230,10 @@
    "category": "research",
    "key": "arxiv:2611.18469",
    "metrics": {
-    "codeStars": 1,
+    "codeStars": 2,
     "prior": 0.3
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "paper": {
     "abstract": "Contrastive representation learning methods operate by pulling different views of the same data sample together while pushing them away from views of different samples. A fundamental challenge is the estimation of the repulsive force, which typically requires large batch sizes, can exhibit high variance, and is susceptible to the curse of dimensionality. We introduce ScoreCLR, a contrastive representation learning method that offers a novel way to estimate this repulsion term. We consider the framework of representation learning by maximizing the mutual information between two latent views of a sample. By deriving the gradient of the Shannon entropy with respect to the encoder parameters, we obtain an equivalent objective that involves the score of the latent representation. We then use denoising score matching techniques to estimate this score with a lightweight network that is trained jointly with the encoder. We further propose regularization techniques using different noise levels and a Gaussian prior on the latent representation. ScoreCLR replaces the batch of explicit negative samples in contrastive methods with a learned repulsion whose cost is linear in the batch size rather than quadratic. On CIFAR-10 and ImageNet-100 it does so with minimal loss of linear-probe accuracy compared to SimCLR under a shared recipe, while producing projector outputs of higher effective rank, closer to the Gaussian prior.",
     "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
@@ -5292,7 +5248,7 @@
      "stat.ML",
      "cs.LG"
     ],
-    "codeStars": 1,
+    "codeStars": 2,
     "codeUrl": "https://github.com/chris-mrn/ScoreCLR_code",
     "pdfUrl": "https://arxiv.org/pdf/2611.18469"
    },
@@ -5319,6 +5275,55 @@
    "url": "https://arxiv.org/abs/2611.18469"
   },
   {
+   "board": "papers",
+   "category": "research",
+   "key": "arxiv:2611.18553",
+   "metrics": {
+    "codeStars": 1,
+    "prior": 0.3
+   },
+   "observedAt": "2026-11-16T18:43:24.425Z",
+   "paper": {
+    "abstract": "Recent work shows that large language models (LLMs) can operate directly on the parameters of other neural networks. They can read what a network was trained to do, fix a network that fails, and write working networks from scratch, all without gradient descent. This capability has been termed Weight-Space Programming (WSP). Exploring this new paradigm systematically requires a robust benchmark. We introduce WEIGHTBENCH, a benchmark that evaluates LLMs of increasing capability on 42 WSP tasks across five tracks: reading, fixing and writing weights, recognizing edits that are impossible, and data-free compression. The networks whose weights the LLMs read and edit range from 2K-parameter control policies to 7B-parameter language models. Experimental benchmark results show that frontier agents can already read small networks and write working control policies without ever running them, but cannot yet patch language models, compress them without data, or tell an impossible edit from a hard one. On all 42 tasks, Claude Opus 5.5 reaches a macro score of 0.535 (Sonnet 5.5 0.466, Haiku 5.5 0.402, DeepSeek v4-flash 0.215); on the 38 tasks it was run on, GPT-6.1-sol reaches 0.568 against Opus's 0.546. Code, the task registry, our OS-level sandbox harness, and the live leaderboard are publicly available at https://github.com/Aayush-Marasini/WeightBench.",
+    "arxivAnnouncedAt": "2026-11-16T01:00:00.000Z",
+    "arxivId": "2611.18553",
+    "arxivPublishedAt": "2026-11-13T18:58:08Z",
+    "authors": [
+     "Aayush Marasini",
+     "Barsat Khadka",
+     "Nick Rahimi"
+    ],
+    "categories": [
+     "cs.LG",
+     "cs.AI"
+    ],
+    "codeStars": 1,
+    "codeUrl": "https://github.com/Aayush-Marasini/WeightBench",
+    "pdfUrl": "https://arxiv.org/pdf/2611.18553"
+   },
+   "publishedAt": "2026-11-16T01:00:00.000Z",
+   "refs": [
+    "gh:aayush-marasini/weightbench"
+   ],
+   "relevance": {
+    "reasons": [
+     "category",
+     "cat:board"
+    ],
+    "score": 1
+   },
+   "sources": [
+    "arxiv"
+   ],
+   "summary": "Recent work shows that large language models (LLMs) can operate directly on the parameters of other neural networks. They can read what a network was trained to do, fix a network that fails, and write working networks from scratch, all without gradient descent. This capability has been termed Weight-Space Programming (WSP). Exploring this new paradigm systematically requires a robust benchmark. We introduce WEIGHTBENCH, a benchmark that evaluates LLMs of increasing capability on 42 WSP tasks across five tracks: reading, fixing and writing weights, recognizing edits that are impossible, and…",
+   "tags": [
+    "cs.LG",
+    "cs.AI"
+   ],
+   "title": "WeightBench: Evaluating Language Models as Weight-Space Programmers",
+   "url": "https://arxiv.org/abs/2611.18553"
+  },
+  {
    "board": "news",
    "category": "tool",
    "key": "hn:50506255",
@@ -5336,7 +5341,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50506255",
     "points": 13
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T11:53:37.000Z",
    "refs": [
     "url:huggingface.co/drmhse/nano-edge-tts"
@@ -5377,7 +5382,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50506376",
     "points": 239
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T12:14:06.000Z",
    "refs": [
     "url:magazine.sebastianraschka.com/p/understanding-positional-embeddings"
@@ -5405,7 +5410,7 @@
    "metrics": {
     "comments": 16,
     "frontPage": 0,
-    "points": 44
+    "points": 45
    },
    "news": {
     "author": "nu_nu11",
@@ -5414,9 +5419,9 @@
     "domain": "github.com",
     "hnId": 50506940,
     "hnUrl": "https://news.ycombinator.com/item?id=50506940",
-    "points": 44
+    "points": 45
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T13:50:51.000Z",
    "refs": [
     "gh:db-branch/db-branch"
@@ -5459,7 +5464,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50507517",
     "points": 23
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T15:18:06.000Z",
    "refs": [
     "url:nytimes.com/2026/11/15/business/anthropic-ipo-filing-prospectus.html"
@@ -5484,20 +5489,20 @@
    "category": "tool",
    "key": "hn:50508535",
    "metrics": {
-    "comments": 1,
+    "comments": 3,
     "frontPage": 0,
     "points": 12
    },
    "news": {
     "author": "fwee",
-    "comments": 1,
+    "comments": 3,
     "createdAt": "2026-11-15T17:06:17.000Z",
     "domain": "github.com",
     "hnId": 50508535,
     "hnUrl": "https://news.ycombinator.com/item?id=50508535",
     "points": 12
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T17:06:17.000Z",
    "refs": [
     "gh:jjyr/canban"
@@ -5538,7 +5543,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50512233",
     "points": 11
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T23:55:50.000Z",
    "refs": [
     "url:baseten.co/blog/the-efficient-frontier-of-llm-inference"
@@ -5577,7 +5582,7 @@
     "hnUrl": "https://news.ycombinator.com/item?id=50512933",
     "points": 15
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-16T01:28:10.000Z",
    "refs": [
     "gh:cpldcpu/2026"
@@ -5603,20 +5608,20 @@
    "category": "discussion",
    "key": "hn:50513215",
    "metrics": {
-    "comments": 365,
+    "comments": 436,
     "frontPage": 1,
-    "points": 730
+    "points": 811
    },
    "news": {
     "author": "ilreb",
-    "comments": 365,
+    "comments": 436,
     "createdAt": "2026-11-16T02:14:44.000Z",
     "domain": "qwen.ai",
     "hnId": 50513215,
     "hnUrl": "https://news.ycombinator.com/item?id=50513215",
-    "points": 730
+    "points": 811
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-16T02:14:44.000Z",
    "refs": [
     "url:qwen.ai/blog?id=qwen4-max"
@@ -5643,7 +5648,7 @@
    "metrics": {
     "comments": 9,
     "frontPage": 0,
-    "points": 33
+    "points": 34
    },
    "news": {
     "author": "mfiguiere",
@@ -5652,9 +5657,9 @@
     "domain": "wsj.com",
     "hnId": 50513876,
     "hnUrl": "https://news.ycombinator.com/item?id=50513876",
-    "points": 33
+    "points": 34
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-16T04:03:51.000Z",
    "refs": [
     "url:wsj.com/tech/ai/nvidias-days-as-an-open-checkbook-for-the-ai-economy-are-numbered-90c7b388"
@@ -8820,12 +8825,12 @@
    "key": "x:2121904277094592911",
    "metrics": {
     "authority": 0,
-    "likes": 5187,
+    "likes": 5191,
     "quotes": 0,
-    "replies": 17,
+    "replies": 18,
     "reposts": 0
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T09:52:57.000Z",
    "refs": [
     "x:2121904277094592911",
@@ -8841,10 +8846,10 @@
    "social": {
     "author": "Bernhard Mueller",
     "authorKind": "community",
-    "comments": 17,
+    "comments": 18,
     "createdAt": "2026-11-15T09:52:57.000Z",
     "handle": "muellerberndt",
-    "likes": 5187,
+    "likes": 5191,
     "linkUrl": "https://x.com/muellerberndt/status/2121904277094592911",
     "permalink": "https://x.com/muellerberndt/status/2121904277094592911",
     "platform": "x",
@@ -8878,7 +8883,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-16T06:00:00.000Z",
    "refs": [],
    "relevance": {
@@ -8916,7 +8921,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-16T06:00:00.000Z",
    "refs": [],
    "relevance": {
@@ -8954,7 +8959,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T22:00:00.000Z",
    "refs": [
     "rd:1xxc5tq"
@@ -8994,7 +8999,7 @@
     "release": 0,
     "surface": 0.2
    },
-   "observedAt": "2026-11-16T15:47:24.110Z",
+   "observedAt": "2026-11-16T18:43:24.425Z",
    "publishedAt": "2026-11-15T22:00:01.000Z",
    "refs": [],
    "relevance": {
@@ -9016,7 +9021,7 @@
   }
  ],
  "date": "2026-11-15",
- "fetchedAt": "2026-11-16T15:47:24.110Z",
+ "fetchedAt": "2026-11-16T18:43:24.425Z",
  "runs": [
   "2026-11-15T08:43:02.414Z",
   "2026-11-15T09:43:39.228Z",
@@ -9031,78 +9036,88 @@
   "2026-11-16T08:51:28.307Z",
   "2026-11-16T09:48:12.514Z",
   "2026-11-16T12:56:15.906Z",
-  "2026-11-16T15:47:24.110Z"
+  "2026-11-16T15:47:24.110Z",
+  "2026-11-16T18:43:24.425Z"
  ],
  "schema": 2,
  "sources": [
   {
    "board": "papers",
    "count": 200,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "arxiv",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "repos",
    "count": 303,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "github-search",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "repos",
-   "count": 86,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 87,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "github-trending",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "news",
-   "count": 164,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 175,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "hacker-news",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "papers",
-   "count": 62,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 66,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "hf-papers",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "papers",
    "count": 37,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "journals",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 4,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-anthropic",
    "message": "anthropic-research: payload: no entries | anthropic-engineering: payload: no entries | claude-blog: html: no entries",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 3,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-deepseek",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 20,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 23,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-google",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -9110,14 +9125,15 @@
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-meta",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -9125,31 +9141,34 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-mistral",
    "message": "nothing in the last 7 days",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
-   "count": 24,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 30,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-openai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "degraded"
   },
   {
    "board": "labs",
    "count": 1,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-qwen",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   },
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-xai",
    "message": "read through r.jina.ai (site blocks bots)",
    "mode": "jina",
@@ -9158,24 +9177,25 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
   },
   {
    "board": "social",
-   "count": 233,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 60,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "reddit",
-   "mode": "rss",
+   "message": "reusing the fetch of 2026-11-16T15:47:24.110Z (at most every 6 h)",
+   "mode": "cached",
    "state": "ok"
   },
   {
    "board": "social",
    "costUsd": 0,
    "count": 0,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "x",
    "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
@@ -9183,10 +9203,11 @@
   },
   {
    "board": "social",
-   "count": 11,
-   "fetchedAt": "2026-11-16T15:47:24.110Z",
+   "count": 12,
+   "fetchedAt": "2026-11-16T18:43:24.425Z",
    "id": "x-linked",
    "mode": "syndication",
+   "settledAt": "2026-11-16T18:43:24.425Z",
    "state": "ok"
   }
  ],
