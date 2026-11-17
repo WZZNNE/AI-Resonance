@@ -8070,14 +8070,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8732,7 +8732,7 @@
    "upd": "2026-06-01"
   },
   {
-   "cr": 0.0075,
+   "cr": 0.015,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -8742,11 +8742,11 @@
     "max"
    ],
    "id": "minimax/minimax-m3.1-flash",
-   "in": 0.075,
+   "in": 0.15,
    "k": "minimax-m3-1-flash",
    "maxOut": 524288,
    "name": "MiniMax-M3.1-Flash",
-   "out": 0.3,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9358,7 +9358,7 @@
   },
   {
    "budget": {},
-   "cr": 0.12,
+   "cr": 0.1,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -9366,11 +9366,11 @@
     "high"
    ],
    "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "in": 0.6,
+   "in": 0.5,
    "k": "nemotron-3-ultra-550b-a55b",
-   "maxOut": 182520,
+   "maxOut": 16384,
    "name": "Nemotron 3 Ultra 550B A55B",
-   "out": 2.4,
+   "out": 2.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11012,14 +11012,14 @@
    "upd": "2026-02-23"
   },
   {
-   "cr": 0.12,
+   "cr": 0.22,
    "ctx": 262144,
    "id": "qwen/qwen3.5-397b-a17b",
-   "in": 0.6,
+   "in": 0.45,
    "k": "qwen3-5-397b-a17b",
-   "maxOut": 64000,
+   "maxOut": 81920,
    "name": "Qwen3.5 397B-A17B",
-   "out": 3.6,
+   "out": 3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16602,5 +16602,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-17T03:43:18.656Z"
+ "updatedAt": "2026-11-17T06:46:01.315Z"
 }
