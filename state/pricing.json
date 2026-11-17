@@ -6111,6 +6111,50 @@
   {
    "cr": 0.4,
    "ctx": 1050000,
+   "cw": 10,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6.2-astra",
+   "in": 8,
+   "k": "gpt-6-2-astra",
+   "maxOut": 128000,
+   "name": "GPT-6.2 Astra",
+   "out": 40,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-17"
+  },
+  {
+   "cr": 0.1,
+   "ctx": 1050000,
+   "cw": 2.5,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "gpt-6.2-sol",
+   "in": 2,
+   "k": "gpt-6-2-sol",
+   "maxOut": 128000,
+   "name": "GPT-6.2 Sol",
+   "out": 10,
+   "p": "openai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-17"
+  },
+  {
+   "cr": 0.4,
+   "ctx": 1050000,
    "cw": 5,
    "efforts": [
     "none",
@@ -10398,6 +10442,28 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-10-26"
+  },
+  {
+   "cr": 0.4,
+   "ctx": 1050000,
+   "cw": 10,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "openai/gpt-6.2-astra",
+   "in": 8,
+   "k": "gpt-6-2-astra",
+   "maxOut": 128000,
+   "name": "GPT-6.2 Astra",
+   "out": 40,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-17"
   },
   {
    "ctx": 128000,
@@ -16602,5 +16668,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-17T15:44:09.069Z"
+ "updatedAt": "2026-11-17T18:43:57.475Z"
 }
