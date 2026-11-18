@@ -69,6 +69,16 @@
   "summary": "Today, we’re introducing Gemini 4 Hydrogen, bringing cutting-edge intelligence to everyone — with speed and efficiency for everyday coding and agentic workflows. While our frontier models, Gemini 4 Carbon and Gemini 4 Argon, excel at deep, long-horizon reasoning on your hardest problems, Hydrogen is built for rapid execution across diverse agentic workflows. With Hydrogen, we’re also bringing Gemini 4 to everyone — for all tiers of Google AI Studio, the Gemini API, Gemini for business, the Gemini app, Google Search, and paid Google AI Pro and Ultra subscribers in Google Antigravity. Hydrogen s",
   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
  },
+ "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": {
+  "at": "2026-11-18T21:43:43.662Z",
+  "summary": "Bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Today, we’re introducing Gemini 4 Neon — bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower models. On the Vals Index, Neon ranks #2 and lands on the Pareto frontier. Be",
+  "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+ },
+ "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/": {
+  "at": "2026-11-18T21:43:43.662Z",
+  "summary": "Gemini can now make the calls, pay the bills, and finish your tasks. We’re updating Gemini to handle complex tasks like scheduling appointments, managing bills, and shopping for groceries. By connecting to your emails, calendar, and payment methods, Gemini saves you time while keeping your data secure in isolated environments. You can try these new capabilities today by switching the toggle from Chat to Task in the Gemini app, texting us on Android or iOS, or forwarding emails to gemini@google.com. Josh Woodward, Vice President of Labs, Gemini app, and AI Studio, explains that Gemini can now h",
+  "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+ },
  "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/": {
   "at": "2026-11-11T21:44:15.251Z",
   "summary": "Introducing the Gemini Decisions API, powered by our new Gemini Decision 1 model. Evaluate up to 1,000 yes/no, choice, and rubric-scoring questions in a fast, single pass across text, images, audio, video, and PDFs. We are introducing the Gemini Decisions API to help you make fast, probabilistic choices across text, images, audio, video, and PDFs. This tool computes confidence scores for multiple questions in a single pass, providing a cost-effective way to route queries, grade content, or check policy rules. You can start building today by accessing your API key in Google AI Studio and review",
@@ -129,11 +139,6 @@
   "summary": "A 1.75M-parameter decoder for Kokoro-82M that runs no neural network at audio rate. Kokoro's text side (pronunciation, timing, pitch and all voices) is unchanged. Its 53.3M-parameter waveform decoder is replaced by two small networks that run 80 and 160 times a second and set per-frequency gains on a pulse train and on white noise. Two inverse STFTs turn the result into audio. Paper: No Network at Audio Rate: A 1.75M-Parameter Harmonic-plus-Noise Decoder for Kokoro-82M (method, results, listening tests and negative results). ¹ 240 validation sentences, PyTorch, Apple M4. ² Six validation sente",
   "url": "https://huggingface.co/drmhse/nano-edge-tts"
  },
- "https://huggingface.co/moonshotai/Kimi-K3.1-Pro": {
-  "at": "2026-11-04T18:44:01.780Z",
-  "summary": "Kimi K3.1 Pro is an open-weight, natively multimodal agentic model, and our most capable 3T-class model to date. Post-trained from Kimi K3 with large-scale joint reinforcement learning across hundreds of downstream domains, it is the first model in the K3.1 series. With a 1-million-token context window, Kimi K3.1 Pro delivers substantial improvements in coding, 3D creation, financial research, factual accuracy, and other agentic capabilities. * Compared with Kimi K3, we replace the full-attention Gated MLA layers with Gated DeepSeek Sparse Attention (Gated DSA) layers for more efficient long-c",
-  "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
- },
  "https://huggingface.co/n4ze3m/tiny-voca": {
   "at": "2026-11-18T15:44:04.319Z",
   "summary": "tiny-voca is a small English text-to-speech model with two voices, F2 (female) and M2 (male). The complete model, including the waveform generator, has 4.5M parameters and was trained from scratch on about 18 hours of synthetic speech. It runs about 70x faster than real time on four CPU threads. Text of any length works. The command reads it one sentence at a time and joins the audio. A text that ends without a mark gets a full stop. A sentence with nothing to read, such as one in another script, is skipped. The saved audio never peaks above 0.99. The graph takes phoneme ids and stress values ",
@@ -151,6 +156,9 @@
  },
  "https://openai.com/index/a-thousand-fewer-paths-to-root/": {
   "at": "2026-11-06T21:43:40.870Z"
+ },
+ "https://openai.com/index/advancing-chip-design-with-our-models/": {
+  "at": "2026-11-18T21:43:43.662Z"
  },
  "https://openai.com/index/advancing-computer-use-for-healthcare-teams/": {
   "at": "2026-11-18T15:44:04.319Z"
@@ -468,11 +476,6 @@
   "at": "2026-11-06T15:43:39.651Z",
   "summary": "Johannes Hermle*, Ben Jones*, Lukas Althoff*, Ryan Heller, Thomas Lyttelton, Carolyn Stein, Nathan Wilmers, Maxim Massenkoff, Peter McCrory Science has been described as an “endless frontier” (Bush 1945). But how fast we explore that frontier has historically been limited by a scarce resource: the time and talent of human researchers. Artificial intelligence could ease that limit by amplifying what researchers can do, transforming both the process of discovery and the pace of exploration (Wang et al. 2023; Amodei 2024). Few applications of AI could matter more for human welfare. Given the high",
   "url": "https://www.anthropic.com/research/how-researchers-use-claude"
- },
- "https://www.anthropic.com/research/provable-inference": {
-  "at": "2026-11-04T18:44:01.780Z",
-  "summary": "Roy Rinberg (Anthropic), Alex Allain (Anthropic); Alessandro Chiesa (EPFL, StarkWare), Miranda Christ (MIT, RESI), Rahul Dalal (Anthropic STEM Fellows Program, Succinct), Giacomo Fenzi (EPFL), Ben Mayer (Anthropic Fellows Program, MIT), Guy Weissenberg (EPFL) When you talk to a friend in person, you have many ways to know it is really them: you can see them, hear them, shake their hand. When you talk to an AI model, you have almost none. A user querying a model today cannot check that the responses came from the specific model that a developer claims is responding, as opposed to one secretly s",
-  "url": "https://www.anthropic.com/research/provable-inference"
  },
  "https://www.reuters.com/business/california-sues-openai-over-ai-models-cyberattacks-hugging-face-other-companies-2026-11-16/": {
   "at": "2026-11-18T15:44:04.319Z"
