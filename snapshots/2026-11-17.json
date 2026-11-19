@@ -7150,158 +7150,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1xyfjl8",
-   "metrics": {
-    "authority": 0.9,
-    "communityN": 50,
-    "communityRank": 25,
-    "feedN": 100,
-    "feedRank": 51
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T08:54:32.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:ClaudeAI",
-     "kw:anthropic",
-     "kw:claude",
-     "cat:board"
-    ],
-    "score": 0.85
-   },
-   "social": {
-    "author": "emarkosov",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "ClaudeAI",
-    "createdAt": "2026-11-17T08:54:32.000Z",
-    "handle": "emarkosov",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/ClaudeAI/comments/1xyfjl8/anthropic_is_cutting_its_vulnerability_disclosure/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Anthropic's Frontier Red Team published an update to its coordinated vulnerability disclosure policy on Nov 16. This is the policy for bugs Anthropic finds in other people's software, including the ones found with Claude. What changes: - High and critical severity issues: 90 days down to 30 before disclosure. That's a third of the time maintainers had. - All other issues: 45 days. - Escalation to an external coordinator after 15 days instead of 30, if the maintainer doesn't respond. - After a patch is out, they wait 30 days instead of 45 before sharing full technical details. - Actively…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Anthropic's Frontier Red Team published an update to its coordinated vulnerability disclosure policy on Nov 16. This is the policy for bugs Anthropic finds in other people's software, including the ones found with Claude. What changes: - High and critical severity issues: 90 days down to 30 before disclosure. That's a third of the time maintainers had. - All other issues: 45 days. - Escalation to an external coordinator after 15 days instead of 30, if the maintainer doesn't respond. - After a patch is out, they wait 30 days instead of 45 before sharing full technical details. - Actively…",
-   "tags": [
-    "r/ClaudeAI"
-   ],
-   "title": "Anthropic is cutting its vulnerability disclosure window from 90 days to 30 for high and critical bugs, starting Jan 1, 2027",
-   "url": "https://www.reddit.com/r/ClaudeAI/comments/1xyfjl8/anthropic_is_cutting_its_vulnerability_disclosure/"
-  },
-  {
-   "board": "social",
-   "category": "research",
-   "key": "rd:1xyfqmf",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 45,
-    "communityRank": 26,
-    "feedN": 63,
-    "feedRank": 40
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T09:06:21.000Z",
-   "refs": [
-    "arxiv:1706.04599",
-    "arxiv:2207.05221",
-    "arxiv:2305.14975",
-    "arxiv:2306.13063"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:llm",
-     "kw:language model",
-     "kw:neural network",
-     "weak:agent",
-     "weak:model",
-     "weak:models",
-     "cat:papers"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Xjjjjyn",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-11-17T09:06:21.000Z",
-    "handle": "Xjjjjyn",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xyfqmf/gating_agent_tool_calls_on_model_confidence_what/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "A common suggestion for agent safety is \"let it act when confidence is above X, ask a human below X\". We went back to the papers before relying on that. Notes below, taken from the abstracts, with links. Corrections welcome. **What the papers report** Guo et al., 2017, [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599): modern neural networks are poorly calibrated out of the box; temperature scaling fixes much of it after the fact. This is about classifiers, before LLMs. Kadavath et al., 2022, [Language Models (Mostly) Know What They…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "A common suggestion for agent safety is \"let it act when confidence is above X, ask a human below X\". We went back to the papers before relying on that. Notes below, taken from the abstracts, with links. Corrections welcome. **What the papers report** Guo et al., 2017, [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599): modern neural networks are poorly calibrated out of the box; temperature scaling fixes much of it after the fact. This is about classifiers, before LLMs. Kadavath et al., 2022, [Language Models (Mostly) Know What They…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "Gating agent tool calls on model confidence: what four calibration papers support, and what they don't",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1xyfqmf/gating_agent_tool_calls_on_model_confidence_what/"
-  },
-  {
-   "board": "social",
-   "category": "tool",
-   "key": "rd:1xyfwv7",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 45,
-    "communityRank": 25,
-    "feedN": 63,
-    "feedRank": 39
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T09:17:46.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:qwen",
-     "kw:llama",
-     "kw:ollama",
-     "weak:model",
-     "weak:models",
-     "weak:gpu",
-     "weak:nvidia",
-     "cat:i built"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "rbm3267",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-11-17T09:17:46.000Z",
-    "handle": "rbm3267",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xyfwv7/i_got_tired_of_7b_models_crawling_at_12_toks_on/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Hey r/LLMDevs, Like a lot of developers, I don't have an M3 Max Mac Studio or dual RTX 4090s. My daily driver workstation has an 8th-Gen Intel i5 (6 cores), 32 GB of system RAM, and an older 2 GB NVIDIA Quadro P620. If you try to run any modern 7B or 8B model (like Qwen 2.5 Coder 7B or Llama 3.1 8B), it won't fit into 2 GB of VRAM. Ollama or llama.cpp defaults to running almost 100% on the CPU. On my machine, that meant getting locked at an agonizing 1.29 tokens per second while my 2 GB GPU sat 90% idle. ### The Physics: The Memory Bandwidth Wall The CPU compute cores aren't the…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Hey r/LLMDevs, Like a lot of developers, I don't have an M3 Max Mac Studio or dual RTX 4090s. My daily driver workstation has an 8th-Gen Intel i5 (6 cores), 32 GB of system RAM, and an older 2 GB NVIDIA Quadro P620. If you try to run any modern 7B or 8B model (like Qwen 2.5 Coder 7B or Llama 3.1 8B), it won't fit into 2 GB of VRAM. Ollama or llama.cpp defaults to running almost 100% on the CPU. On my machine, that meant getting locked at an agonizing 1.29 tokens per second while my 2 GB GPU sat 90% idle. ### The Physics: The Memory Bandwidth Wall The CPU compute cores aren't the…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "I got tired of 7B models crawling at 1.2 tok/s on my 2GB GPU, so I built WingLLM (Go daemon for 2x speculative decoding with Ollama)",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1xyfwv7/i_got_tired_of_7b_models_crawling_at_12_toks_on/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1xyg0vu",
    "metrics": {
     "authority": 1.4,
@@ -7389,55 +7237,6 @@
    ],
    "title": "How is it possible that OKLS can't outperform Muon in terms of step efficiency? [D]",
    "url": "https://www.reddit.com/r/MachineLearning/comments/1xyg48x/how_is_it_possible_that_okls_cant_outperform_muon/"
-  },
-  {
-   "board": "social",
-   "category": "industry",
-   "key": "rd:1xygfig",
-   "metrics": {
-    "authority": 1.1,
-    "communityN": 45,
-    "communityRank": 24,
-    "feedN": 63,
-    "feedRank": 38
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T09:51:01.000Z",
-   "refs": [
-    "gh:opendcai/dataflow"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LLMDevs",
-     "kw:llm",
-     "weak:model",
-     "weak:training",
-     "cat:acquiring"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Puzzleheaded_Box2842",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LLMDevs",
-    "createdAt": "2026-11-17T09:51:01.000Z",
-    "handle": "Puzzleheaded_Box2842",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LLMDevs/comments/1xygfig/what_happens_between_acquiring_training_data_and/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "There’s a lot of attention on model teams buying or licensing data: text collections, code, domain-specific documents, and human annotations. But acquiring the data leaves a substantial engineering problem. How do you turn different sources into training examples, decide which ones to keep, and inspect what each processing step changed? A useful architecture separates the workflow into pipelines, operators, and prompts . The pipeline defines the sequence of processing steps. Each operator handles a particular operation, such as generating examples, refining answers, evaluating quality, or…"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "There’s a lot of attention on model teams buying or licensing data: text collections, code, domain-specific documents, and human annotations. But acquiring the data leaves a substantial engineering problem. How do you turn different sources into training examples, decide which ones to keep, and inspect what each processing step changed? A useful architecture separates the workflow into pipelines, operators, and prompts . The pipeline defines the sequence of processing steps. Each operator handles a particular operation, such as generating examples, refining answers, evaluating quality, or…",
-   "tags": [
-    "r/LLMDevs"
-   ],
-   "title": "What happens between acquiring training data and actually training an LLM?",
-   "url": "https://www.reddit.com/r/LLMDevs/comments/1xygfig/what_happens_between_acquiring_training_data_and/"
   },
   {
    "board": "social",
@@ -8849,53 +8648,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1xyjxli",
-   "metrics": {
-    "authority": 1.3,
-    "communityN": 31,
-    "communityRank": 24,
-    "feedN": 100,
-    "feedRank": 66
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T13:04:43.000Z",
-   "refs": [],
-   "relevance": {
-    "reasons": [
-     "community:LocalLLaMA",
-     "kw:llama",
-     "kw:gemma",
-     "weak:ai",
-     "cat:board"
-    ],
-    "score": 1
-   },
-   "social": {
-    "author": "Course_Latter",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LocalLLaMA",
-    "createdAt": "2026-11-17T13:04:43.000Z",
-    "handle": "Course_Latter",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xyjxli/gemma_4_twice_as_fast_on_ryzen_ai_max_395/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Hi! Just want to share that we have optimized Gemma 4 to run more than twice as fast as llama.cpp on the Ryzen AI Max+ 395! To maintain accuracy we use a combination of rotation and GPTQ, along with selective mixed precision. https://embedl.com/google/gemma-4-31B-it/ryzen-ai-max-395"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Hi! Just want to share that we have optimized Gemma 4 to run more than twice as fast as llama.cpp on the Ryzen AI Max+ 395! To maintain accuracy we use a combination of rotation and GPTQ, along with selective mixed precision. https://embedl.com/google/gemma-4-31B-it/ryzen-ai-max-395",
-   "tags": [
-    "r/LocalLLaMA"
-   ],
-   "title": "Gemma 4 twice as fast on Ryzen AI Max+ 395",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xyjxli/gemma_4_twice_as_fast_on_ryzen_ai_max_395/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1xyk6m2",
    "metrics": {
     "authority": 0.9,
@@ -9368,54 +9120,6 @@
   {
    "board": "social",
    "category": "discussion",
-   "key": "rd:1xyllk7",
-   "metrics": {
-    "authority": 1.3,
-    "communityN": 31,
-    "communityRank": 25,
-    "feedN": 100,
-    "feedRank": 73
-   },
-   "observedAt": "2026-11-17T15:44:09.069Z",
-   "publishedAt": "2026-11-17T14:18:43.000Z",
-   "refs": [
-    "x:2122353364306374986"
-   ],
-   "relevance": {
-    "reasons": [
-     "community:LocalLLaMA",
-     "weak:model",
-     "weak:models",
-     "cat:?"
-    ],
-    "score": 0.55
-   },
-   "social": {
-    "author": "Terminator857",
-    "authorKind": "community",
-    "comments": 0,
-    "community": "LocalLLaMA",
-    "createdAt": "2026-11-17T14:18:43.000Z",
-    "handle": "Terminator857",
-    "likes": 0,
-    "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xyllk7/are_those_that_advocate_against_open_weight/",
-    "platform": "reddit",
-    "rankBasis": "position",
-    "text": "Dario says you can't allow open weight models because they are too dangerous: https://x.com/vikktorrrre/status/2122353364306374986 What are arguments against this line of thinking? We prefer democracy over the government controlling what is safe? Who wants to trust trump? LOL"
-   },
-   "sources": [
-    "reddit"
-   ],
-   "summary": "Dario says you can't allow open weight models because they are too dangerous: https://x.com/vikktorrrre/status/2122353364306374986 What are arguments against this line of thinking? We prefer democracy over the government controlling what is safe? Who wants to trust trump? LOL",
-   "tags": [
-    "r/LocalLLaMA"
-   ],
-   "title": "Are those that advocate against open weight models public enemy #1?",
-   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xyllk7/are_those_that_advocate_against_open_weight/"
-  },
-  {
-   "board": "social",
-   "category": "discussion",
    "key": "rd:1xylr2q",
    "metrics": {
     "authority": 0.9,
@@ -9648,6 +9352,101 @@
   },
   {
    "board": "social",
+   "category": "product",
+   "key": "x:2122737596971503885",
+   "metrics": {
+    "authority": 1,
+    "followers": 622478,
+    "likes": 3240,
+    "quotes": 189,
+    "readAt": 1795074183764,
+    "replies": 202,
+    "reposts": 284
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T17:04:16.000Z",
+   "refs": [],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:watch:lab"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google Gemini",
+    "authorKind": "lab",
+    "comments": 202,
+    "createdAt": "2026-11-17T17:04:16.000Z",
+    "handle": "GeminiApp",
+    "likes": 3240,
+    "permalink": "https://x.com/GeminiApp/status/2122737596971503885",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 284,
+    "text": "Put Gemini to work for you with Tasks. While Chat is for quick back-and-forth answers, Tasks are for longer projects and recurring schedules. Beginning today, Tasks are now free of charge for hundreds of millions of eligible users, starting in the U.S., JP, KR, CA, AU & IN. 🧵"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Put Gemini to work for you with Tasks. While Chat is for quick back-and-forth answers, Tasks are for longer projects and recurring schedules. Beginning today, Tasks are now free of charge for hundreds of millions of eligible users, starting in the U.S., JP, KR, CA, AU & IN. 🧵",
+   "tags": [
+    "google"
+   ],
+   "title": "Put Gemini to work for you with Tasks.",
+   "url": "https://x.com/GeminiApp/status/2122737596971503885"
+  },
+  {
+   "board": "social",
+   "category": "release",
+   "key": "x:2122750124543926515",
+   "metrics": {
+    "authority": 1,
+    "followers": 5553158,
+    "likes": 35577,
+    "quotes": 3668,
+    "readAt": 1795074183764,
+    "replies": 2228,
+    "reposts": 3586
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T17:54:03.000Z",
+   "refs": [
+    "url:openai.com/index/introducing-gpt-6-2-astra-sol"
+   ],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:now available"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "OpenAI",
+    "authorKind": "lab",
+    "comments": 2228,
+    "createdAt": "2026-11-17T17:54:03.000Z",
+    "handle": "OpenAI",
+    "likes": 35577,
+    "linkUrl": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+    "permalink": "https://x.com/OpenAI/status/2122750124543926515",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 3586,
+    "text": "Some of you have been asking very politely. Some of you have just been asking. GPT-6.2 Astra and Sol are now available. Super efficient and built to perform where it counts—the real world. https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Some of you have been asking very politely. Some of you have just been asking. GPT-6.2 Astra and Sol are now available. Super efficient and built to perform where it counts—the real world. https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y",
+   "tags": [
+    "openai"
+   ],
+   "title": "Some of you have been asking very politely.",
+   "url": "https://x.com/OpenAI/status/2122750124543926515"
+  },
+  {
+   "board": "social",
    "category": "discussion",
    "key": "x:2122751233442156678",
    "metrics": {
@@ -9697,6 +9496,55 @@
   },
   {
    "board": "social",
+   "category": "release",
+   "key": "x:2122752241887068565",
+   "metrics": {
+    "authority": 1,
+    "followers": 220219,
+    "likes": 1357,
+    "quotes": 25,
+    "readAt": 1795074183764,
+    "replies": 53,
+    "reposts": 109
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T18:02:27.000Z",
+   "refs": [
+    "x:2122752241887068565"
+   ],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:launched"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google AI Studio",
+    "authorKind": "lab",
+    "comments": 53,
+    "createdAt": "2026-11-17T18:02:27.000Z",
+    "handle": "GoogleAIStudio",
+    "likes": 1357,
+    "linkUrl": "https://x.com/GoogleAIStudio/status/2122752241887068565",
+    "permalink": "https://x.com/GoogleAIStudio/status/2122752241887068565",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 109,
+    "text": "back in may at google I/O, we launched the ability to build android apps right inside ai studio today, that experience gets even better here’s what’s new: - updates to the android emulator in AIS now include HD resolution and audio - store and sync data across devices with https://t.co/tCL99UDuNB"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "back in may at google I/O, we launched the ability to build android apps right inside ai studio today, that experience gets even better here’s what’s new: - updates to the android emulator in AIS now include HD resolution and audio - store and sync data across devices with https://t.co/tCL99UDuNB",
+   "tags": [
+    "google"
+   ],
+   "title": "back in may at google I/O, we launched the ability to build android apps right inside ai studio today, that experience…",
+   "url": "https://x.com/GoogleAIStudio/status/2122752241887068565"
+  },
+  {
+   "board": "social",
    "category": "discussion",
    "key": "x:2122758656668184633",
    "metrics": {
@@ -9742,6 +9590,154 @@
    "tags": [],
    "title": "This is a 180B-parameter model running in real time on just a 16 GB MacBook Pro!",
    "url": "https://x.com/jalenluorion/status/2122758656668184633"
+  },
+  {
+   "board": "social",
+   "category": "tool",
+   "key": "x:2122767521925230896",
+   "metrics": {
+    "authority": 1,
+    "followers": 1615904,
+    "likes": 1282,
+    "quotes": 72,
+    "readAt": 1795074183764,
+    "replies": 166,
+    "reposts": 125
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T19:03:10.000Z",
+   "refs": [
+    "x:2122767521925230896"
+   ],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:plugin"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google DeepMind",
+    "authorKind": "lab",
+    "comments": 166,
+    "createdAt": "2026-11-17T19:03:10.000Z",
+    "handle": "GoogleDeepMind",
+    "likes": 1282,
+    "linkUrl": "https://x.com/GoogleDeepMind/status/2122767521925230896",
+    "permalink": "https://x.com/GoogleDeepMind/status/2122767521925230896",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 125,
+    "text": "Teaching robots new tasks just got a lot faster. 🤖 With Gemini 4 Hydrogen and the new robotics plugin for Google @Antigravity, you can connect a supported arm, practice in @MuJoCo simulation, and run tasks in the real world using plain conversation. https://t.co/Gd9dO26BUN"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Teaching robots new tasks just got a lot faster. 🤖 With Gemini 4 Hydrogen and the new robotics plugin for Google @Antigravity, you can connect a supported arm, practice in @MuJoCo simulation, and run tasks in the real world using plain conversation. https://t.co/Gd9dO26BUN",
+   "tags": [
+    "google"
+   ],
+   "title": "Teaching robots new tasks just got a lot faster.",
+   "url": "https://x.com/GoogleDeepMind/status/2122767521925230896"
+  },
+  {
+   "board": "social",
+   "category": "product",
+   "key": "x:2122807824531275826",
+   "metrics": {
+    "authority": 1,
+    "followers": 1615904,
+    "likes": 2487,
+    "quotes": 62,
+    "readAt": 1795074183764,
+    "replies": 154,
+    "reposts": 154
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T21:43:19.000Z",
+   "refs": [
+    "x:2122807824531275826"
+   ],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:watch:lab"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google DeepMind",
+    "authorKind": "lab",
+    "comments": 154,
+    "createdAt": "2026-11-17T21:43:19.000Z",
+    "handle": "GoogleDeepMind",
+    "likes": 2487,
+    "linkUrl": "https://x.com/GoogleDeepMind/status/2122807824531275826",
+    "permalink": "https://x.com/GoogleDeepMind/status/2122807824531275826",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 154,
+    "text": "Gemini 4 Hydrogen turned Google Sheets into a pixel-art canvas. Using @Antigravity, the model shrank thousands of cells to create animated scenes. https://t.co/BHtrN5CSrt"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "Gemini 4 Hydrogen turned Google Sheets into a pixel-art canvas. Using @Antigravity, the model shrank thousands of cells to create animated scenes. https://t.co/BHtrN5CSrt",
+   "tags": [
+    "google"
+   ],
+   "title": "Gemini 4 Hydrogen turned Google Sheets into a pixel-art canvas.",
+   "url": "https://x.com/GoogleDeepMind/status/2122807824531275826"
+  },
+  {
+   "board": "social",
+   "category": "release",
+   "key": "x:2122817812200555003",
+   "metrics": {
+    "authority": 1,
+    "followers": 220219,
+    "likes": 2918,
+    "quotes": 71,
+    "readAt": 1795074183764,
+    "replies": 106,
+    "reposts": 251
+   },
+   "observedAt": "2026-11-19T07:43:03.764Z",
+   "publishedAt": "2026-11-17T22:23:01.000Z",
+   "refs": [
+    "x:2122817812200555003",
+    "url:ai.studio/build"
+   ],
+   "relevance": {
+    "reasons": [
+     "watch:lab",
+     "cat:introducing"
+    ],
+    "score": 1
+   },
+   "social": {
+    "author": "Google AI Studio",
+    "authorKind": "lab",
+    "comments": 106,
+    "createdAt": "2026-11-17T22:23:01.000Z",
+    "handle": "GoogleAIStudio",
+    "likes": 2918,
+    "linkUrl": "https://ai.studio/build",
+    "permalink": "https://x.com/GoogleAIStudio/status/2122817812200555003",
+    "platform": "x",
+    "rankBasis": "votes",
+    "reposts": 251,
+    "text": "make it yours: introducing custom domains in ai studio turn your idea into a live, branded app with a custom domain, all within ai studio build https://t.co/CbKuR8bPfm to get started https://t.co/oa061xzl3m"
+   },
+   "sources": [
+    "x"
+   ],
+   "summary": "make it yours: introducing custom domains in ai studio turn your idea into a live, branded app with a custom domain, all within ai studio build https://t.co/CbKuR8bPfm to get started https://t.co/oa061xzl3m",
+   "tags": [
+    "google"
+   ],
+   "title": "make it yours: introducing custom domains in ai studio turn your idea into a live, branded app with a custom domain,…",
+   "url": "https://x.com/GoogleAIStudio/status/2122817812200555003"
   },
   {
    "board": "labs",
@@ -10567,7 +10563,7 @@
   }
  ],
  "date": "2026-11-17",
- "fetchedAt": "2026-11-19T06:46:25.748Z",
+ "fetchedAt": "2026-11-19T07:43:03.764Z",
  "runs": [
   "2026-11-17T08:43:06.267Z",
   "2026-11-17T09:43:31.570Z",
@@ -10587,7 +10583,8 @@
   "2026-11-18T21:43:43.662Z",
   "2026-11-19T00:51:06.046Z",
   "2026-11-19T03:43:36.232Z",
-  "2026-11-19T06:46:25.748Z"
+  "2026-11-19T06:46:25.748Z",
+  "2026-11-19T07:43:03.764Z"
  ],
  "schema": 2,
  "sources": [
@@ -10667,7 +10664,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-19T06:46:25.748Z",
+   "fetchedAt": "2026-11-19T07:43:03.764Z",
    "id": "labs-kimi",
    "message": "kimi-platform: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -10683,7 +10680,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-19T06:46:25.748Z",
+   "fetchedAt": "2026-11-19T07:43:03.764Z",
    "id": "labs-minimax",
    "message": "minimax-models: mdChangelog: no entries",
    "state": "degraded"
@@ -10728,7 +10725,7 @@
   {
    "board": "labs",
    "count": 0,
-   "fetchedAt": "2026-11-19T06:46:25.748Z",
+   "fetchedAt": "2026-11-19T07:43:03.764Z",
    "id": "labs-zhipu",
    "message": "zai-releases: mintlifyUpdates: no entries",
    "state": "degraded"
@@ -10736,7 +10733,7 @@
   {
    "board": "social",
    "count": 0,
-   "fetchedAt": "2026-11-19T06:46:25.748Z",
+   "fetchedAt": "2026-11-19T07:43:03.764Z",
    "id": "reddit",
    "message": "rss: all 3 community feeds failed",
    "state": "failed"
@@ -10744,12 +10741,13 @@
   {
    "board": "social",
    "costUsd": 0,
-   "count": 0,
-   "fetchedAt": "2026-11-19T06:46:25.748Z",
+   "count": 17,
+   "fetchedAt": "2026-11-19T07:43:03.764Z",
    "id": "x",
-   "message": "~$0.00 of $20 this month; 5 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
+   "message": "~$0.00 of $20 this month; 11 warnings, e.g. 15 personal accounts skipped (syndication is fresh only for organisations)",
    "mode": "syndication",
-   "state": "degraded"
+   "settledAt": "2026-11-19T07:43:03.764Z",
+   "state": "ok"
   },
   {
    "board": "social",
