@@ -97,11 +97,6 @@
   "summary": "Introducing the Gemini Decisions API, powered by our new Gemini Decision 1 model. Evaluate up to 1,000 yes/no, choice, and rubric-scoring questions in a fast, single pass across text, images, audio, video, and PDFs. We are introducing the Gemini Decisions API to help you make fast, probabilistic choices across text, images, audio, video, and PDFs. This tool computes confidence scores for multiple questions in a single pass, providing a cost-effective way to route queries, grade content, or check policy rules. You can start building today by accessing your API key in Google AI Studio and review",
   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
  },
- "https://community.openai.com/t/security-follow-up-tool-call-silently-routed-to-a-different-connector/1413053": {
-  "at": "2026-11-07T00:48:09.637Z",
-  "summary": "In a conversation with two connectors enabled, ChatGPT made a follow-up tool call through a different connector than the one that started the flow. The user was not told about the switch. The call carried a one-time confirmation code from the first connector’s widget. Setup - One ChatGPT account with two connectors enabled that point to the same MCP server. - Connector A is a custom connector added in developer mode. - Connector B is the published app from the app directory. - Each connecto...",
-  "url": "https://community.openai.com/t/security-follow-up-tool-call-silently-routed-to-a-different-connector/1413053"
- },
  "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/": {
   "at": "2026-11-11T21:44:15.251Z",
   "summary": "Adam Gayoso, Natasha Latysheva, Pushmeet Kohli and Žiga Avsec Our next-generation DNA sequence model bridges single-cell biology and human genetics, predicting how genetic variants affect hundreds of human cell types. Today, we are announcing AlphaGenome 2, our next-generation model that predicts how DNA sequences and their variations impact specific human cell types, giving scientists a powerful new tool to uncover the cellular drivers of disease. Cells are the building blocks of life. Every cell in our body carries the same DNA blueprint, yet each cell type and state—like a heart muscle cell",
@@ -117,11 +112,6 @@
   "summary": "",
   "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
  },
- "https://developers.openai.com/api/docs/guides/voice-sip": {
-  "at": "2026-11-07T00:48:09.637Z",
-  "summary": "Choose your API to see its connection steps and session events. Connect incoming and outgoing phone calls to GPT-Live through a SIP trunk. Your provider exchanges call audio with OpenAI, while your backend handles session configuration, call controls, and business logic. SIP signaling uses TLS, and GPT-Live requires SRTP for call audio. Use a sideband connection when your backend needs to receive session events or send commands. It attaches to the existing conversation while SIP carries the audio. Assign one handler to each action so that duplicate webhook deliveries or events observed on mult",
-  "url": "https://developers.openai.com/api/docs/guides/voice-sip"
- },
  "https://huggingface.co/ArsalanZ/Nenya-2.5B-A0.5B-Base": {
   "at": "2026-11-14T06:43:18.850Z",
   "summary": "Text Generation model with 3B parameters. Download, explore files and run it on Hugging Face.",
@@ -136,6 +126,11 @@
   "at": "2026-11-13T18:43:46.369Z",
   "summary": "llama.cpp makes it possible to run multi-modal LLMs across a wide range of hardware - from consumer-grade local machines to high-end enterprise servers. Through quantization, optimized backends, and a portable C/C++ implementation, we make AI inference accessible at every level of the software stack. We believe this is the most lightweight, versatile and sensible platform for building cross-platform and private AI products. During the 3.5 years since its inception, the project has grown a lot and many downstream applications already depend on our work. We expect this trend to continue as local",
   "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+ },
+ "https://huggingface.co/blog/inkling2mini": {
+  "at": "2026-11-21T00:50:58.538Z",
+  "summary": "TLDR; Inkling 2 Mini is a new looped transformer model. It’s a multimodal Mixture-of-Experts with ~26B physical total and 3B active parameters per token. It uses a neat trick to increase capacity: some layers are visited in a loop that repeats three times, which makes it work like it had more parameters. It supports a 1M-token context size, accepts images and text inputs. Thinking Machines Lab ships the model in a mixed-precision format, with NVFP4 and MXFP8 expert weights. A DSpark drafter is also included for additional speed-up at a small memory cost. Inkling 2 Mini is much, much smaller th",
+  "url": "https://huggingface.co/blog/inkling2mini"
  },
  "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813": {
   "at": "2026-11-14T03:43:29.643Z",
