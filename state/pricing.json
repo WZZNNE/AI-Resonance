@@ -7548,7 +7548,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.001014,
+   "cr": 0.000996,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7557,18 +7557,18 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0507,
+   "in": 0.0498,
    "k": "deepseek-v4-1-flash",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.2028,
+   "out": 0.1992,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-10"
   },
   {
-   "cr": 0.01,
+   "cr": 0.003,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7577,11 +7577,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash-1017",
-   "in": 0.036,
+   "in": 0.15,
    "k": "deepseek-v4-1-flash-1017",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash 1017",
-   "out": 0.5,
+   "out": 0.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8427,22 +8427,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2023-08-02"
-  },
-  {
-   "budget": {},
-   "cr": 0.006,
-   "ctx": 1048756,
-   "id": "meituan/longcat-2.0",
-   "in": 0.3,
-   "k": "longcat-2-0",
-   "maxOut": 262144,
-   "name": "LongCat-2.0",
-   "out": 1.2,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-06-30"
   },
   {
    "ctx": 131072,
@@ -11484,7 +11468,7 @@
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-11-20"
+   "upd": "2026-11-21"
   },
   {
    "alwaysOn": true,
@@ -11927,6 +11911,28 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-07-15"
+  },
+  {
+   "cr": 0.02,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "max"
+   ],
+   "id": "thinkingmachines/inkling-2-mini",
+   "in": 0.1,
+   "k": "inkling-2-mini",
+   "maxOut": 65536,
+   "name": "Inkling 2 Mini",
+   "out": 0.4,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-21"
   },
   {
    "cr": 0.03,
@@ -16744,5 +16750,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-21T03:43:44.200Z"
+ "updatedAt": "2026-11-21T06:44:12.226Z"
 }
