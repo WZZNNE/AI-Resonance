@@ -6480,7 +6480,7 @@
    "k": "kimi-latest",
    "maxOut": 943718,
    "name": "Kimi Latest",
-   "out": 10.6066,
+   "out": 11.0055,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8126,13 +8126,14 @@
    "upd": "2025-03-12"
   },
   {
+   "cr": 0.02,
    "ctx": 131072,
    "id": "google/gemma-3-4b-it",
-   "in": 0.05,
+   "in": 0.04,
    "k": "gemma-3-4b-it",
-   "maxOut": 16384,
+   "maxOut": 117964,
    "name": "Gemma 3 4B IT",
-   "out": 0.1,
+   "out": 0.05,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -8222,13 +8223,14 @@
    "upd": "2026-03-25"
   },
   {
+   "cr": 0.2,
    "ctx": 8192,
    "id": "gryphe/mythomax-l2-13b",
-   "in": 0.08,
+   "in": 0.3,
    "k": "mythomax-l2-13b",
-   "maxOut": 3686,
+   "maxOut": 7372,
    "name": "MythoMax L2 13B",
-   "out": 0.11,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -11124,11 +11126,11 @@
   {
    "ctx": 262144,
    "id": "qwen/qwen3.5-27b",
-   "in": 0.195,
+   "in": 0.26,
    "k": "qwen3-5-27b",
-   "maxOut": 65536,
+   "maxOut": 81920,
    "name": "Qwen3.5 27B",
-   "out": 1.56,
+   "out": 2.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11778,7 +11780,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.020625,
+   "cr": 0.035,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11786,11 +11788,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.0825,
+   "in": 0.14,
    "k": "hy3",
-   "maxOut": 128000,
+   "maxOut": 235929,
    "name": "Hy3",
-   "out": 0.33,
+   "out": 0.58,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11831,7 +11833,7 @@
    "upd": "2026-11-16"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11839,11 +11841,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12371,14 +12373,14 @@
    "upd": "2026-03-16"
   },
   {
-   "cr": 0.26,
+   "cr": 0.6,
    "ctx": 204800,
    "id": "z-ai/glm-5.1",
-   "in": 1.4,
+   "in": 1.19,
    "k": "glm-5-1",
    "maxOut": 131072,
    "name": "GLM-5.1",
-   "out": 4.4,
+   "out": 3.74,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16750,5 +16752,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-21T21:43:46.418Z"
+ "updatedAt": "2026-11-22T00:52:40.185Z"
 }
