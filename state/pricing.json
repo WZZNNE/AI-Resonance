@@ -6442,7 +6442,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.0014,
+   "cr": 0.035,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6451,11 +6451,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.044,
+   "in": 0.0434,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.132,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7514,7 +7514,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0443,
+   "in": 0.0434,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -7604,7 +7604,7 @@
    "upd": "2026-09-10"
   },
   {
-   "cr": 0.003,
+   "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7613,15 +7613,29 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash-1017",
-   "in": 0.15,
+   "in": 0.3,
    "k": "deepseek-v4-1-flash-1017",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash 1017",
-   "out": 0.6,
+   "out": 1.2,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-10-17"
+  },
+  {
+   "ctx": 512000,
+   "id": "dots-studio/dots-3-note-preview:free",
+   "in": 0,
+   "k": "dots-3-note-preview",
+   "maxOut": 460800,
+   "name": "Dots3-Note Preview (free)",
+   "out": 0,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-08-14"
   },
   {
    "cr": 0.06,
@@ -8175,14 +8189,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0375,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0675,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.225,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12409,14 +12423,14 @@
    "upd": "2026-03-16"
   },
   {
-   "cr": 0.6,
+   "cr": 0.26,
    "ctx": 204800,
    "id": "z-ai/glm-5.1",
-   "in": 1.19,
+   "in": 1.4,
    "k": "glm-5-1",
    "maxOut": 131072,
    "name": "GLM-5.1",
-   "out": 3.74,
+   "out": 4.4,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16788,5 +16802,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-23T03:43:46.999Z"
+ "updatedAt": "2026-11-23T06:56:03.525Z"
 }
