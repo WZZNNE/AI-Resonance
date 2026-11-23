@@ -6435,7 +6435,7 @@
    "k": "deepseek-pro-latest",
    "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 8,
+   "out": 5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8148,14 +8148,13 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.04,
    "ctx": 131072,
    "id": "google/gemma-3-27b-it",
    "in": 0.08,
    "k": "gemma-3-27b-it",
-   "maxOut": 117964,
+   "maxOut": 16384,
    "name": "Gemma 3 27B IT",
-   "out": 0.45,
+   "out": 0.16,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -10617,6 +10616,7 @@
    "upd": "2026-05-05"
   },
   {
+   "cr": 0.05,
    "ctx": 131072,
    "efforts": [
     "low",
@@ -10624,11 +10624,11 @@
     "high"
    ],
    "id": "openai/gpt-oss-120b",
-   "in": 0.09,
+   "in": 0.05,
    "k": "gpt-oss-120b",
    "maxOut": 117964,
    "name": "GPT OSS 120B",
-   "out": 0.36,
+   "out": 0.25,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11264,11 +11264,11 @@
    "cr": 0.025,
    "ctx": 262144,
    "id": "qwen/qwen3.6-35b-a3b",
-   "in": 0.1,
+   "in": 0.05,
    "k": "qwen3-6-35b-a3b",
    "maxOut": 235929,
    "name": "Qwen3.6 35B-A3B",
-   "out": 0.9,
+   "out": 0.7,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11869,7 +11869,7 @@
    "upd": "2026-11-16"
   },
   {
-   "cr": 0.0378,
+   "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11877,11 +11877,11 @@
     "high"
    ],
    "id": "tencent/hy4-preview",
-   "in": 0.7506,
+   "in": 0.834,
    "k": "hy4-preview",
    "maxOut": 64000,
    "name": "Hy4 preview",
-   "out": 2.2509,
+   "out": 2.501,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12409,14 +12409,14 @@
    "upd": "2026-03-16"
   },
   {
-   "cr": 0.26,
+   "cr": 0.6,
    "ctx": 204800,
    "id": "z-ai/glm-5.1",
-   "in": 1.4,
+   "in": 1.19,
    "k": "glm-5-1",
    "maxOut": 131072,
    "name": "GLM-5.1",
-   "out": 4.4,
+   "out": 3.74,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16788,5 +16788,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-22T21:43:38.114Z"
+ "updatedAt": "2026-11-23T00:53:46.136Z"
 }
