@@ -2481,6 +2481,24 @@
    "upd": "2026-11-04"
   },
   {
+   "cr": 0.003,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "high"
+   ],
+   "id": "tencent/Hy4-flash",
+   "in": 0.07,
+   "k": "hy4-flash",
+   "maxOut": 65536,
+   "name": "Hy4 flash",
+   "out": 0.281,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-16"
+  },
+  {
    "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
@@ -5921,7 +5939,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.035,
+   "cr": 0.0014,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -5930,11 +5948,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.0434,
+   "in": 0.044,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.3,
+   "out": 0.132,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6993,7 +7011,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0434,
+   "in": 0.045,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 943718,
    "name": "DeepSeek V4 Flash 0731",
@@ -7024,7 +7042,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.2,
+   "cr": 0.108,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7032,11 +7050,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.9,
+   "in": 1.28,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.5,
+   "out": 2.56,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7668,14 +7686,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 235929,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7784,14 +7802,14 @@
    "upd": "2026-08-25"
   },
   {
-   "cr": 0.0042,
-   "ctx": 262144,
+   "cr": 0.012,
+   "ctx": 131072,
    "id": "inclusionai/ling-3.0-flash",
-   "in": 0.021,
+   "in": 0.06,
    "k": "ling-3-0-flash",
    "maxOut": 32768,
    "name": "Ling 3.0 Flash",
-   "out": 0.063,
+   "out": 0.18,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7829,14 +7847,14 @@
    "upd": "2026-08-06"
   },
   {
-   "cr": 0.012,
+   "cr": 0.015,
    "ctx": 1048576,
    "id": "inclusionai/ling-3.1-flash",
-   "in": 0.06,
+   "in": 0.075,
    "k": "ling-3-1-flash",
    "maxOut": 262144,
    "name": "Ling 3.1 Flash",
-   "out": 0.18,
+   "out": 0.225,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8652,19 +8670,6 @@
    "upd": "2026-10-15"
   },
   {
-   "ctx": 131072,
-   "id": "moonshotai/kimi-k2",
-   "in": 0.57,
-   "k": "kimi-k2",
-   "maxOut": 98304,
-   "name": "Kimi K2 0711",
-   "out": 2.3,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-07-11"
-  },
-  {
    "ctx": 262144,
    "id": "moonshotai/kimi-k2-0905",
    "in": 0.6,
@@ -8676,21 +8681,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-09-05"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.15,
-   "ctx": 262144,
-   "id": "moonshotai/kimi-k2-thinking",
-   "in": 0.6,
-   "k": "kimi-k2-thinking",
-   "maxOut": 98304,
-   "name": "Kimi K2 Thinking",
-   "out": 2.5,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-11-06"
   },
   {
    "cr": 0.15,
@@ -11234,7 +11224,7 @@
   },
   {
    "cr": 0.04,
-   "ctx": 262144,
+   "ctx": 256000,
    "efforts": [
     "low",
     "medium",
@@ -11310,7 +11300,7 @@
    "upd": "2026-05-21"
   },
   {
-   "cr": 0.035,
+   "cr": 0.033,
    "ctx": 262144,
    "efforts": [
     "none",
@@ -11318,11 +11308,11 @@
     "high"
    ],
    "id": "tencent/hy3",
-   "in": 0.14,
+   "in": 0.132,
    "k": "hy3",
-   "maxOut": 235929,
+   "maxOut": 128000,
    "name": "Hy3",
-   "out": 0.58,
+   "out": 0.528,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -16397,5 +16387,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-24T03:43:27.578Z"
+ "updatedAt": "2026-11-24T06:46:58.408Z"
 }
