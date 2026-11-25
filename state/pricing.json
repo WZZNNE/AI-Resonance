@@ -196,11 +196,11 @@
    "src": "models.dev"
   },
   {
-   "ctx": 34096,
+   "ctx": 38192,
    "id": "qwen-vl-ocr",
    "in": 0.07,
    "k": "qwen-vl-ocr",
-   "maxOut": 4096,
+   "maxOut": 8192,
    "name": "Qwen-VL OCR",
    "out": 0.16,
    "p": "alibaba",
@@ -1225,7 +1225,7 @@
    "id": "qwen3.7-plus",
    "in": 0.276,
    "k": "qwen3-7-plus",
-   "maxOut": 64000,
+   "maxOut": 131072,
    "name": "Qwen3.7 Plus",
    "out": 1.101,
    "p": "alibaba-cn",
@@ -2011,7 +2011,7 @@
    "id": "ByteDance/Seed-2.0-mini",
    "in": 0.1,
    "k": "seed-2-0-mini",
-   "maxOut": 32000,
+   "maxOut": 131072,
    "name": "Seed 2.0 Mini",
    "out": 0.4,
    "p": "deepinfra",
@@ -3928,7 +3928,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2025-06-17"
+   "upd": "2025-07-22"
   },
   {
    "cr": 0.05,
@@ -4874,51 +4874,6 @@
    "upd": "2025-09-30"
   },
   {
-   "cr": 0.16,
-   "ctx": 262144,
-   "id": "kimi-k2.6",
-   "in": 0.95,
-   "k": "kimi-k2-6",
-   "maxOut": 262144,
-   "name": "Kimi K2.6",
-   "out": 4,
-   "p": "moonshotai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-20"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.19,
-   "ctx": 262144,
-   "id": "kimi-k2.7-code",
-   "in": 0.95,
-   "k": "kimi-k2-7-code",
-   "maxOut": 262144,
-   "name": "Kimi K2.7 Code",
-   "out": 4,
-   "p": "moonshotai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-12"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.38,
-   "ctx": 262144,
-   "id": "kimi-k2.7-code-highspeed",
-   "in": 1.9,
-   "k": "kimi-k2-7-code-highspeed",
-   "maxOut": 262144,
-   "name": "Kimi K2.7 Code HighSpeed",
-   "out": 8,
-   "p": "moonshotai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-12"
-  },
-  {
    "cr": 0.3,
    "ctx": 1048576,
    "cw": 3,
@@ -4977,51 +4932,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-10-23"
-  },
-  {
-   "cr": 0.1643,
-   "ctx": 262144,
-   "id": "kimi-k2.6",
-   "in": 0.9711,
-   "k": "kimi-k2-6",
-   "maxOut": 262144,
-   "name": "Kimi K2.6",
-   "out": 4.0337,
-   "p": "moonshotai-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-20"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.1942,
-   "ctx": 262144,
-   "id": "kimi-k2.7-code",
-   "in": 0.9711,
-   "k": "kimi-k2-7-code",
-   "maxOut": 262144,
-   "name": "Kimi K2.7 Code",
-   "out": 4.0337,
-   "p": "moonshotai-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-12"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.3884,
-   "ctx": 262144,
-   "id": "kimi-k2.7-code-highspeed",
-   "in": 1.9421,
-   "k": "kimi-k2-7-code-highspeed",
-   "maxOut": 262144,
-   "name": "Kimi K2.7 Code HighSpeed",
-   "out": 8.0673,
-   "p": "moonshotai-cn",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-06-12"
   },
   {
    "cr": 0.2988,
@@ -5084,61 +4994,6 @@
    "upd": "2026-10-23"
   },
   {
-   "ctx": 1000000,
-   "efforts": [
-    "none",
-    "low",
-    "high",
-    "max"
-   ],
-   "id": "deepseek-ai/deepseek-v4.1-flash",
-   "in": 0,
-   "k": "deepseek-v4-1-flash",
-   "maxOut": 384000,
-   "name": "DeepSeek V4.1 Flash",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-09-10"
-  },
-  {
-   "ctx": 250000,
-   "efforts": [
-    "none",
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "xhigh",
-    "max"
-   ],
-   "id": "google/diffusiongemma-26b-a4b-it",
-   "in": 0,
-   "k": "diffusiongemma-26b-a4b-it",
-   "maxOut": 32768,
-   "name": "DiffusionGemma 26B A4B IT",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-07-15"
-  },
-  {
-   "ctx": 256000,
-   "id": "google/gemma-4-31b-it",
-   "in": 0,
-   "k": "gemma-4-31b-it",
-   "maxOut": 16384,
-   "name": "Gemma-4-31B-IT",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-04-02"
-  },
-  {
    "ctx": 128000,
    "id": "google/google-paligemma",
    "in": 0,
@@ -5150,66 +5005,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2024-08-26"
-  },
-  {
-   "ctx": 128000,
-   "id": "meta/llama-3.2-11b-vision-instruct",
-   "in": 0,
-   "k": "llama-3-2-11b-vision-instruct",
-   "maxOut": 4096,
-   "name": "Llama 3.2 11b Vision Instruct",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-09-25"
-  },
-  {
-   "ctx": 128000,
-   "id": "meta/llama-3.2-90b-vision-instruct",
-   "in": 0,
-   "k": "llama-3-2-90b-vision-instruct",
-   "maxOut": 8192,
-   "name": "Llama-3.2-90B-Vision-Instruct",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2024-09-25"
-  },
-  {
-   "ctx": 163840,
-   "id": "meta/llama-guard-4-12b",
-   "in": 0,
-   "k": "llama-guard-4-12b",
-   "maxOut": 16384,
-   "name": "Llama Guard 4 12B",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-04-29"
-  },
-  {
-   "ctx": 131072,
-   "efforts": [
-    "none",
-    "minimal",
-    "low",
-    "medium",
-    "high",
-    "max"
-   ],
-   "id": "meta/muse-glimmer-30b",
-   "in": 0,
-   "k": "muse-glimmer-30b",
-   "maxOut": 131072,
-   "name": "Muse Glimmer 30B",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-08-10"
   },
   {
    "ctx": 262144,
@@ -5268,19 +5063,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-10-28"
-  },
-  {
-   "ctx": 10240,
-   "id": "nvidia/llama-nemotron-rerank-vl-1b-v2",
-   "in": 0,
-   "k": "llama-nemotron-rerank-vl-1b-v2",
-   "maxOut": 4096,
-   "name": "llama-nemotron-rerank-vl-1b-v2",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2025-12-18"
   },
   {
    "budget": {
@@ -5364,19 +5146,6 @@
   },
   {
    "ctx": 128000,
-   "id": "nvidia/nemotron-voicechat",
-   "in": 0,
-   "k": "nemotron-voicechat",
-   "maxOut": 8192,
-   "name": "nemotron-voicechat",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-03-16"
-  },
-  {
-   "ctx": 128000,
    "id": "nvidia/sparsedrive",
    "in": 0,
    "k": "sparsedrive",
@@ -5412,24 +5181,6 @@
    "reasoning": false,
    "src": "models.dev",
    "upd": "2026-04-16"
-  },
-  {
-   "ctx": 131072,
-   "efforts": [
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "openai/gpt-oss-20b",
-   "in": 0,
-   "k": "gpt-oss-20b",
-   "maxOut": 131072,
-   "name": "GPT OSS 20B",
-   "out": 0,
-   "p": "nvidia",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-08-05"
   },
   {
    "ctx": 448,
@@ -6630,7 +6381,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.035,
+   "cr": 0.001442,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6639,11 +6390,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.047,
+   "in": 0.04532,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.3,
+   "out": 0.13596,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -6820,20 +6571,6 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-09-11"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 1048576,
-   "id": "~unbiased/pareto-latest",
-   "in": 0.8,
-   "k": "pareto-latest",
-   "maxOut": 131072,
-   "name": "Pareto Latest",
-   "out": 3.2,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-10-13"
   },
   {
    "cr": 0.5,
@@ -7702,7 +7439,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.047,
+   "in": 0.0456,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash 0731",
@@ -7733,7 +7470,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.108,
+   "cr": 0.21,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7741,11 +7478,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 1.28,
+   "in": 0.72684,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 2.56,
+   "out": 1.5228,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7772,7 +7509,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.0042,
+   "cr": 0.001014,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7781,11 +7518,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.14,
+   "in": 0.0507,
    "k": "deepseek-v4-1-flash",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.42,
+   "out": 0.2028,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7859,7 +7596,7 @@
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
-   "upd": "2025-08-26"
+   "upd": "2025-10-02"
   },
   {
    "budget": {
@@ -12136,46 +11873,19 @@
    "upd": "2026-07-30"
   },
   {
-   "cr": 0.03,
-   "ctx": 1048576,
-   "id": "unbiased/pareto-26.10",
-   "in": 0.8,
-   "k": "pareto-26-10",
-   "maxOut": 131072,
-   "name": "Pareto 26.10",
-   "out": 3.2,
+   "alwaysOn": true,
+   "cr": 0.02,
+   "ctx": 131072,
+   "id": "tngtech/deepseek-r1t2-chimera",
+   "in": 1,
+   "k": "deepseek-r1t2-chimera",
+   "maxOut": 32768,
+   "name": "DeepSeek R1T2 Chimera",
+   "out": 2.625,
    "p": "openrouter",
-   "reasoning": false,
+   "reasoning": true,
    "src": "models.dev",
-   "upd": "2026-10-15"
-  },
-  {
-   "cr": 0.03,
-   "ctx": 1048576,
-   "id": "unbiased/pareto-26.10-preview",
-   "in": 0.8,
-   "k": "pareto-26-10-preview",
-   "maxOut": 131072,
-   "name": "Pareto 26.10 Preview",
-   "out": 3.2,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-10-01"
-  },
-  {
-   "cr": 0.25,
-   "ctx": 262144,
-   "id": "unbiased/pareto-26.9",
-   "in": 2.5,
-   "k": "pareto-26-9",
-   "maxOut": 131072,
-   "name": "Pareto 26.9",
-   "out": 7.5,
-   "p": "openrouter",
-   "reasoning": false,
-   "src": "models.dev",
-   "upd": "2026-10-13"
+   "upd": "2025-07-08"
   },
   {
    "cr": 0.2,
@@ -16053,7 +15763,7 @@
    "id": "Qwen/Qwen3.7-Plus",
    "in": 0.32,
    "k": "qwen3-7-plus",
-   "maxOut": 64000,
+   "maxOut": 131072,
    "name": "Qwen3.7 Plus",
    "out": 1.28,
    "p": "togetherai",
@@ -16720,6 +16430,19 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-09-22"
+  },
+  {
+   "ctx": 128000,
+   "id": "glm-4-32b-0414-128k",
+   "in": 0.1,
+   "k": "glm-4-32b-0414-128k",
+   "maxOut": 16384,
+   "name": "GLM-4-32B-0414-128K",
+   "out": 0.1,
+   "p": "zai",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-04-14"
   },
   {
    "cr": 0.11,
@@ -17657,5 +17380,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-25T15:44:08.761Z"
+ "updatedAt": "2026-11-25T18:43:30.360Z"
 }
