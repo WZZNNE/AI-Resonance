@@ -9532,10 +9532,10 @@
    "upd": "2026-06-02"
   },
   {
-   "cr": 0.01,
+   "cr": 0.04,
    "ctx": 1048576,
    "id": "nvidia/nemotron-3.5-lightning",
-   "in": 0.05,
+   "in": 0.07,
    "k": "nemotron-3-5-lightning",
    "maxOut": 262144,
    "name": "Nemotron 3.5 Lightning 30B A3B",
@@ -12340,14 +12340,14 @@
    "upd": "2026-09-22"
   },
   {
-   "cr": 0.02,
+   "cr": 0.05,
    "ctx": 1048576,
    "id": "xiaomi/mimo-v2.6-flash-mopd",
-   "in": 0.15,
+   "in": 0.5,
    "k": "mimo-v2-6-flash-mopd",
    "maxOut": 32768,
    "name": "MiMo-V2.6-Flash-MOPD",
-   "out": 0.42,
+   "out": 1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12385,14 +12385,13 @@
    "upd": "2026-09-22"
   },
   {
-   "cr": 0.025,
    "ctx": 131072,
    "id": "z-ai/glm-4.5-air",
-   "in": 0.13,
+   "in": 0.14,
    "k": "glm-4-5-air",
    "maxOut": 98304,
    "name": "GLM-4.5-Air",
-   "out": 0.85,
+   "out": 0.86,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -12430,7 +12429,7 @@
    "upd": "2025-09-30"
   },
   {
-   "cr": 0.055,
+   "cr": 0.05,
    "ctx": 131072,
    "id": "z-ai/glm-4.6v",
    "in": 0.3,
@@ -12460,7 +12459,7 @@
    "upd": "2025-12-22"
   },
   {
-   "ctx": 200000,
+   "ctx": 131072,
    "id": "z-ai/glm-4.7-flash",
    "in": 0.0605,
    "k": "glm-4-7-flash",
@@ -17572,5 +17571,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-25T09:44:18.231Z"
+ "updatedAt": "2026-11-25T12:44:17.335Z"
 }
