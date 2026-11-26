@@ -6381,7 +6381,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.001442,
+   "cr": 0.035,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6390,11 +6390,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.04532,
+   "in": 0.047,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.13596,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7430,7 +7430,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.035,
+   "cr": 0.015,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7439,11 +7439,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.0456,
+   "in": 0.06,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 0.3,
+   "out": 0.18,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7470,7 +7470,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.21,
+   "cr": 0.2,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7478,11 +7478,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.72684,
+   "in": 0.888188,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.5228,
+   "out": 1.5082,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7509,7 +7509,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.001014,
+   "cr": 0.0042,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7518,11 +7518,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0507,
+   "in": 0.14,
    "k": "deepseek-v4-1-flash",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.2028,
+   "out": 0.42,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8100,14 +8100,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0425,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0765,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.255,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11046,14 +11046,14 @@
    "upd": "2026-02-23"
   },
   {
-   "cr": 0.22,
+   "cr": 0.3,
    "ctx": 262144,
    "id": "qwen/qwen3.5-397b-a17b",
-   "in": 0.45,
+   "in": 0.5,
    "k": "qwen3-5-397b-a17b",
-   "maxOut": 81920,
+   "maxOut": 65536,
    "name": "Qwen3.5 397B-A17B",
-   "out": 3,
+   "out": 3.6,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11380,7 +11380,7 @@
    "upd": "2026-10-21"
   },
   {
-   "cr": 0.05,
+   "cr": 0.04,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -11390,7 +11390,7 @@
     "max"
    ],
    "id": "reflection/beam-1.0-501b-a23b",
-   "in": 0.25,
+   "in": 0.3,
    "k": "beam-1-0-501b-a23b",
    "maxOut": 131072,
    "name": "Beam 1.0 501B A23B",
@@ -12181,13 +12181,14 @@
    "upd": "2026-09-22"
   },
   {
+   "cr": 0.03,
    "ctx": 131072,
    "id": "z-ai/glm-4.5-air",
-   "in": 0.14,
+   "in": 0.2,
    "k": "glm-4-5-air",
    "maxOut": 98304,
    "name": "GLM-4.5-Air",
-   "out": 0.86,
+   "out": 1.1,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -15467,25 +15468,6 @@
    "upd": "2026-09-20"
   },
   {
-   "cr": 0.13,
-   "ctx": 1048576,
-   "efforts": [
-    "high",
-    "max"
-   ],
-   "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
-   "in": 1.32,
-   "k": "deepseek-v4-pro-0813",
-   "maxOut": 384000,
-   "name": "DeepSeek V4 Pro 0813",
-   "out": 3.96,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "toggle": true,
-   "upd": "2026-08-22"
-  },
-  {
    "cr": 0.006,
    "ctx": 1048576,
    "efforts": [
@@ -15682,24 +15664,6 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-10-15"
-  },
-  {
-   "ctx": 131072,
-   "efforts": [
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "openai/gpt-oss-120b",
-   "in": 0.15,
-   "k": "gpt-oss-120b",
-   "maxOut": 131072,
-   "name": "GPT OSS 120B",
-   "out": 0.6,
-   "p": "togetherai",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-08-05"
   },
   {
    "ctx": 262144,
@@ -17380,5 +17344,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-25T21:43:36.222Z"
+ "updatedAt": "2026-11-26T00:52:20.830Z"
 }
