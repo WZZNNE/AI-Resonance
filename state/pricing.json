@@ -1965,26 +1965,6 @@
    "upd": "2026-06-09"
   },
   {
-   "cr": 0.05,
-   "ctx": 256000,
-   "efforts": [
-    "none",
-    "low",
-    "medium",
-    "high"
-   ],
-   "id": "ByteDance/Seed-1.8",
-   "in": 0.25,
-   "k": "seed-1-8",
-   "maxOut": 64000,
-   "name": "Seed 1.8",
-   "out": 2,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-12-28"
-  },
-  {
    "cr": 0.1,
    "ctx": 256000,
    "efforts": [
@@ -1999,21 +1979,6 @@
    "maxOut": 131072,
    "name": "Seed 2.0 Code",
    "out": 3,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-02-14"
-  },
-  {
-   "alwaysOn": true,
-   "cr": 0.02,
-   "ctx": 256000,
-   "id": "ByteDance/Seed-2.0-mini",
-   "in": 0.1,
-   "k": "seed-2-0-mini",
-   "maxOut": 131072,
-   "name": "Seed 2.0 Mini",
-   "out": 0.4,
    "p": "deepinfra",
    "reasoning": true,
    "src": "models.dev",
@@ -2913,6 +2878,32 @@
    "upd": "2026-11-16"
   },
   {
+   "ctx": 8192,
+   "id": "Sao10K/L3-8B-Lunaris-v1-Turbo",
+   "in": 0.04,
+   "k": "l3-8b-lunaris-v1-turbo",
+   "maxOut": 7372,
+   "name": "Llama 3 8B Lunaris",
+   "out": 0.05,
+   "p": "deepinfra",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2024-08-13"
+  },
+  {
+   "ctx": 131072,
+   "id": "Sao10K/L3.1-70B-Euryale-v2.2",
+   "in": 0.85,
+   "k": "l3-1-70b-euryale-v2-2",
+   "maxOut": 16384,
+   "name": "Llama 3.1 Euryale 70B v2.2",
+   "out": 0.85,
+   "p": "deepinfra",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2024-08-28"
+  },
+  {
    "cr": 0.042,
    "ctx": 1048576,
    "efforts": [
@@ -3304,6 +3295,29 @@
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-11-20"
+  },
+  {
+   "cr": 0.03,
+   "ctx": 1048576,
+   "efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "accounts/fireworks/models/inkling-2-small",
+   "in": 0.3,
+   "k": "inkling-2-small",
+   "maxOut": 131072,
+   "name": "Inkling 2 Small",
+   "out": 1,
+   "p": "fireworks-ai",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-11-12"
   },
   {
    "cr": 0.3,
@@ -6443,7 +6457,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.035,
+   "cr": 0.001442,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6452,11 +6466,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.047,
+   "in": 0.04532,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.3,
+   "out": 0.13596,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7501,7 +7515,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.047,
+   "in": 0.0456,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash 0731",
@@ -7532,7 +7546,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.2,
+   "cr": 0.21,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7540,11 +7554,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.888188,
+   "in": 0.75726,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.5082,
+   "out": 1.5004,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7571,7 +7585,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.0042,
+   "cr": 0.001014,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7580,11 +7594,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.14,
+   "in": 0.0507,
    "k": "deepseek-v4-1-flash",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.42,
+   "out": 0.2028,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8321,7 +8335,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-08-06"
+   "upd": "2026-08-07"
   },
   {
    "cr": 0.015,
@@ -8350,7 +8364,22 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-11-13"
+   "upd": "2026-11-05"
+  },
+  {
+   "cr": 0.012,
+   "ctx": 131072,
+   "id": "inclusionai/lingsante-3.1-air-vl",
+   "in": 0.06,
+   "k": "lingsante-3-1-air-vl",
+   "maxOut": 32768,
+   "name": "LingSante 3.1 Air VL",
+   "out": 0.18,
+   "p": "openrouter",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-11-19"
   },
   {
    "cr": 0.05,
@@ -9117,6 +9146,32 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-10-15"
+  },
+  {
+   "ctx": 131072,
+   "id": "moonshotai/kimi-k2",
+   "in": 0.57,
+   "k": "kimi-k2",
+   "maxOut": 98304,
+   "name": "Kimi K2 0711",
+   "out": 2.3,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-07-11"
+  },
+  {
+   "ctx": 262144,
+   "id": "moonshotai/kimi-k2-0905",
+   "in": 0.6,
+   "k": "kimi-k2-0905",
+   "maxOut": 98304,
+   "name": "Kimi K2 Instruct 0905",
+   "out": 2.5,
+   "p": "openrouter",
+   "reasoning": false,
+   "src": "models.dev",
+   "upd": "2025-09-05"
   },
   {
    "cr": 0.15,
@@ -10650,7 +10705,7 @@
    "id": "particle-ai/particle-1",
    "in": 0.07,
    "k": "particle-1",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "Particle-1",
    "out": 0.5,
    "p": "openrouter",
@@ -10672,7 +10727,7 @@
    "id": "particle-ai/particle-1:free",
    "in": 0,
    "k": "particle-1",
-   "maxOut": 131072,
+   "maxOut": 943718,
    "name": "Particle-1 (free)",
    "out": 0,
    "p": "openrouter",
@@ -12211,7 +12266,7 @@
    "reasoning": true,
    "src": "models.dev",
    "toggle": true,
-   "upd": "2026-11-23"
+   "upd": "2026-09-27"
   },
   {
    "cr": 0.0036,
@@ -12275,7 +12330,7 @@
   },
   {
    "cr": 0.1,
-   "ctx": 204800,
+   "ctx": 202752,
    "id": "z-ai/glm-4.6",
    "in": 0.5,
    "k": "glm-4-6",
@@ -15446,6 +15501,41 @@
    "upd": "2026-10-23"
   },
   {
+   "cr": 0.2,
+   "ctx": 1048576,
+   "cw": 4,
+   "efforts": [
+    "low",
+    "high",
+    "max"
+   ],
+   "id": "kimi-k3.1-pro-highspeed",
+   "in": 4,
+   "k": "kimi-k3-1-pro-highspeed",
+   "maxOut": 1048576,
+   "name": "Kimi K3.1 Pro Highspeed",
+   "out": 20,
+   "p": "tencent-tokenhub",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-23"
+  },
+  {
+   "cr": 0.0036,
+   "ctx": 1048576,
+   "id": "mimo-v2.5-pro",
+   "in": 0.435,
+   "k": "mimo-v2-5-pro",
+   "maxOut": 131072,
+   "name": "MiMo-V2.5-Pro",
+   "out": 0.87,
+   "p": "tencent-tokenhub",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-04-22"
+  },
+  {
    "cr": 0.0028,
    "ctx": 1048576,
    "id": "mimo-v2.6-flash",
@@ -17407,5 +17497,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-26T15:43:48.203Z"
+ "updatedAt": "2026-11-26T18:43:45.712Z"
 }
