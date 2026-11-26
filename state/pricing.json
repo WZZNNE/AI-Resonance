@@ -2331,25 +2331,6 @@
    "upd": "2026-04-02"
   },
   {
-   "cr": 0.015,
-   "ctx": 131072,
-   "efforts": [
-    "none",
-    "low",
-    "high"
-   ],
-   "id": "ibm-granite/granite-4.2-8b",
-   "in": 0.06,
-   "k": "granite-4-2-8b",
-   "maxOut": 117964,
-   "name": "Granite 4.2 8B",
-   "out": 0.25,
-   "p": "deepinfra",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2026-08-25"
-  },
-  {
    "cr": 0.012,
    "ctx": 131072,
    "id": "inclusionAI/Ling-3.0-flash",
@@ -7468,7 +7449,7 @@
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.015,
+   "cr": 0.035,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7477,11 +7458,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.06,
+   "in": 0.047,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash 0731",
-   "out": 0.18,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8111,13 +8092,14 @@
    "upd": "2025-03-12"
   },
   {
+   "cr": 0.04,
    "ctx": 131072,
    "id": "google/gemma-3-27b-it",
    "in": 0.08,
    "k": "gemma-3-27b-it",
-   "maxOut": 16384,
+   "maxOut": 131072,
    "name": "Gemma 3 27B IT",
-   "out": 0.16,
+   "out": 0.45,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -11269,7 +11251,7 @@
    "upd": "2026-08-12"
   },
   {
-   "cr": 0.0175,
+   "cr": 0.059,
    "ctx": 1024000,
    "efforts": [
     "none",
@@ -11278,11 +11260,11 @@
     "xhigh"
    ],
    "id": "qwen/qwen3.8-27b",
-   "in": 0.035,
+   "in": 0.06,
    "k": "qwen3-8-27b",
-   "maxOut": 131072,
+   "maxOut": 32768,
    "name": "Qwen3.8 27B",
-   "out": 1.5,
+   "out": 1.96,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17382,5 +17364,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-26T09:43:40.038Z"
+ "updatedAt": "2026-11-26T12:44:30.591Z"
 }
