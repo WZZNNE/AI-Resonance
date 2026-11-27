@@ -123,6 +123,94 @@
    "upd": "2026-10-23"
   },
   {
+   "cr": 0.08,
+   "ctx": 262144,
+   "cw": 0.08,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "mindlab/macaron-v1-tall",
+   "in": 0.45,
+   "k": "macaron-v1-tall",
+   "maxOut": 65536,
+   "name": "Macaron V1 Tall",
+   "out": 2.6,
+   "p": "alibaba",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-07-21"
+  },
+  {
+   "cr": 0.22,
+   "ctx": 1048576,
+   "cw": 0.22,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "mindlab/macaron-v1.1-coding-venti",
+   "in": 1.19,
+   "k": "macaron-v1-1-coding-venti",
+   "maxOut": 131072,
+   "name": "Macaron V1.1 Coding Venti",
+   "out": 3.74,
+   "p": "alibaba",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.22,
+   "ctx": 1048576,
+   "cw": 0.22,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "mindlab/macaron-v1.1-venti",
+   "in": 1.19,
+   "k": "macaron-v1-1-venti",
+   "maxOut": 131072,
+   "name": "Macaron V1.1 Venti",
+   "out": 3.74,
+   "p": "alibaba",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
+   "cr": 0.1,
+   "ctx": 1048576,
+   "cw": 0.1,
+   "efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "id": "mindlab/macaron-v1.1-venti-pro",
+   "in": 2,
+   "k": "macaron-v1-1-venti-pro",
+   "maxOut": 131072,
+   "name": "Macaron V1.1 Venti Pro",
+   "out": 10,
+   "p": "alibaba",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-09-22"
+  },
+  {
    "budget": {},
    "cr": 0.01,
    "ctx": 1000000,
@@ -6491,7 +6579,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.035,
+   "cr": 0.001442,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6500,11 +6588,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-v4-flash-latest",
-   "in": 0.047,
+   "in": 0.04532,
    "k": "deepseek-v4-flash-latest",
-   "maxOut": 943718,
+   "maxOut": 131072,
    "name": "DeepSeek V4 Flash Latest",
-   "out": 0.3,
+   "out": 0.13596,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7552,7 +7640,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-0731",
-   "in": 0.047,
+   "in": 0.0456,
    "k": "deepseek-v4-flash-0731",
    "maxOut": 384000,
    "name": "DeepSeek V4 Flash 0731",
@@ -7583,7 +7671,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.2,
+   "cr": 0.21,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7591,11 +7679,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.888188,
+   "in": 0.70487,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.5082,
+   "out": 1.544,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7622,7 +7710,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.0042,
+   "cr": 0.001014,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7631,11 +7719,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.14,
+   "in": 0.0507,
    "k": "deepseek-v4-1-flash",
    "maxOut": 393216,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.42,
+   "out": 0.2028,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17532,5 +17620,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-27T15:44:14.514Z"
+ "updatedAt": "2026-11-27T18:44:10.007Z"
 }
