@@ -7241,6 +7241,9 @@
   {
    "ctx": 1024000,
    "efforts": [
+    "none",
+    "low",
+    "medium",
     "high"
    ],
    "id": "baidu/ernie-5.5-flash-preview:free",
@@ -8385,13 +8388,14 @@
    "upd": "2026-09-29"
   },
   {
+   "cr": 0.06,
    "ctx": 1048576,
-   "id": "inclusionai/ling-3.2-flash:free",
-   "in": 0,
+   "id": "inclusionai/ling-3.2-flash",
+   "in": 0.3,
    "k": "ling-3-2-flash",
    "maxOut": 262144,
-   "name": "Ling 3.2 Flash (free)",
-   "out": 0,
+   "name": "Ling 3.2 Flash",
+   "out": 0.9,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11362,7 +11366,7 @@
   },
   {
    "cr": 0.25,
-   "ctx": 1048576,
+   "ctx": 1000000,
    "efforts": [
     "low",
     "medium",
@@ -11957,7 +11961,7 @@
    "upd": "2026-07-15"
   },
   {
-   "cr": 0.015,
+   "cr": 0.012,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -11968,11 +11972,11 @@
     "max"
    ],
    "id": "thinkingmachines/inkling-2-mini",
-   "in": 0.075,
+   "in": 0.06,
    "k": "inkling-2-mini",
    "maxOut": 65536,
    "name": "Inkling 2 Mini",
-   "out": 0.3,
+   "out": 0.24,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17528,5 +17532,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-27T09:43:21.816Z"
+ "updatedAt": "2026-11-27T12:44:05.679Z"
 }
