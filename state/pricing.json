@@ -2326,6 +2326,21 @@
    "upd": "2026-09-10"
   },
   {
+   "cr": 0.012,
+   "ctx": 131072,
+   "id": "inclusionAI/LingSante-3.1-air-VL",
+   "in": 0.06,
+   "k": "lingsante-3-1-air-vl",
+   "maxOut": 32768,
+   "name": "LingSante 3.1 Air VL",
+   "out": 0.18,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "toggle": true,
+   "upd": "2026-11-19"
+  },
+  {
    "ctx": 131072,
    "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
    "in": 0.1,
@@ -2557,6 +2572,25 @@
    "src": "models.dev",
    "toggle": true,
    "upd": "2026-08-11"
+  },
+  {
+   "cr": 0.02,
+   "ctx": 262144,
+   "efforts": [
+    "none",
+    "medium",
+    "high"
+   ],
+   "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+   "in": 0.15,
+   "k": "nvidia-nemotron-3-5-super-vl",
+   "maxOut": 8192,
+   "name": "Nemotron 3.5 Super VL 120B A12B",
+   "out": 0.5,
+   "p": "deepinfra",
+   "reasoning": true,
+   "src": "models.dev",
+   "upd": "2026-10-15"
   },
   {
    "cr": 0.0185,
@@ -6437,7 +6471,7 @@
    "upd": "2026-09-14"
   },
   {
-   "cr": 0.097,
+   "cr": 0.0999,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -6446,11 +6480,11 @@
     "max"
    ],
    "id": "~deepseek/deepseek-pro-latest",
-   "in": 0.111,
+   "in": 0.0999,
    "k": "deepseek-pro-latest",
-   "maxOut": 943718,
+   "maxOut": 393216,
    "name": "DeepSeek Pro Latest",
-   "out": 4.44,
+   "out": 5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7526,7 +7560,7 @@
    "upd": "2026-07-31"
   },
   {
-   "cr": 0.028,
+   "cr": 0.00686,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7535,11 +7569,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-flash-vision-exp",
-   "in": 0.44,
+   "in": 0.2156,
    "k": "deepseek-v4-flash-vision-exp",
-   "maxOut": 393216,
+   "maxOut": 262144,
    "name": "DeepSeek V4 Flash Vision Exp",
-   "out": 1.32,
+   "out": 0.6468,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7558,14 +7592,14 @@
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.5039,
+   "out": 1.5082,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
    "upd": "2026-04-24"
   },
   {
-   "cr": 0.125,
+   "cr": 0.0999,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7574,7 +7608,7 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4-pro-0813",
-   "in": 0.25,
+   "in": 0.0999,
    "k": "deepseek-v4-pro-0813",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro 0813",
@@ -8149,14 +8183,13 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.04,
    "ctx": 131072,
    "id": "google/gemma-3-27b-it",
    "in": 0.08,
    "k": "gemma-3-27b-it",
-   "maxOut": 131072,
+   "maxOut": 16384,
    "name": "Gemma 3 27B IT",
-   "out": 0.45,
+   "out": 0.16,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
@@ -8176,14 +8209,14 @@
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.0425,
+   "cr": 0.05,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.0765,
+   "in": 0.09,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.255,
+   "out": 0.3,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17495,5 +17528,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-27T03:43:50.027Z"
+ "updatedAt": "2026-11-27T06:48:08.397Z"
 }
