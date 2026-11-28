@@ -97,11 +97,6 @@
   "summary": "TLDR; Inkling 2 Mini is a new looped transformer model. It’s a multimodal Mixture-of-Experts with ~26B physical total and 3B active parameters per token. It uses a neat trick to increase capacity: some layers are visited in a loop that repeats three times, which makes it work like it had more parameters. It supports a 1M-token context size, accepts images and text inputs. Thinking Machines Lab ships the model in a mixed-precision format, with NVFP4 and MXFP8 expert weights. A DSpark drafter is also included for additional speed-up at a small memory cost. Inkling 2 Mini is much, much smaller th",
   "url": "https://huggingface.co/blog/inkling2mini"
  },
- "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813": {
-  "at": "2026-11-14T03:43:29.643Z",
-  "summary": "Text Generation model with 1.7T parameters. Download, explore files and run it on Hugging Face.",
-  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813"
- },
  "https://huggingface.co/drmhse/nano-edge-tts": {
   "at": "2026-11-15T21:43:33.416Z",
   "summary": "A 1.75M-parameter decoder for Kokoro-82M that runs no neural network at audio rate. Kokoro's text side (pronunciation, timing, pitch and all voices) is unchanged. Its 53.3M-parameter waveform decoder is replaced by two small networks that run 80 and 160 times a second and set per-frequency gains on a pulse train and on white noise. Two inverse STFTs turn the result into audio. Paper: No Network at Audio Rate: A 1.75M-Parameter Harmonic-plus-Noise Decoder for Kokoro-82M (method, results, listening tests and negative results). ¹ 240 validation sentences, PyTorch, Apple M4. ² Six validation sente",
