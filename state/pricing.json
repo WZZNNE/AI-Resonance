@@ -7671,7 +7671,7 @@
    "upd": "2026-09-01"
   },
   {
-   "cr": 0.21,
+   "cr": 0.22,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7679,11 +7679,11 @@
     "xhigh"
    ],
    "id": "deepseek/deepseek-v4-pro",
-   "in": 0.70487,
+   "in": 0.51221,
    "k": "deepseek-v4-pro",
    "maxOut": 393216,
    "name": "DeepSeek V4 Pro",
-   "out": 1.544,
+   "out": 1.5651,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -7710,7 +7710,7 @@
    "upd": "2026-08-22"
   },
   {
-   "cr": 0.001014,
+   "cr": 0.018,
    "ctx": 1048576,
    "efforts": [
     "none",
@@ -7719,11 +7719,11 @@
     "max"
    ],
    "id": "deepseek/deepseek-v4.1-flash",
-   "in": 0.0507,
+   "in": 0.051,
    "k": "deepseek-v4-1-flash",
-   "maxOut": 393216,
+   "maxOut": 384000,
    "name": "DeepSeek V4.1 Flash",
-   "out": 0.2028,
+   "out": 0.567,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -8287,27 +8287,28 @@
    "upd": "2025-03-12"
   },
   {
+   "cr": 0.02,
    "ctx": 131072,
    "id": "google/gemma-3-4b-it",
-   "in": 0.05,
+   "in": 0.04,
    "k": "gemma-3-4b-it",
-   "maxOut": 16384,
+   "maxOut": 131072,
    "name": "Gemma 3 4B IT",
-   "out": 0.1,
+   "out": 0.05,
    "p": "openrouter",
    "reasoning": false,
    "src": "models.dev",
    "upd": "2025-03-12"
   },
   {
-   "cr": 0.05,
+   "cr": 0.0375,
    "ctx": 262144,
    "id": "google/gemma-4-26b-a4b-it",
-   "in": 0.09,
+   "in": 0.0675,
    "k": "gemma-4-26b-a4b-it",
    "maxOut": 32768,
    "name": "Gemma 4 26B A4B IT",
-   "out": 0.3,
+   "out": 0.225,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -9630,9 +9631,9 @@
    "id": "nvidia/nemotron-3.5-super-vl",
    "in": 0.15,
    "k": "nemotron-3-5-super-vl",
-   "maxOut": 8192,
+   "maxOut": 131072,
    "name": "Nemotron 3.5 Super VL",
-   "out": 0.47,
+   "out": 0.45,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -11078,20 +11079,6 @@
    "upd": "2025-07-21"
   },
   {
-   "alwaysOn": true,
-   "ctx": 128000,
-   "id": "qwen/qwen3-235b-a22b-thinking-2507",
-   "in": 0.45,
-   "k": "qwen3-235b-a22b-thinking-2507",
-   "maxOut": 16384,
-   "name": "Qwen3 235B-A22B Thinking 2507",
-   "out": 3.5,
-   "p": "openrouter",
-   "reasoning": true,
-   "src": "models.dev",
-   "upd": "2025-07-25"
-  },
-  {
    "ctx": 40960,
    "id": "qwen/qwen3-30b-a3b",
    "in": 0.12,
@@ -11463,7 +11450,7 @@
    "id": "qwen/qwen3.8-2.4t-a95b",
    "in": 2,
    "k": "qwen3-8-2-4t-a95b",
-   "maxOut": 65536,
+   "maxOut": 131072,
    "name": "Qwen3.8 2.4T A95B",
    "out": 6,
    "p": "openrouter",
@@ -11621,7 +11608,7 @@
    "upd": "2026-10-21"
   },
   {
-   "cr": 0.04,
+   "cr": 0.05,
    "ctx": 1048576,
    "efforts": [
     "low",
@@ -11631,7 +11618,7 @@
     "max"
    ],
    "id": "reflection/beam-1.0-501b-a23b",
-   "in": 0.3,
+   "in": 0.25,
    "k": "beam-1-0-501b-a23b",
    "maxOut": 131072,
    "name": "Beam 1.0 501B A23B",
@@ -12081,11 +12068,11 @@
     "max"
    ],
    "id": "thinkingmachines/inkling-2-small",
-   "in": 0.3,
+   "in": 0.15,
    "k": "inkling-2-small",
    "maxOut": 131072,
    "name": "Inkling 2 Small",
-   "out": 1,
+   "out": 0.5,
    "p": "openrouter",
    "reasoning": true,
    "src": "models.dev",
@@ -17620,5 +17607,5 @@
   }
  ],
  "unit": "per_1M_tokens",
- "updatedAt": "2026-11-27T21:43:47.430Z"
+ "updatedAt": "2026-11-28T00:51:30.876Z"
 }
